@@ -7,7 +7,7 @@ import { CheckCircle2, Copy, Check, ArrowRight, Gift, Star } from "lucide-react"
 import { toast } from "sonner";
 
 // Import product images
-import heroImage from "@/assets/holiday/hero-bread-baking-gifts.jpg";
+import heroImage from "@/assets/holiday/hero-bread-baking-gifts.png";
 import vitaleStarter from "@/assets/holiday/vitale-sourdough-starter.jpg";
 import wireMonkeyLame from "@/assets/holiday/wire-monkey-lame.jpg";
 import goldie from "@/assets/holiday/sourhouse-goldie-starter-warmer.webp";
