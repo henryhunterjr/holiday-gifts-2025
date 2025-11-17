@@ -717,6 +717,7 @@ const HolidayGiftGuide = () => {
       </section>
 
       {/* STOCKING STUFFERS (UNDER $50) */}
+      {/* STOCKING STUFFERS (UNDER $50) */}
       <section
         id="stocking-stuffers"
         className="w-full bg-background dark:bg-background/95 py-12 px-6 md:px-10 border-b border-border"
@@ -734,17 +735,18 @@ const HolidayGiftGuide = () => {
           {/* GRID */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 
-            {/* ITEM 1 — Wire Monkey Pocket Lame */}
+            {/* Dough & Bowl Scraper */}
             <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Budget Pick</Badge>
               <h3 className="font-semibold text-foreground dark:text-foreground text-lg mb-2">
-                Wire Monkey Pocket Lame
+                Dough & Bowl Scraper
               </h3>
+              <p className="text-xs text-accent font-semibold mb-2">$4.95</p>
               <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
-                A compact scoring tool that slips into any apron pocket. 
-                Clean cuts and confident scoring for new bakers.
+                Flexible plastic scraper that conforms to bowl curves for efficient dough removal.
               </p>
               <a
-                href="https://wiremonkey.com/?ref=BAKINGGREATBREAD"
+                href="https://brodandtaylor.com/henrysbreadkitchen"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
@@ -753,17 +755,18 @@ const HolidayGiftGuide = () => {
               </a>
             </div>
 
-            {/* ITEM 2 — Replacement Blades */}
+            {/* Dough Whisk */}
             <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Essential Tool</Badge>
               <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
-                Replacement Blade Pack (Wire Monkey)
+                Dough Whisk
               </h3>
+              <p className="text-xs text-accent font-semibold mb-2">$14.95</p>
               <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
-                Sharp, clean blades packaged for bakers. A simple upgrade that 
-                makes scoring smoother and more predictable.
+                Unique looped wire design that mixes dough without overworking it.
               </p>
               <a
-                href="https://wiremonkey.com/?ref=BAKINGGREATBREAD"
+                href="https://brodandtaylor.com/henrysbreadkitchen"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
@@ -772,51 +775,18 @@ const HolidayGiftGuide = () => {
               </a>
             </div>
 
-            {/* ITEM 3 — Bread Bag */}
+            {/* Bread Lame */}
             <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Pro Scoring</Badge>
               <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
-                ModKitchen Bread Bag
+                Bread Lame
               </h3>
+              <p className="text-xs text-accent font-semibold mb-2">$14.95</p>
               <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
-                A reusable linen-style bread bag that keeps loaves breathing 
-                instead of sweating. Great for gifting fresh bakes.
+                Professional bread scoring tool with replaceable blades for beautiful patterns.
               </p>
               <a
-                href="#"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
-              >
-                Link Coming Soon
-              </a>
-            </div>
-
-            {/* ITEM 4 — Bread Sling */}
-            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
-              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
-                ModKitchen Bread Sling
-              </h3>
-              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
-                Heat-proof, non-stick sling that makes transferring dough into 
-                a Dutch oven smoother, safer, and more predictable.
-              </p>
-              <a
-                href="#"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
-              >
-                Link Coming Soon
-              </a>
-            </div>
-
-            {/* ITEM 5 — Dough Whisk */}
-            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
-              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
-                Brød & Taylor Dough Whisk
-              </h3>
-              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
-                Perfect for mixing sticky doughs without clogging. Light, strong, 
-                and a surprisingly essential tool.
-              </p>
-              <a
-                href="http://brodandtaylor.com/henrysbreadkitchen"
+                href="https://brodandtaylor.com/henrysbreadkitchen"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
@@ -825,34 +795,18 @@ const HolidayGiftGuide = () => {
               </a>
             </div>
 
-            {/* ITEM 6 — Bench Scraper */}
+            {/* Proving Cloth */}
             <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Professional Grade</Badge>
               <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
-                Bench Scraper
+                Proving Cloth
               </h3>
+              <p className="text-xs text-accent font-semibold mb-2">$19.95</p>
               <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
-                Shape, divide, lift, and clean with one tool. 
-                Every baker needs one. Most bakers need two.
+                Natural linen cloth that prevents sticking during proofing.
               </p>
               <a
-                href="#"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
-              >
-                Add Link
-              </a>
-            </div>
-
-            {/* ITEM 7 — Banneton */}
-            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
-              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
-                Wood-Pulp Banneton (Wire Monkey)
-              </h3>
-              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
-                Helps dough form consistent structure and encourages 
-                beautiful crust patterns.
-              </p>
-              <a
-                href="https://wiremonkey.com/?ref=BAKINGGREATBREAD"
+                href="https://brodandtaylor.com/henrysbreadkitchen"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
@@ -861,17 +815,18 @@ const HolidayGiftGuide = () => {
               </a>
             </div>
 
-            {/* ITEM 8 — Starter Accessories */}
+            {/* Stainless Bench Scraper */}
             <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Must-Have</Badge>
               <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
-                Starter Jar Accessories (Sour House)
+                Stainless Bench Scraper
               </h3>
+              <p className="text-xs text-accent font-semibold mb-2">$19.95</p>
               <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
-                Cozy add-ons like the Joe Bed or jar grips. 
-                Perfect companions for the Goldie.
+                Multi-purpose tool for cutting, portioning, and cleaning work surfaces.
               </p>
               <a
-                href="https://sourhouse.co?ref=BAKINGGREATBREAD"
+                href="https://brodandtaylor.com/henrysbreadkitchen"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
@@ -880,34 +835,98 @@ const HolidayGiftGuide = () => {
               </a>
             </div>
 
-            {/* ITEM 9 — Digital Cards */}
+            {/* Round Banneton Basket */}
             <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Traditional</Badge>
               <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
-                Hydration Cheat Sheets / Recipe Cards
+                Round Banneton Basket
               </h3>
+              <p className="text-xs text-accent font-semibold mb-2">$22.95</p>
               <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
-                A tiny, thoughtful digital gift. Perfect for bakers 
-                who want clarity without guesswork.
+                Classic rattan proofing basket for boules with traditional circle patterns.
               </p>
               <a
-                href="#"
+                href="https://brodandtaylor.com/henrysbreadkitchen"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
               >
-                Add Link
+                Shop
               </a>
             </div>
 
-            {/* ITEM 10 — Book */}
+            {/* Oval Banneton Basket */}
             <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Batard Style</Badge>
               <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
-                "Sourdough for the Rest of Us"
+                Oval Banneton Basket
               </h3>
+              <p className="text-xs text-accent font-semibold mb-2">$24.95</p>
               <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
-                A friendly beginner's sourdough guide from my own kitchen. 
-                Lightweight, helpful, and gift-ready.
+                Creates beautiful spiral patterns while supporting dough structure.
               </p>
               <a
-                href="https://sourdough-simplified-gift.lovable.app/sourdough-for-the-rest"
+                href="https://brodandtaylor.com/henrysbreadkitchen"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
+              >
+                Shop
+              </a>
+            </div>
+
+            {/* Spice & Coffee Grinder */}
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Flavor Boost</Badge>
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
+                Spice & Coffee Grinder
+              </h3>
+              <p className="text-xs text-accent font-semibold mb-2">$24.95</p>
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
+                Compact grinder for freshly milled spices and coffee beans.
+              </p>
+              <a
+                href="https://brodandtaylor.com/henrysbreadkitchen"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
+              >
+                Shop
+              </a>
+            </div>
+
+            {/* Pro-Surface Thermometer */}
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Precision Tool</Badge>
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
+                Pro-Surface Thermometer
+              </h3>
+              <p className="text-xs text-accent font-semibold mb-2">$39.95</p>
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
+                Instant-read infrared thermometer for checking dough and water temps.
+              </p>
+              <a
+                href="https://brodandtaylor.com/henrysbreadkitchen"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
+              >
+                Shop
+              </a>
+            </div>
+
+            {/* Sourdough Crock */}
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Starter Home</Badge>
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
+                Sourdough Crock
+              </h3>
+              <p className="text-xs text-accent font-semibold mb-2">$44.95</p>
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
+                Elegant ceramic crock for storing sourdough starter with proper air circulation.
+              </p>
+              <a
+                href="https://brodandtaylor.com/henrysbreadkitchen"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
@@ -917,6 +936,98 @@ const HolidayGiftGuide = () => {
             </div>
 
           </div>
+        </div>
+      </section>
+
+      {/* MID-RANGE GIFTS ($50-$100) */}
+      <section className="container mx-auto px-4 py-16">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground dark:text-primary mb-4">
+            Mid-Range Gifts ($50-$100)
+          </h2>
+          <p className="text-lg text-foreground/80 dark:text-muted-foreground max-w-3xl mx-auto">
+            Step up your baking game with these professional-grade tools that deliver serious results.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {/* Bakers Math Kitchen Scale */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="mb-3 bg-accent w-fit">Precision Required</Badge>
+              <CardTitle className="text-foreground dark:text-foreground">Bakers Math Kitchen Scale</CardTitle>
+              <CardDescription className="text-accent font-semibold text-lg">$49.95</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-foreground/70 dark:text-muted-foreground mb-6">
+                Precision scale with baker's percentage calculations for accurate recipe scaling.
+              </p>
+              <Button 
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a 
+                  href="https://brodandtaylor.com/henrysbreadkitchen" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Shop Now
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Classic VG2 Knife Sharpener */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="mb-3 bg-accent w-fit">Sharp Blades</Badge>
+              <CardTitle className="text-foreground dark:text-foreground">Classic VG2 Knife Sharpener</CardTitle>
+              <CardDescription className="text-accent font-semibold text-lg">$59</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-foreground/70 dark:text-muted-foreground mb-6">
+                Professional-grade sharpener to keep bread knives at peak performance.
+              </p>
+              <Button 
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a 
+                  href="https://brodandtaylor.com/henrysbreadkitchen" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Shop Now
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Professional Apron */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="mb-3 bg-accent w-fit">Pro Look</Badge>
+              <CardTitle className="text-foreground dark:text-foreground">Professional Apron</CardTitle>
+              <CardDescription className="text-accent font-semibold text-lg">$60</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-foreground/70 dark:text-muted-foreground mb-6">
+                Durable, professional-quality apron designed for everyday baking.
+              </p>
+              <Button 
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a 
+                  href="https://brodandtaylor.com/henrysbreadkitchen" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Shop Now
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
@@ -1128,135 +1239,200 @@ const HolidayGiftGuide = () => {
       <section className="container mx-auto px-4 py-16 bg-gradient-to-b from-dough-cream to-background dark:from-background dark:to-background/95">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground dark:text-primary mb-4">
-            What Members of Our Community Are Saying
+            Real Testimonials from Our Community
           </h2>
           <p className="text-lg text-foreground/70 dark:text-muted-foreground">Real bakers. Real results.</p>
         </div>
 
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {/* Testimonial 1 - Vitale Starter */}
+          <Card className="bg-white/80 dark:bg-card/80 backdrop-blur-sm">
+            <CardContent className="p-6 space-y-4">
+              <div className="flex gap-1 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <p className="italic text-foreground/70 dark:text-muted-foreground">
+                "The Vitale starter woke up in 4 days and I baked my first successful loaf that weekend. Henry's instructions made it feel impossible to fail."
+              </p>
+              <div>
+                <p className="font-bold text-foreground dark:text-foreground">Sarah M.</p>
+                <p className="text-sm text-foreground/60 dark:text-muted-foreground">Ohio • Vitale Sourdough Starter</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Testimonial 2 - Wire Monkey Lame */}
+          <Card className="bg-white/80 dark:bg-card/80 backdrop-blur-sm">
+            <CardContent className="p-6 space-y-4">
+              <div className="flex gap-1 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <p className="italic text-foreground/70 dark:text-muted-foreground">
+                "The Wire Monkey lame made me feel like a professional. My scores actually open up now instead of just dragging across the surface."
+              </p>
+              <div>
+                <p className="font-bold text-foreground dark:text-foreground">Jessica R.</p>
+                <p className="text-sm text-foreground/60 dark:text-muted-foreground">North Carolina • Wire Monkey Lame</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Testimonial 3 - Goldie */}
+          <Card className="bg-white/80 dark:bg-card/80 backdrop-blur-sm">
+            <CardContent className="p-6 space-y-4">
+              <div className="flex gap-1 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <p className="italic text-foreground/70 dark:text-muted-foreground">
+                "I've been baking for years but the Goldie changed everything. No more guessing about fermentation times or adjusting for my cold kitchen."
+              </p>
+              <div>
+                <p className="font-bold text-foreground dark:text-foreground">Mike T.</p>
+                <p className="text-sm text-foreground/60 dark:text-muted-foreground">Colorado • Sour House Goldie</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Testimonial 4 - Sourdough Method */}
+          <Card className="bg-white/80 dark:bg-card/80 backdrop-blur-sm">
+            <CardContent className="p-6 space-y-4">
+              <div className="flex gap-1 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <p className="italic text-foreground/70 dark:text-muted-foreground">
+                "Henry's sourdough method changed everything for me. After years of dense, flat loaves, I finally achieved that perfect open crumb and crispy crust."
+              </p>
+              <div>
+                <p className="font-bold text-foreground dark:text-foreground">Sarah Mitchell</p>
+                <p className="text-sm text-foreground/60 dark:text-muted-foreground">Portland, OR • Sourdough Techniques</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Testimonial 5 - Holland Bowl Mill */}
+          <Card className="bg-white/80 dark:bg-card/80 backdrop-blur-sm">
+            <CardContent className="p-6 space-y-4">
+              <div className="flex gap-1 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <p className="italic text-foreground/70 dark:text-muted-foreground">
+                "The Holland Bowl Mill bowl is stunning and functional. I use it for mixing, folding, and it sits on my counter like a piece of art."
+              </p>
+              <div>
+                <p className="font-bold text-foreground dark:text-foreground">Lisa W.</p>
+                <p className="text-sm text-foreground/60 dark:text-muted-foreground">Boston, MA • Holland Bowl Mill Bowl</p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* BOOKS FOR GIFT GIVING */}
+      <section className="container mx-auto px-4 py-16">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground dark:text-primary mb-4">
+            Books for Gift Giving
+          </h2>
+          <p className="text-lg text-foreground/80 dark:text-muted-foreground max-w-3xl mx-auto">
+            Knowledge that lasts longer than any tool. Give the gift of baking wisdom.
+          </p>
+        </div>
+
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <Card className="bg-white/80 backdrop-blur-sm">
-            <CardContent className="p-6 space-y-4">
-              <div className="flex gap-1 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-              <p className="italic text-muted-foreground">
-                "Henry's sourdough method changed everything for me. After years of dense, flat loaves, I finally achieved that perfect open crumb and crispy crust. His step-by-step approach makes it accessible for anyone."
+          {/* Book 1 - Sourdough for the Rest of Us */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <CardTitle className="text-foreground dark:text-foreground">Sourdough for the Rest of Us</CardTitle>
+              <CardDescription className="text-foreground/60 dark:text-muted-foreground italic">No Perfection Required</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Badge className="mb-4 bg-accent">Available Now</Badge>
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
+                Straightforward sourdough guidance that meets you where you are. No artisan jargon, just great bread.
               </p>
-              <p className="font-bold text-foreground">— Sarah Mitchell, Portland, OR</p>
+              <p className="text-xs text-accent font-semibold mb-6">
+                Best for: Beginners or anyone tired of complicated sourdough advice
+              </p>
+              <Button 
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a 
+                  href="https://www.amazon.com/Sourdough-Rest-Us-Perfection-Required/dp/B0DPRZ5NYL" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Buy on Amazon
+                </a>
+              </Button>
             </CardContent>
           </Card>
 
-          <Card className="bg-white/80 backdrop-blur-sm">
-            <CardContent className="p-6 space-y-4">
-              <div className="flex gap-1 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-              <p className="italic text-muted-foreground">
-                "I've been baking professionally for 10 years, and Henry's techniques still taught me something new. The way he explains fermentation is brilliant."
+          {/* Book 2 - The Bread Journey */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <CardTitle className="text-foreground dark:text-foreground">The Bread Journey</CardTitle>
+              <CardDescription className="text-foreground/60 dark:text-muted-foreground italic">From Kitchen to Community</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Badge className="mb-4 bg-accent">Available Now</Badge>
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
+                How bread can transform your life and bring people together. Personal stories, practical guidance, and recipes that build community.
               </p>
-              <p className="font-bold text-foreground">— James Chen, San Francisco, CA</p>
+              <p className="text-xs text-accent font-semibold mb-6">
+                Best for: Anyone who loves the story behind the bread
+              </p>
+              <Button 
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a 
+                  href="https://www.amazon.com/Bread-Journey-Kitchen-Community/dp/B0DPRZM8VG" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Buy on Amazon
+                </a>
+              </Button>
             </CardContent>
           </Card>
 
-          <Card className="bg-white/80 backdrop-blur-sm">
-            <CardContent className="p-6 space-y-4">
-              <div className="flex gap-1 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-              <p className="italic text-muted-foreground">
-                "As a complete beginner, I was intimidated by bread baking. Henry's clear instructions and encouraging tone gave me the confidence to try. My first loaf was a success!"
+          {/* Book 3 - Baking Great Bread at Home */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1 border-2 border-accent">
+            <CardHeader>
+              <CardTitle className="text-foreground dark:text-foreground">Baking Great Bread at Home</CardTitle>
+              <CardDescription className="text-foreground/60 dark:text-muted-foreground italic">A Journey Through the Seasons</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Badge className="mb-4 bg-secondary">Coming December 2025</Badge>
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
+                A year-long journey through seasonal baking with master-level techniques made accessible. Pre-orders opening soon.
               </p>
-              <p className="font-bold text-foreground">— Emily Rodriguez, Austin, TX</p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-white/80 backdrop-blur-sm">
-            <CardContent className="p-6 space-y-4">
-              <div className="flex gap-1 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-              <p className="italic text-muted-foreground">
-                "The science behind the bread-making process is fascinating, and Henry explains it in a way that's both educational and practical. My bakes have improved dramatically."
+              <p className="text-xs text-accent font-semibold mb-6">
+                Best for: Serious bakers who want to deepen their craft
               </p>
-              <p className="font-bold text-foreground">— Michael Thompson, Seattle, WA</p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-white/80 backdrop-blur-sm">
-            <CardContent className="p-6 space-y-4">
-              <div className="flex gap-1 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-              <p className="italic text-muted-foreground">
-                "I love how Henry emphasizes that bread baking is a journey, not a destination. His philosophy helped me stop stressing about perfection and just enjoy the process."
-              </p>
-              <p className="font-bold text-foreground">— Lisa Wang, Boston, MA</p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-white/80 backdrop-blur-sm">
-            <CardContent className="p-6 space-y-4">
-              <div className="flex gap-1 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-              <p className="italic text-muted-foreground">
-                "The troubleshooting section saved my baking! Henry addresses every problem I encountered and offers clear solutions. It's like having a master baker in your kitchen."
-              </p>
-              <p className="font-bold text-foreground">— David Kumar, Chicago, IL</p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-white/80 backdrop-blur-sm">
-            <CardContent className="p-6 space-y-4">
-              <div className="flex gap-1 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-              <p className="italic text-muted-foreground">
-                "My family can't get enough of the sourdough I make using Henry's recipes. Even my picky kids ask for 'daddy's special bread' every week."
-              </p>
-              <p className="font-bold text-foreground">— Rachel Green, Denver, CO</p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-white/80 backdrop-blur-sm">
-            <CardContent className="p-6 space-y-4">
-              <div className="flex gap-1 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-              <p className="italic text-muted-foreground">
-                "Henry's approach to bread scoring transformed my loaves from good to bakery-quality. The patterns I can create now are stunning, and the technique is so simple."
-              </p>
-              <p className="font-bold text-foreground">— Tom Anderson, Minneapolis, MN</p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-white/80 backdrop-blur-sm">
-            <CardContent className="p-6 space-y-4">
-              <div className="flex gap-1 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-              <p className="italic text-muted-foreground">
-                "I appreciate how Henry respects different dietary needs. His whole grain recipes are wholesome, delicious, and my family loves them."
-              </p>
-              <p className="font-bold text-foreground">— Priya Patel, Atlanta, GA</p>
+              <Button 
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a 
+                  href="https://bakinggreatbread.com/books" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Learn More
+                </a>
+              </Button>
             </CardContent>
           </Card>
         </div>
