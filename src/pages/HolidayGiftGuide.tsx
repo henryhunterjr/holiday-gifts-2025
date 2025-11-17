@@ -13,6 +13,11 @@ import wireMonkeyLame from "@/assets/holiday/wire-monkey-lame.jpg";
 import goldie from "@/assets/holiday/sourhouse-goldie-starter-warmer.webp";
 import hollandBowl from "@/assets/holiday/holland-bowl-mill.jpg";
 import brodTaylorProofer from "@/assets/holiday/brod-taylor-proofer.jpg";
+import modBreadBag from "@/assets/holiday/modkitchen-bread-bag.webp";
+import modBreadSling from "@/assets/holiday/modkitchen-bread-sling.webp";
+import woodPulpBanneton from "@/assets/holiday/wood-pulp-banneton.webp";
+import gooseLame from "@/assets/holiday/wire-monkey-goose-lame.jpg";
+import doughBed from "@/assets/holiday/sourhouse-doughbed.jpg";
 
 const HolidayGiftGuide = () => {
   const [email, setEmail] = useState("");
@@ -444,6 +449,229 @@ const HolidayGiftGuide = () => {
         </div>
       </section>
 
+      {/* More Great Tools Section */}
+      <section className="container mx-auto px-4 py-16 bg-gradient-to-b from-background to-dough-cream">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+            More Great Tools
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            These are the tools that round out a complete baking setup. Each one solves a specific problem and makes the process smoother.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* ModKitchen Bread Bag */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-wheat text-white">Storage Solution</Badge>
+              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+                <img
+                  src={modBreadBag}
+                  alt="ModKitchen reusable linen bread storage bag"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">ModKitchen Bread Bag</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                A reusable linen-blend bread bag that actually keeps your loaf breathing instead of sweating. Perfect for same-day storage or delivering a still-warm loaf to a friend. Soft, durable, and sized for everything from boules to batards.
+              </CardDescription>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Coming Soon
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* ModKitchen Bread Sling */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-wheat text-white">Transfer Tool</Badge>
+              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+                <img
+                  src={modBreadSling}
+                  alt="ModKitchen heat-safe bread sling for Dutch oven transfers"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">ModKitchen Bread Sling</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                This sling gives you smooth, confident transfers into a Dutch oven without the panic. Heat-safe, non-stick, and lightweight. If you've ever dropped a shaped loaf into a burning hot pot… this is your upgrade.
+              </CardDescription>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Coming Soon
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Wire Monkey Wood Pulp Banneton */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-olive text-white">Modern Proofing</Badge>
+              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+                <img
+                  src={woodPulpBanneton}
+                  alt="Wire Monkey wood pulp banneton proofing basket"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">Wire Monkey Wood Pulp Banneton</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                A modern take on the classic proofing basket. Wood-pulp bannetons absorb excess moisture and help you score cleaner, sharper designs. They give you a more even skin on your dough and a rustic, artisanal look that people notice.
+              </CardDescription>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://wiremonkey.com/?ref=BAKINGGREATBREAD&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Shop Wire Monkey
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Wire Monkey Goose Lame */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-olive text-white">Precision Scoring</Badge>
+              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+                <img
+                  src={gooseLame}
+                  alt="Wire Monkey Goose lame bread scoring tool with ergonomic design"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">Wire Monkey Goose Lame</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                A sleek, ergonomic scoring tool with a grip that feels secure and balanced. The Goose Lame is loved for its control — you get clean, deep lines and expressive scoring without fighting the blade.
+              </CardDescription>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://wiremonkey.com/?ref=BAKINGGREATBREAD&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Shop Wire Monkey
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Sour House Joe Bed */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-bakery-copper text-white">Starter Care</Badge>
+              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+                <img
+                  src={doughBed}
+                  alt="Sour House Joe Bed dough proofing bowl with temperature control"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">Sour House 'Joe Bed'</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                A cozy, temperature-friendly resting place for your sourdough starter jars. Keeps the jar stable, lifted, and warm enough to ferment smoothly. Perfect companion for the Goldie if you want consistency without fuss.
+              </CardDescription>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://sourhouse.co?ref=BAKINGGREATBREAD&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Shop Sour House
+                </a>
+              </Button>
+              <div className="flex items-center justify-between bg-muted p-2 rounded text-sm">
+                <span className="font-mono">HBK23</span>
+                <span className="text-muted-foreground text-xs">10% off</span>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => copyToClipboard("HBK23")}
+                  className="ml-auto"
+                >
+                  {copiedCode === "HBK23" ? (
+                    <Check className="h-4 w-4 text-green-600" />
+                  ) : (
+                    <Copy className="h-4 w-4" />
+                  )}
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Brød & Taylor Dough Whisk - Placeholder */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1 opacity-75">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-wheat text-white">Mixing Tool</Badge>
+              <div className="aspect-square overflow-hidden rounded-lg mb-4 bg-dough-cream flex items-center justify-center border-2 border-dashed border-olive">
+                <p className="text-olive text-center p-4">Coming Soon</p>
+              </div>
+              <CardTitle className="text-2xl">Brød & Taylor Dough Whisk</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                The classic Danish dough whisk made better with Brød & Taylor craftsmanship. Ideal for mixing wet, sticky doughs without clogging or straining your wrist. It's one of those tools you don't realize you need until you have it.
+              </CardDescription>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="http://brodandtaylor.com/henrysbreadkitchen?utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Shop Brød & Taylor
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* Quick Navigation */}
       <section id="quick-nav" className="container mx-auto px-4 py-16 bg-gradient-to-b from-background to-dough-cream">
         <div className="text-center mb-8">
@@ -745,14 +973,33 @@ const HolidayGiftGuide = () => {
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <Card>
               <CardContent className="p-6 space-y-4 text-center">
-                <Gift className="h-12 w-12 mx-auto text-accent" />
+                <div className="aspect-[3/4] bg-dough-cream rounded-lg border-2 border-dashed border-olive flex items-center justify-center mb-4">
+                  <p className="text-olive">Book Cover<br/>Coming Soon</p>
+                </div>
                 <h3 className="text-xl font-bold">Sourdough for the Rest of Us</h3>
                 <p className="text-sm text-muted-foreground">
-                  Instant download. Beginner-friendly sourdough guide.
+                  My beginner-friendly guide that has already reached thousands of new bakers. Straight talk, no gatekeeping, no intimidation — just a clear path to your first beautiful loaf.
                 </p>
                 <Button asChild className="w-full bg-accent hover:bg-accent/90">
-                  <a href="https://hunter53.gumroad.com/l/tejdc" target="_blank" rel="noopener noreferrer">
+                  <a href="https://sourdough-simplified-gift.lovable.app/sourdough-for-the-rest" target="_blank" rel="noopener noreferrer">
                     Get the eBook
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6 space-y-4 text-center">
+                <div className="aspect-[3/4] bg-dough-cream rounded-lg border-2 border-dashed border-olive flex items-center justify-center mb-4">
+                  <p className="text-olive">Book Cover<br/>Coming Soon</p>
+                </div>
+                <h3 className="text-xl font-bold">Bread: A Journey Through History</h3>
+                <p className="text-sm text-muted-foreground">
+                  A deeper dive into the world of bread — where it came from, how it shaped civilizations, and why baking connects us. This book blends storytelling, technique, science, and the humanity behind bread.
+                </p>
+                <Button asChild className="w-full bg-accent hover:bg-accent/90">
+                  <a href="https://www.amazon.com/author/henryhunterjr" target="_blank" rel="noopener noreferrer">
+                    View on Amazon
                   </a>
                 </Button>
               </CardContent>
@@ -769,19 +1016,6 @@ const HolidayGiftGuide = () => {
                   <a href="https://vitalesourdoughco.etsy.com" target="_blank" rel="noopener noreferrer">
                     Buy Gift Card
                   </a>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6 space-y-4 text-center">
-                <Gift className="h-12 w-12 mx-auto text-accent" />
-                <h3 className="text-xl font-bold">Printable Gift Certificate</h3>
-                <p className="text-sm text-muted-foreground">
-                  Print and wrap. Promise them any tool from this guide.
-                </p>
-                <Button className="w-full bg-accent hover:bg-accent/90">
-                  Download PDF
                 </Button>
               </CardContent>
             </Card>
