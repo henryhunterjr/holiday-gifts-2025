@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle2, Copy, Check, ArrowRight, Gift, Star } from "lucide-react";
 import { toast } from "sonner";
+import { FestiveDarkModeToggle } from "@/components/FestiveDarkModeToggle";
 
 // Import product images
 import heroImage from "@/assets/holiday/hero-bread-baking-gifts.png";
@@ -157,6 +158,11 @@ const HolidayGiftGuide = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
+
+      {/* Festive Dark Mode Toggle - Fixed Position */}
+      <div className="fixed top-4 right-4 z-50">
+        <FestiveDarkModeToggle />
+      </div>
 
       {/* Hero Section */}
       <section className="relative overflow-hidden">

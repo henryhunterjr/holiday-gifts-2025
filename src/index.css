@@ -77,41 +77,58 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Holiday Night Theme - Cozy Winter Evening */
+    --background: 240 15% 8%;
+    --foreground: 43 45% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 240 12% 12%;
+    --card-foreground: 43 45% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 240 12% 12%;
+    --popover-foreground: 43 45% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 43 70% 70%;
+    --primary-foreground: 240 15% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 19 47% 45%;
+    --secondary-foreground: 43 45% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 240 10% 18%;
+    --muted-foreground: 43 20% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 280 50% 55%;
+    --accent-foreground: 43 45% 95%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 45%;
+    --destructive-foreground: 43 45% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 280 50% 60%;
+    
+    /* Custom Dark Mode Bread Baking Colors */
+    --wheat-brown: 36 50% 50%;
+    --dough-cream: 43 30% 85%;
+    --bakery-copper: 19 60% 50%;
+    --olive-accent: 86 20% 45%;
+    
+    /* Dark Mode Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(240 15% 10%) 0%, hsl(260 20% 15%) 100%);
+    --gradient-warm: linear-gradient(180deg, hsl(240 15% 8%) 0%, hsl(260 18% 12%) 100%);
+    
+    /* Dark Mode Shadows */
+    --shadow-soft: 0 2px 8px hsl(240 50% 5% / 0.4);
+    --shadow-card: 0 4px 12px hsl(240 50% 5% / 0.5);
+    --shadow-lifted: 0 8px 24px hsl(240 50% 5% / 0.6);
+    
+    --sidebar-background: 240 15% 10%;
+    --sidebar-foreground: 43 45% 90%;
+    --sidebar-primary: 280 50% 55%;
+    --sidebar-primary-foreground: 43 45% 95%;
+    --sidebar-accent: 240 10% 15%;
+    --sidebar-accent-foreground: 43 45% 90%;
+    --sidebar-border: 240 10% 18%;
+    --sidebar-ring: 280 50% 60%;
   }
 }
 
