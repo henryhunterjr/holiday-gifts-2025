@@ -30,6 +30,37 @@ const HolidayGiftGuide = () => {
   const [urgencyMessage, setUrgencyMessage] = useState("");
   const [showDigitalGifts, setShowDigitalGifts] = useState(false);
 
+  // Product data for search functionality
+  const allProducts = [
+    { name: "Vitale Sourdough Starter", brand: "Vitale", category: "starter", keywords: "sourdough starter dehydrated", price: "$12", id: "vitale-starter" },
+    { name: "Wire Monkey Bread Lame", brand: "Wire Monkey", category: "tools", keywords: "lame scoring blade knife", price: "$26", id: "wire-monkey-lame" },
+    { name: "Sour House Goldie Starter Warmer", brand: "Sour House", category: "equipment", keywords: "warmer temperature control", price: "$89", id: "goldie-warmer" },
+    { name: "Holland Bowl Mill 17\" Bowl", brand: "Holland Bowl Mill", category: "bowls", keywords: "mixing bowl wood wooden beechwood", price: "$135", id: "holland-bowl" },
+    { name: "Brød & Taylor Folding Proofer", brand: "Brød & Taylor", category: "equipment", keywords: "proofer temperature control folding", price: "$189", id: "brod-proofer" },
+    { name: "Holiday Hotline 1-Hour Coaching", brand: "Henry's Bread Kitchen", category: "digital", keywords: "coaching lesson consulting help", price: "$97", id: "holiday-hotline" },
+    { name: "ModKitchen Bread Bag", brand: "ModKitchen", category: "storage", keywords: "bread bag linen storage", price: "$28", id: "mod-bread-bag" },
+    { name: "ModKitchen Bread Sling", brand: "ModKitchen", category: "tools", keywords: "sling dutch oven transfer", price: "$32", id: "mod-bread-sling" },
+    { name: "Wood Pulp Banneton", brand: "Brød & Taylor", category: "bannetons", keywords: "banneton proofing basket wood pulp", price: "$24.95", id: "wood-pulp-banneton" },
+    { name: "Wire Monkey Goose Lame", brand: "Wire Monkey", category: "tools", keywords: "lame scoring blade goose", price: "$26", id: "goose-lame" },
+    { name: "Sour House DoughBed", brand: "Sour House", category: "equipment", keywords: "doughbed proofing resting", price: "$79", id: "dough-bed" },
+    { name: "Danish Dough Whisk", brand: "Brød & Taylor", category: "tools", keywords: "whisk mixing dough danish", price: "$12.95", id: "dough-whisk" },
+    { name: "Challenger Parchment Papers", brand: "Challenger", category: "tools", keywords: "parchment paper precut challenger", price: "$12.95", id: "challenger-parchment" },
+    { name: "Sahara Folding Bread Proofer", brand: "Brød & Taylor", category: "equipment", keywords: "proofer sahara folding temperature", price: "$189", id: "sahara-proofer" },
+    { name: "Water Kettle and French Press", brand: "Generic", category: "beverages", keywords: "kettle french press coffee tea", price: "$117.53", id: "water-kettle" },
+    { name: "mockmill 100 Stone Grain Mill", brand: "mockmill", category: "equipment", keywords: "grain mill stone flour grinding", price: "$279", id: "mockmill-100" },
+    { name: "mockmill Lino 200", brand: "mockmill", category: "equipment", keywords: "grain mill stone flour professional", price: "$449", id: "mockmill-lino" },
+    { name: "Vitamix A2300", brand: "Vitamix", category: "equipment", keywords: "blender vitamix flour grinding", price: "$399", id: "vitamix" },
+  ];
+
+  const filteredProducts = searchQuery 
+    ? allProducts.filter(product => 
+        product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.brand.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.keywords.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    : [];
+
   // Calculate urgency messaging based on date
   useEffect(() => {
     const today = new Date();
@@ -207,8 +238,35 @@ const HolidayGiftGuide = () => {
                   placeholder="Search for tools, brands, or baking needs..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full px-6 py-6 text-lg rounded-full border-2 border-accent/30 focus:border-accent bg-white dark:bg-card dark:text-foreground"
+                  className="w-full px-6 py-6 text-lg rounded-full border-2 border-accent/30 focus:border-accent bg-white dark:bg-card dark:text-foreground placeholder:text-muted-foreground dark:placeholder:text-gray-400"
                 />
+                
+                {/* Search Results Dropdown */}
+                {searchQuery && (
+                  <div className="absolute top-full mt-2 w-full bg-white dark:bg-card border-2 border-accent/30 dark:border-accent/50 rounded-lg shadow-xl z-50 max-h-96 overflow-y-auto">
+                    {filteredProducts.length > 0 ? (
+                      <div className="p-4 space-y-2">
+                        {filteredProducts.map((product) => (
+                          <a
+                            key={product.id}
+                            href={`#${product.id}`}
+                            onClick={() => setSearchQuery("")}
+                            className="block p-3 hover:bg-dough-cream dark:hover:bg-card/80 rounded-lg transition-colors"
+                          >
+                            <div className="font-semibold text-foreground dark:text-white">{product.name}</div>
+                            <div className="text-sm text-muted-foreground dark:text-gray-400">
+                              {product.brand} • {product.price}
+                            </div>
+                          </a>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="p-6 text-center text-muted-foreground dark:text-gray-400">
+                        No results found for "{searchQuery}"
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
 
@@ -524,11 +582,11 @@ const HolidayGiftGuide = () => {
                 asChild
               >
                 <a
-                  href="#"
+                  href="https://modkitchen.com/?ref=BAKINGGREATBREAD&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Coming Soon
+                  Shop ModKitchen
                 </a>
               </Button>
             </CardContent>
@@ -557,11 +615,11 @@ const HolidayGiftGuide = () => {
                 asChild
               >
                 <a
-                  href="#"
+                  href="https://modkitchen.com/?ref=BAKINGGREATBREAD&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Coming Soon
+                  Shop ModKitchen
                 </a>
               </Button>
             </CardContent>
