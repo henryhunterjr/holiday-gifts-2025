@@ -672,6 +672,210 @@ const HolidayGiftGuide = () => {
         </div>
       </section>
 
+      {/* STOCKING STUFFERS (UNDER $50) */}
+      <section
+        id="stocking-stuffers"
+        className="w-full bg-[#FAF5EB] py-12 px-6 md:px-10 border-b border-[rgba(0,0,0,0.05)]"
+      >
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-semibold text-[#586247] mb-3">
+            Stocking Stuffers for Bakers (Under $50)
+          </h2>
+
+          <p className="text-lg text-[#3A3A3A] mb-8">
+            Small, thoughtful tools that bakers love. Perfect for stockings, 
+            hostess gifts, or quick add-ons to any holiday order.
+          </p>
+
+          {/* GRID */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+            {/* ITEM 1 — Wire Monkey Pocket Lame */}
+            <div className="bg-white p-5 rounded-xl shadow-sm border border-[rgba(0,0,0,0.05)]">
+              <h3 className="font-semibold text-[#3A3A3A] text-lg mb-2">
+                Wire Monkey Pocket Lame
+              </h3>
+              <p className="text-sm text-[#555] mb-4">
+                A compact scoring tool that slips into any apron pocket. 
+                Clean cuts and confident scoring for new bakers.
+              </p>
+              <a
+                href="https://wiremonkey.com/?ref=BAKINGGREATBREAD"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#C47B51] text-white py-2 px-4 rounded-lg text-sm hover:bg-[#A56441]"
+              >
+                Shop
+              </a>
+            </div>
+
+            {/* ITEM 2 — Replacement Blades */}
+            <div className="bg-white p-5 rounded-xl shadow-sm border border-[rgba(0,0,0,0.05)]">
+              <h3 className="font-semibold text-lg text-[#3A3A3A] mb-2">
+                Replacement Blade Pack (Wire Monkey)
+              </h3>
+              <p className="text-sm text-[#555] mb-4">
+                Sharp, clean blades packaged for bakers. A simple upgrade that 
+                makes scoring smoother and more predictable.
+              </p>
+              <a
+                href="https://wiremonkey.com/?ref=BAKINGGREATBREAD"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#C47B51] text-white py-2 px-4 rounded-lg text-sm hover:bg-[#A56441]"
+              >
+                Shop
+              </a>
+            </div>
+
+            {/* ITEM 3 — Bread Bag */}
+            <div className="bg-white p-5 rounded-xl shadow-sm border border-[rgba(0,0,0,0.05)]">
+              <h3 className="font-semibold text-lg text-[#3A3A3A] mb-2">
+                ModKitchen Bread Bag
+              </h3>
+              <p className="text-sm text-[#555] mb-4">
+                A reusable linen-style bread bag that keeps loaves breathing 
+                instead of sweating. Great for gifting fresh bakes.
+              </p>
+              <a
+                href="#"
+                className="inline-block bg-[#C47B51] text-white py-2 px-4 rounded-lg text-sm hover:bg-[#A56441]"
+              >
+                Link Coming Soon
+              </a>
+            </div>
+
+            {/* ITEM 4 — Bread Sling */}
+            <div className="bg-white p-5 rounded-xl shadow-sm border border-[rgba(0,0,0,0.05)]">
+              <h3 className="font-semibold text-lg text-[#3A3A3A] mb-2">
+                ModKitchen Bread Sling
+              </h3>
+              <p className="text-sm text-[#555] mb-4">
+                Heat-proof, non-stick sling that makes transferring dough into 
+                a Dutch oven smoother, safer, and more predictable.
+              </p>
+              <a
+                href="#"
+                className="inline-block bg-[#C47B51] text-white py-2 px-4 rounded-lg text-sm hover:bg-[#A56441]"
+              >
+                Link Coming Soon
+              </a>
+            </div>
+
+            {/* ITEM 5 — Dough Whisk */}
+            <div className="bg-white p-5 rounded-xl shadow-sm border border-[rgba(0,0,0,0.05)]">
+              <h3 className="font-semibold text-lg text-[#3A3A3A] mb-2">
+                Brød & Taylor Dough Whisk
+              </h3>
+              <p className="text-sm text-[#555] mb-4">
+                Perfect for mixing sticky doughs without clogging. Light, strong, 
+                and a surprisingly essential tool.
+              </p>
+              <a
+                href="http://brodandtaylor.com/henrysbreadkitchen"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#C47B51] text-white py-2 px-4 rounded-lg text-sm hover:bg-[#A56441]"
+              >
+                Shop
+              </a>
+            </div>
+
+            {/* ITEM 6 — Bench Scraper */}
+            <div className="bg-white p-5 rounded-xl shadow-sm border border-[rgba(0,0,0,0.05)]">
+              <h3 className="font-semibold text-lg text-[#3A3A3A] mb-2">
+                Bench Scraper
+              </h3>
+              <p className="text-sm text-[#555] mb-4">
+                Shape, divide, lift, and clean with one tool. 
+                Every baker needs one. Most bakers need two.
+              </p>
+              <a
+                href="#"
+                className="inline-block bg-[#C47B51] text-white py-2 px-4 rounded-lg text-sm hover:bg-[#A56441]"
+              >
+                Add Link
+              </a>
+            </div>
+
+            {/* ITEM 7 — Banneton */}
+            <div className="bg-white p-5 rounded-xl shadow-sm border border-[rgba(0,0,0,0.05)]">
+              <h3 className="font-semibold text-lg text-[#3A3A3A] mb-2">
+                Wood-Pulp Banneton (Wire Monkey)
+              </h3>
+              <p className="text-sm text-[#555] mb-4">
+                Helps dough form consistent structure and encourages 
+                beautiful crust patterns.
+              </p>
+              <a
+                href="https://wiremonkey.com/?ref=BAKINGGREATBREAD"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#C47B51] text-white py-2 px-4 rounded-lg text-sm hover:bg-[#A56441]"
+              >
+                Shop
+              </a>
+            </div>
+
+            {/* ITEM 8 — Starter Accessories */}
+            <div className="bg-white p-5 rounded-xl shadow-sm border border-[rgba(0,0,0,0.05)]">
+              <h3 className="font-semibold text-lg text-[#3A3A3A] mb-2">
+                Starter Jar Accessories (Sour House)
+              </h3>
+              <p className="text-sm text-[#555] mb-4">
+                Cozy add-ons like the Joe Bed or jar grips. 
+                Perfect companions for the Goldie.
+              </p>
+              <a
+                href="https://sourhouse.co?ref=BAKINGGREATBREAD"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#C47B51] text-white py-2 px-4 rounded-lg text-sm hover:bg-[#A56441]"
+              >
+                Shop
+              </a>
+            </div>
+
+            {/* ITEM 9 — Digital Cards */}
+            <div className="bg-white p-5 rounded-xl shadow-sm border border-[rgba(0,0,0,0.05)]">
+              <h3 className="font-semibold text-lg text-[#3A3A3A] mb-2">
+                Hydration Cheat Sheets / Recipe Cards
+              </h3>
+              <p className="text-sm text-[#555] mb-4">
+                A tiny, thoughtful digital gift. Perfect for bakers 
+                who want clarity without guesswork.
+              </p>
+              <a
+                href="#"
+                className="inline-block bg-[#C47B51] text-white py-2 px-4 rounded-lg text-sm hover:bg-[#A56441]"
+              >
+                Add Link
+              </a>
+            </div>
+
+            {/* ITEM 10 — Book */}
+            <div className="bg-white p-5 rounded-xl shadow-sm border border-[rgba(0,0,0,0.05)]">
+              <h3 className="font-semibold text-lg text-[#3A3A3A] mb-2">
+                "Sourdough for the Rest of Us"
+              </h3>
+              <p className="text-sm text-[#555] mb-4">
+                A friendly beginner's sourdough guide from my own kitchen. 
+                Lightweight, helpful, and gift-ready.
+              </p>
+              <a
+                href="https://sourdough-simplified-gift.lovable.app/sourdough-for-the-rest"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#C47B51] text-white py-2 px-4 rounded-lg text-sm hover:bg-[#A56441]"
+              >
+                Shop
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* Quick Navigation */}
       <section id="quick-nav" className="container mx-auto px-4 py-16 bg-gradient-to-b from-background to-dough-cream">
         <div className="text-center mb-8">
