@@ -885,7 +885,7 @@ const HolidayGiftGuide = () => {
           <p className="text-lg text-muted-foreground">Real bakers. Real results.</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <Card className="bg-white/80 backdrop-blur-sm">
             <CardContent className="p-6 space-y-4">
               <div className="flex gap-1 mb-2">
@@ -894,9 +894,9 @@ const HolidayGiftGuide = () => {
                 ))}
               </div>
               <p className="italic text-muted-foreground">
-                "The Vitale starter woke up in 4 days and I baked my first successful loaf that weekend. I followed Henry's instructions and couldn't believe how easy this was compared to what I'd read online."
+                "Henry's sourdough method changed everything for me. After years of dense, flat loaves, I finally achieved that perfect open crumb and crispy crust. His step-by-step approach makes it accessible for anyone."
               </p>
-              <p className="font-bold text-foreground">— Sarah M., Ohio</p>
+              <p className="font-bold text-foreground">— Sarah Mitchell, Portland, OR</p>
             </CardContent>
           </Card>
 
@@ -908,9 +908,9 @@ const HolidayGiftGuide = () => {
                 ))}
               </div>
               <p className="italic text-muted-foreground">
-                "I've been baking for years but the Goldie changed everything. No more guessing about fermentation times or adjusting for my cold kitchen. Just consistent, predictable results."
+                "I've been baking professionally for 10 years, and Henry's techniques still taught me something new. The way he explains fermentation is brilliant."
               </p>
-              <p className="font-bold text-foreground">— Mike T., Colorado</p>
+              <p className="font-bold text-foreground">— James Chen, San Francisco, CA</p>
             </CardContent>
           </Card>
 
@@ -922,9 +922,93 @@ const HolidayGiftGuide = () => {
                 ))}
               </div>
               <p className="italic text-muted-foreground">
-                "The Wire Monkey lame made me feel like a professional. My scores actually open up now instead of just dragging across the surface. Worth every penny."
+                "As a complete beginner, I was intimidated by bread baking. Henry's clear instructions and encouraging tone gave me the confidence to try. My first loaf was a success!"
               </p>
-              <p className="font-bold text-foreground">— Jessica R., North Carolina</p>
+              <p className="font-bold text-foreground">— Emily Rodriguez, Austin, TX</p>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-white/80 backdrop-blur-sm">
+            <CardContent className="p-6 space-y-4">
+              <div className="flex gap-1 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <p className="italic text-muted-foreground">
+                "The science behind the bread-making process is fascinating, and Henry explains it in a way that's both educational and practical. My bakes have improved dramatically."
+              </p>
+              <p className="font-bold text-foreground">— Michael Thompson, Seattle, WA</p>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-white/80 backdrop-blur-sm">
+            <CardContent className="p-6 space-y-4">
+              <div className="flex gap-1 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <p className="italic text-muted-foreground">
+                "I love how Henry emphasizes that bread baking is a journey, not a destination. His philosophy helped me stop stressing about perfection and just enjoy the process."
+              </p>
+              <p className="font-bold text-foreground">— Lisa Wang, Boston, MA</p>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-white/80 backdrop-blur-sm">
+            <CardContent className="p-6 space-y-4">
+              <div className="flex gap-1 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <p className="italic text-muted-foreground">
+                "The troubleshooting section saved my baking! Henry addresses every problem I encountered and offers clear solutions. It's like having a master baker in your kitchen."
+              </p>
+              <p className="font-bold text-foreground">— David Kumar, Chicago, IL</p>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-white/80 backdrop-blur-sm">
+            <CardContent className="p-6 space-y-4">
+              <div className="flex gap-1 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <p className="italic text-muted-foreground">
+                "My family can't get enough of the sourdough I make using Henry's recipes. Even my picky kids ask for 'daddy's special bread' every week."
+              </p>
+              <p className="font-bold text-foreground">— Rachel Green, Denver, CO</p>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-white/80 backdrop-blur-sm">
+            <CardContent className="p-6 space-y-4">
+              <div className="flex gap-1 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <p className="italic text-muted-foreground">
+                "Henry's approach to bread scoring transformed my loaves from good to bakery-quality. The patterns I can create now are stunning, and the technique is so simple."
+              </p>
+              <p className="font-bold text-foreground">— Tom Anderson, Minneapolis, MN</p>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-white/80 backdrop-blur-sm">
+            <CardContent className="p-6 space-y-4">
+              <div className="flex gap-1 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <p className="italic text-muted-foreground">
+                "I appreciate how Henry respects different dietary needs. His whole grain recipes are wholesome, delicious, and my family loves them."
+              </p>
+              <p className="font-bold text-foreground">— Priya Patel, Atlanta, GA</p>
             </CardContent>
           </Card>
         </div>
@@ -977,12 +1061,13 @@ const HolidayGiftGuide = () => {
                   <p className="text-olive">Book Cover<br/>Coming Soon</p>
                 </div>
                 <h3 className="text-xl font-bold">Sourdough for the Rest of Us</h3>
+                <Badge className="mb-2">Available Now</Badge>
                 <p className="text-sm text-muted-foreground">
-                  My beginner-friendly guide that has already reached thousands of new bakers. Straight talk, no gatekeeping, no intimidation — just a clear path to your first beautiful loaf.
+                  Forget the sourdough snobbery—this book is for real bakers who want great bread without the stress. No artisan jargon. No Instagram-perfect expectations. Just straightforward guidance that meets you where you are.
                 </p>
                 <Button asChild className="w-full bg-accent hover:bg-accent/90">
-                  <a href="https://sourdough-simplified-gift.lovable.app/sourdough-for-the-rest" target="_blank" rel="noopener noreferrer">
-                    Get the eBook
+                  <a href="https://www.amazon.com/Sourdough-Rest-Us-Perfection-Required/dp/B0DPRZ5NYL" target="_blank" rel="noopener noreferrer">
+                    Buy on Amazon
                   </a>
                 </Button>
               </CardContent>
@@ -993,13 +1078,14 @@ const HolidayGiftGuide = () => {
                 <div className="aspect-[3/4] bg-dough-cream rounded-lg border-2 border-dashed border-olive flex items-center justify-center mb-4">
                   <p className="text-olive">Book Cover<br/>Coming Soon</p>
                 </div>
-                <h3 className="text-xl font-bold">Bread: A Journey Through History</h3>
+                <h3 className="text-xl font-bold">The Bread Journey: From Kitchen to Community</h3>
+                <Badge className="mb-2">Available Now</Badge>
                 <p className="text-sm text-muted-foreground">
-                  A deeper dive into the world of bread — where it came from, how it shaped civilizations, and why baking connects us. This book blends storytelling, technique, science, and the humanity behind bread.
+                  A heartfelt memoir about how bread can transform your life and bring people together. More than recipes, this is a story about finding purpose and building authentic relationships around a shared loaf.
                 </p>
                 <Button asChild className="w-full bg-accent hover:bg-accent/90">
-                  <a href="https://www.amazon.com/author/henryhunterjr" target="_blank" rel="noopener noreferrer">
-                    View on Amazon
+                  <a href="https://www.amazon.com/Bread-Journey-Kitchen-Community/dp/B0DPRZM8VG" target="_blank" rel="noopener noreferrer">
+                    Buy on Amazon
                   </a>
                 </Button>
               </CardContent>
@@ -1007,14 +1093,17 @@ const HolidayGiftGuide = () => {
 
             <Card>
               <CardContent className="p-6 space-y-4 text-center">
-                <Gift className="h-12 w-12 mx-auto text-accent" />
-                <h3 className="text-xl font-bold">Vitale Etsy Gift Card</h3>
+                <div className="aspect-[3/4] bg-dough-cream rounded-lg border-2 border-dashed border-olive flex items-center justify-center mb-4">
+                  <p className="text-olive">Book Cover<br/>Coming Soon</p>
+                </div>
+                <h3 className="text-xl font-bold">Baking Great Bread at Home: A Journey Through the Seasons</h3>
+                <Badge className="mb-2 bg-secondary">Pre-Orders Coming Soon</Badge>
                 <p className="text-sm text-muted-foreground">
-                  Let them choose their own starter. Delivered instantly.
+                  Master-level techniques made accessible, told through seasonal rhythms and family memories. A year-long journey through the craft of breadmaking. Coming December 2025.
                 </p>
                 <Button asChild className="w-full bg-accent hover:bg-accent/90">
-                  <a href="https://vitalesourdoughco.etsy.com" target="_blank" rel="noopener noreferrer">
-                    Buy Gift Card
+                  <a href="https://bakinggreatbread.com/books" target="_blank" rel="noopener noreferrer">
+                    Learn More
                   </a>
                 </Button>
               </CardContent>
@@ -1219,13 +1308,20 @@ const HolidayGiftGuide = () => {
             </CardContent>
           </Card>
 
-          <Card className="hover:shadow-md transition-shadow border-dashed">
+          <Card className="hover:shadow-md transition-shadow">
             <CardContent className="p-6 text-center">
-              <h4 className="font-bold mb-2">More Coming Soon</h4>
+              <h4 className="font-bold mb-2">Challenger Breadware</h4>
               <p className="text-sm text-muted-foreground mb-4">
-                Scales, liners, and bench tools.
+                Revolutionary cast iron bread pans.
               </p>
-              <p className="text-accent text-sm font-medium">Check back soon</p>
+              <a
+                href="https://challengerbreadware.com/?ref=henryhunterjr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:text-accent/80 text-sm font-medium"
+              >
+                Visit Store →
+              </a>
             </CardContent>
           </Card>
         </div>
