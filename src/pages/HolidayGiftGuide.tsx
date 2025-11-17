@@ -9,6 +9,7 @@ import { FestiveDarkModeToggle } from "@/components/FestiveDarkModeToggle";
 
 // Import product images
 import heroImage from "@/assets/holiday/hero-christmas-logo.png";
+import holidayHotline from "@/assets/holiday/holiday-hotline.jpg";
 import vitaleStarter from "@/assets/holiday/vitale-sourdough-starter-new.jpg";
 import wireMonkeyLame from "@/assets/holiday/wire-monkey-lame.jpg";
 import goldie from "@/assets/holiday/sourhouse-goldie-starter-warmer.webp";
@@ -22,6 +23,7 @@ import doughBed from "@/assets/holiday/sourhouse-doughbed.jpg";
 
 const HolidayGiftGuide = () => {
   const [email, setEmail] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
   const [urgencyMessage, setUrgencyMessage] = useState("");
   const [showDigitalGifts, setShowDigitalGifts] = useState(false);
@@ -164,7 +166,7 @@ const HolidayGiftGuide = () => {
         <FestiveDarkModeToggle />
       </div>
 
-      {/* Hero Section */}
+      {/* Hero Section - Reorganized */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
@@ -173,52 +175,88 @@ const HolidayGiftGuide = () => {
           }} />
         </div>
         
-        <div className="container mx-auto px-4 py-12 md:py-20">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="space-y-6 relative z-10">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight">
-                The Holiday Gift Guide for People Who Actually Bake Bread
-              </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground">
-                Stop guessing. These are the tools real bakers want. Handpicked from my own kitchen.
-              </p>
-              
-              <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm px-4 py-3 rounded-lg border border-accent/20 w-fit">
-                <CheckCircle2 className="h-5 w-5 text-accent" />
-                <span className="text-sm font-medium text-foreground">
-                  Trusted by 50,000+ home bakers in the Baking Great Bread at Home community
-                </span>
-              </div>
-
-              {urgencyMessage && (
-                <div className="inline-block bg-olive text-white px-6 py-2 rounded-full text-sm font-medium">
-                  {urgencyMessage}
-                </div>
-              )}
-
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button
-                  size="lg"
-                  onClick={() => scrollToSection("top-five")}
-                  className="bg-accent hover:bg-accent/90 text-white text-lg px-8"
-                >
-                  See My Top 5 Picks
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  onClick={() => scrollToSection("vitale-card")}
-                  className="border-2 border-accent text-accent hover:bg-accent hover:text-white text-lg px-8"
-                >
-                  Start With a Starter
-                </Button>
-              </div>
-            </div>
-
-            <div className="relative">
+        <div className="container mx-auto px-4 py-8 md:py-12">
+          <div className="space-y-6 relative z-10">
+            {/* Hero Image at Top */}
+            <div className="w-full max-w-4xl mx-auto">
               <img
                 src={heroImage}
                 alt="Holiday bread baking gifts and essential tools for home bakers"
+                className="rounded-2xl shadow-2xl w-full h-auto object-cover"
+                loading="eager"
+              />
+            </div>
+
+            {/* Subtitle */}
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-center text-foreground dark:text-foreground max-w-4xl mx-auto leading-relaxed">
+              The Holiday Gift Guide for People Who Actually Bake Bread
+            </h2>
+
+            {/* Stop Guessing Text */}
+            <p className="text-xl md:text-2xl text-center text-foreground/80 dark:text-foreground/90 max-w-3xl mx-auto">
+              Stop guessing. These are the tools real bakers want. Handpicked from my own kitchen.
+            </p>
+
+            {/* Search Bar */}
+            <div className="max-w-2xl mx-auto">
+              <div className="relative">
+                <Input
+                  type="text"
+                  placeholder="Search for tools, brands, or baking needs..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full px-6 py-6 text-lg rounded-full border-2 border-accent/30 focus:border-accent bg-white dark:bg-card dark:text-foreground"
+                />
+              </div>
+            </div>
+
+            {/* Trust Badge */}
+            <div className="flex items-center gap-2 bg-white/80 dark:bg-card/80 backdrop-blur-sm px-4 py-3 rounded-lg border border-accent/20 w-fit mx-auto">
+              <CheckCircle2 className="h-5 w-5 text-accent" />
+              <span className="text-sm font-medium text-foreground dark:text-foreground">
+                Trusted by 50,000+ home bakers in the Baking Great Bread at Home community
+              </span>
+            </div>
+
+            {/* Urgency Message */}
+            {urgencyMessage && (
+              <div className="inline-block bg-accent text-white px-6 py-2 rounded-full text-sm font-medium mx-auto block text-center w-fit">
+                {urgencyMessage}
+              </div>
+            )}
+
+            {/* Three Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center max-w-3xl mx-auto">
+              <Button
+                size="lg"
+                onClick={() => scrollToSection("top-five")}
+                className="bg-accent hover:bg-accent/90 text-white text-lg px-8"
+              >
+                See My Top 5 Picks
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() => scrollToSection("vitale-card")}
+                className="border-2 border-accent text-accent hover:bg-accent hover:text-white text-lg px-8 bg-white dark:bg-card"
+              >
+                Start With a Starter
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() => scrollToSection("stocking-stuffers")}
+                className="border-2 border-accent text-accent hover:bg-accent hover:text-white text-lg px-8 bg-white dark:bg-card"
+              >
+                Stocking Stuffers
+              </Button>
+            </div>
+
+            {/* Holiday Hotline Image */}
+            <div className="w-full max-w-4xl mx-auto mt-8">
+              <img
+                src={holidayHotline}
+                alt="Henry's Holiday Hotline - Your Thanksgiving Baking Lifeline November 25-26"
                 className="rounded-2xl shadow-2xl w-full h-auto object-cover"
                 loading="eager"
               />
@@ -229,8 +267,8 @@ const HolidayGiftGuide = () => {
 
       {/* Affiliate Disclosure */}
       <section className="container mx-auto px-4 py-8">
-        <div className="max-w-3xl mx-auto bg-dough-cream border-l-4 border-olive p-6 rounded-lg">
-          <p className="text-sm text-muted-foreground">
+        <div className="max-w-3xl mx-auto bg-muted/50 dark:bg-card/50 border-l-4 border-accent p-6 rounded-lg">
+          <p className="text-sm text-foreground dark:text-foreground">
             <strong>Quick note:</strong> Some links on this page are affiliate links. I only recommend tools I use in my own kitchen. You pay the same price, I earn a small commission that keeps this site running. No surprises.
           </p>
         </div>
@@ -681,14 +719,14 @@ const HolidayGiftGuide = () => {
       {/* STOCKING STUFFERS (UNDER $50) */}
       <section
         id="stocking-stuffers"
-        className="w-full bg-[#FAF5EB] py-12 px-6 md:px-10 border-b border-[rgba(0,0,0,0.05)]"
+        className="w-full bg-background dark:bg-background/95 py-12 px-6 md:px-10 border-b border-border"
       >
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-semibold text-[#586247] mb-3">
+          <h2 className="text-3xl font-semibold text-foreground dark:text-primary mb-3">
             Stocking Stuffers for Bakers (Under $50)
           </h2>
 
-          <p className="text-lg text-[#3A3A3A] mb-8">
+          <p className="text-lg text-foreground/80 dark:text-muted-foreground mb-8">
             Small, thoughtful tools that bakers love. Perfect for stockings, 
             hostess gifts, or quick add-ons to any holiday order.
           </p>
@@ -697,11 +735,11 @@ const HolidayGiftGuide = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 
             {/* ITEM 1 — Wire Monkey Pocket Lame */}
-            <div className="bg-white p-5 rounded-xl shadow-sm border border-[rgba(0,0,0,0.05)]">
-              <h3 className="font-semibold text-[#3A3A3A] text-lg mb-2">
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <h3 className="font-semibold text-foreground dark:text-foreground text-lg mb-2">
                 Wire Monkey Pocket Lame
               </h3>
-              <p className="text-sm text-[#555] mb-4">
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
                 A compact scoring tool that slips into any apron pocket. 
                 Clean cuts and confident scoring for new bakers.
               </p>
@@ -709,18 +747,18 @@ const HolidayGiftGuide = () => {
                 href="https://wiremonkey.com/?ref=BAKINGGREATBREAD"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-[#C47B51] text-white py-2 px-4 rounded-lg text-sm hover:bg-[#A56441]"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
               >
                 Shop
               </a>
             </div>
 
             {/* ITEM 2 — Replacement Blades */}
-            <div className="bg-white p-5 rounded-xl shadow-sm border border-[rgba(0,0,0,0.05)]">
-              <h3 className="font-semibold text-lg text-[#3A3A3A] mb-2">
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
                 Replacement Blade Pack (Wire Monkey)
               </h3>
-              <p className="text-sm text-[#555] mb-4">
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
                 Sharp, clean blades packaged for bakers. A simple upgrade that 
                 makes scoring smoother and more predictable.
               </p>
@@ -728,52 +766,52 @@ const HolidayGiftGuide = () => {
                 href="https://wiremonkey.com/?ref=BAKINGGREATBREAD"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-[#C47B51] text-white py-2 px-4 rounded-lg text-sm hover:bg-[#A56441]"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
               >
                 Shop
               </a>
             </div>
 
             {/* ITEM 3 — Bread Bag */}
-            <div className="bg-white p-5 rounded-xl shadow-sm border border-[rgba(0,0,0,0.05)]">
-              <h3 className="font-semibold text-lg text-[#3A3A3A] mb-2">
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
                 ModKitchen Bread Bag
               </h3>
-              <p className="text-sm text-[#555] mb-4">
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
                 A reusable linen-style bread bag that keeps loaves breathing 
                 instead of sweating. Great for gifting fresh bakes.
               </p>
               <a
                 href="#"
-                className="inline-block bg-[#C47B51] text-white py-2 px-4 rounded-lg text-sm hover:bg-[#A56441]"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
               >
                 Link Coming Soon
               </a>
             </div>
 
             {/* ITEM 4 — Bread Sling */}
-            <div className="bg-white p-5 rounded-xl shadow-sm border border-[rgba(0,0,0,0.05)]">
-              <h3 className="font-semibold text-lg text-[#3A3A3A] mb-2">
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
                 ModKitchen Bread Sling
               </h3>
-              <p className="text-sm text-[#555] mb-4">
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
                 Heat-proof, non-stick sling that makes transferring dough into 
                 a Dutch oven smoother, safer, and more predictable.
               </p>
               <a
                 href="#"
-                className="inline-block bg-[#C47B51] text-white py-2 px-4 rounded-lg text-sm hover:bg-[#A56441]"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
               >
                 Link Coming Soon
               </a>
             </div>
 
             {/* ITEM 5 — Dough Whisk */}
-            <div className="bg-white p-5 rounded-xl shadow-sm border border-[rgba(0,0,0,0.05)]">
-              <h3 className="font-semibold text-lg text-[#3A3A3A] mb-2">
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
                 Brød & Taylor Dough Whisk
               </h3>
-              <p className="text-sm text-[#555] mb-4">
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
                 Perfect for mixing sticky doughs without clogging. Light, strong, 
                 and a surprisingly essential tool.
               </p>
@@ -781,35 +819,35 @@ const HolidayGiftGuide = () => {
                 href="http://brodandtaylor.com/henrysbreadkitchen"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-[#C47B51] text-white py-2 px-4 rounded-lg text-sm hover:bg-[#A56441]"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
               >
                 Shop
               </a>
             </div>
 
             {/* ITEM 6 — Bench Scraper */}
-            <div className="bg-white p-5 rounded-xl shadow-sm border border-[rgba(0,0,0,0.05)]">
-              <h3 className="font-semibold text-lg text-[#3A3A3A] mb-2">
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
                 Bench Scraper
               </h3>
-              <p className="text-sm text-[#555] mb-4">
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
                 Shape, divide, lift, and clean with one tool. 
                 Every baker needs one. Most bakers need two.
               </p>
               <a
                 href="#"
-                className="inline-block bg-[#C47B51] text-white py-2 px-4 rounded-lg text-sm hover:bg-[#A56441]"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
               >
                 Add Link
               </a>
             </div>
 
             {/* ITEM 7 — Banneton */}
-            <div className="bg-white p-5 rounded-xl shadow-sm border border-[rgba(0,0,0,0.05)]">
-              <h3 className="font-semibold text-lg text-[#3A3A3A] mb-2">
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
                 Wood-Pulp Banneton (Wire Monkey)
               </h3>
-              <p className="text-sm text-[#555] mb-4">
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
                 Helps dough form consistent structure and encourages 
                 beautiful crust patterns.
               </p>
@@ -817,18 +855,18 @@ const HolidayGiftGuide = () => {
                 href="https://wiremonkey.com/?ref=BAKINGGREATBREAD"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-[#C47B51] text-white py-2 px-4 rounded-lg text-sm hover:bg-[#A56441]"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
               >
                 Shop
               </a>
             </div>
 
             {/* ITEM 8 — Starter Accessories */}
-            <div className="bg-white p-5 rounded-xl shadow-sm border border-[rgba(0,0,0,0.05)]">
-              <h3 className="font-semibold text-lg text-[#3A3A3A] mb-2">
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
                 Starter Jar Accessories (Sour House)
               </h3>
-              <p className="text-sm text-[#555] mb-4">
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
                 Cozy add-ons like the Joe Bed or jar grips. 
                 Perfect companions for the Goldie.
               </p>
@@ -836,35 +874,35 @@ const HolidayGiftGuide = () => {
                 href="https://sourhouse.co?ref=BAKINGGREATBREAD"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-[#C47B51] text-white py-2 px-4 rounded-lg text-sm hover:bg-[#A56441]"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
               >
                 Shop
               </a>
             </div>
 
             {/* ITEM 9 — Digital Cards */}
-            <div className="bg-white p-5 rounded-xl shadow-sm border border-[rgba(0,0,0,0.05)]">
-              <h3 className="font-semibold text-lg text-[#3A3A3A] mb-2">
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
                 Hydration Cheat Sheets / Recipe Cards
               </h3>
-              <p className="text-sm text-[#555] mb-4">
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
                 A tiny, thoughtful digital gift. Perfect for bakers 
                 who want clarity without guesswork.
               </p>
               <a
                 href="#"
-                className="inline-block bg-[#C47B51] text-white py-2 px-4 rounded-lg text-sm hover:bg-[#A56441]"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
               >
                 Add Link
               </a>
             </div>
 
             {/* ITEM 10 — Book */}
-            <div className="bg-white p-5 rounded-xl shadow-sm border border-[rgba(0,0,0,0.05)]">
-              <h3 className="font-semibold text-lg text-[#3A3A3A] mb-2">
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
                 "Sourdough for the Rest of Us"
               </h3>
-              <p className="text-sm text-[#555] mb-4">
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
                 A friendly beginner's sourdough guide from my own kitchen. 
                 Lightweight, helpful, and gift-ready.
               </p>
@@ -872,7 +910,7 @@ const HolidayGiftGuide = () => {
                 href="https://sourdough-simplified-gift.lovable.app/sourdough-for-the-rest"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-[#C47B51] text-white py-2 px-4 rounded-lg text-sm hover:bg-[#A56441]"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
               >
                 Shop
               </a>
