@@ -47,6 +47,18 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        wheat: {
+          brown: "hsl(var(--wheat-brown))",
+        },
+        dough: {
+          cream: "hsl(var(--dough-cream))",
+        },
+        bakery: {
+          copper: "hsl(var(--bakery-copper))",
+        },
+        olive: {
+          DEFAULT: "hsl(var(--olive-accent))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
