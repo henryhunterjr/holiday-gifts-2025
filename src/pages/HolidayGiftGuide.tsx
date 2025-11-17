@@ -8,8 +8,8 @@ import { toast } from "sonner";
 import { FestiveDarkModeToggle } from "@/components/FestiveDarkModeToggle";
 
 // Import product images
-import heroImage from "@/assets/holiday/hero-bread-baking-gifts.png";
-import vitaleStarter from "@/assets/holiday/vitale-sourdough-starter.jpg";
+import heroImage from "@/assets/holiday/hero-christmas-logo.png";
+import vitaleStarter from "@/assets/holiday/vitale-sourdough-starter-new.jpg";
 import wireMonkeyLame from "@/assets/holiday/wire-monkey-lame.jpg";
 import goldie from "@/assets/holiday/sourhouse-goldie-starter-warmer.webp";
 import hollandBowl from "@/assets/holiday/holland-bowl-mill.jpg";
@@ -239,8 +239,8 @@ const HolidayGiftGuide = () => {
       {/* Authority Section */}
       <section className="container mx-auto px-4 py-12">
         <div className="max-w-2xl mx-auto text-center space-y-4">
-          <h3 className="text-2xl font-bold text-primary">How I Picked These Tools</h3>
-          <p className="text-lg text-muted-foreground italic">
+          <h3 className="text-2xl font-bold text-foreground dark:text-primary">How I Picked These Tools</h3>
+          <p className="text-lg text-foreground/70 dark:text-muted-foreground italic">
             "I've been baking for 20+ years and teaching for 10. These are the tools I reach for every single week. Not the fanciest. Not the cheapest. Just the ones that actually make baking better."
           </p>
         </div>
@@ -249,10 +249,10 @@ const HolidayGiftGuide = () => {
       {/* Top 5 Section */}
       <section id="top-five" className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground dark:text-primary mb-4">
             Henry's Top 5 Holiday Picks
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-foreground/70 dark:text-muted-foreground max-w-3xl mx-auto">
             These are the tools I actually use every week. If someone asked me what to buy a baker, I'd start here. Each one solves a real problem.
           </p>
         </div>
@@ -1087,12 +1087,12 @@ const HolidayGiftGuide = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="container mx-auto px-4 py-16 bg-gradient-to-b from-dough-cream to-background">
+      <section className="container mx-auto px-4 py-16 bg-gradient-to-b from-dough-cream to-background dark:from-background dark:to-background/95">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground dark:text-primary mb-4">
             What Members of Our Community Are Saying
           </h2>
-          <p className="text-lg text-muted-foreground">Real bakers. Real results.</p>
+          <p className="text-lg text-foreground/70 dark:text-muted-foreground">Real bakers. Real results.</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
