@@ -20,6 +20,8 @@ import modBreadSling from "@/assets/holiday/modkitchen-bread-sling.webp";
 import woodPulpBanneton from "@/assets/holiday/wood-pulp-banneton.webp";
 import gooseLame from "@/assets/holiday/wire-monkey-goose-lame.jpg";
 import doughBed from "@/assets/holiday/sourhouse-doughbed.jpg";
+import stockingStuffersBanner from "@/assets/holiday/stocking-stuffers-banner.webp";
+import doughWhisk from "@/assets/holiday/dough-whisk.jpg";
 
 const HolidayGiftGuide = () => {
   const [email, setEmail] = useState("");
@@ -188,7 +190,7 @@ const HolidayGiftGuide = () => {
             </div>
 
             {/* Subtitle */}
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-center text-foreground dark:text-foreground max-w-4xl mx-auto leading-relaxed">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-center text-[hsl(142,50%,25%)] dark:text-[hsl(142,60%,65%)] max-w-4xl mx-auto leading-relaxed">
               The Holiday Gift Guide for People Who Actually Bake Bread
             </h2>
 
@@ -218,12 +220,6 @@ const HolidayGiftGuide = () => {
               </span>
             </div>
 
-            {/* Urgency Message */}
-            {urgencyMessage && (
-              <div className="inline-block bg-accent text-white px-6 py-2 rounded-full text-sm font-medium mx-auto block text-center w-fit">
-                {urgencyMessage}
-              </div>
-            )}
 
             {/* Three Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center max-w-3xl mx-auto">
@@ -232,7 +228,7 @@ const HolidayGiftGuide = () => {
                 onClick={() => scrollToSection("top-five")}
                 className="bg-accent hover:bg-accent/90 text-white text-lg px-8"
               >
-                See My Top 5 Picks
+                See My Top 6 Picks
               </Button>
               <Button
                 size="lg"
@@ -275,20 +271,20 @@ const HolidayGiftGuide = () => {
       </section>
 
       {/* Authority Section */}
-      <section className="container mx-auto px-4 py-12">
+      <section className="container mx-auto px-4 py-12 bg-gradient-to-b from-[hsl(142,35%,92%)] to-background dark:from-[hsl(142,20%,15%)] dark:to-background">
         <div className="max-w-2xl mx-auto text-center space-y-4">
-          <h3 className="text-2xl font-bold text-foreground dark:text-primary">How I Picked These Tools</h3>
-          <p className="text-lg text-foreground/70 dark:text-muted-foreground italic">
+          <h3 className="text-2xl font-bold text-[hsl(142,45%,25%)] dark:text-[hsl(142,60%,70%)]">How I Picked These Tools</h3>
+          <p className="text-lg text-[hsl(142,35%,30%)] dark:text-[hsl(142,40%,65%)] italic">
             "I've been baking for 20+ years and teaching for 10. These are the tools I reach for every single week. Not the fanciest. Not the cheapest. Just the ones that actually make baking better."
           </p>
         </div>
       </section>
 
-      {/* Top 5 Section */}
+      {/* Top 6 Section */}
       <section id="top-five" className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground dark:text-primary mb-4">
-            Henry's Top 5 Holiday Picks
+            Henry's Top 6 Holiday Picks
           </h2>
           <p className="text-lg text-foreground/70 dark:text-muted-foreground max-w-3xl mx-auto">
             These are the tools I actually use every week. If someone asked me what to buy a baker, I'd start here. Each one solves a real problem.
@@ -686,12 +682,17 @@ const HolidayGiftGuide = () => {
             </CardContent>
           </Card>
 
-          {/* Brød & Taylor Dough Whisk - Placeholder */}
-          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1 opacity-75">
+          {/* Brød & Taylor Dough Whisk */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader>
               <Badge className="w-fit mb-4 bg-wheat text-white">Mixing Tool</Badge>
-              <div className="aspect-square overflow-hidden rounded-lg mb-4 bg-dough-cream flex items-center justify-center border-2 border-dashed border-olive">
-                <p className="text-olive text-center p-4">Coming Soon</p>
+              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+                <img
+                  src={doughWhisk}
+                  alt="Brød & Taylor dough whisk for mixing wet sticky doughs"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
               </div>
               <CardTitle className="text-2xl">Brød & Taylor Dough Whisk</CardTitle>
             </CardHeader>
@@ -717,17 +718,22 @@ const HolidayGiftGuide = () => {
       </section>
 
       {/* STOCKING STUFFERS (UNDER $50) */}
-      {/* STOCKING STUFFERS (UNDER $50) */}
       <section
         id="stocking-stuffers"
-        className="w-full bg-background dark:bg-background/95 py-12 px-6 md:px-10 border-b border-border"
+        className="w-full bg-background dark:bg-background/95 py-0 px-0 border-b border-border"
       >
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-semibold text-foreground dark:text-primary mb-3">
-            Stocking Stuffers for Bakers (Under $50)
-          </h2>
+        {/* Banner Image */}
+        <div className="w-full">
+          <img
+            src={stockingStuffersBanner}
+            alt="Stocking Stuffers for Bakers Under $50"
+            className="w-full h-auto object-cover"
+            loading="lazy"
+          />
+        </div>
 
-          <p className="text-lg text-foreground/80 dark:text-muted-foreground mb-8">
+        <div className="max-w-5xl mx-auto px-6 md:px-10 py-12">
+          <p className="text-lg text-foreground/80 dark:text-muted-foreground mb-8 text-center">
             Small, thoughtful tools that bakers love. Perfect for stockings, 
             hostess gifts, or quick add-ons to any holiday order.
           </p>
@@ -1537,63 +1543,63 @@ const HolidayGiftGuide = () => {
       )}
 
       {/* FAQ Section */}
-      <section className="container mx-auto px-4 py-16 bg-dough-cream">
+      <section className="container mx-auto px-4 py-16 bg-gradient-to-b from-[hsl(142,35%,92%)] to-[hsl(142,30%,85%)] dark:from-[hsl(142,20%,15%)] dark:to-[hsl(142,25%,10%)]">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-[hsl(142,50%,25%)] dark:text-[hsl(142,60%,70%)] mb-12 text-center">
             Questions About These Gifts
           </h2>
 
           <div className="space-y-8">
             <div>
-              <h3 className="text-xl font-bold text-foreground mb-2">
+              <h3 className="text-xl font-bold text-[hsl(142,50%,20%)] dark:text-[hsl(142,60%,75%)] mb-2">
                 Do you earn a commission from these links?
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-[hsl(142,35%,25%)] dark:text-[hsl(142,40%,70%)]">
                 Yes. Some of these are affiliate links. When you buy through them, I earn a small commission at no extra cost to you. It supports the Baking Great Bread at Home community and helps me keep creating free content. I appreciate you using these links.
               </p>
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-foreground mb-2">
+              <h3 className="text-xl font-bold text-[hsl(142,50%,20%)] dark:text-[hsl(142,60%,75%)] mb-2">
                 Are these tools beginner-friendly?
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-[hsl(142,35%,25%)] dark:text-[hsl(142,40%,70%)]">
                 Every single tool here can be used by someone baking their first loaf. Some are upgrades for serious bakers, but nothing here requires experience to use. If you can measure flour and water, you can use these tools.
               </p>
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-foreground mb-2">
+              <h3 className="text-xl font-bold text-[hsl(142,50%,20%)] dark:text-[hsl(142,60%,75%)] mb-2">
                 What should I buy first if I'm overwhelmed?
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-[hsl(142,35%,25%)] dark:text-[hsl(142,40%,70%)]">
                 Start with the Vitale Starter and one good tool—either the Wire Monkey lame or the Holland Bowl Mill bowl. That combination gives someone everything they need to bake their first great loaf. You can always add more later.
               </p>
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-foreground mb-2">
+              <h3 className="text-xl font-bold text-[hsl(142,50%,20%)] dark:text-[hsl(142,60%,75%)] mb-2">
                 Do these tools ship in time for Christmas?
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-[hsl(142,35%,25%)] dark:text-[hsl(142,40%,70%)]">
                 Most of them do, but I recommend ordering by December 15 to be safe. Each product page will show current shipping times. After December 15, check the Digital Gifts section for instant-delivery options.
               </p>
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-foreground mb-2">
+              <h3 className="text-xl font-bold text-[hsl(142,50%,20%)] dark:text-[hsl(142,60%,75%)] mb-2">
                 What if the gift doesn't work out?
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-[hsl(142,35%,25%)] dark:text-[hsl(142,40%,70%)]">
                 Each brand has their own return policy. I've linked to companies I trust with good customer service. If you have issues with any purchase, reach out to me at henrysbreadkitchen@gmail.com and I'll help however I can.
               </p>
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-foreground mb-2">
+              <h3 className="text-xl font-bold text-[hsl(142,50%,20%)] dark:text-[hsl(142,60%,75%)] mb-2">
                 Can I mix products from different brands?
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-[hsl(142,35%,25%)] dark:text-[hsl(142,40%,70%)]">
                 Absolutely. These aren't coordinated bundles. Buy one thing, buy all five, mix and match however you want. I'm just showing you what I use together.
               </p>
             </div>
