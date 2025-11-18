@@ -74,21 +74,21 @@ const HolidayGiftGuide = () => {
     { name: "Wood Pulp Banneton", brand: "Brød & Taylor", category: "bannetons", keywords: "banneton proofing basket wood pulp", price: "$24.95", id: "wood-pulp-banneton" },
     { name: "Wire Monkey Goose Lame", brand: "Wire Monkey", category: "tools", keywords: "lame scoring blade goose", price: "$26", id: "goose-lame" },
     { name: "Sour House DoughBed", brand: "Sour House", category: "equipment", keywords: "doughbed proofing resting", price: "$79", id: "dough-bed" },
-    { name: "Brod & Taylor Dough Whisk", brand: "Brød & Taylor", category: "tools", keywords: "whisk mixing dough danish", price: "$20.95", id: "dough-whisk" },
+    { name: "Brød & Taylor Dough Whisk", brand: "Brød & Taylor", category: "tools", keywords: "whisk mixing dough danish", price: "$20.95", id: "dough-whisk" },
     { name: "Goose Lame", brand: "Wire Monkey", category: "tools", keywords: "lame scoring blade goose wood", price: "$49.95", id: "goose-lame-stocking" },
     { name: "UFO Bread Lame", brand: "Bread Journey", category: "tools", keywords: "lame scoring blade ufo wood decorative", price: "$29.95", id: "ufo-lame" },
     { name: "Wire Monkey Oval Banneton", brand: "Wire Monkey", category: "bannetons", keywords: "banneton proofing basket oval wood pulp", price: "$32.00", id: "oval-banneton-stocking" },
     { name: "Round Wood Pulp Banneton", brand: "Wire Monkey", category: "bannetons", keywords: "banneton proofing basket round wood pulp", price: "$32.00", id: "round-banneton-stocking" },
     { name: "Starter Jar", brand: "Sour House", category: "tools", keywords: "starter jar sourdough glass container", price: "$25.95", id: "starter-jar" },
-    { name: "Brod & Taylor Dough Scraper", brand: "Brød & Taylor", category: "tools", keywords: "dough scraper bench stainless steel", price: "$18.95", id: "bt-dough-scraper-stocking" },
-    { name: "Brod & Taylor Spice & Coffee Grinder", brand: "Brød & Taylor", category: "tools", keywords: "grinder spice coffee electric", price: "$24.95", id: "bt-spice-grinder" },
+    { name: "Brød & Taylor Dough Scraper", brand: "Brød & Taylor", category: "tools", keywords: "dough scraper bench stainless steel", price: "$18.95", id: "bt-dough-scraper-stocking" },
+    { name: "Brød & Taylor Spice & Coffee Grinder", brand: "Brød & Taylor", category: "tools", keywords: "grinder spice coffee electric", price: "$24.95", id: "bt-spice-grinder" },
     { name: "Challenger Parchment Papers", brand: "Challenger", category: "tools", keywords: "parchment paper precut challenger", price: "$12.95", id: "challenger-parchment" },
     { name: "Sahara Folding Dehydrator", brand: "Brød & Taylor", category: "equipment", keywords: "dehydrator sahara folding food drying", price: "$295", id: "sahara-dehydrator" },
     { name: "Sour House Bread Blanket", brand: "Sour House", category: "storage", keywords: "bread blanket muslin cloth cover", price: "$19.95", id: "bread-blanket" },
     { name: "Brød & Taylor Dough Scraper", brand: "Brød & Taylor", category: "tools", keywords: "bench scraper dough cutter stainless steel", price: "$14.95", id: "bench-scraper" },
     { name: "Double-Wall French Press & Carafe", brand: "Brød & Taylor", category: "beverages", keywords: "french press coffee tea double wall carafe", price: "$59.00", id: "french-press" },
     { name: "Classic VG2 Knife Sharpener", brand: "Brød & Taylor", category: "tools", keywords: "knife sharpener vg2 spring action austrian", price: "$79", id: "vg2-sharpener" },
-    { name: "Brod & Taylor Chef's Apron", brand: "Brød & Taylor", category: "apparel", keywords: "apron chef professional kitchen", price: "$69", id: "bt-apron" },
+    { name: "Brød & Taylor Chef's Apron", brand: "Brød & Taylor", category: "apparel", keywords: "apron chef professional kitchen", price: "$69", id: "bt-apron" },
     { name: "Challenger Bread Pan", brand: "Challenger", category: "equipment", keywords: "bread pan cast iron dutch oven steam", price: "$270", id: "challenger-bread-pan" },
     { name: "mockmill 100 Stone Grain Mill", brand: "mockmill", category: "equipment", keywords: "grain mill stone flour grinding", price: "$279", id: "mockmill-100" },
     { name: "mockmill Lino 200", brand: "mockmill", category: "equipment", keywords: "grain mill stone flour professional", price: "$449", id: "mockmill-lino" },
@@ -954,7 +954,7 @@ const HolidayGiftGuide = () => {
                   loading="lazy"
                 />
               </div>
-              <CardTitle className="text-2xl">Sour House 'Joe Bed'</CardTitle>
+              <CardTitle className="text-2xl">Sour House 'Dough Bed'</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <CardDescription className="text-base">
@@ -1084,19 +1084,19 @@ const HolidayGiftGuide = () => {
           {/* GRID */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 
-            {/* Brod & Taylor Dough Whisk */}
+            {/* Brød & Taylor Dough Whisk */}
             <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
               <Badge className="mb-3 bg-accent">Essential Tool</Badge>
               <div className="mb-3 rounded-lg overflow-hidden">
                 <img
                   src={doughWhiskNew}
-                  alt="Brod & Taylor Dough Whisk"
+                  alt="Brød & Taylor Dough Whisk"
                   className="w-full h-40 object-cover"
                   loading="lazy"
                 />
               </div>
               <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
-                Brod & Taylor Dough Whisk
+                Brød & Taylor Dough Whisk
               </h3>
               <p className="text-xs text-accent font-semibold mb-2">$20.95</p>
               <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
@@ -1196,7 +1196,7 @@ const HolidayGiftGuide = () => {
               </a>
             </div>
 
-            {/* Brod & Taylor Dough Scraper */}
+            {/* Brød & Taylor Dough Scraper */}
             <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
               <Badge className="mb-3 bg-accent">Essential Tool</Badge>
               <div className="mb-3 rounded-lg overflow-hidden">
@@ -1280,19 +1280,19 @@ const HolidayGiftGuide = () => {
               </a>
             </div>
 
-            {/* Brod & Taylor Spice & Coffee Grinder */}
+            {/* Brød & Taylor Spice & Coffee Grinder */}
             <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
               <Badge className="mb-3 bg-accent">Multi-Purpose</Badge>
               <div className="mb-3 rounded-lg overflow-hidden">
                 <img
                   src={btSpiceGrinder}
-                  alt="Brod & Taylor Spice & Coffee Grinder"
+                  alt="Brød & Taylor Spice & Coffee Grinder"
                   className="w-full h-40 object-cover"
                   loading="lazy"
                 />
               </div>
               <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
-                Brod & Taylor Spice & Coffee Grinder
+                Brød & Taylor Spice & Coffee Grinder
               </h3>
               <p className="text-xs text-accent font-semibold mb-2">$24.95</p>
               <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
@@ -1308,25 +1308,6 @@ const HolidayGiftGuide = () => {
               </a>
             </div>
 
-            {/* Spice & Coffee Grinder */}
-            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
-              <Badge className="mb-3 bg-accent">Flavor Boost</Badge>
-              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
-                Spice & Coffee Grinder
-              </h3>
-              <p className="text-xs text-accent font-semibold mb-2">$24.95</p>
-              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
-                Compact grinder for freshly milled spices and coffee beans.
-              </p>
-              <a
-                href="https://brodandtaylor.com/henrysbreadkitchen"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
-              >
-                Shop
-              </a>
-            </div>
 
             {/* Pro-Surface Thermometer */}
             <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
@@ -1499,104 +1480,12 @@ const HolidayGiftGuide = () => {
       </section>
 
       {/* PREMIUM TOOLS ($200+) */}
-      <section id="premium-tools-mills" className="container mx-auto px-4 py-16 bg-gradient-to-b from-dough-cream to-background dark:from-background dark:to-background/95">
+      <section id="premium-tools" className="container mx-auto px-4 py-16 bg-gradient-to-b from-dough-cream to-background dark:from-background dark:to-background/95">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground dark:text-primary mb-4">
             Premium Tools ($200+)
           </h2>
           <p className="text-lg text-foreground/80 dark:text-muted-foreground max-w-3xl mx-auto">
-            Investment-grade tools for serious home bakers who want complete control over their craft.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {/* mockmill 100 */}
-          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
-            <CardHeader>
-              <Badge className="mb-3 bg-accent w-fit">Fresh Flour</Badge>
-              <CardTitle className="text-foreground dark:text-foreground">mockmill 100 Stone Grain Mill</CardTitle>
-              <CardDescription className="text-accent font-semibold text-lg">$279</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-foreground/70 dark:text-muted-foreground mb-6">
-                Compact electric grain mill with stone burrs for grinding fresh flour from whole grains. Perfect for small kitchens and home bakers who want to experience the flavor and nutrition of freshly milled flour. Grind wheat, spelt, rye, and more right before baking for unmatched flavor and freshness.
-              </p>
-              <Button 
-                className="w-full bg-accent hover:bg-accent/90 text-white"
-                asChild
-              >
-                <a 
-                  href="https://collabs.shop/ggyqco" 
-                  target="_blank" 
-                  rel="noopener noreferrer sponsored nofollow"
-                >
-                  Shop Now
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* mockmill Lino 200 */}
-          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
-            <CardHeader>
-              <Badge className="mb-3 bg-accent w-fit">Professional</Badge>
-              <CardTitle className="text-foreground dark:text-foreground">mockmill Lino 200</CardTitle>
-              <CardDescription className="text-accent font-semibold text-lg">$449</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-foreground/70 dark:text-muted-foreground mb-6">
-                Professional-grade stone grain mill with sustainable linseed oil finish, offering precise grinding control for serious home milling enthusiasts. Larger capacity than the 100 model with a beautiful, eco-friendly design that looks stunning on your counter. The tool for bakers who want complete control over their flour.
-              </p>
-              <Button 
-                className="w-full bg-accent hover:bg-accent/90 text-white"
-                asChild
-              >
-                <a 
-                  href="https://collabs.shop/kfxbbt" 
-                  target="_blank" 
-                  rel="noopener noreferrer sponsored nofollow"
-                >
-                  Shop Now
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* Vitamix A2300 */}
-          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
-            <CardHeader>
-              <Badge className="mb-3 bg-accent w-fit">Multi-Use</Badge>
-              <CardTitle className="text-foreground dark:text-foreground">Vitamix A2300</CardTitle>
-              <CardDescription className="text-accent font-semibold text-lg">$399</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <p className="text-foreground/70 dark:text-muted-foreground mb-6">
-                High-performance blender perfect for making dough, grinding grains into flour, and creating smooth batters for bread and pastry applications. The variable speed control and powerful motor handle everything from delicate batters to tough grains. A true multi-use tool for the serious home baker.
-              </p>
-              <Button 
-                className="w-full bg-accent hover:bg-accent/90 text-white"
-                asChild
-              >
-                <a 
-                  href="https://collabs.shop/dcx28g" 
-                  target="_blank" 
-                  rel="noopener noreferrer sponsored nofollow"
-                >
-                  Shop Now
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* PREMIUM TOOLS ($200+) */}
-      <section id="premium-tools" className="container mx-auto px-4 py-16 bg-gradient-to-b from-dough-cream to-background dark:from-background dark:to-background/95">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground dark:text-white mb-4">
-            Premium Tools ($200+)
-          </h2>
-          <p className="text-lg text-foreground/80 dark:text-gray-300 max-w-3xl mx-auto">
             Investment pieces that serious bakers dream about. Built to last generations and transform your baking.
           </p>
         </div>
@@ -1937,13 +1826,6 @@ const HolidayGiftGuide = () => {
                   <ArrowRight className="h-4 w-4" />
                   <span>Sour House Goldie</span>
                 </button>
-                <a
-                  href="#"
-                  className="flex items-center gap-2 text-muted-foreground hover:text-accent font-medium w-full text-left"
-                >
-                  <ArrowRight className="h-4 w-4" />
-                  <span>High-Capacity Baking Scale (coming soon)</span>
-                </a>
               </div>
 
               <div className="pt-4 border-t">
@@ -1979,13 +1861,6 @@ const HolidayGiftGuide = () => {
                   <ArrowRight className="h-4 w-4" />
                   <span>Wire Monkey Lame</span>
                 </button>
-                <a
-                  href="#"
-                  className="flex items-center gap-2 text-muted-foreground hover:text-accent font-medium w-full text-left"
-                >
-                  <ArrowRight className="h-4 w-4" />
-                  <span>Bench Scraper or Linen Liner (more tools coming soon)</span>
-                </a>
               </div>
 
               <div className="pt-4 border-t">
@@ -2005,14 +1880,6 @@ const HolidayGiftGuide = () => {
           <p className="text-lg text-muted-foreground">Start here before you buy tools.</p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-6 pt-4">
-            <a href="#" className="flex items-center gap-2 text-accent hover:text-accent/80 font-medium text-lg">
-              <ArrowRight className="h-5 w-5" />
-              Beginner Sourdough Guide
-            </a>
-            <a href="#" className="flex items-center gap-2 text-accent hover:text-accent/80 font-medium text-lg">
-              <ArrowRight className="h-5 w-5" />
-              Baking Techniques Library
-            </a>
             <a 
               href="https://bit.ly/3srdSYS" 
               target="_blank" 
