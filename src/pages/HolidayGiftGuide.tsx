@@ -270,13 +270,13 @@ const HolidayGiftGuide = () => {
             </div>
             
             {/* Subtitle */}
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-center text-white max-w-4xl mx-auto leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-center text-primary max-w-4xl mx-auto leading-relaxed">
               The Holiday Gift Guide for People Who Actually Bake Bread
             </h2>
 
             {/* FTC Disclosure */}
             {!ftcDismissed && (
-              <div className="bg-secondary/20 border-[3px] border-secondary/50 rounded-xl p-4 md:p-5 max-w-[900px] mx-auto shadow-lg relative animate-in fade-in duration-500">
+              <div className="bg-secondary/20 border border-secondary/60 rounded-xl p-4 md:p-5 max-w-[900px] mx-auto shadow-lg relative animate-in fade-in duration-500">
                 <button
                   onClick={dismissFTC}
                   className="absolute top-2 right-2 md:top-3 md:right-3 text-secondary hover:text-secondary/70 text-2xl md:text-3xl font-bold leading-none border-none bg-transparent cursor-pointer p-1 transition-colors"
@@ -284,14 +284,14 @@ const HolidayGiftGuide = () => {
                 >
                   ×
                 </button>
-                <p className="text-secondary dark:text-secondary font-bold text-center pr-8 text-sm md:text-base">
+                <p className="text-foreground font-bold text-center pr-8 text-sm md:text-base">
                   ⚠️ Affiliate Disclosure: I earn commissions from qualifying purchases. This supports my independent curation at no extra cost to you. Thanks for trusting my recommendations!
                 </p>
               </div>
             )}
 
             {/* Stop Guessing Text */}
-            <p className="text-xl md:text-2xl text-center text-white max-w-3xl mx-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+            <p className="text-xl md:text-2xl text-center text-secondary max-w-3xl mx-auto">
               Stop guessing. These are the tools real bakers want. Handpicked from my own kitchen.
             </p>
 
