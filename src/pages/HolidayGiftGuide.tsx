@@ -270,7 +270,7 @@ const HolidayGiftGuide = () => {
             </div>
             
             {/* Subtitle */}
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-center text-primary max-w-4xl mx-auto leading-relaxed">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-center text-hero-brown max-w-4xl mx-auto leading-relaxed">
               The Holiday Gift Guide for People Who Actually Bake Bread
             </h2>
 
@@ -284,14 +284,14 @@ const HolidayGiftGuide = () => {
                 >
                   ×
                 </button>
-                <p className="text-foreground font-bold text-center pr-8 text-sm md:text-base">
+                <p className="text-hero-brown font-bold text-center pr-8 text-sm md:text-base">
                   ⚠️ Affiliate Disclosure: I earn commissions from qualifying purchases. This supports my independent curation at no extra cost to you. Thanks for trusting my recommendations!
                 </p>
               </div>
             )}
 
             {/* Stop Guessing Text */}
-            <p className="text-xl md:text-2xl text-center text-secondary max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-center text-hero-brown max-w-3xl mx-auto">
               Stop guessing. These are the tools real bakers want. Handpicked from my own kitchen.
             </p>
 
@@ -411,49 +411,49 @@ const HolidayGiftGuide = () => {
             <Button
               variant="outline"
               onClick={() => scrollToSection("top-five")}
-              className="border-2 border-accent/50 hover:border-accent hover:bg-accent/10"
+              className="border-2 border-accent/50 bg-card text-foreground hover:border-accent hover:bg-accent/10 dark:bg-card dark:text-foreground"
             >
               Top 6 Picks
             </Button>
             <Button
               variant="outline"
               onClick={() => scrollToSection("more-tools")}
-              className="border-2 border-accent/50 hover:border-accent hover:bg-accent/10"
+              className="border-2 border-accent/50 bg-card text-foreground hover:border-accent hover:bg-accent/10 dark:bg-card dark:text-foreground"
             >
               More Great Tools
             </Button>
             <Button
               variant="outline"
               onClick={() => scrollToSection("stocking-stuffers")}
-              className="border-2 border-accent/50 hover:border-accent hover:bg-accent/10"
+              className="border-2 border-accent/50 bg-card text-foreground hover:border-accent hover:bg-accent/10 dark:bg-card dark:text-foreground"
             >
               Stocking Stuffers
             </Button>
             <Button
               variant="outline"
               onClick={() => scrollToSection("midrange-gifts")}
-              className="border-2 border-accent/50 hover:border-accent hover:bg-accent/10"
+              className="border-2 border-accent/50 bg-card text-foreground hover:border-accent hover:bg-accent/10 dark:bg-card dark:text-foreground"
             >
               $50-$100
             </Button>
             <Button
               variant="outline"
               onClick={() => scrollToSection("premium-tools")}
-              className="border-2 border-accent/50 hover:border-accent hover:bg-accent/10"
+              className="border-2 border-accent/50 bg-card text-foreground hover:border-accent hover:bg-accent/10 dark:bg-card dark:text-foreground"
             >
               Premium Tools
             </Button>
             <Button
               variant="outline"
               onClick={() => scrollToSection("books-learning")}
-              className="border-2 border-accent/50 hover:border-accent hover:bg-accent/10"
+              className="border-2 border-accent/50 bg-card text-foreground hover:border-accent hover:bg-accent/10 dark:bg-card dark:text-foreground"
             >
               Books & Learning
             </Button>
             <Button
               variant="outline"
               onClick={() => scrollToSection("free-resources")}
-              className="border-2 border-accent/50 hover:border-accent hover:bg-accent/10"
+              className="border-2 border-accent/50 bg-card text-foreground hover:border-accent hover:bg-accent/10 dark:bg-card dark:text-foreground"
             >
               Free Resources
             </Button>
@@ -480,7 +480,7 @@ const HolidayGiftGuide = () => {
             className="w-full max-w-4xl mx-auto mb-4"
             loading="lazy"
           />
-          <p className="text-lg text-foreground dark:text-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-hero-brown max-w-3xl mx-auto">
             These are the tools I actually use every week. If someone asked me what to buy a baker, I'd start here. Each one solves a real problem.
           </p>
         </div>
