@@ -24,6 +24,8 @@ import stockingStuffersBanner from "@/assets/holiday/stocking-stuffers-banner.we
 import doughWhisk from "@/assets/holiday/dough-whisk.jpg";
 import challengerBreadPan from "@/assets/holiday/challenger-bread-pan.jpg";
 import challengerParchment from "@/assets/holiday/challenger-parchment.png";
+import breadBlanket from "@/assets/holiday/bread-blanket.webp";
+import benchScraper from "@/assets/holiday/bench-scraper.png";
 
 const HolidayGiftGuide = () => {
   const [email, setEmail] = useState("");
@@ -48,6 +50,8 @@ const HolidayGiftGuide = () => {
     { name: "Danish Dough Whisk", brand: "Brød & Taylor", category: "tools", keywords: "whisk mixing dough danish", price: "$12.95", id: "dough-whisk" },
     { name: "Challenger Parchment Papers", brand: "Challenger", category: "tools", keywords: "parchment paper precut challenger", price: "$12.95", id: "challenger-parchment" },
     { name: "Sahara Folding Bread Proofer", brand: "Brød & Taylor", category: "equipment", keywords: "proofer sahara folding temperature", price: "$189", id: "sahara-proofer" },
+    { name: "Sour House Bread Blanket", brand: "Sour House", category: "storage", keywords: "bread blanket muslin cloth cover", price: "$19.95", id: "bread-blanket" },
+    { name: "Brød & Taylor Dough Scraper", brand: "Brød & Taylor", category: "tools", keywords: "bench scraper dough cutter stainless steel", price: "$14.95", id: "bench-scraper" },
     { name: "Water Kettle and French Press", brand: "Generic", category: "beverages", keywords: "kettle french press coffee tea", price: "$117.53", id: "water-kettle" },
     { name: "Challenger Bread Pan", brand: "Challenger", category: "equipment", keywords: "bread pan cast iron dutch oven steam", price: "$270", id: "challenger-bread-pan" },
     { name: "mockmill 100 Stone Grain Mill", brand: "mockmill", category: "equipment", keywords: "grain mill stone flour grinding", price: "$279", id: "mockmill-100" },
@@ -667,7 +671,7 @@ const HolidayGiftGuide = () => {
                 asChild
               >
                 <a
-                  href="https://modkitchen.com/?ref=BAKINGGREATBREAD&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                  href="https://bit.ly/4dsbJ3c"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -700,7 +704,7 @@ const HolidayGiftGuide = () => {
                 asChild
               >
                 <a
-                  href="https://modkitchen.com/?ref=BAKINGGREATBREAD&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                  href="https://bit.ly/4dsbJ3c"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -975,6 +979,62 @@ const HolidayGiftGuide = () => {
                 className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
               >
                 Shop
+              </a>
+            </div>
+
+            {/* Sour House Bread Blanket */}
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Storage</Badge>
+              <div className="mb-3 rounded-lg overflow-hidden">
+                <img
+                  src={breadBlanket}
+                  alt="Sour House Bread Blanket muslin square"
+                  className="w-full h-40 object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
+                Sour House Bread Blanket
+              </h3>
+              <p className="text-xs text-accent font-semibold mb-2">$19.95</p>
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
+                We have made a swaddle for your bread baby. This simple, muslin square will keep your freshly baked bread clean and protected. Perfect for picnics and potlucks, the Bread Blanket by Sourhouse doubles as a table and ground cloth when you have bread to share.
+              </p>
+              <a
+                href="https://sourhouse.co/?ref=BAKINGGREATBREAD&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
+              >
+                Shop Sour House
+              </a>
+            </div>
+
+            {/* Brød & Taylor Dough Scraper */}
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Essential Tool</Badge>
+              <div className="mb-3 rounded-lg overflow-hidden">
+                <img
+                  src={benchScraper}
+                  alt="Brød & Taylor Dough Scraper with soft handle"
+                  className="w-full h-40 object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
+                Brød & Taylor Dough Scraper
+              </h3>
+              <p className="text-xs text-accent font-semibold mb-2">$14.95</p>
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
+                The Brød & Taylor Dough Scraper features a soft, non-slip handle designed to be an extension of your hand. The balanced weight makes it versatile for many tasks including chopping, cutting, scraping, and scooping on the large stainless steel surface.
+              </p>
+              <a
+                href="https://brodandtaylor.com/henrysbreadkitchen?utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
+              >
+                Shop Brød & Taylor
               </a>
             </div>
 
