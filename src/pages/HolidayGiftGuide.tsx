@@ -26,10 +26,10 @@ import challengerBreadPan from "@/assets/holiday/challenger-bread-pan.jpg";
 import challengerParchment from "@/assets/holiday/challenger-parchment.png";
 import breadBlanket from "@/assets/holiday/bread-blanket.webp";
 import benchScraper from "@/assets/holiday/bench-scraper.png";
-import sourdoughRestOfUs from "@/assets/holiday/sourdough-rest-of-us.jpg";
-import vitaleSourdoughMastery from "@/assets/holiday/vitale-sourdough-mastery.jpg";
-import fromOvenToMarket from "@/assets/holiday/from-oven-to-market.jpg";
-import loafAndLie from "@/assets/holiday/loaf-and-lie.jpg";
+import sourdoughRestOfUs from "@/assets/holiday/sourdough-rest-of-us-sharp.jpg";
+import vitaleSourdoughMastery from "@/assets/holiday/vitale-sourdough-mastery-sharp.jpg";
+import fromOvenToMarket from "@/assets/holiday/from-oven-to-market-sharp.jpg";
+import loafAndLie from "@/assets/holiday/loaf-and-lie-sharp.jpg";
 import breadJourney from "@/assets/holiday/bread-journey.jpg";
 import doughWhiskNew from "@/assets/holiday/dough-whisk-new-sharp.png";
 import gooseLameNew from "@/assets/holiday/goose-lame.jpg";
@@ -1126,7 +1126,7 @@ const HolidayGiftGuide = () => {
                 href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-foreground py-2 px-4 rounded-lg text-sm transition-colors"
               >
                 Shop Wire Monkey
               </a>
@@ -1182,7 +1182,7 @@ const HolidayGiftGuide = () => {
                 href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-foreground py-2 px-4 rounded-lg text-sm transition-colors"
               >
                 Shop Wire Monkey
               </a>
@@ -1228,7 +1228,7 @@ const HolidayGiftGuide = () => {
                 />
               </div>
               <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
-                Round Banneton
+                Wire Monkey Round Banneton
               </h3>
               <p className="text-xs text-accent font-semibold mb-2">$32.00</p>
               <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
@@ -1238,7 +1238,7 @@ const HolidayGiftGuide = () => {
                 href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-foreground py-2 px-4 rounded-lg text-sm transition-colors"
               >
                 Shop Wire Monkey
               </a>
@@ -1266,7 +1266,7 @@ const HolidayGiftGuide = () => {
                 href="https://sourhouse.co/?ref=BAKINGGREATBREAD&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-foreground py-2 px-4 rounded-lg text-sm transition-colors"
               >
                 Shop Sour House
               </a>
@@ -1865,21 +1865,21 @@ const HolidayGiftGuide = () => {
               <div className="space-y-3">
                 <button
                   onClick={() => scrollToSection("vitale-card")}
-                  className="flex items-center gap-2 text-accent hover:text-accent/80 font-medium w-full text-left"
+                  className="flex items-center gap-2 text-foreground hover:text-accent font-medium w-full text-left p-2 rounded hover:bg-accent/10 transition-colors"
                 >
                   <ArrowRight className="h-4 w-4" />
                   <span>Vitale Sourdough Starter</span>
                 </button>
                 <button
                   onClick={() => scrollToSection("top-five")}
-                  className="flex items-center gap-2 text-accent hover:text-accent/80 font-medium w-full text-left"
+                  className="flex items-center gap-2 text-foreground hover:text-accent font-medium w-full text-left p-2 rounded hover:bg-accent/10 transition-colors"
                 >
                   <ArrowRight className="h-4 w-4" />
                   <span>Wire Monkey Lame</span>
                 </button>
                 <button
                   onClick={() => scrollToSection("top-five")}
-                  className="flex items-center gap-2 text-accent hover:text-accent/80 font-medium w-full text-left"
+                  className="flex items-center gap-2 text-foreground hover:text-accent font-medium w-full text-left p-2 rounded hover:bg-accent/10 transition-colors"
                 >
                   <ArrowRight className="h-4 w-4" />
                   <span>Holland Bowl Mill 17" Bowl</span>
@@ -1907,14 +1907,14 @@ const HolidayGiftGuide = () => {
               <div className="space-y-3">
                 <button
                   onClick={() => scrollToSection("top-five")}
-                  className="flex items-center gap-2 text-accent hover:text-accent/80 font-medium w-full text-left"
+                  className="flex items-center gap-2 text-foreground hover:text-accent font-medium w-full text-left p-2 rounded hover:bg-accent/10 transition-colors"
                 >
                   <ArrowRight className="h-4 w-4" />
                   <span>Brød & Taylor Folding Proofer</span>
                 </button>
                 <button
                   onClick={() => scrollToSection("top-five")}
-                  className="flex items-center gap-2 text-accent hover:text-accent/80 font-medium w-full text-left"
+                  className="flex items-center gap-2 text-foreground hover:text-accent font-medium w-full text-left p-2 rounded hover:bg-accent/10 transition-colors"
                 >
                   <ArrowRight className="h-4 w-4" />
                   <span>Sour House Goldie</span>
@@ -1942,14 +1942,14 @@ const HolidayGiftGuide = () => {
               <div className="space-y-3">
                 <button
                   onClick={() => scrollToSection("top-five")}
-                  className="flex items-center gap-2 text-accent hover:text-accent/80 font-medium w-full text-left"
+                  className="flex items-center gap-2 text-foreground hover:text-accent font-medium w-full text-left p-2 rounded hover:bg-accent/10 transition-colors"
                 >
                   <ArrowRight className="h-4 w-4" />
                   <span>Holland Bowl Mill Bowl</span>
                 </button>
                 <button
                   onClick={() => scrollToSection("top-five")}
-                  className="flex items-center gap-2 text-accent hover:text-accent/80 font-medium w-full text-left"
+                  className="flex items-center gap-2 text-foreground hover:text-accent font-medium w-full text-left p-2 rounded hover:bg-accent/10 transition-colors"
                 >
                   <ArrowRight className="h-4 w-4" />
                   <span>Wire Monkey Lame</span>
