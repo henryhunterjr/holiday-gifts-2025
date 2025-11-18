@@ -41,6 +41,10 @@ import starterJar from "@/assets/holiday/starter-jar.png";
 import btSpiceGrinder from "@/assets/holiday/bt-spice-grinder.png";
 import safInstantYeast from "@/assets/holiday/saf-instant-yeast.png";
 import recipeCollection from "@/assets/holiday/recipe-collection.png";
+import frenchPress from "@/assets/holiday/french-press.webp";
+import btApron from "@/assets/holiday/bt-apron.png";
+import saharaDehydrator from "@/assets/holiday/sahara-dehydrator.png";
+import top6Banner from "@/assets/holiday/top-6-banner.png";
 
 const HolidayGiftGuide = () => {
   const [email, setEmail] = useState("");
@@ -71,10 +75,12 @@ const HolidayGiftGuide = () => {
     { name: "Brod & Taylor Dough Scraper", brand: "Brød & Taylor", category: "tools", keywords: "dough scraper bench stainless steel", price: "$18.95", id: "bt-dough-scraper-stocking" },
     { name: "Brod & Taylor Spice & Coffee Grinder", brand: "Brød & Taylor", category: "tools", keywords: "grinder spice coffee electric", price: "$24.95", id: "bt-spice-grinder" },
     { name: "Challenger Parchment Papers", brand: "Challenger", category: "tools", keywords: "parchment paper precut challenger", price: "$12.95", id: "challenger-parchment" },
-    { name: "Sahara Folding Bread Proofer", brand: "Brød & Taylor", category: "equipment", keywords: "proofer sahara folding temperature", price: "$189", id: "sahara-proofer" },
+    { name: "Sahara Folding Dehydrator", brand: "Brød & Taylor", category: "equipment", keywords: "dehydrator sahara folding food drying", price: "$295", id: "sahara-dehydrator" },
     { name: "Sour House Bread Blanket", brand: "Sour House", category: "storage", keywords: "bread blanket muslin cloth cover", price: "$19.95", id: "bread-blanket" },
     { name: "Brød & Taylor Dough Scraper", brand: "Brød & Taylor", category: "tools", keywords: "bench scraper dough cutter stainless steel", price: "$14.95", id: "bench-scraper" },
-    { name: "Water Kettle and French Press", brand: "Generic", category: "beverages", keywords: "kettle french press coffee tea", price: "$117.53", id: "water-kettle" },
+    { name: "Double-Wall French Press & Carafe", brand: "Brød & Taylor", category: "beverages", keywords: "french press coffee tea double wall carafe", price: "$59.00", id: "french-press" },
+    { name: "Classic VG2 Knife Sharpener", brand: "Brød & Taylor", category: "tools", keywords: "knife sharpener vg2 spring action austrian", price: "$79", id: "vg2-sharpener" },
+    { name: "Brod & Taylor Chef's Apron", brand: "Brød & Taylor", category: "apparel", keywords: "apron chef professional kitchen", price: "$69", id: "bt-apron" },
     { name: "Challenger Bread Pan", brand: "Challenger", category: "equipment", keywords: "bread pan cast iron dutch oven steam", price: "$270", id: "challenger-bread-pan" },
     { name: "mockmill 100 Stone Grain Mill", brand: "mockmill", category: "equipment", keywords: "grain mill stone flour grinding", price: "$279", id: "mockmill-100" },
     { name: "mockmill Lino 200", brand: "mockmill", category: "equipment", keywords: "grain mill stone flour professional", price: "$449", id: "mockmill-lino" },
@@ -267,13 +273,23 @@ const HolidayGiftGuide = () => {
             {/* Search Bar */}
             <div className="max-w-2xl mx-auto">
               <div className="relative">
-                <Input
-                  type="text"
-                  placeholder="Search for tools, brands, or baking needs..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full px-6 py-6 text-lg rounded-full border-2 border-accent/30 focus:border-accent bg-white dark:bg-card dark:text-foreground placeholder:text-muted-foreground dark:placeholder:text-gray-400"
-                />
+                <div className="flex gap-2">
+                  <Input
+                    type="text"
+                    placeholder="Search for tools, brands, or baking needs..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="flex-1 px-6 py-6 text-lg rounded-full border-2 border-accent/30 focus:border-accent bg-white dark:bg-card dark:text-foreground placeholder:text-muted-foreground dark:placeholder:text-gray-400"
+                  />
+                  <Button
+                    onClick={() => {
+                      // Search functionality is handled by the input onChange
+                    }}
+                    className="px-8 py-6 text-lg rounded-full bg-accent hover:bg-accent/90 text-white"
+                  >
+                    Search
+                  </Button>
+                </div>
                 
                 {/* Search Results Dropdown */}
                 {searchQuery && (
@@ -433,10 +449,13 @@ const HolidayGiftGuide = () => {
       {/* Top 6 Section */}
       <section id="top-five" className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[hsl(36,45%,35%)] dark:text-white mb-4">
-            Henry's Top 6 Holiday Picks
-          </h2>
-          <p className="text-lg text-[hsl(142,35%,25%)] dark:text-gray-300 max-w-3xl mx-auto">
+          <img
+            src={top6Banner}
+            alt="Henry's top 6 Holiday picks"
+            className="w-full max-w-4xl mx-auto mb-4"
+            loading="lazy"
+          />
+          <p className="text-lg text-[hsl(142,35%,30%)] dark:text-gray-300 max-w-3xl mx-auto">
             These are the tools I actually use every week. If someone asked me what to buy a baker, I'd start here. Each one solves a real problem.
           </p>
         </div>
@@ -733,25 +752,25 @@ const HolidayGiftGuide = () => {
             </CardContent>
           </Card>
 
-          {/* Sahara Folding Bread Proofer */}
+          {/* Sahara Folding Dehydrator */}
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader>
               <Badge className="w-fit mb-4 bg-accent text-white">Space Saver</Badge>
               <div className="aspect-square overflow-hidden rounded-lg mb-4">
                 <img
-                  src="https://via.placeholder.com/800x600/e5e7eb/6b7280?text=Sahara+Proofer"
-                  alt="Sahara Folding Bread Proofer temperature control"
+                  src={saharaDehydrator}
+                  alt="Sahara Folding Dehydrator with multiple shelves"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
               </div>
-              <CardTitle className="text-2xl">Sahara Folding Bread Proofer</CardTitle>
+              <CardTitle className="text-2xl">Sahara Folding Dehydrator</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <CardDescription className="text-base">
-                The Sahara Folding Proofer offers precise temperature control from 70°F to 195°F, perfect for proofing dough, making yogurt, and slow cooking. Its foldable design saves valuable counter space and stores away easily when not in use. Set the exact temperature you want, walk away, and come back to perfectly proofed dough every time.
+                This is the only dehydrator that folds flat when you're not using it—genius for small kitchens. Over 11 square feet of drying space, dual heaters, automated controls, and glass doors so you can actually see what's happening. Perfect for drying fruit for your bread, making crackers, or preserving herbs from your garden.
               </CardDescription>
-              <p className="text-sm font-semibold text-accent">From $189</p>
+              <p className="text-sm font-semibold text-accent">$295</p>
               <Button
                 className="w-full bg-accent hover:bg-accent/90 text-white"
                 asChild
@@ -1419,27 +1438,35 @@ const HolidayGiftGuide = () => {
             </CardContent>
           </Card>
 
-          {/* Water Kettle and French Press */}
+          {/* Double-Wall French Press & Carafe */}
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader>
               <Badge className="mb-3 bg-accent w-fit">Coffee & Tea</Badge>
-              <CardTitle className="text-foreground dark:text-foreground">Water Kettle and French Press</CardTitle>
-              <CardDescription className="text-accent font-semibold text-lg">$117.53</CardDescription>
+              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+                <img
+                  src={frenchPress}
+                  alt="Brød & Taylor Double-Wall French Press"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-foreground dark:text-foreground">Double-Wall French Press & Carafe</CardTitle>
+              <CardDescription className="text-accent font-semibold text-lg">$59.00</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-foreground/70 dark:text-muted-foreground mb-6">
-                Combined water kettle and French press for brewing the perfect cup of coffee or tea. Ideal for the complete baking and beverage experience. Whether you're enjoying fresh bread with morning coffee or winding down with evening tea, this elegant combo does both beautifully.
+                Traditional French press meets modern double-wall construction. Brew coffee with the old-school method that gives you a full-bodied cup. The double-wall keeps it hot longer without burning your hand. Even better for tea—just remove the press screen and you've got a beautiful carafe.
               </p>
               <Button 
                 className="w-full bg-accent hover:bg-accent/90 text-white"
                 asChild
               >
                 <a 
-                  href="https://collabs.shop/b8bht0" 
+                  href="https://brodandtaylor.com/henrysbreadkitchen?utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025" 
                   target="_blank" 
                   rel="noopener noreferrer sponsored nofollow"
                 >
-                  Shop Now
+                  Shop Brød & Taylor
                 </a>
               </Button>
             </CardContent>
