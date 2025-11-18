@@ -18,7 +18,7 @@ import brodTaylorProofer from "@/assets/holiday/brod-taylor-proofer.jpg";
 import modBreadBag from "@/assets/holiday/modkitchen-bread-bag.webp";
 import modBreadSling from "@/assets/holiday/modkitchen-bread-sling.webp";
 import woodPulpBanneton from "@/assets/holiday/wood-pulp-banneton.webp";
-import gooseLame from "@/assets/holiday/wire-monkey-goose-lame.jpg";
+import gooseLame from "@/assets/holiday/goose-lame-new.jpg";
 import doughBed from "@/assets/holiday/sourhouse-doughbed.jpg";
 import stockingStuffersBanner from "@/assets/holiday/stocking-stuffers-banner.webp";
 import doughWhisk from "@/assets/holiday/dough-whisk.jpg";
