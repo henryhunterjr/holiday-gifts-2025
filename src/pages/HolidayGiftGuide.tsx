@@ -226,17 +226,14 @@ const HolidayGiftGuide = () => {
                 loading="eager"
               />
             </div>
-
-            {/* Dark overlay for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/60 to-transparent rounded-2xl" />
             
             {/* Subtitle */}
-            <h2 className="relative z-10 text-2xl md:text-3xl lg:text-4xl font-semibold text-center text-white max-w-4xl mx-auto leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-center text-white max-w-4xl mx-auto leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
               The Holiday Gift Guide for People Who Actually Bake Bread
             </h2>
 
             {/* Stop Guessing Text */}
-            <p className="relative z-10 text-xl md:text-2xl text-center text-white max-w-3xl mx-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+            <p className="text-xl md:text-2xl text-center text-white max-w-3xl mx-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
               Stop guessing. These are the tools real bakers want. Handpicked from my own kitchen.
             </p>
 
