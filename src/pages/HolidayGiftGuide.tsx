@@ -39,6 +39,8 @@ import btDoughScraper from "@/assets/holiday/bt-dough-scraper.jpg";
 import roundBannetonNew from "@/assets/holiday/round-banneton.png";
 import starterJar from "@/assets/holiday/starter-jar.png";
 import btSpiceGrinder from "@/assets/holiday/bt-spice-grinder.png";
+import safInstantYeast from "@/assets/holiday/saf-instant-yeast.png";
+import recipeCollection from "@/assets/holiday/recipe-collection.png";
 
 const HolidayGiftGuide = () => {
   const [email, setEmail] = useState("");
@@ -360,6 +362,64 @@ const HolidayGiftGuide = () => {
         </div>
       </section>
 
+      {/* Quick Navigation Section */}
+      <section className="container mx-auto px-4 py-12">
+        <div className="max-w-4xl mx-auto">
+          <h3 className="text-2xl font-bold text-center mb-6 text-foreground dark:text-primary">Jump to Section</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <Button
+              variant="outline"
+              onClick={() => scrollToSection("top-five")}
+              className="border-2 border-accent/50 hover:border-accent hover:bg-accent/10"
+            >
+              Top 6 Picks
+            </Button>
+            <Button
+              variant="outline"
+              onClick={() => scrollToSection("more-tools")}
+              className="border-2 border-accent/50 hover:border-accent hover:bg-accent/10"
+            >
+              More Great Tools
+            </Button>
+            <Button
+              variant="outline"
+              onClick={() => scrollToSection("stocking-stuffers")}
+              className="border-2 border-accent/50 hover:border-accent hover:bg-accent/10"
+            >
+              Stocking Stuffers
+            </Button>
+            <Button
+              variant="outline"
+              onClick={() => scrollToSection("midrange-gifts")}
+              className="border-2 border-accent/50 hover:border-accent hover:bg-accent/10"
+            >
+              $50-$100
+            </Button>
+            <Button
+              variant="outline"
+              onClick={() => scrollToSection("premium-tools")}
+              className="border-2 border-accent/50 hover:border-accent hover:bg-accent/10"
+            >
+              Premium Tools
+            </Button>
+            <Button
+              variant="outline"
+              onClick={() => scrollToSection("books-learning")}
+              className="border-2 border-accent/50 hover:border-accent hover:bg-accent/10"
+            >
+              Books & Learning
+            </Button>
+            <Button
+              variant="outline"
+              onClick={() => scrollToSection("free-resources")}
+              className="border-2 border-accent/50 hover:border-accent hover:bg-accent/10"
+            >
+              Free Resources
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Authority Section */}
       <section className="container mx-auto px-4 py-12 bg-gradient-to-b from-[hsl(142,35%,92%)] to-background dark:from-[hsl(142,20%,15%)] dark:to-background">
         <div className="max-w-2xl mx-auto text-center space-y-4">
@@ -628,7 +688,7 @@ const HolidayGiftGuide = () => {
       </section>
 
       {/* More Great Tools Section */}
-      <section className="container mx-auto px-4 py-16 bg-gradient-to-b from-background to-dough-cream">
+      <section id="more-tools" className="container mx-auto px-4 py-16 bg-gradient-to-b from-background to-dough-cream">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-[hsl(36,45%,35%)] dark:text-white mb-4">
             More Great Tools
@@ -1270,7 +1330,7 @@ const HolidayGiftGuide = () => {
       </section>
 
       {/* MID-RANGE GIFTS ($50-$100) */}
-      <section className="container mx-auto px-4 py-16">
+      <section id="midrange-gifts" className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground dark:text-primary mb-4">
             Mid-Range Gifts ($50-$100)
@@ -1388,7 +1448,7 @@ const HolidayGiftGuide = () => {
       </section>
 
       {/* PREMIUM TOOLS ($200+) */}
-      <section className="container mx-auto px-4 py-16 bg-gradient-to-b from-dough-cream to-background dark:from-background dark:to-background/95">
+      <section id="premium-tools-mills" className="container mx-auto px-4 py-16 bg-gradient-to-b from-dough-cream to-background dark:from-background dark:to-background/95">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground dark:text-primary mb-4">
             Premium Tools ($200+)
@@ -2404,6 +2464,86 @@ const HolidayGiftGuide = () => {
               See All Top Picks
             </Button>
           </div>
+        </div>
+      </section>
+
+      {/* FREE RESOURCES SECTION */}
+      <section id="free-resources" className="container mx-auto px-4 py-16 bg-gradient-to-b from-background to-dough-cream dark:from-background/95 dark:to-background">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground dark:text-primary mb-4">
+            Free Resources
+          </h2>
+          <p className="text-lg text-foreground/80 dark:text-muted-foreground max-w-3xl mx-auto">
+            Sometimes the best gifts are free. Here are my most useful tools and recipes for every baker.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {/* Bread Buddy Converter */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-primary text-primary-foreground">Free Tool</Badge>
+              <div className="aspect-video overflow-hidden rounded-lg mb-4 bg-dough-cream flex items-center justify-center">
+                <img
+                  src={safInstantYeast}
+                  alt="Bread Buddy Sourdough to Yeast Converter Tool"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">Bread Buddy Recipe Converter</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                Convert any sourdough recipe to commercial yeast (or vice versa) in seconds. No more guessing hydration ratios or fermentation times. This calculator does the math so you don't have to. It's the tool I use when I'm short on time but craving sourdough flavor.
+              </CardDescription>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://sourdough-yeast-converter.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Try the Converter
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Free Recipes */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-olive text-white">Free Recipes</Badge>
+              <div className="aspect-video overflow-hidden rounded-lg mb-4">
+                <img
+                  src={recipeCollection}
+                  alt="Free bread baking recipes collection"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">Complete Recipe Collection</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                Over 50 tested bread recipes from rustic sourdough to enriched doughs. Each one includes step-by-step photos, timing guides, and troubleshooting tips. No paywalls. No pop-ups. Just solid recipes that work the first time.
+              </CardDescription>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://bakinggreatbread.com/recipes"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Browse Recipes
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
