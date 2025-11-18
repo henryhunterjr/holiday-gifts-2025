@@ -31,6 +31,14 @@ import vitaleSourdoughMastery from "@/assets/holiday/vitale-sourdough-mastery.jp
 import fromOvenToMarket from "@/assets/holiday/from-oven-to-market.jpg";
 import loafAndLie from "@/assets/holiday/loaf-and-lie.jpg";
 import breadJourney from "@/assets/holiday/bread-journey.jpg";
+import doughWhiskNew from "@/assets/holiday/dough-whisk-new.png";
+import gooseLameNew from "@/assets/holiday/goose-lame.jpg";
+import ufoLame from "@/assets/holiday/ufo-lame.webp";
+import ovalBannetonNew from "@/assets/holiday/oval-banneton.png";
+import btDoughScraper from "@/assets/holiday/bt-dough-scraper.jpg";
+import roundBannetonNew from "@/assets/holiday/round-banneton.png";
+import starterJar from "@/assets/holiday/starter-jar.png";
+import btSpiceGrinder from "@/assets/holiday/bt-spice-grinder.png";
 
 const HolidayGiftGuide = () => {
   const [email, setEmail] = useState("");
@@ -52,7 +60,14 @@ const HolidayGiftGuide = () => {
     { name: "Wood Pulp Banneton", brand: "Brød & Taylor", category: "bannetons", keywords: "banneton proofing basket wood pulp", price: "$24.95", id: "wood-pulp-banneton" },
     { name: "Wire Monkey Goose Lame", brand: "Wire Monkey", category: "tools", keywords: "lame scoring blade goose", price: "$26", id: "goose-lame" },
     { name: "Sour House DoughBed", brand: "Sour House", category: "equipment", keywords: "doughbed proofing resting", price: "$79", id: "dough-bed" },
-    { name: "Danish Dough Whisk", brand: "Brød & Taylor", category: "tools", keywords: "whisk mixing dough danish", price: "$12.95", id: "dough-whisk" },
+    { name: "Brod & Taylor Dough Whisk", brand: "Brød & Taylor", category: "tools", keywords: "whisk mixing dough danish", price: "$20.95", id: "dough-whisk" },
+    { name: "Goose Lame", brand: "Wire Monkey", category: "tools", keywords: "lame scoring blade goose wood", price: "$49.95", id: "goose-lame-stocking" },
+    { name: "UFO Bread Lame", brand: "Bread Journey", category: "tools", keywords: "lame scoring blade ufo wood decorative", price: "$29.95", id: "ufo-lame" },
+    { name: "Wire Monkey Oval Banneton", brand: "Wire Monkey", category: "bannetons", keywords: "banneton proofing basket oval wood pulp", price: "$32.00", id: "oval-banneton-stocking" },
+    { name: "Round Wood Pulp Banneton", brand: "Wire Monkey", category: "bannetons", keywords: "banneton proofing basket round wood pulp", price: "$32.00", id: "round-banneton-stocking" },
+    { name: "Starter Jar", brand: "Sour House", category: "tools", keywords: "starter jar sourdough glass container", price: "$25.95", id: "starter-jar" },
+    { name: "Brod & Taylor Dough Scraper", brand: "Brød & Taylor", category: "tools", keywords: "dough scraper bench stainless steel", price: "$18.95", id: "bt-dough-scraper-stocking" },
+    { name: "Brod & Taylor Spice & Coffee Grinder", brand: "Brød & Taylor", category: "tools", keywords: "grinder spice coffee electric", price: "$24.95", id: "bt-spice-grinder" },
     { name: "Challenger Parchment Papers", brand: "Challenger", category: "tools", keywords: "parchment paper precut challenger", price: "$12.95", id: "challenger-parchment" },
     { name: "Sahara Folding Bread Proofer", brand: "Brød & Taylor", category: "equipment", keywords: "proofer sahara folding temperature", price: "$189", id: "sahara-proofer" },
     { name: "Sour House Bread Blanket", brand: "Sour House", category: "storage", keywords: "bread blanket muslin cloth cover", price: "$19.95", id: "bread-blanket" },
@@ -966,111 +981,23 @@ const HolidayGiftGuide = () => {
           {/* GRID */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 
-            {/* Dough & Bowl Scraper */}
-            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
-              <Badge className="mb-3 bg-accent">Budget Pick</Badge>
-              <h3 className="font-semibold text-foreground dark:text-foreground text-lg mb-2">
-                Dough & Bowl Scraper
-              </h3>
-              <p className="text-xs text-accent font-semibold mb-2">$4.95</p>
-              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
-                Flexible plastic scraper that conforms to bowl curves for efficient dough removal.
-              </p>
-              <a
-                href="https://brodandtaylor.com/henrysbreadkitchen"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
-              >
-                Shop
-              </a>
-            </div>
-
-            {/* Dough Whisk */}
+            {/* Brod & Taylor Dough Whisk */}
             <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
               <Badge className="mb-3 bg-accent">Essential Tool</Badge>
-              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
-                Dough Whisk
-              </h3>
-              <p className="text-xs text-accent font-semibold mb-2">$14.95</p>
-              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
-                Unique looped wire design that mixes dough without overworking it.
-              </p>
-              <a
-                href="https://brodandtaylor.com/henrysbreadkitchen"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
-              >
-                Shop
-              </a>
-            </div>
-
-            {/* Bread Lame */}
-            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
-              <Badge className="mb-3 bg-accent">Pro Scoring</Badge>
-              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
-                Bread Lame
-              </h3>
-              <p className="text-xs text-accent font-semibold mb-2">$14.95</p>
-              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
-                Professional bread scoring tool with replaceable blades for beautiful patterns.
-              </p>
-              <a
-                href="https://brodandtaylor.com/henrysbreadkitchen"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
-              >
-                Shop
-              </a>
-            </div>
-
-            {/* Sour House Bread Blanket */}
-            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
-              <Badge className="mb-3 bg-accent">Storage</Badge>
               <div className="mb-3 rounded-lg overflow-hidden">
                 <img
-                  src={breadBlanket}
-                  alt="Sour House Bread Blanket muslin square"
+                  src={doughWhiskNew}
+                  alt="Brod & Taylor Dough Whisk"
                   className="w-full h-40 object-cover"
                   loading="lazy"
                 />
               </div>
               <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
-                Sour House Bread Blanket
+                Brod & Taylor Dough Whisk
               </h3>
-              <p className="text-xs text-accent font-semibold mb-2">$19.95</p>
+              <p className="text-xs text-accent font-semibold mb-2">$20.95</p>
               <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
-                We have made a swaddle for your bread baby. This simple, muslin square will keep your freshly baked bread clean and protected. Perfect for picnics and potlucks, the Bread Blanket by Sourhouse doubles as a table and ground cloth when you have bread to share.
-              </p>
-              <a
-                href="https://sourhouse.co/?ref=BAKINGGREATBREAD&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
-              >
-                Shop Sour House
-              </a>
-            </div>
-
-            {/* Brød & Taylor Dough Scraper */}
-            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
-              <Badge className="mb-3 bg-accent">Essential Tool</Badge>
-              <div className="mb-3 rounded-lg overflow-hidden">
-                <img
-                  src={benchScraper}
-                  alt="Brød & Taylor Dough Scraper with soft handle"
-                  className="w-full h-40 object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
-                Brød & Taylor Dough Scraper
-              </h3>
-              <p className="text-xs text-accent font-semibold mb-2">$14.95</p>
-              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
-                The Brød & Taylor Dough Scraper features a soft, non-slip handle designed to be an extension of your hand. The balanced weight makes it versatile for many tasks including chopping, cutting, scraping, and scooping on the large stainless steel surface.
+                Unique looped wire design that mixes dough without overworking it. Essential for any baker's toolkit.
               </p>
               <a
                 href="https://brodandtaylor.com/henrysbreadkitchen?utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
@@ -1082,78 +1009,194 @@ const HolidayGiftGuide = () => {
               </a>
             </div>
 
-            {/* Proving Cloth */}
+            {/* Goose Lame */}
             <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
-              <Badge className="mb-3 bg-accent">Professional Grade</Badge>
+              <Badge className="mb-3 bg-accent">Pro Scoring</Badge>
+              <div className="mb-3 rounded-lg overflow-hidden">
+                <img
+                  src={gooseLameNew}
+                  alt="Wire Monkey Goose Lame"
+                  className="w-full h-40 object-cover"
+                  loading="lazy"
+                />
+              </div>
               <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
-                Proving Cloth
+                Goose Lame
               </h3>
-              <p className="text-xs text-accent font-semibold mb-2">$19.95</p>
+              <p className="text-xs text-accent font-semibold mb-2">$49.95</p>
               <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
-                Natural linen cloth that prevents sticking during proofing.
+                Beautiful handcrafted wooden lame with ergonomic goose design for precise bread scoring.
               </p>
               <a
-                href="https://brodandtaylor.com/henrysbreadkitchen"
+                href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
               >
-                Shop
+                Shop Wire Monkey
               </a>
             </div>
 
-            {/* Stainless Bench Scraper */}
+            {/* UFO Bread Lame */}
             <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
-              <Badge className="mb-3 bg-accent">Must-Have</Badge>
+              <Badge className="mb-3 bg-accent">Unique Design</Badge>
+              <div className="mb-3 rounded-lg overflow-hidden">
+                <img
+                  src={ufoLame}
+                  alt="UFO Bread Journey Lame"
+                  className="w-full h-40 object-cover"
+                  loading="lazy"
+                />
+              </div>
               <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
-                Stainless Bench Scraper
+                UFO Bread Lame
               </h3>
-              <p className="text-xs text-accent font-semibold mb-2">$19.95</p>
+              <p className="text-xs text-accent font-semibold mb-2">$29.95</p>
               <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
-                Multi-purpose tool for cutting, portioning, and cleaning work surfaces.
+                Distinctive UFO-shaped wooden lame with intricate laser engraving. Art meets function in bread scoring.
               </p>
               <a
-                href="https://brodandtaylor.com/henrysbreadkitchen"
+                href="https://www.breadjourney.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
               >
-                Shop
+                Shop Bread Journey
               </a>
             </div>
 
-            {/* Round Banneton Basket */}
-            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
-              <Badge className="mb-3 bg-accent">Traditional</Badge>
-              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
-                Round Banneton Basket
-              </h3>
-              <p className="text-xs text-accent font-semibold mb-2">$22.95</p>
-              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
-                Classic rattan proofing basket for boules with traditional circle patterns.
-              </p>
-              <a
-                href="https://brodandtaylor.com/henrysbreadkitchen"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
-              >
-                Shop
-              </a>
-            </div>
-
-            {/* Oval Banneton Basket */}
+            {/* Wire Monkey Oval Banneton */}
             <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
               <Badge className="mb-3 bg-accent">Batard Style</Badge>
+              <div className="mb-3 rounded-lg overflow-hidden">
+                <img
+                  src={ovalBannetonNew}
+                  alt="Wire Monkey Oval Wood Pulp Banneton"
+                  className="w-full h-40 object-cover"
+                  loading="lazy"
+                />
+              </div>
               <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
-                Oval Banneton Basket
+                Wire Monkey Oval Banneton
+              </h3>
+              <p className="text-xs text-accent font-semibold mb-2">$32.00</p>
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
+                Eco-friendly wood pulp banneton creates beautiful spiral patterns while supporting dough structure.
+              </p>
+              <a
+                href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
+              >
+                Shop Wire Monkey
+              </a>
+            </div>
+
+            {/* Brod & Taylor Dough Scraper */}
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Essential Tool</Badge>
+              <div className="mb-3 rounded-lg overflow-hidden">
+                <img
+                  src={btDoughScraper}
+                  alt="Brød & Taylor Dough Scraper with soft handle"
+                  className="w-full h-40 object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
+                Brød & Taylor Dough Scraper
+              </h3>
+              <p className="text-xs text-accent font-semibold mb-2">$18.95</p>
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
+                Soft, non-slip handle designed to be an extension of your hand. Versatile for chopping, cutting, scraping, and scooping.
+              </p>
+              <a
+                href="https://brodandtaylor.com/henrysbreadkitchen?utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
+              >
+                Shop Brød & Taylor
+              </a>
+            </div>
+
+            {/* Round Wood Pulp Banneton */}
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Traditional</Badge>
+              <div className="mb-3 rounded-lg overflow-hidden">
+                <img
+                  src={roundBannetonNew}
+                  alt="Round Wood Pulp Banneton"
+                  className="w-full h-40 object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
+                Round Banneton
+              </h3>
+              <p className="text-xs text-accent font-semibold mb-2">$32.00</p>
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
+                Classic round wood pulp proofing basket for boules with beautiful circle patterns.
+              </p>
+              <a
+                href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
+              >
+                Shop Wire Monkey
+              </a>
+            </div>
+
+            {/* Starter Jar */}
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Sourdough Essential</Badge>
+              <div className="mb-3 rounded-lg overflow-hidden">
+                <img
+                  src={starterJar}
+                  alt="Sour House Starter Jar"
+                  className="w-full h-40 object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
+                Starter Jar
+              </h3>
+              <p className="text-xs text-accent font-semibold mb-2">$25.95</p>
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
+                Glass jar with measurement markings and airtight lid. Perfect for maintaining your sourdough starter.
+              </p>
+              <a
+                href="https://sourhouse.co/?ref=BAKINGGREATBREAD&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
+              >
+                Shop Sour House
+              </a>
+            </div>
+
+            {/* Brod & Taylor Spice & Coffee Grinder */}
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Multi-Purpose</Badge>
+              <div className="mb-3 rounded-lg overflow-hidden">
+                <img
+                  src={btSpiceGrinder}
+                  alt="Brod & Taylor Spice & Coffee Grinder"
+                  className="w-full h-40 object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
+                Brod & Taylor Spice & Coffee Grinder
               </h3>
               <p className="text-xs text-accent font-semibold mb-2">$24.95</p>
               <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
-                Creates beautiful spiral patterns while supporting dough structure.
+                Compact electric grinder perfect for freshly ground spices, coffee, and grains for your baking.
               </p>
               <a
-                href="https://brodandtaylor.com/henrysbreadkitchen"
+                href="https://brodandtaylor.com/henrysbreadkitchen?utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
