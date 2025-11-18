@@ -141,3 +141,21 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* Dark mode text contrast improvements */
+@layer base {
+  .dark .affiliate-button,
+  .dark button {
+    color: white !important;
+  }
+  
+  .dark .product-title,
+  .dark h1, .dark h2, .dark h3, .dark h4 {
+    color: hsl(43 45% 95%) !important;
+  }
+  
+  .dark .product-description,
+  .dark p {
+    color: hsl(43 20% 75%);
+  }
+}
