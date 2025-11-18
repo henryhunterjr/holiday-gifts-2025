@@ -52,6 +52,14 @@ const HolidayGiftGuide = () => {
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
   const [urgencyMessage, setUrgencyMessage] = useState("");
   const [showDigitalGifts, setShowDigitalGifts] = useState(false);
+  const [ftcDismissed, setFtcDismissed] = useState(() => {
+    return localStorage.getItem('ftc-dismissed') === 'true';
+  });
+
+  const dismissFTC = () => {
+    setFtcDismissed(true);
+    localStorage.setItem('ftc-dismissed', 'true');
+  };
 
   // Product data for search functionality
   const allProducts = [
@@ -265,6 +273,22 @@ const HolidayGiftGuide = () => {
               The Holiday Gift Guide for People Who Actually Bake Bread
             </h2>
 
+            {/* FTC Disclosure */}
+            {!ftcDismissed && (
+              <div className="bg-[#fff3cd] border-[3px] border-[#ffc107] rounded-xl p-4 md:p-5 max-w-[900px] mx-auto shadow-lg relative animate-in fade-in duration-500">
+                <button
+                  onClick={dismissFTC}
+                  className="absolute top-2 right-2 md:top-3 md:right-3 text-[#856404] hover:text-[#664308] text-2xl md:text-3xl font-bold leading-none border-none bg-transparent cursor-pointer p-1 transition-colors"
+                  aria-label="Dismiss notice"
+                >
+                  ×
+                </button>
+                <p className="text-[#856404] font-bold text-center pr-8 text-sm md:text-base">
+                  ⚠️ Affiliate Disclosure: I earn commissions from qualifying purchases. This supports my independent curation at no extra cost to you. Thanks for trusting my recommendations!
+                </p>
+              </div>
+            )}
+
             {/* Stop Guessing Text */}
             <p className="text-xl md:text-2xl text-center text-white max-w-3xl mx-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
               Stop guessing. These are the tools real bakers want. Handpicked from my own kitchen.
@@ -465,11 +489,11 @@ const HolidayGiftGuide = () => {
           <Card id="vitale-card" className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader>
               <Badge className="w-fit mb-4 bg-primary text-primary-foreground">My Own Product</Badge>
-              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+              <div className="aspect-square overflow-hidden rounded-lg mb-4 min-h-[280px] relative bg-muted">
                 <img
                   src={vitaleStarter}
                   alt="Vitale dehydrated sourdough starter gift kit for home bakers"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
               </div>
@@ -498,11 +522,11 @@ const HolidayGiftGuide = () => {
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader>
               <Badge className="w-fit mb-4 bg-secondary text-white">Best Scoring Tool</Badge>
-              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+              <div className="aspect-square overflow-hidden rounded-lg mb-4 min-h-[280px] relative bg-muted">
                 <img
                   src={wireMonkeyLame}
                   alt="Wire Monkey bread scoring lame for artisan sourdough"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
               </div>
@@ -531,11 +555,11 @@ const HolidayGiftGuide = () => {
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader>
               <Badge className="w-fit mb-4 bg-bakery-copper text-white">Solves Temperature Problems</Badge>
-              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+              <div className="aspect-square overflow-hidden rounded-lg mb-4 min-h-[280px] relative bg-muted">
                 <img
                   src={goldie}
                   alt="Sour House Goldie sourdough starter warmer and temperature control"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
               </div>
