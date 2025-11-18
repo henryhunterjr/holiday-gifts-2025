@@ -227,13 +227,16 @@ const HolidayGiftGuide = () => {
               />
             </div>
 
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/60 to-transparent rounded-2xl" />
+            
             {/* Subtitle */}
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-center text-white dark:text-white max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
+            <h2 className="relative z-10 text-2xl md:text-3xl lg:text-4xl font-semibold text-center text-white max-w-4xl mx-auto leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
               The Holiday Gift Guide for People Who Actually Bake Bread
             </h2>
 
             {/* Stop Guessing Text */}
-            <p className="text-xl md:text-2xl text-center text-white dark:text-white max-w-3xl mx-auto drop-shadow-lg">
+            <p className="relative z-10 text-xl md:text-2xl text-center text-white max-w-3xl mx-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
               Stop guessing. These are the tools real bakers want. Handpicked from my own kitchen.
             </p>
 
@@ -453,18 +456,18 @@ const HolidayGiftGuide = () => {
                   Shop Sour House
                 </a>
               </Button>
-              <div className="flex items-center gap-2 bg-white dark:bg-gray-100 p-3 rounded-lg border border-border">
-                <span className="text-sm font-semibold text-gray-900">Promo Code: HBK23 (10% off)</span>
+              <div className="flex items-center gap-2 bg-gray-50 dark:bg-white p-3 rounded-lg border border-gray-200 dark:border-gray-300">
+                <span className="text-sm font-semibold text-gray-900 dark:text-gray-900">Promo Code: HBK23 (10% off)</span>
                 <Button
                   size="sm"
                   variant="ghost"
                   onClick={() => copyToClipboard("HBK23")}
-                  className="ml-auto"
+                  className="ml-auto hover:bg-gray-200 dark:hover:bg-gray-100"
                 >
                   {copiedCode === "HBK23" ? (
                     <Check className="h-4 w-4 text-green-600" />
                   ) : (
-                    <Copy className="h-4 w-4" />
+                    <Copy className="h-4 w-4 text-gray-900" />
                   )}
                 </Button>
               </div>
@@ -501,18 +504,18 @@ const HolidayGiftGuide = () => {
                   Shop Holland Bowl Mill
                 </a>
               </Button>
-              <div className="flex items-center gap-2 bg-white dark:bg-gray-100 p-3 rounded-lg border border-border">
-                <span className="text-sm font-semibold text-gray-900">Promo Code: bread (10% off)</span>
+              <div className="flex items-center gap-2 bg-gray-50 dark:bg-white p-3 rounded-lg border border-gray-200 dark:border-gray-300">
+                <span className="text-sm font-semibold text-gray-900 dark:text-gray-900">Promo Code: bread (10% off)</span>
                 <Button
                   size="sm"
                   variant="ghost"
                   onClick={() => copyToClipboard("bread")}
-                  className="ml-auto"
+                  className="ml-auto hover:bg-gray-200 dark:hover:bg-gray-100"
                 >
                   {copiedCode === "bread" ? (
                     <Check className="h-4 w-4 text-green-600" />
                   ) : (
-                    <Copy className="h-4 w-4" />
+                    <Copy className="h-4 w-4 text-gray-900" />
                   )}
                 </Button>
               </div>
@@ -640,9 +643,43 @@ const HolidayGiftGuide = () => {
                 <a
                   href="https://challengerbreadware.com/?ref=henryhunterjr&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer sponsored nofollow"
                 >
                   Shop Challenger
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Sahara Folding Bread Proofer */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-accent text-white">Space Saver</Badge>
+              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+                <img
+                  src="https://via.placeholder.com/800x600/e5e7eb/6b7280?text=Sahara+Proofer"
+                  alt="Sahara Folding Bread Proofer temperature control"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">Sahara Folding Bread Proofer</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                The Sahara Folding Proofer offers precise temperature control from 70°F to 195°F, perfect for proofing dough, making yogurt, and slow cooking. Its foldable design saves valuable counter space and stores away easily when not in use. Set the exact temperature you want, walk away, and come back to perfectly proofed dough every time.
+              </CardDescription>
+              <p className="text-sm font-semibold text-accent">From $189</p>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://brodandtaylor.com/henrysbreadkitchen?utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                  target="_blank"
+                  rel="noopener noreferrer sponsored nofollow"
+                >
+                  Shop Brød & Taylor
                 </a>
               </Button>
             </CardContent>
@@ -1271,6 +1308,124 @@ const HolidayGiftGuide = () => {
               </Button>
             </CardContent>
           </Card>
+
+          {/* Water Kettle and French Press */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="mb-3 bg-accent w-fit">Coffee & Tea</Badge>
+              <CardTitle className="text-foreground dark:text-foreground">Water Kettle and French Press</CardTitle>
+              <CardDescription className="text-accent font-semibold text-lg">$117.53</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-foreground/70 dark:text-muted-foreground mb-6">
+                Combined water kettle and French press for brewing the perfect cup of coffee or tea. Ideal for the complete baking and beverage experience. Whether you're enjoying fresh bread with morning coffee or winding down with evening tea, this elegant combo does both beautifully.
+              </p>
+              <Button 
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a 
+                  href="https://collabs.shop/b8bht0" 
+                  target="_blank" 
+                  rel="noopener noreferrer sponsored nofollow"
+                >
+                  Shop Now
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* PREMIUM TOOLS ($200+) */}
+      <section className="container mx-auto px-4 py-16 bg-gradient-to-b from-dough-cream to-background dark:from-background dark:to-background/95">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground dark:text-primary mb-4">
+            Premium Tools ($200+)
+          </h2>
+          <p className="text-lg text-foreground/80 dark:text-muted-foreground max-w-3xl mx-auto">
+            Investment-grade tools for serious home bakers who want complete control over their craft.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {/* mockmill 100 */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="mb-3 bg-accent w-fit">Fresh Flour</Badge>
+              <CardTitle className="text-foreground dark:text-foreground">mockmill 100 Stone Grain Mill</CardTitle>
+              <CardDescription className="text-accent font-semibold text-lg">$279</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-foreground/70 dark:text-muted-foreground mb-6">
+                Compact electric grain mill with stone burrs for grinding fresh flour from whole grains. Perfect for small kitchens and home bakers who want to experience the flavor and nutrition of freshly milled flour. Grind wheat, spelt, rye, and more right before baking for unmatched flavor and freshness.
+              </p>
+              <Button 
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a 
+                  href="https://collabs.shop/ggyqco" 
+                  target="_blank" 
+                  rel="noopener noreferrer sponsored nofollow"
+                >
+                  Shop Now
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* mockmill Lino 200 */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="mb-3 bg-accent w-fit">Professional</Badge>
+              <CardTitle className="text-foreground dark:text-foreground">mockmill Lino 200</CardTitle>
+              <CardDescription className="text-accent font-semibold text-lg">$449</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-foreground/70 dark:text-muted-foreground mb-6">
+                Professional-grade stone grain mill with sustainable linseed oil finish, offering precise grinding control for serious home milling enthusiasts. Larger capacity than the 100 model with a beautiful, eco-friendly design that looks stunning on your counter. The tool for bakers who want complete control over their flour.
+              </p>
+              <Button 
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a 
+                  href="https://collabs.shop/kfxbbt" 
+                  target="_blank" 
+                  rel="noopener noreferrer sponsored nofollow"
+                >
+                  Shop Now
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Vitamix A2300 */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="mb-3 bg-accent w-fit">Multi-Use</Badge>
+              <CardTitle className="text-foreground dark:text-foreground">Vitamix A2300</CardTitle>
+              <CardDescription className="text-accent font-semibold text-lg">$399</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-foreground/70 dark:text-muted-foreground mb-6">
+                High-performance blender perfect for making dough, grinding grains into flour, and creating smooth batters for bread and pastry applications. The variable speed control and powerful motor handle everything from delicate batters to tough grains. A true multi-use tool for the serious home baker.
+              </p>
+              <Button 
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a 
+                  href="https://collabs.shop/dcx28g" 
+                  target="_blank" 
+                  rel="noopener noreferrer sponsored nofollow"
+                >
+                  Shop Now
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
@@ -1622,6 +1777,96 @@ const HolidayGiftGuide = () => {
               <div>
                 <p className="font-bold text-foreground dark:text-foreground">Lisa W.</p>
                 <p className="text-sm text-foreground/60 dark:text-muted-foreground">Boston, MA • Holland Bowl Mill Bowl</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Testimonial 6 - David Kumar */}
+          <Card className="bg-white/80 dark:bg-card/80 backdrop-blur-sm">
+            <CardContent className="p-6 space-y-4">
+              <div className="flex gap-1 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <p className="italic text-foreground/70 dark:text-muted-foreground">
+                "The troubleshooting section saved my baking! Henry addresses every problem I encountered and offers clear solutions. It's like having a master baker in your kitchen."
+              </p>
+              <div>
+                <p className="font-bold text-foreground dark:text-foreground">David Kumar</p>
+                <p className="text-sm text-foreground/60 dark:text-muted-foreground">Chicago, IL • Baguettes</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Testimonial 7 - Rachel Green */}
+          <Card className="bg-white/80 dark:bg-card/80 backdrop-blur-sm">
+            <CardContent className="p-6 space-y-4">
+              <div className="flex gap-1 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <p className="italic text-foreground/70 dark:text-muted-foreground">
+                "My family can't get enough of the sourdough I make using Henry's recipes. Even my picky kids ask for 'daddy's special bread' every week."
+              </p>
+              <div>
+                <p className="font-bold text-foreground dark:text-foreground">Rachel Green</p>
+                <p className="text-sm text-foreground/60 dark:text-muted-foreground">Denver, CO • Sandwich Bread</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Testimonial 8 - Tom Anderson */}
+          <Card className="bg-white/80 dark:bg-card/80 backdrop-blur-sm">
+            <CardContent className="p-6 space-y-4">
+              <div className="flex gap-1 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <p className="italic text-foreground/70 dark:text-muted-foreground">
+                "Henry's approach to bread scoring transformed my loaves from good to bakery-quality. The patterns I can create now are stunning, and the technique is so simple."
+              </p>
+              <div>
+                <p className="font-bold text-foreground dark:text-foreground">Tom Anderson</p>
+                <p className="text-sm text-foreground/60 dark:text-muted-foreground">Minneapolis, MN • Country Loaf</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Testimonial 9 - Priya Patel */}
+          <Card className="bg-white/80 dark:bg-card/80 backdrop-blur-sm">
+            <CardContent className="p-6 space-y-4">
+              <div className="flex gap-1 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <p className="italic text-foreground/70 dark:text-muted-foreground">
+                "I appreciate how Henry respects different dietary needs. His whole grain recipes are wholesome, delicious, and my family loves them."
+              </p>
+              <div>
+                <p className="font-bold text-foreground dark:text-foreground">Priya Patel</p>
+                <p className="text-sm text-foreground/60 dark:text-muted-foreground">Atlanta, GA • Multigrain Bread</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Testimonial 10 - Chris Martinez */}
+          <Card className="bg-white/80 dark:bg-card/80 backdrop-blur-sm">
+            <CardContent className="p-6 space-y-4">
+              <div className="flex gap-1 mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <p className="italic text-foreground/70 dark:text-muted-foreground">
+                "Learning to maintain my sourdough starter seemed impossible until I found Henry's guide. Now my starter is healthy and consistent, and my bread proves it."
+              </p>
+              <div>
+                <p className="font-bold text-foreground dark:text-foreground">Chris Martinez</p>
+                <p className="text-sm text-foreground/60 dark:text-muted-foreground">Phoenix, AZ • Classic Sourdough</p>
               </div>
             </CardContent>
           </Card>
