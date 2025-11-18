@@ -69,11 +69,12 @@ const HolidayGiftGuide = () => {
     { name: "Holland Bowl Mill 17\" Bowl", brand: "Holland Bowl Mill", category: "bowls", keywords: "mixing bowl wood wooden beechwood", price: "$135", id: "holland-bowl" },
     { name: "Brød & Taylor Folding Proofer", brand: "Brød & Taylor", category: "equipment", keywords: "proofer temperature control folding", price: "$189", id: "brod-proofer" },
     { name: "Holiday Hotline 1-Hour Coaching", brand: "Henry's Bread Kitchen", category: "digital", keywords: "coaching lesson consulting help", price: "$97", id: "holiday-hotline" },
-    { name: "ModKitchen Bread Bag", brand: "ModKitchen", category: "storage", keywords: "bread bag linen storage", price: "$28", id: "mod-bread-bag" },
-    { name: "ModKitchen Bread Sling", brand: "ModKitchen", category: "tools", keywords: "sling dutch oven transfer", price: "$32", id: "mod-bread-sling" },
-    { name: "Wood Pulp Banneton", brand: "Brød & Taylor", category: "bannetons", keywords: "banneton proofing basket wood pulp", price: "$24.95", id: "wood-pulp-banneton" },
-    { name: "Wire Monkey Goose Lame", brand: "Wire Monkey", category: "tools", keywords: "lame scoring blade goose", price: "$26", id: "goose-lame" },
-    { name: "Sour House DoughBed", brand: "Sour House", category: "equipment", keywords: "doughbed proofing resting", price: "$79", id: "dough-bed" },
+    { name: "ModKitchen Bread Bag", brand: "ModKitchen", category: "storage", keywords: "bread bag linen storage", price: "$29.95", id: "mod-bread-bag" },
+    { name: "ModKitchen Bread Sling", brand: "ModKitchen", category: "tools", keywords: "sling dutch oven transfer", price: "$15.99-$16.99", id: "mod-bread-sling" },
+    { name: "Wood Pulp Banneton (Round)", brand: "Wire Monkey", category: "bannetons", keywords: "banneton proofing basket wood pulp round", price: "$29", id: "wood-pulp-banneton-round" },
+    { name: "Wood Pulp Banneton (Oval)", brand: "Wire Monkey", category: "bannetons", keywords: "banneton proofing basket wood pulp oval", price: "$32", id: "wood-pulp-banneton-oval" },
+    { name: "Wire Monkey Goose Lame", brand: "Wire Monkey", category: "tools", keywords: "lame scoring blade goose", price: "$49.95", id: "goose-lame" },
+    { name: "Sour House Dough Bed", brand: "Sour House", category: "equipment", keywords: "doughbed proofing resting", price: "$279.95", id: "dough-bed" },
     { name: "Brød & Taylor Dough Whisk", brand: "Brød & Taylor", category: "tools", keywords: "whisk mixing dough danish", price: "$20.95", id: "dough-whisk" },
     { name: "Goose Lame", brand: "Wire Monkey", category: "tools", keywords: "lame scoring blade goose wood", price: "$49.95", id: "goose-lame-stocking" },
     { name: "UFO Bread Lame", brand: "Bread Journey", category: "tools", keywords: "lame scoring blade ufo wood decorative", price: "$29.95", id: "ufo-lame" },
@@ -828,6 +829,8 @@ const HolidayGiftGuide = () => {
               <CardDescription className="text-base">
                 A reusable linen-blend bread bag that actually keeps your loaf breathing instead of sweating. Perfect for same-day storage or delivering a still-warm loaf to a friend. Soft, durable, and sized for everything from boules to batards.
               </CardDescription>
+              <p className="text-sm font-semibold text-accent">$29.99 - Regular | $29.95 - Holiday Edition</p>
+              <p className="text-xs text-muted-foreground italic">Note: Holiday edition image coming soon from vendor</p>
               <Button
                 className="w-full bg-accent hover:bg-accent/90 text-white"
                 asChild
@@ -861,6 +864,7 @@ const HolidayGiftGuide = () => {
               <CardDescription className="text-base">
                 This sling gives you smooth, confident transfers into a Dutch oven without the panic. Heat-safe, non-stick, and lightweight. If you've ever dropped a shaped loaf into a burning hot pot… this is your upgrade.
               </CardDescription>
+              <p className="text-sm font-semibold text-accent">$15.99 - Oval | $16.99 - Round</p>
               <Button
                 className="w-full bg-accent hover:bg-accent/90 text-white"
                 asChild
@@ -894,6 +898,7 @@ const HolidayGiftGuide = () => {
               <CardDescription className="text-base">
                 A modern take on the classic proofing basket. Wood-pulp bannetons absorb excess moisture and help you score cleaner, sharper designs. They give you a more even skin on your dough and a rustic, artisanal look that people notice.
               </CardDescription>
+              <p className="text-sm font-semibold text-accent">$29 - Round | $32 - Oval</p>
               <Button
                 className="w-full bg-accent hover:bg-accent/90 text-white"
                 asChild
@@ -927,6 +932,7 @@ const HolidayGiftGuide = () => {
               <CardDescription className="text-base">
                 A sleek, ergonomic scoring tool with a grip that feels secure and balanced. The Goose Lame is loved for its control — you get clean, deep lines and expressive scoring without fighting the blade.
               </CardDescription>
+              <p className="text-sm font-semibold text-accent">$49.95</p>
               <Button
                 className="w-full bg-accent hover:bg-accent/90 text-white"
                 asChild
@@ -942,14 +948,14 @@ const HolidayGiftGuide = () => {
             </CardContent>
           </Card>
 
-          {/* Sour House Joe Bed */}
+          {/* Sour House Dough Bed */}
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader>
               <Badge className="w-fit mb-4 bg-bakery-copper text-white">Starter Care</Badge>
               <div className="aspect-square overflow-hidden rounded-lg mb-4">
                 <img
                   src={doughBed}
-                  alt="Sour House Joe Bed dough proofing bowl with temperature control"
+                  alt="Sour House Dough Bed dough proofing bowl with temperature control"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
@@ -960,6 +966,8 @@ const HolidayGiftGuide = () => {
               <CardDescription className="text-base">
                 A cozy, temperature-friendly resting place for your sourdough starter jars. Keeps the jar stable, lifted, and warm enough to ferment smoothly. Perfect companion for the Goldie if you want consistency without fuss.
               </CardDescription>
+              <p className="text-sm font-semibold text-accent">$279.95 USD</p>
+              <p className="text-xs text-muted-foreground italic">10% off with link + promo code</p>
               <Button
                 className="w-full bg-accent hover:bg-accent/90 text-white"
                 asChild
@@ -1520,6 +1528,107 @@ const HolidayGiftGuide = () => {
                   rel="noopener noreferrer"
                 >
                   Shop Challenger
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* BUNDLE DEALS - SAVE MORE */}
+      <section id="bundle-deals" className="container mx-auto px-4 py-16 bg-gradient-to-b from-background to-dough-cream dark:from-background/95 dark:to-background">
+        <div className="text-center mb-12">
+          <Badge className="mb-4 bg-accent text-white text-base px-4 py-2">Best Value</Badge>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground dark:text-primary mb-4">
+            Brød & Taylor Bundle Deals
+          </h2>
+          <p className="text-lg text-foreground/80 dark:text-muted-foreground max-w-3xl mx-auto">
+            Save more when you bundle! Get essential tools together at a discount.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {/* Bundle 1: Sourdough Home + Starter Jar */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1 border-2 border-accent/20">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-accent text-white">Save $8.95!</Badge>
+              <CardTitle className="text-2xl">Sourdough Home + Starter Jar Bundle</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                Everything you need to start your sourdough journey. The Sourdough Home proofer keeps your starter at the perfect temperature, while the premium starter jar makes feeding and maintenance a breeze.
+              </CardDescription>
+              <div className="space-y-2">
+                <p className="text-2xl font-bold text-accent">$165</p>
+                <p className="text-sm text-muted-foreground line-through">Regular: $173.95</p>
+              </div>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://brodandtaylor.com?dt_id=330823"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Shop Bundle
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Bundle 2: Round Baking Shell + Baking Steel */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1 border-2 border-accent/20">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-accent text-white">Pro Setup</Badge>
+              <CardTitle className="text-2xl">Round Baking Shell + Baking Steel Bundle</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                The ultimate duo for professional-quality bread at home. The baking steel provides exceptional heat retention while the shell traps steam perfectly for crispy crusts and open crumb.
+              </CardDescription>
+              <div className="space-y-2">
+                <p className="text-2xl font-bold text-accent">$164</p>
+              </div>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://brodandtaylor.com?dt_id=330823"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Shop Bundle
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Bundle 3: Dough Whisk + Bench Knife */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1 border-2 border-accent/20">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-accent text-white">Starter Kit</Badge>
+              <CardTitle className="text-2xl">Dough Whisk + Bench Knife Bundle</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                Perfect starter kit for any baker. The dough whisk makes mixing a breeze, while the bench knife is essential for dividing, shaping, and cleaning your work surface. Great value!
+              </CardDescription>
+              <div className="space-y-2">
+                <p className="text-2xl font-bold text-accent">$37.75</p>
+                <p className="text-xs text-muted-foreground italic">Perfect starter kit - great value</p>
+              </div>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://brodandtaylor.com?dt_id=330823"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Shop Bundle
                 </a>
               </Button>
             </CardContent>
