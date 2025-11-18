@@ -655,7 +655,7 @@ const HolidayGiftGuide = () => {
                 asChild
               >
                 <a
-                  href="http://brodandtaylor.com/henrysbreadkitchen?utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                  href="https://collabs.shop/38tff48"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -1095,10 +1095,10 @@ const HolidayGiftGuide = () => {
                 Unique looped wire design that mixes dough without overworking it. Essential for any baker's toolkit.
               </p>
               <a
-                href="https://brodandtaylor.com/henrysbreadkitchen?utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                href="https://collabs.shop/e5canl"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-foreground py-2 px-4 rounded-lg text-sm transition-colors"
               >
                 Shop Brød & Taylor
               </a>
@@ -1207,10 +1207,10 @@ const HolidayGiftGuide = () => {
                 Soft, non-slip handle designed to be an extension of your hand. Versatile for chopping, cutting, scraping, and scooping.
               </p>
               <a
-                href="https://brodandtaylor.com/henrysbreadkitchen?utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                href="https://collabs.shop/j4ifmu"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-foreground py-2 px-4 rounded-lg text-sm transition-colors"
               >
                 Shop Brød & Taylor
               </a>
@@ -1291,10 +1291,10 @@ const HolidayGiftGuide = () => {
                 Compact electric grinder perfect for freshly ground spices, coffee, and grains for your baking.
               </p>
               <a
-                href="https://brodandtaylor.com/henrysbreadkitchen?utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                href="https://collabs.shop/e5canl"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-foreground py-2 px-4 rounded-lg text-sm transition-colors"
               >
                 Shop
               </a>
@@ -1399,7 +1399,7 @@ const HolidayGiftGuide = () => {
                 asChild
               >
                 <a 
-                  href="https://brodandtaylor.com/henrysbreadkitchen" 
+                  href="https://collabs.shop/meedk8" 
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
@@ -1459,7 +1459,7 @@ const HolidayGiftGuide = () => {
                 asChild
               >
                 <a 
-                  href="https://brodandtaylor.com/henrysbreadkitchen?utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025" 
+                  href="https://collabs.shop/zyri4om" 
                   target="_blank" 
                   rel="noopener noreferrer sponsored nofollow"
                 >
