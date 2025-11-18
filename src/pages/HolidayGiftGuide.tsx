@@ -224,12 +224,12 @@ const HolidayGiftGuide = () => {
             </div>
 
             {/* Subtitle */}
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-center text-[hsl(142,50%,25%)] dark:text-[hsl(142,60%,65%)] max-w-4xl mx-auto leading-relaxed">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-center text-white dark:text-white max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
               The Holiday Gift Guide for People Who Actually Bake Bread
             </h2>
 
             {/* Stop Guessing Text */}
-            <p className="text-xl md:text-2xl text-center text-foreground/80 dark:text-foreground/90 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-center text-white dark:text-white max-w-3xl mx-auto drop-shadow-lg">
               Stop guessing. These are the tools real bakers want. Handpicked from my own kitchen.
             </p>
 
@@ -344,10 +344,10 @@ const HolidayGiftGuide = () => {
       {/* Top 6 Section */}
       <section id="top-five" className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground dark:text-primary mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[hsl(36,45%,35%)] dark:text-white mb-4">
             Henry's Top 6 Holiday Picks
           </h2>
-          <p className="text-lg text-foreground/70 dark:text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-[hsl(142,35%,25%)] dark:text-gray-300 max-w-3xl mx-auto">
             These are the tools I actually use every week. If someone asked me what to buy a baker, I'd start here. Each one solves a real problem.
           </p>
         </div>
@@ -547,21 +547,103 @@ const HolidayGiftGuide = () => {
               </Button>
             </CardContent>
           </Card>
+
+          {/* Product 6: Sour House DoughBed */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-bakery-copper text-white">Artisan Choice</Badge>
+              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+                <img
+                  src={doughBed}
+                  alt="Sour House DoughBed dough resting surface"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">Sour House DoughBed</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                Dedicated surface for shaping and resting dough. Natural materials that won't stick. Makes the whole process calmer and more organized.
+              </CardDescription>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://sourhouse.co/?ref=BAKINGGREATBREAD&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Shop Sour House
+                </a>
+              </Button>
+              <div className="flex items-center gap-2 bg-white dark:bg-gray-100 p-3 rounded-lg border border-border">
+                <span className="text-sm font-semibold text-gray-900">Promo Code: HBK23 (10% off)</span>
+                <Button
+                  size="sm"
+                  variant="ghost"
+                  onClick={() => copyToClipboard("HBK23")}
+                  className="ml-auto"
+                >
+                  {copiedCode === "HBK23" ? (
+                    <Check className="h-4 w-4 text-green-600" />
+                  ) : (
+                    <Copy className="h-4 w-4" />
+                  )}
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
       {/* More Great Tools Section */}
       <section className="container mx-auto px-4 py-16 bg-gradient-to-b from-background to-dough-cream">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[hsl(36,45%,35%)] dark:text-white mb-4">
             More Great Tools
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-[hsl(142,35%,25%)] dark:text-gray-300 max-w-3xl mx-auto">
             These are the tools that round out a complete baking setup. Each one solves a specific problem and makes the process smoother.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Challenger Bread Pan */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-secondary text-white">Pro Baker Secret</Badge>
+              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+                <img
+                  src={challengerBreadPan}
+                  alt="Challenger Bread Pan cast iron bread baking pan"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">Challenger Bread Pan</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                The game-changing cast iron bread pan designed specifically for home ovens. Features a shallow base and deep lid for easy loading and unmatched steam retention. No more wrestling scored dough into a scorching hot Dutch oven—just slide your loaf into the shallow base, cover with the lid, and bake bakery-quality bread with a crispy, blistered crust and open crumb. Built to last generations.
+              </CardDescription>
+              <p className="text-sm font-semibold text-accent">$270</p>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://challengerbreadware.com/?ref=henryhunterjr&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Shop Challenger
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
           {/* ModKitchen Bread Bag */}
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader>
