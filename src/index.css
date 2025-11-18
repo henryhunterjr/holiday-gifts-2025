@@ -8,26 +8,26 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Bread Baking Holiday Theme - Warm & Rustic */
+    /* Bread Baking Holiday Theme - Warm & Rustic with HIGH CONTRAST */
     --background: 43 45% 97%;
-    --foreground: 86 14% 27%;
+    --foreground: 9 28% 19%; /* Rich brown #3E2723 for body text */
 
     --card: 0 0% 100%;
-    --card-foreground: 86 14% 27%;
+    --card-foreground: 0 0% 10%; /* Near black #1A1A1A for card text */
 
     --popover: 0 0% 100%;
-    --popover-foreground: 86 14% 27%;
+    --popover-foreground: 9 28% 19%;
 
-    --primary: 86 14% 27%;
-    --primary-foreground: 43 45% 97%;
+    --primary: 17 47% 12%; /* Deep brown #2C1810 for headers */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 36 41% 61%;
+    --secondary: 19 29% 28%; /* Warm brown #5C4033 for subtitles */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 43 45% 97%;
-    --muted-foreground: 86 14% 47%;
+    --muted: 43 45% 94%;
+    --muted-foreground: 19 29% 28%; /* Warm brown for muted text */
 
-    --accent: 86 14% 38%;
+    --accent: 19 47% 54%; /* Bakery copper accent */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -35,7 +35,7 @@ All colors MUST be HSL.
 
     --border: 36 30% 85%;
     --input: 36 30% 85%;
-    --ring: 36 41% 61%;
+    --ring: 19 47% 54%;
 
     --radius: 0.75rem;
     
@@ -77,34 +77,34 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Holiday Night Theme - Cozy Winter Evening */
+    /* Holiday Night Theme - NO PURPLE, HIGH CONTRAST */
     --background: 240 15% 8%;
-    --foreground: 43 45% 95%;
+    --foreground: 0 0% 96%; /* Off-white #F5F5F5 for body text */
 
     --card: 240 12% 12%;
-    --card-foreground: 43 45% 95%;
+    --card-foreground: 0 0% 88%; /* Light gray #E0E0E0 for card text */
 
     --popover: 240 12% 12%;
-    --popover-foreground: 43 45% 95%;
+    --popover-foreground: 0 0% 96%;
 
-    --primary: 43 70% 70%;
+    --primary: 0 0% 100%; /* Pure white for headers */
     --primary-foreground: 240 15% 8%;
 
-    --secondary: 19 47% 45%;
-    --secondary-foreground: 43 45% 95%;
+    --secondary: 28 47% 84%; /* Warm cream #E8D5C4 for subtitles */
+    --secondary-foreground: 17 47% 12%;
 
     --muted: 240 10% 18%;
-    --muted-foreground: 43 20% 65%;
+    --muted-foreground: 0 0% 88%; /* Light gray for muted text */
 
-    --accent: 280 50% 55%;
-    --accent-foreground: 43 45% 95%;
+    --accent: 19 47% 54%; /* Bakery copper accent */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 45%;
-    --destructive-foreground: 43 45% 95%;
+    --destructive-foreground: 0 0% 96%;
 
     --border: 240 10% 20%;
     --input: 240 10% 20%;
-    --ring: 280 50% 60%;
+    --ring: 19 47% 54%;
     
     /* Custom Dark Mode Bread Baking Colors */
     --wheat-brown: 36 50% 50%;
@@ -142,20 +142,32 @@ All colors MUST be HSL.
   }
 }
 
-/* Dark mode text contrast improvements */
+/* Text readability improvements - WCAG AA compliant */
 @layer base {
-  .dark .affiliate-button,
+  /* Light mode - warm browns with high contrast */
+  h1, h2, h3, h4, h5, h6 {
+    color: hsl(17 47% 12%); /* Deep brown for headers */
+  }
+  
+  p, .text-base {
+    color: hsl(9 28% 19%); /* Rich brown for body text */
+  }
+  
+  /* Dark mode - warm whites with high contrast */
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    color: hsl(0 0% 100%) !important; /* Pure white for headers */
+  }
+  
+  .dark p, .dark .text-base {
+    color: hsl(0 0% 96%); /* Off-white for body text */
+  }
+  
   .dark button {
-    color: white !important;
+    color: hsl(17 47% 12%); /* Dark text on light buttons */
   }
   
-  .dark .product-title,
-  .dark h1, .dark h2, .dark h3, .dark h4 {
-    color: hsl(43 45% 95%) !important;
-  }
-  
-  .dark .product-description,
-  .dark p {
-    color: hsl(43 20% 75%);
+  /* Badge text fixes */
+  .dark .badge-text {
+    color: hsl(17 47% 12%) !important;
   }
 }

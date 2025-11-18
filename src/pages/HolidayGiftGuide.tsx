@@ -276,15 +276,15 @@ const HolidayGiftGuide = () => {
 
             {/* FTC Disclosure */}
             {!ftcDismissed && (
-              <div className="bg-[#fff3cd] border-[3px] border-[#ffc107] rounded-xl p-4 md:p-5 max-w-[900px] mx-auto shadow-lg relative animate-in fade-in duration-500">
+              <div className="bg-secondary/20 border-[3px] border-secondary/50 rounded-xl p-4 md:p-5 max-w-[900px] mx-auto shadow-lg relative animate-in fade-in duration-500">
                 <button
                   onClick={dismissFTC}
-                  className="absolute top-2 right-2 md:top-3 md:right-3 text-[#856404] hover:text-[#664308] text-2xl md:text-3xl font-bold leading-none border-none bg-transparent cursor-pointer p-1 transition-colors"
+                  className="absolute top-2 right-2 md:top-3 md:right-3 text-secondary hover:text-secondary/70 text-2xl md:text-3xl font-bold leading-none border-none bg-transparent cursor-pointer p-1 transition-colors"
                   aria-label="Dismiss notice"
                 >
                   ×
                 </button>
-                <p className="text-[#856404] font-bold text-center pr-8 text-sm md:text-base">
+                <p className="text-secondary dark:text-secondary font-bold text-center pr-8 text-sm md:text-base">
                   ⚠️ Affiliate Disclosure: I earn commissions from qualifying purchases. This supports my independent curation at no extra cost to you. Thanks for trusting my recommendations!
                 </p>
               </div>
@@ -328,15 +328,15 @@ const HolidayGiftGuide = () => {
                             onClick={() => setSearchQuery("")}
                             className="block p-3 hover:bg-dough-cream dark:hover:bg-card/80 rounded-lg transition-colors"
                           >
-                            <div className="font-semibold text-foreground dark:text-white">{product.name}</div>
-                            <div className="text-sm text-muted-foreground dark:text-gray-400">
+                            <div className="font-semibold text-foreground dark:text-foreground">{product.name}</div>
+                            <div className="text-sm text-muted-foreground dark:text-muted-foreground">
                               {product.brand} • {product.price}
                             </div>
                           </a>
                         ))}
                       </div>
                     ) : (
-                      <div className="p-6 text-center text-muted-foreground dark:text-gray-400">
+                      <div className="p-6 text-center text-muted-foreground dark:text-muted-foreground">
                         No results found for "{searchQuery}"
                       </div>
                     )}
@@ -406,7 +406,7 @@ const HolidayGiftGuide = () => {
       {/* Quick Navigation Section */}
       <section className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
-          <h3 className="text-2xl font-bold text-center mb-6 text-[hsl(36,45%,35%)] dark:text-primary">Jump to Section</h3>
+          <h3 className="text-2xl font-bold text-center mb-6 text-primary dark:text-primary">Jump to Section</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             <Button
               variant="outline"
@@ -462,10 +462,10 @@ const HolidayGiftGuide = () => {
       </section>
 
       {/* Authority Section */}
-      <section className="container mx-auto px-4 py-12 bg-gradient-to-b from-[hsl(142,35%,92%)] to-background dark:from-[hsl(142,20%,15%)] dark:to-background">
+      <section className="container mx-auto px-4 py-12 bg-gradient-to-b from-muted to-background dark:from-muted dark:to-background">
         <div className="max-w-2xl mx-auto text-center space-y-4">
-          <h3 className="text-2xl font-bold text-[hsl(142,45%,25%)] dark:text-[hsl(142,60%,70%)]">How I Picked These Tools</h3>
-          <p className="text-lg text-[hsl(142,35%,30%)] dark:text-[hsl(142,40%,65%)] italic">
+          <h3 className="text-2xl font-bold text-primary dark:text-primary">How I Picked These Tools</h3>
+          <p className="text-lg text-secondary dark:text-secondary italic">
             "I've been baking for 20+ years and teaching for 10. These are the tools I reach for every single week. Not the fanciest. Not the cheapest. Just the ones that actually make baking better."
           </p>
         </div>
@@ -480,7 +480,7 @@ const HolidayGiftGuide = () => {
             className="w-full max-w-4xl mx-auto mb-4"
             loading="lazy"
           />
-          <p className="text-lg text-[hsl(142,35%,30%)] dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg text-foreground dark:text-foreground max-w-3xl mx-auto">
             These are the tools I actually use every week. If someone asked me what to buy a baker, I'd start here. Each one solves a real problem.
           </p>
         </div>
@@ -583,17 +583,17 @@ const HolidayGiftGuide = () => {
                 </a>
               </Button>
               <div className="flex items-center gap-2 bg-gray-50 dark:bg-white p-3 rounded-lg border border-gray-200 dark:border-gray-300">
-                <span className="text-sm font-semibold text-gray-900 dark:text-gray-900">Promo Code: HBK23 (10% off)</span>
+                <span className="text-sm font-semibold badge-text bg-secondary/20 px-3 py-1 rounded-md">Promo Code: HBK23 (10% off)</span>
                 <Button
                   size="sm"
                   variant="ghost"
                   onClick={() => copyToClipboard("HBK23")}
-                  className="ml-auto hover:bg-gray-200 dark:hover:bg-gray-100"
+                  className="ml-auto hover:bg-muted"
                 >
                   {copiedCode === "HBK23" ? (
                     <Check className="h-4 w-4 text-green-600" />
                   ) : (
-                    <Copy className="h-4 w-4 text-gray-900" />
+                    <Copy className="h-4 w-4 text-foreground" />
                   )}
                 </Button>
               </div>
@@ -631,17 +631,17 @@ const HolidayGiftGuide = () => {
                 </a>
               </Button>
               <div className="flex items-center gap-2 bg-gray-50 dark:bg-white p-3 rounded-lg border border-gray-200 dark:border-gray-300">
-                <span className="text-sm font-semibold text-gray-900 dark:text-gray-900">Promo Code: bread (10% off)</span>
+                <span className="text-sm font-semibold badge-text bg-secondary/20 px-3 py-1 rounded-md">Promo Code: bread (10% off)</span>
                 <Button
                   size="sm"
                   variant="ghost"
                   onClick={() => copyToClipboard("bread")}
-                  className="ml-auto hover:bg-gray-200 dark:hover:bg-gray-100"
+                  className="ml-auto hover:bg-muted"
                 >
                   {copiedCode === "bread" ? (
                     <Check className="h-4 w-4 text-green-600" />
                   ) : (
-                    <Copy className="h-4 w-4 text-gray-900" />
+                    <Copy className="h-4 w-4 text-foreground" />
                   )}
                 </Button>
               </div>
@@ -711,18 +711,18 @@ const HolidayGiftGuide = () => {
                   Shop Sour House
                 </a>
               </Button>
-              <div className="flex items-center gap-2 bg-white dark:bg-gray-100 p-3 rounded-lg border border-border">
-                <span className="text-sm font-semibold text-gray-900">Promo Code: HBK23 (10% off)</span>
+              <div className="flex items-center gap-2 bg-card dark:bg-card p-3 rounded-lg border border-border">
+                <span className="text-sm font-semibold badge-text bg-secondary/20 px-3 py-1 rounded-md">Promo Code: HBK23 (10% off)</span>
                 <Button
                   size="sm"
                   variant="ghost"
                   onClick={() => copyToClipboard("HBK23")}
-                  className="ml-auto"
+                  className="ml-auto hover:bg-muted"
                 >
                   {copiedCode === "HBK23" ? (
                     <Check className="h-4 w-4 text-green-600" />
                   ) : (
-                    <Copy className="h-4 w-4" />
+                    <Copy className="h-4 w-4 text-foreground" />
                   )}
                 </Button>
               </div>
@@ -1675,10 +1675,10 @@ const HolidayGiftGuide = () => {
       {/* BOOKS & LEARNING */}
       <section id="books-learning" className="container mx-auto px-4 py-16 bg-gradient-to-b from-background to-dough-cream dark:from-background/95 dark:to-background">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground dark:text-foreground mb-4">
             Books & Learning
           </h2>
-          <p className="text-lg text-foreground/80 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg text-foreground dark:text-foreground max-w-3xl mx-auto">
             Real knowledge from years in the kitchen. These aren't fluff—they're practical guides I wrote after making every mistake first.
           </p>
         </div>
@@ -2394,63 +2394,63 @@ const HolidayGiftGuide = () => {
       )}
 
       {/* FAQ Section */}
-      <section className="container mx-auto px-4 py-16 bg-gradient-to-b from-[hsl(142,35%,92%)] to-[hsl(142,30%,85%)] dark:from-[hsl(142,20%,15%)] dark:to-[hsl(142,25%,10%)]">
+      <section className="container mx-auto px-4 py-16 bg-gradient-to-b from-muted to-muted/50 dark:from-muted dark:to-muted/30">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-[hsl(142,50%,25%)] dark:text-[hsl(142,60%,70%)] mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary dark:text-primary mb-12 text-center">
             Questions About These Gifts
           </h2>
 
           <div className="space-y-8">
             <div>
-              <h3 className="text-xl font-bold text-foreground dark:text-white mb-2">
+              <h3 className="text-xl font-bold text-foreground dark:text-foreground mb-2">
                 Do you earn a commission from these links?
               </h3>
-              <p className="text-foreground/80 dark:text-gray-300">
+              <p className="text-foreground dark:text-foreground">
                 Yes. Some of these are affiliate links. When you buy through them, I earn a small commission at no extra cost to you. It supports the Baking Great Bread at Home community and helps me keep creating free content. I appreciate you using these links.
               </p>
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-foreground dark:text-white mb-2">
+              <h3 className="text-xl font-bold text-foreground dark:text-foreground mb-2">
                 Are these tools beginner-friendly?
               </h3>
-              <p className="text-foreground/80 dark:text-gray-300">
+              <p className="text-foreground dark:text-foreground">
                 Every single tool here can be used by someone baking their first loaf. Some are upgrades for serious bakers, but nothing here requires experience to use. If you can measure flour and water, you can use these tools.
               </p>
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-foreground dark:text-white mb-2">
+              <h3 className="text-xl font-bold text-foreground dark:text-foreground mb-2">
                 What should I buy first if I'm overwhelmed?
               </h3>
-              <p className="text-foreground/80 dark:text-gray-300">
+              <p className="text-foreground dark:text-foreground">
                 Start with the Vitale Starter and one good tool—either the Wire Monkey lame or the Holland Bowl Mill bowl. That combination gives someone everything they need to bake their first great loaf. You can always add more later.
               </p>
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-foreground dark:text-white mb-2">
+              <h3 className="text-xl font-bold text-foreground dark:text-foreground mb-2">
                 Do these tools ship in time for Christmas?
               </h3>
-              <p className="text-foreground/80 dark:text-gray-300">
+              <p className="text-foreground dark:text-foreground">
                 Most of them do, but I recommend ordering by December 15 to be safe. Each product page will show current shipping times. After December 15, check the Digital Gifts section for instant-delivery options.
               </p>
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-foreground dark:text-white mb-2">
+              <h3 className="text-xl font-bold text-foreground dark:text-foreground mb-2">
                 What if the gift doesn't work out?
               </h3>
-              <p className="text-foreground/80 dark:text-gray-300">
+              <p className="text-foreground dark:text-foreground">
                 Each brand has their own return policy. I've linked to companies I trust with good customer service. If you have issues with any purchase, reach out to me at henrysbreadkitchen@gmail.com and I'll help however I can.
               </p>
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-foreground dark:text-white mb-2">
+              <h3 className="text-xl font-bold text-foreground dark:text-foreground mb-2">
                 Can I mix products from different brands?
               </h3>
-              <p className="text-foreground/80 dark:text-gray-300">
+              <p className="text-foreground dark:text-foreground">
                 Absolutely. These aren't coordinated bundles. Buy one thing, buy all five, mix and match however you want. I'm just showing you what I use together.
               </p>
             </div>
