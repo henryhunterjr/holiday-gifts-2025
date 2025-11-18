@@ -365,7 +365,7 @@ const HolidayGiftGuide = () => {
       {/* Quick Navigation Section */}
       <section className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
-          <h3 className="text-2xl font-bold text-center mb-6 text-foreground dark:text-primary">Jump to Section</h3>
+          <h3 className="text-2xl font-bold text-center mb-6 text-[hsl(36,45%,35%)] dark:text-primary">Jump to Section</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             <Button
               variant="outline"
