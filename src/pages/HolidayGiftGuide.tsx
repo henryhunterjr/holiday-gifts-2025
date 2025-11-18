@@ -26,6 +26,11 @@ import challengerBreadPan from "@/assets/holiday/challenger-bread-pan.jpg";
 import challengerParchment from "@/assets/holiday/challenger-parchment.png";
 import breadBlanket from "@/assets/holiday/bread-blanket.webp";
 import benchScraper from "@/assets/holiday/bench-scraper.png";
+import sourdoughRestOfUs from "@/assets/holiday/sourdough-rest-of-us.jpg";
+import vitaleSourdoughMastery from "@/assets/holiday/vitale-sourdough-mastery.jpg";
+import fromOvenToMarket from "@/assets/holiday/from-oven-to-market.jpg";
+import loafAndLie from "@/assets/holiday/loaf-and-lie.jpg";
+import breadJourney from "@/assets/holiday/bread-journey.jpg";
 
 const HolidayGiftGuide = () => {
   const [email, setEmail] = useState("");
@@ -57,6 +62,11 @@ const HolidayGiftGuide = () => {
     { name: "mockmill 100 Stone Grain Mill", brand: "mockmill", category: "equipment", keywords: "grain mill stone flour grinding", price: "$279", id: "mockmill-100" },
     { name: "mockmill Lino 200", brand: "mockmill", category: "equipment", keywords: "grain mill stone flour professional", price: "$449", id: "mockmill-lino" },
     { name: "Vitamix A2300", brand: "Vitamix", category: "equipment", keywords: "blender vitamix flour grinding", price: "$399", id: "vitamix" },
+    { name: "Sourdough for the Rest of Us", brand: "Henry Hunter", category: "books", keywords: "book sourdough beginner guide learning", price: "$6.08", id: "sourdough-rest-of-us" },
+    { name: "Vitale Sourdough Mastery", brand: "Henry Hunter", category: "books", keywords: "book sourdough advanced mastery techniques", price: "$9.60", id: "vitale-mastery" },
+    { name: "From Oven to Market", brand: "Henry Hunter", category: "books", keywords: "book business selling cottage food laws market", price: "$7.62", id: "oven-to-market" },
+    { name: "The Loaf and the Lie", brand: "Henry Hunter", category: "books", keywords: "book history bread industry culture", price: "$6.99", id: "loaf-and-lie" },
+    { name: "Bread: A Journey Through History", brand: "Henry Hunter", category: "books", keywords: "book history science fermentation culture", price: "$7.95", id: "bread-journey" },
   ];
 
   const filteredProducts = searchQuery 
@@ -1507,6 +1517,190 @@ const HolidayGiftGuide = () => {
           >
             Just Show Top 5 Again
           </Button>
+        </div>
+      </section>
+
+      {/* BOOKS & LEARNING */}
+      <section id="books-learning" className="container mx-auto px-4 py-16 bg-gradient-to-b from-background to-dough-cream dark:from-background/95 dark:to-background">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground dark:text-white mb-4">
+            Books & Learning
+          </h2>
+          <p className="text-lg text-foreground/80 dark:text-gray-300 max-w-3xl mx-auto">
+            Real knowledge from years in the kitchen. These aren't fluff—they're practical guides I wrote after making every mistake first.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {/* Sourdough for the Rest of Us */}
+          <Card id="sourdough-rest-of-us" className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-olive text-white">Start Here</Badge>
+              <div className="aspect-[3/4] overflow-hidden rounded-lg mb-4">
+                <img
+                  src={sourdoughRestOfUs}
+                  alt="Sourdough for the Rest of Us book cover"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">Sourdough for the Rest of Us</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                Look, I wrote this book because I got tired of watching people give up on sourdough. Too many guides treat it like rocket science. It's not. This is the book I wish I'd had when I started, no fancy equipment required, no perfection needed. Just real techniques that work in real kitchens. If you can stir and wait, you can make great sourdough.
+              </CardDescription>
+              <p className="text-sm font-semibold text-accent">$6.08</p>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://a.co/d/guDGoiE"
+                  target="_blank"
+                  rel="noopener noreferrer sponsored nofollow"
+                >
+                  Buy on Amazon
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Vitale Sourdough Mastery */}
+          <Card id="vitale-mastery" className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-accent text-white">Level Up</Badge>
+              <div className="aspect-[3/4] overflow-hidden rounded-lg mb-4">
+                <img
+                  src={vitaleSourdoughMastery}
+                  alt="Vitale Sourdough Mastery book cover"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">Vitale Sourdough Mastery</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                Once you've got the basics down, this is where you level up. I dig deeper into the techniques that separate good loaves from great ones. Timing, temperature control, shaping methods that actually make sense. It's not about being perfect, it's about understanding what you're doing so you can adapt and troubleshoot like a pro.
+              </CardDescription>
+              <p className="text-sm font-semibold text-accent">$9.60</p>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://a.co/d/h8Lnskn"
+                  target="_blank"
+                  rel="noopener noreferrer sponsored nofollow"
+                >
+                  Buy on Amazon
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* From Oven to Market */}
+          <Card id="oven-to-market" className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-secondary text-white">Make Money</Badge>
+              <div className="aspect-[3/4] overflow-hidden rounded-lg mb-4">
+                <img
+                  src={fromOvenToMarket}
+                  alt="From Oven to Market book cover"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">From Oven to Market</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                I spent years selling bread at farmers markets before moving online. This book covers everything I learned the hard way: cottage food laws, pricing that actually makes money, production planning, dealing with customers. If you're thinking about turning your baking into income, start here. It'll save you a lot of expensive mistakes.
+              </CardDescription>
+              <p className="text-sm font-semibold text-accent">$7.62</p>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://a.co/d/3MKgp3l"
+                  target="_blank"
+                  rel="noopener noreferrer sponsored nofollow"
+                >
+                  Buy on Amazon
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* The Loaf and the Lie */}
+          <Card id="loaf-and-lie" className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-bakery-copper text-white">Deep Dive</Badge>
+              <div className="aspect-[3/4] overflow-hidden rounded-lg mb-4">
+                <img
+                  src={loafAndLie}
+                  alt="The Loaf and the Lie book cover"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">The Loaf and the Lie</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                This one's different. It's part history, part exposé on how industrial bread replaced real bread in America. I trace the marketing, the culture shift, the nutritional impact. And yeah, I talk about what it means to be a Black baker in a space where we're barely visible. It's a quick read, but it'll change how you see bread.
+              </CardDescription>
+              <p className="text-sm font-semibold text-accent">$6.99</p>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://a.co/d/fyIyomh"
+                  target="_blank"
+                  rel="noopener noreferrer sponsored nofollow"
+                >
+                  Buy on Amazon
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Bread: A Journey Through History */}
+          <Card id="bread-journey" className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-primary text-white">Big Picture</Badge>
+              <div className="aspect-[3/4] overflow-hidden rounded-lg mb-4">
+                <img
+                  src={breadJourney}
+                  alt="Bread: A Journey Through History, Science, Art and Community book cover"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">Bread: A Journey Through History</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                This is the big picture book. Where bread came from, how fermentation actually works, why it matters in cultures around the world. I wrote it for everyone, whether you bake or just love eating good bread. It's the kind of book you can share with your kids or keep on your coffee table. Stories, science, and a whole lot of respect for this ancient craft.
+              </CardDescription>
+              <p className="text-sm font-semibold text-accent">$7.95</p>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://a.co/d/3jUvHC8"
+                  target="_blank"
+                  rel="noopener noreferrer sponsored nofollow"
+                >
+                  Buy on Amazon
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
