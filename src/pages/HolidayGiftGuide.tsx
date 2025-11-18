@@ -22,6 +22,8 @@ import gooseLame from "@/assets/holiday/wire-monkey-goose-lame.jpg";
 import doughBed from "@/assets/holiday/sourhouse-doughbed.jpg";
 import stockingStuffersBanner from "@/assets/holiday/stocking-stuffers-banner.webp";
 import doughWhisk from "@/assets/holiday/dough-whisk.jpg";
+import challengerBreadPan from "@/assets/holiday/challenger-bread-pan.jpg";
+import challengerParchment from "@/assets/holiday/challenger-parchment.png";
 
 const HolidayGiftGuide = () => {
   const [email, setEmail] = useState("");
@@ -47,6 +49,7 @@ const HolidayGiftGuide = () => {
     { name: "Challenger Parchment Papers", brand: "Challenger", category: "tools", keywords: "parchment paper precut challenger", price: "$12.95", id: "challenger-parchment" },
     { name: "Sahara Folding Bread Proofer", brand: "Brød & Taylor", category: "equipment", keywords: "proofer sahara folding temperature", price: "$189", id: "sahara-proofer" },
     { name: "Water Kettle and French Press", brand: "Generic", category: "beverages", keywords: "kettle french press coffee tea", price: "$117.53", id: "water-kettle" },
+    { name: "Challenger Bread Pan", brand: "Challenger", category: "equipment", keywords: "bread pan cast iron dutch oven steam", price: "$270", id: "challenger-bread-pan" },
     { name: "mockmill 100 Stone Grain Mill", brand: "mockmill", category: "equipment", keywords: "grain mill stone flour grinding", price: "$279", id: "mockmill-100" },
     { name: "mockmill Lino 200", brand: "mockmill", category: "equipment", keywords: "grain mill stone flour professional", price: "$449", id: "mockmill-lino" },
     { name: "Vitamix A2300", brand: "Vitamix", category: "equipment", keywords: "blender vitamix flour grinding", price: "$399", id: "vitamix" },
@@ -446,8 +449,8 @@ const HolidayGiftGuide = () => {
                   Shop Sour House
                 </a>
               </Button>
-              <div className="flex items-center gap-2 bg-dough-cream p-3 rounded-lg border border-border">
-                <span className="text-sm font-medium">Promo Code: HBK23 (10% off)</span>
+              <div className="flex items-center gap-2 bg-white dark:bg-gray-100 p-3 rounded-lg border border-border">
+                <span className="text-sm font-semibold text-gray-900">Promo Code: HBK23 (10% off)</span>
                 <Button
                   size="sm"
                   variant="ghost"
@@ -494,8 +497,8 @@ const HolidayGiftGuide = () => {
                   Shop Holland Bowl Mill
                 </a>
               </Button>
-              <div className="flex items-center gap-2 bg-dough-cream p-3 rounded-lg border border-border">
-                <span className="text-sm font-medium">Promo Code: bread (10% off)</span>
+              <div className="flex items-center gap-2 bg-white dark:bg-gray-100 p-3 rounded-lg border border-border">
+                <span className="text-sm font-semibold text-gray-900">Promo Code: bread (10% off)</span>
                 <Button
                   size="sm"
                   variant="ghost"
@@ -768,6 +771,40 @@ const HolidayGiftGuide = () => {
                   rel="noopener noreferrer"
                 >
                   Shop Brød & Taylor
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Challenger Parchment Papers */}
+          <Card id="challenger-parchment" className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-secondary text-white">Perfect Fit</Badge>
+              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+                <img
+                  src={challengerParchment}
+                  alt="Challenger Parchment Papers pre-cut for Challenger Bread Pan"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">Challenger Parchment Papers</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                Pre-cut parchment papers sized perfectly for the Challenger Bread Pan. No more trimming, folding, or wrestling with sheets. Just grab one, line your pan, and bake. Makes cleanup effortless and protects your pan's seasoning. If you have a Challenger Pan, these are essential.
+              </CardDescription>
+              <p className="text-sm font-semibold text-accent">$12.95</p>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://challengerbreadware.com/?ref=henryhunterjr&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Shop Challenger
                 </a>
               </Button>
             </CardContent>
@@ -1088,6 +1125,54 @@ const HolidayGiftGuide = () => {
                   rel="noopener noreferrer"
                 >
                   Shop Now
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* PREMIUM TOOLS ($200+) */}
+      <section id="premium-tools" className="container mx-auto px-4 py-16 bg-gradient-to-b from-dough-cream to-background dark:from-background dark:to-background/95">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground dark:text-white mb-4">
+            Premium Tools ($200+)
+          </h2>
+          <p className="text-lg text-foreground/80 dark:text-gray-300 max-w-3xl mx-auto">
+            Investment pieces that serious bakers dream about. Built to last generations and transform your baking.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {/* Challenger Bread Pan */}
+          <Card id="challenger-bread-pan" className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-bakery-copper text-white">Pro Baker Secret</Badge>
+              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+                <img
+                  src={challengerBreadPan}
+                  alt="Challenger Bread Pan cast iron dutch oven alternative"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">Challenger Bread Pan</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                The game-changing cast iron bread pan designed specifically for home ovens. Features a shallow base and deep lid for easy loading and unmatched steam retention. No more wrestling scored dough into a scorching hot Dutch oven—just slide your loaf into the shallow base, cover with the lid, and bake bakery-quality bread with a crispy, blistered crust and open crumb. Built to last generations.
+              </CardDescription>
+              <p className="text-sm font-semibold text-accent">$270</p>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://challengerbreadware.com/?ref=henryhunterjr&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Shop Challenger
                 </a>
               </Button>
             </CardContent>
@@ -1609,55 +1694,55 @@ const HolidayGiftGuide = () => {
 
           <div className="space-y-8">
             <div>
-              <h3 className="text-xl font-bold text-[hsl(142,50%,20%)] dark:text-[hsl(142,60%,75%)] mb-2">
+              <h3 className="text-xl font-bold text-foreground dark:text-white mb-2">
                 Do you earn a commission from these links?
               </h3>
-              <p className="text-[hsl(142,35%,25%)] dark:text-[hsl(142,40%,70%)]">
+              <p className="text-foreground/80 dark:text-gray-300">
                 Yes. Some of these are affiliate links. When you buy through them, I earn a small commission at no extra cost to you. It supports the Baking Great Bread at Home community and helps me keep creating free content. I appreciate you using these links.
               </p>
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-[hsl(142,50%,20%)] dark:text-[hsl(142,60%,75%)] mb-2">
+              <h3 className="text-xl font-bold text-foreground dark:text-white mb-2">
                 Are these tools beginner-friendly?
               </h3>
-              <p className="text-[hsl(142,35%,25%)] dark:text-[hsl(142,40%,70%)]">
+              <p className="text-foreground/80 dark:text-gray-300">
                 Every single tool here can be used by someone baking their first loaf. Some are upgrades for serious bakers, but nothing here requires experience to use. If you can measure flour and water, you can use these tools.
               </p>
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-[hsl(142,50%,20%)] dark:text-[hsl(142,60%,75%)] mb-2">
+              <h3 className="text-xl font-bold text-foreground dark:text-white mb-2">
                 What should I buy first if I'm overwhelmed?
               </h3>
-              <p className="text-[hsl(142,35%,25%)] dark:text-[hsl(142,40%,70%)]">
+              <p className="text-foreground/80 dark:text-gray-300">
                 Start with the Vitale Starter and one good tool—either the Wire Monkey lame or the Holland Bowl Mill bowl. That combination gives someone everything they need to bake their first great loaf. You can always add more later.
               </p>
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-[hsl(142,50%,20%)] dark:text-[hsl(142,60%,75%)] mb-2">
+              <h3 className="text-xl font-bold text-foreground dark:text-white mb-2">
                 Do these tools ship in time for Christmas?
               </h3>
-              <p className="text-[hsl(142,35%,25%)] dark:text-[hsl(142,40%,70%)]">
+              <p className="text-foreground/80 dark:text-gray-300">
                 Most of them do, but I recommend ordering by December 15 to be safe. Each product page will show current shipping times. After December 15, check the Digital Gifts section for instant-delivery options.
               </p>
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-[hsl(142,50%,20%)] dark:text-[hsl(142,60%,75%)] mb-2">
+              <h3 className="text-xl font-bold text-foreground dark:text-white mb-2">
                 What if the gift doesn't work out?
               </h3>
-              <p className="text-[hsl(142,35%,25%)] dark:text-[hsl(142,40%,70%)]">
+              <p className="text-foreground/80 dark:text-gray-300">
                 Each brand has their own return policy. I've linked to companies I trust with good customer service. If you have issues with any purchase, reach out to me at henrysbreadkitchen@gmail.com and I'll help however I can.
               </p>
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-[hsl(142,50%,20%)] dark:text-[hsl(142,60%,75%)] mb-2">
+              <h3 className="text-xl font-bold text-foreground dark:text-white mb-2">
                 Can I mix products from different brands?
               </h3>
-              <p className="text-[hsl(142,35%,25%)] dark:text-[hsl(142,40%,70%)]">
+              <p className="text-foreground/80 dark:text-gray-300">
                 Absolutely. These aren't coordinated bundles. Buy one thing, buy all five, mix and match however you want. I'm just showing you what I use together.
               </p>
             </div>
