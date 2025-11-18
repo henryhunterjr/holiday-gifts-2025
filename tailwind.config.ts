@@ -56,6 +56,9 @@ export default {
         bakery: {
           copper: "hsl(var(--bakery-copper))",
         },
+        hero: {
+          brown: "hsl(var(--hero-brown))",
+        },
         olive: {
           DEFAULT: "hsl(var(--olive-accent))",
         },
