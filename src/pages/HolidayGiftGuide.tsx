@@ -274,22 +274,6 @@ const HolidayGiftGuide = () => {
               The Holiday Gift Guide for People Who Actually Bake Bread
             </h2>
 
-            {/* FTC Disclosure */}
-            {!ftcDismissed && (
-              <div className="bg-secondary/20 dark:bg-secondary/30 border-2 border-secondary/60 dark:border-[#5C4033] rounded-xl p-4 md:p-5 max-w-[900px] mx-auto shadow-lg relative animate-in fade-in duration-500">
-                <button
-                  onClick={dismissFTC}
-                  className="absolute top-2 right-2 md:top-3 md:right-3 text-secondary dark:text-[#2C1810] hover:text-secondary/70 dark:hover:text-[#2C1810]/70 text-2xl md:text-3xl font-bold leading-none border-none bg-transparent cursor-pointer p-1 transition-colors"
-                  aria-label="Dismiss notice"
-                >
-                  ×
-                </button>
-                <p className="text-hero-brown dark:text-[#2C1810] font-bold text-center pr-8 text-sm md:text-base">
-                  ⚠️ Affiliate Disclosure: I earn commissions from qualifying purchases. This supports my independent curation at no extra cost to you. Thanks for trusting my recommendations!
-                </p>
-              </div>
-            )}
-
             {/* Stop Guessing Text */}
             <p className="text-xl md:text-2xl text-center text-hero-brown dark:text-[#2C1810] max-w-3xl mx-auto">
               Stop guessing. These are the tools real bakers want. Handpicked from my own kitchen.
@@ -2688,12 +2672,23 @@ const HolidayGiftGuide = () => {
         </div>
       </section>
 
-      {/* Final Disclosure */}
-      <section className="bg-muted py-8">
+      {/* Final Affiliate Disclosure */}
+      <section className="bg-background py-8">
         <div className="container mx-auto px-4">
-          <p className="text-sm text-muted-foreground text-center max-w-4xl mx-auto">
-            <strong>Affiliate Disclosure:</strong> Some links on this page are affiliate links. If you make a purchase through them, I may earn a small commission at no extra cost to you. I only recommend products I use and trust in my own kitchen. Thank you for supporting Baking Great Bread at Home and helping me create free content for this community.
-          </p>
+          {!ftcDismissed && (
+            <div className="bg-secondary/20 border-2 border-secondary/60 rounded-xl p-4 md:p-5 max-w-[900px] mx-auto shadow-lg relative animate-in fade-in duration-500">
+              <button
+                onClick={dismissFTC}
+                className="absolute top-2 right-2 md:top-3 md:right-3 text-secondary hover:text-secondary/70 text-2xl md:text-3xl font-bold leading-none border-none bg-transparent cursor-pointer p-1 transition-colors"
+                aria-label="Dismiss notice"
+              >
+                ×
+              </button>
+              <p className="text-foreground font-bold text-center pr-8 text-sm md:text-base">
+                ⚠️ Affiliate Disclosure: I earn commissions from qualifying purchases. This supports my independent curation at no extra cost to you. Thanks for trusting my recommendations!
+              </p>
+            </div>
+          )}
         </div>
       </section>
     </div>
