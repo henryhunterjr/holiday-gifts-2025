@@ -654,10 +654,10 @@ const HolidayGiftGuide = () => {
                 className="w-full bg-accent hover:bg-accent/90 text-white"
                 asChild
               >
-                <a
-                  href="https://collabs.shop/38tff48"
-                  target="_blank"
-                  rel="noopener noreferrer"
+              <a
+                href="https://collabs.shop/38tf48"
+                target="_blank"
+                rel="noopener noreferrer"
                 >
                   Shop Brød & Taylor
                 </a>
@@ -785,7 +785,7 @@ const HolidayGiftGuide = () => {
                 asChild
               >
                 <a
-                  href="https://brodandtaylor.com/henrysbreadkitchen?utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                  href="https://collabs.shop/3g6pc9"
                   target="_blank"
                   rel="noopener noreferrer sponsored nofollow"
                 >
@@ -1006,7 +1006,7 @@ const HolidayGiftGuide = () => {
                 asChild
               >
                 <a
-                  href="http://brodandtaylor.com/henrysbreadkitchen?utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                  href="https://brodandtaylor.com/henrysbreadkitchen"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -1207,7 +1207,7 @@ const HolidayGiftGuide = () => {
                 Soft, non-slip handle designed to be an extension of your hand. Versatile for chopping, cutting, scraping, and scooping.
               </p>
               <a
-                href="https://collabs.shop/j4ifmu"
+                href="https://collabs.shop/i4ifmu"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-secondary hover:bg-secondary/90 text-foreground py-2 px-4 rounded-lg text-sm transition-colors"
@@ -1373,7 +1373,7 @@ const HolidayGiftGuide = () => {
                 asChild
               >
                 <a 
-                  href="https://brodandtaylor.com/henrysbreadkitchen" 
+                  href="https://collabs.shop/bsdfl2" 
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
@@ -1459,7 +1459,7 @@ const HolidayGiftGuide = () => {
                 asChild
               >
                 <a 
-                  href="https://collabs.shop/zyri4om" 
+                  href="https://brodandtaylor.com/henrysbreadkitchen" 
                   target="_blank" 
                   rel="noopener noreferrer sponsored nofollow"
                 >
@@ -1551,7 +1551,7 @@ const HolidayGiftGuide = () => {
                 asChild
               >
                 <a
-                  href="https://brodandtaylor.com?dt_id=330823"
+                  href="https://collabs.shop/1vjisb"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -1579,7 +1579,7 @@ const HolidayGiftGuide = () => {
                 asChild
               >
                 <a
-                  href="https://brodandtaylor.com?dt_id=330823"
+                  href="https://collabs.shop/g9yxme"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -1608,7 +1608,7 @@ const HolidayGiftGuide = () => {
                 asChild
               >
                 <a
-                  href="https://brodandtaylor.com?dt_id=330823"
+                  href="https://brodandtaylor.com/henrysbreadkitchen"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -2643,7 +2643,7 @@ const HolidayGiftGuide = () => {
                 Proofers, scales, and precision tools.
               </p>
               <a
-                href="http://brodandtaylor.com/henrysbreadkitchen?utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                href="https://brodandtaylor.com/henrysbreadkitchen"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-accent hover:text-accent/80 text-sm font-medium"
