@@ -61,6 +61,12 @@ import wiremonkeyBannetonCover from "@/assets/holiday/wiremonkey-banneton-cover.
 import sourHouseBreadBlanket from "@/assets/holiday/sour-house-bread-blanket.webp";
 import starterJars from "@/assets/holiday/starter-jars.webp";
 import bakingShellBatardAlt from "@/assets/holiday/baking-shell-batard-steel-alt.webp";
+import veganBreadWrap from "@/assets/holiday/vegan-bread-wrap.webp";
+import sourHouseBreadBlanketAlt from "@/assets/holiday/sour-house-bread-blanket-alt.webp";
+import frenchRollingPin from "@/assets/holiday/french-rolling-pin.jpg";
+import breadBoardBowKnife from "@/assets/holiday/bread-board-bow-knife.jpg";
+import walnutBowl17 from "@/assets/holiday/walnut-bowl-17.jpg";
+import mapleBowl17 from "@/assets/holiday/maple-bowl-17.jpg";
 
 const HolidayGiftGuide = () => {
   const [email, setEmail] = useState("");
@@ -115,6 +121,13 @@ const HolidayGiftGuide = () => {
     { name: "From Oven to Market", brand: "Henry Hunter", category: "books", keywords: "book business selling cottage food laws market", price: "$7.62", id: "oven-to-market" },
     { name: "The Loaf and the Lie", brand: "Henry Hunter", category: "books", keywords: "book history bread industry culture", price: "$6.99", id: "loaf-and-lie" },
     { name: "Bread: A Journey Through History", brand: "Henry Hunter", category: "books", keywords: "book history science fermentation culture", price: "$7.95", id: "bread-journey" },
+    { name: "Vegan Bread Wrap", brand: "Bee's Wrap", category: "storage", keywords: "bread wrap reusable vegan plant-based wax", price: "$14.99", id: "vegan-bread-wrap" },
+    { name: "Sour House Bread Blanket", brand: "Sour House", category: "storage", keywords: "bread blanket muslin cloth cover storage", price: "$19.95", id: "sour-house-bread-blanket-alt" },
+    { name: "French Rolling Pin", brand: "Holland Bowl Mill", category: "tools", keywords: "rolling pin french tapered wood", price: "$55", id: "french-rolling-pin" },
+    { name: "Cherry Bread Board & Bow Knife", brand: "Holland Bowl Mill", category: "tools", keywords: "bread board knife cherry wood serrated", price: "$130", id: "bread-board-knife" },
+    { name: "17 inch Walnut Bowl", brand: "Holland Bowl Mill", category: "bowls", keywords: "mixing bowl wood walnut large salad", price: "$385", id: "walnut-bowl-17" },
+    { name: "17 inch Maple Bowl", brand: "Holland Bowl Mill", category: "bowls", keywords: "mixing bowl wood maple large salad", price: "$325", id: "maple-bowl-17" },
+    { name: "17 inch Beech Bowl", brand: "Holland Bowl Mill", category: "bowls", keywords: "mixing bowl wood beech large salad", price: "$225", id: "beech-bowl-17" },
   ];
 
   const filteredProducts = searchQuery 
@@ -980,6 +993,176 @@ const HolidayGiftGuide = () => {
               </Button>
             </CardContent>
           </Card>
+
+          {/* French Rolling Pin */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-bakery-copper text-white">Handcrafted</Badge>
+              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+                <img
+                  src={frenchRollingPin}
+                  alt="Holland Bowl Mill French Rolling Pin in Cherry, Maple, or Walnut"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">French Rolling Pin</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                Classic French rolling pin with tapered dowel shape that's easy on hands for bake-a-thons. The tapered design makes it easy to apply just the right amount of pressure as you work angles. Available in Cherry, Maple, or Walnut. 20" length. Hand wash with warm water and soap, periodically retreat with Bee's Oil.
+              </CardDescription>
+              <p className="text-sm font-semibold text-accent">$55</p>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://hollandbowlmill.com/?ref=henrysbreadkitchen"
+                  target="_blank"
+                  rel="noopener noreferrer sponsored nofollow"
+                >
+                  Shop Holland Bowl Mill
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Cherry Bread Board & Bow Knife */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-secondary text-white">Complete Set</Badge>
+              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+                <img
+                  src={breadBoardBowKnife}
+                  alt="Holland Bowl Mill Cherry Bread Board and Bow Knife set"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">Cherry Bread Board & Bow Knife</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                Cherry wood bread board and bow knife set. The bowed handle features stainless steel blade with wide serrated edges that won't crush homemade bread and stays sharp for uniform slices. Perfect kitchen set for bread makers. Finished with Bee's Oil. Board: 20" x 6" x ¾". Knife: 17". Solid piece of cherry wood.
+              </CardDescription>
+              <p className="text-sm font-semibold text-accent">$130</p>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://hollandbowlmill.com/?ref=henrysbreadkitchen"
+                  target="_blank"
+                  rel="noopener noreferrer sponsored nofollow"
+                >
+                  Shop Holland Bowl Mill
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* 17 inch Walnut Bowl */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-accent text-white">Premium Wood</Badge>
+              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+                <img
+                  src={walnutBowl17}
+                  alt="Holland Bowl Mill 17 inch Walnut Bowl with Bee's Oil Finish"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">17" Walnut Bowl</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                Solid walnut bowl serves salad for 8-12 people, also makes great centerpiece or popcorn bowl. Not stained, only hand rubbed with food-safe Bee's Oil wood conditioner. Can request preference of all dark or two-toned wood during checkout. Dimensions: 17½" x 5½". Free personalized engraving available.
+              </CardDescription>
+              <p className="text-sm font-semibold text-accent">$385</p>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://hollandbowlmill.com/?ref=henrysbreadkitchen"
+                  target="_blank"
+                  rel="noopener noreferrer sponsored nofollow"
+                >
+                  Shop Holland Bowl Mill
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* 17 inch Maple Bowl */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-bakery-copper text-white">Classic Beauty</Badge>
+              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+                <img
+                  src={mapleBowl17}
+                  alt="Holland Bowl Mill 17 inch Maple Bowl with Bee's Oil Finish"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">17" Maple Bowl</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                Spectacular solid maple bowl turned by craftsmen at Holland Bowl Mill. Large salad serving bowl serves 8-12 people, also makes great centerpiece or popcorn bowl. Beautiful solid maple not stained, only hand rubbed with food-safe Bee's Oil wood conditioner. All natural finish. Dimensions: 17½" x 5½". Free personalized engraving available.
+              </CardDescription>
+              <p className="text-sm font-semibold text-accent">$325</p>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://hollandbowlmill.com/?ref=henrysbreadkitchen"
+                  target="_blank"
+                  rel="noopener noreferrer sponsored nofollow"
+                >
+                  Shop Holland Bowl Mill
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* 17 inch Beech Bowl */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-primary text-white">Best Value</Badge>
+              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+                <img
+                  src={hollandBowl}
+                  alt="Holland Bowl Mill Henry's 17 inch Beech Bowl with Bee's Oil Finish"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">Henry's 17" Beech Bowl</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                Serving bowl holds salad for 8-12 people, also makes great centerpiece or popcorn bowl. Beautiful solid beech bowl not stained, only hand rubbed with food-safe Bee's Oil wood conditioner. All natural finish. Dimensions: 17½" x 5½". Free personalized engraving available.
+              </CardDescription>
+              <p className="text-sm font-semibold text-accent">$225</p>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://hollandbowlmill.com/?ref=henrysbreadkitchen"
+                  target="_blank"
+                  rel="noopener noreferrer sponsored nofollow"
+                >
+                  Shop Holland Bowl Mill
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
@@ -1396,6 +1579,62 @@ const HolidayGiftGuide = () => {
                 className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
                 Shop Wire Monkey
+              </a>
+            </div>
+
+            {/* Vegan Bread Wrap */}
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Plant-Based</Badge>
+              <div className="mb-3 rounded-lg overflow-hidden">
+                <img
+                  src={veganBreadWrap}
+                  alt="Bee's Wrap Vegan Bread Wrap"
+                  className="w-full h-40 object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
+                Vegan Bread Wrap
+              </h3>
+              <p className="text-xs text-accent font-semibold mb-2">$14.99</p>
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
+                Vegan alternative to plastic wrap, reusable for up to one year. Made from organic cotton, coated with plant-based waxes and oils. Keeps bread loaves fresher days longer than plastic bags.
+              </p>
+              <a
+                href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+              >
+                Shop Wire Monkey
+              </a>
+            </div>
+
+            {/* Sour House Bread Blanket */}
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Storage Essential</Badge>
+              <div className="mb-3 rounded-lg overflow-hidden">
+                <img
+                  src={sourHouseBreadBlanketAlt}
+                  alt="Sour House Bread Blanket"
+                  className="w-full h-40 object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
+                Sour House Bread Blanket
+              </h3>
+              <p className="text-xs text-accent font-semibold mb-2">$19.95</p>
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
+                Beautiful, reusable bread storage wrap that keeps loaves fresh while looking gorgeous on your counter. Perfect for gifting homemade bread or storing your own bakes.
+              </p>
+              <a
+                href="https://sourhouse.co/?ref=henrysbreadkitchen"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+              >
+                Shop Sour House
               </a>
             </div>
 
