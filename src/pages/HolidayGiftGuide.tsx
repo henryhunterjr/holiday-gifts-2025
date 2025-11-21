@@ -55,6 +55,12 @@ import wiremonkeyUfoNux from "@/assets/holiday/wiremonkey-ufo-nux.webp";
 import wiremonkeyPoco from "@/assets/holiday/wiremonkey-poco.webp";
 import toastTongs from "@/assets/holiday/toast-tongs.webp";
 import sphericalDuster from "@/assets/holiday/spherical-flower-duster.webp";
+import wiremonkeyUfoZero from "@/assets/holiday/wiremonkey-ufo-zero.webp";
+import wiremonkeyArcLame from "@/assets/holiday/wiremonkey-arc-lame.webp";
+import wiremonkeyBannetonCover from "@/assets/holiday/wiremonkey-banneton-cover.webp";
+import sourHouseBreadBlanket from "@/assets/holiday/sour-house-bread-blanket.webp";
+import starterJars from "@/assets/holiday/starter-jars.webp";
+import bakingShellBatardAlt from "@/assets/holiday/baking-shell-batard-steel-alt.webp";
 
 const HolidayGiftGuide = () => {
   const [email, setEmail] = useState("");
@@ -805,220 +811,33 @@ const HolidayGiftGuide = () => {
             </CardContent>
           </Card>
 
-          {/* ModKitchen Bread Bag */}
+          {/* Proofing Container (6L) */}
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader>
-              <Badge className="w-fit mb-4 bg-wheat text-white">Storage Solution</Badge>
+              <Badge className="w-fit mb-4 bg-secondary text-white">Bulk Fermentation</Badge>
               <div className="aspect-square overflow-hidden rounded-lg mb-4">
                 <img
-                  src={modBreadBag}
-                  alt="ModKitchen reusable linen bread storage bag"
+                  src={proofingContainer}
+                  alt="Brød & Taylor 6-liter proofing container with measurement markings"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
               </div>
-              <CardTitle className="text-2xl">ModKitchen Bread Bag</CardTitle>
+              <CardTitle className="text-2xl">Proofing Container (6L)</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <CardDescription className="text-base">
-                A reusable linen-blend bread bag that actually keeps your loaf breathing instead of sweating. Perfect for same-day storage or delivering a still-warm loaf to a friend. Soft, durable, and sized for everything from boules to batards.
+                Clear container with volume markings so you can actually see when your dough has doubled. Perfect size for most home recipes, and the lid seals tight to prevent your dough from drying out during bulk fermentation. Essential for consistent results.
               </CardDescription>
-              <p className="text-sm font-semibold text-accent">$29.99 - Regular | $29.95 - Holiday Edition</p>
-              <p className="text-xs text-muted-foreground italic">Note: Holiday edition image coming soon from vendor</p>
+              <p className="text-sm font-semibold text-accent">$24.95</p>
               <Button
                 className="w-full bg-accent hover:bg-accent/90 text-white"
                 asChild
               >
                 <a
-                  href="https://bit.ly/4dsbJ3c"
+                  href="https://collabs.shop/6iguo3"
                   target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Shop ModKitchen
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* ModKitchen Bread Sling */}
-          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
-            <CardHeader>
-              <Badge className="w-fit mb-4 bg-wheat text-white">Transfer Tool</Badge>
-              <div className="aspect-square overflow-hidden rounded-lg mb-4">
-                <img
-                  src={modBreadSling}
-                  alt="ModKitchen heat-safe bread sling for Dutch oven transfers"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                />
-              </div>
-              <CardTitle className="text-2xl">ModKitchen Bread Sling</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <CardDescription className="text-base">
-                This sling gives you smooth, confident transfers into a Dutch oven without the panic. Heat-safe, non-stick, and lightweight. If you've ever dropped a shaped loaf into a burning hot pot… this is your upgrade.
-              </CardDescription>
-              <p className="text-sm font-semibold text-accent">$15.99 - Oval | $16.99 - Round</p>
-              <Button
-                className="w-full bg-accent hover:bg-accent/90 text-white"
-                asChild
-              >
-                <a
-                  href="https://bit.ly/4dsbJ3c"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Shop ModKitchen
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* Wire Monkey Wood Pulp Banneton */}
-          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
-            <CardHeader>
-              <Badge className="w-fit mb-4 bg-olive text-white">Modern Proofing</Badge>
-              <div className="aspect-square overflow-hidden rounded-lg mb-4">
-                <img
-                  src={woodPulpBanneton}
-                  alt="Wire Monkey wood pulp banneton proofing basket"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                />
-              </div>
-              <CardTitle className="text-2xl">Wire Monkey Wood Pulp Banneton</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <CardDescription className="text-base">
-                A modern take on the classic proofing basket. Wood-pulp bannetons absorb excess moisture and help you score cleaner, sharper designs. They give you a more even skin on your dough and a rustic, artisanal look that people notice.
-              </CardDescription>
-              <p className="text-sm font-semibold text-accent">$29 - Round | $32 - Oval</p>
-              <Button
-                className="w-full bg-accent hover:bg-accent/90 text-white"
-                asChild
-              >
-                <a
-                  href="https://wiremonkey.com/?ref=BAKINGGREATBREAD&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Shop Wire Monkey
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* Wire Monkey Goose Lame */}
-          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
-            <CardHeader>
-              <Badge className="w-fit mb-4 bg-olive text-white">Precision Scoring</Badge>
-              <div className="aspect-square overflow-hidden rounded-lg mb-4">
-                <img
-                  src={gooseLame}
-                  alt="Wire Monkey Goose lame bread scoring tool with ergonomic design"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                />
-              </div>
-              <CardTitle className="text-2xl">Wire Monkey Goose Lame</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <CardDescription className="text-base">
-                A sleek, ergonomic scoring tool with a grip that feels secure and balanced. The Goose Lame is loved for its control — you get clean, deep lines and expressive scoring without fighting the blade.
-              </CardDescription>
-              <p className="text-sm font-semibold text-accent">$49.95</p>
-              <Button
-                className="w-full bg-accent hover:bg-accent/90 text-white"
-                asChild
-              >
-                <a
-                  href="https://wiremonkey.com/?ref=BAKINGGREATBREAD&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Shop Wire Monkey
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* Sour House Dough Bed */}
-          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
-            <CardHeader>
-              <Badge className="w-fit mb-4 bg-bakery-copper text-white">Starter Care</Badge>
-              <div className="aspect-square overflow-hidden rounded-lg mb-4">
-                <img
-                  src={doughBed}
-                  alt="Sour House Dough Bed dough proofing bowl with temperature control"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                />
-              </div>
-              <CardTitle className="text-2xl">Sour House 'Dough Bed'</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <CardDescription className="text-base">
-                A cozy, temperature-friendly resting place for your sourdough starter jars. Keeps the jar stable, lifted, and warm enough to ferment smoothly. Perfect companion for the Goldie if you want consistency without fuss.
-              </CardDescription>
-              <p className="text-sm font-semibold text-accent">$279.95 USD</p>
-              <p className="text-xs text-muted-foreground italic">10% off with link + promo code</p>
-              <Button
-                className="w-full bg-accent hover:bg-accent/90 text-white"
-                asChild
-              >
-                <a
-                  href="https://sourhouse.co?ref=BAKINGGREATBREAD&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Shop Sour House
-                </a>
-              </Button>
-              <div className="flex items-center justify-between bg-muted p-2 rounded text-sm">
-                <span className="font-mono">HBK23</span>
-                <span className="text-muted-foreground text-xs">10% off</span>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => copyToClipboard("HBK23")}
-                  className="ml-auto"
-                >
-                  {copiedCode === "HBK23" ? (
-                    <Check className="h-4 w-4 text-green-600" />
-                  ) : (
-                    <Copy className="h-4 w-4" />
-                  )}
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Brød & Taylor Dough Whisk */}
-          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
-            <CardHeader>
-              <Badge className="w-fit mb-4 bg-wheat text-white">Mixing Tool</Badge>
-              <div className="aspect-square overflow-hidden rounded-lg mb-4">
-                <img
-                  src={doughWhisk}
-                  alt="Brød & Taylor dough whisk for mixing wet sticky doughs"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                />
-              </div>
-              <CardTitle className="text-2xl">Brød & Taylor Dough Whisk</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <CardDescription className="text-base">
-                The classic Danish dough whisk made better with Brød & Taylor craftsmanship. Ideal for mixing wet, sticky doughs without clogging or straining your wrist. It's one of those tools you don't realize you need until you have it.
-              </CardDescription>
-              <Button
-                className="w-full bg-accent hover:bg-accent/90 text-white"
-                asChild
-              >
-                <a
-                  href="https://brodandtaylor.com/henrysbreadkitchen"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer sponsored nofollow"
                 >
                   Shop Brød & Taylor
                 </a>
@@ -1026,35 +845,137 @@ const HolidayGiftGuide = () => {
             </CardContent>
           </Card>
 
-          {/* Challenger Parchment Papers */}
-          <Card id="challenger-parchment" className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+          {/* SAHARA Poly Shelves */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader>
-              <Badge className="w-fit mb-4 bg-secondary text-white">Perfect Fit</Badge>
+              <Badge className="w-fit mb-4 bg-accent text-white">Upgrade Add-on</Badge>
               <div className="aspect-square overflow-hidden rounded-lg mb-4">
                 <img
-                  src={challengerParchment}
-                  alt="Challenger Parchment Papers pre-cut for Challenger Bread Pan"
+                  src={saharaPolyShelves}
+                  alt="SAHARA Poly Shelves set of 7 for dehydrator"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
               </div>
-              <CardTitle className="text-2xl">Challenger Parchment Papers</CardTitle>
+              <CardTitle className="text-2xl">SAHARA Poly Shelves, Set of 7</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <CardDescription className="text-base">
-                Pre-cut parchment papers sized perfectly for the Challenger Bread Pan. No more trimming, folding, or wrestling with sheets. Just grab one, line your pan, and bake. Makes cleanup effortless and protects your pan's seasoning. If you have a Challenger Pan, these are essential.
+                Upgrade your Sahara Dehydrator with these solid polycarbonate shelves. They're easier to clean than mesh screens and perfect for making fruit leather, drying herbs, or anything that might stick. Set of 7 shelves gives you maximum drying capacity.
               </CardDescription>
-              <p className="text-sm font-semibold text-accent">$12.95</p>
+              <p className="text-sm font-semibold text-accent">$49.95</p>
               <Button
                 className="w-full bg-accent hover:bg-accent/90 text-white"
                 asChild
               >
                 <a
-                  href="https://challengerbreadware.com/?ref=henryhunterjr&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                  href="https://collabs.shop/lx6erl"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer sponsored nofollow"
                 >
-                  Shop Challenger
+                  Shop Brød & Taylor
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Non-Stick Silicone Baking Mat */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-primary text-white">Budget Essential</Badge>
+              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+                <img
+                  src={nonStickMat}
+                  alt="Non-stick silicone baking mat for bread scoring and baking"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">Non-Stick Silicone Baking Mat</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                Reusable silicone mat that replaces parchment paper. Perfect for scoring your bread right before it goes into the oven—no more wrestling with parchment. Easy cleanup, lasts for years. At this price, you should have two or three.
+              </CardDescription>
+              <p className="text-sm font-semibold text-accent">$8.95</p>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://collabs.shop/txycc2"
+                  target="_blank"
+                  rel="noopener noreferrer sponsored nofollow"
+                >
+                  Shop Brød & Taylor
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Folding Proofer with Accessories */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-bakery-copper text-white">Complete Setup</Badge>
+              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+                <img
+                  src={prooferAccessories}
+                  alt="Brød & Taylor Folding Proofer with accessory shelf"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">Folding Proofer with Accessories</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                The complete proofer setup with accessory shelf. Perfect for serious bakers who want consistent fermentation control and the ability to proof multiple stages at once. Precise temperature control from 70°F to 195°F means perfect bulk fermentation every single time.
+              </CardDescription>
+              <p className="text-sm font-semibold text-accent">$269</p>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://collabs.shop/aygkym"
+                  target="_blank"
+                  rel="noopener noreferrer sponsored nofollow"
+                >
+                  Shop Brød & Taylor
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Baking Shell (Batard) & Steel */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-secondary text-white">Pro Setup</Badge>
+              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+                <img
+                  src={bakingShellBatardAlt}
+                  alt="Brød & Taylor Baking Shell and Steel bundle for batard loaves"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">Baking Shell (Batard) & Steel Bundle</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                The ultimate baking setup for oval batard loaves. The steel provides exceptional heat retention and the shell traps steam perfectly. This combination gives you bakery-quality crust and crumb structure at home. Professional results without a professional oven.
+              </CardDescription>
+              <p className="text-sm font-semibold text-accent">$164</p>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://collabs.shop/noauwh"
+                  target="_blank"
+                  rel="noopener noreferrer sponsored nofollow"
+                >
+                  Shop Brød & Taylor
                 </a>
               </Button>
             </CardContent>
@@ -1307,6 +1228,174 @@ const HolidayGiftGuide = () => {
                 className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
                 Shop Brød & Taylor
+              </a>
+            </div>
+
+            {/* UFO Zero Lame */}
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Premium Scoring</Badge>
+              <div className="mb-3 rounded-lg overflow-hidden">
+                <img
+                  src={wiremonkeyUfoZero}
+                  alt="Wire Monkey UFO Zero Lame"
+                  className="w-full h-40 object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
+                UFO Zero Lame
+              </h3>
+              <p className="text-xs text-accent font-semibold mb-2">$29.95</p>
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
+                The original circular lame by Wire Monkey. Fine control, ambidextrous design, retractable blade. Walnut construction for beautiful scoring.
+              </p>
+              <a
+                href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+              >
+                Shop Wire Monkey
+              </a>
+            </div>
+
+            {/* Poco Lame */}
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Compact Design</Badge>
+              <div className="mb-3 rounded-lg overflow-hidden">
+                <img
+                  src={wiremonkeyPoco}
+                  alt="Wire Monkey Poco Lame"
+                  className="w-full h-40 object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
+                Poco Lame
+              </h3>
+              <p className="text-xs text-accent font-semibold mb-2">$18.95</p>
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
+                Smallest straight-blade lame, American black walnut. Simple, safe, and designed for maximum control without knobs or plastics.
+              </p>
+              <a
+                href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+              >
+                Shop Wire Monkey
+              </a>
+            </div>
+
+            {/* Arc Lame */}
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Curved Blade</Badge>
+              <div className="mb-3 rounded-lg overflow-hidden">
+                <img
+                  src={wiremonkeyArcLame}
+                  alt="Wire Monkey Arc Lame"
+                  className="w-full h-40 object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
+                Arc Lame
+              </h3>
+              <p className="text-xs text-accent font-semibold mb-2">$25.95</p>
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
+                Smallest curved lame in the world. American black walnut with base stand. Ideal for long bread slashes and intimate scoring.
+              </p>
+              <a
+                href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+              >
+                Shop Wire Monkey
+              </a>
+            </div>
+
+            {/* Toast Tongs */}
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Kitchen Essential</Badge>
+              <div className="mb-3 rounded-lg overflow-hidden">
+                <img
+                  src={toastTongs}
+                  alt="Toast Tongs"
+                  className="w-full h-40 object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
+                Toast Tongs
+              </h3>
+              <p className="text-xs text-accent font-semibold mb-2">$14.95</p>
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
+                Solid walnut toast tongs made in Ukraine. Safely retrieve toast slices with rare earth magnet for storing on fridge or toaster.
+              </p>
+              <a
+                href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+              >
+                Shop Wire Monkey
+              </a>
+            </div>
+
+            {/* Spherical Flower Duster */}
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Dusting Tool</Badge>
+              <div className="mb-3 rounded-lg overflow-hidden">
+                <img
+                  src={sphericalDuster}
+                  alt="Spherical Flower Duster"
+                  className="w-full h-40 object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
+                Spherical Flower Duster
+              </h3>
+              <p className="text-xs text-accent font-semibold mb-2">Price varies</p>
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
+                Professional flour duster for dusting bannetons and work surfaces with precision and control.
+              </p>
+              <a
+                href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+              >
+                Shop Wire Monkey
+              </a>
+            </div>
+
+            {/* Reusable Banneton Cover */}
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Eco-Friendly</Badge>
+              <div className="mb-3 rounded-lg overflow-hidden">
+                <img
+                  src={wiremonkeyBannetonCover}
+                  alt="Reusable Banneton/Dish Covers"
+                  className="w-full h-40 object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
+                Reusable Banneton/Dish Covers
+              </h3>
+              <p className="text-xs text-accent font-semibold mb-2">$19.99</p>
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
+                Elastic covers for bowls or bannetons. Made by Wild Clementine Co., washable, snug fit. Perfect for proofing and keeping dust off mixing bowls.
+              </p>
+              <a
+                href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+              >
+                Shop Wire Monkey
               </a>
             </div>
 
