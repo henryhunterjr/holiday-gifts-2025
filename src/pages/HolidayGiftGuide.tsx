@@ -45,6 +45,16 @@ import frenchPress from "@/assets/holiday/french-press.webp";
 import btApron from "@/assets/holiday/bt-apron.png";
 import saharaDehydrator from "@/assets/holiday/sahara-dehydrator.png";
 import top6Banner from "@/assets/holiday/top-6-banner.png";
+import proofingContainer from "@/assets/holiday/proofing-container-6qt.webp";
+import saharaPolyShelves from "@/assets/holiday/sahara-poly-shelves.webp";
+import nonStickMat from "@/assets/holiday/nonstick-silicone-mat.webp";
+import prooferAccessories from "@/assets/holiday/folding-proofer-accessories.webp";
+import bakingShellBatard from "@/assets/holiday/baking-shell-batard-steel.webp";
+import breadSteel from "@/assets/holiday/bread-steel.webp";
+import wiremonkeyUfoNux from "@/assets/holiday/wiremonkey-ufo-nux.webp";
+import wiremonkeyPoco from "@/assets/holiday/wiremonkey-poco.webp";
+import toastTongs from "@/assets/holiday/toast-tongs.webp";
+import sphericalDuster from "@/assets/holiday/spherical-flower-duster.webp";
 
 const HolidayGiftGuide = () => {
   const [email, setEmail] = useState("");
@@ -351,7 +361,7 @@ const HolidayGiftGuide = () => {
                 size="lg"
                 variant="outline"
                 onClick={() => scrollToSection("vitale-card")}
-                className="border-2 border-accent text-accent hover:bg-accent hover:text-white text-lg px-8 bg-white dark:bg-card"
+                className="border-2 border-accent bg-accent/10 hover:bg-accent text-white hover:text-white text-lg px-8"
               >
                 Start With a Starter
               </Button>
@@ -359,7 +369,7 @@ const HolidayGiftGuide = () => {
                 size="lg"
                 variant="outline"
                 onClick={() => scrollToSection("stocking-stuffers")}
-                className="border-2 border-accent text-accent hover:bg-accent hover:text-white text-lg px-8 bg-white dark:bg-card"
+                className="border-2 border-accent bg-accent/10 hover:bg-accent text-white hover:text-white text-lg px-8"
               >
                 Stocking Stuffers
               </Button>
@@ -1095,10 +1105,10 @@ const HolidayGiftGuide = () => {
                 Unique looped wire design that mixes dough without overworking it. Essential for any baker's toolkit.
               </p>
               <a
-                href="https://collabs.shop/e5canl"
+                href="https://brodandtaylor.com/henrysbreadkitchen"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-foreground py-2 px-4 rounded-lg text-sm transition-colors"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
                 Shop Brød & Taylor
               </a>
@@ -1151,12 +1161,12 @@ const HolidayGiftGuide = () => {
                 Distinctive UFO-shaped wooden lame with intricate laser engraving. Art meets function in bread scoring.
               </p>
               <a
-                href="https://www.breadjourney.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
+                href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
-                Shop Bread Journey
+                Shop Wire Monkey
               </a>
             </div>
 
@@ -1182,7 +1192,7 @@ const HolidayGiftGuide = () => {
                 href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-foreground py-2 px-4 rounded-lg text-sm transition-colors"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
                 Shop Wire Monkey
               </a>
@@ -1210,7 +1220,7 @@ const HolidayGiftGuide = () => {
                 href="https://collabs.shop/i4ifmu"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-foreground py-2 px-4 rounded-lg text-sm transition-colors"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
                 Shop Brød & Taylor
               </a>
@@ -1238,7 +1248,7 @@ const HolidayGiftGuide = () => {
                 href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-foreground py-2 px-4 rounded-lg text-sm transition-colors"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
                 Shop Wire Monkey
               </a>
@@ -1266,7 +1276,7 @@ const HolidayGiftGuide = () => {
                 href="https://sourhouse.co/?ref=BAKINGGREATBREAD&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-foreground py-2 px-4 rounded-lg text-sm transition-colors"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
                 Shop Sour House
               </a>
@@ -1291,53 +1301,12 @@ const HolidayGiftGuide = () => {
                 Compact electric grinder perfect for freshly ground spices, coffee, and grains for your baking.
               </p>
               <a
-                href="https://collabs.shop/e5canl"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-foreground py-2 px-4 rounded-lg text-sm transition-colors"
-              >
-                Shop
-              </a>
-            </div>
-
-
-            {/* Pro-Surface Thermometer */}
-            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
-              <Badge className="mb-3 bg-accent">Precision Tool</Badge>
-              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
-                Pro-Surface Thermometer
-              </h3>
-              <p className="text-xs text-accent font-semibold mb-2">$39.95</p>
-              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
-                Instant-read infrared thermometer for checking dough and water temps.
-              </p>
-              <a
                 href="https://brodandtaylor.com/henrysbreadkitchen"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
-                Shop
-              </a>
-            </div>
-
-            {/* Sourdough Crock */}
-            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
-              <Badge className="mb-3 bg-accent">Starter Home</Badge>
-              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
-                Sourdough Crock
-              </h3>
-              <p className="text-xs text-accent font-semibold mb-2">$44.95</p>
-              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
-                Elegant ceramic crock for storing sourdough starter with proper air circulation.
-              </p>
-              <a
-                href="https://brodandtaylor.com/henrysbreadkitchen"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-white py-2 px-4 rounded-lg text-sm transition-colors"
-              >
-                Shop
+                Shop Brød & Taylor
               </a>
             </div>
 
@@ -1366,7 +1335,7 @@ const HolidayGiftGuide = () => {
             </CardHeader>
             <CardContent>
               <p className="text-foreground/70 dark:text-muted-foreground mb-6">
-                Precision scale with baker's percentage calculations for accurate recipe scaling.
+                This is one of my favorite scales. It's accurate to within 1g and it maintains that high precision necessary when you're baking bread. It measures kilograms, pounds, ounces, fluid ounces, and milliliters. In the United States it is $24.97.
               </p>
               <Button 
                 className="w-full bg-accent hover:bg-accent/90 text-white"
@@ -1901,7 +1870,7 @@ const HolidayGiftGuide = () => {
             </div>
             <CardContent className="p-6 space-y-4">
               <p className="text-muted-foreground">
-                They're past beginner tutorials. Time to upgrade their setup and remove guesswork.
+                They've moved past the beginner tutorials. Time to upgrade their setup and remove guesswork.
               </p>
               
               <div className="space-y-3">
@@ -2468,9 +2437,8 @@ const HolidayGiftGuide = () => {
             </Button>
             <Button
               size="lg"
-              variant="outline"
+              className="bg-white text-bakery-copper hover:bg-white/90 text-lg px-8"
               onClick={() => scrollToSection("top-five")}
-              className="border-2 border-white text-white hover:bg-white hover:text-bakery-copper text-lg px-8"
             >
               See All Top Picks
             </Button>
@@ -2489,7 +2457,32 @@ const HolidayGiftGuide = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {/* Sourdough Starter 101 Guide */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-accent text-white">Essential Guide</Badge>
+              <CardTitle className="text-2xl">Sourdough Starter 101 Guide</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                Give the gift of sourdough confidence with our FREE Sourdough Starter 101 guide—the most comprehensive, beginner-friendly resource for creating and maintaining a thriving starter. This guide takes the mystery out of sourdough with clear instructions, troubleshooting tips, and feeding schedules that actually work. Whether they're brand new to baking or looking to level up their bread game, this guide will help them build a healthy starter and bake incredible loaves. It's the foundation every sourdough baker needs.
+              </CardDescription>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://sourdough-starter-master-kxo6qxb.gamma.site/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Get the Free Guide
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
           {/* Bread Buddy Converter */}
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader>
