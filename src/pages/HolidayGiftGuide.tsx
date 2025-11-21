@@ -67,6 +67,7 @@ import frenchRollingPin from "@/assets/holiday/french-rolling-pin.jpg";
 import breadBoardBowKnife from "@/assets/holiday/bread-board-bow-knife.jpg";
 import walnutBowl17 from "@/assets/holiday/walnut-bowl-17.jpg";
 import mapleBowl17 from "@/assets/holiday/maple-bowl-17.jpg";
+import starterGuide from "@/assets/holiday/starter-guide.png";
 
 const HolidayGiftGuide = () => {
   const [email, setEmail] = useState("");
@@ -2790,6 +2791,14 @@ const HolidayGiftGuide = () => {
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader>
               <Badge className="w-fit mb-4 bg-accent text-white">Essential Guide</Badge>
+              <div className="aspect-video overflow-hidden rounded-lg mb-4 bg-dough-cream flex items-center justify-center">
+                <img
+                  src={starterGuide}
+                  alt="Sourdough Starter 101 Guide"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
               <CardTitle className="text-2xl">Sourdough Starter 101 Guide</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
