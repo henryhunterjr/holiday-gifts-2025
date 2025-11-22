@@ -74,6 +74,12 @@ import wiremonkeyPromoButton from "@/assets/holiday/wiremonkey-promo-button.png"
 import sourhousePromoButton from "@/assets/holiday/sourhouse-promo-button.png";
 import sourhouse20OffButton from "@/assets/holiday/sourhouse-promo-20off.png";
 import hollandBowlPromoButton from "@/assets/holiday/holland-bowl-promo.png";
+import btSourdoughHomeStarterBundle from "@/assets/holiday/bt-sourdough-home-starter-jar-bundle.webp";
+import btBakingShellSteelBundle from "@/assets/holiday/bt-baking-shell-steel-bundle.webp";
+import btDoughWhiskBenchKnifeBundle from "@/assets/holiday/bt-dough-whisk-bench-knife-bundle.webp";
+import btBakersMathScale from "@/assets/holiday/bt-bakers-math-scale.webp";
+import btVG2Sharpener from "@/assets/holiday/bt-vg2-sharpener.jpg";
+import btChefApronPro from "@/assets/holiday/bt-chef-apron.png";
 
 const HolidayGiftGuide = () => {
   const [email, setEmail] = useState("");
@@ -655,21 +661,16 @@ const HolidayGiftGuide = () => {
                   Shop Holland Bowl Mill
                 </a>
               </Button>
-              <div className="flex items-center gap-2 bg-gray-50 dark:bg-white p-3 rounded-lg border border-gray-200 dark:border-gray-300">
-                <span className="text-sm font-semibold badge-text bg-secondary/20 px-3 py-1 rounded-md">Promo Code: bread (10% off)</span>
-                <Button
-                  size="sm"
-                  variant="ghost"
-                  onClick={() => copyToClipboard("bread")}
-                  className="ml-auto hover:bg-muted"
-                >
-                  {copiedCode === "bread" ? (
-                    <Check className="h-4 w-4 text-green-600" />
-                  ) : (
-                    <Copy className="h-4 w-4 text-foreground" />
-                  )}
-                </Button>
-              </div>
+              <button
+                onClick={() => copyToClipboard("bread")}
+                className="w-full mt-3 relative overflow-hidden rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <img
+                  src={hollandBowlPromoButton}
+                  alt="10% OFF Holland Bowl Mill - Promo Code bread"
+                  className="w-full h-auto"
+                />
+              </button>
             </CardContent>
           </Card>
 
@@ -1269,7 +1270,7 @@ const HolidayGiftGuide = () => {
                 href="https://brodandtaylor.com/henrysbreadkitchen"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-secondary-foreground py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
                 Shop Brød & Taylor
               </a>
@@ -1297,7 +1298,7 @@ const HolidayGiftGuide = () => {
                 href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-secondary-foreground py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
                 Shop Wire Monkey
               </a>
@@ -1335,7 +1336,7 @@ const HolidayGiftGuide = () => {
                 href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-secondary-foreground py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
                 Shop Wire Monkey
               </a>
@@ -1373,7 +1374,7 @@ const HolidayGiftGuide = () => {
                 href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-secondary-foreground py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
                 Shop Wire Monkey
               </a>
@@ -1401,7 +1402,7 @@ const HolidayGiftGuide = () => {
                 href="https://collabs.shop/i4ifmu"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-secondary-foreground py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
                 Shop Brød & Taylor
               </a>
@@ -1795,6 +1796,14 @@ const HolidayGiftGuide = () => {
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader>
               <Badge className="mb-3 bg-accent w-fit">Precision Required</Badge>
+              <div className="mb-4 rounded-lg overflow-hidden aspect-square">
+                <img
+                  src={btBakersMathScale}
+                  alt="Brød & Taylor Bakers Math Kitchen Scale"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
               <CardTitle className="text-foreground dark:text-foreground">Bakers Math Kitchen Scale</CardTitle>
               <CardDescription className="text-accent font-semibold text-lg">$24.95</CardDescription>
             </CardHeader>
@@ -1821,6 +1830,14 @@ const HolidayGiftGuide = () => {
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader>
               <Badge className="mb-3 bg-accent w-fit">Sharp Blades</Badge>
+              <div className="mb-4 rounded-lg overflow-hidden aspect-square">
+                <img
+                  src={btVG2Sharpener}
+                  alt="Brød & Taylor Classic VG2 knife sharpener"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
               <CardTitle className="text-foreground dark:text-foreground">Classic VG2 Knife Sharpener</CardTitle>
               <CardDescription className="text-accent font-semibold text-lg">$79</CardDescription>
             </CardHeader>
@@ -1847,6 +1864,14 @@ const HolidayGiftGuide = () => {
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader>
               <Badge className="mb-3 bg-accent w-fit">Pro Look</Badge>
+              <div className="mb-4 rounded-lg overflow-hidden aspect-square">
+                <img
+                  src={btChefApronPro}
+                  alt="Brød & Taylor professional apron"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
               <CardTitle className="text-foreground dark:text-foreground">Professional Apron</CardTitle>
               <CardDescription className="text-accent font-semibold text-lg">$60</CardDescription>
             </CardHeader>
@@ -1970,6 +1995,14 @@ const HolidayGiftGuide = () => {
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1 border-2 border-accent/20">
             <CardHeader>
               <Badge className="w-fit mb-4 bg-accent text-white">Save $8.95!</Badge>
+              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+                <img
+                  src={btSourdoughHomeStarterBundle}
+                  alt="Brød & Taylor Sourdough Home and Starter Jar bundle"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
               <CardTitle className="text-2xl">Sourdough Home + Starter Jar Bundle</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -1999,6 +2032,14 @@ const HolidayGiftGuide = () => {
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1 border-2 border-accent/20">
             <CardHeader>
               <Badge className="w-fit mb-4 bg-accent text-white">Pro Setup</Badge>
+              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+                <img
+                  src={btBakingShellSteelBundle}
+                  alt="Brød & Taylor round baking shell and baking steel bundle"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
               <CardTitle className="text-2xl">Round Baking Shell + Baking Steel Bundle</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -2027,6 +2068,14 @@ const HolidayGiftGuide = () => {
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1 border-2 border-accent/20">
             <CardHeader>
               <Badge className="w-fit mb-4 bg-accent text-white">Starter Kit</Badge>
+              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+                <img
+                  src={btDoughWhiskBenchKnifeBundle}
+                  alt="Brød & Taylor dough whisk and bench knife bundle"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
               <CardTitle className="text-2xl">Dough Whisk + Bench Knife Bundle</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
