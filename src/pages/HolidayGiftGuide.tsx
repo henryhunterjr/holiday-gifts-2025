@@ -68,6 +68,7 @@ import breadBoardBowKnife from "@/assets/holiday/bread-board-bow-knife.jpg";
 import walnutBowl17 from "@/assets/holiday/walnut-bowl-17.jpg";
 import mapleBowl17 from "@/assets/holiday/maple-bowl-17.jpg";
 import starterGuide from "@/assets/holiday/starter-guide.png";
+import wiremonkeyPromoBadge from "@/assets/holiday/wiremonkey-promo-badge.jpg";
 
 const HolidayGiftGuide = () => {
   const [email, setEmail] = useState("");
@@ -542,6 +543,12 @@ const HolidayGiftGuide = () => {
                   src={wireMonkeyLame}
                   alt="Wire Monkey bread scoring lame for artisan sourdough"
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+                <img
+                  src={wiremonkeyPromoBadge}
+                  alt="25% off Wire Monkey Brand - Promo Code: HENRY25"
+                  className="absolute top-0 left-0 w-32 h-32 object-contain z-10 pointer-events-none"
                   loading="lazy"
                 />
               </div>
