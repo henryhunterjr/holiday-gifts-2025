@@ -1796,7 +1796,7 @@ const HolidayGiftGuide = () => {
             <CardHeader>
               <Badge className="mb-3 bg-accent w-fit">Precision Required</Badge>
               <CardTitle className="text-foreground dark:text-foreground">Bakers Math Kitchen Scale</CardTitle>
-              <CardDescription className="text-accent font-semibold text-lg">$49.95</CardDescription>
+              <CardDescription className="text-accent font-semibold text-lg">$24.95</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-foreground/70 dark:text-muted-foreground mb-6">
@@ -1822,7 +1822,7 @@ const HolidayGiftGuide = () => {
             <CardHeader>
               <Badge className="mb-3 bg-accent w-fit">Sharp Blades</Badge>
               <CardTitle className="text-foreground dark:text-foreground">Classic VG2 Knife Sharpener</CardTitle>
-              <CardDescription className="text-accent font-semibold text-lg">$59</CardDescription>
+              <CardDescription className="text-accent font-semibold text-lg">$79</CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-foreground/70 dark:text-muted-foreground mb-6">
