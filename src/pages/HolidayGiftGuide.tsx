@@ -70,6 +70,7 @@ import walnutBowl17 from "@/assets/holiday/walnut-bowl-17.jpg";
 import mapleBowl17 from "@/assets/holiday/maple-bowl-17.jpg";
 import starterGuide from "@/assets/holiday/starter-guide.png";
 import wiremonkeyPromoBadge from "@/assets/holiday/wiremonkey-promo-badge.jpg";
+import wiremonkeyPromoButton from "@/assets/holiday/wiremonkey-promo-button.png";
 
 const HolidayGiftGuide = () => {
   const [email, setEmail] = useState("");
@@ -565,21 +566,16 @@ const HolidayGiftGuide = () => {
                   Shop Wire Monkey
                 </a>
               </Button>
-              <div className="flex items-center gap-2 bg-white dark:bg-white p-3 rounded-lg border border-gray-300 dark:border-gray-300">
-                <span className="text-sm font-semibold text-gray-900 dark:text-gray-900 bg-secondary/20 px-3 py-1 rounded-md">Promo Code: HENRY25 (25% off Wire Monkey Brand)</span>
-                <Button
-                  size="sm"
-                  variant="ghost"
-                  onClick={() => copyToClipboard("HENRY25")}
-                  className="ml-auto hover:bg-gray-100"
-                >
-                  {copiedCode === "HENRY25" ? (
-                    <Check className="h-4 w-4 text-green-600" />
-                  ) : (
-                    <Copy className="h-4 w-4 text-gray-900" />
-                  )}
-                </Button>
-              </div>
+              <button
+                onClick={() => copyToClipboard("HENRY25")}
+                className="w-full mt-3 relative overflow-hidden rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <img
+                  src={wiremonkeyPromoButton}
+                  alt="25% OFF Wire Monkey Brand - Promo Code HENRY25"
+                  className="w-full h-auto"
+                />
+              </button>
             </CardContent>
           </Card>
 
@@ -1258,25 +1254,20 @@ const HolidayGiftGuide = () => {
                 href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-foreground py-2 px-4 rounded-lg text-sm transition-colors"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
                 Shop Wire Monkey
               </a>
-              <div className="flex items-center gap-2 bg-white dark:bg-white p-3 rounded-lg border border-gray-300 dark:border-gray-300 mt-3">
-                <span className="text-sm font-semibold text-gray-900 dark:text-gray-900 bg-secondary/20 px-3 py-1 rounded-md">Promo Code: HENRY25 (25% off Wire Monkey Brand)</span>
-                <Button
-                  size="sm"
-                  variant="ghost"
-                  onClick={() => copyToClipboard("HENRY25")}
-                  className="ml-auto hover:bg-gray-100"
-                >
-                  {copiedCode === "HENRY25" ? (
-                    <Check className="h-4 w-4 text-green-600" />
-                  ) : (
-                    <Copy className="h-4 w-4 text-gray-900" />
-                  )}
-                </Button>
-              </div>
+              <button
+                onClick={() => copyToClipboard("HENRY25")}
+                className="w-full mt-3 relative overflow-hidden rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <img
+                  src={wiremonkeyPromoButton}
+                  alt="25% OFF Wire Monkey Brand - Promo Code HENRY25"
+                  className="w-full h-auto"
+                />
+              </button>
             </div>
 
             {/* UFO Bread Lame */}
@@ -1473,21 +1464,16 @@ const HolidayGiftGuide = () => {
               >
                 Shop Wire Monkey
               </a>
-              <div className="flex items-center gap-2 bg-white dark:bg-white p-3 rounded-lg border border-gray-300 dark:border-gray-300 mt-3">
-                <span className="text-sm font-semibold text-gray-900 dark:text-gray-900 bg-secondary/20 px-3 py-1 rounded-md">Promo Code: HENRY25 (25% off Wire Monkey Brand)</span>
-                <Button
-                  size="sm"
-                  variant="ghost"
-                  onClick={() => copyToClipboard("HENRY25")}
-                  className="ml-auto hover:bg-gray-100"
-                >
-                  {copiedCode === "HENRY25" ? (
-                    <Check className="h-4 w-4 text-green-600" />
-                  ) : (
-                    <Copy className="h-4 w-4 text-gray-900" />
-                  )}
-                </Button>
-              </div>
+              <button
+                onClick={() => copyToClipboard("HENRY25")}
+                className="w-full mt-3 relative overflow-hidden rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <img
+                  src={wiremonkeyPromoButton}
+                  alt="25% OFF Wire Monkey Brand - Promo Code HENRY25"
+                  className="w-full h-auto"
+                />
+              </button>
             </div>
 
             {/* Poco Lame */}
@@ -1516,21 +1502,16 @@ const HolidayGiftGuide = () => {
               >
                 Shop Wire Monkey
               </a>
-              <div className="flex items-center gap-2 bg-white dark:bg-white p-3 rounded-lg border border-gray-300 dark:border-gray-300 mt-3">
-                <span className="text-sm font-semibold text-gray-900 dark:text-gray-900 bg-secondary/20 px-3 py-1 rounded-md">Promo Code: HENRY25 (25% off Wire Monkey Brand)</span>
-                <Button
-                  size="sm"
-                  variant="ghost"
-                  onClick={() => copyToClipboard("HENRY25")}
-                  className="ml-auto hover:bg-gray-100"
-                >
-                  {copiedCode === "HENRY25" ? (
-                    <Check className="h-4 w-4 text-green-600" />
-                  ) : (
-                    <Copy className="h-4 w-4 text-gray-900" />
-                  )}
-                </Button>
-              </div>
+              <button
+                onClick={() => copyToClipboard("HENRY25")}
+                className="w-full mt-3 relative overflow-hidden rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <img
+                  src={wiremonkeyPromoButton}
+                  alt="25% OFF Wire Monkey Brand - Promo Code HENRY25"
+                  className="w-full h-auto"
+                />
+              </button>
             </div>
 
             {/* Arc Lame */}
@@ -1559,21 +1540,16 @@ const HolidayGiftGuide = () => {
               >
                 Shop Wire Monkey
               </a>
-              <div className="flex items-center gap-2 bg-white dark:bg-white p-3 rounded-lg border border-gray-300 dark:border-gray-300 mt-3">
-                <span className="text-sm font-semibold text-gray-900 dark:text-gray-900 bg-secondary/20 px-3 py-1 rounded-md">Promo Code: HENRY25 (25% off Wire Monkey Brand)</span>
-                <Button
-                  size="sm"
-                  variant="ghost"
-                  onClick={() => copyToClipboard("HENRY25")}
-                  className="ml-auto hover:bg-gray-100"
-                >
-                  {copiedCode === "HENRY25" ? (
-                    <Check className="h-4 w-4 text-green-600" />
-                  ) : (
-                    <Copy className="h-4 w-4 text-gray-900" />
-                  )}
-                </Button>
-              </div>
+              <button
+                onClick={() => copyToClipboard("HENRY25")}
+                className="w-full mt-3 relative overflow-hidden rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <img
+                  src={wiremonkeyPromoButton}
+                  alt="25% OFF Wire Monkey Brand - Promo Code HENRY25"
+                  className="w-full h-auto"
+                />
+              </button>
             </div>
 
             {/* Toast Tongs */}
@@ -1602,21 +1578,16 @@ const HolidayGiftGuide = () => {
               >
                 Shop Wire Monkey
               </a>
-              <div className="flex items-center gap-2 bg-white dark:bg-white p-3 rounded-lg border border-gray-300 dark:border-gray-300 mt-3">
-                <span className="text-sm font-semibold text-gray-900 dark:text-gray-900 bg-secondary/20 px-3 py-1 rounded-md">Promo Code: HENRY25 (25% off Wire Monkey Brand)</span>
-                <Button
-                  size="sm"
-                  variant="ghost"
-                  onClick={() => copyToClipboard("HENRY25")}
-                  className="ml-auto hover:bg-gray-100"
-                >
-                  {copiedCode === "HENRY25" ? (
-                    <Check className="h-4 w-4 text-green-600" />
-                  ) : (
-                    <Copy className="h-4 w-4 text-gray-900" />
-                  )}
-                </Button>
-              </div>
+              <button
+                onClick={() => copyToClipboard("HENRY25")}
+                className="w-full mt-3 relative overflow-hidden rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <img
+                  src={wiremonkeyPromoButton}
+                  alt="25% OFF Wire Monkey Brand - Promo Code HENRY25"
+                  className="w-full h-auto"
+                />
+              </button>
             </div>
 
             {/* Spherical Flower Duster */}
