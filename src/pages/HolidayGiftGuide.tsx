@@ -71,6 +71,7 @@ import mapleBowl17 from "@/assets/holiday/maple-bowl-17.jpg";
 import starterGuide from "@/assets/holiday/starter-guide.png";
 import wiremonkeyPromoBadge from "@/assets/holiday/wiremonkey-promo-badge.jpg";
 import wiremonkeyPromoButton from "@/assets/holiday/wiremonkey-promo-button.png";
+import sourhousePromoButton from "@/assets/holiday/sourhouse-promo-button.png";
 
 const HolidayGiftGuide = () => {
   const [email, setEmail] = useState("");
@@ -609,21 +610,16 @@ const HolidayGiftGuide = () => {
                   Shop Sour House
                 </a>
               </Button>
-              <div className="flex items-center gap-2 bg-gray-50 dark:bg-white p-3 rounded-lg border border-gray-200 dark:border-gray-300">
-                <span className="text-sm font-semibold badge-text bg-secondary/20 px-3 py-1 rounded-md">Promo Code: HBK23 (10% off)</span>
-                <Button
-                  size="sm"
-                  variant="ghost"
-                  onClick={() => copyToClipboard("HBK23")}
-                  className="ml-auto hover:bg-muted"
-                >
-                  {copiedCode === "HBK23" ? (
-                    <Check className="h-4 w-4 text-green-600" />
-                  ) : (
-                    <Copy className="h-4 w-4 text-foreground" />
-                  )}
-                </Button>
-              </div>
+              <button
+                onClick={() => copyToClipboard("HBK23")}
+                className="w-full mt-3 relative overflow-hidden rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <img
+                  src={sourhousePromoButton}
+                  alt="10% OFF Sour House - Promo Code HBK23"
+                  className="w-full h-auto"
+                />
+              </button>
             </CardContent>
           </Card>
 
@@ -738,21 +734,16 @@ const HolidayGiftGuide = () => {
                   Shop Sour House
                 </a>
               </Button>
-              <div className="flex items-center gap-2 bg-card dark:bg-card p-3 rounded-lg border border-border">
-                <span className="text-sm font-semibold badge-text bg-secondary/20 px-3 py-1 rounded-md">Promo Code: HBK23 (10% off)</span>
-                <Button
-                  size="sm"
-                  variant="ghost"
-                  onClick={() => copyToClipboard("HBK23")}
-                  className="ml-auto hover:bg-muted"
-                >
-                  {copiedCode === "HBK23" ? (
-                    <Check className="h-4 w-4 text-green-600" />
-                  ) : (
-                    <Copy className="h-4 w-4 text-foreground" />
-                  )}
-                </Button>
-              </div>
+              <button
+                onClick={() => copyToClipboard("HBK23")}
+                className="w-full mt-3 relative overflow-hidden rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <img
+                  src={sourhousePromoButton}
+                  alt="10% OFF Sour House - Promo Code HBK23"
+                  className="w-full h-auto"
+                />
+              </button>
             </CardContent>
           </Card>
         </div>
@@ -1700,6 +1691,16 @@ const HolidayGiftGuide = () => {
               >
                 Shop Sour House
               </a>
+              <button
+                onClick={() => copyToClipboard("HBK23")}
+                className="w-full mt-3 relative overflow-hidden rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <img
+                  src={sourhousePromoButton}
+                  alt="10% OFF Sour House - Promo Code HBK23"
+                  className="w-full h-auto"
+                />
+              </button>
             </div>
 
           </div>
