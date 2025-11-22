@@ -546,12 +546,6 @@ const HolidayGiftGuide = () => {
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
-                <img
-                  src={wiremonkeyPromoOverlay}
-                  alt="25% off Wire Monkey Brand - Promo Code: HENRY25"
-                  className="absolute top-0 left-0 w-48 h-48 object-contain z-10 pointer-events-none"
-                  loading="lazy"
-                />
               </div>
               <CardTitle className="text-2xl">Wire Monkey Lame</CardTitle>
             </CardHeader>
