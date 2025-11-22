@@ -48,6 +48,7 @@ import top6Banner from "@/assets/holiday/top-6-banner.png";
 import proofingContainer from "@/assets/holiday/proofing-container-6qt.webp";
 import saharaPolyShelves from "@/assets/holiday/sahara-poly-shelves.webp";
 import nonStickMat from "@/assets/holiday/nonstick-silicone-mat.webp";
+import wiremonkeyPromoOverlay from "@/assets/holiday/wiremonkey-promo-overlay.png";
 import prooferAccessories from "@/assets/holiday/folding-proofer-accessories.webp";
 import bakingShellBatard from "@/assets/holiday/baking-shell-batard-steel.webp";
 import breadSteel from "@/assets/holiday/bread-steel.webp";
@@ -543,6 +544,12 @@ const HolidayGiftGuide = () => {
                   src={wireMonkeyLame}
                   alt="Wire Monkey bread scoring lame for artisan sourdough"
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+                <img
+                  src={wiremonkeyPromoOverlay}
+                  alt="25% off Wire Monkey Brand - Promo Code: HENRY25"
+                  className="absolute top-0 left-0 w-48 h-48 object-contain z-10 pointer-events-none"
                   loading="lazy"
                 />
               </div>
