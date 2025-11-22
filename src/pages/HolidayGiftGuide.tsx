@@ -72,6 +72,8 @@ import starterGuide from "@/assets/holiday/starter-guide.png";
 import wiremonkeyPromoBadge from "@/assets/holiday/wiremonkey-promo-badge.jpg";
 import wiremonkeyPromoButton from "@/assets/holiday/wiremonkey-promo-button.png";
 import sourhousePromoButton from "@/assets/holiday/sourhouse-promo-button.png";
+import sourhouse20OffButton from "@/assets/holiday/sourhouse-promo-20off.png";
+import hollandBowlPromoButton from "@/assets/holiday/holland-bowl-promo.png";
 
 const HolidayGiftGuide = () => {
   const [email, setEmail] = useState("");
@@ -92,7 +94,7 @@ const HolidayGiftGuide = () => {
   const allProducts = [
     { name: "Vitale Sourdough Starter", brand: "Vitale", category: "starter", keywords: "sourdough starter dehydrated", price: "$12", id: "vitale-starter" },
     { name: "Wire Monkey Bread Lame", brand: "Wire Monkey", category: "tools", keywords: "lame scoring blade knife", price: "$26", id: "wire-monkey-lame" },
-    { name: "Sour House Goldie Starter Warmer", brand: "Sour House", category: "equipment", keywords: "warmer temperature control", price: "$89", id: "goldie-warmer" },
+    { name: "Sourhouse Goldie Starter Warmer", brand: "Sourhouse", category: "equipment", keywords: "warmer temperature control", price: "$89", id: "goldie-warmer" },
     { name: "Holland Bowl Mill 17\" Bowl", brand: "Holland Bowl Mill", category: "bowls", keywords: "mixing bowl wood wooden beechwood", price: "$135", id: "holland-bowl" },
     { name: "Brød & Taylor Folding Proofer", brand: "Brød & Taylor", category: "equipment", keywords: "proofer temperature control folding", price: "$189", id: "brod-proofer" },
     { name: "Holiday Hotline 1-Hour Coaching", brand: "Henry's Bread Kitchen", category: "digital", keywords: "coaching lesson consulting help", price: "$97", id: "holiday-hotline" },
@@ -101,18 +103,18 @@ const HolidayGiftGuide = () => {
     { name: "Wood Pulp Banneton (Round)", brand: "Wire Monkey", category: "bannetons", keywords: "banneton proofing basket wood pulp round", price: "$29", id: "wood-pulp-banneton-round" },
     { name: "Wood Pulp Banneton (Oval)", brand: "Wire Monkey", category: "bannetons", keywords: "banneton proofing basket wood pulp oval", price: "$32", id: "wood-pulp-banneton-oval" },
     { name: "Wire Monkey Goose Lame", brand: "Wire Monkey", category: "tools", keywords: "lame scoring blade goose", price: "$49.95", id: "goose-lame" },
-    { name: "Sour House Dough Bed", brand: "Sour House", category: "equipment", keywords: "doughbed proofing resting", price: "$279.95", id: "dough-bed" },
+    { name: "Sourhouse Dough Bed", brand: "Sourhouse", category: "equipment", keywords: "doughbed proofing resting", price: "$279.95", id: "dough-bed" },
     { name: "Brød & Taylor Dough Whisk", brand: "Brød & Taylor", category: "tools", keywords: "whisk mixing dough danish", price: "$20.95", id: "dough-whisk" },
     { name: "Goose Lame", brand: "Wire Monkey", category: "tools", keywords: "lame scoring blade goose wood", price: "$49.95", id: "goose-lame-stocking" },
     { name: "UFO Bread Lame", brand: "Bread Journey", category: "tools", keywords: "lame scoring blade ufo wood decorative", price: "$29.95", id: "ufo-lame" },
     { name: "Wire Monkey Oval Banneton", brand: "Wire Monkey", category: "bannetons", keywords: "banneton proofing basket oval wood pulp", price: "$32.00", id: "oval-banneton-stocking" },
     { name: "Round Wood Pulp Banneton", brand: "Wire Monkey", category: "bannetons", keywords: "banneton proofing basket round wood pulp", price: "$32.00", id: "round-banneton-stocking" },
-    { name: "Starter Jar", brand: "Sour House", category: "tools", keywords: "starter jar sourdough glass container", price: "$25.95", id: "starter-jar" },
+    { name: "Sourhouse Starter Jars", brand: "Sourhouse", category: "tools", keywords: "starter jar sourdough glass container pint quart", price: "$20.76", id: "starter-jars" },
     { name: "Brød & Taylor Dough Scraper", brand: "Brød & Taylor", category: "tools", keywords: "dough scraper bench stainless steel", price: "$18.95", id: "bt-dough-scraper-stocking" },
     { name: "Brød & Taylor Spice & Coffee Grinder", brand: "Brød & Taylor", category: "tools", keywords: "grinder spice coffee electric", price: "$24.95", id: "bt-spice-grinder" },
     { name: "Challenger Parchment Papers", brand: "Challenger", category: "tools", keywords: "parchment paper precut challenger", price: "$12.95", id: "challenger-parchment" },
     { name: "Sahara Folding Dehydrator", brand: "Brød & Taylor", category: "equipment", keywords: "dehydrator sahara folding food drying", price: "$295", id: "sahara-dehydrator" },
-    { name: "Sour House Bread Blanket", brand: "Sour House", category: "storage", keywords: "bread blanket muslin cloth cover", price: "$19.95", id: "bread-blanket" },
+    { name: "Sourhouse Bread Blanket", brand: "Sourhouse", category: "storage", keywords: "bread blanket muslin cloth cover", price: "$19.95", id: "bread-blanket" },
     { name: "Brød & Taylor Dough Scraper", brand: "Brød & Taylor", category: "tools", keywords: "bench scraper dough cutter stainless steel", price: "$14.95", id: "bench-scraper" },
     { name: "Double-Wall French Press & Carafe", brand: "Brød & Taylor", category: "beverages", keywords: "french press coffee tea double wall carafe", price: "$59.00", id: "french-press" },
     { name: "Classic VG2 Knife Sharpener", brand: "Brød & Taylor", category: "tools", keywords: "knife sharpener vg2 spring action austrian", price: "$79", id: "vg2-sharpener" },
@@ -127,7 +129,7 @@ const HolidayGiftGuide = () => {
     { name: "The Loaf and the Lie", brand: "Henry Hunter", category: "books", keywords: "book history bread industry culture", price: "$6.99", id: "loaf-and-lie" },
     { name: "Bread: A Journey Through History", brand: "Henry Hunter", category: "books", keywords: "book history science fermentation culture", price: "$7.95", id: "bread-journey" },
     { name: "Vegan Bread Wrap", brand: "Bee's Wrap", category: "storage", keywords: "bread wrap reusable vegan plant-based wax", price: "$14.99", id: "vegan-bread-wrap" },
-    { name: "Sour House Bread Blanket", brand: "Sour House", category: "storage", keywords: "bread blanket muslin cloth cover storage", price: "$19.95", id: "sour-house-bread-blanket-alt" },
+    { name: "Sourhouse Bread Blanket", brand: "Sourhouse", category: "storage", keywords: "bread blanket muslin cloth cover storage", price: "$19.95", id: "sour-house-bread-blanket-alt" },
     { name: "French Rolling Pin", brand: "Holland Bowl Mill", category: "tools", keywords: "rolling pin french tapered wood", price: "$55", id: "french-rolling-pin" },
     { name: "Cherry Bread Board & Bow Knife", brand: "Holland Bowl Mill", category: "tools", keywords: "bread board knife cherry wood serrated", price: "$130", id: "bread-board-knife" },
     { name: "17 inch Walnut Bowl", brand: "Holland Bowl Mill", category: "bowls", keywords: "mixing bowl wood walnut large salad", price: "$385", id: "walnut-bowl-17" },
@@ -230,10 +232,10 @@ const HolidayGiftGuide = () => {
       {
         "@type": "Product",
         "position": 3,
-        "name": "Sour House Goldie Starter Warmer",
+        "name": "Sourhouse Goldie Starter Warmer",
         "image": "https://bakinggreatbread.blog/holiday/sourhouse-goldie.jpg",
         "description": "Temperature-controlled starter warmer for consistent fermentation.",
-        "brand": { "@type": "Brand", "name": "Sour House" },
+        "brand": { "@type": "Brand", "name": "Sourhouse" },
         "offers": {
           "@type": "Offer",
           "url": "https://sourhouse.co",
@@ -580,19 +582,19 @@ const HolidayGiftGuide = () => {
             </CardContent>
           </Card>
 
-          {/* Product 3: Sour House Goldie */}
+          {/* Product 3: Sourhouse Goldie */}
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader>
               <Badge className="w-fit mb-4 bg-bakery-copper text-white">Solves Temperature Problems</Badge>
               <div className="aspect-square overflow-hidden rounded-lg mb-4 min-h-[280px] relative bg-muted">
                 <img
                   src={goldie}
-                  alt="Sour House Goldie sourdough starter warmer and temperature control"
+                  alt="Sourhouse Goldie sourdough starter warmer and temperature control"
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
               </div>
-              <CardTitle className="text-2xl">Sour House Goldie</CardTitle>
+              <CardTitle className="text-2xl">Sourhouse Goldie</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <CardDescription className="text-base">
@@ -607,7 +609,7 @@ const HolidayGiftGuide = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Shop Sour House
+                  Shop Sourhouse
                 </a>
               </Button>
               <button
@@ -616,7 +618,7 @@ const HolidayGiftGuide = () => {
               >
                 <img
                   src={sourhousePromoButton}
-                  alt="10% OFF Sour House - Promo Code HBK23"
+                  alt="10% OFF Sourhouse - Promo Code HBK23"
                   className="w-full h-auto"
                 />
               </button>
@@ -704,19 +706,19 @@ const HolidayGiftGuide = () => {
             </CardContent>
           </Card>
 
-          {/* Product 6: Sour House DoughBed */}
+          {/* Product 6: Sourhouse DoughBed */}
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader>
               <Badge className="w-fit mb-4 bg-bakery-copper text-white">Artisan Choice</Badge>
               <div className="aspect-square overflow-hidden rounded-lg mb-4">
                 <img
                   src={doughBed}
-                  alt="Sour House DoughBed dough resting surface"
+                  alt="Sourhouse DoughBed dough resting surface"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
               </div>
-              <CardTitle className="text-2xl">Sour House DoughBed</CardTitle>
+              <CardTitle className="text-2xl">Sourhouse DoughBed</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <CardDescription className="text-base">
@@ -731,7 +733,7 @@ const HolidayGiftGuide = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Shop Sour House
+                  Shop Sourhouse
                 </a>
               </Button>
               <button
@@ -740,7 +742,7 @@ const HolidayGiftGuide = () => {
               >
                 <img
                   src={sourhousePromoButton}
-                  alt="10% OFF Sour House - Promo Code HBK23"
+                  alt="10% OFF Sourhouse - Promo Code HBK23"
                   className="w-full h-auto"
                 />
               </button>
@@ -1030,6 +1032,16 @@ const HolidayGiftGuide = () => {
                   Shop Holland Bowl Mill
                 </a>
               </Button>
+              <button
+                onClick={() => copyToClipboard("bread")}
+                className="w-full mt-3 relative overflow-hidden rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <img
+                  src={hollandBowlPromoButton}
+                  alt="10% OFF Holland Bowl Mill - Promo Code bread"
+                  className="w-full h-auto"
+                />
+              </button>
             </CardContent>
           </Card>
 
@@ -1064,6 +1076,16 @@ const HolidayGiftGuide = () => {
                   Shop Holland Bowl Mill
                 </a>
               </Button>
+              <button
+                onClick={() => copyToClipboard("bread")}
+                className="w-full mt-3 relative overflow-hidden rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <img
+                  src={hollandBowlPromoButton}
+                  alt="10% OFF Holland Bowl Mill - Promo Code bread"
+                  className="w-full h-auto"
+                />
+              </button>
             </CardContent>
           </Card>
 
@@ -1098,6 +1120,16 @@ const HolidayGiftGuide = () => {
                   Shop Holland Bowl Mill
                 </a>
               </Button>
+              <button
+                onClick={() => copyToClipboard("bread")}
+                className="w-full mt-3 relative overflow-hidden rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <img
+                  src={hollandBowlPromoButton}
+                  alt="10% OFF Holland Bowl Mill - Promo Code bread"
+                  className="w-full h-auto"
+                />
+              </button>
             </CardContent>
           </Card>
 
@@ -1132,6 +1164,16 @@ const HolidayGiftGuide = () => {
                   Shop Holland Bowl Mill
                 </a>
               </Button>
+              <button
+                onClick={() => copyToClipboard("bread")}
+                className="w-full mt-3 relative overflow-hidden rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <img
+                  src={hollandBowlPromoButton}
+                  alt="10% OFF Holland Bowl Mill - Promo Code bread"
+                  className="w-full h-auto"
+                />
+              </button>
             </CardContent>
           </Card>
 
@@ -1166,6 +1208,16 @@ const HolidayGiftGuide = () => {
                   Shop Holland Bowl Mill
                 </a>
               </Button>
+              <button
+                onClick={() => copyToClipboard("bread")}
+                className="w-full mt-3 relative overflow-hidden rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <img
+                  src={hollandBowlPromoButton}
+                  alt="10% OFF Holland Bowl Mill - Promo Code bread"
+                  className="w-full h-auto"
+                />
+              </button>
             </CardContent>
           </Card>
         </div>
@@ -1287,6 +1339,16 @@ const HolidayGiftGuide = () => {
               >
                 Shop Wire Monkey
               </a>
+              <button
+                onClick={() => copyToClipboard("HENRY25")}
+                className="w-full mt-3 relative overflow-hidden rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <img
+                  src={wiremonkeyPromoButton}
+                  alt="25% OFF Wire Monkey Brand - Promo Code HENRY25"
+                  className="w-full h-auto"
+                />
+              </button>
             </div>
 
             {/* Wire Monkey Oval Banneton */}
@@ -1373,23 +1435,23 @@ const HolidayGiftGuide = () => {
               </a>
             </div>
 
-            {/* Starter Jar */}
+            {/* Sourhouse Starter Jars */}
             <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
-              <Badge className="mb-3 bg-accent">Sourdough Essential</Badge>
+              <Badge className="mb-3 bg-accent">432 Reviews</Badge>
               <div className="mb-3 rounded-lg overflow-hidden">
                 <img
-                  src={starterJar}
-                  alt="Sour House Starter Jar"
+                  src={starterJars}
+                  alt="Sourhouse Starter Jars - Pint or Quart"
                   className="w-full h-40 object-cover"
                   loading="lazy"
                 />
               </div>
               <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
-                Starter Jar
+                Sourhouse Starter Jars (Pint or Quart)
               </h3>
-              <p className="text-xs text-accent font-semibold mb-2">$25.95</p>
+              <p className="text-xs text-accent font-semibold mb-2">$20.76</p>
               <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
-                Glass jar with measurement markings and airtight lid. Perfect for maintaining your sourdough starter.
+                Glass jars with measurement markings and airtight lids. Available in pint or quart sizes. Perfect for maintaining your sourdough starter.
               </p>
               <a
                 href="https://sourhouse.co/?ref=BAKINGGREATBREAD&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
@@ -1397,8 +1459,18 @@ const HolidayGiftGuide = () => {
                 rel="noopener noreferrer"
                 className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
-                Shop Sour House
+                Shop Sourhouse
               </a>
+              <button
+                onClick={() => copyToClipboard("HBK20")}
+                className="w-full mt-3 relative overflow-hidden rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <img
+                  src={sourhouse20OffButton}
+                  alt="20% OFF Sourhouse - Promo Code HBK20"
+                  className="w-full h-auto"
+                />
+              </button>
             </div>
 
             {/* Brød & Taylor Spice & Coffee Grinder */}
@@ -1665,19 +1737,19 @@ const HolidayGiftGuide = () => {
               </a>
             </div>
 
-            {/* Sour House Bread Blanket */}
+            {/* Sourhouse Bread Blanket */}
             <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
               <Badge className="mb-3 bg-accent">Storage Essential</Badge>
               <div className="mb-3 rounded-lg overflow-hidden">
                 <img
                   src={sourHouseBreadBlanketAlt}
-                  alt="Sour House Bread Blanket"
+                  alt="Sourhouse Bread Blanket"
                   className="w-full h-40 object-cover"
                   loading="lazy"
                 />
               </div>
               <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
-                Sour House Bread Blanket
+                Sourhouse Bread Blanket
               </h3>
               <p className="text-xs text-accent font-semibold mb-2">$19.95</p>
               <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
@@ -1689,7 +1761,7 @@ const HolidayGiftGuide = () => {
                 rel="noopener noreferrer"
                 className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
-                Shop Sour House
+                Shop Sourhouse
               </a>
               <button
                 onClick={() => copyToClipboard("HBK23")}
@@ -1697,7 +1769,7 @@ const HolidayGiftGuide = () => {
               >
                 <img
                   src={sourhousePromoButton}
-                  alt="10% OFF Sour House - Promo Code HBK23"
+                  alt="10% OFF Sourhouse - Promo Code HBK23"
                   className="w-full h-auto"
                 />
               </button>
@@ -2279,7 +2351,7 @@ const HolidayGiftGuide = () => {
                   className="flex items-center gap-2 text-foreground hover:text-accent font-medium w-full text-left p-2 rounded hover:bg-accent/10 transition-colors"
                 >
                   <ArrowRight className="h-4 w-4" />
-                  <span>Sour House Goldie</span>
+                  <span>Sourhouse Goldie</span>
                 </button>
               </div>
 
@@ -2407,7 +2479,7 @@ const HolidayGiftGuide = () => {
               </p>
               <div>
                 <p className="font-bold text-foreground dark:text-foreground">Mike T.</p>
-                <p className="text-sm text-foreground/60 dark:text-muted-foreground">Colorado • Sour House Goldie</p>
+                <p className="text-sm text-foreground/60 dark:text-muted-foreground">Colorado • Sourhouse Goldie</p>
               </div>
             </CardContent>
           </Card>
@@ -2996,7 +3068,7 @@ const HolidayGiftGuide = () => {
 
           <Card className="hover:shadow-md transition-shadow">
             <CardContent className="p-6 text-center">
-              <h4 className="font-bold mb-2">Sour House</h4>
+              <h4 className="font-bold mb-2">Sourhouse</h4>
               <p className="text-sm text-muted-foreground mb-4">
                 Starter warmers and fermentation gear.
               </p>
