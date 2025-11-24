@@ -80,6 +80,7 @@ import btDoughWhiskBenchKnifeBundle from "@/assets/holiday/bt-dough-whisk-bench-
 import btBakersMathScale from "@/assets/holiday/bt-bakers-math-scale.webp";
 import btVG2Sharpener from "@/assets/holiday/bt-vg2-sharpener.jpg";
 import btChefApronPro from "@/assets/holiday/bt-chef-apron.png";
+import vitalePromo20Off from "@/assets/holiday/vitale-promo-20off.png";
 
 const HolidayGiftGuide = () => {
   const [email, setEmail] = useState("");
@@ -542,6 +543,16 @@ const HolidayGiftGuide = () => {
                   Shop Vitale Starter
                 </a>
               </Button>
+              <button
+                onClick={() => copyToClipboard("Henry25")}
+                className="w-full mt-3 relative overflow-hidden rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <img
+                  src={vitalePromo20Off}
+                  alt="20% OFF Vitale - Promo Code Henry25"
+                  className="w-full h-auto"
+                />
+              </button>
             </CardContent>
           </Card>
 
