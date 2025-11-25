@@ -81,6 +81,11 @@ import btBakersMathScale from "@/assets/holiday/bt-bakers-math-scale.webp";
 import btVG2Sharpener from "@/assets/holiday/bt-vg2-sharpener.jpg";
 import btChefApronPro from "@/assets/holiday/bt-chef-apron.png";
 import vitalePromo20Off from "@/assets/holiday/vitale-promo-20off.png";
+import modkitchenBreadBag from "@/assets/holiday/modkitchen-bread-bag.webp";
+import modkitchenBreadSling from "@/assets/holiday/modkitchen-bread-sling.webp";
+import modkitchenOvalSling from "@/assets/holiday/modkitchen-oval-sling.webp";
+import modkitchenHolidayBags from "@/assets/holiday/modkitchen-holiday-bags.webp";
+import modkitchenPromo30Off from "@/assets/holiday/modkitchen-promo-30off.png";
 
 const HolidayGiftGuide = () => {
   const [email, setEmail] = useState("");
@@ -1782,6 +1787,158 @@ const HolidayGiftGuide = () => {
                 <img
                   src={sourhousePromoButton}
                   alt="10% OFF Sourhouse - Promo Code HBK23"
+                  className="w-full h-auto"
+                />
+              </button>
+            </div>
+
+            {/* ModKitchn Round Bread Sling */}
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Essential Tool</Badge>
+              <div className="mb-3 rounded-lg overflow-hidden">
+                <img
+                  src={modkitchenBreadSling}
+                  alt="ModKitchn Round Bread Sling"
+                  className="w-full h-40 object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
+                Round Bread Sling
+              </h3>
+              <p className="text-xs text-accent font-semibold mb-2">$16.99</p>
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
+                Round silicone bread sling perfect for sourdough and artisan loaves. SureHold handle design ensures safe dough transfer. BakeShield Technology prevents burnt loaves.
+              </p>
+              <a
+                href="https://modkitchn.com/products/round-bread-sling"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-secondary-foreground py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+              >
+                Shop ModKitchn
+              </a>
+              <button
+                onClick={() => copyToClipboard("BREAD30")}
+                className="w-full mt-3 relative overflow-hidden rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <img
+                  src={modkitchenPromo30Off}
+                  alt="30% OFF ModKitchn - All Items in Store"
+                  className="w-full h-auto"
+                />
+              </button>
+            </div>
+
+            {/* ModKitchn Oval Bread Slings */}
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Essential Tool</Badge>
+              <div className="mb-3 rounded-lg overflow-hidden">
+                <img
+                  src={modkitchenOvalSling}
+                  alt="ModKitchn Oval Bread Slings"
+                  className="w-full h-40 object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
+                Oval Bread Slings
+              </h3>
+              <p className="text-xs text-accent font-semibold mb-2">$15.99</p>
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
+                Silicone bread sling with SureHold grips for safe dough handling and counter-to-oven transfer. Features BakeShield Technology for golden brown crust.
+              </p>
+              <a
+                href="https://modkitchn.com/products/oval-bread-sling"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-secondary-foreground py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+              >
+                Shop ModKitchn
+              </a>
+              <button
+                onClick={() => copyToClipboard("BREAD30")}
+                className="w-full mt-3 relative overflow-hidden rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <img
+                  src={modkitchenPromo30Off}
+                  alt="30% OFF ModKitchn - All Items in Store"
+                  className="w-full h-auto"
+                />
+              </button>
+            </div>
+
+            {/* ModKitchn Fresh Bread Storage Bags */}
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Storage Essential</Badge>
+              <div className="mb-3 rounded-lg overflow-hidden">
+                <img
+                  src={modkitchenBreadBag}
+                  alt="ModKitchn Fresh Bread Storage Bags"
+                  className="w-full h-40 object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
+                Fresh Bread Storage Bags
+              </h3>
+              <p className="text-xs text-accent font-semibold mb-2">$29.99</p>
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
+                Reusable bread bags with waterproof zipper and moisture-controlling liner. Made from recycled water bottles. XL capacity holds up to 2 artisan bread boules.
+              </p>
+              <a
+                href="https://modkitchn.com/products/bread-bag"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-secondary-foreground py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+              >
+                Shop ModKitchn
+              </a>
+              <button
+                onClick={() => copyToClipboard("BREAD30")}
+                className="w-full mt-3 relative overflow-hidden rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <img
+                  src={modkitchenPromo30Off}
+                  alt="30% OFF ModKitchn - All Items in Store"
+                  className="w-full h-auto"
+                />
+              </button>
+            </div>
+
+            {/* ModKitchn Holiday Bread Bags */}
+            <div className="bg-card dark:bg-card p-5 rounded-xl shadow-sm border border-border">
+              <Badge className="mb-3 bg-accent">Holiday Special</Badge>
+              <div className="mb-3 rounded-lg overflow-hidden">
+                <img
+                  src={modkitchenHolidayBags}
+                  alt="ModKitchn Holiday Bread Bags"
+                  className="w-full h-40 object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <h3 className="font-semibold text-lg text-foreground dark:text-foreground mb-2">
+                Holiday Bread Bags
+              </h3>
+              <p className="text-xs text-accent font-semibold mb-2">$29.99</p>
+              <p className="text-sm text-foreground/70 dark:text-muted-foreground mb-4">
+                Limited-edition holiday-themed reusable bread bags with festive designs. Perfect for gifting homemade loaves - functions as both gift wrap and a reusable gift.
+              </p>
+              <a
+                href="https://modkitchn.com/products/holiday-bread-bags"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-secondary-foreground py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+              >
+                Shop ModKitchn
+              </a>
+              <button
+                onClick={() => copyToClipboard("BREAD30")}
+                className="w-full mt-3 relative overflow-hidden rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <img
+                  src={modkitchenPromo30Off}
+                  alt="30% OFF ModKitchn - All Items in Store"
                   className="w-full h-auto"
                 />
               </button>
