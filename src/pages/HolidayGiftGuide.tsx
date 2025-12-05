@@ -86,6 +86,8 @@ import modkitchenBreadSling from "@/assets/holiday/modkitchen-bread-sling.webp";
 import modkitchenOvalSling from "@/assets/holiday/modkitchen-oval-sling.webp";
 import modkitchenHolidayBags from "@/assets/holiday/modkitchen-holiday-bags.webp";
 import modkitchenPromo30Off from "@/assets/holiday/modkitchen-promo-30off.png";
+import goldieChristmasSale from "@/assets/holiday/goldie-christmas-sale.png";
+import sourhouseDiscountBanner from "@/assets/holiday/sourhouse-discount-banner.jpg";
 
 const HolidayGiftGuide = () => {
   const [email, setEmail] = useState("");
@@ -521,6 +523,58 @@ const HolidayGiftGuide = () => {
           <p className="text-lg text-hero-brown max-w-3xl mx-auto">
             These are the tools I actually use every week. If someone asked me what to buy a baker, I'd start here. Each one solves a real problem.
           </p>
+        </div>
+
+        {/* Featured Product: Sourhouse Goldie - Christmas Sale */}
+        <div className="max-w-4xl mx-auto mb-12">
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1 border-2 border-accent overflow-hidden">
+            <a
+              href="https://sourhouse.co?ref=BAKINGGREATBREAD"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
+            >
+              <img
+                src={goldieChristmasSale}
+                alt="Sourhouse Goldie Christmas Sale - Additional 10% OFF with code JINGLE10"
+                className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                loading="eager"
+              />
+            </a>
+            <CardContent className="p-6 space-y-4">
+              <div className="flex items-center gap-3">
+                <Badge className="bg-bakery-copper text-white">Featured Pick</Badge>
+                <Badge className="bg-accent text-white">Christmas Sale!</Badge>
+              </div>
+              <CardTitle className="text-2xl">Sourhouse Goldie Starter Warmer</CardTitle>
+              <CardDescription className="text-base">
+                Keeps your starter at perfect temp, 24/7. Just plug it in, set it, and stop worrying about cold kitchens or inconsistent fermentation. Soft silicone wraps around your jar. If you've ever lost a starter to temperature swings, this fixes it permanently.
+              </CardDescription>
+              <p className="text-lg font-semibold text-accent">$89 • Plus extra 10% off with code JINGLE10</p>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://sourhouse.co?ref=BAKINGGREATBREAD"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Shop Sourhouse Christmas Sale
+                </a>
+              </Button>
+              <button
+                onClick={() => copyToClipboard("JINGLE10")}
+                className="w-full mt-3 relative overflow-hidden rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <img
+                  src={sourhousePromoButton}
+                  alt="10% OFF Sourhouse - Promo Code JINGLE10"
+                  className="w-full h-auto"
+                />
+              </button>
+            </CardContent>
+          </Card>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -1259,6 +1313,23 @@ const HolidayGiftGuide = () => {
             className="w-full h-auto object-cover"
             loading="lazy"
           />
+        </div>
+
+        {/* Sourhouse Discount Banner */}
+        <div className="w-full max-w-3xl mx-auto my-8 px-4">
+          <a
+            href="https://sourhouse.co?ref=BAKINGGREATBREAD"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+          >
+            <img
+              src={sourhouseDiscountBanner}
+              alt="Sourhouse 10% Discount - Use code FRIEND-FTHM7BK"
+              className="w-full h-auto object-cover"
+              loading="lazy"
+            />
+          </a>
         </div>
 
         <div className="max-w-5xl mx-auto px-6 md:px-10 py-12">
@@ -2147,6 +2218,128 @@ const HolidayGiftGuide = () => {
                   Shop Challenger
                 </a>
               </Button>
+            </CardContent>
+          </Card>
+
+          {/* Sahara Folding Dehydrator */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-bakery-copper text-white">Multi-Purpose</Badge>
+              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+                <img
+                  src={saharaDehydrator}
+                  alt="Brød & Taylor Sahara Folding Dehydrator"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">Sahara Folding Dehydrator</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                A versatile dehydrator that folds flat for storage. Perfect for drying fruits, vegetables, herbs, and making jerky. Precise temperature control and even air circulation ensure consistent results every time.
+              </CardDescription>
+              <p className="text-sm font-semibold text-accent">$295</p>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://collabs.shop/38tf48"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Shop Brød & Taylor
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* 17 inch Walnut Bowl */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-accent text-white">Premium Wood</Badge>
+              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+                <img
+                  src={walnutBowl17}
+                  alt="Holland Bowl Mill 17 inch Walnut Bowl"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">17" Walnut Bowl</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                Solid walnut bowl serves salad for 8-12 people, also makes great centerpiece or popcorn bowl. Hand rubbed with food-safe Bee's Oil wood conditioner. Free personalized engraving available.
+              </CardDescription>
+              <p className="text-sm font-semibold text-accent">$385</p>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://hollandbowlmill.com/?ref=henrysbreadkitchen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Shop Holland Bowl Mill
+                </a>
+              </Button>
+              <button
+                onClick={() => copyToClipboard("bread")}
+                className="w-full mt-3 relative overflow-hidden rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <img
+                  src={hollandBowlPromoButton}
+                  alt="10% OFF Holland Bowl Mill - Promo Code bread"
+                  className="w-full h-auto"
+                />
+              </button>
+            </CardContent>
+          </Card>
+
+          {/* Sourhouse DoughBed */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader>
+              <Badge className="w-fit mb-4 bg-bakery-copper text-white">Artisan Choice</Badge>
+              <div className="aspect-square overflow-hidden rounded-lg mb-4">
+                <img
+                  src={doughBed}
+                  alt="Sourhouse DoughBed dough resting surface"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <CardTitle className="text-2xl">Sourhouse DoughBed</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <CardDescription className="text-base">
+                Dedicated surface for shaping and resting dough. Natural materials that won't stick. Makes the whole process calmer and more organized. A beautiful addition to any baker's workspace.
+              </CardDescription>
+              <p className="text-sm font-semibold text-accent">$279.95</p>
+              <Button
+                className="w-full bg-accent hover:bg-accent/90 text-white"
+                asChild
+              >
+                <a
+                  href="https://sourhouse.co?ref=BAKINGGREATBREAD"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Shop Sourhouse
+                </a>
+              </Button>
+              <button
+                onClick={() => copyToClipboard("JINGLE10")}
+                className="w-full mt-3 relative overflow-hidden rounded-xl transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <img
+                  src={sourhousePromoButton}
+                  alt="10% OFF Sourhouse - Promo Code JINGLE10"
+                  className="w-full h-auto"
+                />
+              </button>
             </CardContent>
           </Card>
         </div>
