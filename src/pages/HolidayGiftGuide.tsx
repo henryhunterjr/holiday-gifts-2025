@@ -9,7 +9,7 @@ import { FestiveDarkModeToggle } from "@/components/FestiveDarkModeToggle";
 
 // Import product images
 import heroImage from "@/assets/holiday/hero-christmas-logo.png";
-import holidayHotline from "@/assets/holiday/holiday-hotline.jpg";
+import holidayHotline from "@/assets/holiday/christmas-hotline.jpg";
 import vitaleStarter from "@/assets/holiday/vitale-sourdough-starter-new.jpg";
 import wireMonkeyLame from "@/assets/holiday/wire-monkey-lame-sharp.jpg";
 import goldie from "@/assets/holiday/sourhouse-goldie-starter-warmer.webp";
@@ -109,7 +109,7 @@ const HolidayGiftGuide = () => {
     { name: "Sourhouse Goldie Starter Warmer", brand: "Sourhouse", category: "equipment", keywords: "warmer temperature control", price: "$89", id: "goldie-warmer" },
     { name: "Holland Bowl Mill 17\" Bowl", brand: "Holland Bowl Mill", category: "bowls", keywords: "mixing bowl wood wooden beechwood", price: "$135", id: "holland-bowl" },
     { name: "Brød & Taylor Folding Proofer", brand: "Brød & Taylor", category: "equipment", keywords: "proofer temperature control folding", price: "$189", id: "brod-proofer" },
-    { name: "Holiday Hotline 1-Hour Coaching", brand: "Henry's Bread Kitchen", category: "digital", keywords: "coaching lesson consulting help", price: "$97", id: "holiday-hotline" },
+    { name: "Holiday Hotline", brand: "Henry's Bread Kitchen", category: "digital", keywords: "hotline help support", price: "Free", id: "holiday-hotline" },
     { name: "ModKitchen Bread Bag", brand: "ModKitchen", category: "storage", keywords: "bread bag linen storage", price: "$29.95", id: "mod-bread-bag" },
     { name: "ModKitchen Bread Sling", brand: "ModKitchen", category: "tools", keywords: "sling dutch oven transfer", price: "$15.99-$16.99", id: "mod-bread-sling" },
     { name: "Wood Pulp Banneton (Round)", brand: "Wire Monkey", category: "bannetons", keywords: "banneton proofing basket wood pulp round", price: "$29", id: "wood-pulp-banneton-round" },
@@ -413,33 +413,14 @@ const HolidayGiftGuide = () => {
               </Button>
             </div>
 
-            {/* Holiday Hotline Section - Prominent CTA */}
-            <div id="holiday-hotline" className="w-full max-w-4xl mx-auto mt-8 bg-card dark:bg-card border-2 border-accent rounded-2xl shadow-2xl overflow-hidden">
+            {/* Holiday Hotline Section */}
+            <div id="holiday-hotline" className="w-full max-w-4xl mx-auto mt-8 rounded-2xl shadow-2xl overflow-hidden">
               <img
                 src={holidayHotline}
-                alt="Henry's Holiday Hotline - Your Thanksgiving Baking Lifeline November 25-26"
-                className="w-full h-auto object-cover"
+                alt="Henry's Holiday Hotline - Your Christmas Baking Lifeline December 23-24"
+                className="w-full h-auto object-cover rounded-2xl"
                 loading="eager"
               />
-              <div className="p-6 space-y-4">
-                <h3 className="text-2xl font-bold text-foreground dark:text-foreground">Henry's Holiday Hotline</h3>
-                <p className="text-foreground/80 dark:text-muted-foreground">
-                  Need baking help during the holidays? Book a 1-hour coaching call with Henry. Get personalized guidance on sourdough troubleshooting, recipe scaling, or technique refinement. Perfect for gifting to the baker who wants expert advice.
-                </p>
-                <p className="text-lg font-semibold text-accent">$97 per session</p>
-                <Button
-                  className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-white"
-                  asChild
-                >
-                  <a
-                    href="https://calendly.com/henrysbreadkitchen/holiday-hotline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Book a Coaching Call
-                  </a>
-                </Button>
-              </div>
             </div>
           </div>
         </div>
