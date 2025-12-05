@@ -318,12 +318,12 @@ const HolidayGiftGuide = () => {
             </div>
             
             {/* Subtitle */}
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-center text-hero-brown dark:text-[#2C1810] max-w-4xl mx-auto leading-relaxed">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-center text-hero-brown dark:text-secondary max-w-4xl mx-auto leading-relaxed">
               The Holiday Gift Guide for People Who Actually Bake Bread
             </h2>
 
             {/* Stop Guessing Text */}
-            <p className="text-xl md:text-2xl text-center text-hero-brown dark:text-[#2C1810] max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-center text-hero-brown dark:text-foreground/90 max-w-3xl mx-auto">
               Stop guessing. These are the tools real bakers want. Handpicked from my own kitchen.
             </p>
 
@@ -399,7 +399,7 @@ const HolidayGiftGuide = () => {
                 size="lg"
                 variant="outline"
                 onClick={() => scrollToSection("vitale-card")}
-                className="border-2 border-accent bg-accent/10 hover:bg-accent text-white hover:text-white text-lg px-8"
+                className="border-2 border-accent bg-accent text-white hover:bg-accent/90 hover:text-white text-lg px-8"
               >
                 Start With a Starter
               </Button>
@@ -407,31 +407,56 @@ const HolidayGiftGuide = () => {
                 size="lg"
                 variant="outline"
                 onClick={() => scrollToSection("stocking-stuffers")}
-                className="border-2 border-accent bg-accent/10 hover:bg-accent text-white hover:text-white text-lg px-8"
+                className="border-2 border-accent bg-accent text-white hover:bg-accent/90 hover:text-white text-lg px-8"
               >
                 Stocking Stuffers
               </Button>
             </div>
 
-            {/* Holiday Hotline Image */}
-            <div className="w-full max-w-4xl mx-auto mt-8">
+            {/* Holiday Hotline Section - Prominent CTA */}
+            <div id="holiday-hotline" className="w-full max-w-4xl mx-auto mt-8 bg-card dark:bg-card border-2 border-accent rounded-2xl shadow-2xl overflow-hidden">
               <img
                 src={holidayHotline}
                 alt="Henry's Holiday Hotline - Your Thanksgiving Baking Lifeline November 25-26"
-                className="rounded-2xl shadow-2xl w-full h-auto object-cover"
+                className="w-full h-auto object-cover"
                 loading="eager"
               />
+              <div className="p-6 space-y-4">
+                <h3 className="text-2xl font-bold text-foreground dark:text-foreground">Henry's Holiday Hotline</h3>
+                <p className="text-foreground/80 dark:text-muted-foreground">
+                  Need baking help during the holidays? Book a 1-hour coaching call with Henry. Get personalized guidance on sourdough troubleshooting, recipe scaling, or technique refinement. Perfect for gifting to the baker who wants expert advice.
+                </p>
+                <p className="text-lg font-semibold text-accent">$97 per session</p>
+                <Button
+                  className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-white"
+                  asChild
+                >
+                  <a
+                    href="https://calendly.com/henrysbreadkitchen/holiday-hotline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Book a Coaching Call
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Affiliate Disclosure */}
-      <section className="container mx-auto px-4 py-8">
-        <div className="max-w-3xl mx-auto bg-muted/50 dark:bg-card/50 border-l-4 border-accent p-6 rounded-lg">
-          <p className="text-sm text-foreground dark:text-foreground">
-            <strong>Quick note:</strong> Some links on this page are affiliate links. I only recommend tools I use in my own kitchen. You pay the same price, I earn a small commission that keeps this site running. No surprises.
-          </p>
+      {/* Affiliate Disclosure - More Prominent */}
+      <section id="affiliate-disclosure" className="container mx-auto px-4 py-8">
+        <div className="max-w-3xl mx-auto bg-accent/10 dark:bg-accent/20 border-2 border-accent p-6 rounded-xl">
+          <div className="flex items-start gap-3">
+            <CheckCircle2 className="h-6 w-6 text-accent flex-shrink-0 mt-0.5" />
+            <div>
+              <p className="font-semibold text-foreground dark:text-foreground mb-1">Affiliate Disclosure</p>
+              <p className="text-sm text-foreground/80 dark:text-foreground/80">
+                Some links on this page are affiliate links. I only recommend tools I use in my own kitchen. You pay the same price, I earn a small commission that keeps this site running. No surprises.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -1446,7 +1471,7 @@ const HolidayGiftGuide = () => {
                 href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-secondary-foreground py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
                 Shop Wire Monkey
               </a>
@@ -1474,7 +1499,7 @@ const HolidayGiftGuide = () => {
                 href="https://sourhouse.co/?ref=BAKINGGREATBREAD&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-secondary-foreground py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
                 Shop Sourhouse
               </a>
@@ -1512,7 +1537,7 @@ const HolidayGiftGuide = () => {
                 href="https://brodandtaylor.com/henrysbreadkitchen"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-secondary-foreground py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
                 Shop Brød & Taylor
               </a>
@@ -1540,7 +1565,7 @@ const HolidayGiftGuide = () => {
                 href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-secondary-foreground py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
                 Shop Wire Monkey
               </a>
@@ -1578,7 +1603,7 @@ const HolidayGiftGuide = () => {
                 href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-secondary-foreground py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
                 Shop Wire Monkey
               </a>
@@ -1616,7 +1641,7 @@ const HolidayGiftGuide = () => {
                 href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-secondary-foreground py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
                 Shop Wire Monkey
               </a>
@@ -1654,7 +1679,7 @@ const HolidayGiftGuide = () => {
                 href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-secondary-foreground py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
                 Shop Wire Monkey
               </a>
@@ -1692,7 +1717,7 @@ const HolidayGiftGuide = () => {
                 href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-secondary-foreground py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
                 Shop Wire Monkey
               </a>
@@ -1720,7 +1745,7 @@ const HolidayGiftGuide = () => {
                 href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-secondary-foreground py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
                 Shop Wire Monkey
               </a>
@@ -1748,7 +1773,7 @@ const HolidayGiftGuide = () => {
                 href="https://wiremonkey.com/?ref=henrysbreadkitchen&utm_source=holidayguide&utm_medium=giftguide2025&utm_campaign=christmas2025"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-secondary-foreground py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
                 Shop Wire Monkey
               </a>
@@ -1776,7 +1801,7 @@ const HolidayGiftGuide = () => {
                 href="https://sourhouse.co/?ref=henrysbreadkitchen"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-secondary hover:bg-secondary/90 text-[#4A3728] py-2 px-4 rounded-lg text-sm transition-colors font-medium"
+                className="inline-block bg-secondary hover:bg-secondary/90 text-secondary-foreground py-2 px-4 rounded-lg text-sm transition-colors font-medium"
               >
                 Shop Sourhouse
               </a>
