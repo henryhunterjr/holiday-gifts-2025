@@ -1888,7 +1888,7 @@ const HolidayGiftGuide = () => {
                 Round silicone bread sling perfect for sourdough and artisan loaves. SureHold handle design ensures safe dough transfer. BakeShield Technology prevents burnt loaves.
               </p>
               <a
-                href="https://modkitchn.com/products/round-bread-sling"
+                href="https://modkitchn.com/discount/BAKINGGREATBREAD10"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-secondary hover:bg-secondary/90 text-secondary-foreground py-2 px-4 rounded-lg text-sm transition-colors font-medium"
@@ -1926,7 +1926,7 @@ const HolidayGiftGuide = () => {
                 Silicone bread sling with SureHold grips for safe dough handling and counter-to-oven transfer. Features BakeShield Technology for golden brown crust.
               </p>
               <a
-                href="https://modkitchn.com/products/oval-bread-sling"
+                href="https://modkitchn.com/discount/BAKINGGREATBREAD10"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-secondary hover:bg-secondary/90 text-secondary-foreground py-2 px-4 rounded-lg text-sm transition-colors font-medium"
@@ -1964,7 +1964,7 @@ const HolidayGiftGuide = () => {
                 Reusable bread bags with waterproof zipper and moisture-controlling liner. Made from recycled water bottles. XL capacity holds up to 2 artisan bread boules.
               </p>
               <a
-                href="https://modkitchn.com/products/bread-bag"
+                href="https://modkitchn.com/discount/BAKINGGREATBREAD10"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-secondary hover:bg-secondary/90 text-secondary-foreground py-2 px-4 rounded-lg text-sm transition-colors font-medium"
@@ -2002,7 +2002,7 @@ const HolidayGiftGuide = () => {
                 Limited-edition holiday-themed reusable bread bags with festive designs. Perfect for gifting homemade loaves - functions as both gift wrap and a reusable gift.
               </p>
               <a
-                href="https://modkitchn.com/products/holiday-bread-bags"
+                href="https://modkitchn.com/discount/BAKINGGREATBREAD10"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-secondary hover:bg-secondary/90 text-secondary-foreground py-2 px-4 rounded-lg text-sm transition-colors font-medium"
