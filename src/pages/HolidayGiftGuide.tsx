@@ -2345,12 +2345,12 @@ const HolidayGiftGuide = () => {
         </div>
       </section>
 
-      {/* SHOP MORE ON AMAZON */}
+      {/* SHOP MORE BAKING ESSENTIALS */}
       <section id="amazon-picks" className="container mx-auto px-4 py-16 bg-gradient-to-b from-background to-dough-cream dark:from-background/95 dark:to-background">
         <div className="text-center mb-12">
           <Badge className="mb-4 bg-[#FF9900] text-black text-base px-4 py-2">Shop on Amazon</Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground dark:text-primary mb-4">
-            Shop More on Amazon
+            Shop More Baking Essentials
           </h2>
           <p className="text-lg text-foreground/80 dark:text-muted-foreground max-w-3xl mx-auto">
             Great baking tools available with Prime shipping. Curated picks from Dutch ovens to scoring tools.
@@ -2358,366 +2358,200 @@ const HolidayGiftGuide = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-          {/* Dutch Ovens */}
+          {/* Lodge 6Qt Dutch Oven */}
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader className="pb-2">
               <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Dutch Oven</Badge>
               <div className="aspect-square overflow-hidden rounded-lg mb-3 bg-white flex items-center justify-center">
                 <div className="text-6xl">🍲</div>
               </div>
-              <CardTitle className="text-lg">Lodge 5-Quart Dutch Oven</CardTitle>
+              <CardTitle className="text-lg">Lodge 6Qt Dutch Oven</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-[#FF9900] text-[#FF9900]" />
+                  <Star key={i} className={`w-4 h-4 ${i < 4 ? 'fill-[#FF9900] text-[#FF9900]' : 'fill-[#FF9900]/70 text-[#FF9900]/70'}`} />
                 ))}
-                <span className="text-sm text-muted-foreground ml-1">(15,000+)</span>
+                <span className="text-sm text-muted-foreground ml-1">4.7</span>
               </div>
-              <p className="text-xl font-bold text-accent">$79.90</p>
+              <p className="text-xl font-bold text-accent">$79.99</p>
               <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
-                <a href="https://www.amazon.com/dp/B000N501BK?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.amazon.com/dp/B000N4UX4Q?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
                   View on Amazon
                 </a>
               </Button>
             </CardContent>
           </Card>
 
+          {/* Challenger Bread Pan */}
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader className="pb-2">
-              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Dutch Oven</Badge>
+              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Bread Pan</Badge>
               <div className="aspect-square overflow-hidden rounded-lg mb-3 bg-white flex items-center justify-center">
                 <div className="text-6xl">🥘</div>
               </div>
-              <CardTitle className="text-lg">Le Creuset 5.5 Qt Round</CardTitle>
+              <CardTitle className="text-lg">Challenger Bread Pan</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-[#FF9900] text-[#FF9900]" />
                 ))}
-                <span className="text-sm text-muted-foreground ml-1">(8,500+)</span>
+                <span className="text-sm text-muted-foreground ml-1">4.9</span>
               </div>
-              <p className="text-xl font-bold text-accent">$369.95</p>
+              <p className="text-xl font-bold text-accent">$295</p>
               <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
-                <a href="https://www.amazon.com/dp/B00004S9G2?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.amazon.com/dp/B07M6MF86P?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
                   View on Amazon
                 </a>
               </Button>
             </CardContent>
           </Card>
 
-          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
-            <CardHeader className="pb-2">
-              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Dutch Oven</Badge>
-              <div className="aspect-square overflow-hidden rounded-lg mb-3 bg-white flex items-center justify-center">
-                <div className="text-6xl">🫕</div>
-              </div>
-              <CardTitle className="text-lg">Staub 5.5 Qt Cocotte</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="flex items-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-[#FF9900] text-[#FF9900]" />
-                ))}
-                <span className="text-sm text-muted-foreground ml-1">(4,200+)</span>
-              </div>
-              <p className="text-xl font-bold text-accent">$349.95</p>
-              <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
-                <a href="https://www.amazon.com/dp/B004SOFZVM?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
-                  View on Amazon
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* Scales */}
+          {/* MyWeigh KD-8000 Scale */}
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader className="pb-2">
               <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Scale</Badge>
               <div className="aspect-square overflow-hidden rounded-lg mb-3 bg-white flex items-center justify-center">
                 <div className="text-6xl">⚖️</div>
               </div>
-              <CardTitle className="text-lg">OXO Good Grips Scale</CardTitle>
+              <CardTitle className="text-lg">MyWeigh KD-8000 Scale</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-[#FF9900] text-[#FF9900]" />
+                  <Star key={i} className={`w-4 h-4 ${i < 5 ? 'fill-[#FF9900] text-[#FF9900]' : 'fill-[#FF9900]/70 text-[#FF9900]/70'}`} />
                 ))}
-                <span className="text-sm text-muted-foreground ml-1">(22,000+)</span>
+                <span className="text-sm text-muted-foreground ml-1">4.8</span>
               </div>
-              <p className="text-xl font-bold text-accent">$55.95</p>
+              <p className="text-xl font-bold text-accent">$39.95</p>
               <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
-                <a href="https://www.amazon.com/dp/B079D9B82W?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.amazon.com/dp/B00VEKX35Y?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
                   View on Amazon
                 </a>
               </Button>
             </CardContent>
           </Card>
 
-          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
-            <CardHeader className="pb-2">
-              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Scale</Badge>
-              <div className="aspect-square overflow-hidden rounded-lg mb-3 bg-white flex items-center justify-center">
-                <div className="text-6xl">📊</div>
-              </div>
-              <CardTitle className="text-lg">Escali Primo Digital Scale</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="flex items-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-[#FF9900] text-[#FF9900]" />
-                ))}
-                <span className="text-sm text-muted-foreground ml-1">(45,000+)</span>
-              </div>
-              <p className="text-xl font-bold text-accent">$29.79</p>
-              <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
-                <a href="https://www.amazon.com/dp/B0007GAWRS?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
-                  View on Amazon
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
-            <CardHeader className="pb-2">
-              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Scale</Badge>
-              <div className="aspect-square overflow-hidden rounded-lg mb-3 bg-white flex items-center justify-center">
-                <div className="text-6xl">🔬</div>
-              </div>
-              <CardTitle className="text-lg">Hario Drip Scale</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="flex items-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-[#FF9900] text-[#FF9900]" />
-                ))}
-                <span className="text-sm text-muted-foreground ml-1">(3,800+)</span>
-              </div>
-              <p className="text-xl font-bold text-accent">$49.00</p>
-              <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
-                <a href="https://www.amazon.com/dp/B009GPJMOU?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
-                  View on Amazon
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* Bannetons */}
+          {/* Bread Bosses Banneton */}
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader className="pb-2">
               <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Banneton</Badge>
               <div className="aspect-square overflow-hidden rounded-lg mb-3 bg-white flex items-center justify-center">
                 <div className="text-6xl">🧺</div>
               </div>
-              <CardTitle className="text-lg">9" Round Rattan Banneton</CardTitle>
+              <CardTitle className="text-lg">Bread Bosses Banneton</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-[#FF9900] text-[#FF9900]" />
+                  <Star key={i} className={`w-4 h-4 ${i < 4 ? 'fill-[#FF9900] text-[#FF9900]' : 'fill-[#FF9900]/70 text-[#FF9900]/70'}`} />
                 ))}
-                <span className="text-sm text-muted-foreground ml-1">(12,500+)</span>
+                <span className="text-sm text-muted-foreground ml-1">4.7</span>
               </div>
-              <p className="text-xl font-bold text-accent">$15.99</p>
+              <p className="text-xl font-bold text-accent">$16.95</p>
               <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
-                <a href="https://www.amazon.com/dp/B07H7TQPTZ?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.amazon.com/dp/B01GM4UZJI?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
                   View on Amazon
                 </a>
               </Button>
             </CardContent>
           </Card>
 
-          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
-            <CardHeader className="pb-2">
-              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Banneton</Badge>
-              <div className="aspect-square overflow-hidden rounded-lg mb-3 bg-white flex items-center justify-center">
-                <div className="text-6xl">🥖</div>
-              </div>
-              <CardTitle className="text-lg">10" Oval Rattan Banneton</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="flex items-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-[#FF9900] text-[#FF9900]" />
-                ))}
-                <span className="text-sm text-muted-foreground ml-1">(8,200+)</span>
-              </div>
-              <p className="text-xl font-bold text-accent">$17.99</p>
-              <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
-                <a href="https://www.amazon.com/dp/B07K24VF9S?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
-                  View on Amazon
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
-            <CardHeader className="pb-2">
-              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Banneton Set</Badge>
-              <div className="aspect-square overflow-hidden rounded-lg mb-3 bg-white flex items-center justify-center">
-                <div className="text-6xl">🎁</div>
-              </div>
-              <CardTitle className="text-lg">Banneton Bread Kit (2-Pack)</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="flex items-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-[#FF9900] text-[#FF9900]" />
-                ))}
-                <span className="text-sm text-muted-foreground ml-1">(6,800+)</span>
-              </div>
-              <p className="text-xl font-bold text-accent">$29.99</p>
-              <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
-                <a href="https://www.amazon.com/dp/B08CXQBPT9?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
-                  View on Amazon
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* Scoring Tools */}
+          {/* Wire Monkey UFO Lame */}
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader className="pb-2">
               <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Scoring Tool</Badge>
               <div className="aspect-square overflow-hidden rounded-lg mb-3 bg-white flex items-center justify-center">
                 <div className="text-6xl">🔪</div>
               </div>
-              <CardTitle className="text-lg">Bread Lame with 5 Blades</CardTitle>
+              <CardTitle className="text-lg">Wire Monkey UFO Lame</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-[#FF9900] text-[#FF9900]" />
                 ))}
-                <span className="text-sm text-muted-foreground ml-1">(9,400+)</span>
+                <span className="text-sm text-muted-foreground ml-1">4.9</span>
               </div>
-              <p className="text-xl font-bold text-accent">$8.99</p>
+              <p className="text-xl font-bold text-accent">$35</p>
               <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
-                <a href="https://www.amazon.com/dp/B07TGDNKR7?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.amazon.com/dp/B07KPTC1FN?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
                   View on Amazon
                 </a>
               </Button>
             </CardContent>
           </Card>
 
-          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
-            <CardHeader className="pb-2">
-              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Scoring Tool</Badge>
-              <div className="aspect-square overflow-hidden rounded-lg mb-3 bg-white flex items-center justify-center">
-                <div className="text-6xl">✂️</div>
-              </div>
-              <CardTitle className="text-lg">Kitchen Shears Bread Scissors</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="flex items-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-[#FF9900] text-[#FF9900]" />
-                ))}
-                <span className="text-sm text-muted-foreground ml-1">(5,600+)</span>
-              </div>
-              <p className="text-xl font-bold text-accent">$12.99</p>
-              <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
-                <a href="https://www.amazon.com/dp/B08JQ7HV4N?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
-                  View on Amazon
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
-            <CardHeader className="pb-2">
-              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Scoring Tool</Badge>
-              <div className="aspect-square overflow-hidden rounded-lg mb-3 bg-white flex items-center justify-center">
-                <div className="text-6xl">🎨</div>
-              </div>
-              <CardTitle className="text-lg">Decorative Bread Stencils</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="flex items-center gap-1">
-                {[...Array(4)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-[#FF9900] text-[#FF9900]" />
-                ))}
-                <Star className="w-4 h-4 fill-muted text-muted" />
-                <span className="text-sm text-muted-foreground ml-1">(2,100+)</span>
-              </div>
-              <p className="text-xl font-bold text-accent">$9.99</p>
-              <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
-                <a href="https://www.amazon.com/dp/B07Y5JQ6RH?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
-                  View on Amazon
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-
-          {/* More Tools */}
-          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
-            <CardHeader className="pb-2">
-              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Dough Tool</Badge>
-              <div className="aspect-square overflow-hidden rounded-lg mb-3 bg-white flex items-center justify-center">
-                <div className="text-6xl">🥄</div>
-              </div>
-              <CardTitle className="text-lg">Danish Dough Whisk</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="flex items-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-[#FF9900] text-[#FF9900]" />
-                ))}
-                <span className="text-sm text-muted-foreground ml-1">(18,000+)</span>
-              </div>
-              <p className="text-xl font-bold text-accent">$12.95</p>
-              <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
-                <a href="https://www.amazon.com/dp/B000KEEK5C?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
-                  View on Amazon
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
-            <CardHeader className="pb-2">
-              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Bench Tool</Badge>
-              <div className="aspect-square overflow-hidden rounded-lg mb-3 bg-white flex items-center justify-center">
-                <div className="text-6xl">🧹</div>
-              </div>
-              <CardTitle className="text-lg">Bench Scraper Set (2-Pack)</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="flex items-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-[#FF9900] text-[#FF9900]" />
-                ))}
-                <span className="text-sm text-muted-foreground ml-1">(11,200+)</span>
-              </div>
-              <p className="text-xl font-bold text-accent">$9.99</p>
-              <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
-                <a href="https://www.amazon.com/dp/B0001XLYXQ?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
-                  View on Amazon
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-
+          {/* Thermapen ONE */}
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader className="pb-2">
               <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Thermometer</Badge>
               <div className="aspect-square overflow-hidden rounded-lg mb-3 bg-white flex items-center justify-center">
                 <div className="text-6xl">🌡️</div>
               </div>
-              <CardTitle className="text-lg">ThermoWorks ThermoPop</CardTitle>
+              <CardTitle className="text-lg">Thermapen ONE</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-[#FF9900] text-[#FF9900]" />
                 ))}
-                <span className="text-sm text-muted-foreground ml-1">(7,300+)</span>
+                <span className="text-sm text-muted-foreground ml-1">4.9</span>
               </div>
-              <p className="text-xl font-bold text-accent">$34.00</p>
+              <p className="text-xl font-bold text-accent">$105</p>
               <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
-                <a href="https://www.amazon.com/dp/B01HT4QEXU?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.amazon.com/dp/B084XZLB7W?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
+                  View on Amazon
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Baking Steel */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader className="pb-2">
+              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Baking Steel</Badge>
+              <div className="aspect-square overflow-hidden rounded-lg mb-3 bg-white flex items-center justify-center">
+                <div className="text-6xl">🔥</div>
+              </div>
+              <CardTitle className="text-lg">Baking Steel</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className={`w-4 h-4 ${i < 5 ? 'fill-[#FF9900] text-[#FF9900]' : 'fill-[#FF9900]/70 text-[#FF9900]/70'}`} />
+                ))}
+                <span className="text-sm text-muted-foreground ml-1">4.8</span>
+              </div>
+              <p className="text-xl font-bold text-accent">$119</p>
+              <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
+                <a href="https://www.amazon.com/dp/B00N205G22?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
+                  View on Amazon
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* OXO Bench Scraper */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader className="pb-2">
+              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Bench Tool</Badge>
+              <div className="aspect-square overflow-hidden rounded-lg mb-3 bg-white flex items-center justify-center">
+                <div className="text-6xl">🧹</div>
+              </div>
+              <CardTitle className="text-lg">OXO Bench Scraper</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className={`w-4 h-4 ${i < 5 ? 'fill-[#FF9900] text-[#FF9900]' : 'fill-[#FF9900]/70 text-[#FF9900]/70'}`} />
+                ))}
+                <span className="text-sm text-muted-foreground ml-1">4.8</span>
+              </div>
+              <p className="text-xl font-bold text-accent">$10.99</p>
+              <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
+                <a href="https://www.amazon.com/dp/B00004OCNJ?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
                   View on Amazon
                 </a>
               </Button>
