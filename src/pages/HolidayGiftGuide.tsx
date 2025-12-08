@@ -2362,9 +2362,9 @@ const HolidayGiftGuide = () => {
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader className="pb-2">
               <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Dutch Oven</Badge>
-              <div className="aspect-square overflow-hidden rounded-lg mb-3 bg-white flex items-center justify-center">
-                <div className="text-6xl">🍲</div>
-              </div>
+              <a href="https://www.amazon.com/dp/B000N4UX4Q?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src="https://cdn.shoplightspeed.com/shops/633447/files/32303969/image.jpg" alt="Lodge 6Qt Dutch Oven" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </a>
               <CardTitle className="text-lg">Lodge 6Qt Dutch Oven</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
@@ -2387,9 +2387,9 @@ const HolidayGiftGuide = () => {
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader className="pb-2">
               <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Bread Pan</Badge>
-              <div className="aspect-square overflow-hidden rounded-lg mb-3 bg-white flex items-center justify-center">
-                <div className="text-6xl">🥘</div>
-              </div>
+              <a href="https://www.amazon.com/dp/B07M6MF86P?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src="https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_4:3/k%2FEdit%2F2021-05-Challenger-Pan-Review%2FChallenger2" alt="Challenger Bread Pan" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </a>
               <CardTitle className="text-lg">Challenger Bread Pan</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
@@ -2412,9 +2412,9 @@ const HolidayGiftGuide = () => {
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader className="pb-2">
               <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Scale</Badge>
-              <div className="aspect-square overflow-hidden rounded-lg mb-3 bg-white flex items-center justify-center">
-                <div className="text-6xl">⚖️</div>
-              </div>
+              <a href="https://www.amazon.com/dp/B00VEKX35Y?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src="https://cdn11.bigcommerce.com/s-6ijtzgo0pb/images/stencil/1280x1280/products/470/831/kd8000__96617.1669052301.JPG?c=1" alt="MyWeigh KD-8000 Scale" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </a>
               <CardTitle className="text-lg">MyWeigh KD-8000 Scale</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
@@ -2437,9 +2437,9 @@ const HolidayGiftGuide = () => {
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader className="pb-2">
               <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Banneton</Badge>
-              <div className="aspect-square overflow-hidden rounded-lg mb-3 bg-white flex items-center justify-center">
-                <div className="text-6xl">🧺</div>
-              </div>
+              <a href="https://www.amazon.com/dp/B01GM4UZJI?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src="https://m.media-amazon.com/images/I/81Y8FVOd1lL.jpg" alt="Bread Bosses Banneton" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </a>
               <CardTitle className="text-lg">Bread Bosses Banneton</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
@@ -2462,9 +2462,9 @@ const HolidayGiftGuide = () => {
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader className="pb-2">
               <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Scoring Tool</Badge>
-              <div className="aspect-square overflow-hidden rounded-lg mb-3 bg-white flex items-center justify-center">
-                <div className="text-6xl">🔪</div>
-              </div>
+              <a href="https://www.amazon.com/dp/B07KPTC1FN?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src="https://wiremonkey.com/cdn/shop/products/MG_0020_1445x.jpg?v=1573946504" alt="Wire Monkey UFO Lame" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </a>
               <CardTitle className="text-lg">Wire Monkey UFO Lame</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
@@ -2487,9 +2487,9 @@ const HolidayGiftGuide = () => {
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader className="pb-2">
               <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Thermometer</Badge>
-              <div className="aspect-square overflow-hidden rounded-lg mb-3 bg-white flex items-center justify-center">
-                <div className="text-6xl">🌡️</div>
-              </div>
+              <a href="https://www.amazon.com/dp/B084XZLB7W?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src="https://cdn.coalwayohio.com/wp-content/uploads/2024/09/Thermapen-Mk4_generic-01.jpg" alt="Thermapen ONE" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </a>
               <CardTitle className="text-lg">Thermapen ONE</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
@@ -2512,9 +2512,9 @@ const HolidayGiftGuide = () => {
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader className="pb-2">
               <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Baking Steel</Badge>
-              <div className="aspect-square overflow-hidden rounded-lg mb-3 bg-white flex items-center justify-center">
-                <div className="text-6xl">🔥</div>
-              </div>
+              <a href="https://www.amazon.com/dp/B00N205G22?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src="https://m.media-amazon.com/images/I/81T2o6K4fLL.jpg" alt="Baking Steel" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </a>
               <CardTitle className="text-lg">Baking Steel</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
@@ -2537,9 +2537,9 @@ const HolidayGiftGuide = () => {
           <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
             <CardHeader className="pb-2">
               <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Bench Tool</Badge>
-              <div className="aspect-square overflow-hidden rounded-lg mb-3 bg-white flex items-center justify-center">
-                <div className="text-6xl">🧹</div>
-              </div>
+              <a href="https://www.amazon.com/dp/B00004OCNJ?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src="http://walfosbrand.com/cdn/shop/files/615Wgh2HHiL._AC_SL1500.jpg?v=1749399688" alt="OXO Bench Scraper" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </a>
               <CardTitle className="text-lg">OXO Bench Scraper</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
