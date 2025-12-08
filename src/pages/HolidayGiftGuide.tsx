@@ -78,6 +78,18 @@ import btSourdoughHomeStarterBundle from "@/assets/holiday/bt-sourdough-home-sta
 import btBakingShellSteelBundle from "@/assets/holiday/bt-baking-shell-steel-bundle.webp";
 import btDoughWhiskBenchKnifeBundle from "@/assets/holiday/bt-dough-whisk-bench-knife-bundle.webp";
 import btBakersMathScale from "@/assets/holiday/bt-bakers-math-scale.webp";
+
+// Amazon products - Batch 2 & 3
+import amazonMatferBakingMat from "@/assets/holiday/amazon-matfer-baking-mat.jpeg";
+import amazonAnkarsrumMixer from "@/assets/holiday/amazon-ankarsrum-mixer.jpeg";
+import amazonEmileHenryCloche from "@/assets/holiday/amazon-emile-henry-cloche.jpeg";
+import amazonFibramentStone from "@/assets/holiday/amazon-fibrament-stone.jpeg";
+import amazonLavatoolsThermometer from "@/assets/holiday/amazon-lavatools-thermometer.jpeg";
+import amazonStaubCocotte from "@/assets/holiday/amazon-staub-cocotte.jpeg";
+import amazonLeCreuset from "@/assets/holiday/amazon-le-creuset.jpeg";
+import amazonBallJars from "@/assets/holiday/amazon-ball-jars.jpeg";
+import amazonBreadSling from "@/assets/holiday/amazon-bread-sling.jpeg";
+import amazonFeatherBlades from "@/assets/holiday/amazon-feather-blades.jpeg";
 import btVG2Sharpener from "@/assets/holiday/bt-vg2-sharpener.jpg";
 import btChefApronPro from "@/assets/holiday/bt-chef-apron.png";
 import vitalePromo20Off from "@/assets/holiday/vitale-promo-20off.png";
@@ -2552,6 +2564,381 @@ const HolidayGiftGuide = () => {
               <p className="text-xl font-bold text-accent">$10.99</p>
               <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
                 <a href="https://www.amazon.com/dp/B00004OCNJ?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
+                  View on Amazon
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Brod & Taylor Dough Whisk */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader className="pb-2">
+              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Whisk</Badge>
+              <a href="https://www.amazon.com/dp/B0821K5RDJ?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src="https://m.media-amazon.com/images/I/61kQ5L5HIOL._AC_SL1500_.jpg" alt="Brod & Taylor Dough Whisk" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </a>
+              <CardTitle className="text-lg">Brod & Taylor Dough Whisk</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className={`w-4 h-4 ${i < 5 ? 'fill-[#FF9900] text-[#FF9900]' : 'fill-[#FF9900]/70 text-[#FF9900]/70'}`} />
+                ))}
+                <span className="text-sm text-muted-foreground ml-1">4.8</span>
+              </div>
+              <p className="text-xl font-bold text-accent">$16.00</p>
+              <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
+                <a href="https://www.amazon.com/dp/B0821K5RDJ?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
+                  View on Amazon
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* ThermoWorks ThermoPop */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader className="pb-2">
+              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Thermometer</Badge>
+              <a href="https://www.amazon.com/dp/B07MJSQR1F?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src="https://m.media-amazon.com/images/I/61VDw7YFVKL._AC_SL1500_.jpg" alt="ThermoWorks ThermoPop" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </a>
+              <CardTitle className="text-lg">ThermoWorks ThermoPop</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className={`w-4 h-4 ${i < 4 ? 'fill-[#FF9900] text-[#FF9900]' : 'fill-[#FF9900]/70 text-[#FF9900]/70'}`} />
+                ))}
+                <span className="text-sm text-muted-foreground ml-1">4.7</span>
+              </div>
+              <p className="text-xl font-bold text-accent">$34.00</p>
+              <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
+                <a href="https://www.amazon.com/dp/B07MJSQR1F?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
+                  View on Amazon
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Cambro 6 Qt Container with Lid */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader className="pb-2">
+              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Container</Badge>
+              <a href="https://www.amazon.com/dp/B001NCDE74?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src="https://m.media-amazon.com/images/I/51q4d4YnGUL._AC_SL1000_.jpg" alt="Cambro 6 Qt Container with Lid" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </a>
+              <CardTitle className="text-lg">Cambro 6 Qt Container</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className={`w-4 h-4 ${i < 5 ? 'fill-[#FF9900] text-[#FF9900]' : 'fill-[#FF9900]/70 text-[#FF9900]/70'}`} />
+                ))}
+                <span className="text-sm text-muted-foreground ml-1">4.8</span>
+              </div>
+              <p className="text-xl font-bold text-accent">$17.29</p>
+              <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
+                <a href="https://www.amazon.com/dp/B001NCDE74?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
+                  View on Amazon
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Checkered Chef Cooling Rack */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader className="pb-2">
+              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Cooling Rack</Badge>
+              <a href="https://www.amazon.com/dp/B01N1YDLIG?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src="https://m.media-amazon.com/images/I/81Yxft4FHKL._AC_SL1500_.jpg" alt="Checkered Chef Cooling Rack" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </a>
+              <CardTitle className="text-lg">Checkered Chef Cooling Rack</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className={`w-4 h-4 ${i < 4 ? 'fill-[#FF9900] text-[#FF9900]' : 'fill-[#FF9900]/70 text-[#FF9900]/70'}`} />
+                ))}
+                <span className="text-sm text-muted-foreground ml-1">4.7</span>
+              </div>
+              <p className="text-xl font-bold text-accent">$12.95</p>
+              <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
+                <a href="https://www.amazon.com/dp/B01N1YDLIG?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
+                  View on Amazon
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* KitchenAid Artisan 5 Qt Stand Mixer */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader className="pb-2">
+              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Stand Mixer</Badge>
+              <a href="https://www.amazon.com/dp/B00005UP2P?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src="https://m.media-amazon.com/images/I/71mYPExNqrL._AC_SL1500_.jpg" alt="KitchenAid Artisan 5 Qt Stand Mixer" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </a>
+              <CardTitle className="text-lg">KitchenAid Artisan Mixer</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className={`w-4 h-4 ${i < 5 ? 'fill-[#FF9900] text-[#FF9900]' : 'fill-[#FF9900]/70 text-[#FF9900]/70'}`} />
+                ))}
+                <span className="text-sm text-muted-foreground ml-1">4.8</span>
+              </div>
+              <p className="text-xl font-bold text-accent">$449.99</p>
+              <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
+                <a href="https://www.amazon.com/dp/B00005UP2P?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
+                  View on Amazon
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Feather Razor Blades */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader className="pb-2">
+              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Scoring Blades</Badge>
+              <a href="https://www.amazon.com/dp/B004LK3Y8W?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src={amazonFeatherBlades} alt="Feather Razor Blades 100 pack" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </a>
+              <CardTitle className="text-lg">Feather Razor Blades (100)</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className={`w-4 h-4 ${i < 5 ? 'fill-[#FF9900] text-[#FF9900]' : 'fill-[#FF9900]/70 text-[#FF9900]/70'}`} />
+                ))}
+                <span className="text-sm text-muted-foreground ml-1">4.8</span>
+              </div>
+              <p className="text-xl font-bold text-accent">$18.50</p>
+              <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
+                <a href="https://www.amazon.com/dp/B004LK3Y8W?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
+                  View on Amazon
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Silicone Bread Sling */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader className="pb-2">
+              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Bread Sling</Badge>
+              <a href="https://www.amazon.com/dp/B07W4TKLR3?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src={amazonBreadSling} alt="Silicone Bread Sling" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </a>
+              <CardTitle className="text-lg">Silicone Bread Sling</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className={`w-4 h-4 ${i < 4 ? 'fill-[#FF9900] text-[#FF9900]' : 'fill-[#FF9900]/70 text-[#FF9900]/70'}`} />
+                ))}
+                <span className="text-sm text-muted-foreground ml-1">4.6</span>
+              </div>
+              <p className="text-xl font-bold text-accent">$12.99</p>
+              <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
+                <a href="https://www.amazon.com/dp/B07W4TKLR3?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
+                  View on Amazon
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Ball Wide Mouth Mason Jars */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader className="pb-2">
+              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Jars</Badge>
+              <a href="https://www.amazon.com/dp/B01N6QBJG0?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src={amazonBallJars} alt="Ball Wide Mouth Mason Jars 12 pack" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </a>
+              <CardTitle className="text-lg">Ball Mason Jars (12 pack)</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className={`w-4 h-4 ${i < 5 ? 'fill-[#FF9900] text-[#FF9900]' : 'fill-[#FF9900]/70 text-[#FF9900]/70'}`} />
+                ))}
+                <span className="text-sm text-muted-foreground ml-1">4.8</span>
+              </div>
+              <p className="text-xl font-bold text-accent">$18.99</p>
+              <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
+                <a href="https://www.amazon.com/dp/B01N6QBJG0?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
+                  View on Amazon
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Le Creuset Signature Dutch Oven */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader className="pb-2">
+              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Dutch Oven</Badge>
+              <a href="https://www.amazon.com/dp/B00076SGQE?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src={amazonLeCreuset} alt="Le Creuset Signature Dutch Oven 5.5 Qt" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </a>
+              <CardTitle className="text-lg">Le Creuset Dutch Oven 5.5Qt</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className={`w-4 h-4 ${i < 5 ? 'fill-[#FF9900] text-[#FF9900]' : 'fill-[#FF9900]/70 text-[#FF9900]/70'}`} />
+                ))}
+                <span className="text-sm text-muted-foreground ml-1">4.8</span>
+              </div>
+              <p className="text-xl font-bold text-accent">$369.95</p>
+              <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
+                <a href="https://www.amazon.com/dp/B00076SGQE?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
+                  View on Amazon
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Staub Cast Iron Round Cocotte */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader className="pb-2">
+              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Dutch Oven</Badge>
+              <a href="https://www.amazon.com/dp/B000RUTDNA?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src={amazonStaubCocotte} alt="Staub Cast Iron Round Cocotte 5.5 Qt" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </a>
+              <CardTitle className="text-lg">Staub Cocotte 5.5Qt</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className={`w-4 h-4 ${i < 5 ? 'fill-[#FF9900] text-[#FF9900]' : 'fill-[#FF9900]/70 text-[#FF9900]/70'}`} />
+                ))}
+                <span className="text-sm text-muted-foreground ml-1">4.8</span>
+              </div>
+              <p className="text-xl font-bold text-accent">$329.99</p>
+              <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
+                <a href="https://www.amazon.com/dp/B000RUTDNA?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
+                  View on Amazon
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Lavatools Javelin PRO Duo Thermometer */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader className="pb-2">
+              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Thermometer</Badge>
+              <a href="https://www.amazon.com/dp/B00GRFHXVQ?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src={amazonLavatoolsThermometer} alt="Lavatools Javelin PRO Duo Thermometer" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </a>
+              <CardTitle className="text-lg">Lavatools Javelin PRO</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className={`w-4 h-4 ${i < 4 ? 'fill-[#FF9900] text-[#FF9900]' : 'fill-[#FF9900]/70 text-[#FF9900]/70'}`} />
+                ))}
+                <span className="text-sm text-muted-foreground ml-1">4.7</span>
+              </div>
+              <p className="text-xl font-bold text-accent">$54.99</p>
+              <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
+                <a href="https://www.amazon.com/dp/B00GRFHXVQ?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
+                  View on Amazon
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* FibraMent-D Baking Stone */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader className="pb-2">
+              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Baking Stone</Badge>
+              <a href="https://www.amazon.com/dp/B005IF2B28?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src={amazonFibramentStone} alt="FibraMent-D Baking Stone" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </a>
+              <CardTitle className="text-lg">FibraMent-D Baking Stone</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className={`w-4 h-4 ${i < 4 ? 'fill-[#FF9900] text-[#FF9900]' : 'fill-[#FF9900]/70 text-[#FF9900]/70'}`} />
+                ))}
+                <span className="text-sm text-muted-foreground ml-1">4.7</span>
+              </div>
+              <p className="text-xl font-bold text-accent">$89.95</p>
+              <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
+                <a href="https://www.amazon.com/dp/B005IF2B28?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
+                  View on Amazon
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Emile Henry Bread Cloche */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader className="pb-2">
+              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Bread Cloche</Badge>
+              <a href="https://www.amazon.com/dp/B001CJNJBC?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src={amazonEmileHenryCloche} alt="Emile Henry Bread Cloche" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </a>
+              <CardTitle className="text-lg">Emile Henry Bread Cloche</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className={`w-4 h-4 ${i < 4 ? 'fill-[#FF9900] text-[#FF9900]' : 'fill-[#FF9900]/70 text-[#FF9900]/70'}`} />
+                ))}
+                <span className="text-sm text-muted-foreground ml-1">4.6</span>
+              </div>
+              <p className="text-xl font-bold text-accent">$89.95</p>
+              <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
+                <a href="https://www.amazon.com/dp/B001CJNJBC?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
+                  View on Amazon
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Ankarsrum Original Stand Mixer */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader className="pb-2">
+              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Stand Mixer</Badge>
+              <a href="https://www.amazon.com/dp/B0892SQPVQ?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src={amazonAnkarsrumMixer} alt="Ankarsrum Original Stand Mixer" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </a>
+              <CardTitle className="text-lg">Ankarsrum Original Mixer</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className={`w-4 h-4 ${i < 4 ? 'fill-[#FF9900] text-[#FF9900]' : 'fill-[#FF9900]/70 text-[#FF9900]/70'}`} />
+                ))}
+                <span className="text-sm text-muted-foreground ml-1">4.7</span>
+              </div>
+              <p className="text-xl font-bold text-accent">$799.00</p>
+              <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
+                <a href="https://www.amazon.com/dp/B0892SQPVQ?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
+                  View on Amazon
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Matfer Bourgeat Silicone Baking Mat */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader className="pb-2">
+              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Baking Mat</Badge>
+              <a href="https://www.amazon.com/dp/B000WM0CQU?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src={amazonMatferBakingMat} alt="Matfer Bourgeat Silicone Baking Mat" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              </a>
+              <CardTitle className="text-lg">Matfer Silicone Baking Mat</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className={`w-4 h-4 ${i < 5 ? 'fill-[#FF9900] text-[#FF9900]' : 'fill-[#FF9900]/70 text-[#FF9900]/70'}`} />
+                ))}
+                <span className="text-sm text-muted-foreground ml-1">4.8</span>
+              </div>
+              <p className="text-xl font-bold text-accent">$32.00</p>
+              <Button className="w-full bg-[#FF9900] hover:bg-[#E88B00] text-black font-semibold" asChild>
+                <a href="https://www.amazon.com/dp/B000WM0CQU?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer">
                   View on Amazon
                 </a>
               </Button>
