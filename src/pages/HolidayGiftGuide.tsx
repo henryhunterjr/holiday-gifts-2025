@@ -93,6 +93,13 @@ import amazonFeatherBlades from "@/assets/holiday/amazon-feather-blades.jpeg";
 import btVG2Sharpener from "@/assets/holiday/bt-vg2-sharpener.jpg";
 import btChefApronPro from "@/assets/holiday/bt-chef-apron.png";
 
+// Amazon products - missing images
+import amazonKitchenaidMixer from "@/assets/holiday/amazon-kitchenaid-mixer.png";
+import amazonCambroContainer from "@/assets/holiday/amazon-cambro-container.jpg";
+import amazonCheckeredChefRack from "@/assets/holiday/amazon-checkered-chef-rack.jpg";
+import amazonBrodTaylorWhisk from "@/assets/holiday/amazon-brod-taylor-whisk.jpg";
+import amazonThermopop from "@/assets/holiday/amazon-thermopop.jpg";
+
 // Krustic brand images
 import krusticBakersBundle from "@/assets/holiday/krustic-bakers-bundle.jpg";
 import krusticEnamelRound from "@/assets/holiday/krustic-enamel-round.jpg";
@@ -2835,7 +2842,7 @@ const HolidayGiftGuide = () => {
             <CardHeader className="pb-2">
               <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Whisk</Badge>
               <a href="https://www.amazon.com/dp/B0821K5RDJ?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
-                <img src="https://m.media-amazon.com/images/I/61kQ5L5HIOL._AC_SL1500_.jpg" alt="Brod & Taylor Dough Whisk" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                <img src={amazonBrodTaylorWhisk} alt="Brod & Taylor Dough Whisk" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
               </a>
               <CardTitle className="text-lg">Brod & Taylor Dough Whisk</CardTitle>
             </CardHeader>
@@ -2860,7 +2867,7 @@ const HolidayGiftGuide = () => {
             <CardHeader className="pb-2">
               <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Thermometer</Badge>
               <a href="https://www.amazon.com/dp/B07MJSQR1F?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
-                <img src="https://m.media-amazon.com/images/I/61VDw7YFVKL._AC_SL1500_.jpg" alt="ThermoWorks ThermoPop" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                <img src={amazonThermopop} alt="ThermoWorks ThermoPop" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
               </a>
               <CardTitle className="text-lg">ThermoWorks ThermoPop</CardTitle>
             </CardHeader>
@@ -2885,7 +2892,7 @@ const HolidayGiftGuide = () => {
             <CardHeader className="pb-2">
               <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Container</Badge>
               <a href="https://www.amazon.com/dp/B001NCDE74?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
-                <img src="https://m.media-amazon.com/images/I/51q4d4YnGUL._AC_SL1000_.jpg" alt="Cambro 6 Qt Container with Lid" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                <img src={amazonCambroContainer} alt="Cambro 6 Qt Container with Lid" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
               </a>
               <CardTitle className="text-lg">Cambro 6 Qt Container</CardTitle>
             </CardHeader>
@@ -2910,7 +2917,7 @@ const HolidayGiftGuide = () => {
             <CardHeader className="pb-2">
               <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Cooling Rack</Badge>
               <a href="https://www.amazon.com/dp/B01N1YDLIG?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
-                <img src="https://m.media-amazon.com/images/I/81Yxft4FHKL._AC_SL1500_.jpg" alt="Checkered Chef Cooling Rack" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                <img src={amazonCheckeredChefRack} alt="Checkered Chef Cooling Rack" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
               </a>
               <CardTitle className="text-lg">Checkered Chef Cooling Rack</CardTitle>
             </CardHeader>
@@ -2935,7 +2942,7 @@ const HolidayGiftGuide = () => {
             <CardHeader className="pb-2">
               <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Stand Mixer</Badge>
               <a href="https://www.amazon.com/dp/B00005UP2P?tag=onamz55024a-20" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
-                <img src="https://m.media-amazon.com/images/I/71mYPExNqrL._AC_SL1500_.jpg" alt="KitchenAid Artisan 5 Qt Stand Mixer" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                <img src={amazonKitchenaidMixer} alt="KitchenAid Artisan 5 Qt Stand Mixer" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
               </a>
               <CardTitle className="text-lg">KitchenAid Artisan Mixer</CardTitle>
             </CardHeader>
