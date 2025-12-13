@@ -92,6 +92,16 @@ import amazonBreadSling from "@/assets/holiday/amazon-bread-sling.jpeg";
 import amazonFeatherBlades from "@/assets/holiday/amazon-feather-blades.jpeg";
 import btVG2Sharpener from "@/assets/holiday/bt-vg2-sharpener.jpg";
 import btChefApronPro from "@/assets/holiday/bt-chef-apron.png";
+
+// Krustic brand images
+import krusticBakersBundle from "@/assets/holiday/krustic-bakers-bundle.jpg";
+import krusticEnamelRound from "@/assets/holiday/krustic-enamel-round.jpg";
+import krusticEnamelOval from "@/assets/holiday/krustic-enamel-oval.jpeg";
+import krusticCastIronRound from "@/assets/holiday/krustic-cast-iron-round.png";
+import krusticCastIronOval from "@/assets/holiday/krustic-cast-iron-oval.jpeg";
+import krusticBannetonOval from "@/assets/holiday/krustic-banneton-oval.jpeg";
+import krusticTransferMat from "@/assets/holiday/krustic-transfer-mat.jpeg";
+import krusticStarter from "@/assets/holiday/krustic-starter.webp";
 import vitalePromo20Off from "@/assets/holiday/vitale-promo-20off.png";
 import modkitchenBreadBag from "@/assets/holiday/modkitchen-bread-bag.webp";
 import modkitchenBreadSling from "@/assets/holiday/modkitchen-bread-sling.webp";
@@ -161,6 +171,15 @@ const HolidayGiftGuide = () => {
     { name: "17 inch Walnut Bowl", brand: "Holland Bowl Mill", category: "bowls", keywords: "mixing bowl wood walnut large salad", price: "$385", id: "walnut-bowl-17" },
     { name: "17 inch Maple Bowl", brand: "Holland Bowl Mill", category: "bowls", keywords: "mixing bowl wood maple large salad", price: "$325", id: "maple-bowl-17" },
     { name: "17 inch Beech Bowl", brand: "Holland Bowl Mill", category: "bowls", keywords: "mixing bowl wood beech large salad", price: "$225", id: "beech-bowl-17" },
+    // Krustic products
+    { name: "Krustic Baker's Bundle", brand: "Krustic", category: "equipment", keywords: "bundle kit dutch oven banneton starter complete set", price: "$349.99", id: "krustic-bundle" },
+    { name: "Krustic Enameled Dutch Oven Round", brand: "Krustic", category: "equipment", keywords: "dutch oven enameled round cast iron bread", price: "$149.99", id: "krustic-enamel-round" },
+    { name: "Krustic Enameled Dutch Oven Oval", brand: "Krustic", category: "equipment", keywords: "dutch oven enameled oval cast iron bread batard", price: "$159.98", id: "krustic-enamel-oval" },
+    { name: "Krustic Cast Iron Dutch Oven Round", brand: "Krustic", category: "equipment", keywords: "dutch oven cast iron round bread heritage", price: "$149.99", id: "krustic-cast-iron-round" },
+    { name: "Krustic Cast Iron Dutch Oven Oval", brand: "Krustic", category: "equipment", keywords: "dutch oven cast iron oval bread batard heritage", price: "$159.98", id: "krustic-cast-iron-oval" },
+    { name: "Krustic Wood Pulp Banneton", brand: "Krustic", category: "bannetons", keywords: "banneton proofing basket wood pulp oval eco-friendly", price: "$44.99", id: "krustic-banneton" },
+    { name: "Krustic Silicone Transfer Mat", brand: "Krustic", category: "tools", keywords: "transfer mat silicone dough peel", price: "$19.99", id: "krustic-transfer-mat" },
+    { name: "Krustic Dual-Flour Starter", brand: "Krustic", category: "starter", keywords: "sourdough starter dehydrated organic wild yeast", price: "$19.99", id: "krustic-starter" },
   ];
 
   const filteredProducts = searchQuery 
@@ -494,6 +513,13 @@ const HolidayGiftGuide = () => {
               className="border-2 border-accent/50 bg-card text-foreground hover:border-accent hover:bg-accent/10 dark:bg-card dark:text-foreground"
             >
               Premium Tools
+            </Button>
+            <Button
+              variant="outline"
+              onClick={() => scrollToSection("krustic")}
+              className="border-2 border-[#C45C26]/50 bg-card text-foreground hover:border-[#C45C26] hover:bg-[#C45C26]/10 dark:bg-card dark:text-foreground"
+            >
+              Krustic
             </Button>
             <Button
               variant="outline"
@@ -2354,6 +2380,240 @@ const HolidayGiftGuide = () => {
               </button>
             </CardContent>
           </Card>
+        </div>
+      </section>
+
+      {/* KRUSTIC - Budget-Friendly Premium Bakeware */}
+      <section id="krustic" className="container mx-auto px-4 py-16 bg-gradient-to-b from-background to-[hsl(25,50%,95%)] dark:from-background/95 dark:to-background">
+        <div className="text-center mb-12">
+          <Badge className="mb-4 bg-[#C45C26] text-white text-base px-4 py-2">Rise Above Tradition™</Badge>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground dark:text-primary mb-4">
+            Krustic
+          </h2>
+          <p className="text-lg text-foreground/80 dark:text-muted-foreground max-w-3xl mx-auto mb-4">
+            Heritage-inspired sourdough tools that honor the past and elevate your bake. From Dutch ovens to wood pulp bannetons and sourdough starters, Krustic blends tradition with thoughtful design.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3 mb-4">
+            <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200 dark:bg-green-900/30 dark:text-green-400 dark:border-green-800">
+              Free Shipping + 30-Day Returns
+            </Badge>
+            <button
+              onClick={() => copyToClipboard("BGBAH25")}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-[#C45C26] text-white rounded-full text-sm font-semibold hover:bg-[#A34D1F] transition-colors"
+            >
+              {copiedCode === "BGBAH25" ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+              Use code BGBAH25 for 10% off
+            </button>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          {/* The Baker's Bundle - Featured */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1 md:col-span-2 lg:col-span-2">
+            <CardHeader className="pb-2">
+              <div className="flex gap-2 mb-2">
+                <Badge className="bg-red-500 text-white">Save $70!</Badge>
+                <Badge className="bg-[#C45C26] text-white">Best Value</Badge>
+              </div>
+              <a href="https://www.krustic.com/products/prime-bakers-bundle?rfsn=8815980.edac31" target="_blank" rel="noopener noreferrer" className="block aspect-video overflow-hidden rounded-lg mb-3 bg-white">
+                <img src={krusticBakersBundle} alt="Krustic Baker's Bundle complete sourdough kit" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+              </a>
+              <CardTitle className="text-xl">The Baker's Bundle</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <CardDescription className="text-base">
+                Complete sourdough starter kit including 2 enameled Dutch ovens, bannetons, transfer peels, starter, and cleaning brush. The ultimate gift for serious bakers.
+              </CardDescription>
+              <div className="flex items-baseline gap-2">
+                <p className="text-2xl font-bold text-[#C45C26]">$349.99</p>
+                <p className="text-lg text-muted-foreground line-through">$419.99</p>
+              </div>
+              <Button className="w-full bg-[#C45C26] hover:bg-[#A34D1F] text-white font-semibold" asChild>
+                <a href="https://www.krustic.com/products/prime-bakers-bundle?rfsn=8815980.edac31" target="_blank" rel="noopener noreferrer">
+                  Shop Krustic
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Freeform Dutch Oven - Enameled Round */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader className="pb-2">
+              <Badge className="w-fit mb-2 bg-red-500 text-white text-xs">Save $40!</Badge>
+              <a href="https://www.krustic.com/products/freeform-dutch-oven-round-enameled?rfsn=8815980.edac31" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src={krusticEnamelRound} alt="Krustic Freeform Dutch Oven Enameled Round" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+              </a>
+              <CardTitle className="text-lg">Enameled Round (6qt)</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <CardDescription className="text-sm">
+                Nonstick enamel coating, oven-safe to 500°F. Perfect for boules. Multiple colors available.
+              </CardDescription>
+              <div className="flex items-baseline gap-2">
+                <p className="text-xl font-bold text-[#C45C26]">$149.99</p>
+                <p className="text-sm text-muted-foreground line-through">$189.99</p>
+              </div>
+              <Button className="w-full bg-[#C45C26] hover:bg-[#A34D1F] text-white font-semibold" asChild>
+                <a href="https://www.krustic.com/products/freeform-dutch-oven-round-enameled?rfsn=8815980.edac31" target="_blank" rel="noopener noreferrer">
+                  Shop Now
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Freeform Dutch Oven - Enameled Oval */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader className="pb-2">
+              <Badge className="w-fit mb-2 bg-red-500 text-white text-xs">Save $40!</Badge>
+              <a href="https://www.krustic.com/products/freeform-dutch-oven-oval-enameled?rfsn=8815980.edac31" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src={krusticEnamelOval} alt="Krustic Freeform Dutch Oven Enameled Oval" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+              </a>
+              <CardTitle className="text-lg">Enameled Oval (5.5qt)</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <CardDescription className="text-sm">
+                Oval shape perfect for batards. Nonstick enamel, includes silicone mat.
+              </CardDescription>
+              <div className="flex items-baseline gap-2">
+                <p className="text-xl font-bold text-[#C45C26]">$159.98</p>
+                <p className="text-sm text-muted-foreground line-through">$199.98</p>
+              </div>
+              <Button className="w-full bg-[#C45C26] hover:bg-[#A34D1F] text-white font-semibold" asChild>
+                <a href="https://www.krustic.com/products/freeform-dutch-oven-oval-enameled?rfsn=8815980.edac31" target="_blank" rel="noopener noreferrer">
+                  Shop Now
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Cast Iron Round */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader className="pb-2">
+              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Cast Iron</Badge>
+              <a href="https://www.krustic.com/products/the-freeform-dutch-oven-cast-iron-round?rfsn=8815980.edac31" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src={krusticCastIronRound} alt="Krustic Cast Iron Dutch Oven Round" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+              </a>
+              <CardTitle className="text-lg">Cast Iron Round (6qt)</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <CardDescription className="text-sm">
+                Classic raw cast iron for heritage performance. Heavy, solid, holds heat like nothing else.
+              </CardDescription>
+              <p className="text-xl font-bold text-[#C45C26]">$149.99</p>
+              <Button className="w-full bg-[#C45C26] hover:bg-[#A34D1F] text-white font-semibold" asChild>
+                <a href="https://www.krustic.com/products/the-freeform-dutch-oven-cast-iron-round?rfsn=8815980.edac31" target="_blank" rel="noopener noreferrer">
+                  Shop Now
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Cast Iron Oval */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader className="pb-2">
+              <Badge className="w-fit mb-2 bg-muted text-muted-foreground text-xs">Cast Iron</Badge>
+              <a href="https://www.krustic.com/products/the-freeform-dutch-oven-cast-iron-oval?rfsn=8815980.edac31" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src={krusticCastIronOval} alt="Krustic Cast Iron Dutch Oven Oval" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+              </a>
+              <CardTitle className="text-lg">Cast Iron Oval (5.5qt)</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <CardDescription className="text-sm">
+                Oval shape for traditional batards. Raw cast iron, built for bread.
+              </CardDescription>
+              <p className="text-xl font-bold text-[#C45C26]">$159.98</p>
+              <Button className="w-full bg-[#C45C26] hover:bg-[#A34D1F] text-white font-semibold" asChild>
+                <a href="https://www.krustic.com/products/the-freeform-dutch-oven-cast-iron-oval?rfsn=8815980.edac31" target="_blank" rel="noopener noreferrer">
+                  Shop Now
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Wood Pulp Banneton - Oval */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader className="pb-2">
+              <Badge className="w-fit mb-2 bg-green-600 text-white text-xs">Eco-Friendly</Badge>
+              <a href="https://www.krustic.com/products/the-wood-pulp-banneton-oval?rfsn=8815980.edac31" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src={krusticBannetonOval} alt="Krustic Wood Pulp Banneton Oval" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+              </a>
+              <CardTitle className="text-lg">Wood Pulp Banneton - Oval</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <CardDescription className="text-sm">
+                Eco-friendly wood pulp proofing basket, 0.75kg capacity. Creates beautiful ring patterns.
+              </CardDescription>
+              <div className="flex items-baseline gap-2">
+                <p className="text-xl font-bold text-[#C45C26]">$44.99</p>
+                <p className="text-sm text-muted-foreground line-through">$49.99</p>
+              </div>
+              <Button className="w-full bg-[#C45C26] hover:bg-[#A34D1F] text-white font-semibold" asChild>
+                <a href="https://www.krustic.com/products/the-wood-pulp-banneton-oval?rfsn=8815980.edac31" target="_blank" rel="noopener noreferrer">
+                  Shop Now
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Silicone Transfer Mat */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader className="pb-2">
+              <Badge className="w-fit mb-2 bg-accent text-white text-xs">Essential</Badge>
+              <a href="https://www.krustic.com/products/silicone-transfer-mat-round?rfsn=8815980.edac31" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src={krusticTransferMat} alt="Krustic Silicone Transfer Mat" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+              </a>
+              <CardTitle className="text-lg">Silicone Transfer Mat</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <CardDescription className="text-sm">
+                Easy dough transfer from banneton to Dutch oven. No more deflating your dough!
+              </CardDescription>
+              <p className="text-xl font-bold text-[#C45C26]">$19.99</p>
+              <Button className="w-full bg-[#C45C26] hover:bg-[#A34D1F] text-white font-semibold" asChild>
+                <a href="https://www.krustic.com/products/silicone-transfer-mat-round?rfsn=8815980.edac31" target="_blank" rel="noopener noreferrer">
+                  Shop Now
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Dual-Flour Sourdough Starter */}
+          <Card className="group hover:shadow-lifted transition-all duration-300 hover:-translate-y-1">
+            <CardHeader className="pb-2">
+              <Badge className="w-fit mb-2 bg-[#C45C26] text-white text-xs">Stocking Stuffer!</Badge>
+              <a href="https://www.krustic.com/products/the-dual-flour-starter-dehydrated?rfsn=8815980.edac31" target="_blank" rel="noopener noreferrer" className="block aspect-square overflow-hidden rounded-lg mb-3 bg-white">
+                <img src={krusticStarter} alt="Krustic Dual-Flour Dehydrated Sourdough Starter" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+              </a>
+              <CardTitle className="text-lg">Dual-Flour Starter</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <CardDescription className="text-sm">
+                10g organic, non-GMO wild yeast chips. Quick-activating, works with any flour. Perfect stocking stuffer!
+              </CardDescription>
+              <div className="flex items-baseline gap-2">
+                <p className="text-xl font-bold text-[#C45C26]">$19.99</p>
+                <p className="text-sm text-muted-foreground line-through">$24.99</p>
+              </div>
+              <Button className="w-full bg-[#C45C26] hover:bg-[#A34D1F] text-white font-semibold" asChild>
+                <a href="https://www.krustic.com/products/the-dual-flour-starter-dehydrated?rfsn=8815980.edac31" target="_blank" rel="noopener noreferrer">
+                  Shop Now
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Social Links */}
+        <div className="flex justify-center items-center gap-6 mt-10">
+          <a href="https://www.instagram.com/krustic_crafts/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-[#C45C26] transition-colors text-sm flex items-center gap-1">
+            Instagram
+          </a>
+          <a href="https://www.facebook.com/KrusticCrafts" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-[#C45C26] transition-colors text-sm flex items-center gap-1">
+            Facebook
+          </a>
+          <a href="https://www.tiktok.com/@krustic" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-[#C45C26] transition-colors text-sm flex items-center gap-1">
+            TikTok
+          </a>
         </div>
       </section>
 
