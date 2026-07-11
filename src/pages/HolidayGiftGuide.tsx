@@ -4,7 +4,14 @@ import { toast } from "sonner";
 import productsData from "@/data/products.json";
 import { krusticProducts } from "@/data/krustic";
 import { amazonProducts } from "@/data/amazon";
-import heroImg from "@/assets/holiday/hero-bread-baking-gifts.jpg";
+import bakeryWindow from "@/assets/holiday/bakery-window.png";
+import bgbLogo from "@/assets/holiday/ornament-bgb-logo.png";
+import ornBauble from "@/assets/holiday/ornament-bgb-bauble.png";
+import ornCrust from "@/assets/holiday/ornament-crust-crumb.png";
+import ornBanneton from "@/assets/holiday/ornament-banneton.png";
+import ornMixerRed from "@/assets/holiday/ornament-mixer-red.jpg";
+import ornStarter from "@/assets/holiday/ornament-starter-pack.jpg";
+import ornHenryMixer from "@/assets/holiday/ornament-henry-mixer.jpg";
 
 /* ============ Types & data ============ */
 type Product = {
@@ -70,26 +77,27 @@ function SnowCanvas({ on }: { on: boolean }) {
     const ctx = c.getContext("2d")!;
     let raf = 0;
     const resize = () => {
-      c.width = c.offsetWidth;
-      c.height = c.offsetHeight;
+      c.width = window.innerWidth;
+      c.height = window.innerHeight;
     };
     resize();
     window.addEventListener("resize", resize);
-    const flakes = Array.from({ length: 60 }, () => ({
+    const flakes = Array.from({ length: 140 }, () => ({
       x: Math.random() * c.width,
       y: Math.random() * c.height,
-      r: 1 + Math.random() * 2.5,
-      vy: 0.3 + Math.random() * 0.9,
+      r: 0.8 + Math.random() * 2.8,
+      vy: 0.25 + Math.random() * 1.1,
       vx: -0.3 + Math.random() * 0.6,
+      a: 0.5 + Math.random() * 0.5,
     }));
     const draw = () => {
       ctx.clearRect(0, 0, c.width, c.height);
-      ctx.fillStyle = "rgba(255,250,235,0.85)";
       for (const f of flakes) {
         f.y += f.vy;
         f.x += f.vx;
         if (f.y > c.height) { f.y = -5; f.x = Math.random() * c.width; }
         if (f.x < 0 || f.x > c.width) f.x = Math.random() * c.width;
+        ctx.fillStyle = `rgba(255,250,235,${f.a})`;
         ctx.beginPath();
         ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
         ctx.fill();
@@ -99,7 +107,75 @@ function SnowCanvas({ on }: { on: boolean }) {
     draw();
     return () => { cancelAnimationFrame(raf); window.removeEventListener("resize", resize); };
   }, [on]);
-  return <canvas ref={ref} className="pointer-events-none absolute inset-0 z-10" />;
+  return <canvas ref={ref} className="pointer-events-none fixed inset-0 z-[45] h-screen w-screen" />;
+}
+
+/* ============ Header Ornament Garland ============ */
+const ORNAMENTS = [
+  { src: ornBauble,     size: 62, drop: 14 },
+  { src: ornCrust,      size: 56, drop: 26 },
+  { src: ornBanneton,   size: 58, drop: 18 },
+  { src: ornHenryMixer, size: 60, drop: 30 },
+  { src: ornStarter,    size: 52, drop: 22 },
+  { src: ornMixerRed,   size: 58, drop: 16 },
+  { src: ornBauble,     size: 54, drop: 28 },
+  { src: ornCrust,      size: 60, drop: 20 },
+];
+
+function HeaderGarland() {
+  return (
+    <div aria-hidden className="pointer-events-none absolute inset-x-0 top-full z-40 h-[120px] overflow-visible">
+      {/* String across the top */}
+      <svg className="absolute inset-x-0 top-0 h-6 w-full" viewBox="0 0 1200 24" preserveAspectRatio="none">
+        <path d="M0 4 Q 300 24 600 8 T 1200 4" stroke="hsl(var(--evergreen-deep))" strokeWidth="2" fill="none" opacity="0.85" />
+      </svg>
+      <div className="mx-auto flex max-w-[1200px] items-start justify-between px-6">
+        {ORNAMENTS.map((o, i) => (
+          <div
+            key={i}
+            className="ornament-sway relative"
+            style={{
+              // @ts-expect-error css var
+              "--sway-a": `${-3 - (i % 3)}deg`,
+              "--sway-b": `${3 + (i % 3)}deg`,
+              animationDelay: `${(i * 0.35).toFixed(2)}s`,
+              animationDuration: `${4 + (i % 4)}s`,
+              marginTop: `${o.drop - 20}px`,
+            }}
+          >
+            {/* twine */}
+            <span
+              className="absolute left-1/2 top-0 -z-10 block w-[2px] -translate-x-1/2 bg-[hsl(var(--twine))]"
+              style={{ height: `${o.drop + 8}px` }}
+            />
+            <img
+              src={o.src}
+              alt=""
+              className="ornament-twinkle block rounded-full object-cover"
+              style={{
+                width: o.size,
+                height: o.size,
+                marginTop: o.drop,
+                animationDelay: `${(i * 0.25).toFixed(2)}s`,
+              }}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ============ Tiny holly icon (inline SVG) ============ */
+function HollySprig({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden>
+      <path d="M12 3c-1.6 2-4 2.4-6 1.6.4 2.2 2 4 4 4.4-2 .6-4 2.4-4.4 4.6 2-.8 4.4-.4 6 1.6 1.6-2 4-2.4 6-1.6-.4-2.2-2.4-4-4.4-4.6 2-.4 3.6-2.2 4-4.4-2 .8-4.4.4-5.2-1.6z" fill="#2f7d3a" stroke="#1c4a24" strokeWidth=".6"/>
+      <circle cx="9.5" cy="15" r="1.4" fill="#e11d1d"/>
+      <circle cx="13" cy="16.5" r="1.2" fill="#e11d1d"/>
+      <circle cx="11.5" cy="13" r="1.1" fill="#e11d1d"/>
+    </svg>
+  );
 }
 
 /* ============ Gift Tag Card ============ */
@@ -123,8 +199,24 @@ function GiftTag({ p, onCopyCode }: { p: Product; onCopyCode: (code: string) => 
         )}
       </div>
       <div className="mt-3 flex gap-2">
-        <a href={p.url} target="_blank" rel="noopener noreferrer" className="flex-1 rounded-[10px] bg-evergreen px-3 py-[11px] text-center text-[.88rem] font-extrabold text-flour transition-colors hover:bg-evergreen-deep">
-          Gift it →
+        <a
+          href={p.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group/gift relative flex-1 overflow-hidden rounded-[10px] bg-evergreen px-3 py-[11px] text-center text-[.88rem] font-extrabold text-flour transition-colors hover:bg-evergreen-deep"
+        >
+          {/* mini string lights */}
+          <span aria-hidden className="pointer-events-none absolute inset-x-1 top-1 flex justify-between">
+            <i className="bulb block h-1.5 w-1.5 rounded-full bg-[#ffd166]" style={{ animationDelay: "0s", boxShadow: "0 0 6px #ffd166" }} />
+            <i className="bulb block h-1.5 w-1.5 rounded-full bg-[#ef476f]" style={{ animationDelay: ".3s", boxShadow: "0 0 6px #ef476f" }} />
+            <i className="bulb block h-1.5 w-1.5 rounded-full bg-[#06d6a0]" style={{ animationDelay: ".6s", boxShadow: "0 0 6px #06d6a0" }} />
+            <i className="bulb block h-1.5 w-1.5 rounded-full bg-[#118ab2]" style={{ animationDelay: ".9s", boxShadow: "0 0 6px #118ab2" }} />
+            <i className="bulb block h-1.5 w-1.5 rounded-full bg-[#ffd166]" style={{ animationDelay: "1.2s", boxShadow: "0 0 6px #ffd166" }} />
+          </span>
+          <span className="relative inline-flex items-center justify-center gap-1.5">
+            <HollySprig className="h-4 w-4" />
+            Gift it →
+          </span>
         </a>
         <button
           onClick={() => {
@@ -275,7 +367,11 @@ export default function HolidayGiftGuide() {
       <header className="sticky top-0 z-50 border-b border-honey/25 bg-oven/95 text-flour backdrop-blur">
         <div className="mx-auto flex max-w-[1200px] items-center gap-3 px-4 py-2.5">
           <a href="#top" className="mr-auto flex items-center gap-2 font-display text-base font-semibold text-flour">
-            <span className="h-6 w-6 rounded-full" style={{ background: "radial-gradient(circle at 35% 30%, hsl(var(--honey)), hsl(var(--cranberry)) 70%)", boxShadow: "0 0 12px hsl(var(--honey) / 0.5)" }} />
+            <img
+              src={bgbLogo}
+              alt="Baking Great Bread at Home"
+              className="ornament-twinkle h-9 w-9 rounded-full object-cover ring-1 ring-honey/40"
+            />
             <span className="hidden sm:inline">Baking Great Bread at Home</span>
             <span className="sm:hidden">BGB</span>
           </a>
@@ -290,13 +386,13 @@ export default function HolidayGiftGuide() {
             <Snowflake className="h-3 w-3" /> Snow
           </button>
         </div>
+        <HeaderGarland />
       </header>
 
       <main id="top">
         {/* Hero */}
-        <section className="relative overflow-hidden pt-16 text-flour" style={{ background: "radial-gradient(1200px 500px at 50% -10%, hsl(var(--honey) / 0.16), transparent 60%), linear-gradient(180deg, #17202b 0%, #1c1a14 45%, hsl(var(--oven)) 100%)" }}>
-          <SnowCanvas on={snow} />
-          <div className="relative z-20 mx-auto grid max-w-[1200px] items-center gap-10 px-5 pb-20 md:grid-cols-[1.1fr_0.9fr] md:gap-12">
+        <section className="relative overflow-hidden pt-32 text-flour" style={{ background: "radial-gradient(1200px 500px at 50% -10%, hsl(var(--honey) / 0.16), transparent 60%), linear-gradient(180deg, #17202b 0%, #1c1a14 45%, hsl(var(--oven)) 100%)" }}>
+          <div className="relative z-20 mx-auto grid max-w-[1200px] items-center gap-10 px-5 pb-20 md:grid-cols-[1.05fr_0.95fr] md:gap-12">
             <div>
               <p className="eyebrow" style={{ color: "hsl(var(--honey))" }}>The 2025 Guide</p>
               <h1 className="mt-3 font-display font-medium" style={{ fontSize: "clamp(2.4rem, 5.6vw, 4.2rem)" }}>
@@ -315,12 +411,28 @@ export default function HolidayGiftGuide() {
               </div>
               <p className="mt-5 text-sm" style={{ color: "#bfae92" }}>Affiliate links support free recipes. I only recommend what I use.</p>
             </div>
-            <div className="relative overflow-hidden rounded-3xl" style={{ boxShadow: "0 0 0 3px #1a100a, 0 24px 60px rgba(0,0,0,.55), 0 0 90px hsl(var(--honey) / 0.38)" }}>
-              <img src={heroImg} alt="A warm bakery kitchen at Christmas seen through a frosted window" className="w-full" loading="eager" />
-              <div className="pointer-events-none absolute inset-0 rounded-3xl" style={{ boxShadow: "inset 0 0 70px hsl(var(--honey) / 0.18)" }} />
+            <div
+              className="relative overflow-hidden rounded-3xl"
+              style={{
+                boxShadow:
+                  "0 0 0 4px #1a100a, 0 0 0 8px #3a2412, 0 24px 60px rgba(0,0,0,.6), 0 0 120px hsl(var(--honey) / 0.45)",
+              }}
+            >
+              <img
+                src={bakeryWindow}
+                alt="Warm bakery kitchen at Christmas seen through a frosted window"
+                className="block w-full"
+                loading="eager"
+              />
+              <div
+                className="pointer-events-none absolute inset-0 rounded-3xl"
+                style={{ boxShadow: "inset 0 0 90px hsl(var(--honey) / 0.22)" }}
+              />
             </div>
           </div>
         </section>
+        {/* Site-wide snow, sits above hero and page, below modals */}
+        <SnowCanvas on={snow} />
 
         {/* Promo marquee */}
         <div className="overflow-hidden border-y border-honey/30 bg-evergreen-deep text-flour">

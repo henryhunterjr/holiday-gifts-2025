@@ -195,4 +195,26 @@
   @media (prefers-reduced-motion: reduce) {
     .animate-marquee { animation: none; }
   }
+
+  /* Ornament twinkle + sway */
+  @keyframes ornamentSway {
+    0%, 100% { transform: rotate(var(--sway-a, -4deg)); }
+    50%      { transform: rotate(var(--sway-b, 4deg)); }
+  }
+  @keyframes ornamentTwinkle {
+    0%, 100% { filter: drop-shadow(0 0 6px hsl(var(--honey) / .55)) drop-shadow(0 4px 10px rgba(0,0,0,.6)); }
+    50%      { filter: drop-shadow(0 0 18px hsl(var(--honey) / .95)) drop-shadow(0 0 32px hsl(var(--cranberry) / .6)) drop-shadow(0 4px 10px rgba(0,0,0,.6)); }
+  }
+  .ornament-sway { animation: ornamentSway 5s ease-in-out infinite; transform-origin: 50% -8px; }
+  .ornament-twinkle { animation: ornamentTwinkle 2.8s ease-in-out infinite; }
+  @media (prefers-reduced-motion: reduce) {
+    .ornament-sway, .ornament-twinkle { animation: none; }
+  }
+
+  /* String lights on green button */
+  @keyframes bulbBlink {
+    0%, 100% { opacity: .35; }
+    50%      { opacity: 1; }
+  }
+  .bulb { animation: bulbBlink 1.6s ease-in-out infinite; }
 }
