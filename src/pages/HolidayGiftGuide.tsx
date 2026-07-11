@@ -376,6 +376,8 @@ function GiftFinderQuiz({ open, onClose }: { open: boolean; onClose: () => void 
 /* ============ Page ============ */
 export default function HolidayGiftGuide() {
   const days = useDaysToChristmas();
+  const location = useLocation();
+  const canonicalUrl = `https://holiday-gifts-2025.lovable.app${location.pathname === "/" ? "/" : location.pathname}`;
   const [snow, setSnow] = useState(true);
   const [search, setSearch] = useState("");
   const [cat, setCat] = useState<string | null>(null);
