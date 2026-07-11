@@ -4,6 +4,7 @@ import { toast } from "sonner";
 import productsData from "@/data/products.json";
 import { krusticProducts } from "@/data/krustic";
 import { amazonProducts } from "@/data/amazon";
+import heroImg from "@/assets/holiday/hero-bread-baking-gifts.jpg";
 
 /* ============ Types & data ============ */
 type Product = {
@@ -315,7 +316,7 @@ export default function HolidayGiftGuide() {
               <p className="mt-5 text-sm" style={{ color: "#bfae92" }}>Affiliate links support free recipes. I only recommend what I use.</p>
             </div>
             <div className="relative overflow-hidden rounded-3xl" style={{ boxShadow: "0 0 0 3px #1a100a, 0 24px 60px rgba(0,0,0,.55), 0 0 90px hsl(var(--honey) / 0.38)" }}>
-              <img src="https://holiday-gifts-2025.lovable.app/assets/hero-bread-baking-gifts.jpg" alt="A warm bakery kitchen at Christmas seen through a frosted window" className="w-full" loading="eager" />
+              <img src={heroImg} alt="A warm bakery kitchen at Christmas seen through a frosted window" className="w-full" loading="eager" />
               <div className="pointer-events-none absolute inset-0 rounded-3xl" style={{ boxShadow: "inset 0 0 70px hsl(var(--honey) / 0.18)" }} />
             </div>
           </div>
