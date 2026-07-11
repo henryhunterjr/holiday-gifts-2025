@@ -461,6 +461,18 @@ export default function HolidayGiftGuide() {
 
   return (
     <div className="min-h-screen bg-flour text-ink">
+      <Helmet>
+        <title>Bread Lover's Holiday Gift Guide 2026 | Baking Great Bread</title>
+        <meta name="description" content="The 2026 gift guide for bread bakers. Handpicked tools, lames, and books from Henry Hunter, with promo codes built in." />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:title" content="Holiday Gift Guide 2026 | Bread Baker Essentials" />
+        <meta property="og:description" content="The 2026 curated gift guide for bread bakers and sourdough obsessives. Real recommendations from Henry Hunter." />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content="https://holiday-gifts-2025.lovable.app/og-image.png" />
+        <meta name="twitter:title" content="Holiday Gift Guide 2026 | Bread Baker Essentials" />
+        <meta name="twitter:description" content="Curated 2026 gifts for bread bakers and sourdough enthusiasts." />
+        <meta name="twitter:image" content="https://holiday-gifts-2025.lovable.app/og-image.png" />
+      </Helmet>
       <script
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger
