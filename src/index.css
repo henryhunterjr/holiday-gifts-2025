@@ -2,174 +2,197 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
+/* ============ Bakery Window Design System ============ */
 @layer base {
   :root {
-    /* Bread Baking Holiday Theme - Warm & Rustic with HIGH CONTRAST */
-    --background: 43 45% 97%;
-    --foreground: 9 28% 19%; /* Rich brown #3E2723 for body text */
+    /* Bakery palette (HSL) */
+    --oven: 24 39% 8%;             /* #1c110a */
+    --crust: 22 51% 18%;            /* #432817 */
+    --crumb: 27 39% 30%;            /* #6b4a2e */
+    --flour: 38 60% 90%;            /* #f4ead8 */
+    --parchment: 37 55% 81%;        /* #e9d6b4 */
+    --parchment-deep: 34 51% 71%;   /* #d9bf94 */
+    --cranberry: 3 60% 39%;         /* #9e2b25 */
+    --cranberry-deep: 3 62% 30%;    /* #7c1f1b */
+    --evergreen: 138 22% 24%;       /* #2f4a38 */
+    --evergreen-deep: 138 25% 18%;  /* #22382a */
+    --honey: 36 66% 54%;            /* #d89a3d */
+    --twine: 33 34% 53%;            /* #b08d5f */
+    --ink: 27 42% 12%;              /* #2a1d12 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%; /* Near black #1A1A1A for card text */
+    /* Semantic tokens mapped to bakery palette */
+    --background: var(--flour);
+    --foreground: var(--ink);
+    --card: 38 60% 96%;
+    --card-foreground: var(--ink);
+    --popover: 38 60% 96%;
+    --popover-foreground: var(--ink);
+    --primary: var(--cranberry);
+    --primary-foreground: 38 60% 96%;
+    --secondary: var(--evergreen);
+    --secondary-foreground: 38 60% 96%;
+    --muted: var(--parchment);
+    --muted-foreground: var(--crumb);
+    --accent: var(--honey);
+    --accent-foreground: var(--oven);
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: var(--parchment-deep);
+    --input: var(--parchment-deep);
+    --ring: var(--honey);
+    --radius: 14px;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 9 28% 19%;
-
-    --primary: 17 47% 12%; /* Deep brown #2C1810 for headers */
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 19 29% 28%; /* Warm brown #5C4033 for subtitles */
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 43 45% 94%;
-    --muted-foreground: 19 29% 28%; /* Warm brown for muted text */
-
-    --accent: 19 47% 54%; /* Bakery copper accent */
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 36 30% 85%;
-    --input: 36 30% 85%;
-    --ring: 19 47% 54%;
-
-    --radius: 0.75rem;
-    
-    /* Custom Bread Baking Colors */
-    --wheat-brown: 36 41% 61%;
-    --dough-cream: 43 45% 97%;
-    --bakery-copper: 19 47% 54%;
-    --olive-accent: 86 14% 38%;
-    --hero-brown: 19 29% 28%;
-    
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(43 45% 97%) 0%, hsl(36 30% 90%) 100%);
-    --gradient-warm: linear-gradient(180deg, hsl(43 45% 97%) 0%, hsl(36 41% 91%) 100%);
-    
-    /* Shadows */
-    --shadow-soft: 0 2px 8px hsl(36 41% 61% / 0.1);
-    --shadow-card: 0 4px 12px hsl(36 41% 61% / 0.15);
-    --shadow-lifted: 0 8px 24px hsl(36 41% 61% / 0.2);
-    
-    /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-    --radius: 0.75rem;
+    --shadow-tag: 0 10px 30px hsl(24 39% 8% / 0.18);
+    --shadow-lifted: 0 18px 40px hsl(24 39% 8% / 0.26);
 
     --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
+    --sidebar-foreground: 240 5% 26%;
+    --sidebar-primary: 240 6% 10%;
     --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
+    --sidebar-accent: 240 5% 96%;
+    --sidebar-accent-foreground: 240 6% 10%;
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 217 91% 60%;
   }
 
   .dark {
-    /* Holiday Night Theme - NO PURPLE, HIGH CONTRAST */
-    --background: 240 15% 8%;
-    --foreground: 0 0% 96%; /* Off-white #F5F5F5 for body text */
-
-    --card: 240 12% 12%;
-    --card-foreground: 0 0% 88%; /* Light gray #E0E0E0 for card text */
-
-    --popover: 240 12% 12%;
-    --popover-foreground: 0 0% 96%;
-
-    --primary: 0 0% 100%; /* Pure white for headers */
-    --primary-foreground: 240 15% 8%;
-
-    --secondary: 28 47% 84%; /* Warm cream #E8D5C4 for subtitles */
-    --secondary-foreground: 17 47% 12%;
-
-    --muted: 240 10% 18%;
-    --muted-foreground: 0 0% 88%; /* Light gray for muted text */
-
-    --accent: 19 47% 54%; /* Bakery copper accent */
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 62.8% 45%;
-    --destructive-foreground: 0 0% 96%;
-
-    --border: 240 10% 20%;
-    --input: 240 10% 20%;
-    --ring: 19 47% 54%;
-    
-    /* Custom Dark Mode Bread Baking Colors */
-    --wheat-brown: 36 50% 50%;
-    --dough-cream: 43 30% 85%;
-    --bakery-copper: 19 60% 50%;
-    --olive-accent: 86 20% 45%;
-    --hero-brown: 19 29% 28%;
-    
-    /* Dark Mode Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(240 15% 10%) 0%, hsl(260 20% 15%) 100%);
-    --gradient-warm: linear-gradient(180deg, hsl(240 15% 8%) 0%, hsl(260 18% 12%) 100%);
-    
-    /* Dark Mode Shadows */
-    --shadow-soft: 0 2px 8px hsl(240 50% 5% / 0.4);
-    --shadow-card: 0 4px 12px hsl(240 50% 5% / 0.5);
-    --shadow-lifted: 0 8px 24px hsl(240 50% 5% / 0.6);
-    
-    --sidebar-background: 240 15% 10%;
-    --sidebar-foreground: 43 45% 90%;
-    --sidebar-primary: 280 50% 55%;
-    --sidebar-primary-foreground: 43 45% 95%;
-    --sidebar-accent: 240 10% 15%;
-    --sidebar-accent-foreground: 43 45% 90%;
-    --sidebar-border: 240 10% 18%;
-    --sidebar-ring: 280 50% 60%;
+    --background: var(--oven);
+    --foreground: var(--flour);
+    --card: 24 30% 12%;
+    --card-foreground: var(--flour);
+    --popover: 24 30% 12%;
+    --popover-foreground: var(--flour);
+    --primary: var(--honey);
+    --primary-foreground: var(--oven);
+    --secondary: var(--evergreen);
+    --secondary-foreground: var(--flour);
+    --muted: 24 25% 16%;
+    --muted-foreground: 37 40% 78%;
+    --accent: var(--cranberry);
+    --accent-foreground: var(--flour);
+    --border: 24 25% 22%;
+    --input: 24 25% 22%;
+    --ring: var(--honey);
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Karla', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, .display {
+    font-family: 'Fraunces', ui-serif, Georgia, serif;
+    font-variation-settings: "SOFT" 50;
+    line-height: 1.08;
+  }
+  .font-hand { font-family: 'Caveat', cursive; }
+  .font-display { font-family: 'Fraunces', ui-serif, Georgia, serif; }
+}
+
+/* ============ Gift Tag Card (signature) ============ */
+@layer components {
+  .gift-tag {
+    background: linear-gradient(168deg, hsl(38 60% 94%) 0%, hsl(var(--parchment)) 100%);
+    border-radius: 10px 10px var(--radius) var(--radius);
+    padding: 44px 18px 18px;
+    position: relative;
+    box-shadow: var(--shadow-tag);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid hsl(var(--parchment-deep));
+    transform: rotate(var(--tilt, 0deg));
+    transition: transform .2s ease, box-shadow .2s ease;
+    color: hsl(var(--ink));
+  }
+  .gift-tag:hover {
+    transform: rotate(0deg) translateY(-6px);
+    box-shadow: var(--shadow-lifted);
+    z-index: 2;
+  }
+  .gift-tag::before {
+    content: "";
+    position: absolute;
+    top: 12px; left: 50%;
+    transform: translateX(-50%);
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: hsl(var(--flour));
+    box-shadow: inset 0 2px 4px hsl(var(--oven) / 0.35), 0 1px 0 hsl(0 0% 100%);
+  }
+  .gift-tag::after {
+    content: "";
+    position: absolute;
+    top: -9px; left: 50%;
+    width: 46px; height: 36px;
+    border: 2.5px solid hsl(var(--twine));
+    border-radius: 52% 60% 55% 48% / 62% 55% 48% 52%;
+    transform: translateX(-50%) rotate(-12deg);
+    pointer-events: none;
+  }
+  .brand-chip {
+    position: absolute;
+    top: 14px; left: 14px;
+    font-size: .66rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: hsl(var(--evergreen));
+    background: hsl(var(--evergreen) / 0.12);
+    padding: 3px 9px;
+    border-radius: 999px;
+  }
+  .code-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: hsl(0 0% 100%);
+    border: 1.5px dashed hsl(var(--cranberry));
+    color: hsl(var(--cranberry-deep));
+    font-weight: 800;
+    font-size: .74rem;
+    border-radius: 8px;
+    padding: 4px 9px;
+    letter-spacing: .05em;
+    cursor: pointer;
+    transition: all .12s;
+  }
+  .code-pill:hover { background: hsl(var(--cranberry)); color: hsl(var(--flour)); }
+  .chip {
+    border: 1.5px solid hsl(var(--parchment-deep));
+    background: hsl(0 0% 100%);
+    border-radius: 999px;
+    padding: 7px 15px;
+    font-size: .83rem;
+    font-weight: 700;
+    color: hsl(var(--crumb));
+    transition: all .12s;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .chip:hover { border-color: hsl(var(--honey)); }
+  .chip.on { background: hsl(var(--evergreen)); border-color: hsl(var(--evergreen)); color: hsl(var(--flour)); }
+  .chip.on.price-on { background: hsl(var(--cranberry)); border-color: hsl(var(--cranberry)); }
+  .eyebrow {
+    font-size: .72rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: hsl(var(--cranberry));
   }
 }
 
-/* Text readability improvements - WCAG AA compliant */
-@layer base {
-  /* Light mode - warm browns with high contrast */
-  h1, h2, h3, h4, h5, h6 {
-    color: hsl(17 47% 12%); /* Deep brown for headers */
+/* ============ Marquee ============ */
+@layer utilities {
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
   }
-  
-  p, .text-base {
-    color: hsl(9 28% 19%); /* Rich brown for body text */
-  }
-  
-  /* Dark mode - warm whites with high contrast */
-  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
-    color: hsl(0 0% 100%) !important; /* Pure white for headers */
-  }
-  
-  .dark p, .dark .text-base {
-    color: hsl(0 0% 96%); /* Off-white for body text */
-  }
-  
-  .dark button {
-    color: hsl(17 47% 12%); /* Dark text on light buttons */
-  }
-  
-  /* Badge text fixes */
-  .dark .badge-text {
-    color: hsl(17 47% 12%) !important;
+  .animate-marquee { animation: marquee 30s linear infinite; }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee { animation: none; }
   }
 }
