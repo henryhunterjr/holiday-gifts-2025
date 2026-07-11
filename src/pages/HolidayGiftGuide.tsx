@@ -596,6 +596,22 @@ export default function HolidayGiftGuide() {
 
         {/* From Oven to Market */}
         <section className="text-flour" style={{ background: "radial-gradient(700px 300px at 85% 0%, hsl(var(--honey) / 0.12), transparent 60%), linear-gradient(180deg, hsl(var(--evergreen-deep)), #1d2f23)" }}>
+          <a
+            href="https://fromoventomarket.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block overflow-hidden border-y border-honey/40"
+            aria-label="Visit From Oven to Market"
+          >
+            <img
+              src={fotmBanner}
+              alt="From Oven to Market — turn Saturdays into income"
+              loading="lazy"
+              width={1600}
+              height={260}
+              className="block h-[160px] w-full object-cover md:h-[220px] lg:h-[260px] transition-transform duration-700 hover:scale-[1.02]"
+            />
+          </a>
           <div className="mx-auto max-w-[1200px] px-5 py-20">
             <p className="eyebrow" style={{ color: "hsl(var(--honey))" }}>From Oven to Market · For the baker ready to sell</p>
             <h2 className="mt-3 font-display text-3xl font-semibold text-flour md:text-5xl">Know someone turning Saturdays into income?</h2>
@@ -630,11 +646,11 @@ export default function HolidayGiftGuide() {
             </div>
             <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
               {[
-                { name: "Sourdough for the Rest of Us", price: "$6.08", url: "https://amzn.to/sourdoughrestofus", img: "https://holiday-gifts-2025.lovable.app/assets/sourdough-rest-of-us-sharp.jpg" },
-                { name: "Vitale Sourdough Mastery", price: "$9.60", url: "https://vitalebreadco.com?ref=bfriedman", img: "https://holiday-gifts-2025.lovable.app/assets/vitale-sourdough-mastery-sharp.jpg" },
-                { name: "From Oven to Market", price: "$7.62", url: "https://fromoventomarket.com/", img: "https://holiday-gifts-2025.lovable.app/assets/from-oven-to-market-sharp.jpg" },
-                { name: "The Loaf and the Lie", price: "$6.99", url: "https://amzn.to/loafandlie", img: "https://holiday-gifts-2025.lovable.app/assets/loaf-and-lie-sharp.jpg" },
-                { name: "Bread: A Journey Through History", price: "$7.95", url: "https://amzn.to/breadjourney", img: "https://holiday-gifts-2025.lovable.app/assets/bread-journey.jpg" },
+                { name: "Sourdough for the Rest of Us", price: "$6.08", url: "https://amzn.to/sourdoughrestofus", img: bookSourdough },
+                { name: "Vitale Sourdough Mastery", price: "$9.60", url: "https://vitalebreadco.com?ref=bfriedman", img: bookVitale },
+                { name: "From Oven to Market", price: "$7.62", url: "https://fromoventomarket.com/", img: bookFOTM },
+                { name: "The Loaf and the Lie", price: "$6.99", url: "https://amzn.to/loafandlie", img: bookLoaf },
+                { name: "Bread: A Journey Through History", price: "$7.95", url: "https://amzn.to/breadjourney", img: bookJourney },
               ].map((b, i) => (
                 <a key={i} href={b.url} target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center text-center">
                   <img src={b.img} alt={b.name} loading="lazy" className="h-56 w-auto object-contain drop-shadow-xl transition-transform group-hover:-translate-y-2" />
