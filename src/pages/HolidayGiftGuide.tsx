@@ -12,6 +12,12 @@ import ornBanneton from "@/assets/holiday/ornament-banneton.png";
 import ornMixerRed from "@/assets/holiday/ornament-mixer-red.jpg";
 import ornStarter from "@/assets/holiday/ornament-starter-pack.jpg";
 import ornHenryMixer from "@/assets/holiday/ornament-henry-mixer.jpg";
+import fotmBanner from "@/assets/holiday/fotm-banner.jpg";
+import bookSourdough from "@/assets/holiday/sourdough-rest-of-us-sharp.jpg";
+import bookVitale from "@/assets/holiday/vitale-sourdough-mastery-sharp.jpg";
+import bookFOTM from "@/assets/holiday/from-oven-to-market-sharp.jpg";
+import bookLoaf from "@/assets/holiday/loaf-and-lie-sharp.jpg";
+import bookJourney from "@/assets/holiday/bread-journey.jpg";
 
 /* ============ Types & data ============ */
 type Product = {
