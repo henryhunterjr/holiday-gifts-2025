@@ -379,18 +379,25 @@ export default function HolidayGiftGuide() {
   const [cat, setCat] = useState<string | null>(null);
   const [band, setBand] = useState<string | null>(null);
   const [quiz, setQuiz] = useState(false);
+  const [showAll, setShowAll] = useState(false);
+  const searchInputId = useId();
 
   const copyCode = (code: string) => {
     navigator.clipboard?.writeText(code);
     toast.success(`Copied ${code}`);
   };
 
+  const clearAllFilters = () => {
+    setSearch(""); setCat(null); setBand(null);
+  };
+  const anyFilter = search.trim() !== "" || !!cat || !!band;
+
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
     return products.filter((p) => {
       if (cat && p.cat !== cat) return false;
       if (band) {
-        const b = PRICE_BANDS.find((x) => x.label === band);
+        const b = bandByLabel(band);
         if (b && !b.test(priceNum(p))) return false;
       }
       if (q && !`${p.name} ${p.brand} ${p.desc}`.toLowerCase().includes(q)) return false;
@@ -409,8 +416,52 @@ export default function HolidayGiftGuide() {
 
   const top6 = top6Slugs.map((s) => products.find((p) => p.slug === s)).filter(Boolean) as Product[];
 
+  // JSON-LD for the curated guide (only fully-verified products).
+  const jsonLd = useMemo(() => {
+    const items = products
+      .filter((p) => isValidUrl(p.url) && p.img && priceNum(p) > 0)
+      .map((p, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        item: {
+          "@type": "Product",
+          name: p.name,
+          brand: { "@type": "Brand", name: p.brand },
+          image: p.img,
+          url: p.url,
+          offers: {
+            "@type": "Offer",
+            price: priceNum(p),
+            priceCurrency: "USD",
+          },
+        },
+      }));
+    return {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://holiday-gifts-2025.lovable.app/#webpage",
+          name: "The Bread Lover's Holiday Gift Guide 2026",
+          url: "https://holiday-gifts-2025.lovable.app/",
+          description: "The 2026 holiday gift guide for bread bakers. Handpicked tools, wood bowls, lames, and books from Henry Hunter.",
+        },
+        {
+          "@type": "ItemList",
+          name: "Holiday Gift Guide 2026 — Curated picks",
+          itemListElement: items,
+        },
+      ],
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-flour text-ink">
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Top bar */}
       <header className="sticky top-0 z-50 border-b border-honey/25 bg-oven/95 text-flour backdrop-blur">
         <div className="mx-auto flex max-w-[1200px] items-center gap-3 px-4 py-2.5">
