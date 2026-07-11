@@ -1,9 +1,25 @@
-import { useEffect, useMemo, useRef, useState } from "react";
-import { Search, Share2, Copy, Snowflake, ExternalLink, Star, X, Sparkles } from "lucide-react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { Search, Share2, Copy, Snowflake, ExternalLink, Star, X, Sparkles, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
 import productsData from "@/data/products.json";
 import { krusticProducts } from "@/data/krustic";
 import { amazonProducts } from "@/data/amazon";
+import {
+  PRICE_BANDS,
+  bandByLabel,
+  DISABLED_PRODUCT_SLUGS,
+  DISABLED_KRUSTIC_SLUGS,
+  FREE_RESOURCES_ENABLED,
+  PRICES_LAST_CHECKED,
+  isValidUrl,
+} from "@/lib/guideConfig";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import bakeryWindow from "@/assets/holiday/bakery-window.png";
 import bgbLogo from "@/assets/holiday/ornament-bgb-logo.png";
 import ornBauble from "@/assets/holiday/ornament-bgb-bauble.png";
@@ -34,9 +50,16 @@ type Product = {
   note?: string;
 };
 
-const products = productsData.products as Product[];
+const allProducts = productsData.products as Product[];
+// Hide products that are disabled or lack a valid URL.
+const products = allProducts.filter(
+  (p) => !DISABLED_PRODUCT_SLUGS.has(p.slug) && isValidUrl(p.url),
+);
 const top6Slugs = productsData.top6 as string[];
 const promoCodes = productsData.promo_codes as [string, string][];
+const visibleKrustic = krusticProducts.filter(
+  (k) => !DISABLED_KRUSTIC_SLUGS.has(k.slug) && isValidUrl(k.url),
+);
 
 const CATEGORIES = [
   "Starter Care",
@@ -45,13 +68,6 @@ const CATEGORIES = [
   "Bake Day",
   "Wood & Serving",
   "Storage & Gifting",
-];
-
-const PRICE_BANDS: { label: string; test: (p: number) => boolean }[] = [
-  { label: "Under $25", test: (p) => p < 25 },
-  { label: "$25–75", test: (p) => p >= 25 && p <= 75 },
-  { label: "$75–150", test: (p) => p > 75 && p <= 150 },
-  { label: "Splurge $150+", test: (p) => p > 150 },
 ];
 
 const priceNum = (p: Product) => (typeof p.price === "number" ? p.price : parseFloat(String(p.price).replace(/[^0-9.]/g, "")) || 0);
