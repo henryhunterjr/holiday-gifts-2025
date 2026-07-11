@@ -1,0 +1,631 @@
+{
+  "meta": {
+    "generated": "2026-07-11",
+    "source": "verified: henry_affiliate_links.csv, affiliatelinks.csv, live-site audit",
+    "note": "Single source of truth for the Lovable rebuild. Never use affiliate-links-promo-codes.csv."
+  },
+  "promo_codes": [
+    [
+      "HBK23",
+      "Sourhouse — Goldie, DoughBed, jars"
+    ],
+    [
+      "BAKINGGREATBREAD10",
+      "ModKitchn — 10% off slings & bags"
+    ],
+    [
+      "bread",
+      "Holland Bowl Mill — 10% off heirloom wood"
+    ],
+    [
+      "Discount built in",
+      "Wire Monkey — use my link, save automatically"
+    ]
+  ],
+  "top6": [
+    "goldie",
+    "challenger-pan",
+    "proofer",
+    "goose-lame",
+    "walnut-17",
+    "holiday-bags"
+  ],
+  "products": [
+    {
+      "slug": "goldie",
+      "name": "Goldie Starter Warmer",
+      "brand": "Sourhouse",
+      "price": 89,
+      "cat": "Starter Care",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/sourhouse-goldie-starter-warmer-fScoFuL-.webp",
+      "url": "https://sourhouse.co?ref=BAKINGGREATBREAD",
+      "code": "HBK23",
+      "desc": "Holds your starter at a steady 75–82°F around the clock. Plug it in, stop worrying about cold kitchens and sluggish ferments.",
+      "note": "Cold kitchen? Solved. This lives on my counter year-round."
+    },
+    {
+      "slug": "sourdough-home",
+      "name": "Sourdough Home + Starter Jar Bundle",
+      "brand": "Brød & Taylor",
+      "price": 44.95,
+      "cat": "Starter Care",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/bt-sourdough-home-starter-jar-bundle-CyCEaB76.webp",
+      "url": "https://collabs.shop/1vjisb",
+      "code": "",
+      "desc": "Temperature-controlled home for your starter with jar included. Dial in an exact temp, hot or cold, and your feeding schedule finally behaves.",
+      "note": "Set it to 78°F and your starter shows up on time."
+    },
+    {
+      "slug": "starter-jars",
+      "name": "Starter Jars (Pint or Quart)",
+      "brand": "Sourhouse",
+      "price": 20.76,
+      "cat": "Starter Care",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/starter-jars-hGFrfhj5.webp",
+      "url": "https://bit.ly/Sourhouse",
+      "code": "HBK23",
+      "desc": "Easy-clean borosilicate jars with measurement markings and breathable silicone lids. Made for daily starter life.",
+      "note": "The jar I actually reach for every morning."
+    },
+    {
+      "slug": "vitale-starter",
+      "name": "Vitale Sourdough Starter (Dehydrated)",
+      "brand": "Vitale Sourdough Co.",
+      "price": 12,
+      "cat": "Starter Care",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/vitale-sourdough-starter-new-D6pJpBPS.jpg",
+      "url": "https://vitalesourdoughco.etsy.com",
+      "code": "",
+      "desc": "My own dehydrated starter. Wakes up in 3–5 days with just flour and water, with instructions that actually make sense.",
+      "note": "This is my starter. Raised it myself."
+    },
+    {
+      "slug": "sahara",
+      "name": "Sahara Folding Dehydrator",
+      "brand": "Brød & Taylor",
+      "price": 295,
+      "cat": "Starter Care",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/sahara-dehydrator-GsW80CBA.png",
+      "url": "https://collabs.shop/94zxfe",
+      "code": "",
+      "desc": "Pro-grade dehydrator that folds flat for storage. Dry starter for backup, herbs, fruit, and more.",
+      "note": "Back up your starter. Future you says thanks."
+    },
+    {
+      "slug": "sahara-shelves",
+      "name": "Sahara Poly Shelves",
+      "brand": "Brød & Taylor",
+      "price": 39.95,
+      "cat": "Starter Care",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/sahara-poly-shelves-r3IbwOpW.webp",
+      "url": "https://collabs.shop/94zxfe",
+      "code": "",
+      "desc": "Extra shelves to expand the Sahara. More trays, more drying, one batch.",
+      "note": "Stocking stuffer for the Sahara owner."
+    },
+    {
+      "slug": "proofer",
+      "name": "Folding Proofer & Slow Cooker",
+      "brand": "Brød & Taylor",
+      "price": 189,
+      "cat": "Proofing & Temp",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/brod-taylor-proofer-sharp-Bn06Oi8M.jpg",
+      "url": "https://collabs.shop/vutgu8",
+      "code": "",
+      "desc": "Precision temperature control for proofing, plus it doubles as a slow cooker. Folds flat. Dough rises on schedule, every time.",
+      "note": "The single biggest upgrade to my winter baking."
+    },
+    {
+      "slug": "proofer-shelf",
+      "name": "Proofer Accessory Shelf Kit",
+      "brand": "Brød & Taylor",
+      "price": 49.95,
+      "cat": "Proofing & Temp",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/folding-proofer-accessories-DjEmBFy1.webp",
+      "url": "https://collabs.shop/vutgu8",
+      "code": "",
+      "desc": "Adds a second level to the Folding Proofer. Double the dough in the same footprint.",
+      "note": "Two doughs, one proofer."
+    },
+    {
+      "slug": "doughbed",
+      "name": "DoughBed",
+      "brand": "Sourhouse",
+      "price": 279.95,
+      "cat": "Proofing & Temp",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/sourhouse-doughbed-ZAyioXnJ.jpg",
+      "url": "https://bit.ly/Sourhouse",
+      "code": "HBK23",
+      "desc": "A warm, glass-bottomed bed for bulk fermentation. Gentle even heat and a lid that earns its counter space.",
+      "note": "Bulk ferment finally runs on my schedule."
+    },
+    {
+      "slug": "bread-blanket",
+      "name": "Bread Blanket",
+      "brand": "Sourhouse",
+      "price": 19.95,
+      "cat": "Proofing & Temp",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/sour-house-bread-blanket-alt-DZSnRtNv.webp",
+      "url": "https://bit.ly/Sourhouse",
+      "code": "HBK23",
+      "desc": "Breathable muslin cover that keeps loaves fresh and doughs cozy. Simple and smart.",
+      "note": "Tuck the dough in. Literally."
+    },
+    {
+      "slug": "proof-container",
+      "name": "6 Qt Proofing Container",
+      "brand": "Brød & Taylor",
+      "price": 24.95,
+      "cat": "Proofing & Temp",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/proofing-container-6qt-BjaCrglY.webp",
+      "url": "https://brodandtaylor.com/henrysbreadkitchen",
+      "code": "",
+      "desc": "Clear-walled 6-quart tub with markings so you can see exactly how far your bulk has come.",
+      "note": "Stop guessing. Watch it rise."
+    },
+    {
+      "slug": "round-banneton",
+      "name": "Wood Pulp Banneton (Round)",
+      "brand": "Wire Monkey",
+      "price": 29,
+      "cat": "Proofing & Temp",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/round-banneton-M3_6LiuQ.png",
+      "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
+      "code": "",
+      "desc": "Sustainable wood pulp proofing basket that leaves beautiful rings on your boules. No flour caking like rattan.",
+      "note": "Cleaner than cane, prettier rings."
+    },
+    {
+      "slug": "oval-banneton",
+      "name": "Wood Pulp Banneton (Oval)",
+      "brand": "Wire Monkey",
+      "price": 32,
+      "cat": "Proofing & Temp",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/oval-banneton-CPuBmBTj.png",
+      "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
+      "code": "",
+      "desc": "The batard version. Same sustainable wood pulp, same easy release.",
+      "note": "For the batard bakers on your list."
+    },
+    {
+      "slug": "banneton-cover",
+      "name": "Reusable Banneton Covers",
+      "brand": "Wire Monkey",
+      "price": 19.99,
+      "cat": "Proofing & Temp",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/wiremonkey-banneton-cover-DriQcLWi.webp",
+      "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
+      "code": "",
+      "desc": "Elastic, washable covers by Wild Clementine Co. Keep proofing dough from drying out, skip the plastic wrap.",
+      "note": "Little gift, daily use."
+    },
+    {
+      "slug": "goose-lame",
+      "name": "Goose Lame",
+      "brand": "Wire Monkey",
+      "price": 49.95,
+      "cat": "Scoring & Shaping",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/goose-lame-C9wuTV4x.jpg",
+      "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
+      "code": "",
+      "desc": "Wire Monkey’s flagship scoring tool. Balanced, beautiful walnut, and forgiving for newer hands.",
+      "note": "The lame I hand people when they say scoring scares them."
+    },
+    {
+      "slug": "ufo-zero",
+      "name": "UFO Zero Lame",
+      "brand": "Wire Monkey",
+      "price": 29.95,
+      "cat": "Scoring & Shaping",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/wiremonkey-ufo-zero-BM7mgrLa.webp",
+      "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
+      "code": "",
+      "desc": "The original circular lame. Retractable blade, ambidextrous, fine control for detail work.",
+      "note": "Fits the hand like it grew there."
+    },
+    {
+      "slug": "ufo-lame",
+      "name": "UFO Bread Lame",
+      "brand": "Wire Monkey",
+      "price": 29.95,
+      "cat": "Scoring & Shaping",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/ufo-lame-BkCb9kxA.webp",
+      "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
+      "code": "",
+      "desc": "The saucer-shaped classic in gorgeous wood. Scoring control that makes ears stand up.",
+      "note": "Yes, it looks like a UFO. It scores like a dream."
+    },
+    {
+      "slug": "poco-lame",
+      "name": "Poco Lame",
+      "brand": "Wire Monkey",
+      "price": 18.95,
+      "cat": "Scoring & Shaping",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/wiremonkey-poco-DBGooRpf.webp",
+      "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
+      "code": "",
+      "desc": "The smallest straight-blade lame, black walnut. Maximum control, minimum price.",
+      "note": "Best stocking stuffer under $20 on this page."
+    },
+    {
+      "slug": "arc-lame",
+      "name": "Arc Lame",
+      "brand": "Wire Monkey",
+      "price": 25.95,
+      "cat": "Scoring & Shaping",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/wiremonkey-arc-lame-VebIMZlE.webp",
+      "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
+      "code": "",
+      "desc": "The smallest curved lame in the world, with a base stand. Built for long dramatic slashes.",
+      "note": "For the baker chasing that one perfect ear."
+    },
+    {
+      "slug": "bench-knife",
+      "name": "Bench Knife",
+      "brand": "Brød & Taylor",
+      "price": 14.95,
+      "cat": "Scoring & Shaping",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/bt-dough-scraper-v-f4Bgin.jpg",
+      "url": "https://collabs.shop/8vcnxu",
+      "code": "",
+      "desc": "One-piece stainless scraper for dividing, shaping, and keeping the bench clean. No seams for dough to hide in.",
+      "note": "The tool I’d grab in a kitchen fire."
+    },
+    {
+      "slug": "dough-whisk",
+      "name": "Dough Whisk",
+      "brand": "Brød & Taylor",
+      "price": 20.95,
+      "cat": "Scoring & Shaping",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/dough-whisk-new-sharp-qEyzBCbD.png",
+      "url": "https://collabs.shop/6jalk7",
+      "code": "",
+      "desc": "Moves through shaggy dough without sticking or overworking. Retire the wooden spoon.",
+      "note": "Mixes in half the strokes. Ask my wrist."
+    },
+    {
+      "slug": "whisk-bundle",
+      "name": "Dough Whisk + Bench Knife Bundle",
+      "brand": "Brød & Taylor",
+      "price": 34.95,
+      "cat": "Scoring & Shaping",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/bt-dough-whisk-bench-knife-bundle-xHXmjOoW.webp",
+      "url": "https://brodandtaylor.com/henrysbreadkitchen",
+      "code": "",
+      "desc": "The two tools every new baker needs, boxed together. Mixing and shaping, sorted.",
+      "note": "My default gift for brand-new bakers."
+    },
+    {
+      "slug": "silicone-mat",
+      "name": "Non-Stick Silicone Mat",
+      "brand": "Brød & Taylor",
+      "price": 19.95,
+      "cat": "Scoring & Shaping",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/nonstick-silicone-mat-KPWABAcA.webp",
+      "url": "https://brodandtaylor.com/henrysbreadkitchen",
+      "code": "",
+      "desc": "Heat-resistant mat for kneading and shaping. Saves your counters and your patience.",
+      "note": "Cleanup goes from ten minutes to ten seconds."
+    },
+    {
+      "slug": "challenger-pan",
+      "name": "Challenger Bread Pan",
+      "brand": "Challenger Breadware",
+      "price": 270,
+      "cat": "Bake Day",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/challenger-bread-pan-GSjRZvht.jpg",
+      "url": "https://challengerbreadware.com/?ref=henryhunterjr",
+      "code": "",
+      "desc": "Cast iron built specifically for bread. Traps steam like a professional deck oven and gives you crust you can hear. Grab their pre-cut parchment while you’re there.",
+      "note": "The best crust of my life came out of this pan."
+    },
+    {
+      "slug": "shell-batard",
+      "name": "Baking Shell (Batard) + Steel",
+      "brand": "Brød & Taylor",
+      "price": 89,
+      "cat": "Bake Day",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/baking-shell-batard-steel-alt-Du6BedmG.webp",
+      "url": "https://collabs.shop/noauwh",
+      "code": "",
+      "desc": "Steam-trapping shell and steel combo for oval loaves. Serious oven spring without a 30-pound Dutch oven.",
+      "note": "Dutch oven results, half the deadlift."
+    },
+    {
+      "slug": "shell-steel-bundle",
+      "name": "Baking Shell + Steel Bundle",
+      "brand": "Brød & Taylor",
+      "price": 159,
+      "cat": "Bake Day",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/bt-baking-shell-steel-bundle-MyuIYjFK.webp",
+      "url": "https://collabs.shop/g9yxme",
+      "code": "",
+      "desc": "The boule version of the shell-and-steel setup. Even heat below, trapped steam above.",
+      "note": "Round loaf people, this one’s yours."
+    },
+    {
+      "slug": "bakers-scale",
+      "name": "Baker’s Math Kitchen Scale",
+      "brand": "Brød & Taylor",
+      "price": 49.95,
+      "cat": "Bake Day",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/bt-bakers-math-scale-CMJbKkf3.webp",
+      "url": "https://collabs.shop/hvryn6",
+      "code": "",
+      "desc": "High-capacity precision scale with baker’s percentage built in. The math does itself.",
+      "note": "Percentages without the napkin math."
+    },
+    {
+      "slug": "spice-grinder",
+      "name": "Spice & Coffee Grinder",
+      "brand": "Brød & Taylor",
+      "price": 24.95,
+      "cat": "Bake Day",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/bt-spice-grinder-lZeuu4Uh.png",
+      "url": "https://collabs.shop/ve9hzn",
+      "code": "",
+      "desc": "Compact electric grinder for fresh spices, seeds, and coffee. Fresh-ground makes a difference you can taste.",
+      "note": "Fresh caraway will change your rye. Trust me."
+    },
+    {
+      "slug": "vg2",
+      "name": "Classic VG2 Knife Sharpener",
+      "brand": "Brød & Taylor",
+      "price": 79,
+      "cat": "Bake Day",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/bt-vg2-sharpener-2CyZS3hL.jpg",
+      "url": "https://collabs.shop/lifdzg",
+      "code": "",
+      "desc": "Spring-action sharpener with Austrian steel. Your bread knife deserves better than sawing.",
+      "note": "A sharp knife respects the crumb."
+    },
+    {
+      "slug": "apron",
+      "name": "Chef’s Apron",
+      "brand": "Brød & Taylor",
+      "price": 69,
+      "cat": "Bake Day",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/bt-chef-apron-xA88_kun.png",
+      "url": "https://collabs.shop/akcwv4",
+      "code": "",
+      "desc": "Durable, adjustable, and actually comfortable through a full bake day.",
+      "note": "Flour goes on the apron, not the good shirt."
+    },
+    {
+      "slug": "french-press",
+      "name": "Water Kettle & French Press",
+      "brand": "Brød & Taylor",
+      "price": 59,
+      "cat": "Bake Day",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/french-press-CTORochM.webp",
+      "url": "https://collabs.shop/b8bht0",
+      "code": "",
+      "desc": "Double-wall press and kettle combo. Bake-day coffee stays hot from mix to shape.",
+      "note": "Bakers run on coffee. This keeps it hot."
+    },
+    {
+      "slug": "toast-tongs",
+      "name": "Toast Tongs",
+      "brand": "Wire Monkey",
+      "price": 14.95,
+      "cat": "Bake Day",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/toast-tongs-nCpfDlmk.webp",
+      "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
+      "code": "",
+      "desc": "Solid walnut tongs with a magnet for toaster-side storage. Handmade in Ukraine.",
+      "note": "Burnt fingertips, retired."
+    },
+    {
+      "slug": "bread-wrap",
+      "name": "Vegan Bread Wrap",
+      "brand": "Wire Monkey",
+      "price": 14.99,
+      "cat": "Bake Day",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/vegan-bread-wrap-BsXtmHz3.webp",
+      "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
+      "code": "",
+      "desc": "Reusable plant-wax wrap that replaces plastic for up to a year. Organic cotton.",
+      "note": "Wrap the loaf, skip the plastic."
+    },
+    {
+      "slug": "walnut-17",
+      "name": "17″ Walnut Bowl",
+      "brand": "Holland Bowl Mill",
+      "price": 385,
+      "cat": "Wood & Serving",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/walnut-bowl-17-iJhW5gd4.jpg",
+      "url": "https://hollandbowlmill.com/baking/?wpam_id=10",
+      "code": "bread",
+      "desc": "Hand-turned in Michigan from a single piece of walnut. An heirloom that mixes, proofs, and serves for generations.",
+      "note": "This bowl will outlive both of us. That’s the point."
+    },
+    {
+      "slug": "maple-17",
+      "name": "17″ Maple Bowl",
+      "brand": "Holland Bowl Mill",
+      "price": 325,
+      "cat": "Wood & Serving",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/maple-bowl-17-D-qiAogI.jpg",
+      "url": "https://hollandbowlmill.com/baking/?wpam_id=10",
+      "code": "bread",
+      "desc": "The lighter-grain sibling. Same one-piece hand-turned construction, brighter look.",
+      "note": "Maple brightens a dark kitchen."
+    },
+    {
+      "slug": "beech-17",
+      "name": "17″ Beechwood Bowl",
+      "brand": "Holland Bowl Mill",
+      "price": 135,
+      "cat": "Wood & Serving",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/holland-bowl-mill-CJm2U-zh.jpg",
+      "url": "https://hollandbowlmill.com/baking/?wpam_id=10",
+      "code": "bread",
+      "desc": "The workhorse of the line. Big enough for full batches, and wood keeps dough at room temp even in a cold kitchen.",
+      "note": "The entry door to heirloom wood."
+    },
+    {
+      "slug": "rolling-pin",
+      "name": "French Rolling Pin",
+      "brand": "Holland Bowl Mill",
+      "price": 55,
+      "cat": "Wood & Serving",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/french-rolling-pin-BxZh1GcW.jpg",
+      "url": "https://hollandbowlmill.com/baking/?wpam_id=10",
+      "code": "bread",
+      "desc": "Tapered hardwood pin, hand-finished. Feel the dough instead of fighting it.",
+      "note": "Tapered pins let you steer."
+    },
+    {
+      "slug": "bread-board",
+      "name": "Cherry Bread Board & Bow Knife",
+      "brand": "Holland Bowl Mill",
+      "price": 130,
+      "cat": "Wood & Serving",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/bread-board-bow-knife-BC63rEN9.jpg",
+      "url": "https://hollandbowlmill.com/baking/?wpam_id=10",
+      "code": "bread",
+      "desc": "Cherry board with a serrated bow knife. The way fresh bread wants to be sliced and served.",
+      "note": "This is how you present a loaf you’re proud of."
+    },
+    {
+      "slug": "round-sling",
+      "name": "Round Bread Sling",
+      "brand": "ModKitchn",
+      "price": 15.99,
+      "cat": "Storage & Gifting",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/modkitchen-bread-sling-Ckcwusgx.webp",
+      "url": "https://modkitchn.com/discount/BAKINGGREATBREAD10",
+      "code": "BAKINGGREATBREAD10",
+      "desc": "Silicone sling with SureHold grips. Lower dough into a screaming-hot Dutch oven without the burn scars.",
+      "note": "Knuckles: saved."
+    },
+    {
+      "slug": "oval-sling",
+      "name": "Oval Bread Sling",
+      "brand": "ModKitchn",
+      "price": 16.99,
+      "cat": "Storage & Gifting",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/modkitchen-oval-sling-BH79Tc-m.webp",
+      "url": "https://modkitchn.com/discount/BAKINGGREATBREAD10",
+      "code": "BAKINGGREATBREAD10",
+      "desc": "The batard-shaped version, sized for oval Dutch ovens.",
+      "note": "Same save, longer loaf."
+    },
+    {
+      "slug": "bread-bag",
+      "name": "Reusable Bread Bag",
+      "brand": "ModKitchn",
+      "price": 29.95,
+      "cat": "Storage & Gifting",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/modkitchen-bread-bag-Caf4GoHb.webp",
+      "url": "https://modkitchn.com/discount/BAKINGGREATBREAD10",
+      "code": "BAKINGGREATBREAD10",
+      "desc": "Waterproof zipper, moisture-managing liner, made from recycled bottles. Keeps crust crisp days longer.",
+      "note": "Day-three sourdough that still crackles."
+    },
+    {
+      "slug": "holiday-bags",
+      "name": "Holiday Bread Bags (Limited)",
+      "brand": "ModKitchn",
+      "price": 29.95,
+      "cat": "Storage & Gifting",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/modkitchen-holiday-bags-cYGTsbnk.webp",
+      "url": "https://modkitchn.com/discount/BAKINGGREATBREAD10",
+      "code": "BAKINGGREATBREAD10",
+      "desc": "Limited-edition festive prints. Gift a homemade loaf inside one and you’ve given two presents.",
+      "note": "The loaf is the gift. This is the bow."
+    }
+  ],
+  "books": [
+    {
+      "slug": "book-rest-of-us",
+      "name": "Sourdough for the Rest of Us",
+      "price": 6.08,
+      "img": "https://holiday-gifts-2025.lovable.app/assets/sourdough-rest-of-us-sharp-CBF-ZBK2.jpg",
+      "url": "https://a.co/d/guDGoiE",
+      "desc": "The beginner-friendly guide. No fancy equipment, no guilt, just techniques that work."
+    },
+    {
+      "slug": "book-vitale",
+      "name": "Vitale Sourdough Mastery",
+      "price": 9.6,
+      "img": "https://holiday-gifts-2025.lovable.app/assets/vitale-sourdough-mastery-sharp-fcuhqWpB.jpg",
+      "url": "https://a.co/d/h8Lnskn",
+      "desc": "Level up: timing, temperature control, and shaping, explained deeper."
+    },
+    {
+      "slug": "book-foto",
+      "name": "From Oven to Market",
+      "price": 7.62,
+      "img": "https://holiday-gifts-2025.lovable.app/assets/from-oven-to-market-sharp-IbVzgN-5.jpg",
+      "url": "https://a.co/d/3MKgp3l",
+      "desc": "Turn baking into income. Cottage food law, pricing, production planning."
+    },
+    {
+      "slug": "book-loaf-lie",
+      "name": "The Loaf and the Lie",
+      "price": 6.99,
+      "img": "https://holiday-gifts-2025.lovable.app/assets/loaf-and-lie-sharp-Br6dbTce.jpg",
+      "url": "https://a.co/d/fyIyomh",
+      "desc": "Part history, part exposé: how industrial bread replaced the real thing."
+    },
+    {
+      "slug": "book-journey",
+      "name": "Bread: A Journey",
+      "price": 7.95,
+      "img": "https://holiday-gifts-2025.lovable.app/assets/bread-journey-BX-cOeNU.jpg",
+      "url": "https://a.co/d/3jUvHC8",
+      "desc": "History, fermentation science, and bread cultures around the world."
+    }
+  ],
+  "free": [
+    {
+      "slug": "free-starter-guide",
+      "name": "Sourdough Starter Guide",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/starter-guide-VfslA1US.png",
+      "url": "https://sourdough-starter-master-kxo6qxb.gamma.site/",
+      "desc": "Create and keep a healthy starter, start to finish."
+    },
+    {
+      "slug": "free-recipes",
+      "name": "Recipe Collection",
+      "img": "https://holiday-gifts-2025.lovable.app/assets/recipe-collection-C9_ut0XW.png",
+      "url": "https://bakinggreatbread.blog",
+      "desc": "Tested recipes from my kitchen, free on the blog."
+    }
+  ],
+  "market_kit_highlights": [
+    {
+      "slug": "mk-canopy",
+      "name": "Crown Shades 10×10 Pop-Up Canopy",
+      "catlabel": "Shelter",
+      "price": 139.99,
+      "img": "https://m.media-amazon.com/images/I/61-p2KheVzL._AC_SL600_.jpg",
+      "url": "https://www.amazon.com/dp/B078XR1CS8?tag=onamz55024a-20"
+    },
+    {
+      "slug": "mk-weights",
+      "name": "US Weight 40 lb Canopy Weights",
+      "catlabel": "Weights",
+      "price": 36.59,
+      "img": "https://m.media-amazon.com/images/I/91eFp9X0ilL._AC_SL600_.jpg",
+      "url": "https://www.amazon.com/dp/B06XQ6BLLJ?tag=onamz55024a-20"
+    },
+    {
+      "slug": "mk-chalkboard",
+      "name": "40×20 A-Frame Chalkboard Sign",
+      "catlabel": "Signage",
+      "price": 65.54,
+      "img": "https://m.media-amazon.com/images/I/81eqULfOkrL._AC_SL600_.jpg",
+      "url": "https://www.amazon.com/dp/B01NBG3QDF?tag=onamz55024a-20"
+    },
+    {
+      "slug": "mk-bags",
+      "name": "Kraft Bread Bags w/ Window (100)",
+      "catlabel": "Bagging",
+      "price": 14.89,
+      "img": "https://m.media-amazon.com/images/I/81KF6wQTNWL._AC_SL600_.jpg",
+      "url": "https://www.amazon.com/dp/B0CW1YDB1M?tag=onamz55024a-20"
+    }
+  ]
+}
