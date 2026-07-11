@@ -772,7 +772,7 @@ export default function HolidayGiftGuide() {
                   <div className="mb-3 flex h-44 items-center justify-center overflow-hidden rounded-xl bg-flour/50">
                     <img src={k.img} alt={k.name} loading="lazy" className="max-h-full object-contain transition-transform group-hover:scale-105" />
                   </div>
-                  <h4 className="font-display text-base font-semibold text-crust">{k.name}</h4>
+                  <h3 className="font-display text-base font-semibold text-crust">{k.name}</h3>
                   <p className="mt-1 line-clamp-2 text-sm text-crumb">{k.desc}</p>
                   <div className="mt-3 flex items-center justify-between">
                     <span className="font-bold text-cranberry">{k.price}</span>
@@ -809,7 +809,7 @@ export default function HolidayGiftGuide() {
                   <div className="mb-3 flex h-44 items-center justify-center overflow-hidden rounded-lg bg-white">
                     <img src={a.img} alt={a.name} loading="lazy" className="max-h-full object-contain transition-transform group-hover:scale-105" />
                   </div>
-                  <h4 className="font-display text-sm font-semibold text-crust line-clamp-2">{a.name}</h4>
+                  <h3 className="font-display text-sm font-semibold text-crust line-clamp-2">{a.name}</h3>
                   <div className="mt-2 flex items-center gap-1 text-xs">
                     {[...Array(5)].map((_, s) => (
                       <Star key={s} className={`h-3.5 w-3.5 ${s < Math.round(a.rating) ? "fill-honey text-honey" : "fill-honey/30 text-honey/30"}`} />
@@ -857,7 +857,7 @@ export default function HolidayGiftGuide() {
                 { name: "Kraft Bread Bags (100)", desc: "Branded-ready packaging your loaves deserve." },
               ].map((m, i) => (
                 <div key={i} className="rounded-xl border border-honey/30 bg-flour/5 p-5">
-                  <h4 className="font-display text-lg font-semibold text-flour">{m.name}</h4>
+                  <h3 className="font-display text-lg font-semibold text-flour">{m.name}</h3>
                   <p className="mt-1 text-sm text-[hsl(37_35%_82%)]">{m.desc}</p>
                 </div>
               ))}
@@ -890,7 +890,7 @@ export default function HolidayGiftGuide() {
               ].map((b, i) => (
                 <a key={i} href={b.url} target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center text-center">
                   <img src={b.img} alt={b.name} loading="lazy" className="h-56 w-auto object-contain drop-shadow-xl transition-transform group-hover:-translate-y-2" />
-                  <h4 className="mt-4 font-display text-sm font-semibold text-crust">{b.name}</h4>
+                  <h3 className="mt-4 font-display text-sm font-semibold text-crust">{b.name}</h3>
                   <p className="mt-1 font-bold text-cranberry">{b.price}</p>
                 </a>
               ))}
