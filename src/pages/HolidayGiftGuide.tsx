@@ -695,6 +695,7 @@ export default function HolidayGiftGuide() {
         {/* The Counter: category aisles with progressive disclosure */}
         <section className="py-16">
           <div className="mx-auto max-w-[1200px] px-5">
+            <h2 className="mb-3 font-display text-3xl font-semibold text-crust md:text-4xl">Browse all baking gifts</h2>
             <p className="mb-6 text-xs text-crumb md:text-sm">
               Prices and availability may change. Some links are affiliate links, which support our free recipes at no additional cost to you. <span className="whitespace-nowrap">Prices last checked {PRICES_LAST_CHECKED}.</span>
             </p>
