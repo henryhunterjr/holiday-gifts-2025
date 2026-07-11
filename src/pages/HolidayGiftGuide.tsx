@@ -97,10 +97,8 @@ function SnowCanvas({ on }: { on: boolean }) {
     const c = ref.current;
     if (!c) return;
     const ctx = c.getContext("2d")!;
-    if (!on) {
-      ctx.clearRect(0, 0, c.width, c.height);
-      return;
-    }
+    ctx.clearRect(0, 0, c.width, c.height);
+    if (!on) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     let raf = 0;
     const resize = () => {
