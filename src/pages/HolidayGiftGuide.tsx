@@ -252,7 +252,6 @@ function GiftFinderQuiz({ open, onClose }: { open: boolean; onClose: () => void 
   const [step, setStep] = useState(0);
   const [ans, setAns] = useState<QuizAnswers>({ who: "", budget: "", need: "", style: "" });
   useEffect(() => { if (open) { setStep(0); setAns({ who: "", budget: "", need: "", style: "" }); } }, [open]);
-  if (!open) return null;
 
   const questions = [
     { key: "who" as const, q: "Who's it for?", opts: ["A new baker", "Weekend baker", "Obsessed sourdough baker", "Market seller"] },
@@ -284,6 +283,8 @@ function GiftFinderQuiz({ open, onClose }: { open: boolean; onClose: () => void 
       .slice(0, 3)
       .map((x) => x.p);
   }, [done, ans]);
+
+  if (!open) return null;
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-oven/80 p-4" onClick={(e) => e.target === e.currentTarget && onClose()}>
