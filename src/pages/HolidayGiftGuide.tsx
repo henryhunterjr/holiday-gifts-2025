@@ -475,8 +475,10 @@ export default function HolidayGiftGuide() {
           </div>
         </section>
 
-        {/* Filter bar */}
-        <div className="sticky top-[52px] z-40 border-b border-parchment-deep bg-flour/95 backdrop-blur">
+        {/* Filter bar — sticky on desktop only. On mobile it scrolls naturally
+            because the header height (with garland) varies and iOS Safari's
+            URL-bar hide/show made a hard-coded sticky offset flicker. */}
+        <div className="z-40 border-b border-parchment-deep bg-flour md:sticky md:top-[64px] md:bg-flour/95 md:backdrop-blur">
           <div className="mx-auto flex max-w-[1200px] flex-wrap items-center gap-2.5 px-5 py-3">
             <div className="relative min-w-[180px] flex-1">
               <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-crumb" />
