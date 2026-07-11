@@ -634,6 +634,7 @@ export default function HolidayGiftGuide() {
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder="Search the main gift collection…"
+                  aria-label="Search the main gift collection"
                   className="min-h-[44px] w-full rounded-full border-[1.5px] border-parchment-deep bg-white py-2.5 pl-10 pr-10 text-sm focus:border-honey focus:outline-none focus:ring-2 focus:ring-honey/30"
                 />
                 {search && (
