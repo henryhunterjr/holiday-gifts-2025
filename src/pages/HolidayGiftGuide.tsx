@@ -367,7 +367,11 @@ export default function HolidayGiftGuide() {
       <header className="sticky top-0 z-50 border-b border-honey/25 bg-oven/95 text-flour backdrop-blur">
         <div className="mx-auto flex max-w-[1200px] items-center gap-3 px-4 py-2.5">
           <a href="#top" className="mr-auto flex items-center gap-2 font-display text-base font-semibold text-flour">
-            <span className="h-6 w-6 rounded-full" style={{ background: "radial-gradient(circle at 35% 30%, hsl(var(--honey)), hsl(var(--cranberry)) 70%)", boxShadow: "0 0 12px hsl(var(--honey) / 0.5)" }} />
+            <img
+              src={bgbLogo}
+              alt="Baking Great Bread at Home"
+              className="ornament-twinkle h-9 w-9 rounded-full object-cover ring-1 ring-honey/40"
+            />
             <span className="hidden sm:inline">Baking Great Bread at Home</span>
             <span className="sm:hidden">BGB</span>
           </a>
@@ -382,13 +386,13 @@ export default function HolidayGiftGuide() {
             <Snowflake className="h-3 w-3" /> Snow
           </button>
         </div>
+        <HeaderGarland />
       </header>
 
       <main id="top">
         {/* Hero */}
-        <section className="relative overflow-hidden pt-16 text-flour" style={{ background: "radial-gradient(1200px 500px at 50% -10%, hsl(var(--honey) / 0.16), transparent 60%), linear-gradient(180deg, #17202b 0%, #1c1a14 45%, hsl(var(--oven)) 100%)" }}>
-          <SnowCanvas on={snow} />
-          <div className="relative z-20 mx-auto grid max-w-[1200px] items-center gap-10 px-5 pb-20 md:grid-cols-[1.1fr_0.9fr] md:gap-12">
+        <section className="relative overflow-hidden pt-32 text-flour" style={{ background: "radial-gradient(1200px 500px at 50% -10%, hsl(var(--honey) / 0.16), transparent 60%), linear-gradient(180deg, #17202b 0%, #1c1a14 45%, hsl(var(--oven)) 100%)" }}>
+          <div className="relative z-20 mx-auto grid max-w-[1200px] items-center gap-10 px-5 pb-20 md:grid-cols-[1.05fr_0.95fr] md:gap-12">
             <div>
               <p className="eyebrow" style={{ color: "hsl(var(--honey))" }}>The 2025 Guide</p>
               <h1 className="mt-3 font-display font-medium" style={{ fontSize: "clamp(2.4rem, 5.6vw, 4.2rem)" }}>
@@ -407,12 +411,28 @@ export default function HolidayGiftGuide() {
               </div>
               <p className="mt-5 text-sm" style={{ color: "#bfae92" }}>Affiliate links support free recipes. I only recommend what I use.</p>
             </div>
-            <div className="relative overflow-hidden rounded-3xl" style={{ boxShadow: "0 0 0 3px #1a100a, 0 24px 60px rgba(0,0,0,.55), 0 0 90px hsl(var(--honey) / 0.38)" }}>
-              <img src={heroImg} alt="A warm bakery kitchen at Christmas seen through a frosted window" className="w-full" loading="eager" />
-              <div className="pointer-events-none absolute inset-0 rounded-3xl" style={{ boxShadow: "inset 0 0 70px hsl(var(--honey) / 0.18)" }} />
+            <div
+              className="relative overflow-hidden rounded-3xl"
+              style={{
+                boxShadow:
+                  "0 0 0 4px #1a100a, 0 0 0 8px #3a2412, 0 24px 60px rgba(0,0,0,.6), 0 0 120px hsl(var(--honey) / 0.45)",
+              }}
+            >
+              <img
+                src={bakeryWindow}
+                alt="Warm bakery kitchen at Christmas seen through a frosted window"
+                className="block w-full"
+                loading="eager"
+              />
+              <div
+                className="pointer-events-none absolute inset-0 rounded-3xl"
+                style={{ boxShadow: "inset 0 0 90px hsl(var(--honey) / 0.22)" }}
+              />
             </div>
           </div>
         </section>
+        {/* Site-wide snow, sits above hero and page, below modals */}
+        <SnowCanvas on={snow} />
 
         {/* Promo marquee */}
         <div className="overflow-hidden border-y border-honey/30 bg-evergreen-deep text-flour">
