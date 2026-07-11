@@ -18,6 +18,7 @@ import bookVitale from "@/assets/holiday/vitale-sourdough-mastery-sharp.jpg";
 import bookFOTM from "@/assets/holiday/from-oven-to-market-sharp.jpg";
 import bookLoaf from "@/assets/holiday/loaf-and-lie-sharp.jpg";
 import bookJourney from "@/assets/holiday/bread-journey.jpg";
+import giveBreadVideo from "@/assets/holiday/give-bread-instead.mp4.asset.json";
 
 /* ============ Types & data ============ */
 type Product = {
