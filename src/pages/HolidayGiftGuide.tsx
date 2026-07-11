@@ -18,6 +18,7 @@ import bookVitale from "@/assets/holiday/vitale-sourdough-mastery-sharp.jpg";
 import bookFOTM from "@/assets/holiday/from-oven-to-market-sharp.jpg";
 import bookLoaf from "@/assets/holiday/loaf-and-lie-sharp.jpg";
 import bookJourney from "@/assets/holiday/bread-journey.jpg";
+import giveBreadVideo from "@/assets/holiday/give-bread-instead.mp4.asset.json";
 
 /* ============ Types & data ============ */
 type Product = {
@@ -454,6 +455,43 @@ export default function HolidayGiftGuide() {
             ))}
           </div>
         </div>
+
+        {/* Give Bread Instead campaign */}
+        <section id="give-bread-instead" className="relative overflow-hidden text-flour" style={{ background: "radial-gradient(900px 400px at 20% 0%, hsl(var(--cranberry) / 0.25), transparent 60%), linear-gradient(180deg, #2a1418 0%, #1c0f12 100%)" }}>
+          <div className="mx-auto grid max-w-[1200px] items-center gap-10 px-5 py-16 md:grid-cols-[1fr_1.1fr] md:py-20">
+            <div>
+              <p className="eyebrow" style={{ color: "hsl(var(--honey))" }}>A December tradition</p>
+              <h2 className="mt-3 font-display font-medium text-flour" style={{ fontSize: "clamp(2rem, 4.4vw, 3.4rem)", lineHeight: 1.05 }}>
+                Give <em className="not-italic italic text-honey">Bread</em> Instead.
+              </h2>
+              <p className="mt-4 max-w-[46ch] text-[1.05rem]" style={{ color: "#e8dcc6" }}>
+                Skip the store-bought this year. A loaf you baked with your own hands says more than anything on a shelf. Watch the two-minute story, then pick a tool below to gift the baker in your life.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a href="#top6" className="inline-flex items-center gap-2 rounded-full bg-cranberry px-6 py-3 font-bold text-flour shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-cranberry-deep">
+                  <HollySprig className="h-4 w-4" /> Shop the guide
+                </a>
+                <button onClick={() => setQuiz(true)} className="inline-flex items-center gap-2 rounded-full border-[1.5px] border-flour/40 px-6 py-3 font-bold text-flour transition-colors hover:border-honey hover:text-honey">
+                  <Sparkles className="h-4 w-4" /> Find the perfect gift
+                </button>
+              </div>
+            </div>
+            <div
+              className="relative overflow-hidden rounded-2xl"
+              style={{
+                boxShadow: "0 0 0 4px #1a100a, 0 0 0 8px #3a2412, 0 24px 60px rgba(0,0,0,.6), 0 0 100px hsl(var(--cranberry) / 0.35)",
+              }}
+            >
+              <video
+                src={giveBreadVideo.url}
+                controls
+                playsInline
+                preload="metadata"
+                className="block h-auto w-full"
+              />
+            </div>
+          </div>
+        </section>
 
         {/* Top 6 */}
         <section id="top6" className="bg-gradient-to-b from-oven to-[hsl(24_38%_11%)] py-16 text-flour">
