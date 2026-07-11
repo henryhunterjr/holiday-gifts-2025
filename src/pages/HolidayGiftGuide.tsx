@@ -267,6 +267,7 @@ type QuizAnswers = { who: string; budget: string; need: string; style: string };
 function GiftFinderQuiz({ open, onClose }: { open: boolean; onClose: () => void }) {
   const [step, setStep] = useState(0);
   const [ans, setAns] = useState<QuizAnswers>({ who: "", budget: "", need: "", style: "" });
+  const titleId = useId();
   useEffect(() => { if (open) { setStep(0); setAns({ who: "", budget: "", need: "", style: "" }); } }, [open]);
 
   const questions = [
@@ -280,74 +281,95 @@ function GiftFinderQuiz({ open, onClose }: { open: boolean; onClose: () => void 
 
   const matches = useMemo(() => {
     if (!done) return [];
-    const band = PRICE_BANDS.find((b) => b.label === ans.budget);
-    return products
+    // Budget is a HARD constraint: filter first, then score.
+    const band = bandByLabel(ans.budget);
+    const inBudget = band ? products.filter((p) => band.test(priceNum(p))) : products;
+    return inBudget
       .map((p) => {
         let score = 0;
         if (p.cat === ans.need) score += 3;
-        if (band && band.test(priceNum(p))) score += 2;
         if (ans.who === "A new baker" && ["Starter Care", "Bake Day"].includes(p.cat)) score += 1;
         if (ans.who === "Obsessed sourdough baker" && ["Scoring & Shaping", "Proofing & Temp"].includes(p.cat)) score += 1;
         if (ans.who === "Market seller" && ["Storage & Gifting", "Wood & Serving"].includes(p.cat)) score += 1;
-        if (ans.style === "Stocking stuffer" && priceNum(p) < 30) score += 2;
-        if (ans.style === "Centerpiece gift" && priceNum(p) > 100) score += 2;
-        if (ans.style === "Bundle" && /bundle/i.test(p.name)) score += 3;
+        if (ans.style === "Stocking stuffer" && priceNum(p) < 30) score += 1;
+        if (ans.style === "Centerpiece gift" && priceNum(p) > 100) score += 1;
+        if (ans.style === "Bundle" && /bundle/i.test(p.name)) score += 2;
         return { p, score };
       })
-      .filter((x) => x.score > 0)
       .sort((a, b) => b.score - a.score)
       .slice(0, 3)
       .map((x) => x.p);
   }, [done, ans]);
 
-  if (!open) return null;
+  const widenBudget = () => setStep(1); // jump back to budget question
+  const changeCategory = () => setStep(2); // jump back to need/category
+  const startOver = () => setStep(0);
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-oven/80 p-4" onClick={(e) => e.target === e.currentTarget && onClose()}>
-      <div className="relative w-full max-w-2xl rounded-2xl bg-flour p-6 shadow-2xl md:p-10">
-        <button onClick={onClose} className="absolute right-4 top-4 text-crumb hover:text-cranberry" aria-label="Close">
-          <X className="h-6 w-6" />
-        </button>
-        <p className="eyebrow mb-2">Gift Finder</p>
+    <Dialog open={open} onOpenChange={(o) => { if (!o) onClose(); }}>
+      <DialogContent
+        aria-labelledby={titleId}
+        className="max-w-2xl bg-flour p-6 md:p-10"
+      >
+        <DialogHeader className="text-left">
+          <p className="eyebrow mb-1">Gift Finder</p>
+          <DialogTitle id={titleId} className="font-display text-2xl font-semibold text-crust md:text-3xl">
+            {done ? "Here's what I'd get them" : questions[step].q}
+          </DialogTitle>
+          <DialogDescription className="text-crumb">
+            {done
+              ? `Based on: ${Object.values(ans).filter(Boolean).join(" · ")}`
+              : `Question ${step + 1} of ${questions.length}`}
+          </DialogDescription>
+        </DialogHeader>
+
         {!done ? (
-          <>
-            <h3 className="font-display text-2xl font-semibold text-crust md:text-3xl">{questions[step].q}</h3>
-            <p className="mt-1 text-sm text-crumb">Question {step + 1} of {questions.length}</p>
-            <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {questions[step].opts.map((o) => (
-                <button
-                  key={o}
-                  onClick={() => { setAns({ ...ans, [questions[step].key]: o }); setStep(step + 1); }}
-                  className="rounded-xl border-[1.5px] border-parchment-deep bg-white px-4 py-4 text-left font-semibold text-crust transition-all hover:-translate-y-0.5 hover:border-honey hover:shadow-lg"
-                >
-                  {o}
-                </button>
-              ))}
-            </div>
-          </>
+          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {questions[step].opts.map((o) => (
+              <button
+                key={o}
+                onClick={() => { setAns({ ...ans, [questions[step].key]: o }); setStep(step + 1); }}
+                className="min-h-[52px] rounded-xl border-[1.5px] border-parchment-deep bg-white px-4 py-3 text-left font-semibold text-crust transition-all hover:-translate-y-0.5 hover:border-honey hover:shadow-lg"
+              >
+                {o}
+              </button>
+            ))}
+          </div>
         ) : (
-          <>
-            <h3 className="font-display text-2xl font-semibold text-crust md:text-3xl">Here's what I'd get them</h3>
-            <p className="mt-1 text-sm text-crumb">Based on: {Object.values(ans).join(" · ")}</p>
-            <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
-              {matches.length === 0 && <p className="col-span-full text-crumb">No perfect match. Try widening the budget or category.</p>}
-              {matches.map((p) => (
-                <a key={p.slug} href={p.url} target="_blank" rel="noopener noreferrer" className="group rounded-xl border border-parchment-deep bg-white p-3 transition-transform hover:-translate-y-1">
-                  <img src={p.img} alt={p.name} className="mx-auto h-32 object-contain" style={{ mixBlendMode: "multiply" }} />
-                  <p className="mt-2 line-clamp-2 font-display text-sm font-semibold text-crust">{p.name}</p>
-                  <p className="mt-1 text-xs text-crumb">{p.brand}</p>
-                  <p className="mt-1 font-bold text-cranberry">{priceStr(p)}</p>
-                </a>
-              ))}
-            </div>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <button onClick={() => setStep(0)} className="rounded-full border-[1.5px] border-crust px-5 py-2 font-bold text-crust hover:bg-crust hover:text-flour">Start over</button>
-              <button onClick={onClose} className="rounded-full bg-cranberry px-5 py-2 font-bold text-flour hover:bg-cranberry-deep">Done</button>
-            </div>
-          </>
+          <div aria-live="polite">
+            {matches.length === 0 ? (
+              <div className="mt-2 rounded-xl border-2 border-dashed border-parchment-deep bg-white p-6 text-center">
+                <p className="font-display text-lg font-semibold text-crust">Nothing lands inside that budget.</p>
+                <p className="mt-1 text-sm text-crumb">Try widening the budget or picking a different category.</p>
+                <div className="mt-5 flex flex-wrap justify-center gap-3">
+                  <button onClick={widenBudget} className="min-h-[44px] rounded-full border-[1.5px] border-crust px-5 py-2 font-bold text-crust hover:bg-crust hover:text-flour">Widen budget</button>
+                  <button onClick={changeCategory} className="min-h-[44px] rounded-full border-[1.5px] border-crust px-5 py-2 font-bold text-crust hover:bg-crust hover:text-flour">Change category</button>
+                  <button onClick={startOver} className="min-h-[44px] rounded-full bg-cranberry px-5 py-2 font-bold text-flour hover:bg-cranberry-deep">Start over</button>
+                </div>
+              </div>
+            ) : (
+              <>
+                <p className="sr-only">{matches.length} gift{matches.length !== 1 ? "s" : ""} found within your budget.</p>
+                <div className="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-3">
+                  {matches.map((p) => (
+                    <a key={p.slug} href={p.url} target="_blank" rel="noopener noreferrer" className="group rounded-xl border border-parchment-deep bg-white p-3 transition-transform hover:-translate-y-1">
+                      <img src={p.img} alt={p.name} className="mx-auto h-32 object-contain" style={{ mixBlendMode: "multiply" }} />
+                      <p className="mt-2 line-clamp-2 font-display text-sm font-semibold text-crust">{p.name}</p>
+                      <p className="mt-1 text-xs text-crumb">{p.brand}</p>
+                      <p className="mt-1 font-bold text-cranberry">{priceStr(p)}</p>
+                    </a>
+                  ))}
+                </div>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <button onClick={startOver} className="min-h-[44px] rounded-full border-[1.5px] border-crust px-5 py-2 font-bold text-crust hover:bg-crust hover:text-flour">Start over</button>
+                  <button onClick={onClose} className="min-h-[44px] rounded-full bg-cranberry px-5 py-2 font-bold text-flour hover:bg-cranberry-deep">Done</button>
+                </div>
+              </>
+            )}
+          </div>
         )}
-      </div>
-    </div>
+      </DialogContent>
+    </Dialog>
   );
 }
 
