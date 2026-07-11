@@ -739,7 +739,7 @@ export default function HolidayGiftGuide() {
               <p className="eyebrow">Featured brand</p>
               <h2 className="mt-2 font-display text-3xl font-semibold text-crust md:text-4xl">Krustic <span className="font-hand text-2xl text-cranberry">Rise Above Tradition™</span></h2>
             </div>
-            <ChevronDown aria-hidden className="h-5 w-5 flex-none text-crumb transition-transform [details[open]_&]:rotate-180" />
+            <ChevronDown aria-hidden className="h-5 w-5 flex-none text-crumb" />
           </summary>
           <div>
             <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
