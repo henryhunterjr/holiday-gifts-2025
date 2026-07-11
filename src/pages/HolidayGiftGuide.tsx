@@ -605,74 +605,153 @@ export default function HolidayGiftGuide() {
           </div>
         </section>
 
-        {/* Filter bar — sticky on desktop only. On mobile it scrolls naturally
-            because the header height (with garland) varies and iOS Safari's
-            URL-bar hide/show made a hard-coded sticky offset flicker. */}
+        {/* Filter bar — sticky on desktop only. */}
         <div className="z-40 border-b border-parchment-deep bg-flour md:sticky md:top-[64px] md:bg-flour/95 md:backdrop-blur">
-          <div className="mx-auto flex max-w-[1200px] flex-wrap items-center gap-2.5 px-5 py-3">
-            <div className="relative min-w-[180px] flex-1">
-              <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-crumb" />
-              <input
-                type="search"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search gifts, brands, tools…"
-                className="w-full rounded-full border-[1.5px] border-parchment-deep bg-white py-2.5 pl-10 pr-4 text-sm focus:border-honey focus:outline-none focus:ring-2 focus:ring-honey/30"
-              />
+          <div className="mx-auto max-w-[1200px] px-5 py-3">
+            <div className="flex flex-wrap items-center gap-2.5">
+              <div className="relative min-w-[180px] flex-1">
+                <label htmlFor={searchInputId} className="sr-only">Search the main gift collection</label>
+                <Search aria-hidden className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-crumb" />
+                <input
+                  id={searchInputId}
+                  type="search"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  placeholder="Search the main gift collection…"
+                  className="min-h-[44px] w-full rounded-full border-[1.5px] border-parchment-deep bg-white py-2.5 pl-10 pr-10 text-sm focus:border-honey focus:outline-none focus:ring-2 focus:ring-honey/30"
+                />
+                {search && (
+                  <button
+                    type="button"
+                    onClick={() => setSearch("")}
+                    aria-label="Clear search"
+                    className="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full text-crumb hover:bg-parchment"
+                  >
+                    <X className="h-4 w-4" />
+                  </button>
+                )}
+              </div>
+              <div className="-mx-1 flex flex-nowrap gap-2 overflow-x-auto px-1 pb-1 md:flex-wrap" style={{ scrollbarWidth: "none" }} role="group" aria-label="Category filters">
+                <button aria-pressed={!cat} className={`chip min-h-[44px] ${!cat ? "on" : ""}`} onClick={() => setCat(null)}>All</button>
+                {CATEGORIES.map((c) => (
+                  <button key={c} aria-pressed={cat === c} className={`chip min-h-[44px] ${cat === c ? "on" : ""}`} onClick={() => setCat(cat === c ? null : c)}>{c}</button>
+                ))}
+              </div>
+              <div className="-mx-1 flex flex-nowrap gap-2 overflow-x-auto px-1 pb-1 pr-4 md:flex-wrap" style={{ scrollbarWidth: "none" }} role="group" aria-label="Price filters">
+                {PRICE_BANDS.map((b) => (
+                  <button key={b.label} aria-pressed={band === b.label} className={`chip min-h-[44px] ${band === b.label ? "on price-on" : ""}`} onClick={() => setBand(band === b.label ? null : b.label)}>{b.label}</button>
+                ))}
+              </div>
             </div>
-            <div className="flex flex-nowrap gap-2 overflow-x-auto md:flex-wrap" style={{ scrollbarWidth: "none" }}>
-              <button className={`chip ${!cat ? "on" : ""}`} onClick={() => setCat(null)}>All</button>
-              {CATEGORIES.map((c) => (
-                <button key={c} className={`chip ${cat === c ? "on" : ""}`} onClick={() => setCat(cat === c ? null : c)}>{c}</button>
-              ))}
-            </div>
-            <div className="flex flex-nowrap gap-2 overflow-x-auto md:flex-wrap" style={{ scrollbarWidth: "none" }}>
-              {PRICE_BANDS.map((b) => (
-                <button key={b.label} className={`chip ${band === b.label ? "on price-on" : ""}`} onClick={() => setBand(band === b.label ? null : b.label)}>{b.label}</button>
-              ))}
+            <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-crumb" aria-live="polite">
+              <span><b className="text-crust">{filtered.length}</b> gift{filtered.length !== 1 ? "s" : ""}</span>
+              {anyFilter && (
+                <>
+                  <span aria-hidden>·</span>
+                  <span className="truncate">
+                    Active: {[search && `"${search}"`, cat, band].filter(Boolean).join(" · ")}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={clearAllFilters}
+                    className="ml-auto min-h-[36px] rounded-full border border-crust/40 px-3 py-1 text-xs font-bold text-crust hover:bg-crust hover:text-flour"
+                  >
+                    Clear all filters
+                  </button>
+                </>
+              )}
             </div>
           </div>
         </div>
 
-        {/* The Counter: category aisles */}
+        {/* Jump nav for the main catalog */}
+        <nav aria-label="Jump to section" className="border-b border-parchment-deep/60 bg-flour">
+          <div className="mx-auto flex max-w-[1200px] flex-nowrap gap-2 overflow-x-auto px-5 py-2 text-xs md:flex-wrap" style={{ scrollbarWidth: "none" }}>
+            <a href="#top6" className="chip min-h-[36px]">Top Picks</a>
+            <button className="chip min-h-[36px]" onClick={() => { setBand("Under $25"); setCat(null); }}>Under $25</button>
+            <button className="chip min-h-[36px]" onClick={() => { setCat("Starter Care"); setBand(null); }}>New Bakers</button>
+            <button className="chip min-h-[36px]" onClick={() => { setCat("Scoring & Shaping"); setBand(null); }}>Serious Bakers</button>
+            <a href="#market-sellers" className="chip min-h-[36px]">Market Sellers</a>
+          </div>
+        </nav>
+
+        {/* The Counter: category aisles with progressive disclosure */}
         <section className="py-16">
           <div className="mx-auto max-w-[1200px] px-5">
-            {CATEGORIES.map((c) => {
-              const items = byCat.get(c) || [];
-              if (items.length === 0) return null;
+            <p className="mb-6 text-xs text-crumb md:text-sm">
+              Prices and availability may change. Some links are affiliate links, which support our free recipes at no additional cost to you. <span className="whitespace-nowrap">Prices last checked {PRICES_LAST_CHECKED}.</span>
+            </p>
+            {(() => {
+              // If a filter is active, show everything. Otherwise, cap the
+              // initial view and let the user opt into the full catalog.
+              const INITIAL_LIMIT = 12;
+              const shouldCap = !anyFilter && !showAll;
+              const displayList = shouldCap ? filtered.slice(0, INITIAL_LIMIT) : filtered;
+              const displayByCat = new Map<string, Product[]>();
+              for (const p of displayList) {
+                if (!displayByCat.has(p.cat)) displayByCat.set(p.cat, []);
+                displayByCat.get(p.cat)!.push(p);
+              }
               return (
-                <div key={c} className="mb-14">
-                  <div className="mb-6 flex items-baseline gap-3.5 border-b-2 border-dashed border-parchment-deep pb-2.5">
-                    <h3 className="font-display text-2xl font-semibold text-crust">{c}</h3>
-                    <span className="text-xs text-crumb">{items.length} gift{items.length !== 1 ? "s" : ""}</span>
-                  </div>
-                  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                    {items.map((p) => <GiftTag key={p.slug} p={p} onCopyCode={copyCode} />)}
-                  </div>
-                </div>
+                <>
+                  {CATEGORIES.map((c) => {
+                    const items = displayByCat.get(c) || [];
+                    if (items.length === 0) return null;
+                    return (
+                      <div key={c} className="mb-14">
+                        <div className="mb-6 flex items-baseline gap-3.5 border-b-2 border-dashed border-parchment-deep pb-2.5">
+                          <h3 className="font-display text-2xl font-semibold text-crust">{c}</h3>
+                          <span className="text-xs text-crumb">{items.length} gift{items.length !== 1 ? "s" : ""}</span>
+                        </div>
+                        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                          {items.map((p) => <GiftTag key={p.slug} p={p} onCopyCode={copyCode} />)}
+                        </div>
+                      </div>
+                    );
+                  })}
+                  {filtered.length === 0 && (
+                    <div className="py-16 text-center">
+                      <p className="text-crumb">No gifts match your filters.</p>
+                      <button onClick={clearAllFilters} className="mt-4 min-h-[44px] rounded-full bg-cranberry px-5 py-2 font-bold text-flour hover:bg-cranberry-deep">Clear all filters</button>
+                    </div>
+                  )}
+                  {!anyFilter && filtered.length > INITIAL_LIMIT && (
+                    <div className="mt-2 flex justify-center">
+                      <button
+                        onClick={() => setShowAll((s) => !s)}
+                        className="min-h-[44px] rounded-full border-[1.5px] border-crust bg-white px-6 py-2 font-bold text-crust hover:bg-crust hover:text-flour"
+                      >
+                        {showAll ? "Show fewer" : `View all ${filtered.length} gifts`}
+                      </button>
+                    </div>
+                  )}
+                </>
               );
-            })}
-            {filtered.length === 0 && (
-              <p className="py-16 text-center text-crumb">Nothing matches. Try clearing filters or a different search.</p>
-            )}
+            })()}
           </div>
         </section>
 
         {/* Krustic brand section */}
-        <section id="krustic" className="border-y border-parchment-deep bg-parchment/60 py-16">
-          <div className="mx-auto max-w-[1200px] px-5">
+        <section id="krustic" className="border-y border-parchment-deep bg-parchment/60 py-10">
+         <details open className="mx-auto max-w-[1200px] px-5">
+          <summary className="mb-6 flex cursor-pointer list-none items-center justify-between gap-4">
+            <div>
+              <p className="eyebrow">Featured brand</p>
+              <h2 className="mt-2 font-display text-3xl font-semibold text-crust md:text-4xl">Krustic <span className="font-hand text-2xl text-cranberry">Rise Above Tradition™</span></h2>
+            </div>
+            <ChevronDown aria-hidden className="h-5 w-5 flex-none text-crumb transition-transform [details[open]_&]:rotate-180" />
+          </summary>
+          <div>
             <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
               <div>
-                <p className="eyebrow">Featured brand</p>
-                <h2 className="mt-2 font-display text-3xl font-semibold text-crust md:text-4xl">Krustic <span className="font-hand text-2xl text-cranberry">Rise Above Tradition™</span></h2>
                 <p className="mt-3 max-w-[60ch] text-crumb">Heritage-inspired sourdough tools that honor the past and elevate your bake. Free shipping + 30-day returns.</p>
               </div>
-              <button onClick={() => copyCode("BGBAH25")} className="code-pill text-base">
+              <button onClick={() => copyCode("BGBAH25")} className="code-pill min-h-[44px] text-base">
                 <Copy className="h-4 w-4" /> Use code BGBAH25 for 10% off
               </button>
             </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {krusticProducts.map((k, i) => (
+              {visibleKrustic.map((k, i) => (
                 <a key={i} href={k.url} target="_blank" rel="noopener noreferrer" className="group rounded-2xl border border-parchment-deep bg-white p-4 shadow-md transition-transform hover:-translate-y-1.5">
                   <div className="mb-3 flex h-44 items-center justify-center overflow-hidden rounded-xl bg-flour/50">
                     <img src={k.img} alt={k.name} loading="lazy" className="max-h-full object-contain transition-transform group-hover:scale-105" />
@@ -692,16 +771,21 @@ export default function HolidayGiftGuide() {
               <a href="https://www.tiktok.com/@krustic" target="_blank" rel="noopener noreferrer" className="hover:text-cranberry">TikTok</a>
             </div>
           </div>
+         </details>
         </section>
 
         {/* Shop More Baking Essentials — Amazon */}
-        <section className="py-16">
-          <div className="mx-auto max-w-[1200px] px-5">
-            <div className="mb-8">
+        <section className="py-10">
+         <details open className="mx-auto max-w-[1200px] px-5">
+          <summary className="mb-8 flex cursor-pointer list-none items-center justify-between gap-4">
+            <div>
               <p className="eyebrow">Also on Amazon</p>
               <h2 className="mt-2 font-display text-3xl font-semibold text-crust md:text-4xl">Shop More Baking Essentials</h2>
-              <p className="mt-3 max-w-[60ch] text-crumb">The Amazon-available gear that rounds out a serious baker's kitchen.</p>
             </div>
+            <ChevronDown aria-hidden className="h-5 w-5 flex-none text-crumb" />
+          </summary>
+          <div>
+            <p className="mb-6 max-w-[60ch] text-crumb">The Amazon-available gear that rounds out a serious baker's kitchen.</p>
             <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {amazonProducts.map((a, i) => (
                 <a key={i} href={a.url} target="_blank" rel="noopener noreferrer" className="group flex flex-col rounded-xl border border-parchment-deep bg-white p-3 shadow transition-transform hover:-translate-y-1">
@@ -724,10 +808,11 @@ export default function HolidayGiftGuide() {
               ))}
             </div>
           </div>
+         </details>
         </section>
 
         {/* From Oven to Market */}
-        <section className="text-flour" style={{ background: "radial-gradient(700px 300px at 85% 0%, hsl(var(--honey) / 0.12), transparent 60%), linear-gradient(180deg, hsl(var(--evergreen-deep)), #1d2f23)" }}>
+        <section id="market-sellers" className="text-flour" style={{ background: "radial-gradient(700px 300px at 85% 0%, hsl(var(--honey) / 0.12), transparent 60%), linear-gradient(180deg, hsl(var(--evergreen-deep)), #1d2f23)" }}>
           <a
             href="https://fromoventomarket.com/"
             target="_blank"
@@ -770,12 +855,15 @@ export default function HolidayGiftGuide() {
         </section>
 
         {/* Books shelf */}
-        <section className="bg-parchment/50 py-16">
-          <div className="mx-auto max-w-[1200px] px-5">
-            <div className="mb-8">
+        <section className="bg-parchment/50 py-10">
+         <details open className="mx-auto max-w-[1200px] px-5">
+          <summary className="mb-8 flex cursor-pointer list-none items-center justify-between gap-4">
+            <div>
               <p className="eyebrow">Stocking-sized, kitchen-tested</p>
               <h2 className="mt-2 font-display text-3xl font-semibold text-crust md:text-4xl">Books from my own oven</h2>
             </div>
+            <ChevronDown aria-hidden className="h-5 w-5 flex-none text-crumb" />
+          </summary>
             <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
               {[
                 { name: "Sourdough for the Rest of Us", price: "$6.08", url: "https://amzn.to/sourdoughrestofus", img: bookSourdough },
@@ -791,28 +879,19 @@ export default function HolidayGiftGuide() {
                 </a>
               ))}
             </div>
-          </div>
+         </details>
         </section>
 
-        {/* Free gifts */}
-        <section className="py-16" style={{ background: "hsl(38 60% 94%)" }}>
-          <div className="mx-auto max-w-[1200px] px-5 text-center">
-            <p className="eyebrow">On the house</p>
-            <h2 className="mt-2 font-display text-3xl font-semibold text-crust md:text-4xl">Free gifts, from me to you</h2>
-            <div className="mx-auto mt-8 grid max-w-3xl gap-6 sm:grid-cols-2">
-              {[
-                { name: "Sourdough Starter Guide", desc: "Everything I wish someone had handed me on day one.", url: "#" },
-                { name: "Holiday Recipe Collection", desc: "Gift loaves, quick breads, and the bakes neighbors ask for by name.", url: "#" },
-              ].map((f, i) => (
-                <a key={i} href={f.url} className="rounded-2xl border-2 border-dashed border-cranberry bg-white p-6 text-left transition-transform hover:-translate-y-1">
-                  <h4 className="font-display text-lg font-semibold text-crust">{f.name}</h4>
-                  <p className="mt-2 text-sm text-crumb">{f.desc}</p>
-                  <p className="mt-3 font-bold text-evergreen">Free →</p>
-                </a>
-              ))}
+        {/* Free gifts — hidden until real download URLs are configured. */}
+        {FREE_RESOURCES_ENABLED && (
+          <section className="py-16" style={{ background: "hsl(38 60% 94%)" }}>
+            <div className="mx-auto max-w-[1200px] px-5 text-center">
+              <p className="eyebrow">On the house</p>
+              <h2 className="mt-2 font-display text-3xl font-semibold text-crust md:text-4xl">Free gifts, from me to you</h2>
+              <p className="mt-4 text-sm text-crumb">Coming soon.</p>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* Newsletter */}
         <section className="text-flour" style={{ background: "linear-gradient(180deg, hsl(var(--oven)), hsl(24 40% 12%))" }}>
