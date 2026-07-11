@@ -19,6 +19,25 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        oven: "hsl(var(--oven))",
+        crust: "hsl(var(--crust))",
+        crumb: "hsl(var(--crumb))",
+        flour: "hsl(var(--flour))",
+        parchment: {
+          DEFAULT: "hsl(var(--parchment))",
+          deep: "hsl(var(--parchment-deep))",
+        },
+        cranberry: {
+          DEFAULT: "hsl(var(--cranberry))",
+          deep: "hsl(var(--cranberry-deep))",
+        },
+        evergreen: {
+          DEFAULT: "hsl(var(--evergreen))",
+          deep: "hsl(var(--evergreen-deep))",
+        },
+        honey: "hsl(var(--honey))",
+        twine: "hsl(var(--twine))",
+        ink: "hsl(var(--ink))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -72,6 +91,11 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      fontFamily: {
+        display: ['Fraunces', 'ui-serif', 'Georgia', 'serif'],
+        body: ['Karla', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        hand: ['Caveat', 'cursive'],
       },
       borderRadius: {
         lg: "var(--radius)",
