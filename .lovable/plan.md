@@ -1,81 +1,84 @@
-## What we're building
+# Holiday Gift Guide 2026 — Launch Readiness Plan
 
-A full replacement of the current `/` page with the design from your uploaded prototype: warm flour-white background, gift-tag product cards with twine and handwritten notes, glowing "bakery window" hero, marquee promo strip, Henry's Top 6 shelf, sticky filter bar, category aisles, Gift Finder quiz, Books shelf, free gifts, and footer. Krustic and the Amazon "Shop More Baking Essentials" grid stay intact as their own sections so no product is lost.
+Scope: repair, harden, and update the existing guide. No changes to visual identity, hero art, ornament strip, typography, palette, product photography, snow effect, or brand voice.
 
-## Design system
+## 1. 2025 → 2026 refresh
+- Update hero copy ("The 2026 Guide"), page title, meta description, OG/Twitter title & description, and any alt text / hidden labels that mention 2025.
+- Keep countdown dynamic: target `new Date(new Date().getFullYear(), 11, 25)`; if past, roll to next year.
+- Leave production domain untouched.
 
-Add these tokens to `index.css` and `tailwind.config.ts`:
-- Colors: oven, crust, crumb, flour (bg), parchment, cranberry, evergreen, honey, twine
-- Fonts: Fraunces (display, SOFT variation), Karla (body), Caveat (Henry's notes) — loaded from Google Fonts in `index.html`
-- Gift-tag card component: parchment bg, punched hole with twine, slight rotation that straightens on hover, dashed promo pill
+## 2. Data source of truth + broken links
+- Consolidate products into a single typed catalog with per-item fields: `slug, name, brand, price, priceValue (number), category, image, url, promoCode, description, personalNote, enabled, lastVerified`.
+- Render only where `enabled !== false` AND `url` is a valid non-placeholder URL.
+- Move known-broken items to a clearly-marked `NEEDS_URL` config block with `enabled: false`:
+  - Water Kettle & French Press (`collabs.shop/b8bht0`)
+  - Dual-Flour Dehydrated Starter (Krustic)
+- Free-resource cards (Sourdough Starter Guide, Holiday Recipe Collection): hide until real URLs provided (same `enabled: false` pattern; never render `href="#"`).
 
-All colors are HSL semantic tokens. No hardcoded hex in components.
+## 3. Gift Finder — budget as hard constraint
+- Price bands: `<25`, `25–75` inclusive, `>75 and ≤150`, `>150`.
+- Pipeline: filter by budget → score by recipient + need/category + style → return top 3.
+- Empty state with actions: Widen budget, Change category, Start over. Announce via `aria-live="polite"`.
 
-## Page structure
+## 4. Gift Finder — accessible modal
+- Rebuild on shadcn `Dialog` (Radix): gives `role="dialog"`, `aria-modal`, focus trap, Escape, focus restore, scroll lock, outside-click close for free. Keep current look and 4-question flow.
+- `aria-labelledby` on visible heading. First answer or close gets focus on open.
+- Answer buttons min 44×44. Result region `aria-live="polite"`.
+- Wire both "Open the Gift Finder" triggers.
 
-1. Sticky top bar: brand, "X days until Christmas" countdown, snow toggle, Admin link (Admin is placeholder, no route yet)
-2. Hero: bakery window with honey radial glow, garland, canvas snow (respects prefers-reduced-motion). Headline: "Every gift on this list has flour on it." CTA opens the Gift Finder.
-3. Promo-code marquee: HBK23, BAKINGGREATBREAD10, `bread`, Wire Monkey built-in
-4. Henry's Top 6 shelf: ranked cards on a wooden shelf board (goldie, challenger-pan, proofer, goose-lame, walnut-17, holiday-bags)
-5. Sticky filter bar: search, category chips, price chips
-6. The Counter: products from `gift-guide-products.json` grouped into category aisles, rendered as gift-tag cards with tap-to-copy promo pills
-7. Krustic brand section (preserved, restyled to match tags)
-8. Shop More Baking Essentials — Amazon grid (preserved, restyled)
-9. From Oven to Market evergreen section: 4 Market Kit highlights, CTAs to fromoventomarket.com/market-kit and the course
-10. Books shelf on parchment: 5 books with lift on hover
-11. Free gifts: Starter Guide + Recipe Collection in dashed-border cards
-12. Newsletter block + footer (blog, Facebook, YouTube, From Oven to Market)
+## 5. Search
+- Rename input to "Search the main gift collection…" (avoids large architectural change).
+- Add persistent `<label>` (visually hidden ok), visible Clear button when text present, `aria-live` count ("14 gifts"), zero-results state with "Clear all filters".
+- Preserve combined category + price filtering.
 
-## Gift Finder quiz
+## 6. Filter chips
+- Add `aria-pressed`, min 44px height, strong `:focus-visible` ring.
+- Active-filter summary line + "Clear all" + result count.
+- Mobile: horizontal scroll with fade affordance and right padding so last chip isn't clipped.
 
-Modal opened by the hero CTA. 4 short questions:
-1. Who's it for? (new baker / weekend baker / obsessed sourdough baker / market seller)
-2. Budget? (Under $25 / $25–75 / $75–150 / Splurge $150+)
-3. What do they need most? (starter care / proofing / scoring / bake day / serving / storage)
-4. Gift style? (stocking stuffer / centerpiece gift / bundle)
+## 7. Progressive disclosure (shorter page, same content)
+- Hero + Top 6 always visible.
+- Main catalog: show first N (e.g. 12), then "View all gifts" / "Show fewer".
+- Collapsible sections (native `<details>` for SEO-friendly, crawlable markup): Krustic, Amazon finds, Market seller gifts, Books, Free resources.
+- Jump-nav near main catalog: Top Picks, Under $25, New Bakers, Serious Bakers, Market Sellers.
 
-Scores products from the JSON by matching category, price band, and hand-picked tag weights. Shows top 3 matches as gift-tag cards with a "Copy shareable link" button (link encodes selections as query params so refreshing restores results).
+## 8. Touch targets & focus
+- Ensure ≥44×44 on: search, chips, coupon buttons, share buttons, footer social, modal close.
+- Global `:focus-visible` ring token added to `index.css` for links, cards, chips, CTAs, coupons, share, modal options, footer nav. Hover styles preserved.
 
-Pure client-side, no backend.
+## 9. Reduced motion
+- Extend `@media (prefers-reduced-motion: reduce)` block: snow off (skip canvas RAF loop), ornament sway/twinkle off, gift-tag lift off, marquee off, `scroll-behavior: auto`.
+- Snow toggle keeps `aria-pressed`.
 
-## Data
+## 10. Trust language
+- Disclaimer near main catalog: "Prices and availability may change. Some links are affiliate links, which support our free recipes at no additional cost to you."
+- Single `PRICES_LAST_CHECKED` constant rendered once as "Prices last checked {date}".
 
-- Copy `user-uploads://gift-guide-products.json` into `src/data/products.json`
-- Preserve current Krustic product data as a separate file `src/data/krustic.ts`
-- Preserve current Amazon products list as `src/data/amazon.ts`
-- All product images imported from `src/assets/holiday/` (existing) — no re-download needed for items already local
+## 11. SEO / social metadata
+- `index.html`: canonical `https://holiday-gifts-2025.lovable.app/`, 2026 title/desc, OG + Twitter title/desc, absolute OG/Twitter image URL (`https://holiday-gifts-2025.lovable.app/og-image.png`).
+- Remove `twitter:site="@Lovable"` (no verified handle supplied — will ask user).
+- JSON-LD injected in page: `WebPage`, `ItemList` for curated guide, `Product` entries only where name+url+image+price are reliable. No availability/ratings/reviews/shipping.
 
-## Files
+## 12. Preserve
+- Snow toggle, countdown, 4-question finder, search, combined filters, coupon copy, link copy, affiliate params, `target="_blank" rel="noopener noreferrer"`, mobile no-overflow, Top 6 anchor, all copy & photos.
 
-New:
-- `src/pages/HolidayGiftGuide.tsx` (rewritten)
-- `src/components/holiday/GiftTag.tsx` (card)
-- `src/components/holiday/BakeryWindowHero.tsx`
-- `src/components/holiday/PromoMarquee.tsx`
-- `src/components/holiday/Top6Shelf.tsx`
-- `src/components/holiday/FilterBar.tsx`
-- `src/components/holiday/CategoryAisle.tsx`
-- `src/components/holiday/BooksShelf.tsx`
-- `src/components/holiday/OvenToMarket.tsx`
-- `src/components/holiday/GiftFinderQuiz.tsx`
-- `src/components/holiday/SnowCanvas.tsx`
-- `src/components/holiday/CountdownBadge.tsx`
-- `src/data/products.json`, `src/data/krustic.ts`, `src/data/amazon.ts`
+## Technical notes
 
-Updated:
-- `index.css` (tokens, fonts, gift-tag styles)
-- `tailwind.config.ts` (color extensions, font families)
-- `index.html` (Google Fonts preconnect + link, title/meta)
+Files to touch:
+- `src/pages/HolidayGiftGuide.tsx` — most changes
+- `src/data/products.json` + wrapper (or new `src/data/catalog.ts`) — extend schema, `enabled`, `lastVerified`
+- `src/data/krustic.ts`, `src/data/amazon.ts` — add `enabled`/`slug`
+- `src/components/holiday/GiftFinderQuiz.tsx` — rebuild on shadcn Dialog
+- `src/components/holiday/FilterBar.tsx` — aria-pressed, focus, summary
+- `src/components/holiday/SnowCanvas.tsx` — reduced-motion guard
+- `src/index.css` — focus-visible tokens, reduced-motion extensions
+- `index.html` — 2026 meta, canonical, absolute OG image, drop @Lovable
+- New: `src/lib/config.ts` (`PRICES_LAST_CHECKED`, price band predicates, `NEEDS_URL` set)
 
-Removed from current page: old dark-navy hero, sticky nav buttons row, existing category headers — but every product (Krustic + Amazon + all Sourhouse/Wire Monkey/etc.) is carried into the new layout.
+## Items I will need from you after shipping
+- Correct URLs for: Water Kettle & French Press, Krustic Dual-Flour Dehydrated Starter, Sourdough Starter Guide, Holiday Recipe Collection.
+- Verified Twitter/X handle for `twitter:site` (or confirm to omit).
+- Confirm OG image path (`/og-image.png`) is the right social preview.
 
-## Out of scope (deferred)
-
-- Phase 2 click tracking
-- Phase 3 shareable curated lists with slugs
-- Phase 4 admin dashboard
-- Lovable Cloud (not needed for Phase 1 + quiz)
-
-## Verification
-
-After build: view `/` in the preview, confirm hero renders with snow, marquee scrolls, gift-tag cards rotate on hover, promo pill copies to clipboard, quiz opens and returns matches, Krustic + Amazon sections still show all products, mobile layout works at 375px. Then publish.
+## Acceptance verification
+Build passes, Playwright pass on `/` at 375px and 1280px checking: no "2025" text, no `href="#"` CTAs, hidden broken products, Finder budget constraint, focus trap + Escape, aria-pressed on chips, search label matches behavior, zero-results state, reduced-motion disables snow, valid JSON-LD, no console errors, no horizontal overflow.
