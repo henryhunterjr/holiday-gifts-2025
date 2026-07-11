@@ -78,9 +78,13 @@ function SnowCanvas({ on }: { on: boolean }) {
   const ref = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
     const c = ref.current;
-    if (!c || !on) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!c) return;
     const ctx = c.getContext("2d")!;
+    if (!on) {
+      ctx.clearRect(0, 0, c.width, c.height);
+      return;
+    }
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     let raf = 0;
     const resize = () => {
       c.width = window.innerWidth;
@@ -88,13 +92,13 @@ function SnowCanvas({ on }: { on: boolean }) {
     };
     resize();
     window.addEventListener("resize", resize);
-    const flakes = Array.from({ length: 140 }, () => ({
+    const flakes = Array.from({ length: 70 }, () => ({
       x: Math.random() * c.width,
       y: Math.random() * c.height,
-      r: 0.8 + Math.random() * 2.8,
-      vy: 0.25 + Math.random() * 1.1,
-      vx: -0.3 + Math.random() * 0.6,
-      a: 0.5 + Math.random() * 0.5,
+      r: 0.6 + Math.random() * 2.2,
+      vy: 0.2 + Math.random() * 0.7,
+      vx: -0.2 + Math.random() * 0.4,
+      a: 0.35 + Math.random() * 0.45,
     }));
     const draw = () => {
       ctx.clearRect(0, 0, c.width, c.height);
