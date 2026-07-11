@@ -1,4 +1,6 @@
 import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Search, Share2, Copy, Snowflake, ExternalLink, Star, X, Sparkles, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
 import productsData from "@/data/products.json";
@@ -374,6 +376,8 @@ function GiftFinderQuiz({ open, onClose }: { open: boolean; onClose: () => void 
 /* ============ Page ============ */
 export default function HolidayGiftGuide() {
   const days = useDaysToChristmas();
+  const location = useLocation();
+  const canonicalUrl = `https://holiday-gifts-2025.lovable.app${location.pathname === "/" ? "/" : location.pathname}`;
   const [snow, setSnow] = useState(true);
   const [search, setSearch] = useState("");
   const [cat, setCat] = useState<string | null>(null);
@@ -457,6 +461,18 @@ export default function HolidayGiftGuide() {
 
   return (
     <div className="min-h-screen bg-flour text-ink">
+      <Helmet>
+        <title>Bread Lover's Holiday Gift Guide 2026 | Baking Great Bread</title>
+        <meta name="description" content="The 2026 gift guide for bread bakers. Handpicked tools, lames, and books from Henry Hunter, with promo codes built in." />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:title" content="Holiday Gift Guide 2026 | Bread Baker Essentials" />
+        <meta property="og:description" content="The 2026 curated gift guide for bread bakers and sourdough obsessives. Real recommendations from Henry Hunter." />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content="https://holiday-gifts-2025.lovable.app/og-image.png" />
+        <meta name="twitter:title" content="Holiday Gift Guide 2026 | Bread Baker Essentials" />
+        <meta name="twitter:description" content="Curated 2026 gifts for bread bakers and sourdough enthusiasts." />
+        <meta name="twitter:image" content="https://holiday-gifts-2025.lovable.app/og-image.png" />
+      </Helmet>
       <script
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger
@@ -618,6 +634,7 @@ export default function HolidayGiftGuide() {
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder="Search the main gift collection…"
+                  aria-label="Search the main gift collection"
                   className="min-h-[44px] w-full rounded-full border-[1.5px] border-parchment-deep bg-white py-2.5 pl-10 pr-10 text-sm focus:border-honey focus:outline-none focus:ring-2 focus:ring-honey/30"
                 />
                 {search && (
@@ -678,6 +695,7 @@ export default function HolidayGiftGuide() {
         {/* The Counter: category aisles with progressive disclosure */}
         <section className="py-16">
           <div className="mx-auto max-w-[1200px] px-5">
+            <h2 className="mb-3 font-display text-3xl font-semibold text-crust md:text-4xl">Browse all baking gifts</h2>
             <p className="mb-6 text-xs text-crumb md:text-sm">
               Prices and availability may change. Some links are affiliate links, which support our free recipes at no additional cost to you. <span className="whitespace-nowrap">Prices last checked {PRICES_LAST_CHECKED}.</span>
             </p>
@@ -756,7 +774,7 @@ export default function HolidayGiftGuide() {
                   <div className="mb-3 flex h-44 items-center justify-center overflow-hidden rounded-xl bg-flour/50">
                     <img src={k.img} alt={k.name} loading="lazy" className="max-h-full object-contain transition-transform group-hover:scale-105" />
                   </div>
-                  <h4 className="font-display text-base font-semibold text-crust">{k.name}</h4>
+                  <h3 className="font-display text-base font-semibold text-crust">{k.name}</h3>
                   <p className="mt-1 line-clamp-2 text-sm text-crumb">{k.desc}</p>
                   <div className="mt-3 flex items-center justify-between">
                     <span className="font-bold text-cranberry">{k.price}</span>
@@ -793,7 +811,7 @@ export default function HolidayGiftGuide() {
                   <div className="mb-3 flex h-44 items-center justify-center overflow-hidden rounded-lg bg-white">
                     <img src={a.img} alt={a.name} loading="lazy" className="max-h-full object-contain transition-transform group-hover:scale-105" />
                   </div>
-                  <h4 className="font-display text-sm font-semibold text-crust line-clamp-2">{a.name}</h4>
+                  <h3 className="font-display text-sm font-semibold text-crust line-clamp-2">{a.name}</h3>
                   <div className="mt-2 flex items-center gap-1 text-xs">
                     {[...Array(5)].map((_, s) => (
                       <Star key={s} className={`h-3.5 w-3.5 ${s < Math.round(a.rating) ? "fill-honey text-honey" : "fill-honey/30 text-honey/30"}`} />
@@ -841,7 +859,7 @@ export default function HolidayGiftGuide() {
                 { name: "Kraft Bread Bags (100)", desc: "Branded-ready packaging your loaves deserve." },
               ].map((m, i) => (
                 <div key={i} className="rounded-xl border border-honey/30 bg-flour/5 p-5">
-                  <h4 className="font-display text-lg font-semibold text-flour">{m.name}</h4>
+                  <h3 className="font-display text-lg font-semibold text-flour">{m.name}</h3>
                   <p className="mt-1 text-sm text-[hsl(37_35%_82%)]">{m.desc}</p>
                 </div>
               ))}
@@ -874,7 +892,7 @@ export default function HolidayGiftGuide() {
               ].map((b, i) => (
                 <a key={i} href={b.url} target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center text-center">
                   <img src={b.img} alt={b.name} loading="lazy" className="h-56 w-auto object-contain drop-shadow-xl transition-transform group-hover:-translate-y-2" />
-                  <h4 className="mt-4 font-display text-sm font-semibold text-crust">{b.name}</h4>
+                  <h3 className="mt-4 font-display text-sm font-semibold text-crust">{b.name}</h3>
                   <p className="mt-1 font-bold text-cranberry">{b.price}</p>
                 </a>
               ))}
