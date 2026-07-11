@@ -1,9 +1,25 @@
-import { useEffect, useMemo, useRef, useState } from "react";
-import { Search, Share2, Copy, Snowflake, ExternalLink, Star, X, Sparkles } from "lucide-react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { Search, Share2, Copy, Snowflake, ExternalLink, Star, X, Sparkles, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
 import productsData from "@/data/products.json";
 import { krusticProducts } from "@/data/krustic";
 import { amazonProducts } from "@/data/amazon";
+import {
+  PRICE_BANDS,
+  bandByLabel,
+  DISABLED_PRODUCT_SLUGS,
+  DISABLED_KRUSTIC_SLUGS,
+  FREE_RESOURCES_ENABLED,
+  PRICES_LAST_CHECKED,
+  isValidUrl,
+} from "@/lib/guideConfig";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import bakeryWindow from "@/assets/holiday/bakery-window.png";
 import bgbLogo from "@/assets/holiday/ornament-bgb-logo.png";
 import ornBauble from "@/assets/holiday/ornament-bgb-bauble.png";
@@ -34,9 +50,16 @@ type Product = {
   note?: string;
 };
 
-const products = productsData.products as Product[];
+const allProducts = productsData.products as Product[];
+// Hide products that are disabled or lack a valid URL.
+const products = allProducts.filter(
+  (p) => !DISABLED_PRODUCT_SLUGS.has(p.slug) && isValidUrl(p.url),
+);
 const top6Slugs = productsData.top6 as string[];
 const promoCodes = productsData.promo_codes as [string, string][];
+const visibleKrustic = krusticProducts.filter(
+  (k) => !DISABLED_KRUSTIC_SLUGS.has(k.slug) && isValidUrl(k.url),
+);
 
 const CATEGORIES = [
   "Starter Care",
@@ -45,13 +68,6 @@ const CATEGORIES = [
   "Bake Day",
   "Wood & Serving",
   "Storage & Gifting",
-];
-
-const PRICE_BANDS: { label: string; test: (p: number) => boolean }[] = [
-  { label: "Under $25", test: (p) => p < 25 },
-  { label: "$25–75", test: (p) => p >= 25 && p <= 75 },
-  { label: "$75–150", test: (p) => p > 75 && p <= 150 },
-  { label: "Splurge $150+", test: (p) => p > 150 },
 ];
 
 const priceNum = (p: Product) => (typeof p.price === "number" ? p.price : parseFloat(String(p.price).replace(/[^0-9.]/g, "")) || 0);
@@ -81,10 +97,8 @@ function SnowCanvas({ on }: { on: boolean }) {
     const c = ref.current;
     if (!c) return;
     const ctx = c.getContext("2d")!;
-    if (!on) {
-      ctx.clearRect(0, 0, c.width, c.height);
-      return;
-    }
+    ctx.clearRect(0, 0, c.width, c.height);
+    if (!on) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     let raf = 0;
     const resize = () => {
@@ -251,6 +265,7 @@ type QuizAnswers = { who: string; budget: string; need: string; style: string };
 function GiftFinderQuiz({ open, onClose }: { open: boolean; onClose: () => void }) {
   const [step, setStep] = useState(0);
   const [ans, setAns] = useState<QuizAnswers>({ who: "", budget: "", need: "", style: "" });
+  const titleId = useId();
   useEffect(() => { if (open) { setStep(0); setAns({ who: "", budget: "", need: "", style: "" }); } }, [open]);
 
   const questions = [
@@ -264,74 +279,95 @@ function GiftFinderQuiz({ open, onClose }: { open: boolean; onClose: () => void 
 
   const matches = useMemo(() => {
     if (!done) return [];
-    const band = PRICE_BANDS.find((b) => b.label === ans.budget);
-    return products
+    // Budget is a HARD constraint: filter first, then score.
+    const band = bandByLabel(ans.budget);
+    const inBudget = band ? products.filter((p) => band.test(priceNum(p))) : products;
+    return inBudget
       .map((p) => {
         let score = 0;
         if (p.cat === ans.need) score += 3;
-        if (band && band.test(priceNum(p))) score += 2;
         if (ans.who === "A new baker" && ["Starter Care", "Bake Day"].includes(p.cat)) score += 1;
         if (ans.who === "Obsessed sourdough baker" && ["Scoring & Shaping", "Proofing & Temp"].includes(p.cat)) score += 1;
         if (ans.who === "Market seller" && ["Storage & Gifting", "Wood & Serving"].includes(p.cat)) score += 1;
-        if (ans.style === "Stocking stuffer" && priceNum(p) < 30) score += 2;
-        if (ans.style === "Centerpiece gift" && priceNum(p) > 100) score += 2;
-        if (ans.style === "Bundle" && /bundle/i.test(p.name)) score += 3;
+        if (ans.style === "Stocking stuffer" && priceNum(p) < 30) score += 1;
+        if (ans.style === "Centerpiece gift" && priceNum(p) > 100) score += 1;
+        if (ans.style === "Bundle" && /bundle/i.test(p.name)) score += 2;
         return { p, score };
       })
-      .filter((x) => x.score > 0)
       .sort((a, b) => b.score - a.score)
       .slice(0, 3)
       .map((x) => x.p);
   }, [done, ans]);
 
-  if (!open) return null;
+  const widenBudget = () => setStep(1); // jump back to budget question
+  const changeCategory = () => setStep(2); // jump back to need/category
+  const startOver = () => setStep(0);
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-oven/80 p-4" onClick={(e) => e.target === e.currentTarget && onClose()}>
-      <div className="relative w-full max-w-2xl rounded-2xl bg-flour p-6 shadow-2xl md:p-10">
-        <button onClick={onClose} className="absolute right-4 top-4 text-crumb hover:text-cranberry" aria-label="Close">
-          <X className="h-6 w-6" />
-        </button>
-        <p className="eyebrow mb-2">Gift Finder</p>
+    <Dialog open={open} onOpenChange={(o) => { if (!o) onClose(); }}>
+      <DialogContent
+        aria-labelledby={titleId}
+        className="max-w-2xl bg-flour p-6 md:p-10"
+      >
+        <DialogHeader className="text-left">
+          <p className="eyebrow mb-1">Gift Finder</p>
+          <DialogTitle id={titleId} className="font-display text-2xl font-semibold text-crust md:text-3xl">
+            {done ? "Here's what I'd get them" : questions[step].q}
+          </DialogTitle>
+          <DialogDescription className="text-crumb">
+            {done
+              ? `Based on: ${Object.values(ans).filter(Boolean).join(" · ")}`
+              : `Question ${step + 1} of ${questions.length}`}
+          </DialogDescription>
+        </DialogHeader>
+
         {!done ? (
-          <>
-            <h3 className="font-display text-2xl font-semibold text-crust md:text-3xl">{questions[step].q}</h3>
-            <p className="mt-1 text-sm text-crumb">Question {step + 1} of {questions.length}</p>
-            <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {questions[step].opts.map((o) => (
-                <button
-                  key={o}
-                  onClick={() => { setAns({ ...ans, [questions[step].key]: o }); setStep(step + 1); }}
-                  className="rounded-xl border-[1.5px] border-parchment-deep bg-white px-4 py-4 text-left font-semibold text-crust transition-all hover:-translate-y-0.5 hover:border-honey hover:shadow-lg"
-                >
-                  {o}
-                </button>
-              ))}
-            </div>
-          </>
+          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {questions[step].opts.map((o) => (
+              <button
+                key={o}
+                onClick={() => { setAns({ ...ans, [questions[step].key]: o }); setStep(step + 1); }}
+                className="min-h-[52px] rounded-xl border-[1.5px] border-parchment-deep bg-white px-4 py-3 text-left font-semibold text-crust transition-all hover:-translate-y-0.5 hover:border-honey hover:shadow-lg"
+              >
+                {o}
+              </button>
+            ))}
+          </div>
         ) : (
-          <>
-            <h3 className="font-display text-2xl font-semibold text-crust md:text-3xl">Here's what I'd get them</h3>
-            <p className="mt-1 text-sm text-crumb">Based on: {Object.values(ans).join(" · ")}</p>
-            <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
-              {matches.length === 0 && <p className="col-span-full text-crumb">No perfect match. Try widening the budget or category.</p>}
-              {matches.map((p) => (
-                <a key={p.slug} href={p.url} target="_blank" rel="noopener noreferrer" className="group rounded-xl border border-parchment-deep bg-white p-3 transition-transform hover:-translate-y-1">
-                  <img src={p.img} alt={p.name} className="mx-auto h-32 object-contain" style={{ mixBlendMode: "multiply" }} />
-                  <p className="mt-2 line-clamp-2 font-display text-sm font-semibold text-crust">{p.name}</p>
-                  <p className="mt-1 text-xs text-crumb">{p.brand}</p>
-                  <p className="mt-1 font-bold text-cranberry">{priceStr(p)}</p>
-                </a>
-              ))}
-            </div>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <button onClick={() => setStep(0)} className="rounded-full border-[1.5px] border-crust px-5 py-2 font-bold text-crust hover:bg-crust hover:text-flour">Start over</button>
-              <button onClick={onClose} className="rounded-full bg-cranberry px-5 py-2 font-bold text-flour hover:bg-cranberry-deep">Done</button>
-            </div>
-          </>
+          <div aria-live="polite">
+            {matches.length === 0 ? (
+              <div className="mt-2 rounded-xl border-2 border-dashed border-parchment-deep bg-white p-6 text-center">
+                <p className="font-display text-lg font-semibold text-crust">Nothing lands inside that budget.</p>
+                <p className="mt-1 text-sm text-crumb">Try widening the budget or picking a different category.</p>
+                <div className="mt-5 flex flex-wrap justify-center gap-3">
+                  <button onClick={widenBudget} className="min-h-[44px] rounded-full border-[1.5px] border-crust px-5 py-2 font-bold text-crust hover:bg-crust hover:text-flour">Widen budget</button>
+                  <button onClick={changeCategory} className="min-h-[44px] rounded-full border-[1.5px] border-crust px-5 py-2 font-bold text-crust hover:bg-crust hover:text-flour">Change category</button>
+                  <button onClick={startOver} className="min-h-[44px] rounded-full bg-cranberry px-5 py-2 font-bold text-flour hover:bg-cranberry-deep">Start over</button>
+                </div>
+              </div>
+            ) : (
+              <>
+                <p className="sr-only">{matches.length} gift{matches.length !== 1 ? "s" : ""} found within your budget.</p>
+                <div className="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-3">
+                  {matches.map((p) => (
+                    <a key={p.slug} href={p.url} target="_blank" rel="noopener noreferrer" className="group rounded-xl border border-parchment-deep bg-white p-3 transition-transform hover:-translate-y-1">
+                      <img src={p.img} alt={p.name} className="mx-auto h-32 object-contain" style={{ mixBlendMode: "multiply" }} />
+                      <p className="mt-2 line-clamp-2 font-display text-sm font-semibold text-crust">{p.name}</p>
+                      <p className="mt-1 text-xs text-crumb">{p.brand}</p>
+                      <p className="mt-1 font-bold text-cranberry">{priceStr(p)}</p>
+                    </a>
+                  ))}
+                </div>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <button onClick={startOver} className="min-h-[44px] rounded-full border-[1.5px] border-crust px-5 py-2 font-bold text-crust hover:bg-crust hover:text-flour">Start over</button>
+                  <button onClick={onClose} className="min-h-[44px] rounded-full bg-cranberry px-5 py-2 font-bold text-flour hover:bg-cranberry-deep">Done</button>
+                </div>
+              </>
+            )}
+          </div>
         )}
-      </div>
-    </div>
+      </DialogContent>
+    </Dialog>
   );
 }
 
@@ -343,18 +379,25 @@ export default function HolidayGiftGuide() {
   const [cat, setCat] = useState<string | null>(null);
   const [band, setBand] = useState<string | null>(null);
   const [quiz, setQuiz] = useState(false);
+  const [showAll, setShowAll] = useState(false);
+  const searchInputId = useId();
 
   const copyCode = (code: string) => {
     navigator.clipboard?.writeText(code);
     toast.success(`Copied ${code}`);
   };
 
+  const clearAllFilters = () => {
+    setSearch(""); setCat(null); setBand(null);
+  };
+  const anyFilter = search.trim() !== "" || !!cat || !!band;
+
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
     return products.filter((p) => {
       if (cat && p.cat !== cat) return false;
       if (band) {
-        const b = PRICE_BANDS.find((x) => x.label === band);
+        const b = bandByLabel(band);
         if (b && !b.test(priceNum(p))) return false;
       }
       if (q && !`${p.name} ${p.brand} ${p.desc}`.toLowerCase().includes(q)) return false;
@@ -373,8 +416,52 @@ export default function HolidayGiftGuide() {
 
   const top6 = top6Slugs.map((s) => products.find((p) => p.slug === s)).filter(Boolean) as Product[];
 
+  // JSON-LD for the curated guide (only fully-verified products).
+  const jsonLd = useMemo(() => {
+    const items = products
+      .filter((p) => isValidUrl(p.url) && p.img && priceNum(p) > 0)
+      .map((p, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        item: {
+          "@type": "Product",
+          name: p.name,
+          brand: { "@type": "Brand", name: p.brand },
+          image: p.img,
+          url: p.url,
+          offers: {
+            "@type": "Offer",
+            price: priceNum(p),
+            priceCurrency: "USD",
+          },
+        },
+      }));
+    return {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://holiday-gifts-2025.lovable.app/#webpage",
+          name: "The Bread Lover's Holiday Gift Guide 2026",
+          url: "https://holiday-gifts-2025.lovable.app/",
+          description: "The 2026 holiday gift guide for bread bakers. Handpicked tools, wood bowls, lames, and books from Henry Hunter.",
+        },
+        {
+          "@type": "ItemList",
+          name: "Holiday Gift Guide 2026 — Curated picks",
+          itemListElement: items,
+        },
+      ],
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-flour text-ink">
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Top bar */}
       <header className="sticky top-0 z-50 border-b border-honey/25 bg-oven/95 text-flour backdrop-blur">
         <div className="mx-auto flex max-w-[1200px] items-center gap-3 px-4 py-2.5">
@@ -406,7 +493,7 @@ export default function HolidayGiftGuide() {
         <section className="relative overflow-hidden pt-32 text-flour" style={{ background: "radial-gradient(1200px 500px at 50% -10%, hsl(var(--honey) / 0.16), transparent 60%), linear-gradient(180deg, #17202b 0%, #1c1a14 45%, hsl(var(--oven)) 100%)" }}>
           <div className="relative z-20 mx-auto grid max-w-[1200px] items-center gap-10 px-5 pb-20 md:grid-cols-[1.05fr_0.95fr] md:gap-12">
             <div>
-              <p className="eyebrow" style={{ color: "hsl(var(--honey))" }}>The 2025 Guide</p>
+              <p className="eyebrow" style={{ color: "hsl(var(--honey))" }}>The 2026 Guide</p>
               <h1 className="mt-3 font-display font-medium" style={{ fontSize: "clamp(2.4rem, 5.6vw, 4.2rem)" }}>
                 Every gift on this list has <em className="not-italic italic text-honey" style={{ fontVariationSettings: '"SOFT" 100' }}>flour on it.</em>
               </h1>
@@ -518,74 +605,153 @@ export default function HolidayGiftGuide() {
           </div>
         </section>
 
-        {/* Filter bar — sticky on desktop only. On mobile it scrolls naturally
-            because the header height (with garland) varies and iOS Safari's
-            URL-bar hide/show made a hard-coded sticky offset flicker. */}
+        {/* Filter bar — sticky on desktop only. */}
         <div className="z-40 border-b border-parchment-deep bg-flour md:sticky md:top-[64px] md:bg-flour/95 md:backdrop-blur">
-          <div className="mx-auto flex max-w-[1200px] flex-wrap items-center gap-2.5 px-5 py-3">
-            <div className="relative min-w-[180px] flex-1">
-              <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-crumb" />
-              <input
-                type="search"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search gifts, brands, tools…"
-                className="w-full rounded-full border-[1.5px] border-parchment-deep bg-white py-2.5 pl-10 pr-4 text-sm focus:border-honey focus:outline-none focus:ring-2 focus:ring-honey/30"
-              />
+          <div className="mx-auto max-w-[1200px] px-5 py-3">
+            <div className="flex flex-wrap items-center gap-2.5">
+              <div className="relative min-w-[180px] flex-1">
+                <label htmlFor={searchInputId} className="sr-only">Search the main gift collection</label>
+                <Search aria-hidden className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-crumb" />
+                <input
+                  id={searchInputId}
+                  type="search"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  placeholder="Search the main gift collection…"
+                  className="min-h-[44px] w-full rounded-full border-[1.5px] border-parchment-deep bg-white py-2.5 pl-10 pr-10 text-sm focus:border-honey focus:outline-none focus:ring-2 focus:ring-honey/30"
+                />
+                {search && (
+                  <button
+                    type="button"
+                    onClick={() => setSearch("")}
+                    aria-label="Clear search"
+                    className="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full text-crumb hover:bg-parchment"
+                  >
+                    <X className="h-4 w-4" />
+                  </button>
+                )}
+              </div>
+              <div className="-mx-1 flex flex-nowrap gap-2 overflow-x-auto px-1 pb-1 md:flex-wrap" style={{ scrollbarWidth: "none" }} role="group" aria-label="Category filters">
+                <button aria-pressed={!cat} className={`chip min-h-[44px] ${!cat ? "on" : ""}`} onClick={() => setCat(null)}>All</button>
+                {CATEGORIES.map((c) => (
+                  <button key={c} aria-pressed={cat === c} className={`chip min-h-[44px] ${cat === c ? "on" : ""}`} onClick={() => setCat(cat === c ? null : c)}>{c}</button>
+                ))}
+              </div>
+              <div className="-mx-1 flex flex-nowrap gap-2 overflow-x-auto px-1 pb-1 pr-4 md:flex-wrap" style={{ scrollbarWidth: "none" }} role="group" aria-label="Price filters">
+                {PRICE_BANDS.map((b) => (
+                  <button key={b.label} aria-pressed={band === b.label} className={`chip min-h-[44px] ${band === b.label ? "on price-on" : ""}`} onClick={() => setBand(band === b.label ? null : b.label)}>{b.label}</button>
+                ))}
+              </div>
             </div>
-            <div className="flex flex-nowrap gap-2 overflow-x-auto md:flex-wrap" style={{ scrollbarWidth: "none" }}>
-              <button className={`chip ${!cat ? "on" : ""}`} onClick={() => setCat(null)}>All</button>
-              {CATEGORIES.map((c) => (
-                <button key={c} className={`chip ${cat === c ? "on" : ""}`} onClick={() => setCat(cat === c ? null : c)}>{c}</button>
-              ))}
-            </div>
-            <div className="flex flex-nowrap gap-2 overflow-x-auto md:flex-wrap" style={{ scrollbarWidth: "none" }}>
-              {PRICE_BANDS.map((b) => (
-                <button key={b.label} className={`chip ${band === b.label ? "on price-on" : ""}`} onClick={() => setBand(band === b.label ? null : b.label)}>{b.label}</button>
-              ))}
+            <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-crumb" aria-live="polite">
+              <span><b className="text-crust">{filtered.length}</b> gift{filtered.length !== 1 ? "s" : ""}</span>
+              {anyFilter && (
+                <>
+                  <span aria-hidden>·</span>
+                  <span className="truncate">
+                    Active: {[search && `"${search}"`, cat, band].filter(Boolean).join(" · ")}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={clearAllFilters}
+                    className="ml-auto min-h-[36px] rounded-full border border-crust/40 px-3 py-1 text-xs font-bold text-crust hover:bg-crust hover:text-flour"
+                  >
+                    Clear all filters
+                  </button>
+                </>
+              )}
             </div>
           </div>
         </div>
 
-        {/* The Counter: category aisles */}
+        {/* Jump nav for the main catalog */}
+        <nav aria-label="Jump to section" className="border-b border-parchment-deep/60 bg-flour">
+          <div className="mx-auto flex max-w-[1200px] flex-nowrap gap-2 overflow-x-auto px-5 py-2 text-xs md:flex-wrap" style={{ scrollbarWidth: "none" }}>
+            <a href="#top6" className="chip min-h-[36px]">Top Picks</a>
+            <button className="chip min-h-[36px]" onClick={() => { setBand("Under $25"); setCat(null); }}>Under $25</button>
+            <button className="chip min-h-[36px]" onClick={() => { setCat("Starter Care"); setBand(null); }}>New Bakers</button>
+            <button className="chip min-h-[36px]" onClick={() => { setCat("Scoring & Shaping"); setBand(null); }}>Serious Bakers</button>
+            <a href="#market-sellers" className="chip min-h-[36px]">Market Sellers</a>
+          </div>
+        </nav>
+
+        {/* The Counter: category aisles with progressive disclosure */}
         <section className="py-16">
           <div className="mx-auto max-w-[1200px] px-5">
-            {CATEGORIES.map((c) => {
-              const items = byCat.get(c) || [];
-              if (items.length === 0) return null;
+            <p className="mb-6 text-xs text-crumb md:text-sm">
+              Prices and availability may change. Some links are affiliate links, which support our free recipes at no additional cost to you. <span className="whitespace-nowrap">Prices last checked {PRICES_LAST_CHECKED}.</span>
+            </p>
+            {(() => {
+              // If a filter is active, show everything. Otherwise, cap the
+              // initial view and let the user opt into the full catalog.
+              const INITIAL_LIMIT = 12;
+              const shouldCap = !anyFilter && !showAll;
+              const displayList = shouldCap ? filtered.slice(0, INITIAL_LIMIT) : filtered;
+              const displayByCat = new Map<string, Product[]>();
+              for (const p of displayList) {
+                if (!displayByCat.has(p.cat)) displayByCat.set(p.cat, []);
+                displayByCat.get(p.cat)!.push(p);
+              }
               return (
-                <div key={c} className="mb-14">
-                  <div className="mb-6 flex items-baseline gap-3.5 border-b-2 border-dashed border-parchment-deep pb-2.5">
-                    <h3 className="font-display text-2xl font-semibold text-crust">{c}</h3>
-                    <span className="text-xs text-crumb">{items.length} gift{items.length !== 1 ? "s" : ""}</span>
-                  </div>
-                  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                    {items.map((p) => <GiftTag key={p.slug} p={p} onCopyCode={copyCode} />)}
-                  </div>
-                </div>
+                <>
+                  {CATEGORIES.map((c) => {
+                    const items = displayByCat.get(c) || [];
+                    if (items.length === 0) return null;
+                    return (
+                      <div key={c} className="mb-14">
+                        <div className="mb-6 flex items-baseline gap-3.5 border-b-2 border-dashed border-parchment-deep pb-2.5">
+                          <h3 className="font-display text-2xl font-semibold text-crust">{c}</h3>
+                          <span className="text-xs text-crumb">{items.length} gift{items.length !== 1 ? "s" : ""}</span>
+                        </div>
+                        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                          {items.map((p) => <GiftTag key={p.slug} p={p} onCopyCode={copyCode} />)}
+                        </div>
+                      </div>
+                    );
+                  })}
+                  {filtered.length === 0 && (
+                    <div className="py-16 text-center">
+                      <p className="text-crumb">No gifts match your filters.</p>
+                      <button onClick={clearAllFilters} className="mt-4 min-h-[44px] rounded-full bg-cranberry px-5 py-2 font-bold text-flour hover:bg-cranberry-deep">Clear all filters</button>
+                    </div>
+                  )}
+                  {!anyFilter && filtered.length > INITIAL_LIMIT && (
+                    <div className="mt-2 flex justify-center">
+                      <button
+                        onClick={() => setShowAll((s) => !s)}
+                        className="min-h-[44px] rounded-full border-[1.5px] border-crust bg-white px-6 py-2 font-bold text-crust hover:bg-crust hover:text-flour"
+                      >
+                        {showAll ? "Show fewer" : `View all ${filtered.length} gifts`}
+                      </button>
+                    </div>
+                  )}
+                </>
               );
-            })}
-            {filtered.length === 0 && (
-              <p className="py-16 text-center text-crumb">Nothing matches. Try clearing filters or a different search.</p>
-            )}
+            })()}
           </div>
         </section>
 
         {/* Krustic brand section */}
-        <section id="krustic" className="border-y border-parchment-deep bg-parchment/60 py-16">
-          <div className="mx-auto max-w-[1200px] px-5">
+        <section id="krustic" className="border-y border-parchment-deep bg-parchment/60 py-10">
+         <details open className="mx-auto max-w-[1200px] px-5">
+          <summary className="mb-6 flex cursor-pointer list-none items-center justify-between gap-4">
+            <div>
+              <p className="eyebrow">Featured brand</p>
+              <h2 className="mt-2 font-display text-3xl font-semibold text-crust md:text-4xl">Krustic <span className="font-hand text-2xl text-cranberry">Rise Above Tradition™</span></h2>
+            </div>
+            <ChevronDown aria-hidden className="h-5 w-5 flex-none text-crumb" />
+          </summary>
+          <div>
             <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
               <div>
-                <p className="eyebrow">Featured brand</p>
-                <h2 className="mt-2 font-display text-3xl font-semibold text-crust md:text-4xl">Krustic <span className="font-hand text-2xl text-cranberry">Rise Above Tradition™</span></h2>
                 <p className="mt-3 max-w-[60ch] text-crumb">Heritage-inspired sourdough tools that honor the past and elevate your bake. Free shipping + 30-day returns.</p>
               </div>
-              <button onClick={() => copyCode("BGBAH25")} className="code-pill text-base">
+              <button onClick={() => copyCode("BGBAH25")} className="code-pill min-h-[44px] text-base">
                 <Copy className="h-4 w-4" /> Use code BGBAH25 for 10% off
               </button>
             </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {krusticProducts.map((k, i) => (
+              {visibleKrustic.map((k, i) => (
                 <a key={i} href={k.url} target="_blank" rel="noopener noreferrer" className="group rounded-2xl border border-parchment-deep bg-white p-4 shadow-md transition-transform hover:-translate-y-1.5">
                   <div className="mb-3 flex h-44 items-center justify-center overflow-hidden rounded-xl bg-flour/50">
                     <img src={k.img} alt={k.name} loading="lazy" className="max-h-full object-contain transition-transform group-hover:scale-105" />
@@ -605,16 +771,21 @@ export default function HolidayGiftGuide() {
               <a href="https://www.tiktok.com/@krustic" target="_blank" rel="noopener noreferrer" className="hover:text-cranberry">TikTok</a>
             </div>
           </div>
+         </details>
         </section>
 
         {/* Shop More Baking Essentials — Amazon */}
-        <section className="py-16">
-          <div className="mx-auto max-w-[1200px] px-5">
-            <div className="mb-8">
+        <section className="py-10">
+         <details open className="mx-auto max-w-[1200px] px-5">
+          <summary className="mb-8 flex cursor-pointer list-none items-center justify-between gap-4">
+            <div>
               <p className="eyebrow">Also on Amazon</p>
               <h2 className="mt-2 font-display text-3xl font-semibold text-crust md:text-4xl">Shop More Baking Essentials</h2>
-              <p className="mt-3 max-w-[60ch] text-crumb">The Amazon-available gear that rounds out a serious baker's kitchen.</p>
             </div>
+            <ChevronDown aria-hidden className="h-5 w-5 flex-none text-crumb" />
+          </summary>
+          <div>
+            <p className="mb-6 max-w-[60ch] text-crumb">The Amazon-available gear that rounds out a serious baker's kitchen.</p>
             <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {amazonProducts.map((a, i) => (
                 <a key={i} href={a.url} target="_blank" rel="noopener noreferrer" className="group flex flex-col rounded-xl border border-parchment-deep bg-white p-3 shadow transition-transform hover:-translate-y-1">
@@ -637,10 +808,11 @@ export default function HolidayGiftGuide() {
               ))}
             </div>
           </div>
+         </details>
         </section>
 
         {/* From Oven to Market */}
-        <section className="text-flour" style={{ background: "radial-gradient(700px 300px at 85% 0%, hsl(var(--honey) / 0.12), transparent 60%), linear-gradient(180deg, hsl(var(--evergreen-deep)), #1d2f23)" }}>
+        <section id="market-sellers" className="text-flour" style={{ background: "radial-gradient(700px 300px at 85% 0%, hsl(var(--honey) / 0.12), transparent 60%), linear-gradient(180deg, hsl(var(--evergreen-deep)), #1d2f23)" }}>
           <a
             href="https://fromoventomarket.com/"
             target="_blank"
@@ -683,12 +855,15 @@ export default function HolidayGiftGuide() {
         </section>
 
         {/* Books shelf */}
-        <section className="bg-parchment/50 py-16">
-          <div className="mx-auto max-w-[1200px] px-5">
-            <div className="mb-8">
+        <section className="bg-parchment/50 py-10">
+         <details open className="mx-auto max-w-[1200px] px-5">
+          <summary className="mb-8 flex cursor-pointer list-none items-center justify-between gap-4">
+            <div>
               <p className="eyebrow">Stocking-sized, kitchen-tested</p>
               <h2 className="mt-2 font-display text-3xl font-semibold text-crust md:text-4xl">Books from my own oven</h2>
             </div>
+            <ChevronDown aria-hidden className="h-5 w-5 flex-none text-crumb" />
+          </summary>
             <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
               {[
                 { name: "Sourdough for the Rest of Us", price: "$6.08", url: "https://amzn.to/sourdoughrestofus", img: bookSourdough },
@@ -704,28 +879,19 @@ export default function HolidayGiftGuide() {
                 </a>
               ))}
             </div>
-          </div>
+         </details>
         </section>
 
-        {/* Free gifts */}
-        <section className="py-16" style={{ background: "hsl(38 60% 94%)" }}>
-          <div className="mx-auto max-w-[1200px] px-5 text-center">
-            <p className="eyebrow">On the house</p>
-            <h2 className="mt-2 font-display text-3xl font-semibold text-crust md:text-4xl">Free gifts, from me to you</h2>
-            <div className="mx-auto mt-8 grid max-w-3xl gap-6 sm:grid-cols-2">
-              {[
-                { name: "Sourdough Starter Guide", desc: "Everything I wish someone had handed me on day one.", url: "#" },
-                { name: "Holiday Recipe Collection", desc: "Gift loaves, quick breads, and the bakes neighbors ask for by name.", url: "#" },
-              ].map((f, i) => (
-                <a key={i} href={f.url} className="rounded-2xl border-2 border-dashed border-cranberry bg-white p-6 text-left transition-transform hover:-translate-y-1">
-                  <h4 className="font-display text-lg font-semibold text-crust">{f.name}</h4>
-                  <p className="mt-2 text-sm text-crumb">{f.desc}</p>
-                  <p className="mt-3 font-bold text-evergreen">Free →</p>
-                </a>
-              ))}
+        {/* Free gifts — hidden until real download URLs are configured. */}
+        {FREE_RESOURCES_ENABLED && (
+          <section className="py-16" style={{ background: "hsl(38 60% 94%)" }}>
+            <div className="mx-auto max-w-[1200px] px-5 text-center">
+              <p className="eyebrow">On the house</p>
+              <h2 className="mt-2 font-display text-3xl font-semibold text-crust md:text-4xl">Free gifts, from me to you</h2>
+              <p className="mt-4 text-sm text-crumb">Coming soon.</p>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* Newsletter */}
         <section className="text-flour" style={{ background: "linear-gradient(180deg, hsl(var(--oven)), hsl(24 40% 12%))" }}>
