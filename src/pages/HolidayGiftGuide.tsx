@@ -621,6 +621,13 @@ export default function HolidayGiftGuide() {
               ))}
             </div>
             <div className="-mt-3 h-3.5 rounded bg-gradient-to-b from-[#5a3a20] to-[#3a2412] shadow-2xl" />
+            <p className="mt-6 text-center text-sm text-[hsl(37_35%_75%)]">
+              Need help choosing tools?{" "}
+              <Link to="/essential-baking-tools" className="font-semibold text-honey underline underline-offset-2 hover:text-flour">
+                See the essential baking tools checklist
+              </Link>
+              .
+            </p>
           </div>
         </section>
 
