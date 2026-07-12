@@ -63,6 +63,17 @@ const visibleKrustic = krusticProducts.filter(
   (k) => !DISABLED_KRUSTIC_SLUGS.has(k.slug) && isValidUrl(k.url),
 );
 
+type FreeResource = {
+  slug: string;
+  name: string;
+  img: string;
+  url: string;
+  desc: string;
+};
+
+const freeResources = (productsData.free || []) as FreeResource[];
+const visibleFree = freeResources.filter((f) => isValidUrl(f.url));
+
 const CATEGORIES = [
   "Starter Care",
   "Proofing & Temp",
@@ -921,13 +932,45 @@ export default function HolidayGiftGuide() {
          </details>
         </section>
 
-        {/* Free gifts — hidden until real download URLs are configured. */}
-        {FREE_RESOURCES_ENABLED && (
+        {/* Free gifts — shown once real download URLs are configured in products.json. */}
+        {FREE_RESOURCES_ENABLED && visibleFree.length > 0 && (
           <section className="py-16" style={{ background: "hsl(38 60% 94%)" }}>
             <div className="mx-auto max-w-[1200px] px-5 text-center">
               <p className="eyebrow">On the house</p>
               <h2 className="mt-2 font-display text-3xl font-semibold text-crust md:text-4xl">Free gifts, from me to you</h2>
-              <p className="mt-4 text-sm text-crumb">Coming soon.</p>
+              <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {visibleFree.map((f) => (
+                  <article
+                    key={f.slug}
+                    className="rounded-2xl border border-parchment-deep bg-white p-5 text-left shadow-sm transition-transform hover:-translate-y-1"
+                  >
+                    <a
+                      href={f.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block overflow-hidden rounded-xl bg-flour"
+                    >
+                      <img
+                        src={f.img}
+                        alt={f.name}
+                        loading="lazy"
+                        className="h-40 w-full object-cover"
+                      />
+                    </a>
+                    <h3 className="mt-4 font-display text-xl font-semibold text-crust">{f.name}</h3>
+                    <p className="mt-2 text-sm text-crumb">{f.desc}</p>
+                    <a
+                      href={f.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-evergreen px-5 py-2.5 text-sm font-bold text-flour hover:bg-evergreen-deep"
+                    >
+                      <HollySprig className="h-4 w-4" />
+                      Get it free →
+                    </a>
+                  </article>
+                ))}
+              </div>
             </div>
           </section>
         )}
