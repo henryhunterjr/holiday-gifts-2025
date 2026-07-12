@@ -773,6 +773,17 @@ export default function HolidayGiftGuide() {
             <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
               <div>
                 <p className="mt-3 max-w-[60ch] text-crumb">Heritage-inspired sourdough tools that honor the past and elevate your bake. Free shipping + 30-day returns.</p>
+                <p className="mt-2 max-w-[60ch] text-sm text-crumb">
+                  New to sourdough?{" "}
+                  <Link to="/sourdough-starter-care-guide" className="font-semibold text-cranberry hover:underline">
+                    Start with the starter care guide
+                  </Link>
+                  . Gummy loaves?{" "}
+                  <Link to="/fix-gummy-dense-sourdough" className="font-semibold text-cranberry hover:underline">
+                    Here's a troubleshooting guide
+                  </Link>
+                  .
+                </p>
               </div>
               <button onClick={() => copyCode("BGBAH25")} className="code-pill min-h-[44px] text-base">
                 <Copy className="h-4 w-4" /> Use code BGBAH25 for 10% off
