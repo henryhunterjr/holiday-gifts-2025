@@ -582,14 +582,14 @@
     {
       "slug": "free-starter-guide",
       "name": "Sourdough Starter Guide",
-      "img": "https://holiday-gifts-2025.lovable.app/assets/starter-guide-VfslA1US.png",
+      "img": "/starter-guide.png",
       "url": "https://sourdough-starter-guide.vercel.app/",
       "desc": "Create and keep a healthy starter, start to finish."
     },
     {
       "slug": "free-recipes",
       "name": "Recipe Collection",
-      "img": "https://holiday-gifts-2025.lovable.app/assets/recipe-collection-C9_ut0XW.png",
+      "img": "/recipe-collection.png",
       "url": "https://bakinggreatbread.blog",
       "desc": "Tested recipes from my kitchen, free on the blog."
     }
