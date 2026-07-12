@@ -15,8 +15,8 @@ export const DISABLED_KRUSTIC_SLUGS: ReadonlySet<string> = new Set([
   "dual-flour-dehydrated-starter",
 ]);
 
-// Free resource cards are hidden until real download URLs are provided.
-export const FREE_RESOURCES_ENABLED = false;
+// Free resource cards are shown once real download URLs are configured below.
+export const FREE_RESOURCES_ENABLED = true;
 
 // Price bands. Single source of truth for both the Gift Finder and catalog.
 // Rules:
