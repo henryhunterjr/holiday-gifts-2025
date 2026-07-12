@@ -1,5 +1,5 @@
 import { useEffect, useId, useMemo, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Search, Share2, Copy, Snowflake, ExternalLink, Star, X, Sparkles, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
@@ -571,8 +571,11 @@ export default function HolidayGiftGuide() {
               <p className="mt-4 max-w-[46ch] text-[1.05rem]" style={{ color: "#e8dcc6" }}>
                 Skip the store-bought this year. A loaf you baked with your own hands says more than anything on a shelf. Watch the two-minute story, then pick a tool below to gift the baker in your life.
               </p>
+              <p className="mt-3 text-sm" style={{ color: "#e8dcc6" }}>
+                Baking your gift? <Link to="/how-to-wrap-sourdough-as-a-gift" className="font-semibold text-honey underline underline-offset-2 hover:text-flour">Learn how to wrap sourdough as a gift</Link>.
+              </p>
               <div className="mt-6 flex flex-wrap gap-3">
-                <a href="#top6" className="inline-flex items-center gap-2 rounded-full bg-cranberry px-6 py-3 font-bold text-flour shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-cranberry-deep">
+                <a href="#top6" className="inline-flex items-center gap-2 rounded-full bg-cranberry px-6 py-3 font-bold text-flour shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-cranberry-deep" aria-label="Shop the 2026 Holiday Gift Guide">
                   <HollySprig className="h-4 w-4" /> Shop the guide
                 </a>
                 <button onClick={() => setQuiz(true)} className="inline-flex items-center gap-2 rounded-full border-[1.5px] border-flour/40 px-6 py-3 font-bold text-flour transition-colors hover:border-honey hover:text-honey">
@@ -618,6 +621,13 @@ export default function HolidayGiftGuide() {
               ))}
             </div>
             <div className="-mt-3 h-3.5 rounded bg-gradient-to-b from-[#5a3a20] to-[#3a2412] shadow-2xl" />
+            <p className="mt-6 text-center text-sm text-[hsl(37_35%_75%)]">
+              Need help choosing tools?{" "}
+              <Link to="/essential-baking-tools" className="font-semibold text-honey underline underline-offset-2 hover:text-flour">
+                See the essential baking tools checklist
+              </Link>
+              .
+            </p>
           </div>
         </section>
 
@@ -763,6 +773,17 @@ export default function HolidayGiftGuide() {
             <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
               <div>
                 <p className="mt-3 max-w-[60ch] text-crumb">Heritage-inspired sourdough tools that honor the past and elevate your bake. Free shipping + 30-day returns.</p>
+                <p className="mt-2 max-w-[60ch] text-sm text-crumb">
+                  New to sourdough?{" "}
+                  <Link to="/sourdough-starter-care-guide" className="font-semibold text-cranberry hover:underline">
+                    Start with the starter care guide
+                  </Link>
+                  . Gummy loaves?{" "}
+                  <Link to="/fix-gummy-dense-sourdough" className="font-semibold text-cranberry hover:underline">
+                    Here's a troubleshooting guide
+                  </Link>
+                  .
+                </p>
               </div>
               <button onClick={() => copyCode("BGBAH25")} className="code-pill min-h-[44px] text-base">
                 <Copy className="h-4 w-4" /> Use code BGBAH25 for 10% off
