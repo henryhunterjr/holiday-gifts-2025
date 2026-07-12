@@ -63,6 +63,17 @@ const visibleKrustic = krusticProducts.filter(
   (k) => !DISABLED_KRUSTIC_SLUGS.has(k.slug) && isValidUrl(k.url),
 );
 
+type FreeResource = {
+  slug: string;
+  name: string;
+  img: string;
+  url: string;
+  desc: string;
+};
+
+const freeResources = (productsData.free || []) as FreeResource[];
+const visibleFree = freeResources.filter((f) => isValidUrl(f.url));
+
 const CATEGORIES = [
   "Starter Care",
   "Proofing & Temp",
