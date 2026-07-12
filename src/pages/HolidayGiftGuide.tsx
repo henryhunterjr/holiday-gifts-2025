@@ -1,5 +1,5 @@
 import { useEffect, useId, useMemo, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Search, Share2, Copy, Snowflake, ExternalLink, Star, X, Sparkles, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
@@ -571,8 +571,11 @@ export default function HolidayGiftGuide() {
               <p className="mt-4 max-w-[46ch] text-[1.05rem]" style={{ color: "#e8dcc6" }}>
                 Skip the store-bought this year. A loaf you baked with your own hands says more than anything on a shelf. Watch the two-minute story, then pick a tool below to gift the baker in your life.
               </p>
+              <p className="mt-3 text-sm" style={{ color: "#e8dcc6" }}>
+                Baking your gift? <Link to="/how-to-wrap-sourdough-as-a-gift" className="font-semibold text-honey underline underline-offset-2 hover:text-flour">Learn how to wrap sourdough as a gift</Link>.
+              </p>
               <div className="mt-6 flex flex-wrap gap-3">
-                <a href="#top6" className="inline-flex items-center gap-2 rounded-full bg-cranberry px-6 py-3 font-bold text-flour shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-cranberry-deep">
+                <a href="#top6" className="inline-flex items-center gap-2 rounded-full bg-cranberry px-6 py-3 font-bold text-flour shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-cranberry-deep" aria-label="Shop the 2026 Holiday Gift Guide">
                   <HollySprig className="h-4 w-4" /> Shop the guide
                 </a>
                 <button onClick={() => setQuiz(true)} className="inline-flex items-center gap-2 rounded-full border-[1.5px] border-flour/40 px-6 py-3 font-bold text-flour transition-colors hover:border-honey hover:text-honey">
