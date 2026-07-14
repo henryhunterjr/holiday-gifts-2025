@@ -505,6 +505,15 @@ export default function HolidayGiftGuide() {
             <span className="hidden sm:inline">Baking Great Bread at Home</span>
             <span className="sm:hidden">BGB</span>
           </a>
+          <button
+            onClick={() => setMusic((m) => !m)}
+            aria-pressed={music}
+            aria-label={music ? "Stop background music" : "Play background music"}
+            className={`inline-flex items-center gap-1 rounded-full border px-3 py-1 text-xs transition-colors ${music ? "border-honey bg-honey/20 text-honey" : "border-honey/40 hover:bg-flour/10"}`}
+          >
+            {music ? <Music2 className="h-3 w-3" /> : <Music className="h-3 w-3" />}
+            <span>🎄 Music</span>
+          </button>
           <span className="rounded-full border border-honey/40 bg-cranberry/30 px-3 py-1 text-xs whitespace-nowrap">
             <b className="text-honey">{days}</b> days to Christmas
           </span>
@@ -518,6 +527,18 @@ export default function HolidayGiftGuide() {
         </div>
         <HeaderGarland />
       </header>
+      {/* Background music player — hidden YouTube iframe, click gesture allows autoplay */}
+      {music && (
+        <iframe
+          key="bg-music"
+          title="Background holiday music"
+          src="https://www.youtube.com/embed/N91_IHbofhs?autoplay=1&loop=1&playlist=N91_IHbofhs&controls=0&modestbranding=1&rel=0"
+          allow="autoplay"
+          aria-hidden="true"
+          tabIndex={-1}
+          style={{ position: "fixed", left: -9999, top: -9999, width: 1, height: 1, border: 0, pointerEvents: "none" }}
+        />
+      )}
 
       <main id="top">
         {/* Hero */}
