@@ -760,7 +760,7 @@ export default function HolidayGiftGuide() {
         </nav>
 
         {/* The Counter: category aisles with progressive disclosure */}
-        <section className="py-16">
+        <section className="border-t border-parchment-deep/70 bg-parchment/30 py-16">
           <div className="mx-auto max-w-[1200px] px-5">
             <h2 className="mb-3 font-display text-3xl font-semibold text-crust md:text-4xl">Browse all baking gifts</h2>
             <p className="mb-6 text-xs text-crumb md:text-sm">
