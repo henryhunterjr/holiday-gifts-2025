@@ -1081,6 +1081,7 @@ export default function HolidayGiftGuide() {
       </footer>
 
       <GiftFinderQuiz open={quiz} onClose={() => setQuiz(false)} />
+      <GiveawayModal open={giveaway} onClose={() => setGiveaway(false)} />
     </div>
   );
 }
