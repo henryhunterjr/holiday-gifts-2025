@@ -600,6 +600,27 @@ export default function HolidayGiftGuide() {
         <section id="give-bread-instead" className="relative overflow-hidden text-flour" style={{ background: "radial-gradient(900px 400px at 20% 0%, hsl(var(--cranberry) / 0.25), transparent 60%), linear-gradient(180deg, #2a1418 0%, #1c0f12 100%)" }}>
           <div className="mx-auto grid max-w-[1200px] items-center gap-10 px-5 py-16 md:grid-cols-[1fr_1.1fr] md:py-20">
             <div>
+              {/* Gift tag hanging as if tied to a package */}
+              <div className="relative mb-8 flex justify-start" aria-hidden>
+                <div className="relative">
+                  <span
+                    className="absolute left-1/2 -top-6 h-6 w-[2px] -translate-x-1/2 bg-[hsl(var(--twine))]"
+                    style={{ background: "#c9a56a" }}
+                  />
+                  <img
+                    src={giveBreadTag.url}
+                    alt=""
+                    className="ornament-sway block h-auto w-[130px] origin-top drop-shadow-2xl sm:w-[160px] md:w-[180px]"
+                    style={{
+                      transform: "rotate(-7deg)",
+                      // @ts-expect-error css vars
+                      "--sway-a": "-9deg",
+                      "--sway-b": "-5deg",
+                      animationDuration: "6s",
+                    }}
+                  />
+                </div>
+              </div>
               <p className="eyebrow" style={{ color: "hsl(var(--honey))" }}>A December tradition</p>
               <h2 className="mt-3 font-display font-medium text-flour" style={{ fontSize: "clamp(2rem, 4.4vw, 3.4rem)", lineHeight: 1.05 }}>
                 Give <em className="not-italic italic text-honey">Bread</em> Instead.
