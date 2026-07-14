@@ -1,7 +1,7 @@
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Search, Share2, Copy, Snowflake, ExternalLink, Star, X, Sparkles, ChevronDown } from "lucide-react";
+import { Search, Share2, Copy, Snowflake, ExternalLink, Star, X, Sparkles, ChevronDown, Music, Music2 } from "lucide-react";
 import { toast } from "sonner";
 import productsData from "@/data/products.json";
 import { krusticProducts } from "@/data/krustic";
@@ -37,6 +37,8 @@ import bookFOTM from "@/assets/holiday/from-oven-to-market-sharp.jpg";
 import bookLoaf from "@/assets/holiday/loaf-and-lie-sharp.jpg";
 import bookJourney from "@/assets/holiday/bread-journey.jpg";
 import giveBreadVideo from "@/assets/holiday/give-bread-instead.mp4.asset.json";
+import giveBreadTag from "@/assets/holiday/give-bread-instead-tag.png.asset.json";
+import { GiveawayModal } from "@/components/giveaway/GiveawayModal";
 
 /* ============ Types & data ============ */
 type Product = {
@@ -395,6 +397,8 @@ export default function HolidayGiftGuide() {
   const [band, setBand] = useState<string | null>(null);
   const [quiz, setQuiz] = useState(false);
   const [showAll, setShowAll] = useState(false);
+  const [music, setMusic] = useState(false);
+  const [giveaway, setGiveaway] = useState(false);
   const searchInputId = useId();
 
   const copyCode = (code: string) => {
@@ -501,6 +505,15 @@ export default function HolidayGiftGuide() {
             <span className="hidden sm:inline">Baking Great Bread at Home</span>
             <span className="sm:hidden">BGB</span>
           </a>
+          <button
+            onClick={() => setMusic((m) => !m)}
+            aria-pressed={music}
+            aria-label={music ? "Stop background music" : "Play background music"}
+            className={`inline-flex items-center gap-1 rounded-full border px-3 py-1 text-xs transition-colors ${music ? "border-honey bg-honey/20 text-honey" : "border-honey/40 hover:bg-flour/10"}`}
+          >
+            {music ? <Music2 className="h-3 w-3" /> : <Music className="h-3 w-3" />}
+            <span>🎄 Music</span>
+          </button>
           <span className="rounded-full border border-honey/40 bg-cranberry/30 px-3 py-1 text-xs whitespace-nowrap">
             <b className="text-honey">{days}</b> days to Christmas
           </span>
@@ -514,6 +527,18 @@ export default function HolidayGiftGuide() {
         </div>
         <HeaderGarland />
       </header>
+      {/* Background music player — hidden YouTube iframe, click gesture allows autoplay */}
+      {music && (
+        <iframe
+          key="bg-music"
+          title="Background holiday music"
+          src="https://www.youtube.com/embed/N91_IHbofhs?autoplay=1&loop=1&playlist=N91_IHbofhs&controls=0&modestbranding=1&rel=0"
+          allow="autoplay"
+          aria-hidden="true"
+          tabIndex={-1}
+          style={{ position: "fixed", left: -9999, top: -9999, width: 1, height: 1, border: 0, pointerEvents: "none" }}
+        />
+      )}
 
       <main id="top">
         {/* Hero */}
@@ -575,6 +600,27 @@ export default function HolidayGiftGuide() {
         <section id="give-bread-instead" className="relative overflow-hidden text-flour" style={{ background: "radial-gradient(900px 400px at 20% 0%, hsl(var(--cranberry) / 0.25), transparent 60%), linear-gradient(180deg, #2a1418 0%, #1c0f12 100%)" }}>
           <div className="mx-auto grid max-w-[1200px] items-center gap-10 px-5 py-16 md:grid-cols-[1fr_1.1fr] md:py-20">
             <div>
+              {/* Gift tag hanging as if tied to a package */}
+              <div className="relative mb-8 flex justify-start" aria-hidden>
+                <div className="relative">
+                  <span
+                    className="absolute left-1/2 -top-6 h-6 w-[2px] -translate-x-1/2 bg-[hsl(var(--twine))]"
+                    style={{ background: "#c9a56a" }}
+                  />
+                  <img
+                    src={giveBreadTag.url}
+                    alt=""
+                    className="ornament-sway block h-auto w-[130px] origin-top drop-shadow-2xl sm:w-[160px] md:w-[180px]"
+                    style={{
+                      transform: "rotate(-7deg)",
+                      // @ts-expect-error css vars
+                      "--sway-a": "-9deg",
+                      "--sway-b": "-5deg",
+                      animationDuration: "6s",
+                    }}
+                  />
+                </div>
+              </div>
               <p className="eyebrow" style={{ color: "hsl(var(--honey))" }}>A December tradition</p>
               <h2 className="mt-3 font-display font-medium text-flour" style={{ fontSize: "clamp(2rem, 4.4vw, 3.4rem)", lineHeight: 1.05 }}>
                 Give <em className="not-italic italic text-honey">Bread</em> Instead.
@@ -714,7 +760,7 @@ export default function HolidayGiftGuide() {
         </nav>
 
         {/* The Counter: category aisles with progressive disclosure */}
-        <section className="py-16">
+        <section className="border-t border-parchment-deep/70 bg-parchment/30 py-16">
           <div className="mx-auto max-w-[1200px] px-5">
             <h2 className="mb-3 font-display text-3xl font-semibold text-crust md:text-4xl">Browse all baking gifts</h2>
             <p className="mb-6 text-xs text-crumb md:text-sm">
@@ -867,16 +913,14 @@ export default function HolidayGiftGuide() {
             href="https://fromoventomarket.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="block overflow-hidden border-y border-honey/40"
+            className="block overflow-hidden border-y border-honey/40 bg-evergreen-deep"
             aria-label="Visit From Oven to Market"
           >
             <img
               src={fotmBanner}
               alt="From Oven to Market — turn Saturdays into income"
               loading="lazy"
-              width={1600}
-              height={260}
-              className="block h-[160px] w-full object-cover md:h-[220px] lg:h-[260px] transition-transform duration-700 hover:scale-[1.02]"
+              className="mx-auto block h-auto w-full max-w-[1600px] object-contain transition-transform duration-700 hover:scale-[1.02]"
             />
           </a>
           <div className="mx-auto max-w-[1200px] px-5 py-20">
@@ -933,7 +977,7 @@ export default function HolidayGiftGuide() {
         </section>
 
         {/* Free gifts — shown once real download URLs are configured in products.json. */}
-        {FREE_RESOURCES_ENABLED && visibleFree.length > 0 && (
+        {FREE_RESOURCES_ENABLED && (
           <section className="py-16" style={{ background: "hsl(38 60% 94%)" }}>
             <div className="mx-auto max-w-[1200px] px-5 text-center">
               <p className="eyebrow">On the house</p>
@@ -970,6 +1014,37 @@ export default function HolidayGiftGuide() {
                     </a>
                   </article>
                 ))}
+                {/* Weekly Give Bread Instead gift tag set giveaway */}
+                <article className="rounded-2xl border-2 border-honey/60 bg-white p-5 text-left shadow-md transition-transform hover:-translate-y-1">
+                  <button
+                    type="button"
+                    onClick={() => setGiveaway(true)}
+                    className="block w-full overflow-hidden rounded-xl bg-[hsl(38_55%_92%)]"
+                    aria-label="Enter the Give Bread Instead Gift Tag Set giveaway"
+                  >
+                    <img
+                      src={giveBreadTag.url}
+                      alt="Give Bread Instead Gift Tag Set"
+                      loading="lazy"
+                      className="mx-auto h-40 w-auto object-contain py-3"
+                    />
+                  </button>
+                  <div className="mt-4 flex items-center gap-2">
+                    <span className="rounded-full bg-cranberry px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-flour">Weekly winner</span>
+                  </div>
+                  <h3 className="mt-2 font-display text-xl font-semibold text-crust">Give Bread Instead Gift Tag Set</h3>
+                  <p className="mt-2 text-sm text-crumb">
+                    Printable gift tag templates and greeting cards. Register to win — a new winner picked each week, November 5 through December 25.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setGiveaway(true)}
+                    className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-cranberry px-5 py-2.5 text-sm font-bold text-flour hover:bg-cranberry-deep"
+                  >
+                    <HollySprig className="h-4 w-4" />
+                    Enter to win →
+                  </button>
+                </article>
               </div>
             </div>
           </section>
@@ -1006,6 +1081,7 @@ export default function HolidayGiftGuide() {
       </footer>
 
       <GiftFinderQuiz open={quiz} onClose={() => setQuiz(false)} />
+      <GiveawayModal open={giveaway} onClose={() => setGiveaway(false)} />
     </div>
   );
 }
