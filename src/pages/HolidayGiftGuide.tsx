@@ -22,7 +22,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import bakeryWindow from "@/assets/holiday/bakery-window.png";
+import bakeryWindow from "@/assets/holiday/holiday-hero-2026.png.asset.json";
 import bgbLogo from "@/assets/holiday/ornament-bgb-logo.png";
 import ornBauble from "@/assets/holiday/ornament-bgb-bauble.png";
 import ornCrust from "@/assets/holiday/ornament-crust-crumb.png";
@@ -545,8 +545,8 @@ export default function HolidayGiftGuide() {
               }}
             >
               <img
-                src={bakeryWindow}
-                alt="Warm bakery kitchen at Christmas seen through a frosted window"
+                src={bakeryWindow.url}
+                alt="Baking Great Bread at Home Holiday Shopper's Guide by Crust & Crumb Academy"
                 className="block w-full"
                 loading="eager"
               />
