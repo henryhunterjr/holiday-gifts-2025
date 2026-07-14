@@ -1,7 +1,7 @@
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Search, Share2, Copy, Snowflake, ExternalLink, Star, X, Sparkles, ChevronDown } from "lucide-react";
+import { Search, Share2, Copy, Snowflake, ExternalLink, Star, X, Sparkles, ChevronDown, Music, Music2 } from "lucide-react";
 import { toast } from "sonner";
 import productsData from "@/data/products.json";
 import { krusticProducts } from "@/data/krustic";
@@ -37,6 +37,8 @@ import bookFOTM from "@/assets/holiday/from-oven-to-market-sharp.jpg";
 import bookLoaf from "@/assets/holiday/loaf-and-lie-sharp.jpg";
 import bookJourney from "@/assets/holiday/bread-journey.jpg";
 import giveBreadVideo from "@/assets/holiday/give-bread-instead.mp4.asset.json";
+import giveBreadTag from "@/assets/holiday/give-bread-instead-tag.png.asset.json";
+import { GiveawayModal } from "@/components/giveaway/GiveawayModal";
 
 /* ============ Types & data ============ */
 type Product = {
