@@ -977,7 +977,7 @@ export default function HolidayGiftGuide() {
         </section>
 
         {/* Free gifts — shown once real download URLs are configured in products.json. */}
-        {FREE_RESOURCES_ENABLED && visibleFree.length > 0 && (
+        {FREE_RESOURCES_ENABLED && (
           <section className="py-16" style={{ background: "hsl(38 60% 94%)" }}>
             <div className="mx-auto max-w-[1200px] px-5 text-center">
               <p className="eyebrow">On the house</p>
@@ -1014,6 +1014,37 @@ export default function HolidayGiftGuide() {
                     </a>
                   </article>
                 ))}
+                {/* Weekly Give Bread Instead gift tag set giveaway */}
+                <article className="rounded-2xl border-2 border-honey/60 bg-white p-5 text-left shadow-md transition-transform hover:-translate-y-1">
+                  <button
+                    type="button"
+                    onClick={() => setGiveaway(true)}
+                    className="block w-full overflow-hidden rounded-xl bg-[hsl(38_55%_92%)]"
+                    aria-label="Enter the Give Bread Instead Gift Tag Set giveaway"
+                  >
+                    <img
+                      src={giveBreadTag.url}
+                      alt="Give Bread Instead Gift Tag Set"
+                      loading="lazy"
+                      className="mx-auto h-40 w-auto object-contain py-3"
+                    />
+                  </button>
+                  <div className="mt-4 flex items-center gap-2">
+                    <span className="rounded-full bg-cranberry px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-flour">Weekly winner</span>
+                  </div>
+                  <h3 className="mt-2 font-display text-xl font-semibold text-crust">Give Bread Instead Gift Tag Set</h3>
+                  <p className="mt-2 text-sm text-crumb">
+                    Printable gift tag templates and greeting cards. Register to win — a new winner picked each week, November 5 through December 25.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setGiveaway(true)}
+                    className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-cranberry px-5 py-2.5 text-sm font-bold text-flour hover:bg-cranberry-deep"
+                  >
+                    <HollySprig className="h-4 w-4" />
+                    Enter to win →
+                  </button>
+                </article>
               </div>
             </div>
           </section>
