@@ -913,16 +913,14 @@ export default function HolidayGiftGuide() {
             href="https://fromoventomarket.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="block overflow-hidden border-y border-honey/40"
+            className="block overflow-hidden border-y border-honey/40 bg-evergreen-deep"
             aria-label="Visit From Oven to Market"
           >
             <img
               src={fotmBanner}
               alt="From Oven to Market — turn Saturdays into income"
               loading="lazy"
-              width={1600}
-              height={260}
-              className="block h-[160px] w-full object-cover md:h-[220px] lg:h-[260px] transition-transform duration-700 hover:scale-[1.02]"
+              className="mx-auto block h-auto w-full max-w-[1600px] object-contain transition-transform duration-700 hover:scale-[1.02]"
             />
           </a>
           <div className="mx-auto max-w-[1200px] px-5 py-20">
