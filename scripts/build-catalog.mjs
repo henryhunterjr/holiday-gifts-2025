@@ -50,20 +50,26 @@ const krustic = parseTsProducts(krusticSrc)
 
 const amazonSrc = read("src/data/amazon.ts");
 const TAG = (amazonSrc.match(/const TAG = "([^"]+)"/) || [, ""])[1];
-const amazon = parseTsProducts(amazonSrc).map(({ img, ...p }) => ({
-  ...p,
-  url: p.url.startsWith("http") ? p.url : p.url,
-  source: "amazon",
-  affiliate_tag: TAG,
-}));
-// link("ASIN") calls aren't matched by the generic parser — rebuild them.
-const amazonLinks = [...amazonSrc.matchAll(/\{\s*name:\s*"([^"]+)"[\s\S]*?link\("([^"]+)"\)/g)];
-for (const [, name, asin] of amazonLinks) {
-  const row = amazon.find((a) => a.name === name);
-  if (row) {
-    row.asin = asin;
-    row.url = `https://www.amazon.com/dp/${asin}?tag=${TAG}`;
-  }
+const amazon = [];
+for (const line of amazonSrc.split("\n")) {
+  const t = line.trim();
+  if (!t.startsWith("{ ") || !t.includes("name:")) continue;
+  const get = (k) => (t.match(new RegExp(`${k}:\\s*"([^"]*)"`)) || [])[1];
+  const asin = (t.match(/link\("([^"]+)"\)/) || [])[1];
+  const urlLiteral = (t.match(/url:\s*"([^"]*)"/) || [])[1];
+  const rating = Number((t.match(/rating:\s*([\d.]+)/) || [])[1]);
+  const name = get("name");
+  if (!name) continue;
+  amazon.push({
+    name,
+    category: get("category"),
+    price: get("price"),
+    rating: Number.isFinite(rating) ? rating : undefined,
+    asin,
+    url: asin ? `https://www.amazon.com/dp/${asin}?tag=${TAG}` : urlLiteral,
+    source: "amazon",
+    affiliate_tag: TAG,
+  });
 }
 
 const abs = (u) => (u?.startsWith("/") ? SITE + u : u);

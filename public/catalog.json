@@ -1,7 +1,7 @@
 {
   "meta": {
     "site": "https://holiday-gifts-2025.lovable.app",
-    "generated": "2026-08-21T15:10:12.944Z",
+    "generated": "2026-08-21T15:10:25.636Z",
     "description": "Consolidated product catalog for the Holiday Baking Gift Guide. Affiliate links included. Prices last verified on the site.",
     "license": "Free to read. Keep affiliate links intact when republishing."
   },
@@ -624,7 +624,238 @@
       "source": "krustic"
     }
   ],
-  "amazon": [],
+  "amazon": [
+    {
+      "name": "Lodge 6qt Dutch Oven",
+      "category": "Dutch Oven",
+      "price": "$79.99",
+      "rating": 4.7,
+      "asin": "B000N4UX4Q",
+      "url": "https://www.amazon.com/dp/B000N4UX4Q?tag=onamz55024a-20",
+      "source": "amazon",
+      "affiliate_tag": "onamz55024a-20"
+    },
+    {
+      "name": "Challenger Bread Pan",
+      "category": "Bread Pan",
+      "price": "$295",
+      "rating": 4.9,
+      "asin": "B07M6MF86P",
+      "url": "https://www.amazon.com/dp/B07M6MF86P?tag=onamz55024a-20",
+      "source": "amazon",
+      "affiliate_tag": "onamz55024a-20"
+    },
+    {
+      "name": "MyWeigh KD-8000 Scale",
+      "category": "Scale",
+      "price": "$39.95",
+      "rating": 4.8,
+      "asin": "B00VEKX35Y",
+      "url": "https://www.amazon.com/dp/B00VEKX35Y?tag=onamz55024a-20",
+      "source": "amazon",
+      "affiliate_tag": "onamz55024a-20"
+    },
+    {
+      "name": "Bread Bosses Banneton",
+      "category": "Banneton",
+      "price": "$16.95",
+      "rating": 4.7,
+      "asin": "B01GM4UZJI",
+      "url": "https://www.amazon.com/dp/B01GM4UZJI?tag=onamz55024a-20",
+      "source": "amazon",
+      "affiliate_tag": "onamz55024a-20"
+    },
+    {
+      "name": "Wire Monkey UFO Lame",
+      "category": "Scoring",
+      "price": "$35",
+      "rating": 4.9,
+      "asin": "B07KPTC1FN",
+      "url": "https://www.amazon.com/dp/B07KPTC1FN?tag=onamz55024a-20",
+      "source": "amazon",
+      "affiliate_tag": "onamz55024a-20"
+    },
+    {
+      "name": "Thermapen ONE",
+      "category": "Thermometer",
+      "price": "$105",
+      "rating": 4.9,
+      "asin": "B084XZLB7W",
+      "url": "https://www.amazon.com/dp/B084XZLB7W?tag=onamz55024a-20",
+      "source": "amazon",
+      "affiliate_tag": "onamz55024a-20"
+    },
+    {
+      "name": "Baking Steel",
+      "category": "Baking Steel",
+      "price": "$119",
+      "rating": 4.8,
+      "asin": "B00N205G22",
+      "url": "https://www.amazon.com/dp/B00N205G22?tag=onamz55024a-20",
+      "source": "amazon",
+      "affiliate_tag": "onamz55024a-20"
+    },
+    {
+      "name": "OXO Bench Scraper",
+      "category": "Bench Tool",
+      "price": "$10.99",
+      "rating": 4.8,
+      "asin": "B00004OCNJ",
+      "url": "https://www.amazon.com/dp/B00004OCNJ?tag=onamz55024a-20",
+      "source": "amazon",
+      "affiliate_tag": "onamz55024a-20"
+    },
+    {
+      "name": "Brod & Taylor Dough Whisk",
+      "category": "Whisk",
+      "price": "$16.00",
+      "rating": 4.8,
+      "asin": "B0821K5RDJ",
+      "url": "https://www.amazon.com/dp/B0821K5RDJ?tag=onamz55024a-20",
+      "source": "amazon",
+      "affiliate_tag": "onamz55024a-20"
+    },
+    {
+      "name": "ThermoWorks ThermoPop",
+      "category": "Thermometer",
+      "price": "$34.00",
+      "rating": 4.7,
+      "asin": "B07MJSQR1F",
+      "url": "https://www.amazon.com/dp/B07MJSQR1F?tag=onamz55024a-20",
+      "source": "amazon",
+      "affiliate_tag": "onamz55024a-20"
+    },
+    {
+      "name": "Cambro 6qt Container",
+      "category": "Container",
+      "price": "$17.29",
+      "rating": 4.8,
+      "asin": "B001NCDE74",
+      "url": "https://www.amazon.com/dp/B001NCDE74?tag=onamz55024a-20",
+      "source": "amazon",
+      "affiliate_tag": "onamz55024a-20"
+    },
+    {
+      "name": "Checkered Chef Cooling Rack",
+      "category": "Cooling Rack",
+      "price": "$12.95",
+      "rating": 4.7,
+      "asin": "B01N1YDLIG",
+      "url": "https://www.amazon.com/dp/B01N1YDLIG?tag=onamz55024a-20",
+      "source": "amazon",
+      "affiliate_tag": "onamz55024a-20"
+    },
+    {
+      "name": "KitchenAid Artisan 5qt Stand Mixer",
+      "category": "Stand Mixer",
+      "price": "$449.99",
+      "rating": 4.8,
+      "asin": "B00005UP2P",
+      "url": "https://www.amazon.com/dp/B00005UP2P?tag=onamz55024a-20",
+      "source": "amazon",
+      "affiliate_tag": "onamz55024a-20"
+    },
+    {
+      "name": "Feather Razor Blades (100 pack)",
+      "category": "Scoring",
+      "price": "$18.50",
+      "rating": 4.8,
+      "asin": "B004LK3Y8W",
+      "url": "https://www.amazon.com/dp/B004LK3Y8W?tag=onamz55024a-20",
+      "source": "amazon",
+      "affiliate_tag": "onamz55024a-20"
+    },
+    {
+      "name": "Silicone Bread Sling",
+      "category": "Sling",
+      "price": "$12.99",
+      "rating": 4.6,
+      "asin": "B07W4TKLR3",
+      "url": "https://www.amazon.com/dp/B07W4TKLR3?tag=onamz55024a-20",
+      "source": "amazon",
+      "affiliate_tag": "onamz55024a-20"
+    },
+    {
+      "name": "Ball Wide Mouth Mason Jars (12)",
+      "category": "Starter Jar",
+      "price": "$18.99",
+      "rating": 4.8,
+      "asin": "B01N6QBJG0",
+      "url": "https://www.amazon.com/dp/B01N6QBJG0?tag=onamz55024a-20",
+      "source": "amazon",
+      "affiliate_tag": "onamz55024a-20"
+    },
+    {
+      "name": "Le Creuset Signature Dutch Oven 5.5qt",
+      "category": "Dutch Oven",
+      "price": "$369.95",
+      "rating": 4.8,
+      "asin": "B00076SGQE",
+      "url": "https://www.amazon.com/dp/B00076SGQE?tag=onamz55024a-20",
+      "source": "amazon",
+      "affiliate_tag": "onamz55024a-20"
+    },
+    {
+      "name": "Staub Cast Iron Round Cocotte 5.5qt",
+      "category": "Dutch Oven",
+      "price": "$329.99",
+      "rating": 4.8,
+      "asin": "B000RUTDNA",
+      "url": "https://www.amazon.com/dp/B000RUTDNA?tag=onamz55024a-20",
+      "source": "amazon",
+      "affiliate_tag": "onamz55024a-20"
+    },
+    {
+      "name": "Lavatools Javelin PRO Duo",
+      "category": "Thermometer",
+      "price": "$54.99",
+      "rating": 4.7,
+      "asin": "B00GRFHXVQ",
+      "url": "https://www.amazon.com/dp/B00GRFHXVQ?tag=onamz55024a-20",
+      "source": "amazon",
+      "affiliate_tag": "onamz55024a-20"
+    },
+    {
+      "name": "FibraMent-D Baking Stone",
+      "category": "Baking Stone",
+      "price": "$89.95",
+      "rating": 4.7,
+      "asin": "B005IF2B28",
+      "url": "https://www.amazon.com/dp/B005IF2B28?tag=onamz55024a-20",
+      "source": "amazon",
+      "affiliate_tag": "onamz55024a-20"
+    },
+    {
+      "name": "Emile Henry Bread Cloche",
+      "category": "Cloche",
+      "price": "$89.95",
+      "rating": 4.6,
+      "asin": "B001CJNJBC",
+      "url": "https://www.amazon.com/dp/B001CJNJBC?tag=onamz55024a-20",
+      "source": "amazon",
+      "affiliate_tag": "onamz55024a-20"
+    },
+    {
+      "name": "Ankarsrum Original Stand Mixer",
+      "category": "Stand Mixer",
+      "price": "$799.00",
+      "rating": 4.7,
+      "asin": "B0892SQPVQ",
+      "url": "https://www.amazon.com/dp/B0892SQPVQ?tag=onamz55024a-20",
+      "source": "amazon",
+      "affiliate_tag": "onamz55024a-20"
+    },
+    {
+      "name": "Matfer Bourgeat Silicone Baking Mat",
+      "category": "Baking Mat",
+      "price": "$32.00",
+      "rating": 4.8,
+      "asin": "B000WM0CQU",
+      "url": "https://www.amazon.com/dp/B000WM0CQU?tag=onamz55024a-20",
+      "source": "amazon",
+      "affiliate_tag": "onamz55024a-20"
+    }
+  ],
   "books": [
     {
       "slug": "book-rest-of-us",
