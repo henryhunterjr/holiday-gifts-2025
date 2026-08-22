@@ -5,6 +5,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { enrichRecord } from "./catalog-lib.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (p) => fs.readFileSync(path.join(root, p), "utf8");
@@ -74,6 +75,11 @@ for (const line of amazonSrc.split("\n")) {
 
 const abs = (u) => (u?.startsWith("/") ? SITE + u : u);
 
+// Phase 1b structural pass: every record in every product array carries the
+// normalized fields. See scripts/catalog-lib.mjs and RECONCILIATION.md.
+// top_picks stays an array of slug references, not records.
+const enrichAll = (rows) => rows.map(enrichRecord);
+
 const catalog = {
   meta: {
     site: SITE,
@@ -84,13 +90,15 @@ const catalog = {
   },
   promo_codes: data.promo_codes.map(([code, applies_to]) => ({ code, applies_to })),
   top_picks: data.top6,
-  products: data.products
-    .filter((p) => !disabled.has(p.slug))
-    .map((p) => ({ ...p, img: abs(p.img), source: "main" })),
-  krustic,
-  amazon,
-  books: (data.books || []).map((b) => ({ ...b, img: abs(b.img), source: "books" })),
-  free_resources: (data.free || []).map((f) => ({ ...f, img: abs(f.img), source: "free" })),
+  products: enrichAll(
+    data.products
+      .filter((p) => !disabled.has(p.slug))
+      .map((p) => ({ ...p, img: abs(p.img), source: "main" }))
+  ),
+  krustic: enrichAll(krustic),
+  amazon: enrichAll(amazon),
+  books: enrichAll((data.books || []).map((b) => ({ ...b, img: abs(b.img), source: "books" }))),
+  free_resources: enrichAll((data.free || []).map((f) => ({ ...f, img: abs(f.img), source: "free" }))),
 };
 
 const out = path.join(root, "public", "catalog.json");

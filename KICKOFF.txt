@@ -1,0 +1,47 @@
+I'm rebuilding my holiday gift guide. Read HANDOFF.md in this folder first. Everything you need is in that file, so don't go looking for prior context.
+
+Repo: https://github.com/henryhunterjr/holiday-gifts-2025.git
+Generator: scripts/build-catalog.mjs
+Live catalog: https://holiday-gifts-2025.lovable.app/catalog.json
+Local copy of it: catalog.live.json in this folder
+
+IMPORTANT: catalog.seed.json does not exist. The brief references it. It is gone and we are not waiting for it. Do not search for it, do not ask about it, and absolutely do not fabricate its contents. Anything the brief says to source from the seed is out of scope for this pass. I'll handle it separately.
+
+catalog.live.json is the source of truth for product data.
+
+SCOPE: structural half of Phase 1b only. Section 5 of the brief, minus the enrichment merge.
+
+Extend scripts/build-catalog.mjs so its output carries these fields on every record in every array:
+
+- price: a number, or null when no price is known. Strip currency symbols and parse. "$105" becomes 105. "$159.98" becomes 159.98. 89 stays 89. If a price string can't be parsed cleanly, null is the answer.
+- currency: string. Use "USD" only where a price exists and the source shows a dollar figure. Where price is null, currency is null.
+- rel: "nofollow sponsored noopener" on every record that carries an affiliate link.
+- alt: descriptive alt text derived ONLY from the product name and brand already in the record. Do not invent materials, sizes, colors, or any attribute not already present in the data. If a record has no usable name, alt is null.
+- categories: an array. Convert the existing single `cat` string into a one-element array. Keep `cat` in place for now so nothing downstream breaks.
+- priceBand: derive from the normalized numeric price. under-25 for price < 25, 25-75 for 25 to 74.99, 75-150 for 75 to 149.99, splurge for 150 and up. Where price is null, priceBand is null. Do not guess a band from a product's category or vibe.
+- priceCheckedAt: null on every record. There is no recorded verification date for any existing product. Do not backfill with today's date, the build date, or anything scraped from meta.description. Null is the correct answer here and I will be checking.
+- audiences: empty array on every record. Placeholder for enrichment that isn't available yet.
+- concierge: an object with a `solves` key holding an empty array. Same reason.
+
+Then write the build test:
+
+Add a test that fails the build when any record carrying an affiliate link is missing rel="nofollow sponsored noopener". Wire it into the existing build script so `npm run build` fails. Use whatever test runner the repo already has. Do not add a new testing framework. If the repo has no test runner at all, make it a plain node assertion script that build calls and that exits non-zero on failure. Say which route you took and why.
+
+Then write RECONCILIATION.md covering:
+
+- How many records are in each array, before and after
+- Every price that was normalized, showing the original value and the parsed number
+- Every price that could not be parsed and is therefore null, with the original string
+- Every record where alt could not be derived
+- Which records got rel and which did not, and why
+- The priceBand distribution across the catalog
+- How the rel test is wired in and how to run it alone
+- Anything you could not resolve
+
+Constraints:
+
+- Do not build pages. Do not change the framework. Do not touch routing, components, or styling.
+- The site must still build and deploy exactly as it does now.
+- Never invent a price, a date, or a product claim. Null is correct. Guessing is a bug.
+
+Before you edit anything, tell me in one short paragraph what you found: what build-catalog.mjs currently does and where its output goes, how many products are in each array of catalog.live.json, what the current price field types actually are, and whether the repo has a test runner. Then go.
