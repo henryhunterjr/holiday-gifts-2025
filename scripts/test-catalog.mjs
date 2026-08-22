@@ -38,6 +38,23 @@ for (const key of ARRAYS) {
   }
 }
 
+// Every record must carry a real category and audience assignment. An empty
+// array means the enrichment merge missed it or a new product arrived without
+// either being filled in.
+let emptyTaxonomy = [];
+for (const key of ARRAYS) {
+  for (const r of catalog[key] || []) {
+    const label = `${key} :: ${r.name || r.slug || "(no name)"}`;
+    if (!Array.isArray(r.categories) || r.categories.length === 0) emptyTaxonomy.push(`${label}: categories is empty`);
+    if (!Array.isArray(r.audiences) || r.audiences.length === 0) emptyTaxonomy.push(`${label}: audiences is empty`);
+  }
+}
+if (emptyTaxonomy.length) {
+  console.error(`catalog taxonomy test FAILED (${emptyTaxonomy.length} records):`);
+  for (const f of emptyTaxonomy) console.error(`  - ${f}`);
+  process.exit(1);
+}
+
 if (affiliateCount < MIN_AFFILIATE_RECORDS) {
   console.error(
     `catalog rel test FAILED: found ${affiliateCount} affiliate records, expected at least ${MIN_AFFILIATE_RECORDS}. ` +
@@ -54,5 +71,5 @@ if (failures.length) {
 }
 
 console.log(
-  `catalog rel test passed: ${affiliateCount} affiliate records carry rel="${REL_AFFILIATE}" and target="${TARGET_AFFILIATE}"`
+  `catalog tests passed: ${affiliateCount} affiliate records carry rel="${REL_AFFILIATE}" and target="${TARGET_AFFILIATE}"; every record has categories and audiences`
 );

@@ -1,7 +1,7 @@
 {
   "meta": {
     "site": "https://holiday-gifts-2025.lovable.app",
-    "generated": "2026-08-22T05:53:20.423Z",
+    "generated": "2026-08-22T19:59:02.868Z",
     "description": "Consolidated product catalog for the Holiday Baking Gift Guide. Affiliate links included. Prices last verified on the site.",
     "license": "Free to read. Keep affiliate links intact when republishing."
   },
@@ -53,9 +53,15 @@
       ],
       "priceBand": "75-150",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers",
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "My kitchen is too cold and my starter goes sluggish all winter",
+          "I want my starter on a predictable schedule instead of guessing"
+        ]
       }
     },
     {
@@ -79,9 +85,15 @@
       ],
       "priceBand": "25-75",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers",
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I want to dial in an exact temperature instead of hunting for a warm spot",
+          "I'm starting from nothing and want the jar and the warmer in one box"
+        ]
       }
     },
     {
@@ -105,9 +117,14 @@
       ],
       "priceBand": "under-25",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "My starter jar is a pain to clean and I can't see the rise",
+          "I want to know how much my starter has actually grown"
+        ]
       }
     },
     {
@@ -131,9 +148,14 @@
       ],
       "priceBand": "under-25",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I want to start sourdough without waiting two weeks for a starter to wake up",
+          "I don't want to gamble on a starter with no track record"
+        ]
       }
     },
     {
@@ -157,9 +179,15 @@
       ],
       "priceBand": "splurge",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers",
+        "market-sellers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I want a backup of my starter in case something goes wrong",
+          "I'm drying more than starter and need real capacity"
+        ]
       }
     },
     {
@@ -183,9 +211,15 @@
       ],
       "priceBand": "25-75",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers",
+        "market-sellers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I'm running out of tray space mid-batch",
+          "I want to dry a full load in one run instead of three"
+        ]
       }
     },
     {
@@ -209,9 +243,14 @@
       ],
       "priceBand": "splurge",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "My proof times swing wildly depending on the season",
+          "I want temperature control without giving up counter space year round"
+        ]
       }
     },
     {
@@ -235,9 +274,15 @@
       ],
       "priceBand": "25-75",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers",
+        "market-sellers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I can only fit one batch in the proofer at a time",
+          "I'm proofing for more than my own table"
+        ]
       }
     },
     {
@@ -261,9 +306,14 @@
       ],
       "priceBand": "splurge",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "My bulk ferment is uneven because the heat comes from one side",
+          "I want to watch the dough without lifting a towel every ten minutes"
+        ]
       }
     },
     {
@@ -287,9 +337,15 @@
       ],
       "priceBand": "under-25",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers",
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "Plastic wrap over dough feels wasteful and it sticks",
+          "I want my loaves covered without trapping condensation"
+        ]
       }
     },
     {
@@ -313,9 +369,15 @@
       ],
       "priceBand": "under-25",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers",
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I can't tell when bulk fermentation is actually done",
+          "I'm guessing at rise instead of measuring it"
+        ]
       }
     },
     {
@@ -339,9 +401,15 @@
       ],
       "priceBand": "25-75",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers",
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "My dough sticks to the basket and tears when I turn it out",
+          "I want the spiral rings on my boules without a flour disaster"
+        ]
       }
     },
     {
@@ -365,9 +433,14 @@
       ],
       "priceBand": "25-75",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I want to bake batards and my round basket won't hold the shape",
+          "I want clean release on a long loaf"
+        ]
       }
     },
     {
@@ -391,9 +464,14 @@
       ],
       "priceBand": "under-25",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "My dough skins over in the fridge overnight",
+          "I'm tired of buying plastic just to cover a basket"
+        ]
       }
     },
     {
@@ -417,9 +495,15 @@
       ],
       "priceBand": "25-75",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers",
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "My scoring is timid and my ears never open",
+          "I want a scoring tool that feels good in the hand while I'm still learning"
+        ]
       }
     },
     {
@@ -443,9 +527,14 @@
       ],
       "priceBand": "25-75",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I want fine control for detailed scoring patterns",
+          "I'm left handed and most lames fight me"
+        ]
       }
     },
     {
@@ -469,9 +558,14 @@
       ],
       "priceBand": "25-75",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "My cuts are shallow and the loaf bursts at the side",
+          "I want the ear to stand up the way it does in the pictures"
+        ]
       }
     },
     {
@@ -495,9 +589,15 @@
       ],
       "priceBand": "under-25",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers",
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I want to try real scoring without spending much",
+          "I want maximum control on small or detailed cuts"
+        ]
       }
     },
     {
@@ -521,9 +621,14 @@
       ],
       "priceBand": "25-75",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I want one long dramatic slash and my straight blade won't do it",
+          "I want a lame that stores upright instead of loose in a drawer"
+        ]
       }
     },
     {
@@ -547,9 +652,14 @@
       ],
       "priceBand": "under-25",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "My hands stick to the dough every time I try to divide it",
+          "My bench is a mess and scraping it takes forever"
+        ]
       }
     },
     {
@@ -573,9 +683,14 @@
       ],
       "priceBand": "under-25",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "My wooden spoon clogs up the second the dough gets shaggy",
+          "I'm overworking the dough just trying to mix it"
+        ]
       }
     },
     {
@@ -599,9 +714,14 @@
       ],
       "priceBand": "25-75",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I'm brand new and don't know which two tools to buy first",
+          "I'm gifting someone who has a recipe but no equipment"
+        ]
       }
     },
     {
@@ -625,9 +745,14 @@
       ],
       "priceBand": "under-25",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "My counters end up covered in flour and dough",
+          "I want a surface I can knead on and then just wipe down"
+        ]
       }
     },
     {
@@ -651,9 +776,14 @@
       ],
       "priceBand": "splurge",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "My Dutch oven is heavy and I keep burning my knuckles loading it",
+          "My crust never gets the blistering I see from deck ovens"
+        ]
       }
     },
     {
@@ -677,9 +807,14 @@
       ],
       "priceBand": "75-150",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I want deck oven results without a thirty pound Dutch oven",
+          "My oval loaves spread instead of springing up"
+        ]
       }
     },
     {
@@ -703,9 +838,14 @@
       ],
       "priceBand": "splurge",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I want trapped steam above and real heat below",
+          "I want boule results that match what a bakery gets"
+        ]
       }
     },
     {
@@ -729,9 +869,16 @@
       ],
       "priceBand": "25-75",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers",
+        "serious-bakers",
+        "market-sellers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I'm doing baker's percentages on my phone every single bake",
+          "My scale maxes out before the bowl is even full"
+        ]
       }
     },
     {
@@ -755,9 +902,14 @@
       ],
       "priceBand": "under-25",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "My seeds and spices taste flat by the time they hit the dough",
+          "I want to grind small amounts fresh instead of buying pre-ground"
+        ]
       }
     },
     {
@@ -781,9 +933,14 @@
       ],
       "priceBand": "75-150",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I'm sawing through my own crust and crushing the crumb",
+          "My bread knife is dull and I don't know how to fix it"
+        ]
       }
     },
     {
@@ -807,9 +964,15 @@
       ],
       "priceBand": "25-75",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers",
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I ruin my clothes every bake day",
+          "I want an apron that's still comfortable four hours in"
+        ]
       }
     },
     {
@@ -833,9 +996,14 @@
       ],
       "priceBand": "under-25",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I keep burning my fingers fishing toast out",
+          "I want a small handmade thing to put in a stocking"
+        ]
       }
     },
     {
@@ -859,9 +1027,14 @@
       ],
       "priceBand": "under-25",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I go through plastic wrap constantly and it bothers me",
+          "I want to keep a cut loaf fresh without a bag"
+        ]
       }
     },
     {
@@ -885,9 +1058,14 @@
       ],
       "priceBand": "splurge",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I want one piece in my kitchen that outlives me",
+          "I want a bowl that mixes, proofs, and goes on the table"
+        ]
       }
     },
     {
@@ -911,9 +1089,14 @@
       ],
       "priceBand": "splurge",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I want the heirloom bowl in a lighter grain",
+          "I want a serving piece that isn't another dark wood"
+        ]
       }
     },
     {
@@ -937,9 +1120,14 @@
       ],
       "priceBand": "75-150",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "My metal bowl chills the dough and slows the rise",
+          "I want a full batch bowl without the heirloom price"
+        ]
       }
     },
     {
@@ -963,9 +1151,15 @@
       ],
       "priceBand": "25-75",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers",
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "My rolling pin fights me and I can't feel the dough",
+          "I want to roll evenly without handles getting in the way"
+        ]
       }
     },
     {
@@ -989,9 +1183,15 @@
       ],
       "priceBand": "75-150",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers",
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "My loaves get squashed when I slice them",
+          "I want to bring the bread to the table the way it deserves"
+        ]
       }
     },
     {
@@ -1015,9 +1215,15 @@
       ],
       "priceBand": "under-25",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers",
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I burn myself lowering dough into a screaming hot Dutch oven",
+          "My parchment slides around and the loaf lands crooked"
+        ]
       }
     },
     {
@@ -1041,9 +1247,14 @@
       ],
       "priceBand": "under-25",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "My batards won't fit the round sling",
+          "I want a clean lift out of an oval Dutch oven"
+        ]
       }
     },
     {
@@ -1067,9 +1278,16 @@
       ],
       "priceBand": "25-75",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers",
+        "serious-bakers",
+        "market-sellers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "My crust goes soft in a plastic bag by the next morning",
+          "I want to sell or gift loaves in something that isn't a plastic sleeve"
+        ]
       }
     },
     {
@@ -1093,9 +1311,374 @@
       ],
       "priceBand": "25-75",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers",
+        "market-sellers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I'm giving loaves as gifts and want the wrapping to look intentional",
+          "I'm selling at a holiday market and need packaging that photographs well"
+        ]
+      }
+    },
+    {
+      "slug": "nutrimill-bosch-bakers-bundle",
+      "name": "NutriMill Bosch Baker's Bundle",
+      "brand": "NutriMill",
+      "source": "seed",
+      "url": "https://collabs.shop/k0t6tw",
+      "price": null,
+      "currency": null,
+      "rel": "nofollow sponsored noopener",
+      "target": "_blank",
+      "alt": "NutriMill Bosch Baker's Bundle",
+      "categories": [
+        "Milling & Flour"
+      ],
+      "priceBand": null,
+      "priceCheckedAt": null,
+      "audiences": [
+        "serious-bakers",
+        "market-sellers"
+      ],
+      "commissionRate": "15%",
+      "partnerStatus": "active-collab",
+      "concierge": {
+        "solves": [
+          "My stand mixer strains on stiff whole grain dough",
+          "I'm mixing more than two loaves at a time",
+          "I want one machine that mixes, mills, and handles market volume"
+        ]
+      }
+    },
+    {
+      "slug": "nutrimill-impact-grain-mill",
+      "name": "NutriMill Impact Grain Mill",
+      "brand": "NutriMill",
+      "source": "seed",
+      "url": "https://collabs.shop/vavywo",
+      "price": null,
+      "currency": null,
+      "rel": "nofollow sponsored noopener",
+      "target": "_blank",
+      "alt": "NutriMill Impact grain mill",
+      "categories": [
+        "Milling & Flour"
+      ],
+      "priceBand": null,
+      "priceCheckedAt": null,
+      "audiences": [
+        "serious-bakers",
+        "market-sellers"
+      ],
+      "commissionRate": "15%",
+      "partnerStatus": "active-collab",
+      "concierge": {
+        "solves": [
+          "I want fine flour fast and I'm milling in volume",
+          "Store bought whole wheat tastes flat by the time I open the bag",
+          "I'm milling for a market table, not a single loaf"
+        ]
+      }
+    },
+    {
+      "slug": "nutrimill-classic-grain-mill",
+      "name": "NutriMill Classic Grain Mill",
+      "brand": "NutriMill",
+      "source": "seed",
+      "url": "https://collabs.shop/tyhfee",
+      "price": null,
+      "currency": null,
+      "rel": "nofollow sponsored noopener",
+      "target": "_blank",
+      "alt": "NutriMill Classic grain mill",
+      "categories": [
+        "Milling & Flour"
+      ],
+      "priceBand": null,
+      "priceCheckedAt": null,
+      "audiences": [
+        "serious-bakers"
+      ],
+      "commissionRate": "15%",
+      "partnerStatus": "active-collab",
+      "concierge": {
+        "solves": [
+          "I want to mill my own flour without a second mortgage",
+          "I bake whole grain often enough that bagged flour goes stale on me",
+          "I want control over how coarse or fine my flour is"
+        ]
+      }
+    },
+    {
+      "slug": "nutrimill-harvest-grain-mill",
+      "name": "NutriMill Harvest Grain Mill",
+      "brand": "NutriMill",
+      "source": "seed",
+      "url": "https://collabs.shop/lrhjzp",
+      "price": null,
+      "currency": null,
+      "rel": "nofollow sponsored noopener",
+      "target": "_blank",
+      "alt": "NutriMill Harvest stone burr grain mill",
+      "categories": [
+        "Milling & Flour"
+      ],
+      "priceBand": null,
+      "priceCheckedAt": null,
+      "audiences": [
+        "serious-bakers"
+      ],
+      "commissionRate": "15%",
+      "partnerStatus": "active-collab",
+      "colorways": {
+        "default": "Black",
+        "black": "https://collabs.shop/lrhjzp",
+        "silver": "https://collabs.shop/abogjb",
+        "red": "https://collabs.shop/3r79et"
+      },
+      "concierge": {
+        "solves": [
+          "I want a mill that's quiet enough to run in a shared kitchen",
+          "I want stone milled flour, not hammer milled",
+          "I want a mill I don't have to hide in a cabinet"
+        ]
+      }
+    },
+    {
+      "slug": "fourneau-bread-oven-grande",
+      "name": "Fourneau Bread Oven Grande",
+      "brand": "Fourneau",
+      "source": "seed",
+      "url": "https://collabs.shop/56xs3h",
+      "price": null,
+      "currency": null,
+      "rel": "nofollow sponsored noopener",
+      "target": "_blank",
+      "alt": "Fourneau Bread Oven Grande cast iron baking vessel",
+      "categories": [
+        "Bake Day"
+      ],
+      "priceBand": null,
+      "priceCheckedAt": null,
+      "audiences": [
+        "serious-bakers"
+      ],
+      "commissionRate": "10%",
+      "partnerStatus": "open-affiliate",
+      "concierge": {
+        "solves": [
+          "I burn my knuckles loading dough into a screaming hot dutch oven",
+          "My oven spring is weaker than it should be",
+          "I want steam without a pan of water and a mess"
+        ]
+      }
+    },
+    {
+      "slug": "farm2flour-100-organic-einkorn-flour",
+      "name": "Farm2Flour 100% Organic Einkorn Flour",
+      "brand": "Farm2Flour",
+      "source": "seed",
+      "url": "https://collabs.shop/rde7py",
+      "price": null,
+      "currency": null,
+      "rel": "nofollow sponsored noopener",
+      "target": "_blank",
+      "alt": "Farm2Flour organic einkorn flour",
+      "categories": [
+        "Milling & Flour"
+      ],
+      "priceBand": null,
+      "priceCheckedAt": null,
+      "audiences": [
+        "serious-bakers"
+      ],
+      "commissionRate": "15%",
+      "partnerStatus": "open-affiliate",
+      "concierge": {
+        "solves": [
+          "Modern wheat doesn't sit well with me",
+          "I want to bake with an ancient grain but don't know where to start",
+          "I want flour I can trace back to a farm"
+        ]
+      }
+    },
+    {
+      "slug": "fusek-flour-co-sungold-spelt-berries",
+      "name": "Fusek Flour Co. Sungold Spelt Berries",
+      "brand": "Fusek Flour Co.",
+      "source": "seed",
+      "url": "https://collabs.shop/qvvoqa",
+      "price": null,
+      "currency": null,
+      "rel": "nofollow sponsored noopener",
+      "target": "_blank",
+      "alt": "Fusek Flour Co. Sungold spelt berries",
+      "categories": [
+        "Milling & Flour"
+      ],
+      "priceBand": null,
+      "priceCheckedAt": null,
+      "audiences": [
+        "serious-bakers"
+      ],
+      "commissionRate": "15%",
+      "partnerStatus": "open-affiliate",
+      "concierge": {
+        "solves": [
+          "I bought a mill and now I need something worth milling",
+          "I want spelt that hasn't been sitting in a warehouse for a year",
+          "I want to taste the difference fresh milled actually makes"
+        ]
+      }
+    },
+    {
+      "slug": "better-batter-gluten-free-bread-flour-blend",
+      "name": "Better Batter Gluten Free Bread Flour Blend",
+      "brand": "Better Batter",
+      "source": "seed",
+      "url": "https://collabs.shop/mrd6bl",
+      "price": null,
+      "currency": null,
+      "rel": "nofollow sponsored noopener",
+      "target": "_blank",
+      "alt": "Better Batter gluten free bread flour blend",
+      "categories": [
+        "Milling & Flour"
+      ],
+      "priceBand": null,
+      "priceCheckedAt": null,
+      "audiences": [
+        "new-bakers",
+        "serious-bakers"
+      ],
+      "commissionRate": "10%",
+      "partnerStatus": "open-affiliate",
+      "concierge": {
+        "solves": [
+          "Someone at my table can't eat gluten and I'm tired of serving them bad bread",
+          "Every gluten free loaf I've made comes out like a brick",
+          "I want a blend I can use in a normal bread recipe without rewriting it"
+        ]
+      }
+    },
+    {
+      "slug": "polselli-organic-tipo-00-flour-5-kg",
+      "name": "Polselli Organic Tipo 00 Flour, 5 kg",
+      "brand": "Polselli",
+      "source": "seed",
+      "url": "https://collabs.shop/2jn8jy",
+      "price": null,
+      "currency": null,
+      "rel": "nofollow sponsored noopener",
+      "target": "_blank",
+      "alt": "Polselli organic Tipo 00 flour, 5 kilogram bag",
+      "categories": [
+        "Milling & Flour"
+      ],
+      "priceBand": null,
+      "priceCheckedAt": null,
+      "audiences": [
+        "serious-bakers",
+        "market-sellers"
+      ],
+      "commissionRate": "10%",
+      "partnerStatus": "open-affiliate",
+      "concierge": {
+        "solves": [
+          "My pizza crust never gets that chew I'm after",
+          "I'm going through flour fast enough that small bags are costing me",
+          "I want real Italian 00, not a domestic substitute"
+        ]
+      }
+    },
+    {
+      "slug": "farmsteady-sourdough-bread-making-kit",
+      "name": "FarmSteady Sourdough Bread Making Kit",
+      "brand": "FarmSteady",
+      "source": "seed",
+      "url": "https://collabs.shop/h9clow",
+      "price": null,
+      "currency": null,
+      "rel": "nofollow sponsored noopener",
+      "target": "_blank",
+      "alt": "FarmSteady sourdough bread making kit",
+      "categories": [
+        "Starter Care"
+      ],
+      "priceBand": null,
+      "priceCheckedAt": null,
+      "audiences": [
+        "new-bakers"
+      ],
+      "commissionRate": "15%",
+      "partnerStatus": "open-affiliate",
+      "concierge": {
+        "solves": [
+          "I want to try sourdough but I don't know what to buy first",
+          "I'm shopping for someone who's curious but hasn't started",
+          "I want one box that has everything instead of six separate orders"
+        ]
+      }
+    },
+    {
+      "slug": "made-with-loave-dehydrated-sourdough-starter-with-recipe",
+      "name": "Made With Loave Dehydrated Sourdough Starter with Recipe",
+      "brand": "Made With Loave",
+      "source": "seed",
+      "url": "https://collabs.shop/9ug4o2",
+      "price": null,
+      "currency": null,
+      "rel": "nofollow sponsored noopener",
+      "target": "_blank",
+      "alt": "Made With Loave dehydrated sourdough starter with recipe card",
+      "categories": [
+        "Starter Care"
+      ],
+      "priceBand": null,
+      "priceCheckedAt": null,
+      "audiences": [
+        "new-bakers"
+      ],
+      "commissionRate": "10%",
+      "partnerStatus": "open-affiliate",
+      "concierge": {
+        "solves": [
+          "My starter died and I don't want to spend two weeks growing another",
+          "I want to skip the part where I stare at flour paste for a week",
+          "I want a starter with a track record, not one I have to gamble on"
+        ]
+      }
+    },
+    {
+      "slug": "made-with-loave-sourdough-accessory-kit",
+      "name": "Made With Loave Sourdough Accessory Kit",
+      "brand": "Made With Loave",
+      "source": "seed",
+      "url": "https://collabs.shop/akvrdf",
+      "price": null,
+      "currency": null,
+      "rel": "nofollow sponsored noopener",
+      "target": "_blank",
+      "alt": "Made With Loave sourdough accessory kit",
+      "categories": [
+        "Starter Care",
+        "Scoring & Shaping"
+      ],
+      "priceBand": null,
+      "priceCheckedAt": null,
+      "audiences": [
+        "new-bakers"
+      ],
+      "commissionRate": "10%",
+      "partnerStatus": "open-affiliate",
+      "concierge": {
+        "solves": [
+          "I've got a starter going and now I need the tools around it",
+          "I'm buying for someone who has the bug but not the gear",
+          "I want the basics without buying a whole shelf of specialty equipment"
+        ]
       }
     }
   ],
@@ -1111,12 +1694,19 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Baker's Bundle",
-      "categories": [],
+      "categories": [
+        "Bake Day"
+      ],
       "priceBand": "splurge",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I'm starting from zero and don't know what to buy first",
+          "I want to give someone everything they need in one box"
+        ]
       }
     },
     {
@@ -1130,12 +1720,20 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Enameled Dutch Oven — Round",
-      "categories": [],
+      "categories": [
+        "Bake Day"
+      ],
       "priceBand": "75-150",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers",
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I want a Dutch oven I don't have to season and babysit",
+          "My loaf sticks to bare cast iron"
+        ]
       }
     },
     {
@@ -1149,12 +1747,19 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Enameled Dutch Oven — Oval",
-      "categories": [],
+      "categories": [
+        "Bake Day"
+      ],
       "priceBand": "splurge",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I bake batards and a round pot wastes the space",
+          "I want to fit two loaves side by side"
+        ]
       }
     },
     {
@@ -1168,12 +1773,19 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Cast Iron Dutch Oven — Round",
-      "categories": [],
+      "categories": [
+        "Bake Day"
+      ],
       "priceBand": "75-150",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I want the heat retention only bare cast iron gives",
+          "I want a pot that gets better the more I use it"
+        ]
       }
     },
     {
@@ -1187,12 +1799,19 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Cast Iron Dutch Oven — Oval",
-      "categories": [],
+      "categories": [
+        "Bake Day"
+      ],
       "priceBand": "splurge",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I want bare cast iron shaped for long loaves",
+          "I need a workhorse that handles back to back bakes"
+        ]
       }
     },
     {
@@ -1206,12 +1825,19 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Wood Pulp Banneton — Oval",
-      "categories": [],
+      "categories": [
+        "Proofing & Temp"
+      ],
       "priceBand": "25-75",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I want clean spiral patterns on a batard",
+          "My cane basket sheds and cakes with flour"
+        ]
       }
     },
     {
@@ -1225,12 +1851,19 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Silicone Transfer Mat",
-      "categories": [],
+      "categories": [
+        "Bake Day"
+      ],
       "priceBand": "under-25",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I drop the loaf every time I move it to the pot",
+          "I want to load hot cast iron without burning my hands"
+        ]
       }
     }
   ],
@@ -1248,33 +1881,19 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Lodge 6qt Dutch Oven",
-      "categories": [],
+      "categories": [
+        "Bake Day"
+      ],
       "priceBand": "75-150",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers"
+      ],
       "concierge": {
-        "solves": []
-      }
-    },
-    {
-      "name": "Challenger Bread Pan",
-      "category": "Bread Pan",
-      "price": 295,
-      "rating": 4.9,
-      "asin": "B07M6MF86P",
-      "url": "https://www.amazon.com/dp/B07M6MF86P?tag=onamz55024a-20",
-      "source": "amazon",
-      "affiliate_tag": "onamz55024a-20",
-      "currency": "USD",
-      "rel": "nofollow sponsored noopener",
-      "target": "_blank",
-      "alt": "Challenger Bread Pan",
-      "categories": [],
-      "priceBand": "splurge",
-      "priceCheckedAt": null,
-      "audiences": [],
-      "concierge": {
-        "solves": []
+        "solves": [
+          "I want to bake real sourdough without spending three hundred dollars",
+          "I need one pot that does bread and everything else"
+        ]
       }
     },
     {
@@ -1290,12 +1909,21 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "MyWeigh KD-8000 Scale",
-      "categories": [],
+      "categories": [
+        "Bake Day"
+      ],
       "priceBand": "25-75",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers",
+        "serious-bakers",
+        "market-sellers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "My scale can't handle a full bowl of dough",
+          "I want baker's percentages without doing the math myself"
+        ]
       }
     },
     {
@@ -1311,33 +1939,19 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Bread Bosses Banneton",
-      "categories": [],
+      "categories": [
+        "Proofing & Temp"
+      ],
       "priceBand": "under-25",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers"
+      ],
       "concierge": {
-        "solves": []
-      }
-    },
-    {
-      "name": "Wire Monkey UFO Lame",
-      "category": "Scoring",
-      "price": 35,
-      "rating": 4.9,
-      "asin": "B07KPTC1FN",
-      "url": "https://www.amazon.com/dp/B07KPTC1FN?tag=onamz55024a-20",
-      "source": "amazon",
-      "affiliate_tag": "onamz55024a-20",
-      "currency": "USD",
-      "rel": "nofollow sponsored noopener",
-      "target": "_blank",
-      "alt": "Wire Monkey UFO Lame",
-      "categories": [],
-      "priceBand": "25-75",
-      "priceCheckedAt": null,
-      "audiences": [],
-      "concierge": {
-        "solves": []
+        "solves": [
+          "I want to try a proofing basket without committing much",
+          "My dough loses its shape during the final proof"
+        ]
       }
     },
     {
@@ -1353,12 +1967,19 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Thermapen ONE",
-      "categories": [],
+      "categories": [
+        "Proofing & Temp"
+      ],
       "priceBand": "75-150",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I'm cutting into loaves to check if they're done",
+          "I want an instant read I can actually trust"
+        ]
       }
     },
     {
@@ -1374,12 +1995,19 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Baking Steel",
-      "categories": [],
+      "categories": [
+        "Bake Day"
+      ],
       "priceBand": "75-150",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "My bottom crust is pale and soft",
+          "My pizza and my hearth loaves both need more heat from below"
+        ]
       }
     },
     {
@@ -1395,33 +2023,19 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "OXO Bench Scraper",
-      "categories": [],
+      "categories": [
+        "Scoring & Shaping"
+      ],
       "priceBand": "under-25",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers"
+      ],
       "concierge": {
-        "solves": []
-      }
-    },
-    {
-      "name": "Brod & Taylor Dough Whisk",
-      "category": "Whisk",
-      "price": 16,
-      "rating": 4.8,
-      "asin": "B0821K5RDJ",
-      "url": "https://www.amazon.com/dp/B0821K5RDJ?tag=onamz55024a-20",
-      "source": "amazon",
-      "affiliate_tag": "onamz55024a-20",
-      "currency": "USD",
-      "rel": "nofollow sponsored noopener",
-      "target": "_blank",
-      "alt": "Brod & Taylor Dough Whisk",
-      "categories": [],
-      "priceBand": "under-25",
-      "priceCheckedAt": null,
-      "audiences": [],
-      "concierge": {
-        "solves": []
+        "solves": [
+          "I need a scraper today and don't want to wait on shipping",
+          "I want a cheap first tool that actually works"
+        ]
       }
     },
     {
@@ -1437,12 +2051,20 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "ThermoWorks ThermoPop",
-      "categories": [],
+      "categories": [
+        "Proofing & Temp"
+      ],
       "priceBand": "25-75",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers",
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I want a thermometer without spending a hundred dollars",
+          "I need to check dough temp, not just the finished loaf"
+        ]
       }
     },
     {
@@ -1458,12 +2080,20 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Cambro 6qt Container",
-      "categories": [],
+      "categories": [
+        "Proofing & Temp"
+      ],
       "priceBand": "under-25",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers",
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I want to see the bulk rise through the side of the container",
+          "I need something stackable that survives a real kitchen"
+        ]
       }
     },
     {
@@ -1479,12 +2109,19 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Checkered Chef Cooling Rack",
-      "categories": [],
+      "categories": [
+        "Bake Day"
+      ],
       "priceBand": "under-25",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "My loaf bottoms go soggy on the counter",
+          "I need a rack that fits a half sheet pan"
+        ]
       }
     },
     {
@@ -1500,12 +2137,19 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "KitchenAid Artisan 5qt Stand Mixer",
-      "categories": [],
+      "categories": [
+        "Bake Day"
+      ],
       "priceBand": "splurge",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I'm mixing by hand and my wrists are done",
+          "I want a mixer that handles bread dough, not just cake batter"
+        ]
       }
     },
     {
@@ -1521,12 +2165,20 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Feather Razor Blades (100 pack)",
-      "categories": [],
+      "categories": [
+        "Scoring & Shaping"
+      ],
       "priceBand": "under-25",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers",
+        "market-sellers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "My blade goes dull after a few loaves and drags",
+          "I'm baking enough that I need blades in bulk"
+        ]
       }
     },
     {
@@ -1542,12 +2194,19 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Silicone Bread Sling",
-      "categories": [],
+      "categories": [
+        "Bake Day"
+      ],
       "priceBand": "under-25",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I need a sling now and my Dutch oven is already hot",
+          "I want the cheapest safe way to load a loaf"
+        ]
       }
     },
     {
@@ -1563,12 +2222,20 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Ball Wide Mouth Mason Jars (12)",
-      "categories": [],
+      "categories": [
+        "Starter Care"
+      ],
       "priceBand": "under-25",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers",
+        "market-sellers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I need more starter jars and don't want to pay boutique prices",
+          "I'm sharing starter and need jars I can give away"
+        ]
       }
     },
     {
@@ -1584,12 +2251,19 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Le Creuset Signature Dutch Oven 5.5qt",
-      "categories": [],
+      "categories": [
+        "Bake Day"
+      ],
       "priceBand": "splurge",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I want one pot that's as good on the stove as it is for bread",
+          "I want a piece I'd be glad to have on the counter"
+        ]
       }
     },
     {
@@ -1605,12 +2279,19 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Staub Cast Iron Round Cocotte 5.5qt",
-      "categories": [],
+      "categories": [
+        "Bake Day"
+      ],
       "priceBand": "splurge",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I want a heavy lid that holds steam in tight",
+          "I want enameled cast iron with a matte interior that browns better"
+        ]
       }
     },
     {
@@ -1626,12 +2307,19 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Lavatools Javelin PRO Duo",
-      "categories": [],
+      "categories": [
+        "Proofing & Temp"
+      ],
       "priceBand": "25-75",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I want fast accurate temps without the flagship price",
+          "I check dough temp constantly and need it readable at a glance"
+        ]
       }
     },
     {
@@ -1647,12 +2335,19 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "FibraMent-D Baking Stone",
-      "categories": [],
+      "categories": [
+        "Bake Day"
+      ],
       "priceBand": "75-150",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "My stone cracked and I want one that won't",
+          "I want deck oven heat across the whole rack"
+        ]
       }
     },
     {
@@ -1668,12 +2363,19 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Emile Henry Bread Cloche",
-      "categories": [],
+      "categories": [
+        "Bake Day"
+      ],
       "priceBand": "75-150",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "My Dutch oven is too heavy to handle safely",
+          "I want a lighter vessel that still traps steam"
+        ]
       }
     },
     {
@@ -1689,12 +2391,20 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Ankarsrum Original Stand Mixer",
-      "categories": [],
+      "categories": [
+        "Bake Day"
+      ],
       "priceBand": "splurge",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers",
+        "market-sellers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "My mixer strains and walks across the counter on stiff dough",
+          "I'm mixing large batches and need a machine built for it"
+        ]
       }
     },
     {
@@ -1710,12 +2420,20 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Matfer Bourgeat Silicone Baking Mat",
-      "categories": [],
+      "categories": [
+        "Bake Day"
+      ],
       "priceBand": "25-75",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers",
+        "market-sellers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "My parchment habit is expensive and wasteful",
+          "I want a mat that survives daily commercial use"
+        ]
       }
     }
   ],
@@ -1732,12 +2450,19 @@
       "rel": null,
       "target": null,
       "alt": "Sourdough for the Rest of Us",
-      "categories": [],
+      "categories": [
+        "Books & Learning"
+      ],
       "priceBand": "under-25",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "Every sourdough guide assumes gear I don't own",
+          "I want someone to tell me plainly what actually matters"
+        ]
       }
     },
     {
@@ -1752,12 +2477,19 @@
       "rel": null,
       "target": null,
       "alt": "Vitale Sourdough Mastery",
-      "categories": [],
+      "categories": [
+        "Books & Learning"
+      ],
       "priceBand": "under-25",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "My loaves are fine but I can't say why the good ones were good",
+          "I want to understand timing and temperature instead of following steps"
+        ]
       }
     },
     {
@@ -1772,12 +2504,19 @@
       "rel": null,
       "target": null,
       "alt": "From Oven to Market",
-      "categories": [],
+      "categories": [
+        "Books & Learning"
+      ],
       "priceBand": "under-25",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "market-sellers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "People keep asking to buy my bread and I don't know where to start",
+          "I need to understand cottage food law and pricing before I sell"
+        ]
       }
     },
     {
@@ -1792,12 +2531,20 @@
       "rel": null,
       "target": null,
       "alt": "The Loaf and the Lie",
-      "categories": [],
+      "categories": [
+        "Books & Learning"
+      ],
       "priceBand": "under-25",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers",
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I want to understand why store bread is the way it is",
+          "I want the history behind what I'm doing at the bench"
+        ]
       }
     },
     {
@@ -1812,12 +2559,19 @@
       "rel": null,
       "target": null,
       "alt": "Bread: A Journey",
-      "categories": [],
+      "categories": [
+        "Books & Learning"
+      ],
       "priceBand": "under-25",
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I want the science and the story, not another recipe list",
+          "I want to know where the bread I bake actually came from"
+        ]
       }
     }
   ],
@@ -1834,12 +2588,19 @@
       "rel": null,
       "target": null,
       "alt": "Sourdough Starter Guide",
-      "categories": [],
+      "categories": [
+        "Books & Learning"
+      ],
       "priceBand": null,
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I want to start a starter and I don't want to pay to learn how",
+          "My starter died and I need to know what went wrong"
+        ]
       }
     },
     {
@@ -1854,12 +2615,20 @@
       "rel": null,
       "target": null,
       "alt": "Recipe Collection",
-      "categories": [],
+      "categories": [
+        "Books & Learning"
+      ],
       "priceBand": null,
       "priceCheckedAt": null,
-      "audiences": [],
+      "audiences": [
+        "new-bakers",
+        "serious-bakers"
+      ],
       "concierge": {
-        "solves": []
+        "solves": [
+          "I have a starter and now I need something to bake",
+          "I want tested recipes, not whatever the algorithm served me"
+        ]
       }
     }
   ]

@@ -5,7 +5,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { enrichRecord } from "./catalog-lib.mjs";
+import { enrichRecord, isAffiliateUrl, REL_AFFILIATE, TARGET_AFFILIATE, parsePrice, priceBandFor } from "./catalog-lib.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (p) => fs.readFileSync(path.join(root, p), "utf8");
@@ -75,10 +75,95 @@ for (const line of amazonSrc.split("\n")) {
 
 const abs = (u) => (u?.startsWith("/") ? SITE + u : u);
 
-// Phase 1b structural pass: every record in every product array carries the
-// normalized fields. See scripts/catalog-lib.mjs and RECONCILIATION.md.
-// top_picks stays an array of slug references, not records.
-const enrichAll = (rows) => rows.map(enrichRecord);
+// Enrichment merge: catalog.enrichment.json is keyed by array then exact
+// record name. It replaces categories, audiences and concierge.solves only.
+// price, currency, priceBand, priceCheckedAt, rel, target, alt and cat are
+// untouched. See RECONCILIATION.md.
+const enrichmentData = JSON.parse(read("catalog.enrichment.json"));
+const seedData = JSON.parse(read("catalog.seed.json"));
+
+const enrichAll = (rows, key) =>
+  rows.map(enrichRecord).map((r) => {
+    const e = enrichmentData.enrichment[key]?.[r.name];
+    if (!e) return r;
+    return {
+      ...r,
+      categories: [...e.categories],
+      audiences: [...e.audiences],
+      concierge: { solves: [...(e.concierge?.solves ?? [])] },
+    };
+  });
+
+// Drop records named in dropRecords (exact name match per array).
+const dropNamesFor = (key) =>
+  new Set((enrichmentData.dropRecords?.[key] ?? []).map((d) => d.name));
+
+// Seed newProducts: map provisional categories to the real vocabulary.
+// splurge-gifts is a price band, not a category, so it is dropped here.
+const SEED_CATEGORY_MAP = {
+  "grain-mills": "Milling & Flour",
+  mixers: "Milling & Flour",
+  grain: "Milling & Flour",
+  flour: "Milling & Flour",
+  pantry: "Milling & Flour",
+  pizza: "Milling & Flour",
+  "gluten-free": "Milling & Flour",
+  "baking-vessels": "Bake Day",
+  kits: "Starter Care",
+  starter: "Starter Care",
+  "gifts-for-beginners": "Starter Care",
+  tools: "Scoring & Shaping", // per Henry, 2026-08-22 (Made With Loave Accessory Kit)
+};
+
+const slugify = (name) =>
+  name
+    .toLowerCase()
+    .replace(/['’]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+const seedProducts = seedData.newProducts.map((p) => {
+  const categories = [];
+  for (const c of p.categories ?? []) {
+    if (c === "splurge-gifts") continue;
+    const mapped = SEED_CATEGORY_MAP[c];
+    if (!mapped) throw new Error(`Unmapped provisional category "${c}" on seed product "${p.name}". Add it to SEED_CATEGORY_MAP instead of guessing.`);
+    if (!categories.includes(mapped)) categories.push(mapped);
+  }
+  const affiliate = isAffiliateUrl(p.url);
+  const price = parsePrice(p.price);
+  return {
+    slug: slugify(p.name),
+    name: p.name,
+    brand: p.brand,
+    source: "seed",
+    url: p.url,
+    price,
+    currency: null,
+    rel: affiliate ? REL_AFFILIATE : null,
+    target: affiliate ? TARGET_AFFILIATE : null,
+    alt: typeof p.alt === "string" ? p.alt : null,
+    categories,
+    priceBand: priceBandFor(price),
+    priceCheckedAt: null,
+    audiences: [...(p.audiences ?? [])],
+    commissionRate: p.commissionRate,
+    partnerStatus: p.partnerStatus,
+    ...(p.colorways ? { colorways: p.colorways } : {}),
+    concierge: { solves: [...(p.concierge?.solves ?? [])] },
+  };
+});
+
+// Guard against slug collisions between seed products and everything already
+// in the catalog.
+const seenSlugs = new Set([
+  ...data.products.map((p) => p.slug),
+  ...krustic.map((p) => p.slug),
+]);
+for (const s of seedProducts) {
+  if (seenSlugs.has(s.slug)) throw new Error(`Seed product slug collision: "${s.slug}". Rename in the seed or adjust slugify.`);
+  seenSlugs.add(s.slug);
+}
 
 const catalog = {
   meta: {
@@ -90,19 +175,26 @@ const catalog = {
   },
   promo_codes: data.promo_codes.map(([code, applies_to]) => ({ code, applies_to })),
   top_picks: data.top6,
-  products: enrichAll(
-    data.products
-      .filter((p) => !disabled.has(p.slug))
-      .map((p) => ({ ...p, img: abs(p.img), source: "main" }))
+  products: [
+    ...enrichAll(
+      data.products
+        .filter((p) => !disabled.has(p.slug))
+        .map((p) => ({ ...p, img: abs(p.img), source: "main" })),
+      "products"
+    ),
+    ...seedProducts,
+  ],
+  krustic: enrichAll(krustic, "krustic"),
+  amazon: enrichAll(
+    amazon.filter((a) => !dropNamesFor("amazon").has(a.name)),
+    "amazon"
   ),
-  krustic: enrichAll(krustic),
-  amazon: enrichAll(amazon),
-  books: enrichAll((data.books || []).map((b) => ({ ...b, img: abs(b.img), source: "books" }))),
-  free_resources: enrichAll((data.free || []).map((f) => ({ ...f, img: abs(f.img), source: "free" }))),
+  books: enrichAll((data.books || []).map((b) => ({ ...b, img: abs(b.img), source: "books" })), "books"),
+  free_resources: enrichAll((data.free || []).map((f) => ({ ...f, img: abs(f.img), source: "free" })), "free_resources"),
 };
 
 const out = path.join(root, "public", "catalog.json");
 fs.writeFileSync(out, JSON.stringify(catalog, null, 2));
 console.log(
-  `catalog.json written: ${catalog.products.length} products, ${krustic.length} krustic, ${amazon.length} amazon, ${catalog.books.length} books`
+  `catalog.json written: ${catalog.products.length} products (incl ${seedProducts.length} seed), ${krustic.length} krustic, ${catalog.amazon.length} amazon (after drops), ${catalog.books.length} books, ${catalog.free_resources.length} free`
 );

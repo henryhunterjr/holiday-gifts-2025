@@ -1,9 +1,10 @@
 # NEXT.md — open items after Phase 1b
 
-Last updated 2026-08-21, end of session. Read alongside RECONCILIATION.md.
+Last updated 2026-08-22. Read alongside RECONCILIATION.md.
 
-Phase 1b structural pass is complete and verified: commits `e5d2753`, `ed3e6a5`, `3f6039f`.
-Everything below is still open. Nothing here is blocked on anything except where noted.
+Phase 1b structural pass complete (commits `e5d2753`, `ed3e6a5`, `3f6039f`). Enrichment
+merge and seed merge complete 2026-08-22: catalog now holds 87 records, every one carrying
+categories, audiences and concierge.solves. Items below reflect what is still open.
 
 ---
 
@@ -52,38 +53,37 @@ The other disabled item, `dual-flour-dehydrated-starter`, is **not** fixable on 
 The Krustic URL is well formed but the product returns 404, so it appears delisted.
 Leave it disabled.
 
-## 3. Merge catalog.seed.json
+## 3. Merge catalog.seed.json — DONE 2026-08-22
 
-`catalog.seed.json` (rebuilt 2026-08-21, replaces the lost original) holds 12 new products
-with fresh Shopify Collabs URLs verified that day. It adds products only. It does **not**
-enrich the existing 78 — that mapping still has to be rebuilt.
+The merge landed in `scripts/build-catalog.mjs`. All 12 seed products are in `catalog.json`
+(inside the `products` array, with `source: "seed"`), categories mapped to the real
+vocabulary, audiences and concierge.solves carried as written. See RECONCILIATION.md,
+"Enrichment and seed merge", for the mapping table and the drop records.
 
-Notes for whoever merges it:
+Still open from this section:
 
-- `categories` values in the seed are provisional. Map them to the category names already
-  used in `catalog.json` before merging.
-- Every new product has `price`, `currency`, `priceBand` and `priceCheckedAt` set to `null`
-  by design. No prices were available. Do not infer them from the brand, the commission
-  rate, or the product type.
-- NutriMill is four items, not five: Classic, Impact, Harvest, plus the Bosch bundle.
-  Harvest ships in three colorways; all three URLs are preserved under `colorways` on the
-  Harvest record, with Black as the default. Do not create three Harvest records.
-- Each record carries `commissionRate` and `partnerStatus`. Those are for Henry's
-  prioritisation, not for the site. Decide whether they ship in `catalog.json` or get
-  stripped at build.
+- **commissionRate / partnerStatus / colorways ship publicly.** Henry has not decided
+  whether these stay in the published catalog or get stripped at build. Right now they ship.
+  Commission rates visible to competitors and to customers is a business call, not a build one.
+- Slugs for the 12 were generated at build time (`slugify` of the name). If any slug needs
+  to change later, change it in `slugify`'s output deliberately — URLs may already reference them.
 
-## 4. Prices for the twelve new products
+## 4. Prices for the twelve new products — STILL OPEN
 
 Pull from the product pages. When they land, `priceBand` computes and `priceCheckedAt`
-finally gets a real date for those twelve. Everything already in the catalog stays `null`
-until someone actually verifies a price.
+finally gets a real date for those twelve. Everything else stays `null` until someone
+actually verifies a price.
 
-## 5. Audiences and concierge mappings for the existing 78
+## 5. Audiences and concierge mappings for the existing 78 — DONE 2026-08-22
 
-Every record currently carries `audiences: []` and `concierge: { solves: [] }`.
-This is judgment work, not a mechanical merge: who is each product for, and what problem
-does it solve in plain language. Henry and Claude do this together against the live catalog.
-Phase 4's Pantry Concierge depends on `concierge.solves` being real.
+Landed via `catalog.enrichment.json`, merged in `scripts/build-catalog.mjs`. All 75 surviving
+original records (78 minus the 3 amazon drops) now carry real categories, audiences and
+concierge.solves; the test fails the build on any empty categories or audiences array.
+Phase 4's Pantry Concierge can wire to this data.
+
+Quality note: the mappings were written by Henry and Claude without live product-page
+verification. Spot-check a handful of `solves` strings against the actual products before
+Phase 4 leans on them hard.
 
 ## 6. market_kit_highlights: keep or delete
 

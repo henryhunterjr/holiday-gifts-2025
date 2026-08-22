@@ -1,6 +1,6 @@
 # RECONCILIATION.md — Phase 1b structural pass
 
-Date: 2026-08-21. Scope: section 5 of the handoff brief, structural half only. The enrichment merge from `catalog.seed.json` (step 3) is explicitly out of scope; `catalog.seed.json` was not read and does not exist in this working copy.
+Date: 2026-08-21 (structural pass), updated 2026-08-22 (enrichment + seed merge). Scope: section 5 of the handoff brief. The enrichment merge from `catalog.seed.json` and `catalog.enrichment.json` landed on 2026-08-22; see "Enrichment and seed merge" near the end of this file.
 
 ## What changed
 
@@ -179,5 +179,57 @@ Note: these 4 are part of the likely miscount behind the brief's "85" (Theory A 
 2. **Vitale starter link** is a bare Etsy shop URL. If there is a tracked link available, swap it in; until then it stays non-affiliate.
 3. **ModKitchn discount links** are treated as affiliate because they carry Henry's tracked code, but they show no commission parameter. If any of them are not commission-bearing, say the word and I will narrow the rule.
 4. **`meta.description`** in catalog.json still says "prices last verified on the site." Left untouched as out of scope for this pass; it contradicts the null `priceCheckedAt` data and should be reworded before Phase 2 renders a date from data.
-5. **Enrichment merge** (seed audiences/priceBand/concierge/rel overrides, plus the NutriMill/Fourneau/Farm2Flour/Fusek/Better Batter/Polselli/FarmSteady/Made With Loave presence check) not started, per scope.
+5. **Enrichment merge** — done 2026-08-22, see "Enrichment and seed merge" above. The NutriMill/Fourneau/Farm2Flour/Fusek/Better Batter/Polselli/FarmSteady/Made With Loave presence check resolved by the seed merge: none were in the catalog before; all 12 are now added, including all four NutriMill items at 15% commission, the best rate in Henry's account.
 6. **Currency assumption:** every storefront in the catalog prices in USD, so currency is set to `"USD"` for all 76 parsed prices, including those stored as bare numbers. If any non-dollar price ever enters the data, the parser will need a currency hint rather than this default.
+
+## Enrichment and seed merge (2026-08-22)
+
+`scripts/build-catalog.mjs` now reads `catalog.enrichment.json` (keyed by array then exact record name) and `catalog.seed.json`. Pre-merge verification, all three checks passed with zero mismatches: (1) all 75 enrichment names matched catalog record names exactly — no fuzzy matching, no quote normalization; (2) every catalog record had an enrichment entry except exactly the 3 records named in `dropRecords.amazon`; (3) counts products 41 / krustic 7 / amazon 20 / books 5 / free_resources 2 = 75.
+
+### Records dropped from amazon (dropRecords.amazon)
+
+Dropped by exact name at build; reasons carried here verbatim from `catalog.enrichment.json`:
+
+| Dropped record | Reason |
+|---|---|
+| Challenger Bread Pan | Duplicate of products/Challenger Bread Pan. Direct link is $270 with ?ref=henryhunterjr; Amazon copy is $295. Direct wins on rate and on price. |
+| Wire Monkey UFO Lame | Duplicate of products/UFO Bread Lame. Direct is $29.95; Amazon copy is $35. Direct wins on rate and on price. |
+| Brod & Taylor Dough Whisk | Duplicate of products/Dough Whisk. Amazon is cheaper ($16 vs $20.95) but Brod & Taylor is an active partner. Direct wins per Henry's dedupe rule. |
+
+The enrichment overwrite replaces only `categories`, `audiences`, and `concierge.solves`. `price`, `currency`, `priceBand`, `priceCheckedAt`, `rel`, `target`, `alt`, and `cat` are untouched by the merge (verified post-build: zero invariant violations).
+
+### Twelve seed products added
+
+Appended to the `products` array (they span three categories, so a dedicated array would contradict the mapping). Provisional seed categories mapped to the real vocabulary:
+
+| Seed category | Maps to | Applies to |
+|---|---|---|
+| grain-mills, mixers, grain, flour, pantry, pizza, gluten-free | Milling & Flour | NutriMill x4, Farm2Flour, Fusek, Better Batter, Polselli |
+| baking-vessels | Bake Day | Fourneau Bread Oven Grande |
+| kits, starter, gifts-for-beginners | Starter Care | FarmSteady kit, Made With Loave starter + accessory kit |
+| splurge-gifts | dropped (price band, not a category) | all 12 |
+| tools | Scoring & Shaping | Made With Loave Accessory Kit — not in Henry's original mapping list; caught by the build guard and mapped per Henry, 2026-08-22 |
+
+Notes:
+- The build **fails** on any unmapped provisional category rather than guessing.
+- Each seed product gets a deterministic slug derived from its name (`slugify` in build-catalog.mjs); the build fails on collision with any existing slug. Slugs are generated because the seed carries none and the schema requires them.
+- `commissionRate`, `partnerStatus` and (on Harvest) `colorways` are carried through as written. NEXT.md flags whether these should ship publicly or be stripped at build; undecided.
+- All 12 have `price`, `currency`, `priceBand`, `priceCheckedAt` = null by design. No prices exist yet; see NEXT.md item 4.
+- Alt text uses the seed's own alt values verbatim.
+
+### Post-merge counts
+
+| Array | Count |
+|---|---|
+| products (41 original + 12 seed) | 53 |
+| krustic | 7 |
+| amazon (23 minus 3 drops) | 20 |
+| books | 5 |
+| free_resources | 2 |
+| **Total** | **87** |
+
+Affiliate records now number 79 (70 prior + 12 seed collabs links − 3 dropped amazon tag links); floor of 60 unchanged and still valid.
+
+Category distribution (records can hold multiple categories): Bake Day 28, Proofing & Temp 14, Scoring & Shaping 12, Starter Care 10, Milling & Flour 8, Books & Learning 7, Wood & Serving 5, Storage & Gifting 4.
+
+Audience distribution (records can hold multiple audiences): serious-bakers 64, new-bakers 42, market-sellers 15.
