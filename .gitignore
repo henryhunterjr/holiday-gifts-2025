@@ -24,3 +24,8 @@ dist-ssr
 *.sw?
 
 .env
+
+# Partner image originals - never commit, these live outside the repo
+Charlie Wiskin-*
+*.psd
+
