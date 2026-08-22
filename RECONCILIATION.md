@@ -213,7 +213,9 @@ Appended to the `products` array (they span three categories, so a dedicated arr
 Notes:
 - The build **fails** on any unmapped provisional category rather than guessing.
 - Each seed product gets a deterministic slug derived from its name (`slugify` in build-catalog.mjs); the build fails on collision with any existing slug. Slugs are generated because the seed carries none and the schema requires them.
-- `commissionRate`, `partnerStatus` and (on Harvest) `colorways` are carried through as written. NEXT.md flags whether these should ship publicly or be stripped at build; undecided.
+- **`commissionRate` and `partnerStatus` are stripped at build** and never appear in `public/catalog.json`. Partner commission rates are commercially sensitive. They live only in `catalog.partners.json`, which is gitignored. Note: these rates were briefly public — they shipped in `catalog.json` output between commits `79eca04`'s build and the strip, and they remain in the git history of `catalog.seed.json` (commits `e736d79` through `ef2b451`). Treat them as known to anyone who looked during that window.
+- A test in `scripts/test-catalog.mjs` fails the build if any record carries either field, so the rule is enforced by data rather than memory.
+- `colorways` is product data and ships.
 - All 12 have `price`, `currency`, `priceBand`, `priceCheckedAt` = null by design. No prices exist yet; see NEXT.md item 4.
 - Alt text uses the seed's own alt values verbatim.
 

@@ -55,6 +55,25 @@ if (emptyTaxonomy.length) {
   process.exit(1);
 }
 
+// Commission rates and partner status are commercially sensitive. They must
+// never appear in the published catalog, so the rule is enforced here by data,
+// same as the rel test, not by anyone remembering.
+const FORBIDDEN_FIELDS = ["commissionRate", "partnerStatus"];
+
+let forbiddenHits = [];
+for (const key of ARRAYS) {
+  for (const r of catalog[key] || []) {
+    for (const f of FORBIDDEN_FIELDS) {
+      if (f in r) forbiddenHits.push(`${key} :: ${r.name || r.slug || "(no name)"} carries "${f}"`);
+    }
+  }
+}
+if (forbiddenHits.length) {
+  console.error(`catalog sensitive-fields test FAILED (${forbiddenHits.length} records): partner commission data must never be published`);
+  for (const f of forbiddenHits) console.error(`  - ${f}`);
+  process.exit(1);
+}
+
 if (affiliateCount < MIN_AFFILIATE_RECORDS) {
   console.error(
     `catalog rel test FAILED: found ${affiliateCount} affiliate records, expected at least ${MIN_AFFILIATE_RECORDS}. ` +

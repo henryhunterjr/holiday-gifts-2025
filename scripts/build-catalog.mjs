@@ -147,8 +147,10 @@ const seedProducts = seedData.newProducts.map((p) => {
     priceBand: priceBandFor(price),
     priceCheckedAt: null,
     audiences: [...(p.audiences ?? [])],
-    commissionRate: p.commissionRate,
-    partnerStatus: p.partnerStatus,
+    // commissionRate and partnerStatus are deliberately NOT copied here:
+    // partner commission rates are commercially sensitive and must never be
+    // published. They live in the gitignored catalog.partners.json instead,
+    // and scripts/test-catalog.mjs fails the build if they ever leak out.
     ...(p.colorways ? { colorways: p.colorways } : {}),
     concierge: { solves: [...(p.concierge?.solves ?? [])] },
   };

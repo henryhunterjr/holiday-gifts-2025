@@ -62,9 +62,11 @@ vocabulary, audiences and concierge.solves carried as written. See RECONCILIATIO
 
 Still open from this section:
 
-- **commissionRate / partnerStatus / colorways ship publicly.** Henry has not decided
-  whether these stay in the published catalog or get stripped at build. Right now they ship.
-  Commission rates visible to competitors and to customers is a business call, not a build one.
+- **commissionRate / partnerStatus — resolved 2026-08-22.** Stripped from the build output
+  and from `catalog.seed.json`; the rates now live only in the gitignored
+  `catalog.partners.json`, and `scripts/test-catalog.mjs` fails the build if either field
+  ever appears in catalog output. Caveat: they were briefly public (see RECONCILIATION.md)
+  and remain in git history of `catalog.seed.json`. `colorways` ships — it is product data.
 - Slugs for the 12 were generated at build time (`slugify` of the name). If any slug needs
   to change later, change it in `slugify`'s output deliberately — URLs may already reference them.
 

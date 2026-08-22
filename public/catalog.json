@@ -1,7 +1,7 @@
 {
   "meta": {
     "site": "https://holiday-gifts-2025.lovable.app",
-    "generated": "2026-08-22T19:59:02.868Z",
+    "generated": "2026-08-22T20:57:47.437Z",
     "description": "Consolidated product catalog for the Holiday Baking Gift Guide. Affiliate links included. Prices last verified on the site.",
     "license": "Free to read. Keep affiliate links intact when republishing."
   },
@@ -1342,8 +1342,6 @@
         "serious-bakers",
         "market-sellers"
       ],
-      "commissionRate": "15%",
-      "partnerStatus": "active-collab",
       "concierge": {
         "solves": [
           "My stand mixer strains on stiff whole grain dough",
@@ -1372,8 +1370,6 @@
         "serious-bakers",
         "market-sellers"
       ],
-      "commissionRate": "15%",
-      "partnerStatus": "active-collab",
       "concierge": {
         "solves": [
           "I want fine flour fast and I'm milling in volume",
@@ -1401,8 +1397,6 @@
       "audiences": [
         "serious-bakers"
       ],
-      "commissionRate": "15%",
-      "partnerStatus": "active-collab",
       "concierge": {
         "solves": [
           "I want to mill my own flour without a second mortgage",
@@ -1430,8 +1424,6 @@
       "audiences": [
         "serious-bakers"
       ],
-      "commissionRate": "15%",
-      "partnerStatus": "active-collab",
       "colorways": {
         "default": "Black",
         "black": "https://collabs.shop/lrhjzp",
@@ -1465,8 +1457,6 @@
       "audiences": [
         "serious-bakers"
       ],
-      "commissionRate": "10%",
-      "partnerStatus": "open-affiliate",
       "concierge": {
         "solves": [
           "I burn my knuckles loading dough into a screaming hot dutch oven",
@@ -1494,8 +1484,6 @@
       "audiences": [
         "serious-bakers"
       ],
-      "commissionRate": "15%",
-      "partnerStatus": "open-affiliate",
       "concierge": {
         "solves": [
           "Modern wheat doesn't sit well with me",
@@ -1523,8 +1511,6 @@
       "audiences": [
         "serious-bakers"
       ],
-      "commissionRate": "15%",
-      "partnerStatus": "open-affiliate",
       "concierge": {
         "solves": [
           "I bought a mill and now I need something worth milling",
@@ -1553,8 +1539,6 @@
         "new-bakers",
         "serious-bakers"
       ],
-      "commissionRate": "10%",
-      "partnerStatus": "open-affiliate",
       "concierge": {
         "solves": [
           "Someone at my table can't eat gluten and I'm tired of serving them bad bread",
@@ -1583,8 +1567,6 @@
         "serious-bakers",
         "market-sellers"
       ],
-      "commissionRate": "10%",
-      "partnerStatus": "open-affiliate",
       "concierge": {
         "solves": [
           "My pizza crust never gets that chew I'm after",
@@ -1612,8 +1594,6 @@
       "audiences": [
         "new-bakers"
       ],
-      "commissionRate": "15%",
-      "partnerStatus": "open-affiliate",
       "concierge": {
         "solves": [
           "I want to try sourdough but I don't know what to buy first",
@@ -1641,8 +1621,6 @@
       "audiences": [
         "new-bakers"
       ],
-      "commissionRate": "10%",
-      "partnerStatus": "open-affiliate",
       "concierge": {
         "solves": [
           "My starter died and I don't want to spend two weeks growing another",
@@ -1671,8 +1649,6 @@
       "audiences": [
         "new-bakers"
       ],
-      "commissionRate": "10%",
-      "partnerStatus": "open-affiliate",
       "concierge": {
         "solves": [
           "I've got a starter going and now I need the tools around it",
