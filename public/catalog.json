@@ -1,7 +1,7 @@
 {
   "meta": {
     "site": "https://holiday-gifts-2025.lovable.app",
-    "generated": "2026-08-22T00:01:01.567Z",
+    "generated": "2026-08-22T05:53:20.423Z",
     "description": "Consolidated product catalog for the Holiday Baking Gift Guide. Affiliate links included. Prices last verified on the site.",
     "license": "Free to read. Keep affiliate links intact when republishing."
   },
@@ -46,6 +46,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Goldie Starter Warmer by Sourhouse",
       "categories": [
         "Starter Care"
@@ -71,6 +72,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Sourdough Home + Starter Jar Bundle by Brød & Taylor",
       "categories": [
         "Starter Care"
@@ -96,6 +98,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Starter Jars (Pint or Quart) by Sourhouse",
       "categories": [
         "Starter Care"
@@ -121,6 +124,7 @@
       "source": "main",
       "currency": "USD",
       "rel": null,
+      "target": null,
       "alt": "Vitale Sourdough Starter (Dehydrated) by Vitale Sourdough Co.",
       "categories": [
         "Starter Care"
@@ -146,6 +150,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Sahara Folding Dehydrator by Brød & Taylor",
       "categories": [
         "Starter Care"
@@ -171,6 +176,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Sahara Poly Shelves by Brød & Taylor",
       "categories": [
         "Starter Care"
@@ -196,6 +202,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Folding Proofer & Slow Cooker by Brød & Taylor",
       "categories": [
         "Proofing & Temp"
@@ -221,6 +228,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Proofer Accessory Shelf Kit by Brød & Taylor",
       "categories": [
         "Proofing & Temp"
@@ -246,6 +254,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "DoughBed by Sourhouse",
       "categories": [
         "Proofing & Temp"
@@ -271,6 +280,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Bread Blanket by Sourhouse",
       "categories": [
         "Proofing & Temp"
@@ -296,6 +306,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "6 Qt Proofing Container by Brød & Taylor",
       "categories": [
         "Proofing & Temp"
@@ -321,6 +332,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Wood Pulp Banneton (Round) by Wire Monkey",
       "categories": [
         "Proofing & Temp"
@@ -346,6 +358,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Wood Pulp Banneton (Oval) by Wire Monkey",
       "categories": [
         "Proofing & Temp"
@@ -371,6 +384,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Reusable Banneton Covers by Wire Monkey",
       "categories": [
         "Proofing & Temp"
@@ -396,6 +410,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Goose Lame by Wire Monkey",
       "categories": [
         "Scoring & Shaping"
@@ -421,6 +436,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "UFO Zero Lame by Wire Monkey",
       "categories": [
         "Scoring & Shaping"
@@ -446,6 +462,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "UFO Bread Lame by Wire Monkey",
       "categories": [
         "Scoring & Shaping"
@@ -471,6 +488,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Poco Lame by Wire Monkey",
       "categories": [
         "Scoring & Shaping"
@@ -496,6 +514,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Arc Lame by Wire Monkey",
       "categories": [
         "Scoring & Shaping"
@@ -521,6 +540,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Bench Knife by Brød & Taylor",
       "categories": [
         "Scoring & Shaping"
@@ -546,6 +566,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Dough Whisk by Brød & Taylor",
       "categories": [
         "Scoring & Shaping"
@@ -571,6 +592,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Dough Whisk + Bench Knife Bundle by Brød & Taylor",
       "categories": [
         "Scoring & Shaping"
@@ -596,6 +618,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Non-Stick Silicone Mat by Brød & Taylor",
       "categories": [
         "Scoring & Shaping"
@@ -621,6 +644,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Challenger Bread Pan by Challenger Breadware",
       "categories": [
         "Bake Day"
@@ -646,6 +670,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Baking Shell (Batard) + Steel by Brød & Taylor",
       "categories": [
         "Bake Day"
@@ -671,6 +696,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Baking Shell + Steel Bundle by Brød & Taylor",
       "categories": [
         "Bake Day"
@@ -696,6 +722,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Baker’s Math Kitchen Scale by Brød & Taylor",
       "categories": [
         "Bake Day"
@@ -721,6 +748,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Spice & Coffee Grinder by Brød & Taylor",
       "categories": [
         "Bake Day"
@@ -746,6 +774,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Classic VG2 Knife Sharpener by Brød & Taylor",
       "categories": [
         "Bake Day"
@@ -771,6 +800,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Chef’s Apron by Brød & Taylor",
       "categories": [
         "Bake Day"
@@ -796,6 +826,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Toast Tongs by Wire Monkey",
       "categories": [
         "Bake Day"
@@ -821,6 +852,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Vegan Bread Wrap by Wire Monkey",
       "categories": [
         "Bake Day"
@@ -846,6 +878,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "17″ Walnut Bowl by Holland Bowl Mill",
       "categories": [
         "Wood & Serving"
@@ -871,6 +904,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "17″ Maple Bowl by Holland Bowl Mill",
       "categories": [
         "Wood & Serving"
@@ -896,6 +930,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "17″ Beechwood Bowl by Holland Bowl Mill",
       "categories": [
         "Wood & Serving"
@@ -921,6 +956,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "French Rolling Pin by Holland Bowl Mill",
       "categories": [
         "Wood & Serving"
@@ -946,6 +982,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Cherry Bread Board & Bow Knife by Holland Bowl Mill",
       "categories": [
         "Wood & Serving"
@@ -971,6 +1008,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Round Bread Sling by ModKitchn",
       "categories": [
         "Storage & Gifting"
@@ -996,6 +1034,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Oval Bread Sling by ModKitchn",
       "categories": [
         "Storage & Gifting"
@@ -1021,6 +1060,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Reusable Bread Bag by ModKitchn",
       "categories": [
         "Storage & Gifting"
@@ -1046,6 +1086,7 @@
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Holiday Bread Bags (Limited) by ModKitchn",
       "categories": [
         "Storage & Gifting"
@@ -1068,6 +1109,7 @@
       "source": "krustic",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Baker's Bundle",
       "categories": [],
       "priceBand": "splurge",
@@ -1086,6 +1128,7 @@
       "source": "krustic",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Enameled Dutch Oven — Round",
       "categories": [],
       "priceBand": "75-150",
@@ -1104,6 +1147,7 @@
       "source": "krustic",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Enameled Dutch Oven — Oval",
       "categories": [],
       "priceBand": "splurge",
@@ -1122,6 +1166,7 @@
       "source": "krustic",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Cast Iron Dutch Oven — Round",
       "categories": [],
       "priceBand": "75-150",
@@ -1140,6 +1185,7 @@
       "source": "krustic",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Cast Iron Dutch Oven — Oval",
       "categories": [],
       "priceBand": "splurge",
@@ -1158,6 +1204,7 @@
       "source": "krustic",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Wood Pulp Banneton — Oval",
       "categories": [],
       "priceBand": "25-75",
@@ -1176,6 +1223,7 @@
       "source": "krustic",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Silicone Transfer Mat",
       "categories": [],
       "priceBand": "under-25",
@@ -1198,6 +1246,7 @@
       "affiliate_tag": "onamz55024a-20",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Lodge 6qt Dutch Oven",
       "categories": [],
       "priceBand": "75-150",
@@ -1218,6 +1267,7 @@
       "affiliate_tag": "onamz55024a-20",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Challenger Bread Pan",
       "categories": [],
       "priceBand": "splurge",
@@ -1238,6 +1288,7 @@
       "affiliate_tag": "onamz55024a-20",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "MyWeigh KD-8000 Scale",
       "categories": [],
       "priceBand": "25-75",
@@ -1258,6 +1309,7 @@
       "affiliate_tag": "onamz55024a-20",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Bread Bosses Banneton",
       "categories": [],
       "priceBand": "under-25",
@@ -1278,6 +1330,7 @@
       "affiliate_tag": "onamz55024a-20",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Wire Monkey UFO Lame",
       "categories": [],
       "priceBand": "25-75",
@@ -1298,6 +1351,7 @@
       "affiliate_tag": "onamz55024a-20",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Thermapen ONE",
       "categories": [],
       "priceBand": "75-150",
@@ -1318,6 +1372,7 @@
       "affiliate_tag": "onamz55024a-20",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Baking Steel",
       "categories": [],
       "priceBand": "75-150",
@@ -1338,6 +1393,7 @@
       "affiliate_tag": "onamz55024a-20",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "OXO Bench Scraper",
       "categories": [],
       "priceBand": "under-25",
@@ -1358,6 +1414,7 @@
       "affiliate_tag": "onamz55024a-20",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Brod & Taylor Dough Whisk",
       "categories": [],
       "priceBand": "under-25",
@@ -1378,6 +1435,7 @@
       "affiliate_tag": "onamz55024a-20",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "ThermoWorks ThermoPop",
       "categories": [],
       "priceBand": "25-75",
@@ -1398,6 +1456,7 @@
       "affiliate_tag": "onamz55024a-20",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Cambro 6qt Container",
       "categories": [],
       "priceBand": "under-25",
@@ -1418,6 +1477,7 @@
       "affiliate_tag": "onamz55024a-20",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Checkered Chef Cooling Rack",
       "categories": [],
       "priceBand": "under-25",
@@ -1438,6 +1498,7 @@
       "affiliate_tag": "onamz55024a-20",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "KitchenAid Artisan 5qt Stand Mixer",
       "categories": [],
       "priceBand": "splurge",
@@ -1458,6 +1519,7 @@
       "affiliate_tag": "onamz55024a-20",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Feather Razor Blades (100 pack)",
       "categories": [],
       "priceBand": "under-25",
@@ -1478,6 +1540,7 @@
       "affiliate_tag": "onamz55024a-20",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Silicone Bread Sling",
       "categories": [],
       "priceBand": "under-25",
@@ -1498,6 +1561,7 @@
       "affiliate_tag": "onamz55024a-20",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Ball Wide Mouth Mason Jars (12)",
       "categories": [],
       "priceBand": "under-25",
@@ -1518,6 +1582,7 @@
       "affiliate_tag": "onamz55024a-20",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Le Creuset Signature Dutch Oven 5.5qt",
       "categories": [],
       "priceBand": "splurge",
@@ -1538,6 +1603,7 @@
       "affiliate_tag": "onamz55024a-20",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Staub Cast Iron Round Cocotte 5.5qt",
       "categories": [],
       "priceBand": "splurge",
@@ -1558,6 +1624,7 @@
       "affiliate_tag": "onamz55024a-20",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Lavatools Javelin PRO Duo",
       "categories": [],
       "priceBand": "25-75",
@@ -1578,6 +1645,7 @@
       "affiliate_tag": "onamz55024a-20",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "FibraMent-D Baking Stone",
       "categories": [],
       "priceBand": "75-150",
@@ -1598,6 +1666,7 @@
       "affiliate_tag": "onamz55024a-20",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Emile Henry Bread Cloche",
       "categories": [],
       "priceBand": "75-150",
@@ -1618,6 +1687,7 @@
       "affiliate_tag": "onamz55024a-20",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Ankarsrum Original Stand Mixer",
       "categories": [],
       "priceBand": "splurge",
@@ -1638,6 +1708,7 @@
       "affiliate_tag": "onamz55024a-20",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Matfer Bourgeat Silicone Baking Mat",
       "categories": [],
       "priceBand": "25-75",
@@ -1659,6 +1730,7 @@
       "source": "books",
       "currency": "USD",
       "rel": null,
+      "target": null,
       "alt": "Sourdough for the Rest of Us",
       "categories": [],
       "priceBand": "under-25",
@@ -1678,6 +1750,7 @@
       "source": "books",
       "currency": "USD",
       "rel": null,
+      "target": null,
       "alt": "Vitale Sourdough Mastery",
       "categories": [],
       "priceBand": "under-25",
@@ -1697,6 +1770,7 @@
       "source": "books",
       "currency": "USD",
       "rel": null,
+      "target": null,
       "alt": "From Oven to Market",
       "categories": [],
       "priceBand": "under-25",
@@ -1716,6 +1790,7 @@
       "source": "books",
       "currency": "USD",
       "rel": null,
+      "target": null,
       "alt": "The Loaf and the Lie",
       "categories": [],
       "priceBand": "under-25",
@@ -1735,6 +1810,7 @@
       "source": "books",
       "currency": "USD",
       "rel": null,
+      "target": null,
       "alt": "Bread: A Journey",
       "categories": [],
       "priceBand": "under-25",
@@ -1756,6 +1832,7 @@
       "price": null,
       "currency": null,
       "rel": null,
+      "target": null,
       "alt": "Sourdough Starter Guide",
       "categories": [],
       "priceBand": null,
@@ -1775,6 +1852,7 @@
       "price": null,
       "currency": null,
       "rel": null,
+      "target": null,
       "alt": "Recipe Collection",
       "categories": [],
       "priceBand": null,

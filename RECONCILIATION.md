@@ -13,6 +13,7 @@ New fields on every record in `products`, `krustic`, `amazon`, `books`, `free_re
 | `price` | Normalized number. Strings stripped of `$` and commas, parsed. Unparseable or absent becomes `null`. |
 | `currency` | `"USD"` wherever a price exists (every price in this catalog comes from a US-dollar storefront); `null` where price is `null`. |
 | `rel` | `"nofollow sponsored noopener"` on every record whose URL carries an affiliate signal; `null` otherwise. |
+| `target` | `"_blank"` wherever `rel` is set; `null` otherwise. Brief section 7 requires both attributes on every affiliate link, and they are one policy, so they live together in the data. (The render-layer alternative is untestable here: the Vite build emits a client-rendered shell with no anchor tags, so there is no built HTML to assert against until Phase 2.) |
 | `alt` | Derived only from `name` and `brand` already in the record (`"Name by Brand"`, or just `"Name"` when no brand). `null` if no usable name. |
 | `categories` | One-element array from `cat` where `cat` exists, else empty array. `cat` kept in place for downstream compatibility. |
 | `priceBand` | Derived from normalized price: under 25 → `under-25`, 25 to 74.99 → `25-75`, 75 to 149.99 → `75-150`, 150+ → `splurge`, null price → `null`. Never inferred from category or description. |
@@ -108,7 +109,7 @@ None. Every one of the 78 records has a usable `name`, so no alt is null. Alt us
 
 ## rel assignments
 
-70 of 78 records carry `rel="nofollow sponsored noopener"`. The rule (in `scripts/catalog-lib.mjs`): a URL is affiliate if it has any of the tracking params `tag=`, `rfsn=`, `wpam_id=`, `ref=`, `dt_id=`; or matches a known-affiliate prefix verified by following redirects on 2026-08-21 (`collabs.shop/*` lands on Brod & Taylor with `dt_id=` attribution, `bit.ly/Sourhouse` lands on a ReferralCandy share link, `brodandtaylor.com/henrysbreadkitchen` lands with `dt_id=`); or is a discount-code link carrying Henry's code on a known host (`modkitchn.com/discount/BAKINGGREATBREAD10`).
+70 of 78 records carry `rel="nofollow sponsored noopener"` and `target="_blank"`. The rule (in `scripts/catalog-lib.mjs`): a URL is affiliate if it has any of the tracking params `tag=`, `rfsn=`, `wpam_id=`, `dt_id=`; or carries one of two exact partner `ref=` values on their known hosts (`sourhouse.co?ref=BAKINGGREATBREAD`, `challengerbreadware.com/?ref=henryhunterjr`); or matches a known-affiliate host+path prefix verified by following redirects on 2026-08-21 (`collabs.shop/*` lands on Brod & Taylor with `dt_id=` attribution, `bit.ly/Sourhouse` lands on a ReferralCandy share link, `brodandtaylor.com/henrysbreadkitchen` lands with `dt_id=`), matched on normalized hostname so `http://` and `www.` variants cannot silently miss; or is a discount-code link carrying Henry's code on a known host (`modkitchn.com/discount/BAKINGGREATBREAD10`).
 
 Got rel:
 - products: 40 of 41 (Sourhouse ref links, bit.ly/Sourhouse, all collabs.shop links, brodandtaylor.com/henrysbreadkitchen, wiremonkey rfsn links, Challenger ?ref=henryhunterjr, Holland Bowl Mill wpam_id=10 links, ModKitchn discount-code links)
@@ -136,11 +137,14 @@ Did not get rel, and why:
 
 The repo had no test runner (package.json scripts were dev/build/lint/preview only), so this is the fallback route: a plain Node assertion script, no framework added.
 
-- `scripts/test-catalog.mjs` reads `public/catalog.json`, walks the five arrays, and fails with exit code 1 listing every record whose URL matches an affiliate signal but whose `rel` is not `"nofollow sponsored noopener"`.
+- `scripts/test-catalog.mjs` reads `public/catalog.json`, walks the five arrays, and fails with exit code 1 listing every record whose URL matches an affiliate signal but whose `rel` is not `"nofollow sponsored noopener"` or whose `target` is not `"_blank"`.
+- Vacuous-pass guard: the test also enforces a floor, `MIN_AFFILIATE_RECORDS = 70` (the count as of 2026-08-21). If detection ever finds fewer than 70 affiliate records it fails with a message saying the affiliate detection rule in `catalog-lib.mjs` likely broke, rather than implying the catalog merely changed.
 - Wired into `package.json`: `"build": "node scripts/build-catalog.mjs && node scripts/test-catalog.mjs && vite build"`, so `npm run build` fails before Vite ever runs if the test trips.
 - Run it alone with either `npm run test` (added) or directly: `node scripts/test-catalog.mjs`.
 
-Negative test confirmed: removing one record's rel makes the test exit 1 with a named failure; regenerating restores the pass.
+Negative tests confirmed:
+- Removing one record's rel or target: test exits 1 with a named failure.
+- Stripping every URL from the catalog (detection-rule collapse): test exits 1 via the floor assertion with the rule-broke message.
 
 ## Verification done
 
