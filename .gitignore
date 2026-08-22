@@ -31,3 +31,10 @@ Charlie Wiskin-*
 
 
 catalog.partners.json
+
+# Next.js site
+site/node_modules/
+site/.next/
+site/out/
+site/tsconfig.tsbuildinfo
+site/next-env.d.ts
