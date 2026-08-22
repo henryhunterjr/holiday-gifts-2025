@@ -138,7 +138,7 @@ Did not get rel, and why:
 The repo had no test runner (package.json scripts were dev/build/lint/preview only), so this is the fallback route: a plain Node assertion script, no framework added.
 
 - `scripts/test-catalog.mjs` reads `public/catalog.json`, walks the five arrays, and fails with exit code 1 listing every record whose URL matches an affiliate signal but whose `rel` is not `"nofollow sponsored noopener"` or whose `target` is not `"_blank"`.
-- Vacuous-pass guard: the test also enforces a floor, `MIN_AFFILIATE_RECORDS = 70` (the count as of 2026-08-21). If detection ever finds fewer than 70 affiliate records it fails with a message saying the affiliate detection rule in `catalog-lib.mjs` likely broke, rather than implying the catalog merely changed.
+- Vacuous-pass guard: the test also enforces a floor, `MIN_AFFILIATE_RECORDS = 60`. The actual count was 70 as of 2026-08-21; the floor is deliberately slack so legitimately retiring a product does not false-alarm and send the failure message pointing at the detection rule when nothing is wrong. It should be raised if the catalog grows a lot.
 - Wired into `package.json`: `"build": "node scripts/build-catalog.mjs && node scripts/test-catalog.mjs && vite build"`, so `npm run build` fails before Vite ever runs if the test trips.
 - Run it alone with either `npm run test` (added) or directly: `node scripts/test-catalog.mjs`.
 

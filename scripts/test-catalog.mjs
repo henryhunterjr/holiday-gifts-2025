@@ -8,10 +8,11 @@ import { fileURLToPath } from "node:url";
 import assert from "node:assert/strict";
 import { isAffiliateUrl, REL_AFFILIATE, TARGET_AFFILIATE } from "./catalog-lib.mjs";
 
-// Floor on how many affiliate records the detection rule must find. If this
-// ever trips, the affiliate detection rule in catalog-lib.mjs likely broke
-// rather than the catalog having changed. Count was 70 as of 2026-08-21.
-const MIN_AFFILIATE_RECORDS = 70;
+// Floor on how many affiliate records the detection rule must find. The count
+// was 70 as of 2026-08-21. This floor is deliberately slack (60): set at the
+// exact count it would false-alarm the first time a product legitimately
+// retires. Raise it if the catalog grows a lot.
+const MIN_AFFILIATE_RECORDS = 60;
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const catalog = JSON.parse(fs.readFileSync(path.join(root, "public", "catalog.json"), "utf8"));
