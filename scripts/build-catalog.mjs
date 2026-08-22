@@ -62,6 +62,14 @@ for (const line of amazonSrc.split("\n")) {
   const name = get("name");
   if (!name) continue;
   amazon.push({
+    // Amazon records arrive without slugs; derive one from the name so every
+    // record in the catalog carries the same stable identifier (used by the
+    // site's per-product markup markers and its render-count test).
+    slug: name
+      .toLowerCase()
+      .replace(/['’]/g, "")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, ""),
     name,
     category: get("category"),
     price: get("price"),

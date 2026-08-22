@@ -8,7 +8,7 @@ export function ProductList({ products }: { products: CatalogRecord[] }) {
   return (
     <ul>
       {products.map((p, i) => (
-        <li key={`${p.slug ?? p.name ?? i}`}>
+        <li key={`${p.slug ?? p.name ?? i}`} data-product-slug={p.slug}>
           {p.url ? (
             <a href={p.url} rel={p.rel ?? undefined} target={p.target ?? undefined}>
               {p.name}

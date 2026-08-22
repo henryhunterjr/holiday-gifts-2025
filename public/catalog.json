@@ -1,7 +1,7 @@
 {
   "meta": {
     "site": "https://holiday-gifts-2025.lovable.app",
-    "generated": "2026-08-22T22:52:09.088Z",
+    "generated": "2026-08-22T23:32:34.454Z",
     "description": "Consolidated product catalog for the Holiday Baking Gift Guide. Affiliate links included. Prices last verified on the site.",
     "license": "Free to read. Keep affiliate links intact when republishing."
   },
@@ -1845,6 +1845,7 @@
   ],
   "amazon": [
     {
+      "slug": "lodge-6qt-dutch-oven",
       "name": "Lodge 6qt Dutch Oven",
       "category": "Dutch Oven",
       "price": 79.99,
@@ -1873,6 +1874,7 @@
       }
     },
     {
+      "slug": "myweigh-kd-8000-scale",
       "name": "MyWeigh KD-8000 Scale",
       "category": "Scale",
       "price": 39.95,
@@ -1903,6 +1905,7 @@
       }
     },
     {
+      "slug": "bread-bosses-banneton",
       "name": "Bread Bosses Banneton",
       "category": "Banneton",
       "price": 16.95,
@@ -1931,6 +1934,7 @@
       }
     },
     {
+      "slug": "thermapen-one",
       "name": "Thermapen ONE",
       "category": "Thermometer",
       "price": 105,
@@ -1959,6 +1963,7 @@
       }
     },
     {
+      "slug": "baking-steel",
       "name": "Baking Steel",
       "category": "Baking Steel",
       "price": 119,
@@ -1987,6 +1992,7 @@
       }
     },
     {
+      "slug": "oxo-bench-scraper",
       "name": "OXO Bench Scraper",
       "category": "Bench Tool",
       "price": 10.99,
@@ -2015,6 +2021,7 @@
       }
     },
     {
+      "slug": "thermoworks-thermopop",
       "name": "ThermoWorks ThermoPop",
       "category": "Thermometer",
       "price": 34,
@@ -2044,6 +2051,7 @@
       }
     },
     {
+      "slug": "cambro-6qt-container",
       "name": "Cambro 6qt Container",
       "category": "Container",
       "price": 17.29,
@@ -2073,6 +2081,7 @@
       }
     },
     {
+      "slug": "checkered-chef-cooling-rack",
       "name": "Checkered Chef Cooling Rack",
       "category": "Cooling Rack",
       "price": 12.95,
@@ -2101,6 +2110,7 @@
       }
     },
     {
+      "slug": "kitchenaid-artisan-5qt-stand-mixer",
       "name": "KitchenAid Artisan 5qt Stand Mixer",
       "category": "Stand Mixer",
       "price": 449.99,
@@ -2129,6 +2139,7 @@
       }
     },
     {
+      "slug": "feather-razor-blades-100-pack",
       "name": "Feather Razor Blades (100 pack)",
       "category": "Scoring",
       "price": 18.5,
@@ -2158,6 +2169,7 @@
       }
     },
     {
+      "slug": "silicone-bread-sling",
       "name": "Silicone Bread Sling",
       "category": "Sling",
       "price": 12.99,
@@ -2186,6 +2198,7 @@
       }
     },
     {
+      "slug": "ball-wide-mouth-mason-jars-12",
       "name": "Ball Wide Mouth Mason Jars (12)",
       "category": "Starter Jar",
       "price": 18.99,
@@ -2215,6 +2228,7 @@
       }
     },
     {
+      "slug": "le-creuset-signature-dutch-oven-5-5qt",
       "name": "Le Creuset Signature Dutch Oven 5.5qt",
       "category": "Dutch Oven",
       "price": 369.95,
@@ -2243,6 +2257,7 @@
       }
     },
     {
+      "slug": "staub-cast-iron-round-cocotte-5-5qt",
       "name": "Staub Cast Iron Round Cocotte 5.5qt",
       "category": "Dutch Oven",
       "price": 329.99,
@@ -2271,6 +2286,7 @@
       }
     },
     {
+      "slug": "lavatools-javelin-pro-duo",
       "name": "Lavatools Javelin PRO Duo",
       "category": "Thermometer",
       "price": 54.99,
@@ -2299,6 +2315,7 @@
       }
     },
     {
+      "slug": "fibrament-d-baking-stone",
       "name": "FibraMent-D Baking Stone",
       "category": "Baking Stone",
       "price": 89.95,
@@ -2327,6 +2344,7 @@
       }
     },
     {
+      "slug": "emile-henry-bread-cloche",
       "name": "Emile Henry Bread Cloche",
       "category": "Cloche",
       "price": 89.95,
@@ -2355,6 +2373,7 @@
       }
     },
     {
+      "slug": "ankarsrum-original-stand-mixer",
       "name": "Ankarsrum Original Stand Mixer",
       "category": "Stand Mixer",
       "price": 799,
@@ -2384,6 +2403,7 @@
       }
     },
     {
+      "slug": "matfer-bourgeat-silicone-baking-mat",
       "name": "Matfer Bourgeat Silicone Baking Mat",
       "category": "Baking Mat",
       "price": 32,
