@@ -182,6 +182,14 @@ Note: these 4 are part of the likely miscount behind the brief's "85" (Theory A 
 5. **Enrichment merge** — done 2026-08-22, see "Enrichment and seed merge" above. The NutriMill/Fourneau/Farm2Flour/Fusek/Better Batter/Polselli/FarmSteady/Made With Loave presence check resolved by the seed merge: none were in the catalog before; all 12 are now added, including all four NutriMill items at 15% commission, the best rate in Henry's account.
 6. **Currency assumption:** every storefront in the catalog prices in USD, so currency is set to `"USD"` for all 76 parsed prices, including those stored as bare numbers. If any non-dollar price ever enters the data, the parser will need a currency hint rather than this default.
 
+## Structured data and canonicals (2026-08-22, Phase 2 brief 3)
+
+The Next site (`site/`) emits one ItemList JSON-LD block per page plus a self-referential canonical on all 16 routes, derived from `BASE_URL` in `site/lib/site.mjs` (currently `https://bakinggreatbread.blog/gifts`; trailing slashes match static export).
+
+**Products shipped without an offer: 12.** These are exactly the twelve seed products (NutriMill x4, Fourneau, Farm2Flour, Fusek, Better Batter, Polselli, FarmSteady, Made With Loave x2), whose `price` is null by design. Schema.org Offer requires a price; rather than emit a null, zero or invented price, those Product entries ship with no `offers` property at all. They gain offers automatically the day real prices land in the catalog.
+
+Also enforced by build tests: free_resources never appear as Product/Book/Offer (they are list items only); no aggregateRating or review anywhere (no ratings data exists); no priceValidUntil (no such data); ItemList length must equal the rendered product count per page; every ld+json block must parse; every canonical must be exactly one, absolute, and match its own generated path. The five books emit as Book with author Henry Hunter and keep their offers (all five have prices). `priceCheckedAt` logic is wired: pages render the max across the catalog when a real date exists, and render nothing today while every value is null.
+
 ## Enrichment and seed merge (2026-08-22)
 
 `scripts/build-catalog.mjs` now reads `catalog.enrichment.json` (keyed by array then exact record name) and `catalog.seed.json`. Pre-merge verification, all three checks passed with zero mismatches: (1) all 75 enrichment names matched catalog record names exactly — no fuzzy matching, no quote normalization; (2) every catalog record had an enrichment entry except exactly the 3 records named in `dropRecords.amazon`; (3) counts products 41 / krustic 7 / amazon 20 / books 5 / free_resources 2 = 75.

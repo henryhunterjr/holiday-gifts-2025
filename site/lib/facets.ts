@@ -11,8 +11,9 @@ export function buildFacets(): Facet[] {
   ];
 }
 
-export function productsForFacet(facet: Facet) {
+export function productsForFacet(facet: Facet | null) {
   const { products } = readCatalog();
+  if (!facet) return products;
   switch (facet.kind) {
     case "category":
       return products.filter((p) => (p.categories ?? []).includes(facet.name));

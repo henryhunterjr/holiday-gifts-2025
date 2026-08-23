@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/check-slugs.mjs && node scripts/check-facets.mjs && next build && node scripts/check-render.mjs",
+    "build": "node scripts/check-slugs.mjs && node scripts/check-facets.mjs && next build && node scripts/check-render.mjs && node scripts/check-schema.mjs",
     "start": "next start"
   },
   "dependencies": {
