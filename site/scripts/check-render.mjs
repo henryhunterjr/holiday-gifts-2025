@@ -21,8 +21,21 @@ function visibleMarkup(html) {
 }
 
 const raw = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
+const content = JSON.parse(fs.readFileSync(path.resolve(here, "..", "content", "facets.json"), "utf8"));
 const arrays = ["products", "krustic", "amazon", "books", "free_resources"].flatMap((k) => raw[k] ?? []);
 const all = arrays;
+
+function visibleText(html) {
+  // Script/style stripped, tags stripped, then the handful of entities React
+  // emits decoded, so needles with ampersands or apostrophes match.
+  return visibleMarkup(html)
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&#x27;|&#39;/g, "'")
+    .replace(/&quot;/g, '"');
+}
 
 function expectedFor(facet) {
   if (!facet) return all;
@@ -62,6 +75,22 @@ for (const r of routes) {
   const ok = actual === expected;
   console.log(`${r.label.padEnd(30)} ${String(expected).padStart(8)}  ${String(actual).padStart(6)}${ok ? "" : "   <-- MISMATCH"}`);
   if (!ok) failures.push(`${r.label}: expected ${expected} products, rendered ${actual}`);
+
+  // Page copy assertions: intro and pinned pick must appear as visible text,
+  // and the pinned product must be the first product rendered on the page.
+  const page = content.pages[r.label];
+  if (page) {
+    const text = visibleText(fs.readFileSync(file, "utf8"));
+    if (!text.includes(page.intro)) failures.push(`${r.label}: intro copy missing from visible text`);
+    if (page.pinnedPick) {
+      if (!text.includes(page.pinnedPick)) failures.push(`${r.label}: pinned pick "${page.pinnedPick}" missing from visible text`);
+      const pinRecord = all.find((p) => p.name === page.pinnedPick);
+      const firstMarker = (markup.match(/data-product-slug="([^"]+)"/) || [])[1];
+      if (pinRecord && firstMarker !== pinRecord.slug) {
+        failures.push(`${r.label}: pinned "${page.pinnedPick}" (slug ${pinRecord.slug}) is not first in render order (first is ${firstMarker})`);
+      }
+    }
+  }
 }
 
 // Named canary: the acceptance needle must appear as real text on index and bake-day.

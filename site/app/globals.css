@@ -1,16 +1,73 @@
-/* Bare minimum. Briefs 2 covers real styling. */
+/* Legible, not finished. Brief 3 and Phase 3 replace this. */
 body {
-  font-family: system-ui, sans-serif;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.6;
   margin: 2rem auto;
-  max-width: 60rem;
-  padding: 0 1rem;
+  max-width: 42rem;
+  padding: 0 1.25rem;
+  color: #1d1d1d;
+  background: #fdfcf9;
 }
-nav {
-  margin-bottom: 1rem;
+nav,
+.facets {
+  margin-bottom: 1.5rem;
 }
 h1 {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
+  line-height: 1.25;
 }
-li {
-  margin: 0.5rem 0;
+h2 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+a {
+  color: #7a3320;
+}
+.intro {
+  font-style: italic;
+}
+.products {
+  list-style: none;
+  padding: 0;
+}
+.products li {
+  margin: 1.25rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e4ded2;
+}
+.products li.pinned {
+  border-left: 4px solid #b3552e;
+  padding-left: 0.75rem;
+}
+.pick-label {
+  display: block;
+  font-family: system-ui, sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #b3552e;
+  margin-bottom: 0.15rem;
+}
+.name {
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+.desc {
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+}
+.code {
+  margin: 0.25rem 0 0;
+  font-family: system-ui, sans-serif;
+  font-size: 0.85rem;
+}
+.facets ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  columns: 2;
+}
+.facets li {
+  margin: 0.15rem 0;
+  font-size: 0.95rem;
 }
