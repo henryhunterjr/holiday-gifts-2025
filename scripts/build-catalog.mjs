@@ -10,7 +10,6 @@ import { enrichRecord, isAffiliateUrl, REL_AFFILIATE, TARGET_AFFILIATE, parsePri
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (p) => fs.readFileSync(path.join(root, p), "utf8");
 
-const SITE = "https://holiday-gifts-2025.lovable.app";
 const data = JSON.parse(read("src/data/products.json"));
 const config = read("src/lib/guideConfig.ts");
 
@@ -80,8 +79,6 @@ for (const line of amazonSrc.split("\n")) {
     affiliate_tag: TAG,
   });
 }
-
-const abs = (u) => (u?.startsWith("/") ? SITE + u : u);
 
 // Enrichment merge: catalog.enrichment.json is keyed by array then exact
 // record name. It replaces categories, audiences and concierge.solves only.
@@ -189,7 +186,7 @@ const catalog = {
     ...enrichAll(
       data.products
         .filter((p) => !disabled.has(p.slug))
-        .map((p) => ({ ...p, img: abs(p.img), source: "main" })),
+        .map((p) => ({ ...p, source: "main" })),
       "products"
     ),
     ...seedProducts,
@@ -199,8 +196,8 @@ const catalog = {
     amazon.filter((a) => !dropNamesFor("amazon").has(a.name)),
     "amazon"
   ),
-  books: enrichAll((data.books || []).map((b) => ({ ...b, img: abs(b.img), source: "books" })), "books"),
-  free_resources: enrichAll((data.free || []).map((f) => ({ ...f, img: abs(f.img), source: "free" })), "free_resources"),
+  books: enrichAll((data.books || []).map((b) => ({ ...b, source: "books" })), "books"),
+  free_resources: enrichAll((data.free || []).map((f) => ({ ...f, source: "free" })), "free_resources"),
 };
 
 const out = path.join(root, "public", "catalog.json");
