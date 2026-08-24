@@ -8,7 +8,7 @@ export default function HowToWrapSourdoughAsAGift() {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: "How to Wrap Sourdough as a Gift",
-    mainEntityOfPage: { "@type": "WebPage", "@id": `https://holiday-gifts-2025.lovable.app${PATH}` },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://gifts.bakinggreatbread.blog${PATH}` },
     inLanguage: "en-US",
     about: ["how to wrap sourdough as a gift", "sourdough gift", "Give Bread Instead"],
   };

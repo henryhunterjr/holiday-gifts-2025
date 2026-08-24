@@ -8,7 +8,7 @@ export default function SourdoughStarterCareGuide() {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: "How to Care for a Sourdough Starter (Beginner Guide)",
-    mainEntityOfPage: { "@type": "WebPage", "@id": `https://holiday-gifts-2025.lovable.app${PATH}` },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://gifts.bakinggreatbread.blog${PATH}` },
     inLanguage: "en-US",
     about: [
       "sourdough starter",

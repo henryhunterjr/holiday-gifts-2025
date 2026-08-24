@@ -8,7 +8,7 @@ export default function FixGummyDenseSourdough() {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: "How to Fix Gummy or Dense Sourdough",
-    mainEntityOfPage: { "@type": "WebPage", "@id": `https://holiday-gifts-2025.lovable.app${PATH}` },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://gifts.bakinggreatbread.blog${PATH}` },
     inLanguage: "en-US",
     about: ["gummy sourdough", "dense sourdough bread", "sourdough troubleshooting"],
   };
