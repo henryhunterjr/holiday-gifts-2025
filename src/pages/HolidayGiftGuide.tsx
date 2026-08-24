@@ -390,7 +390,7 @@ function GiftFinderQuiz({ open, onClose }: { open: boolean; onClose: () => void 
 export default function HolidayGiftGuide() {
   const days = useDaysToChristmas();
   const location = useLocation();
-  const canonicalUrl = `https://holiday-gifts-2025.lovable.app${location.pathname === "/" ? "/" : location.pathname}`;
+  const canonicalUrl = `https://gifts.bakinggreatbread.blog${location.pathname === "/" ? "/" : location.pathname}`;
   const [snow, setSnow] = useState(true);
   const [search, setSearch] = useState("");
   const [cat, setCat] = useState<string | null>(null);
@@ -460,9 +460,9 @@ export default function HolidayGiftGuide() {
       "@graph": [
         {
           "@type": "WebPage",
-          "@id": "https://holiday-gifts-2025.lovable.app/#webpage",
+          "@id": "https://gifts.bakinggreatbread.blog/#webpage",
           name: "The Bread Lover's Holiday Gift Guide 2026",
-          url: "https://holiday-gifts-2025.lovable.app/",
+          url: "https://gifts.bakinggreatbread.blog/",
           description: "The 2026 holiday gift guide for bread bakers. Handpicked tools, wood bowls, lames, and books from Henry Hunter.",
         },
         {
@@ -483,10 +483,10 @@ export default function HolidayGiftGuide() {
         <meta property="og:title" content="Holiday Gift Guide 2026 | Bread Baker Essentials" />
         <meta property="og:description" content="The 2026 curated gift guide for bread bakers and sourdough obsessives. Real recommendations from Henry Hunter." />
         <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:image" content="https://holiday-gifts-2025.lovable.app/og-image.png" />
+        <meta property="og:image" content="https://gifts.bakinggreatbread.blog/og-image.png" />
         <meta name="twitter:title" content="Holiday Gift Guide 2026 | Bread Baker Essentials" />
         <meta name="twitter:description" content="Curated 2026 gifts for bread bakers and sourdough enthusiasts." />
-        <meta name="twitter:image" content="https://holiday-gifts-2025.lovable.app/og-image.png" />
+        <meta name="twitter:image" content="https://gifts.bakinggreatbread.blog/og-image.png" />
       </Helmet>
       <script
         type="application/ld+json"

@@ -3,8 +3,10 @@
 // lost or clobbered something.
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
+import { BASE_URL } from "../site/lib/site.mjs";
 
 const DIST = "dist";
+const SITE_ORIGIN = new URL(BASE_URL).origin;
 
 function fail(msg) {
   console.error(`check-dist: ${msg}`);
@@ -14,6 +16,16 @@ function fail(msg) {
 function readFile(p) {
   if (!existsSync(p)) fail(`${p} missing`);
   return readFileSync(p, "utf8");
+}
+
+function walk(dir) {
+  const out = [];
+  for (const name of readdirSync(dir)) {
+    const p = join(dir, name);
+    if (statSync(p).isDirectory()) out.push(...walk(p));
+    else out.push(p);
+  }
+  return out;
 }
 
 // SPA survived.
@@ -45,7 +57,30 @@ const catalog = readFile(`${DIST}/catalog.json`);
 if (catalog.includes("commissionRate") || catalog.includes("partnerStatus")) {
   fail("dist/catalog.json contains commissionRate or partnerStatus");
 }
+const metaSite = JSON.parse(catalog).meta?.site;
+if (metaSite !== SITE_ORIGIN) {
+  fail(`dist/catalog.json meta.site is ${JSON.stringify(metaSite)}, expected ${JSON.stringify(SITE_ORIGIN)}`);
+}
+
+// Sitemap: exists, structurally valid, one <loc> per shipped gift route.
+const sitemap = readFile(`${DIST}/sitemap.xml`);
+if (!sitemap.startsWith("<?xml") || !sitemap.includes("<urlset") || !sitemap.includes("</urlset>")) {
+  fail("dist/sitemap.xml does not look like a valid urlset");
+}
+const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+if (locs.length === 0) fail("dist/sitemap.xml has no <loc> entries");
+for (const want of [`${SITE_ORIGIN}/gifts/`, ...facetDirs.map((d) => `${SITE_ORIGIN}/gifts/${d}/`)]) {
+  if (!locs.includes(want)) fail(`dist/sitemap.xml is missing <loc> ${want}`);
+}
+
+// The cheap catch-all: nothing that ships may reference the dead host.
+const lovableFiles = walk(DIST).filter((f) => readFile(f).includes("lovable.app"));
+if (lovableFiles.length) {
+  fail(
+    `lovable.app found in ${lovableFiles.length} dist file(s):\n  ${lovableFiles.slice(0, 10).join("\n  ")}`
+  );
+}
 
 console.log(
-  `check-dist passed: SPA at /, ${routeCount} gift routes with visible product text, _next/static populated, catalog.json clean`
+  `check-dist passed: SPA at /, ${routeCount} gift routes with visible product text, _next/static populated, catalog.json points at ${SITE_ORIGIN}, sitemap has ${locs.length} URLs, zero lovable.app references`
 );

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import type { ReactNode } from "react";
 
-const SITE = "https://holiday-gifts-2025.lovable.app";
+const SITE = "https://gifts.bakinggreatbread.blog";
 const OG_IMAGE = `${SITE}/og-image.png`;
 
 export type SeoPageProps = {

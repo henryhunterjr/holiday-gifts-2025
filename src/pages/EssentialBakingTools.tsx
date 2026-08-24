@@ -2,7 +2,7 @@ import { SeoPage, StubSection } from "@/components/seo/SeoPage";
 import { Link } from "react-router-dom";
 
 const PATH = "/essential-baking-tools";
-const SITE = "https://holiday-gifts-2025.lovable.app";
+const SITE = "https://gifts.bakinggreatbread.blog";
 
 const PLACEHOLDER_ITEMS = [
   { name: "Digital kitchen scale", url: `${SITE}${PATH}#tbd-scale` },

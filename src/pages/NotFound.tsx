@@ -15,7 +15,7 @@ const NotFound = () => {
         <title>Page Not Found | Baking Great Bread at Home</title>
         <meta name="description" content="This page does not exist. Head back to the 2026 Holiday Gift Guide for bread bakers." />
         <meta name="robots" content="noindex" />
-        <link rel="canonical" href={`https://holiday-gifts-2025.lovable.app${location.pathname}`} />
+        <link rel="canonical" href={`https://gifts.bakinggreatbread.blog${location.pathname}`} />
       </Helmet>
       <div className="text-center">
         <h1 className="mb-4 text-4xl font-bold">404</h1>

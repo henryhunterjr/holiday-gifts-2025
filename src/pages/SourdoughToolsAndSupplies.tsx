@@ -8,7 +8,7 @@ export default function SourdoughToolsAndSupplies() {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: "Essential Sourdough Tools and Supplies",
-    mainEntityOfPage: { "@type": "WebPage", "@id": `https://holiday-gifts-2025.lovable.app${PATH}` },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://gifts.bakinggreatbread.blog${PATH}` },
     inLanguage: "en-US",
     about: ["sourdough tools", "sourdough supplies", "sourdough accessories", "bread baking supplies"],
   };
