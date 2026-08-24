@@ -177,7 +177,7 @@ for (const s of seedProducts) {
 
 const catalog = {
   meta: {
-    site: SITE,
+    site: "https://gifts.bakinggreatbread.blog",
     generated: new Date().toISOString(),
     description:
       "Consolidated product catalog for the Holiday Baking Gift Guide. Affiliate links included. Prices last verified on the site.",

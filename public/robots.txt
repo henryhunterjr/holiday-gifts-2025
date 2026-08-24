@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://holiday-gifts-2025.lovable.app/sitemap.xml
+Sitemap: https://gifts.bakinggreatbread.blog/sitemap.xml
