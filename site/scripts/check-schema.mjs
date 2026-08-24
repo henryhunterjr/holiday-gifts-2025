@@ -10,6 +10,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { slugify } from "../lib/slugs.mjs";
 import { BASE_URL } from "../lib/site.mjs";
+import { PRICE_CAPS } from "../lib/price-caps.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const outDir = path.resolve(here, "..", "out");
@@ -31,6 +32,9 @@ function expectedFor(facet) {
       return arrays.filter((p) => (p.audiences ?? []).includes(facet.name));
     case "price-band":
       return arrays.filter((p) => p.priceBand === facet.name);
+    case "price-cap":
+      // Strict less-than, matching productsForFacet. Null prices never qualify.
+      return arrays.filter((p) => typeof p.price === "number" && p.price < facet.max);
   }
 }
 
@@ -39,6 +43,7 @@ const routes = [
   ...categories.map((name) => ({ file: `gifts/${slugify(name)}/index.html`, label: `/gifts/${slugify(name)}`, facet: { kind: "category", name }, canonical: `${BASE_URL}/${slugify(name)}/` })),
   ...audiences.map((name) => ({ file: `gifts/${slugify(name)}/index.html`, label: `/gifts/${slugify(name)}`, facet: { kind: "audience", name }, canonical: `${BASE_URL}/${slugify(name)}/` })),
   ...bands.map((name) => ({ file: `gifts/${slugify(name)}/index.html`, label: `/gifts/${slugify(name)}`, facet: { kind: "price-band", name }, canonical: `${BASE_URL}/${slugify(name)}/` })),
+  ...PRICE_CAPS.map((c) => ({ file: `gifts/${c.slug}/index.html`, label: `/gifts/${c.slug}`, facet: { kind: "price-cap", name: c.name, slug: c.slug, max: c.max }, canonical: `${BASE_URL}/${c.slug}/` })),
 ];
 
 let failures = [];
@@ -146,5 +151,6 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`schema test passed: 16 canonicals exact; all ld+json parses; offers clean; no ratings/reviews; ItemList lengths match renders`);
+  const canonicalCount = routes.length;
+  console.log(`schema test passed: ${canonicalCount} canonicals exact; all ld+json parses; offers clean; no ratings/reviews; ItemList lengths match renders`);
 console.log(`schema inventory: ${productCount} Product entries, ${bookCount} Book entries, ${noOfferCount} entities without an offer (null price), free_resources excluded`);

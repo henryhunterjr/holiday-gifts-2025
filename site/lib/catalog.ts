@@ -19,7 +19,9 @@ export type CatalogRecord = Record<string, any> & {
   priceBand?: string | null;
 };
 
-export type Facet = { kind: "category" | "audience" | "price-band"; name: string; slug: string };
+export type Facet =
+  | { kind: "category" | "audience" | "price-band"; name: string; slug: string }
+  | { kind: "price-cap"; name: string; slug: string; max: number };
 
 export function readCatalog(): { products: CatalogRecord[] } {
   const raw = JSON.parse(fs.readFileSync(CATALOG_PATH, "utf8"));

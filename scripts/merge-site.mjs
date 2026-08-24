@@ -4,7 +4,7 @@ import { join, relative } from "node:path";
 const OUT = "site/out";
 const DIST = "dist";
 const COPY = ["gifts", "_next"];
-const EXPECTED_ROUTES = 16; // /gifts plus 15 facet directories
+const EXPECTED_ROUTES = 17; // /gifts plus 15 band/category/audience facets plus the under-50 price cap
 
 function fail(msg) {
   console.error(`merge-site: ${msg}`);

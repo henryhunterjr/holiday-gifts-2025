@@ -10,6 +10,7 @@ export function FacetLinks({ current }: { current?: Facet }) {
     ["By category", "category"],
     ["By audience", "audience"],
     ["By price band", "price-band"],
+    ["By budget", "price-cap"],
   ];
   return (
     <nav className="facets">

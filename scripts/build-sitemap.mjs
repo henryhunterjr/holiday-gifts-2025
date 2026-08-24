@@ -11,6 +11,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { slugify } from "../site/lib/slugs.mjs";
 import { BASE_URL } from "../site/lib/site.mjs";
+import { PRICE_CAPS } from "../site/lib/price-caps.mjs";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, "..");
@@ -42,6 +43,7 @@ const locs = [
   ...categories.map((c) => `${BASE_URL}/${slugify(c)}/`),
   ...audiences.map((a) => `${BASE_URL}/${slugify(a)}/`),
   ...bands.map((b) => `${BASE_URL}/${slugify(b)}/`),
+  ...PRICE_CAPS.map((c) => `${BASE_URL}/${c.slug}/`),
 ];
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -52,4 +54,5 @@ ${locs.map((l) => `  <url><loc>${l}</loc></url>`).join("\n")}
 
 const fsWait = await import("node:fs");
 fsWait.writeFileSync(join(root, "public", "sitemap.xml"), xml);
-console.log(`build-sitemap: ${locs.length} URLs (root + ${spaRoutes.length} SPA routes + ${1 + categories.length + audiences.length + bands.length} gift routes)`);
+const giftRouteCount = 1 + categories.length + audiences.length + bands.length + PRICE_CAPS.length;
+console.log(`build-sitemap: ${locs.length} URLs (root + ${spaRoutes.length} SPA routes + ${giftRouteCount} gift routes)`);

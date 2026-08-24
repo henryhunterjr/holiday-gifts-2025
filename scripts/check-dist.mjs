@@ -45,7 +45,7 @@ if (!giftsIndex.includes("Challenger Bread Pan")) {
 const giftsDir = `${DIST}/gifts`;
 const facetDirs = readdirSync(giftsDir).filter((n) => statSync(join(giftsDir, n)).isDirectory());
 const routeCount = facetDirs.length + (existsSync(join(giftsDir, "index.html")) ? 1 : 0);
-if (routeCount !== 16) fail(`expected 16 routes under dist/gifts/, found ${routeCount}`);
+if (routeCount !== 17) fail(`expected 17 routes under dist/gifts/, found ${routeCount}`);
 
 // Next assets present and non-empty.
 const staticDir = `${DIST}/_next/static`;

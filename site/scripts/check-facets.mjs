@@ -6,6 +6,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { slugify } from "../lib/slugs.mjs";
+import { PRICE_CAPS } from "../lib/price-caps.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const raw = JSON.parse(fs.readFileSync(path.resolve(here, "..", "..", "public", "catalog.json"), "utf8"));
@@ -18,14 +19,17 @@ const categories = [...new Set(arrays.flatMap((p) => p.categories ?? []))].sort(
 const audiences = [...new Set(arrays.flatMap((p) => p.audiences ?? []))].sort();
 const bands = [...new Set(arrays.map((p) => p.priceBand).filter((b) => typeof b === "string"))].sort();
 
-function membersFor(kind, name) {
-  switch (kind) {
+function membersFor(facet) {
+  switch (facet.kind) {
     case "category":
-      return arrays.filter((p) => (p.categories ?? []).includes(name));
+      return arrays.filter((p) => (p.categories ?? []).includes(facet.name));
     case "audience":
-      return arrays.filter((p) => (p.audiences ?? []).includes(name));
+      return arrays.filter((p) => (p.audiences ?? []).includes(facet.name));
     case "price-band":
-      return arrays.filter((p) => p.priceBand === name);
+      return arrays.filter((p) => p.priceBand === facet.name);
+    case "price-cap":
+      // Strict less-than, matching productsForFacet. Null prices never qualify.
+      return arrays.filter((p) => typeof p.price === "number" && p.price < facet.max);
   }
 }
 
@@ -34,6 +38,7 @@ const generated = new Set(["/gifts"]);
 for (const name of categories) generated.add(`/gifts/${slugify(name)}`);
 for (const name of audiences) generated.add(`/gifts/${slugify(name)}`);
 for (const name of bands) generated.add(`/gifts/${slugify(name)}`);
+for (const c of PRICE_CAPS) generated.add(`/gifts/${c.slug}`);
 
 const failures = [];
 
@@ -58,10 +63,11 @@ for (const [key, page] of Object.entries(content.pages)) {
     ...categories.map((name) => ({ kind: "category", name, slug: slugify(name) })),
     ...audiences.map((name) => ({ kind: "audience", name, slug: slugify(name) })),
     ...bands.map((name) => ({ kind: "price-band", name, slug: slugify(name) })),
+    ...PRICE_CAPS.map((c) => ({ kind: "price-cap", name: c.name, slug: c.slug, max: c.max })),
   ];
   const facet = facetDefs.find((f) => f.slug === slug);
   if (!facet) continue; // index has no facet membership; handled by route check above
-  const members = membersFor(facet.kind, facet.name);
+  const members = membersFor(facet);
   if (!members.some((p) => p.name === pin)) {
     failures.push(`"${key}" pins "${pin}" but it does not belong to ${facet.kind} "${facet.name}"`);
   }

@@ -8,6 +8,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { slugify } from "../lib/slugs.mjs";
+import { PRICE_CAPS } from "../lib/price-caps.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const outDir = path.resolve(here, "..", "out");
@@ -46,6 +47,9 @@ function expectedFor(facet) {
       return all.filter((p) => (p.audiences ?? []).includes(facet.name));
     case "price-band":
       return all.filter((p) => p.priceBand === facet.name);
+    case "price-cap":
+      // Strict less-than, matching productsForFacet. Null prices never qualify.
+      return all.filter((p) => typeof p.price === "number" && p.price < facet.max);
   }
 }
 
@@ -58,6 +62,7 @@ const routes = [
   ...categories.map((name) => ({ file: `gifts/${slugify(name)}/index.html`, label: `/gifts/${slugify(name)}`, facets: [{ kind: "category", name }] })),
   ...audiences.map((name) => ({ file: `gifts/${slugify(name)}/index.html`, label: `/gifts/${slugify(name)}`, facets: [{ kind: "audience", name }] })),
   ...bands.map((name) => ({ file: `gifts/${slugify(name)}/index.html`, label: `/gifts/${slugify(name)}`, facets: [{ kind: "price-band", name }] })),
+  ...PRICE_CAPS.map((c) => ({ file: `gifts/${c.slug}/index.html`, label: `/gifts/${c.slug}`, facets: [{ kind: "price-cap", name: c.name, slug: c.slug, max: c.max }] })),
 ];
 
 let failures = [];

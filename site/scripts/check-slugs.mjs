@@ -7,6 +7,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { slugify } from "../lib/slugs.mjs";
+import { PRICE_CAPS } from "../lib/price-caps.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const raw = JSON.parse(fs.readFileSync(path.resolve(here, "..", "..", "public", "catalog.json"), "utf8"));
@@ -20,6 +21,7 @@ const facets = [
   ...categories.map((name) => ({ kind: "category", name, slug: slugify(name) })),
   ...audiences.map((name) => ({ kind: "audience", name, slug: slugify(name) })),
   ...bands.map((name) => ({ kind: "price-band", name, slug: slugify(name) })),
+  ...PRICE_CAPS.map((c) => ({ kind: "price-cap", name: c.name, slug: c.slug })),
 ];
 
 const seen = new Map();

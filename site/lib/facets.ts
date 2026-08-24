@@ -1,4 +1,5 @@
 import { slugify } from "./slugs.mjs";
+import { PRICE_CAPS } from "./price-caps.mjs";
 import { getCategories, getAudiences, getPriceBands, readCatalog, type Facet } from "./catalog";
 
 // The route list is derived from the catalog at build time. Add a category or
@@ -8,6 +9,7 @@ export function buildFacets(): Facet[] {
     ...getCategories().map((name) => ({ kind: "category" as const, name, slug: slugify(name) })),
     ...getAudiences().map((name) => ({ kind: "audience" as const, name, slug: slugify(name) })),
     ...getPriceBands().map((name) => ({ kind: "price-band" as const, name, slug: slugify(name) })),
+    ...PRICE_CAPS.map((c) => ({ kind: "price-cap" as const, name: c.name, slug: c.slug, max: c.max })),
   ];
 }
 
@@ -21,6 +23,10 @@ export function productsForFacet(facet: Facet | null) {
       return products.filter((p) => (p.audiences ?? []).includes(facet.name));
     case "price-band":
       return products.filter((p) => p.priceBand === facet.name);
+    case "price-cap":
+      // Strict less-than, matching priceBandFor's boundaries. A null price can
+      // never qualify: an unpriced record is not "under $50", it is unknown.
+      return products.filter((p) => typeof p.price === "number" && p.price < facet.max);
   }
 }
 
