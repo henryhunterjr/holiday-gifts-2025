@@ -8,6 +8,7 @@ import { ProductList } from "../components";
 import { FacetLinks } from "../facet-links";
 import { JsonLd } from "../jsonld";
 import { PriceCheckedNote } from "../price-note";
+import { MiniOrnament } from "../dressing";
 
 export const dynamic = "force-static";
 
@@ -37,10 +38,14 @@ export default async function FacetPage({ params }: { params: Promise<{ facet: s
   const products = orderProducts(productsForFacet(facet), content?.pinnedPick ?? null);
   return (
     <>
-      <h1>{content?.title ?? facet.name}</h1>
+      <header className="slim-header">
+        <p className="eyebrow">Holiday Gift Guide</p>
+        <h1>{content?.title ?? facet.name}</h1>
+        <MiniOrnament />
+      </header>
       {content && <p className="intro">{content.intro}</p>}
-      <FacetLinks current={facet} />
       <PriceCheckedNote />
+      <FacetLinks current={facet} />
       <ProductList products={products} pinnedName={content?.pinnedPick ?? null} />
       <JsonLd data={buildItemListJsonLd(`/gifts/${slug}`)} />
     </>

@@ -1,73 +1,400 @@
-/* Legible, not finished. Brief 3 and Phase 3 replace this. */
+/* ============ Bakery Window Design System ============
+   Tokens ported verbatim from src/index.css so a palette change is a
+   two-file find-replace, never archaeology. Plain CSS only: no Tailwind
+   in the Next app, by design. */
+
+:root {
+  /* Bakery palette (HSL) */
+  --oven: 24 39% 8%;             /* #1c110a */
+  --crust: 22 51% 18%;            /* #432817 */
+  --crumb: 27 39% 30%;            /* #6b4a2e */
+  --flour: 38 60% 90%;            /* #f4ead8 */
+  --parchment: 37 55% 81%;        /* #e9d6b4 */
+  --parchment-deep: 34 51% 71%;   /* #d9bf94 */
+  --cranberry: 3 60% 39%;         /* #9e2b25 */
+  --cranberry-deep: 3 62% 30%;    /* #7c1f1b */
+  --evergreen: 138 22% 24%;       /* #2f4a38 */
+  --evergreen-deep: 138 25% 18%;  /* #22382a */
+  --honey: 36 66% 54%;            /* #d89a3d */
+  --twine: 33 34% 53%;            /* #b08d5f */
+  --ink: 27 42% 12%;              /* #2a1d12 */
+
+  /* Semantic tokens mapped to bakery palette */
+  --background: var(--flour);
+  --foreground: var(--ink);
+  --card: 38 60% 96%;
+  --card-foreground: var(--ink);
+  --primary: var(--cranberry);
+  --primary-foreground: 38 60% 96%;
+  --secondary: var(--evergreen);
+  --secondary-foreground: 38 60% 96%;
+  --muted: var(--parchment);
+  --muted-foreground: var(--crumb);
+  --accent: var(--honey);
+  --border: var(--parchment-deep);
+  --ring: var(--honey);
+  --radius: 14px;
+
+  --shadow-tag: 0 10px 30px hsl(24 39% 8% / 0.18);
+  --shadow-lifted: 0 18px 40px hsl(24 39% 8% / 0.26);
+}
+
+/* ============ Base ============ */
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
 body {
-  font-family: Georgia, "Times New Roman", serif;
-  line-height: 1.6;
-  margin: 2rem auto;
-  max-width: 42rem;
-  padding: 0 1.25rem;
-  color: #1d1d1d;
-  background: #fdfcf9;
+  margin: 0;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-body), "Karla", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.55;
 }
-nav,
-.facets {
-  margin-bottom: 1.5rem;
+main {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.25rem 4rem;
 }
-h1 {
-  font-size: 1.75rem;
-  line-height: 1.25;
-}
-h2 {
-  font-size: 1rem;
-  margin-bottom: 0.25rem;
+h1, h2, h3, .display {
+  font-family: var(--font-display), "Fraunces", ui-serif, Georgia, serif;
+  font-variation-settings: "SOFT" 50;
+  line-height: 1.08;
 }
 a {
-  color: #7a3320;
+  color: hsl(var(--cranberry));
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+nav.top-nav {
+  background: hsl(var(--oven));
+  padding: 0.6rem 1.25rem;
+}
+nav.top-nav a {
+  color: hsl(var(--flour));
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+}
+nav.top-nav a:hover {
+  color: hsl(var(--honey));
+  text-decoration: none;
+}
+
+/* ============ Ornaments hanging from the top edge ============ */
+.ornaments {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 150px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.ornaments::before {
+  /* the twine line they hang from */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, hsl(var(--twine)) 0%, hsl(var(--parchment-deep)) 45%, hsl(var(--twine)) 100%);
+}
+.ornament {
+  position: absolute;
+  top: 2px;
+  height: 110px;
+  width: auto;
+}
+.ornament.o1 { left: 6%; }
+.ornament.o2 { left: 88%; height: 92px; top: 12px; }
+.ornament-sway { animation: ornamentSway 5s ease-in-out infinite; transform-origin: 50% -8px; }
+.ornament-twinkle { animation: ornamentTwinkle 2.8s ease-in-out infinite; }
+@keyframes ornamentSway {
+  0%, 100% { transform: rotate(var(--sway-a, -4deg)); }
+  50%      { transform: rotate(var(--sway-b, 4deg)); }
+}
+@keyframes ornamentTwinkle {
+  0%, 100% { filter: drop-shadow(0 0 6px hsl(var(--honey) / .55)); }
+  50%      { filter: drop-shadow(0 0 18px hsl(var(--honey) / .95)) drop-shadow(0 0 32px hsl(var(--cranberry) / .6)); }
+}
+
+/* ============ Hero (index) and slim header (facets) ============ */
+.hero {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-top: 1rem;
+  box-shadow: var(--shadow-tag);
+}
+.hero img.hero-img {
+  display: block;
+  width: 100%;
+  height: clamp(220px, 34vw, 380px);
+  object-fit: cover;
+}
+.hero .hero-text {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 2.5rem 1.75rem 1.5rem;
+  background: linear-gradient(180deg, transparent, hsl(var(--oven) / 0.88));
+  color: hsl(var(--flour));
+}
+.hero .eyebrow,
+.eyebrow {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: hsl(var(--honey));
+}
+.hero h1 {
+  margin: 0.35rem 0 0;
+  font-size: clamp(1.7rem, 4vw, 2.8rem);
 }
 .intro {
-  font-style: italic;
-}
-.products {
-  list-style: none;
-  padding: 0;
-}
-.products li {
-  margin: 1.25rem 0;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #e4ded2;
-}
-.products li.pinned {
-  border-left: 4px solid #b3552e;
-  padding-left: 0.75rem;
-}
-.pick-label {
-  display: block;
-  font-family: system-ui, sans-serif;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #b3552e;
-  margin-bottom: 0.15rem;
-}
-.name {
-  font-weight: bold;
+  max-width: 46rem;
   font-size: 1.05rem;
+  color: hsl(var(--crust));
 }
-.desc {
-  margin: 0.25rem 0 0;
-  font-size: 0.95rem;
+.slim-header {
+  position: relative;
+  background: linear-gradient(168deg, hsl(38 60% 94%), hsl(var(--parchment)));
+  border: 1px solid hsl(var(--parchment-deep));
+  border-radius: var(--radius);
+  padding: 1.5rem 1.75rem;
+  margin-top: 1rem;
+  box-shadow: var(--shadow-tag);
+  overflow: hidden;
 }
-.code {
+.slim-header h1 {
   margin: 0.25rem 0 0;
-  font-family: system-ui, sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+.slim-header .mini-ornament {
+  position: absolute;
+  right: 1.25rem;
+  top: -6px;
+  height: 84px;
+  width: auto;
+  transform-origin: 50% -8px;
+}
+.checked {
   font-size: 0.85rem;
+  color: hsl(var(--crumb));
+}
+
+/* ============ Facet nav as parchment pills ============ */
+.facets {
+  margin: 1.75rem 0 1.5rem;
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--parchment-deep));
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+}
+.facets h2 {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: hsl(var(--cranberry));
+  margin: 0.75rem 0 0.4rem;
 }
 .facets ul {
   list-style: none;
-  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   margin: 0;
-  columns: 2;
+  padding: 0;
 }
-.facets li {
-  margin: 0.15rem 0;
+.facets a,
+.facets strong {
+  display: inline-block;
+  border: 1.5px solid hsl(var(--parchment-deep));
+  background: hsl(0 0% 100%);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: hsl(var(--crumb));
+}
+.facets a:hover {
+  border-color: hsl(var(--honey));
+  text-decoration: none;
+}
+.facets strong {
+  background: hsl(var(--evergreen));
+  border-color: hsl(var(--evergreen));
+  color: hsl(var(--flour));
+}
+
+/* ============ Gift Tag card grid ============ */
+.card-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+.gift-tag {
+  background: linear-gradient(168deg, hsl(38 60% 94%) 0%, hsl(var(--parchment)) 100%);
+  border-radius: 10px 10px var(--radius) var(--radius);
+  padding: 30px 16px 16px;
+  position: relative;
+  box-shadow: var(--shadow-tag);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid hsl(var(--parchment-deep));
+  transform: rotate(var(--tilt, 0deg));
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: hsl(var(--ink));
+}
+.gift-tag::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: hsl(var(--flour));
+  box-shadow: inset 0 2px 4px hsl(var(--oven) / 0.35), 0 1px 0 hsl(0 0% 100%);
+}
+.gift-tag::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  width: 40px;
+  height: 30px;
+  border: 2.5px solid hsl(var(--twine));
+  border-radius: 52% 60% 55% 48% / 62% 55% 48% 52%;
+  transform: translateX(-50%) rotate(-12deg);
+  pointer-events: none;
+}
+.gift-tag:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lifted);
+  z-index: 2;
+}
+.card-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid hsl(var(--parchment-deep));
+  background: hsl(var(--card));
+}
+.no-img {
+  aspect-ratio: 4 / 3;
+  border-radius: 8px;
+  border: 1px solid hsl(var(--parchment-deep));
+  background:
+    radial-gradient(circle at 30% 20%, hsl(38 60% 96%), transparent 70%),
+    hsl(var(--card));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+.no-img span {
+  font-family: var(--font-display), "Fraunces", Georgia, serif;
+  font-variation-settings: "SOFT" 50;
+  font-size: 1.35rem;
+  color: hsl(var(--crumb));
+  line-height: 1.2;
+}
+.tag-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-top: 0.65rem;
+  flex: 1;
+}
+.tag-name {
+  font-family: var(--font-display), "Fraunces", Georgia, serif;
+  font-variation-settings: "SOFT" 50;
+  font-size: 1.08rem;
+  line-height: 1.2;
+}
+.tag-price {
+  font-weight: 800;
+  color: hsl(var(--cranberry-deep));
+  font-family: var(--font-body), sans-serif;
   font-size: 0.95rem;
+}
+.tag-desc {
+  margin: 0;
+  font-size: 0.88rem;
+  color: hsl(var(--crust));
+}
+.code-pill {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: hsl(0 0% 100%);
+  border: 1.5px dashed hsl(var(--cranberry));
+  color: hsl(var(--cranberry-deep));
+  font-weight: 800;
+  font-size: 0.74rem;
+  border-radius: 8px;
+  padding: 4px 9px;
+  letter-spacing: 0.05em;
+}
+.pick-ribbon {
+  position: absolute;
+  top: 12px;
+  right: -6px;
+  z-index: 1;
+  background: hsl(var(--cranberry));
+  color: hsl(var(--flour));
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 999px 999px 999px 4px;
+  box-shadow: var(--shadow-tag);
+}
+
+/* ============ Focus ring (accessibility port) ============ */
+a:focus-visible {
+  outline: 3px solid hsl(var(--honey));
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+.gift-tag a:focus-visible {
+  outline: 3px solid hsl(var(--honey));
+  outline-offset: 3px;
+}
+
+/* ============ Reduced motion ============ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .ornament-sway,
+  .ornament-twinkle { animation: none !important; }
+  .gift-tag,
+  .gift-tag:hover {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* One column on small screens; the grid handles it via minmax, but keep the
+   hero text padding comfortable. */
+@media (max-width: 480px) {
+  main { padding: 0 0.9rem 3rem; }
+  .hero .hero-text { padding: 1.5rem 1rem 1rem; }
 }

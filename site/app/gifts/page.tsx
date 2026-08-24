@@ -8,6 +8,7 @@ import { ProductList } from "./components";
 import { AllFacetLinks } from "./facet-links";
 import { JsonLd } from "./jsonld";
 import { PriceCheckedNote } from "./price-note";
+import { Ornaments } from "./dressing";
 
 export const dynamic = "force-static";
 
@@ -29,10 +30,19 @@ export default function GiftsIndex() {
   if (!content) throw new Error(`facets.json is missing the "${ROUTE}" page entry`);
   return (
     <>
-      <h1>{content.title}</h1>
+      <div style={{ position: "relative" }}>
+        <Ornaments />
+        <header className="hero">
+          <img className="hero-img" src="/brand/hero-bread-baking-gifts.jpg" alt="Freshly baked sourdough loaves on a holiday table" width={1600} height={900} />
+          <div className="hero-text">
+            <p className="eyebrow">Henry Hunter's annual guide</p>
+            <h1>{content.title}</h1>
+          </div>
+        </header>
+      </div>
       <p className="intro">{content.intro}</p>
-      <AllFacetLinks />
       <PriceCheckedNote />
+      <AllFacetLinks />
       <ProductList products={orderProducts(products, content.pinnedPick)} pinnedName={content.pinnedPick} />
       <JsonLd data={buildItemListJsonLd(ROUTE)} />
     </>
