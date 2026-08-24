@@ -110,6 +110,15 @@ for (const r of routes) {
           failures.push(`${r.label}: Offer with bad price (${JSON.stringify(node.price)}) on "${node.name ?? "?"}"`);
         }
       }
+      if (node["@type"] === "AggregateOffer") {
+        // Variable pricing: lowPrice is the only price field we are allowed to
+        // have, because it is the only one we can source.
+        if (typeof node.lowPrice !== "number" || !(node.lowPrice > 0)) {
+          failures.push(`${r.label}: AggregateOffer with bad lowPrice (${JSON.stringify(node.lowPrice)}) on "${node.name ?? "?"}"`);
+        }
+        if ("price" in node) failures.push(`${r.label}: AggregateOffer carries a flat "price" — flattening a range is a lie`);
+        if ("highPrice" in node) failures.push(`${r.label}: AggregateOffer carries highPrice, which we cannot source`);
+      }
       if ("aggregateRating" in node || "review" in node) {
         failures.push(`${r.label}: forbidden rating/review property on ${node["@type"]}`);
       }

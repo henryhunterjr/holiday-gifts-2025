@@ -144,13 +144,17 @@ const seedProducts = seedData.newProducts.map((p) => {
     source: "seed",
     url: p.url,
     price,
-    currency: null,
+    // USD wherever a price exists — same rule as enrichRecord. Without this
+    // the schema layer drops the offer entirely (priceCurrency is required).
+    currency: price === null ? null : "USD",
     rel: affiliate ? REL_AFFILIATE : null,
     target: affiliate ? TARGET_AFFILIATE : null,
     alt: typeof p.alt === "string" ? p.alt : null,
     categories,
     priceBand: priceBandFor(price),
-    priceCheckedAt: null,
+    priceFrom: p.priceFrom ?? false,
+    // Verified dates come from the seed; null stays null. Never backfilled.
+    priceCheckedAt: p.priceCheckedAt ?? null,
     audiences: [...(p.audiences ?? [])],
     // commissionRate and partnerStatus are deliberately NOT copied here:
     // partner commission rates are commercially sensitive and must never be

@@ -4,22 +4,330 @@
     "generated": "2026-08-21",
     "linksPulledFrom": "Shopify Collabs, verified live 2026-08-21",
     "priceRule": "No prices are recorded here. price, currency, priceBand and priceCheckedAt are null on every record by design. Do not infer a price from the commission rate, the brand, or the product type.",
-    "audienceVocabulary": ["new-bakers", "serious-bakers", "market-sellers"],
+    "audienceVocabulary": [
+      "new-bakers",
+      "serious-bakers",
+      "market-sellers"
+    ],
     "categoryNote": "categories values are provisional. Map them to the category names already used in catalog.json before merging."
   },
   "newProducts": [
-    { "name": "NutriMill Bosch Baker's Bundle", "brand": "NutriMill", "url": "https://collabs.shop/k0t6tw", "rel": "nofollow sponsored noopener", "alt": "NutriMill Bosch Baker's Bundle", "categories": ["mixers", "splurge-gifts"], "audiences": ["serious-bakers", "market-sellers"], "priceBand": null, "price": null, "currency": null, "priceCheckedAt": null, "concierge": { "solves": ["My stand mixer strains on stiff whole grain dough", "I'm mixing more than two loaves at a time", "I want one machine that mixes, mills, and handles market volume"] } },
-    { "name": "NutriMill Impact Grain Mill", "brand": "NutriMill", "url": "https://collabs.shop/vavywo", "rel": "nofollow sponsored noopener", "alt": "NutriMill Impact grain mill", "categories": ["grain-mills", "splurge-gifts"], "audiences": ["serious-bakers", "market-sellers"], "priceBand": null, "price": null, "currency": null, "priceCheckedAt": null, "concierge": { "solves": ["I want fine flour fast and I'm milling in volume", "Store bought whole wheat tastes flat by the time I open the bag", "I'm milling for a market table, not a single loaf"] } },
-    { "name": "NutriMill Classic Grain Mill", "brand": "NutriMill", "url": "https://collabs.shop/tyhfee", "rel": "nofollow sponsored noopener", "alt": "NutriMill Classic grain mill", "categories": ["grain-mills", "splurge-gifts"], "audiences": ["serious-bakers"], "priceBand": null, "price": null, "currency": null, "priceCheckedAt": null, "concierge": { "solves": ["I want to mill my own flour without a second mortgage", "I bake whole grain often enough that bagged flour goes stale on me", "I want control over how coarse or fine my flour is"] } },
-    { "name": "NutriMill Harvest Grain Mill", "brand": "NutriMill", "url": "https://collabs.shop/lrhjzp", "rel": "nofollow sponsored noopener", "alt": "NutriMill Harvest stone burr grain mill", "categories": ["grain-mills", "splurge-gifts"], "audiences": ["serious-bakers"], "priceBand": null, "price": null, "currency": null, "priceCheckedAt": null, "colorways": { "default": "Black", "black": "https://collabs.shop/lrhjzp", "silver": "https://collabs.shop/abogjb", "red": "https://collabs.shop/3r79et" }, "concierge": { "solves": ["I want a mill that's quiet enough to run in a shared kitchen", "I want stone milled flour, not hammer milled", "I want a mill I don't have to hide in a cabinet"] } },
-    { "name": "Fourneau Bread Oven Grande", "brand": "Fourneau", "url": "https://collabs.shop/56xs3h", "rel": "nofollow sponsored noopener", "alt": "Fourneau Bread Oven Grande cast iron baking vessel", "categories": ["baking-vessels", "splurge-gifts"], "audiences": ["serious-bakers"], "priceBand": null, "price": null, "currency": null, "priceCheckedAt": null, "concierge": { "solves": ["I burn my knuckles loading dough into a screaming hot dutch oven", "My oven spring is weaker than it should be", "I want steam without a pan of water and a mess"] } },
-    { "name": "Farm2Flour 100% Organic Einkorn Flour", "brand": "Farm2Flour", "url": "https://collabs.shop/rde7py", "rel": "nofollow sponsored noopener", "alt": "Farm2Flour organic einkorn flour", "categories": ["flour", "pantry"], "audiences": ["serious-bakers"], "priceBand": null, "price": null, "currency": null, "priceCheckedAt": null, "concierge": { "solves": ["Modern wheat doesn't sit well with me", "I want to bake with an ancient grain but don't know where to start", "I want flour I can trace back to a farm"] } },
-    { "name": "Fusek Flour Co. Sungold Spelt Berries", "brand": "Fusek Flour Co.", "url": "https://collabs.shop/qvvoqa", "rel": "nofollow sponsored noopener", "alt": "Fusek Flour Co. Sungold spelt berries", "categories": ["grain", "pantry"], "audiences": ["serious-bakers"], "priceBand": null, "price": null, "currency": null, "priceCheckedAt": null, "concierge": { "solves": ["I bought a mill and now I need something worth milling", "I want spelt that hasn't been sitting in a warehouse for a year", "I want to taste the difference fresh milled actually makes"] } },
-    { "name": "Better Batter Gluten Free Bread Flour Blend", "brand": "Better Batter", "url": "https://collabs.shop/mrd6bl", "rel": "nofollow sponsored noopener", "alt": "Better Batter gluten free bread flour blend", "categories": ["flour", "pantry", "gluten-free"], "audiences": ["new-bakers", "serious-bakers"], "priceBand": null, "price": null, "currency": null, "priceCheckedAt": null, "concierge": { "solves": ["Someone at my table can't eat gluten and I'm tired of serving them bad bread", "Every gluten free loaf I've made comes out like a brick", "I want a blend I can use in a normal bread recipe without rewriting it"] } },
-    { "name": "Polselli Organic Tipo 00 Flour, 5 kg", "brand": "Polselli", "url": "https://collabs.shop/2jn8jy", "rel": "nofollow sponsored noopener", "alt": "Polselli organic Tipo 00 flour, 5 kilogram bag", "categories": ["flour", "pantry", "pizza"], "audiences": ["serious-bakers", "market-sellers"], "priceBand": null, "price": null, "currency": null, "priceCheckedAt": null, "concierge": { "solves": ["My pizza crust never gets that chew I'm after", "I'm going through flour fast enough that small bags are costing me", "I want real Italian 00, not a domestic substitute"] } },
-    { "name": "FarmSteady Sourdough Bread Making Kit", "brand": "FarmSteady", "url": "https://collabs.shop/h9clow", "rel": "nofollow sponsored noopener", "alt": "FarmSteady sourdough bread making kit", "categories": ["kits", "gifts-for-beginners"], "audiences": ["new-bakers"], "priceBand": null, "price": null, "currency": null, "priceCheckedAt": null, "concierge": { "solves": ["I want to try sourdough but I don't know what to buy first", "I'm shopping for someone who's curious but hasn't started", "I want one box that has everything instead of six separate orders"] } },
-    { "name": "Made With Loave Dehydrated Sourdough Starter with Recipe", "brand": "Made With Loave", "url": "https://collabs.shop/9ug4o2", "rel": "nofollow sponsored noopener", "alt": "Made With Loave dehydrated sourdough starter with recipe card", "categories": ["starter", "gifts-for-beginners"], "audiences": ["new-bakers"], "priceBand": null, "price": null, "currency": null, "priceCheckedAt": null, "concierge": { "solves": ["My starter died and I don't want to spend two weeks growing another", "I want to skip the part where I stare at flour paste for a week", "I want a starter with a track record, not one I have to gamble on"] } },
-    { "name": "Made With Loave Sourdough Accessory Kit", "brand": "Made With Loave", "url": "https://collabs.shop/akvrdf", "rel": "nofollow sponsored noopener", "alt": "Made With Loave sourdough accessory kit", "categories": ["kits", "tools", "gifts-for-beginners"], "audiences": ["new-bakers"], "priceBand": null, "price": null, "currency": null, "priceCheckedAt": null, "concierge": { "solves": ["I've got a starter going and now I need the tools around it", "I'm buying for someone who has the bug but not the gear", "I want the basics without buying a whole shelf of specialty equipment"] } }
+    {
+      "name": "NutriMill Bosch Baker's Bundle",
+      "brand": "NutriMill",
+      "url": "https://collabs.shop/k0t6tw",
+      "rel": "nofollow sponsored noopener",
+      "alt": "NutriMill Bosch Baker's Bundle",
+      "categories": [
+        "mixers",
+        "splurge-gifts"
+      ],
+      "audiences": [
+        "serious-bakers",
+        "market-sellers"
+      ],
+      "priceBand": null,
+      "price": 99,
+      "currency": null,
+      "priceCheckedAt": "2026-08-23",
+      "concierge": {
+        "solves": [
+          "My stand mixer strains on stiff whole grain dough",
+          "I'm mixing more than two loaves at a time",
+          "I want one machine that mixes, mills, and handles market volume"
+        ]
+      }
+    },
+    {
+      "name": "NutriMill Impact Grain Mill",
+      "brand": "NutriMill",
+      "url": "https://collabs.shop/vavywo",
+      "rel": "nofollow sponsored noopener",
+      "alt": "NutriMill Impact grain mill",
+      "categories": [
+        "grain-mills",
+        "splurge-gifts"
+      ],
+      "audiences": [
+        "serious-bakers",
+        "market-sellers"
+      ],
+      "priceBand": null,
+      "price": 249,
+      "currency": null,
+      "priceCheckedAt": "2026-08-23",
+      "concierge": {
+        "solves": [
+          "I want fine flour fast and I'm milling in volume",
+          "Store bought whole wheat tastes flat by the time I open the bag",
+          "I'm milling for a market table, not a single loaf"
+        ]
+      }
+    },
+    {
+      "name": "NutriMill Classic Grain Mill",
+      "brand": "NutriMill",
+      "url": "https://collabs.shop/tyhfee",
+      "rel": "nofollow sponsored noopener",
+      "alt": "NutriMill Classic grain mill",
+      "categories": [
+        "grain-mills",
+        "splurge-gifts"
+      ],
+      "audiences": [
+        "serious-bakers"
+      ],
+      "priceBand": null,
+      "price": 329,
+      "currency": null,
+      "priceCheckedAt": "2026-08-23",
+      "concierge": {
+        "solves": [
+          "I want to mill my own flour without a second mortgage",
+          "I bake whole grain often enough that bagged flour goes stale on me",
+          "I want control over how coarse or fine my flour is"
+        ]
+      }
+    },
+    {
+      "name": "NutriMill Harvest Grain Mill",
+      "brand": "NutriMill",
+      "url": "https://collabs.shop/lrhjzp",
+      "rel": "nofollow sponsored noopener",
+      "alt": "NutriMill Harvest stone burr grain mill",
+      "categories": [
+        "grain-mills",
+        "splurge-gifts"
+      ],
+      "audiences": [
+        "serious-bakers"
+      ],
+      "priceBand": null,
+      "price": 499,
+      "currency": null,
+      "priceCheckedAt": "2026-08-23",
+      "colorways": {
+        "default": "Black",
+        "black": "https://collabs.shop/lrhjzp",
+        "silver": "https://collabs.shop/abogjb",
+        "red": "https://collabs.shop/3r79et"
+      },
+      "concierge": {
+        "solves": [
+          "I want a mill that's quiet enough to run in a shared kitchen",
+          "I want stone milled flour, not hammer milled",
+          "I want a mill I don't have to hide in a cabinet"
+        ]
+      }
+    },
+    {
+      "name": "Fourneau Bread Oven Grande",
+      "brand": "Fourneau",
+      "url": "https://collabs.shop/56xs3h",
+      "rel": "nofollow sponsored noopener",
+      "alt": "Fourneau Bread Oven Grande cast iron baking vessel",
+      "categories": [
+        "baking-vessels",
+        "splurge-gifts"
+      ],
+      "audiences": [
+        "serious-bakers"
+      ],
+      "priceBand": null,
+      "price": 292.5,
+      "currency": null,
+      "priceCheckedAt": "2026-08-23",
+      "concierge": {
+        "solves": [
+          "I burn my knuckles loading dough into a screaming hot dutch oven",
+          "My oven spring is weaker than it should be",
+          "I want steam without a pan of water and a mess"
+        ]
+      },
+      "priceFrom": true
+    },
+    {
+      "name": "Farm2Flour 100% Organic Einkorn Flour",
+      "brand": "Farm2Flour",
+      "url": "https://collabs.shop/rde7py",
+      "rel": "nofollow sponsored noopener",
+      "alt": "Farm2Flour organic einkorn flour",
+      "categories": [
+        "flour",
+        "pantry"
+      ],
+      "audiences": [
+        "serious-bakers"
+      ],
+      "priceBand": null,
+      "price": 5.5,
+      "currency": null,
+      "priceCheckedAt": "2026-08-23",
+      "concierge": {
+        "solves": [
+          "Modern wheat doesn't sit well with me",
+          "I want to bake with an ancient grain but don't know where to start",
+          "I want flour I can trace back to a farm"
+        ]
+      },
+      "priceFrom": true
+    },
+    {
+      "name": "Fusek Flour Co. Sungold Spelt Berries",
+      "brand": "Fusek Flour Co.",
+      "url": "https://collabs.shop/qvvoqa",
+      "rel": "nofollow sponsored noopener",
+      "alt": "Fusek Flour Co. Sungold spelt berries",
+      "categories": [
+        "grain",
+        "pantry"
+      ],
+      "audiences": [
+        "serious-bakers"
+      ],
+      "priceBand": null,
+      "price": 7.5,
+      "currency": null,
+      "priceCheckedAt": "2026-08-23",
+      "concierge": {
+        "solves": [
+          "I bought a mill and now I need something worth milling",
+          "I want spelt that hasn't been sitting in a warehouse for a year",
+          "I want to taste the difference fresh milled actually makes"
+        ]
+      }
+    },
+    {
+      "name": "Better Batter Gluten Free Bread Flour Blend",
+      "brand": "Better Batter",
+      "url": "https://collabs.shop/mrd6bl",
+      "rel": "nofollow sponsored noopener",
+      "alt": "Better Batter gluten free bread flour blend",
+      "categories": [
+        "flour",
+        "pantry",
+        "gluten-free"
+      ],
+      "audiences": [
+        "new-bakers",
+        "serious-bakers"
+      ],
+      "priceBand": null,
+      "price": 9.99,
+      "currency": null,
+      "priceCheckedAt": "2026-08-23",
+      "concierge": {
+        "solves": [
+          "Someone at my table can't eat gluten and I'm tired of serving them bad bread",
+          "Every gluten free loaf I've made comes out like a brick",
+          "I want a blend I can use in a normal bread recipe without rewriting it"
+        ]
+      },
+      "priceFrom": true
+    },
+    {
+      "name": "Polselli Organic Tipo 00 Flour, 5 kg",
+      "brand": "Polselli",
+      "url": "https://collabs.shop/2jn8jy",
+      "rel": "nofollow sponsored noopener",
+      "alt": "Polselli organic Tipo 00 flour, 5 kilogram bag",
+      "categories": [
+        "flour",
+        "pantry",
+        "pizza"
+      ],
+      "audiences": [
+        "serious-bakers",
+        "market-sellers"
+      ],
+      "priceBand": null,
+      "price": 29.9,
+      "currency": null,
+      "priceCheckedAt": "2026-08-23",
+      "concierge": {
+        "solves": [
+          "My pizza crust never gets that chew I'm after",
+          "I'm going through flour fast enough that small bags are costing me",
+          "I want real Italian 00, not a domestic substitute"
+        ]
+      }
+    },
+    {
+      "name": "FarmSteady Sourdough Bread Making Kit",
+      "brand": "FarmSteady",
+      "url": "https://collabs.shop/h9clow",
+      "rel": "nofollow sponsored noopener",
+      "alt": "FarmSteady sourdough bread making kit",
+      "categories": [
+        "kits",
+        "gifts-for-beginners"
+      ],
+      "audiences": [
+        "new-bakers"
+      ],
+      "priceBand": null,
+      "price": 55,
+      "currency": null,
+      "priceCheckedAt": "2026-08-23",
+      "concierge": {
+        "solves": [
+          "I want to try sourdough but I don't know what to buy first",
+          "I'm shopping for someone who's curious but hasn't started",
+          "I want one box that has everything instead of six separate orders"
+        ]
+      }
+    },
+    {
+      "name": "Made With Loave Dehydrated Sourdough Starter with Recipe",
+      "brand": "Made With Loave",
+      "url": "https://collabs.shop/9ug4o2",
+      "rel": "nofollow sponsored noopener",
+      "alt": "Made With Loave dehydrated sourdough starter with recipe card",
+      "categories": [
+        "starter",
+        "gifts-for-beginners"
+      ],
+      "audiences": [
+        "new-bakers"
+      ],
+      "priceBand": null,
+      "price": 15,
+      "currency": null,
+      "priceCheckedAt": "2026-08-23",
+      "concierge": {
+        "solves": [
+          "My starter died and I don't want to spend two weeks growing another",
+          "I want to skip the part where I stare at flour paste for a week",
+          "I want a starter with a track record, not one I have to gamble on"
+        ]
+      }
+    },
+    {
+      "name": "Made With Loave Sourdough Accessory Kit",
+      "brand": "Made With Loave",
+      "url": "https://collabs.shop/akvrdf",
+      "rel": "nofollow sponsored noopener",
+      "alt": "Made With Loave sourdough accessory kit",
+      "categories": [
+        "kits",
+        "tools",
+        "gifts-for-beginners"
+      ],
+      "audiences": [
+        "new-bakers"
+      ],
+      "priceBand": null,
+      "price": 40,
+      "currency": null,
+      "priceCheckedAt": "2026-08-23",
+      "concierge": {
+        "solves": [
+          "I've got a starter going and now I need the tools around it",
+          "I'm buying for someone who has the bug but not the gear",
+          "I want the basics without buying a whole shelf of specialty equipment"
+        ]
+      }
+    }
   ],
   "enrichmentByName": {
     "_note": "Empty. The audiences, priceBand and concierge.solves mappings for the products already in catalog.json have not been rebuilt yet. Merging from this file adds the newProducts above and nothing else."

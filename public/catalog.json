@@ -1,7 +1,7 @@
 {
   "meta": {
     "site": "https://gifts.bakinggreatbread.blog",
-    "generated": "2026-08-24T05:07:58.947Z",
+    "generated": "2026-08-24T12:35:06.296Z",
     "description": "Consolidated product catalog for the Holiday Baking Gift Guide. Affiliate links included. Prices last verified on the site.",
     "license": "Free to read. Keep affiliate links intact when republishing."
   },
@@ -52,6 +52,7 @@
         "Starter Care"
       ],
       "priceBand": "75-150",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers",
@@ -84,6 +85,7 @@
         "Starter Care"
       ],
       "priceBand": "25-75",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers",
@@ -116,6 +118,7 @@
         "Starter Care"
       ],
       "priceBand": "under-25",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers"
@@ -147,6 +150,7 @@
         "Starter Care"
       ],
       "priceBand": "under-25",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers"
@@ -178,6 +182,7 @@
         "Starter Care"
       ],
       "priceBand": "splurge",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers",
@@ -210,6 +215,7 @@
         "Starter Care"
       ],
       "priceBand": "25-75",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers",
@@ -242,6 +248,7 @@
         "Proofing & Temp"
       ],
       "priceBand": "splurge",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -273,6 +280,7 @@
         "Proofing & Temp"
       ],
       "priceBand": "25-75",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers",
@@ -305,6 +313,7 @@
         "Proofing & Temp"
       ],
       "priceBand": "splurge",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -336,6 +345,7 @@
         "Proofing & Temp"
       ],
       "priceBand": "under-25",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers",
@@ -368,6 +378,7 @@
         "Proofing & Temp"
       ],
       "priceBand": "under-25",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers",
@@ -400,6 +411,7 @@
         "Proofing & Temp"
       ],
       "priceBand": "25-75",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers",
@@ -432,6 +444,7 @@
         "Proofing & Temp"
       ],
       "priceBand": "25-75",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -463,6 +476,7 @@
         "Proofing & Temp"
       ],
       "priceBand": "under-25",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -494,6 +508,7 @@
         "Scoring & Shaping"
       ],
       "priceBand": "25-75",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers",
@@ -526,6 +541,7 @@
         "Scoring & Shaping"
       ],
       "priceBand": "25-75",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -557,6 +573,7 @@
         "Scoring & Shaping"
       ],
       "priceBand": "25-75",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -588,6 +605,7 @@
         "Scoring & Shaping"
       ],
       "priceBand": "under-25",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers",
@@ -620,6 +638,7 @@
         "Scoring & Shaping"
       ],
       "priceBand": "25-75",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -651,6 +670,7 @@
         "Scoring & Shaping"
       ],
       "priceBand": "under-25",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers"
@@ -682,6 +702,7 @@
         "Scoring & Shaping"
       ],
       "priceBand": "under-25",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers"
@@ -713,6 +734,7 @@
         "Scoring & Shaping"
       ],
       "priceBand": "25-75",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers"
@@ -744,6 +766,7 @@
         "Scoring & Shaping"
       ],
       "priceBand": "under-25",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers"
@@ -775,6 +798,7 @@
         "Bake Day"
       ],
       "priceBand": "splurge",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -806,6 +830,7 @@
         "Bake Day"
       ],
       "priceBand": "75-150",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -837,6 +862,7 @@
         "Bake Day"
       ],
       "priceBand": "splurge",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -868,6 +894,7 @@
         "Bake Day"
       ],
       "priceBand": "25-75",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers",
@@ -901,6 +928,7 @@
         "Bake Day"
       ],
       "priceBand": "under-25",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -932,6 +960,7 @@
         "Bake Day"
       ],
       "priceBand": "75-150",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -963,6 +992,7 @@
         "Bake Day"
       ],
       "priceBand": "25-75",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers",
@@ -995,6 +1025,7 @@
         "Bake Day"
       ],
       "priceBand": "under-25",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers"
@@ -1026,6 +1057,7 @@
         "Bake Day"
       ],
       "priceBand": "under-25",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers"
@@ -1057,6 +1089,7 @@
         "Wood & Serving"
       ],
       "priceBand": "splurge",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -1088,6 +1121,7 @@
         "Wood & Serving"
       ],
       "priceBand": "splurge",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -1119,6 +1153,7 @@
         "Wood & Serving"
       ],
       "priceBand": "75-150",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -1150,6 +1185,7 @@
         "Wood & Serving"
       ],
       "priceBand": "25-75",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers",
@@ -1182,6 +1218,7 @@
         "Wood & Serving"
       ],
       "priceBand": "75-150",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers",
@@ -1214,6 +1251,7 @@
         "Storage & Gifting"
       ],
       "priceBand": "under-25",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers",
@@ -1246,6 +1284,7 @@
         "Storage & Gifting"
       ],
       "priceBand": "under-25",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -1277,6 +1316,7 @@
         "Storage & Gifting"
       ],
       "priceBand": "25-75",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers",
@@ -1310,6 +1350,7 @@
         "Storage & Gifting"
       ],
       "priceBand": "25-75",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers",
@@ -1328,16 +1369,17 @@
       "brand": "NutriMill",
       "source": "seed",
       "url": "https://collabs.shop/k0t6tw",
-      "price": null,
-      "currency": null,
+      "price": 99,
+      "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "NutriMill Bosch Baker's Bundle",
       "categories": [
         "Milling & Flour"
       ],
-      "priceBand": null,
-      "priceCheckedAt": null,
+      "priceBand": "75-150",
+      "priceFrom": false,
+      "priceCheckedAt": "2026-08-23",
       "audiences": [
         "serious-bakers",
         "market-sellers"
@@ -1356,16 +1398,17 @@
       "brand": "NutriMill",
       "source": "seed",
       "url": "https://collabs.shop/vavywo",
-      "price": null,
-      "currency": null,
+      "price": 249,
+      "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "NutriMill Impact grain mill",
       "categories": [
         "Milling & Flour"
       ],
-      "priceBand": null,
-      "priceCheckedAt": null,
+      "priceBand": "splurge",
+      "priceFrom": false,
+      "priceCheckedAt": "2026-08-23",
       "audiences": [
         "serious-bakers",
         "market-sellers"
@@ -1384,16 +1427,17 @@
       "brand": "NutriMill",
       "source": "seed",
       "url": "https://collabs.shop/tyhfee",
-      "price": null,
-      "currency": null,
+      "price": 329,
+      "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "NutriMill Classic grain mill",
       "categories": [
         "Milling & Flour"
       ],
-      "priceBand": null,
-      "priceCheckedAt": null,
+      "priceBand": "splurge",
+      "priceFrom": false,
+      "priceCheckedAt": "2026-08-23",
       "audiences": [
         "serious-bakers"
       ],
@@ -1411,16 +1455,17 @@
       "brand": "NutriMill",
       "source": "seed",
       "url": "https://collabs.shop/lrhjzp",
-      "price": null,
-      "currency": null,
+      "price": 499,
+      "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "NutriMill Harvest stone burr grain mill",
       "categories": [
         "Milling & Flour"
       ],
-      "priceBand": null,
-      "priceCheckedAt": null,
+      "priceBand": "splurge",
+      "priceFrom": false,
+      "priceCheckedAt": "2026-08-23",
       "audiences": [
         "serious-bakers"
       ],
@@ -1444,16 +1489,17 @@
       "brand": "Fourneau",
       "source": "seed",
       "url": "https://collabs.shop/56xs3h",
-      "price": null,
-      "currency": null,
+      "price": 292.5,
+      "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Fourneau Bread Oven Grande cast iron baking vessel",
       "categories": [
         "Bake Day"
       ],
-      "priceBand": null,
-      "priceCheckedAt": null,
+      "priceBand": "splurge",
+      "priceFrom": true,
+      "priceCheckedAt": "2026-08-23",
       "audiences": [
         "serious-bakers"
       ],
@@ -1471,16 +1517,17 @@
       "brand": "Farm2Flour",
       "source": "seed",
       "url": "https://collabs.shop/rde7py",
-      "price": null,
-      "currency": null,
+      "price": 5.5,
+      "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Farm2Flour organic einkorn flour",
       "categories": [
         "Milling & Flour"
       ],
-      "priceBand": null,
-      "priceCheckedAt": null,
+      "priceBand": "under-25",
+      "priceFrom": true,
+      "priceCheckedAt": "2026-08-23",
       "audiences": [
         "serious-bakers"
       ],
@@ -1498,16 +1545,17 @@
       "brand": "Fusek Flour Co.",
       "source": "seed",
       "url": "https://collabs.shop/qvvoqa",
-      "price": null,
-      "currency": null,
+      "price": 7.5,
+      "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Fusek Flour Co. Sungold spelt berries",
       "categories": [
         "Milling & Flour"
       ],
-      "priceBand": null,
-      "priceCheckedAt": null,
+      "priceBand": "under-25",
+      "priceFrom": false,
+      "priceCheckedAt": "2026-08-23",
       "audiences": [
         "serious-bakers"
       ],
@@ -1525,16 +1573,17 @@
       "brand": "Better Batter",
       "source": "seed",
       "url": "https://collabs.shop/mrd6bl",
-      "price": null,
-      "currency": null,
+      "price": 9.99,
+      "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Better Batter gluten free bread flour blend",
       "categories": [
         "Milling & Flour"
       ],
-      "priceBand": null,
-      "priceCheckedAt": null,
+      "priceBand": "under-25",
+      "priceFrom": true,
+      "priceCheckedAt": "2026-08-23",
       "audiences": [
         "new-bakers",
         "serious-bakers"
@@ -1553,16 +1602,17 @@
       "brand": "Polselli",
       "source": "seed",
       "url": "https://collabs.shop/2jn8jy",
-      "price": null,
-      "currency": null,
+      "price": 29.9,
+      "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Polselli organic Tipo 00 flour, 5 kilogram bag",
       "categories": [
         "Milling & Flour"
       ],
-      "priceBand": null,
-      "priceCheckedAt": null,
+      "priceBand": "25-75",
+      "priceFrom": false,
+      "priceCheckedAt": "2026-08-23",
       "audiences": [
         "serious-bakers",
         "market-sellers"
@@ -1581,16 +1631,17 @@
       "brand": "FarmSteady",
       "source": "seed",
       "url": "https://collabs.shop/h9clow",
-      "price": null,
-      "currency": null,
+      "price": 55,
+      "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "FarmSteady sourdough bread making kit",
       "categories": [
         "Starter Care"
       ],
-      "priceBand": null,
-      "priceCheckedAt": null,
+      "priceBand": "25-75",
+      "priceFrom": false,
+      "priceCheckedAt": "2026-08-23",
       "audiences": [
         "new-bakers"
       ],
@@ -1608,16 +1659,17 @@
       "brand": "Made With Loave",
       "source": "seed",
       "url": "https://collabs.shop/9ug4o2",
-      "price": null,
-      "currency": null,
+      "price": 15,
+      "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Made With Loave dehydrated sourdough starter with recipe card",
       "categories": [
         "Starter Care"
       ],
-      "priceBand": null,
-      "priceCheckedAt": null,
+      "priceBand": "under-25",
+      "priceFrom": false,
+      "priceCheckedAt": "2026-08-23",
       "audiences": [
         "new-bakers"
       ],
@@ -1635,8 +1687,8 @@
       "brand": "Made With Loave",
       "source": "seed",
       "url": "https://collabs.shop/akvrdf",
-      "price": null,
-      "currency": null,
+      "price": 40,
+      "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Made With Loave sourdough accessory kit",
@@ -1644,8 +1696,9 @@
         "Starter Care",
         "Scoring & Shaping"
       ],
-      "priceBand": null,
-      "priceCheckedAt": null,
+      "priceBand": "25-75",
+      "priceFrom": false,
+      "priceCheckedAt": "2026-08-23",
       "audiences": [
         "new-bakers"
       ],
@@ -1674,6 +1727,7 @@
         "Bake Day"
       ],
       "priceBand": "splurge",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers"
@@ -1700,6 +1754,7 @@
         "Bake Day"
       ],
       "priceBand": "75-150",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers",
@@ -1727,6 +1782,7 @@
         "Bake Day"
       ],
       "priceBand": "splurge",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -1753,6 +1809,7 @@
         "Bake Day"
       ],
       "priceBand": "75-150",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -1779,6 +1836,7 @@
         "Bake Day"
       ],
       "priceBand": "splurge",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -1805,6 +1863,7 @@
         "Proofing & Temp"
       ],
       "priceBand": "25-75",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -1831,6 +1890,7 @@
         "Bake Day"
       ],
       "priceBand": "under-25",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers"
@@ -1862,6 +1922,7 @@
         "Bake Day"
       ],
       "priceBand": "75-150",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers"
@@ -1891,6 +1952,7 @@
         "Bake Day"
       ],
       "priceBand": "25-75",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers",
@@ -1922,6 +1984,7 @@
         "Proofing & Temp"
       ],
       "priceBand": "under-25",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers"
@@ -1951,6 +2014,7 @@
         "Proofing & Temp"
       ],
       "priceBand": "75-150",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -1980,6 +2044,7 @@
         "Bake Day"
       ],
       "priceBand": "75-150",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -2009,6 +2074,7 @@
         "Scoring & Shaping"
       ],
       "priceBand": "under-25",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers"
@@ -2038,6 +2104,7 @@
         "Proofing & Temp"
       ],
       "priceBand": "25-75",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers",
@@ -2068,6 +2135,7 @@
         "Proofing & Temp"
       ],
       "priceBand": "under-25",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers",
@@ -2098,6 +2166,7 @@
         "Bake Day"
       ],
       "priceBand": "under-25",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers"
@@ -2127,6 +2196,7 @@
         "Bake Day"
       ],
       "priceBand": "splurge",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -2156,6 +2226,7 @@
         "Scoring & Shaping"
       ],
       "priceBand": "under-25",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers",
@@ -2186,6 +2257,7 @@
         "Bake Day"
       ],
       "priceBand": "under-25",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers"
@@ -2215,6 +2287,7 @@
         "Starter Care"
       ],
       "priceBand": "under-25",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers",
@@ -2245,6 +2318,7 @@
         "Bake Day"
       ],
       "priceBand": "splurge",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -2274,6 +2348,7 @@
         "Bake Day"
       ],
       "priceBand": "splurge",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -2303,6 +2378,7 @@
         "Proofing & Temp"
       ],
       "priceBand": "25-75",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -2332,6 +2408,7 @@
         "Bake Day"
       ],
       "priceBand": "75-150",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -2361,6 +2438,7 @@
         "Bake Day"
       ],
       "priceBand": "75-150",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -2390,6 +2468,7 @@
         "Bake Day"
       ],
       "priceBand": "splurge",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers",
@@ -2420,6 +2499,7 @@
         "Bake Day"
       ],
       "priceBand": "25-75",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers",
@@ -2450,6 +2530,7 @@
         "Books & Learning"
       ],
       "priceBand": "under-25",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers"
@@ -2477,6 +2558,7 @@
         "Books & Learning"
       ],
       "priceBand": "under-25",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -2504,6 +2586,7 @@
         "Books & Learning"
       ],
       "priceBand": "under-25",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "market-sellers"
@@ -2531,6 +2614,7 @@
         "Books & Learning"
       ],
       "priceBand": "under-25",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers",
@@ -2559,6 +2643,7 @@
         "Books & Learning"
       ],
       "priceBand": "under-25",
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "serious-bakers"
@@ -2588,6 +2673,7 @@
         "Books & Learning"
       ],
       "priceBand": null,
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers"
@@ -2615,6 +2701,7 @@
         "Books & Learning"
       ],
       "priceBand": null,
+      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers",

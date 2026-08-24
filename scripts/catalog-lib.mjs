@@ -93,6 +93,7 @@ export function enrichRecord(r) {
     alt: deriveAlt(r),
     categories: cat ? [cat] : [],
     priceBand: priceBandFor(price),
+    priceFrom: false,
     priceCheckedAt: null,
     audiences: [],
     concierge: { solves: [] },

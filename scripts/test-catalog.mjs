@@ -42,16 +42,32 @@ for (const key of ARRAYS) {
 // array means the enrichment merge missed it or a new product arrived without
 // either being filled in.
 let emptyTaxonomy = [];
+let priceFieldFailures = [];
 for (const key of ARRAYS) {
   for (const r of catalog[key] || []) {
     const label = `${key} :: ${r.name || r.slug || "(no name)"}`;
     if (!Array.isArray(r.categories) || r.categories.length === 0) emptyTaxonomy.push(`${label}: categories is empty`);
     if (!Array.isArray(r.audiences) || r.audiences.length === 0) emptyTaxonomy.push(`${label}: audiences is empty`);
+
+    // Price provenance gates.
+    if (typeof r.priceFrom !== "boolean") priceFieldFailures.push(`${label}: priceFrom is ${JSON.stringify(r.priceFrom)}, expected a boolean`);
+    if (r.priceFrom === true && typeof r.price !== "number") priceFieldFailures.push(`${label}: priceFrom true but price is not a number`);
+    if (r.priceCheckedAt != null && !/^\d{4}-\d{2}-\d{2}$/.test(r.priceCheckedAt)) {
+      priceFieldFailures.push(`${label}: priceCheckedAt ${JSON.stringify(r.priceCheckedAt)} is not YYYY-MM-DD`);
+    }
+    if (typeof r.price !== "number" && r.priceCheckedAt != null) {
+      priceFieldFailures.push(`${label}: has priceCheckedAt but no price — a date on an unpriced record is a claim about nothing`);
+    }
   }
 }
 if (emptyTaxonomy.length) {
   console.error(`catalog taxonomy test FAILED (${emptyTaxonomy.length} records):`);
   for (const f of emptyTaxonomy) console.error(`  - ${f}`);
+  process.exit(1);
+}
+if (priceFieldFailures.length) {
+  console.error(`catalog price-provenance test FAILED (${priceFieldFailures.length} records):`);
+  for (const f of priceFieldFailures) console.error(`  - ${f}`);
   process.exit(1);
 }
 

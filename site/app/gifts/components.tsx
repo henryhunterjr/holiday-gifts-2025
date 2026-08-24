@@ -20,7 +20,9 @@ export function ProductList({ products, pinnedName }: { products: CatalogRecord[
                 p.name
               )}
             </span>{" "}
-            <span className="price">({typeof p.price === "number" ? `$${p.price.toFixed(2)}` : "price pending"})</span>
+            <span className="price">
+            ({typeof p.price === "number" ? `${p.priceFrom ? "from " : ""}$${p.price.toFixed(2)}` : "price pending"})
+          </span>
             {typeof p.desc === "string" && p.desc.trim() !== "" && <p className="desc">{p.desc}</p>}
             {typeof p.code === "string" && p.code.trim() !== "" && (
               <p className="code">

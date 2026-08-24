@@ -20,12 +20,23 @@ function itemFor(p: CatalogRecord): Record<string, unknown> | undefined {
   if (typeof p.desc === "string" && p.desc.trim() !== "") entry.description = p.desc;
   if (isBook) entry.author = { "@type": "Person", name: "Henry Hunter" };
   if (typeof p.price === "number" && p.price > 0 && typeof p.currency === "string" && p.currency !== "") {
-    entry.offers = {
-      "@type": "Offer",
-      price: p.price,
-      priceCurrency: p.currency,
-      url: p.url,
-    };
+    // priceFrom records do not have A price, they have a range across sizes or
+    // tray counts. AggregateOffer with lowPrice ONLY: highPrice would be a mid
+    // price pretending to be a ceiling, and that is the same fabrication we
+    // refuse everywhere else. No offerCount, no priceValidUntil.
+    entry.offers = p.priceFrom
+      ? {
+          "@type": "AggregateOffer",
+          lowPrice: p.price,
+          priceCurrency: p.currency,
+          url: p.url,
+        }
+      : {
+          "@type": "Offer",
+          price: p.price,
+          priceCurrency: p.currency,
+          url: p.url,
+        };
   }
   return entry;
 }
