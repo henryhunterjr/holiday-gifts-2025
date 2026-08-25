@@ -48,35 +48,37 @@ export function WishlistDrawer({
               {items.map((it) => (
                 <li
                   key={it.slug}
-                  className="flex items-center gap-3 rounded-xl border border-parchment-deep bg-white/70 p-3"
+                  className="flex flex-wrap items-center gap-3 rounded-xl border border-parchment-deep bg-white/70 p-3"
                 >
                   <img
                     src={it.img}
                     alt={it.name}
                     loading="lazy"
-                    className="h-14 w-14 flex-none object-contain"
+                    className="h-12 w-12 flex-none object-contain"
                     style={{ mixBlendMode: "multiply" }}
                   />
-                  <div className="min-w-0 flex-1">
+                  <div className="min-w-[8rem] flex-1">
                     <p className="truncate text-[.72rem] uppercase tracking-wide text-crumb">{it.brand}</p>
                     <p className="truncate font-semibold text-crust">{it.name}</p>
                     <p className="text-sm text-crumb">{it.priceLabel}</p>
                   </div>
-                  <a
-                    href={it.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex min-h-[44px] items-center gap-1 rounded-[10px] bg-evergreen px-3 text-[.82rem] font-bold text-flour hover:bg-evergreen-deep"
-                  >
-                    Gift it <ExternalLink className="h-3 w-3" aria-hidden />
-                  </a>
-                  <button
-                    onClick={() => remove(it.slug)}
-                    aria-label={`Remove ${it.name} from saved gifts`}
-                    className="inline-flex h-[44px] w-[44px] flex-none items-center justify-center rounded-[10px] border border-parchment-deep text-crumb hover:border-cranberry hover:text-cranberry"
-                  >
-                    <Trash2 className="h-4 w-4" aria-hidden />
-                  </button>
+                  <div className="flex flex-none items-center gap-2">
+                    <a
+                      href={it.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex min-h-[44px] items-center gap-1 rounded-[10px] bg-evergreen px-3 text-[.82rem] font-bold text-flour hover:bg-evergreen-deep"
+                    >
+                      Gift it <ExternalLink className="h-3 w-3" aria-hidden />
+                    </a>
+                    <button
+                      onClick={() => remove(it.slug)}
+                      aria-label={`Remove ${it.name} from saved gifts`}
+                      className="inline-flex h-[44px] w-[44px] items-center justify-center rounded-[10px] border border-parchment-deep text-crumb hover:border-cranberry hover:text-cranberry"
+                    >
+                      <Trash2 className="h-4 w-4" aria-hidden />
+                    </button>
+                  </div>
                 </li>
               ))}
             </ul>
