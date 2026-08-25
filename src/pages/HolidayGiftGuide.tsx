@@ -414,9 +414,16 @@ export default function HolidayGiftGuide() {
   const [giveaway, setGiveaway] = useState(false);
   const searchInputId = useId();
 
-  const copyCode = (code: string) => {
-    navigator.clipboard?.writeText(code);
-    toast.success(`Copied ${code}`);
+  // Only claim success once the clipboard write actually resolves. If the
+  // browser blocks it, show the code so it can be copied by hand.
+  const copyCode = async (code: string) => {
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error("no clipboard");
+      await navigator.clipboard.writeText(code);
+      toast.success(`Copied ${code}`);
+    } catch {
+      toast.error(`Copy blocked. Use code: ${code}`, { duration: 8000 });
+    }
   };
 
   const clearAllFilters = () => {
