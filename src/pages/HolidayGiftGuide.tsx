@@ -238,6 +238,8 @@ function HollySprig({ className = "" }: { className?: string }) {
 /* ============ Gift Tag Card ============ */
 function GiftTag({ p, onCopyCode }: { p: Product; onCopyCode: (code: string) => void }) {
   const num = priceNum(p);
+  const { has, toggle } = useWishlist();
+  const saved = has(p.slug);
   return (
     <article className="gift-tag">
       <span className="brand-chip">{p.brand}</span>
