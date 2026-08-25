@@ -163,8 +163,21 @@ const ORNAMENTS = [
 ];
 
 function HeaderGarland() {
+  // The garland belongs to the hero. Once the visitor scrolls past it, fade it
+  // out so it never hangs over live content further down the page.
+  const [visible, setVisible] = useState(true);
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY < 160);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   return (
-    <div aria-hidden className="pointer-events-none absolute inset-x-0 top-full z-40 h-[120px] overflow-visible">
+    <div
+      aria-hidden
+      className="pointer-events-none absolute inset-x-0 top-full z-40 h-[120px] overflow-visible transition-opacity duration-300"
+      style={{ opacity: visible ? 1 : 0 }}
+    >
       {/* String across the top */}
       <svg className="absolute inset-x-0 top-0 h-6 w-full" viewBox="0 0 1200 24" preserveAspectRatio="none">
         <path d="M0 4 Q 300 24 600 8 T 1200 4" stroke="hsl(var(--evergreen-deep))" strokeWidth="2" fill="none" opacity="0.85" />
@@ -259,10 +272,22 @@ function GiftTag({ p, onCopyCode }: { p: Product; onCopyCode: (code: string) => 
           </span>
         </a>
         <button
-          onClick={() => {
-            navigator.share?.({ title: p.name, url: p.url }).catch(() => {});
-            navigator.clipboard?.writeText(p.url);
-            toast.success("Link copied");
+          onClick={async () => {
+            if (navigator.share) {
+              try {
+                await navigator.share({ title: p.name, url: p.url });
+                return;
+              } catch {
+                /* fall through to clipboard */
+              }
+            }
+            try {
+              if (!navigator.clipboard?.writeText) throw new Error("no clipboard");
+              await navigator.clipboard.writeText(p.url);
+              toast.success("Link copied");
+            } catch {
+              toast.error("Copy blocked by your browser. Long-press the link to copy it.");
+            }
           }}
           className="flex h-[42px] w-[42px] flex-none items-center justify-center rounded-[10px] border-[1.5px] border-parchment-deep bg-white text-crumb transition-colors hover:border-cranberry hover:text-cranberry"
           aria-label="Share"
@@ -292,27 +317,58 @@ function GiftFinderQuiz({ open, onClose }: { open: boolean; onClose: () => void 
 
   const done = step >= questions.length;
 
-  const matches = useMemo(() => {
+  // Budget is a hard constraint and the stated category comes first. Only when
+  // the category has fewer than three in-budget matches do we backfill, and
+  // those extras get labelled so the picks stay honest.
+  const matches = useMemo<{ p: Product; extra: boolean }[]>(() => {
     if (!done) return [];
-    // Budget is a HARD constraint: filter first, then score.
     const band = bandByLabel(ans.budget);
     const inBudget = band ? products.filter((p) => band.test(priceNum(p))) : products;
-    return inBudget
-      .map((p) => {
-        let score = 0;
-        if (p.cat === ans.need) score += 3;
-        if (ans.who === "A new baker" && ["Starter Care", "Bake Day"].includes(p.cat)) score += 1;
-        if (ans.who === "Obsessed sourdough baker" && ["Scoring & Shaping", "Proofing & Temp"].includes(p.cat)) score += 1;
-        if (ans.who === "Market seller" && ["Storage & Gifting", "Wood & Serving"].includes(p.cat)) score += 1;
-        if (ans.style === "Stocking stuffer" && priceNum(p) < 30) score += 1;
-        if (ans.style === "Centerpiece gift" && priceNum(p) > 100) score += 1;
-        if (ans.style === "Bundle" && /bundle/i.test(p.name)) score += 2;
-        return { p, score };
-      })
-      .sort((a, b) => b.score - a.score)
-      .slice(0, 3)
-      .map((x) => x.p);
+    const rank = (p: Product) => {
+      let score = 0;
+      if (ans.who === "A new baker" && ["Starter Care", "Bake Day"].includes(p.cat)) score += 2;
+      if (ans.who === "Obsessed sourdough baker" && ["Scoring & Shaping", "Proofing & Temp"].includes(p.cat)) score += 2;
+      if (ans.who === "Market seller" && ["Storage & Gifting", "Wood & Serving"].includes(p.cat)) score += 2;
+      if (ans.style === "Stocking stuffer" && priceNum(p) < 30) score += 1;
+      if (ans.style === "Centerpiece gift" && priceNum(p) > 100) score += 1;
+      if (ans.style === "Bundle" && /bundle/i.test(p.name)) score += 2;
+      return score;
+    };
+    const byRank = (a: Product, b: Product) => rank(b) - rank(a);
+    const onCategory = inBudget.filter((p) => p.cat === ans.need).sort(byRank);
+    const picks = onCategory.slice(0, 3).map((p) => ({ p, extra: false }));
+    if (picks.length < 3) {
+      const rest = inBudget
+        .filter((p) => p.cat !== ans.need)
+        .sort(byRank)
+        .slice(0, 3 - picks.length)
+        .map((p) => ({ p, extra: true }));
+      picks.push(...rest);
+    }
+    return picks;
   }, [done, ans]);
+
+  // Preload result photos before revealing them, so the payoff screen never
+  // flashes empty white cards.
+  const [imagesReady, setImagesReady] = useState(false);
+  useEffect(() => {
+    if (!done || matches.length === 0) { setImagesReady(false); return; }
+    let cancelled = false;
+    setImagesReady(false);
+    Promise.all(
+      matches.map(
+        ({ p }) =>
+          new Promise<void>((resolve) => {
+            const img = new Image();
+            img.onload = () => resolve();
+            img.onerror = () => resolve();
+            img.src = p.img;
+          })
+      )
+    ).then(() => { if (!cancelled) setImagesReady(true); });
+    const timer = window.setTimeout(() => { if (!cancelled) setImagesReady(true); }, 2500);
+    return () => { cancelled = true; window.clearTimeout(timer); };
+  }, [done, matches]);
 
   const widenBudget = () => setStep(1); // jump back to budget question
   const changeCategory = () => setStep(2); // jump back to need/category
@@ -363,16 +419,38 @@ function GiftFinderQuiz({ open, onClose }: { open: boolean; onClose: () => void 
             ) : (
               <>
                 <p className="sr-only">{matches.length} gift{matches.length !== 1 ? "s" : ""} found within your budget.</p>
-                <div className="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-3">
-                  {matches.map((p) => (
-                    <a key={p.slug} href={p.url} target="_blank" rel="noopener noreferrer" className="group rounded-xl border border-parchment-deep bg-white p-3 transition-transform hover:-translate-y-1">
-                      <img src={p.img} alt={p.name} className="mx-auto h-32 object-contain" style={{ mixBlendMode: "multiply" }} />
-                      <p className="mt-2 line-clamp-2 font-display text-sm font-semibold text-crust">{p.name}</p>
-                      <p className="mt-1 text-xs text-crumb">{p.brand}</p>
-                      <p className="mt-1 font-bold text-cranberry">{priceStr(p)}</p>
-                    </a>
-                  ))}
-                </div>
+                {!imagesReady ? (
+                  <div className="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-3" aria-hidden>
+                    {matches.map(({ p }) => (
+                      <div key={p.slug} className="rounded-xl border border-parchment-deep bg-parchment/50 p-3">
+                        <div className="mx-auto h-32 animate-pulse rounded-lg bg-parchment-deep/40" />
+                        <div className="mt-3 h-3 w-3/4 animate-pulse rounded bg-parchment-deep/40" />
+                        <div className="mt-2 h-3 w-1/2 animate-pulse rounded bg-parchment-deep/40" />
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-3">
+                    {matches.map(({ p, extra }) => (
+                      <a key={p.slug} href={p.url} target="_blank" rel="noopener noreferrer" className="group relative rounded-xl border border-parchment-deep bg-white p-3 transition-transform hover:-translate-y-1">
+                        {extra && (
+                          <span className="absolute right-2 top-2 rounded-full bg-honey/25 px-2 py-0.5 text-[.65rem] font-bold uppercase tracking-wide text-crust">
+                            Also worth a look
+                          </span>
+                        )}
+                        <img src={p.img} alt={p.name} className="mx-auto h-32 object-contain" style={{ mixBlendMode: "multiply" }} />
+                        <p className="mt-2 line-clamp-2 font-display text-sm font-semibold text-crust">{p.name}</p>
+                        <p className="mt-1 text-xs text-crumb">{p.brand}</p>
+                        <p className="mt-1 font-bold text-cranberry">{priceStr(p)}</p>
+                      </a>
+                    ))}
+                  </div>
+                )}
+                {matches.some((m) => m.extra) && (
+                  <p className="mt-3 text-xs text-crumb">
+                    Only {matches.filter((m) => !m.extra).length} {ans.need} pick{matches.filter((m) => !m.extra).length === 1 ? "" : "s"} land in that budget, so I added a couple of close cousins.
+                  </p>
+                )}
                 <div className="mt-6 flex flex-wrap gap-3">
                   <button onClick={startOver} className="min-h-[44px] rounded-full border-[1.5px] border-crust px-5 py-2 font-bold text-crust hover:bg-crust hover:text-flour">Start over</button>
                   <button onClick={onClose} className="min-h-[44px] rounded-full bg-cranberry px-5 py-2 font-bold text-flour hover:bg-cranberry-deep">Done</button>
@@ -401,9 +479,16 @@ export default function HolidayGiftGuide() {
   const [giveaway, setGiveaway] = useState(false);
   const searchInputId = useId();
 
-  const copyCode = (code: string) => {
-    navigator.clipboard?.writeText(code);
-    toast.success(`Copied ${code}`);
+  // Only claim success once the clipboard write actually resolves. If the
+  // browser blocks it, show the code so it can be copied by hand.
+  const copyCode = async (code: string) => {
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error("no clipboard");
+      await navigator.clipboard.writeText(code);
+      toast.success(`Copied ${code}`);
+    } catch {
+      toast.error(`Copy blocked. Use code: ${code}`, { duration: 8000 });
+    }
   };
 
   const clearAllFilters = () => {
@@ -542,7 +627,7 @@ export default function HolidayGiftGuide() {
 
       <main id="top">
         {/* Hero */}
-        <section className="relative overflow-hidden pt-32 text-flour" style={{ background: "radial-gradient(1200px 500px at 50% -10%, hsl(var(--honey) / 0.16), transparent 60%), linear-gradient(180deg, #17202b 0%, #1c1a14 45%, hsl(var(--oven)) 100%)" }}>
+        <section className="relative overflow-hidden pt-[150px] text-flour" style={{ background: "radial-gradient(1200px 500px at 50% -10%, hsl(var(--honey) / 0.16), transparent 60%), linear-gradient(180deg, #17202b 0%, #1c1a14 45%, hsl(var(--oven)) 100%)" }}>
           <div className="relative z-20 mx-auto grid max-w-[1200px] items-center gap-10 px-5 pb-20 md:grid-cols-[1.05fr_0.95fr] md:gap-12">
             <div>
               <p className="eyebrow" style={{ color: "hsl(var(--honey))" }}>The 2026 Guide</p>
@@ -597,7 +682,7 @@ export default function HolidayGiftGuide() {
         </div>
 
         {/* Give Bread Instead campaign */}
-        <section id="give-bread-instead" className="relative overflow-hidden text-flour" style={{ background: "radial-gradient(900px 400px at 20% 0%, hsl(var(--cranberry) / 0.25), transparent 60%), linear-gradient(180deg, #2a1418 0%, #1c0f12 100%)" }}>
+        <section id="give-bread-instead" className="relative scroll-mt-[150px] overflow-hidden text-flour" style={{ background: "radial-gradient(900px 400px at 20% 0%, hsl(var(--cranberry) / 0.25), transparent 60%), linear-gradient(180deg, #2a1418 0%, #1c0f12 100%)" }}>
           <div className="mx-auto grid max-w-[1200px] items-center gap-10 px-5 py-16 md:grid-cols-[1fr_1.1fr] md:py-20">
             <div>
               {/* Gift tag hanging as if tied to a package */}
@@ -658,7 +743,7 @@ export default function HolidayGiftGuide() {
         </section>
 
         {/* Top 6 */}
-        <section id="top6" className="bg-gradient-to-b from-oven to-[hsl(24_38%_11%)] py-16 text-flour">
+        <section id="top6" className="scroll-mt-[150px] bg-gradient-to-b from-oven to-[hsl(24_38%_11%)] py-16 text-flour">
           <div className="mx-auto max-w-[1200px] px-5">
             <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
               <div>
@@ -688,7 +773,10 @@ export default function HolidayGiftGuide() {
           </div>
         </section>
 
-        {/* Filter bar — sticky on desktop only. */}
+        {/* Browse block. The sticky filter bar lives inside this wrapper, so it
+            only follows the visitor through the section it actually filters. */}
+        <div id="browse" className="relative">
+        {/* Filter bar — sticky on desktop only, scoped to #browse. */}
         <div className="z-40 border-b border-parchment-deep bg-flour md:sticky md:top-[64px] md:bg-flour/95 md:backdrop-blur">
           <div className="mx-auto max-w-[1200px] px-5 py-3">
             <div className="flex flex-wrap items-center gap-2.5">
@@ -815,9 +903,11 @@ export default function HolidayGiftGuide() {
             })()}
           </div>
         </section>
+        </div>
+        {/* /browse — the sticky filter bar releases here */}
 
         {/* Krustic brand section */}
-        <section id="krustic" className="border-y border-parchment-deep bg-parchment/60 py-10">
+        <section id="krustic" className="scroll-mt-[150px] border-y border-parchment-deep bg-parchment/60 py-10">
          <details open className="mx-auto max-w-[1200px] px-5">
           <summary className="mb-6 flex cursor-pointer list-none items-center justify-between gap-4">
             <div>
@@ -908,7 +998,7 @@ export default function HolidayGiftGuide() {
         </section>
 
         {/* From Oven to Market */}
-        <section id="market-sellers" className="text-flour" style={{ background: "radial-gradient(700px 300px at 85% 0%, hsl(var(--honey) / 0.12), transparent 60%), linear-gradient(180deg, hsl(var(--evergreen-deep)), #1d2f23)" }}>
+        <section id="market-sellers" className="scroll-mt-[150px] text-flour" style={{ background: "radial-gradient(700px 300px at 85% 0%, hsl(var(--honey) / 0.12), transparent 60%), linear-gradient(180deg, hsl(var(--evergreen-deep)), #1d2f23)" }}>
           <a
             href="https://fromoventomarket.com/"
             target="_blank"
@@ -941,8 +1031,8 @@ export default function HolidayGiftGuide() {
               ))}
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="https://fromoventomarket.com" target="_blank" rel="noopener noreferrer" className="rounded-full bg-cranberry px-6 py-3 font-bold text-flour hover:bg-cranberry-deep">See all 35 Market Kit essentials →</a>
-              <a href="https://fromoventomarket.com/" target="_blank" rel="noopener noreferrer" className="rounded-full border-[1.5px] border-flour/40 px-6 py-3 font-bold text-flour hover:border-honey hover:text-honey">Gift the course</a>
+              <a href="https://fromoventomarket.com" target="_blank" rel="noopener noreferrer" className="rounded-full bg-cranberry px-6 py-3 font-bold text-flour hover:bg-cranberry-deep">See the Market Kit at From Oven to Market →</a>
+              <a href="https://fromoventomarket.com/" target="_blank" rel="noopener noreferrer" className="rounded-full border-[1.5px] border-flour/40 px-6 py-3 font-bold text-flour hover:border-honey hover:text-honey">Gift the course at From Oven to Market</a>
             </div>
             <p className="mt-4 text-xs text-[hsl(37_25%_70%)]">As an Amazon Associate Henry earns from qualifying purchases. Booth gear links go to Amazon; the Kit and course live at fromoventomarket.com.</p>
           </div>
