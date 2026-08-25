@@ -4,6 +4,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import { existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { enrichRecord, isAffiliateUrl, REL_AFFILIATE, TARGET_AFFILIATE, parsePrice, priceBandFor } from "./catalog-lib.mjs";
 
@@ -138,12 +139,17 @@ const seedProducts = seedData.newProducts.map((p) => {
   }
   const affiliate = isAffiliateUrl(p.url);
   const price = parsePrice(p.price);
+  // Seed products ship with photos in public/product-images/, named by slug.
+  // If no file exists for a slug, no img field is emitted: never a broken path.
+  const seedImg = `/product-images/${slugify(p.name)}.jpg`;
+  const hasImg = existsSync(path.join(root, "public", seedImg));
   return {
     slug: slugify(p.name),
     name: p.name,
     brand: p.brand,
     source: "seed",
     url: p.url,
+    ...(hasImg ? { img: seedImg } : {}),
     price,
     // USD wherever a price exists — same rule as enrichRecord. Without this
     // the schema layer drops the offer entirely (priceCurrency is required).
