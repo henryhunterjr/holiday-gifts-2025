@@ -682,7 +682,7 @@ export default function HolidayGiftGuide() {
         </div>
 
         {/* Give Bread Instead campaign */}
-        <section id="give-bread-instead" className="relative overflow-hidden text-flour" style={{ background: "radial-gradient(900px 400px at 20% 0%, hsl(var(--cranberry) / 0.25), transparent 60%), linear-gradient(180deg, #2a1418 0%, #1c0f12 100%)" }}>
+        <section id="give-bread-instead" className="relative scroll-mt-[150px] overflow-hidden text-flour" style={{ background: "radial-gradient(900px 400px at 20% 0%, hsl(var(--cranberry) / 0.25), transparent 60%), linear-gradient(180deg, #2a1418 0%, #1c0f12 100%)" }}>
           <div className="mx-auto grid max-w-[1200px] items-center gap-10 px-5 py-16 md:grid-cols-[1fr_1.1fr] md:py-20">
             <div>
               {/* Gift tag hanging as if tied to a package */}
@@ -743,7 +743,7 @@ export default function HolidayGiftGuide() {
         </section>
 
         {/* Top 6 */}
-        <section id="top6" className="bg-gradient-to-b from-oven to-[hsl(24_38%_11%)] py-16 text-flour">
+        <section id="top6" className="scroll-mt-[150px] bg-gradient-to-b from-oven to-[hsl(24_38%_11%)] py-16 text-flour">
           <div className="mx-auto max-w-[1200px] px-5">
             <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
               <div>
@@ -907,7 +907,7 @@ export default function HolidayGiftGuide() {
         {/* /browse — the sticky filter bar releases here */}
 
         {/* Krustic brand section */}
-        <section id="krustic" className="border-y border-parchment-deep bg-parchment/60 py-10">
+        <section id="krustic" className="scroll-mt-[150px] border-y border-parchment-deep bg-parchment/60 py-10">
          <details open className="mx-auto max-w-[1200px] px-5">
           <summary className="mb-6 flex cursor-pointer list-none items-center justify-between gap-4">
             <div>
@@ -998,7 +998,7 @@ export default function HolidayGiftGuide() {
         </section>
 
         {/* From Oven to Market */}
-        <section id="market-sellers" className="text-flour" style={{ background: "radial-gradient(700px 300px at 85% 0%, hsl(var(--honey) / 0.12), transparent 60%), linear-gradient(180deg, hsl(var(--evergreen-deep)), #1d2f23)" }}>
+        <section id="market-sellers" className="scroll-mt-[150px] text-flour" style={{ background: "radial-gradient(700px 300px at 85% 0%, hsl(var(--honey) / 0.12), transparent 60%), linear-gradient(180deg, hsl(var(--evergreen-deep)), #1d2f23)" }}>
           <a
             href="https://fromoventomarket.com/"
             target="_blank"
