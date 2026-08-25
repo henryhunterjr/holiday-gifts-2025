@@ -419,16 +419,38 @@ function GiftFinderQuiz({ open, onClose }: { open: boolean; onClose: () => void 
             ) : (
               <>
                 <p className="sr-only">{matches.length} gift{matches.length !== 1 ? "s" : ""} found within your budget.</p>
-                <div className="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-3">
-                  {matches.map((p) => (
-                    <a key={p.slug} href={p.url} target="_blank" rel="noopener noreferrer" className="group rounded-xl border border-parchment-deep bg-white p-3 transition-transform hover:-translate-y-1">
-                      <img src={p.img} alt={p.name} className="mx-auto h-32 object-contain" style={{ mixBlendMode: "multiply" }} />
-                      <p className="mt-2 line-clamp-2 font-display text-sm font-semibold text-crust">{p.name}</p>
-                      <p className="mt-1 text-xs text-crumb">{p.brand}</p>
-                      <p className="mt-1 font-bold text-cranberry">{priceStr(p)}</p>
-                    </a>
-                  ))}
-                </div>
+                {!imagesReady ? (
+                  <div className="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-3" aria-hidden>
+                    {matches.map(({ p }) => (
+                      <div key={p.slug} className="rounded-xl border border-parchment-deep bg-parchment/50 p-3">
+                        <div className="mx-auto h-32 animate-pulse rounded-lg bg-parchment-deep/40" />
+                        <div className="mt-3 h-3 w-3/4 animate-pulse rounded bg-parchment-deep/40" />
+                        <div className="mt-2 h-3 w-1/2 animate-pulse rounded bg-parchment-deep/40" />
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-3">
+                    {matches.map(({ p, extra }) => (
+                      <a key={p.slug} href={p.url} target="_blank" rel="noopener noreferrer" className="group relative rounded-xl border border-parchment-deep bg-white p-3 transition-transform hover:-translate-y-1">
+                        {extra && (
+                          <span className="absolute right-2 top-2 rounded-full bg-honey/25 px-2 py-0.5 text-[.65rem] font-bold uppercase tracking-wide text-crust">
+                            Also worth a look
+                          </span>
+                        )}
+                        <img src={p.img} alt={p.name} className="mx-auto h-32 object-contain" style={{ mixBlendMode: "multiply" }} />
+                        <p className="mt-2 line-clamp-2 font-display text-sm font-semibold text-crust">{p.name}</p>
+                        <p className="mt-1 text-xs text-crumb">{p.brand}</p>
+                        <p className="mt-1 font-bold text-cranberry">{priceStr(p)}</p>
+                      </a>
+                    ))}
+                  </div>
+                )}
+                {matches.some((m) => m.extra) && (
+                  <p className="mt-3 text-xs text-crumb">
+                    Only {matches.filter((m) => !m.extra).length} {ans.need} pick{matches.filter((m) => !m.extra).length === 1 ? "" : "s"} land in that budget, so I added a couple of close cousins.
+                  </p>
+                )}
                 <div className="mt-6 flex flex-wrap gap-3">
                   <button onClick={startOver} className="min-h-[44px] rounded-full border-[1.5px] border-crust px-5 py-2 font-bold text-crust hover:bg-crust hover:text-flour">Start over</button>
                   <button onClick={onClose} className="min-h-[44px] rounded-full bg-cranberry px-5 py-2 font-bold text-flour hover:bg-cranberry-deep">Done</button>
