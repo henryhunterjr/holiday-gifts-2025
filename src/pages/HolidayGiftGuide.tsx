@@ -542,6 +542,16 @@ export default function HolidayGiftGuide() {
   }, [filtered]);
 
   const top6 = top6Slugs.map((s) => products.find((p) => p.slug === s)).filter(Boolean) as Product[];
+  // Positions 1-6 come from the curated slugs; 7-10 live in topPicks.ts.
+  const top10: TopPick[] = [
+    ...top6.map((p) => ({ id: p.slug, name: p.name, img: p.img, url: p.url, price: priceNum(p) })),
+    ...EXTRA_TOP_PICKS,
+  ];
+
+  // Promo popups defer while any other overlay is open — never stacked.
+  const anyOverlayOpen = quiz || wishlistOpen || giveaway;
+  const promo = usePromoCampaign(anyOverlayOpen);
+
 
   // JSON-LD for the curated guide (only fully-verified products).
   const jsonLd = useMemo(() => {
