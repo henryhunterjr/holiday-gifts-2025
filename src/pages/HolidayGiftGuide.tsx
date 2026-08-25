@@ -272,10 +272,22 @@ function GiftTag({ p, onCopyCode }: { p: Product; onCopyCode: (code: string) => 
           </span>
         </a>
         <button
-          onClick={() => {
-            navigator.share?.({ title: p.name, url: p.url }).catch(() => {});
-            navigator.clipboard?.writeText(p.url);
-            toast.success("Link copied");
+          onClick={async () => {
+            if (navigator.share) {
+              try {
+                await navigator.share({ title: p.name, url: p.url });
+                return;
+              } catch {
+                /* fall through to clipboard */
+              }
+            }
+            try {
+              if (!navigator.clipboard?.writeText) throw new Error("no clipboard");
+              await navigator.clipboard.writeText(p.url);
+              toast.success("Link copied");
+            } catch {
+              toast.error("Copy blocked by your browser. Long-press the link to copy it.");
+            }
           }}
           className="flex h-[42px] w-[42px] flex-none items-center justify-center rounded-[10px] border-[1.5px] border-parchment-deep bg-white text-crumb transition-colors hover:border-cranberry hover:text-cranberry"
           aria-label="Share"
