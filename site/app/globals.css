@@ -55,7 +55,7 @@ body {
   line-height: 1.55;
 }
 main {
-  max-width: 72rem;
+  max-width: 76rem;
   margin: 0 auto;
   padding: 0 1.25rem 4rem;
 }
@@ -145,7 +145,6 @@ nav.top-nav a:hover {
   background: linear-gradient(180deg, transparent, hsl(var(--oven) / 0.88));
   color: hsl(var(--flour));
 }
-.hero .eyebrow,
 .eyebrow {
   font-family: var(--font-body), sans-serif;
   font-size: 0.72rem;
@@ -234,19 +233,19 @@ nav.top-nav a:hover {
   color: hsl(var(--flour));
 }
 
-/* ============ Gift Tag card grid ============ */
+/* ============ Gift Tag card (ported from the SPA element) ============ */
 .card-grid {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 .gift-tag {
   background: linear-gradient(168deg, hsl(38 60% 94%) 0%, hsl(var(--parchment)) 100%);
   border-radius: 10px 10px var(--radius) var(--radius);
-  padding: 30px 16px 16px;
+  padding: 44px 18px 18px;
   position: relative;
   box-shadow: var(--shadow-tag);
   display: flex;
@@ -259,11 +258,11 @@ nav.top-nav a:hover {
 .gift-tag::before {
   content: "";
   position: absolute;
-  top: 10px;
+  top: 12px;
   left: 50%;
   transform: translateX(-50%);
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: hsl(var(--flour));
   box-shadow: inset 0 2px 4px hsl(var(--oven) / 0.35), 0 1px 0 hsl(0 0% 100%);
@@ -271,10 +270,10 @@ nav.top-nav a:hover {
 .gift-tag::after {
   content: "";
   position: absolute;
-  top: -8px;
+  top: -9px;
   left: 50%;
-  width: 40px;
-  height: 30px;
+  width: 46px;
+  height: 36px;
   border: 2.5px solid hsl(var(--twine));
   border-radius: 52% 60% 55% 48% / 62% 55% 48% 52%;
   transform: translateX(-50%) rotate(-12deg);
@@ -285,17 +284,43 @@ nav.top-nav a:hover {
   box-shadow: var(--shadow-lifted);
   z-index: 2;
 }
+/* the stretched anchor that makes the whole card clickable */
+.card-stretch::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.brand-chip {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: hsl(var(--evergreen));
+  background: hsl(var(--evergreen) / 0.12);
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+.card-img-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 170px;
+  margin-bottom: 0.75rem;
+}
 .card-img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 1px solid hsl(var(--parchment-deep));
-  background: hsl(var(--card));
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
 }
 .no-img {
-  aspect-ratio: 4 / 3;
+  height: 170px;
+  margin-bottom: 0.75rem;
   border-radius: 8px;
   border: 1px solid hsl(var(--parchment-deep));
   background:
@@ -310,39 +335,53 @@ nav.top-nav a:hover {
 .no-img span {
   font-family: var(--font-display), "Fraunces", Georgia, serif;
   font-variation-settings: "SOFT" 50;
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   color: hsl(var(--crumb));
   line-height: 1.2;
-}
-.tag-body {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  margin-top: 0.65rem;
-  flex: 1;
 }
 .tag-name {
   font-family: var(--font-display), "Fraunces", Georgia, serif;
   font-variation-settings: "SOFT" 50;
+  font-weight: 600;
   font-size: 1.08rem;
   line-height: 1.2;
-}
-.tag-price {
-  font-weight: 800;
-  color: hsl(var(--cranberry-deep));
-  font-family: var(--font-body), sans-serif;
-  font-size: 0.95rem;
+  color: hsl(var(--crust));
+  margin-bottom: 0.25rem;
 }
 .tag-desc {
-  margin: 0;
-  font-size: 0.88rem;
+  margin: 0 0 0.5rem;
+  font-size: 0.86rem;
+  color: hsl(27 35% 28%);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.tag-note {
+  font-family: var(--font-hand), "Caveat", cursive;
+  font-size: 1.12rem;
+  color: hsl(var(--cranberry-deep));
+  transform: rotate(-1deg);
+  margin: 0 0 0.75rem;
+}
+.tag-foot {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  position: relative;
+  z-index: 2;
+}
+.tag-price {
+  font-weight: 700;
+  font-size: 1.12rem;
   color: hsl(var(--crust));
 }
 .code-pill {
-  align-self: flex-start;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
   background: hsl(0 0% 100%);
   border: 1.5px dashed hsl(var(--cranberry));
   color: hsl(var(--cranberry-deep));
@@ -352,11 +391,51 @@ nav.top-nav a:hover {
   padding: 4px 9px;
   letter-spacing: 0.05em;
 }
+.buy-btn {
+  position: relative;
+  z-index: 2;
+  margin-top: 0.75rem;
+  display: block;
+  overflow: hidden;
+  border-radius: 10px;
+  background: hsl(var(--evergreen));
+  padding: 11px 12px;
+  text-align: center;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: hsl(var(--flour));
+  transition: background 0.15s ease;
+}
+.buy-btn:hover {
+  background: hsl(var(--evergreen-deep));
+  text-decoration: none;
+}
+.bulbs {
+  position: absolute;
+  inset: 4px 8px auto 8px;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.bulb {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+.bulb.b1 { background: #ffd166; box-shadow: 0 0 6px #ffd166; animation: bulbBlink 1.6s ease-in-out infinite; }
+.bulb.b2 { background: #ef476f; box-shadow: 0 0 6px #ef476f; animation: bulbBlink 1.6s ease-in-out 0.3s infinite; }
+.bulb.b3 { background: #06d6a0; box-shadow: 0 0 6px #06d6a0; animation: bulbBlink 1.6s ease-in-out 0.6s infinite; }
+.bulb.b4 { background: #ffd166; box-shadow: 0 0 6px #ffd166; animation: bulbBlink 1.6s ease-in-out 0.9s infinite; }
+@keyframes bulbBlink {
+  0%, 100% { opacity: 0.35; }
+  50%      { opacity: 1; }
+}
 .pick-ribbon {
   position: absolute;
   top: 12px;
   right: -6px;
-  z-index: 1;
+  z-index: 3;
   background: hsl(var(--cranberry));
   color: hsl(var(--flour));
   font-family: var(--font-body), sans-serif;
@@ -384,7 +463,8 @@ a:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .ornament-sway,
-  .ornament-twinkle { animation: none !important; }
+  .ornament-twinkle,
+  .bulb { animation: none !important; }
   .gift-tag,
   .gift-tag:hover {
     transform: none !important;
@@ -392,8 +472,7 @@ a:focus-visible {
   }
 }
 
-/* One column on small screens; the grid handles it via minmax, but keep the
-   hero text padding comfortable. */
+/* One column on small screens; keep hero text comfortable. */
 @media (max-width: 480px) {
   main { padding: 0 0.9rem 3rem; }
   .hero .hero-text { padding: 1.5rem 1rem 1rem; }
