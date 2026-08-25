@@ -43,6 +43,8 @@ import { MusicPlayer } from "@/components/MusicPlayer";
 import { WishlistDrawer, type WishlistItem } from "@/components/WishlistDrawer";
 import { useWishlist } from "@/hooks/useWishlist";
 import { breadcrumbJsonLd } from "@/components/seo/Breadcrumbs";
+import { EXTRA_TOP_PICKS, type TopPick } from "@/data/topPicks";
+import { PromoPopup, usePromoCampaign } from "@/components/promo/PromoPopup";
 
 /* ============ Types & data ============ */
 type Product = {
@@ -542,6 +544,16 @@ export default function HolidayGiftGuide() {
   }, [filtered]);
 
   const top6 = top6Slugs.map((s) => products.find((p) => p.slug === s)).filter(Boolean) as Product[];
+  // Positions 1-6 come from the curated slugs; 7-10 live in topPicks.ts.
+  const top10: TopPick[] = [
+    ...top6.map((p) => ({ id: p.slug, name: p.name, img: p.img, url: p.url, price: priceNum(p) })),
+    ...EXTRA_TOP_PICKS,
+  ];
+
+  // Promo popups defer while any other overlay is open — never stacked.
+  const anyOverlayOpen = quiz || wishlistOpen || giveaway;
+  const promo = usePromoCampaign(anyOverlayOpen);
+
 
   // JSON-LD for the curated guide (only fully-verified products).
   const jsonLd = useMemo(() => {
@@ -671,7 +683,7 @@ export default function HolidayGiftGuide() {
                   <Sparkles className="h-4 w-4" /> Open the Gift Finder
                 </button>
                 <a href="#top6" className="inline-flex items-center gap-2 rounded-full border-[1.5px] border-flour/40 px-6 py-3 font-bold text-flour transition-colors hover:border-honey hover:text-honey">
-                  See Henry's Top 6
+                  See Henry's Top 10
                 </a>
               </div>
               <p className="mt-5 text-sm" style={{ color: "#bfae92" }}>Affiliate links support free recipes. I only recommend what I use.</p>
@@ -773,25 +785,74 @@ export default function HolidayGiftGuide() {
           </div>
         </section>
 
-        {/* Top 6 */}
+        {/* Top 10 */}
         <section id="top6" className="scroll-mt-[150px] bg-gradient-to-b from-oven to-[hsl(24_38%_11%)] py-16 text-flour">
           <div className="mx-auto max-w-[1200px] px-5">
             <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
               <div>
                 <p className="eyebrow" style={{ color: "hsl(var(--honey))" }}>If you only look at one shelf</p>
-                <h2 className="mt-2 font-display text-3xl font-semibold text-flour md:text-5xl">Henry's Top 6</h2>
+                <h2 className="mt-2 font-display text-3xl font-semibold text-flour md:text-5xl">Henry's Top 10</h2>
               </div>
-              <p className="max-w-[52ch] text-[hsl(37_35%_75%)]">The six gifts I'd put under my own tree. Proven, loved, and used until the paint wore off.</p>
+              <p className="max-w-[52ch] text-[hsl(37_35%_75%)]">The gifts I'd put under my own tree. Proven, loved, and used until the paint wore off.</p>
             </div>
-            <div className="grid grid-flow-col auto-cols-[minmax(230px,1fr)] gap-5 overflow-x-auto pb-6" style={{ scrollSnapType: "x mandatory" }}>
-              {top6.map((p, i) => (
-                <a key={p.slug} href={p.url} target="_blank" rel="noopener noreferrer" className="relative flex flex-col rounded-2xl bg-gradient-to-b from-[#fdf6e8] to-flour p-4 text-ink shadow-lg transition-transform hover:-translate-y-1.5" style={{ scrollSnapAlign: "start" }}>
-                  <span className="absolute -left-2 -top-3 flex h-10 w-10 items-center justify-center rounded-full bg-cranberry font-display text-lg font-bold text-flour shadow-lg">{i + 1}</span>
-                  <img src={p.img} alt={p.name} loading="lazy" className="mx-auto my-3 h-36 object-contain" style={{ mixBlendMode: "multiply" }} />
-                  <h3 className="font-display text-[1.02rem] font-semibold text-crust">{p.name}</h3>
-                  <p className="mt-auto pt-2 font-extrabold text-cranberry">{priceStr(p)}</p>
-                </a>
-              ))}
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+              {top10.map((p, i) =>
+                p.placeholder ? (
+                  <div
+                    key={p.id}
+                    className="flex flex-col items-center justify-center rounded-2xl border-[1.5px] border-dashed border-flour/25 bg-flour/[0.06] p-4 text-center min-h-[280px]"
+                  >
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full border-[1.5px] border-flour/30 font-display text-lg font-bold text-flour/60">{i + 1}</span>
+                    <h3 className="mt-4 font-display text-[1.02rem] font-semibold text-flour/70">{p.name}</h3>
+                    <p className="mt-1 text-sm text-[hsl(37_25%_62%)]">{p.placeholderLabel}</p>
+                  </div>
+                ) : (
+                  <article key={p.id} className="relative flex flex-col rounded-2xl bg-gradient-to-b from-[#fdf6e8] to-flour p-4 text-ink shadow-lg transition-transform hover:-translate-y-1.5">
+                    <span className="absolute -left-2 -top-3 flex h-10 w-10 items-center justify-center rounded-full bg-cranberry font-display text-lg font-bold text-flour shadow-lg">{i + 1}</span>
+                    {p.discountLabel && (
+                      <span className="absolute right-3 top-3 rounded-full bg-evergreen px-2.5 py-1 text-[11px] font-extrabold uppercase tracking-wide text-flour shadow">
+                        {p.discountLabel}
+                      </span>
+                    )}
+                    <a href={p.url} target="_blank" rel="noopener noreferrer sponsored" className="block">
+                      <img src={p.img} alt={p.name} loading="lazy" className="mx-auto my-3 h-36 object-contain" style={{ mixBlendMode: "multiply" }} />
+                    </a>
+                    <h3 className="font-display text-[1.02rem] font-semibold text-crust">{p.name}</h3>
+                    {p.seller && <p className="mt-1 text-xs text-crumb">{p.seller}</p>}
+                    {p.desc && <p className="mt-2 text-[.84rem] leading-snug text-[hsl(27_35%_28%)]">{p.desc}</p>}
+                    <div className="mt-auto pt-3">
+                      {p.salePrice ? (
+                        <>
+                          <p className="font-extrabold text-cranberry">
+                            ${p.salePrice.toFixed(2)}{" "}
+                            <span className="text-sm font-semibold text-crumb line-through">${p.price.toFixed(2)}</span>
+                          </p>
+                          {p.code && (
+                            <button
+                              type="button"
+                              onClick={() => copyCode(p.code!)}
+                              className="code-pill mt-2 min-h-[36px]"
+                              aria-label={`Copy promo code ${p.code}`}
+                            >
+                              <Copy className="h-3 w-3" /> {p.discountLabel} · {p.code}
+                            </button>
+                          )}
+                        </>
+                      ) : (
+                        <p className="font-extrabold text-cranberry">${p.price.toFixed(2)}</p>
+                      )}
+                      <a
+                        href={p.url}
+                        target="_blank"
+                        rel="noopener noreferrer sponsored"
+                        className="mt-3 flex min-h-[46px] items-center justify-center rounded-[10px] bg-evergreen px-3 text-center text-[.88rem] font-extrabold text-flour transition-colors hover:bg-evergreen-deep"
+                      >
+                        {p.cta ?? "Gift it"} →
+                      </a>
+                    </div>
+                  </article>
+                ),
+              )}
             </div>
             <div className="-mt-3 h-3.5 rounded bg-gradient-to-b from-[#5a3a20] to-[#3a2412] shadow-2xl" />
             <p className="mt-6 text-center text-sm text-[hsl(37_35%_75%)]">
@@ -803,6 +864,7 @@ export default function HolidayGiftGuide() {
             </p>
           </div>
         </section>
+
 
         {/* Browse block. The sticky filter bar lives inside this wrapper, so it
             only follows the visitor through the section it actually filters. */}
@@ -1203,6 +1265,7 @@ export default function HolidayGiftGuide() {
 
       <GiftFinderQuiz open={quiz} onClose={() => setQuiz(false)} />
       <GiveawayModal open={giveaway} onClose={() => setGiveaway(false)} />
+      <PromoPopup campaign={promo.campaign} image={promo.image} onDismiss={promo.dismiss} onClickThrough={promo.clickThrough} />
     </div>
   );
 }
