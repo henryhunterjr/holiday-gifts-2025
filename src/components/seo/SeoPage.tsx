@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import type { ReactNode } from "react";
+import { Breadcrumbs, type Crumb } from "@/components/seo/Breadcrumbs";
 
 const SITE = "https://gifts.bakinggreatbread.blog";
 const OG_IMAGE = `${SITE}/og-image.png`;
@@ -12,6 +13,10 @@ export type SeoPageProps = {
   description: string;
   h1: string;
   eyebrow?: string;
+  /** Short label for this page in the breadcrumb trail. Defaults to `title`. */
+  breadcrumbLabel?: string;
+  /** Optional crumbs between the hub and this page. */
+  breadcrumbParents?: Crumb[];
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
   children: ReactNode;
 };
@@ -21,7 +26,7 @@ export type SeoPageProps = {
  * canonical URL, JSON-LD, the top back-to-hub nav, the visible <h1>,
  * and the footer link back into the Holiday Gift Guide 2026 hub.
  */
-export function SeoPage({ path, title, description, h1, eyebrow, jsonLd, children }: SeoPageProps) {
+export function SeoPage({ path, title, description, h1, eyebrow, breadcrumbLabel, breadcrumbParents = [], jsonLd, children }: SeoPageProps) {
   const canonical = `${SITE}${path}`;
   const fullTitle = `${title} — Holiday Gifts 2026`;
   const ldArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
@@ -46,17 +51,24 @@ export function SeoPage({ path, title, description, h1, eyebrow, jsonLd, childre
         ))}
       </Helmet>
 
-      <nav aria-label="Breadcrumb" className="border-b border-parchment-deep bg-parchment/50">
-        <div className="mx-auto flex max-w-[900px] items-center px-5 py-3">
+      <div className="border-b border-parchment-deep bg-parchment/50">
+        <div className="mx-auto flex max-w-[900px] flex-wrap items-center justify-between gap-x-4 px-5 py-3">
+          <Breadcrumbs
+            crumbs={[
+              { name: "Holiday Gift Guide 2026", path: "/" },
+              ...breadcrumbParents,
+              { name: breadcrumbLabel ?? title },
+            ]}
+          />
           <Link
             to="/"
-            className="inline-flex min-h-[44px] items-center gap-2 text-sm font-semibold text-crust hover:text-cranberry focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cranberry focus-visible:ring-offset-2"
+            className="inline-flex min-h-[36px] items-center gap-2 text-sm font-semibold text-cranberry hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cranberry focus-visible:ring-offset-2"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden />
-            Back to the 2026 Holiday Gift Guide
+            Back to the guide
           </Link>
         </div>
-      </nav>
+      </div>
 
       <main className="mx-auto max-w-[900px] px-5 py-12 md:py-16">
         <header className="mb-10">

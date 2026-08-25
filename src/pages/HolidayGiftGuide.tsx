@@ -1,7 +1,7 @@
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Search, Share2, Copy, Snowflake, ExternalLink, Star, X, Sparkles, ChevronDown, Music, Music2 } from "lucide-react";
+import { Search, Share2, Copy, Snowflake, ExternalLink, Star, X, Sparkles, ChevronDown, Heart } from "lucide-react";
 import { toast } from "sonner";
 import productsData from "@/data/products.json";
 import { krusticProducts } from "@/data/krustic";
@@ -39,6 +39,10 @@ import bookJourney from "@/assets/holiday/bread-journey.jpg";
 import giveBreadVideo from "@/assets/holiday/give-bread-instead.mp4.asset.json";
 import giveBreadTag from "@/assets/holiday/give-bread-instead-tag.png.asset.json";
 import { GiveawayModal } from "@/components/giveaway/GiveawayModal";
+import { MusicPlayer } from "@/components/MusicPlayer";
+import { WishlistDrawer, type WishlistItem } from "@/components/WishlistDrawer";
+import { useWishlist } from "@/hooks/useWishlist";
+import { breadcrumbJsonLd } from "@/components/seo/Breadcrumbs";
 
 /* ============ Types & data ============ */
 type Product = {
@@ -234,6 +238,8 @@ function HollySprig({ className = "" }: { className?: string }) {
 /* ============ Gift Tag Card ============ */
 function GiftTag({ p, onCopyCode }: { p: Product; onCopyCode: (code: string) => void }) {
   const num = priceNum(p);
+  const { has, toggle } = useWishlist();
+  const saved = has(p.slug);
   return (
     <article className="gift-tag">
       <span className="brand-chip">{p.brand}</span>
@@ -293,6 +299,22 @@ function GiftTag({ p, onCopyCode }: { p: Product; onCopyCode: (code: string) => 
           aria-label="Share"
         >
           <Share2 className="h-4 w-4" />
+        </button>
+        <button
+          onClick={() => {
+            const nowSaved = toggle(p.slug);
+            toast.success(nowSaved ? `Saved ${p.name}` : `Removed ${p.name}`);
+          }}
+          aria-pressed={saved}
+          aria-label={saved ? `Remove ${p.name} from saved gifts` : `Save ${p.name} to your gift list`}
+          title={saved ? "Saved" : "Save this gift"}
+          className={`flex h-[42px] w-[42px] flex-none items-center justify-center rounded-[10px] border-[1.5px] transition-colors ${
+            saved
+              ? "border-cranberry bg-cranberry text-flour"
+              : "border-parchment-deep bg-white text-crumb hover:border-cranberry hover:text-cranberry"
+          }`}
+        >
+          <Heart className="h-4 w-4" fill={saved ? "currentColor" : "none"} />
         </button>
       </div>
     </article>
@@ -475,7 +497,8 @@ export default function HolidayGiftGuide() {
   const [band, setBand] = useState<string | null>(null);
   const [quiz, setQuiz] = useState(false);
   const [showAll, setShowAll] = useState(false);
-  const [music, setMusic] = useState(false);
+  const [wishlistOpen, setWishlistOpen] = useState(false);
+  const { count: savedCount } = useWishlist();
   const [giveaway, setGiveaway] = useState(false);
   const searchInputId = useId();
 
@@ -555,9 +578,24 @@ export default function HolidayGiftGuide() {
           name: "Holiday Gift Guide 2026 — Curated picks",
           itemListElement: items,
         },
+        breadcrumbJsonLd([{ name: "Holiday Gift Guide 2026", path: "/" }]),
       ],
     };
   }, []);
+
+  // Saved gifts are stored as slugs; resolve them back to card data on demand.
+  const wishlistLookup = (slug: string): WishlistItem | undefined => {
+    const p = products.find((x) => x.slug === slug);
+    if (!p) return undefined;
+    return {
+      slug: p.slug,
+      name: p.name,
+      brand: p.brand,
+      img: p.img,
+      url: p.url,
+      priceLabel: priceNum(p) === 0 ? "Free" : priceStr(p),
+    };
+  };
 
   return (
     <div className="min-h-screen bg-flour text-ink">
@@ -590,16 +628,17 @@ export default function HolidayGiftGuide() {
             <span className="hidden sm:inline">Baking Great Bread at Home</span>
             <span className="sm:hidden">BGB</span>
           </a>
+          <MusicPlayer />
           <button
-            onClick={() => setMusic((m) => !m)}
-            aria-pressed={music}
-            aria-label={music ? "Stop background music" : "Play background music"}
-            className={`inline-flex items-center gap-1 rounded-full border px-3 py-1 text-xs transition-colors ${music ? "border-honey bg-honey/20 text-honey" : "border-honey/40 hover:bg-flour/10"}`}
+            onClick={() => setWishlistOpen(true)}
+            aria-label={`Saved gifts, ${savedCount} saved`}
+            className={`inline-flex min-h-[36px] items-center gap-1 rounded-full border px-3 py-1 text-xs transition-colors ${savedCount > 0 ? "border-cranberry bg-cranberry/30 text-flour" : "border-honey/40 hover:bg-flour/10"}`}
           >
-            {music ? <Music2 className="h-3 w-3" /> : <Music className="h-3 w-3" />}
-            <span>🎄 Music</span>
+            <Heart className="h-3 w-3" fill={savedCount > 0 ? "currentColor" : "none"} aria-hidden />
+            <span className="hidden sm:inline">Saved</span>
+            <span>{savedCount}</span>
           </button>
-          <span className="rounded-full border border-honey/40 bg-cranberry/30 px-3 py-1 text-xs whitespace-nowrap">
+          <span className="hidden rounded-full border border-honey/40 bg-cranberry/30 px-3 py-1 text-xs whitespace-nowrap sm:inline">
             <b className="text-honey">{days}</b> days to Christmas
           </span>
           <button
@@ -612,18 +651,8 @@ export default function HolidayGiftGuide() {
         </div>
         <HeaderGarland />
       </header>
-      {/* Background music player — hidden YouTube iframe, click gesture allows autoplay */}
-      {music && (
-        <iframe
-          key="bg-music"
-          title="Background holiday music"
-          src="https://www.youtube.com/embed/N91_IHbofhs?autoplay=1&loop=1&playlist=N91_IHbofhs&controls=0&modestbranding=1&rel=0"
-          allow="autoplay"
-          aria-hidden="true"
-          tabIndex={-1}
-          style={{ position: "fixed", left: -9999, top: -9999, width: 1, height: 1, border: 0, pointerEvents: "none" }}
-        />
-      )}
+      <WishlistDrawer open={wishlistOpen} onClose={() => setWishlistOpen(false)} lookup={wishlistLookup} />
+
 
       <main id="top">
         {/* Hero */}
