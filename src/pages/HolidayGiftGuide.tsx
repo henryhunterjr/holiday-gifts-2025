@@ -900,6 +900,8 @@ export default function HolidayGiftGuide() {
             })()}
           </div>
         </section>
+        </div>
+        {/* /browse — the sticky filter bar releases here */}
 
         {/* Krustic brand section */}
         <section id="krustic" className="border-y border-parchment-deep bg-parchment/60 py-10">
