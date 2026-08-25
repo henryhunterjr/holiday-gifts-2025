@@ -1,7 +1,7 @@
 {
   "meta": {
     "site": "https://gifts.bakinggreatbread.blog",
-    "generated": "2026-08-24T12:43:54.014Z",
+    "generated": "2026-08-25T03:05:14.937Z",
     "description": "Consolidated product catalog for the Holiday Baking Gift Guide. Affiliate links included. Prices last verified on the site.",
     "license": "Free to read. Keep affiliate links intact when republishing."
   },
@@ -168,7 +168,7 @@
       "brand": "Brød & Taylor",
       "price": 295,
       "cat": "Starter Care",
-      "img": "/product-images/sahara-dehydrator.png",
+      "img": "/product-images/sahara-dehydrator.jpg",
       "url": "https://collabs.shop/94zxfe",
       "code": "",
       "desc": "Pro-grade dehydrator that folds flat for storage. Dry starter for backup, herbs, fruit, and more.",
@@ -397,7 +397,7 @@
       "brand": "Wire Monkey",
       "price": 29,
       "cat": "Proofing & Temp",
-      "img": "/product-images/round-banneton.png",
+      "img": "/product-images/round-banneton.jpg",
       "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
       "code": "",
       "desc": "Sustainable wood pulp proofing basket that leaves beautiful rings on your boules. No flour caking like rattan.",
@@ -430,7 +430,7 @@
       "brand": "Wire Monkey",
       "price": 32,
       "cat": "Proofing & Temp",
-      "img": "/product-images/oval-banneton.png",
+      "img": "/product-images/oval-banneton.jpg",
       "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
       "code": "",
       "desc": "The batard version. Same sustainable wood pulp, same easy release.",
@@ -688,7 +688,7 @@
       "brand": "Brød & Taylor",
       "price": 20.95,
       "cat": "Scoring & Shaping",
-      "img": "/product-images/dough-whisk-new-sharp.png",
+      "img": "/product-images/dough-whisk-new-sharp.jpg",
       "url": "https://collabs.shop/6jalk7",
       "code": "",
       "desc": "Moves through shaggy dough without sticking or overworking. Retire the wooden spoon.",
@@ -914,7 +914,7 @@
       "brand": "Brød & Taylor",
       "price": 24.95,
       "cat": "Bake Day",
-      "img": "/product-images/bt-spice-grinder.png",
+      "img": "/product-images/bt-spice-grinder.jpg",
       "url": "https://collabs.shop/ve9hzn",
       "code": "",
       "desc": "Compact electric grinder for fresh spices, seeds, and coffee. Fresh-ground makes a difference you can taste.",
@@ -978,7 +978,7 @@
       "brand": "Brød & Taylor",
       "price": 69,
       "cat": "Bake Day",
-      "img": "/product-images/bt-chef-apron.png",
+      "img": "/product-images/bt-chef-apron.jpg",
       "url": "https://collabs.shop/akcwv4",
       "code": "",
       "desc": "Durable, adjustable, and actually comfortable through a full bake day.",
@@ -1369,11 +1369,13 @@
       "brand": "NutriMill",
       "source": "seed",
       "url": "https://collabs.shop/k0t6tw",
+      "img": "/product-images/nutrimill-bosch-bakers-bundle.jpg",
       "price": 99,
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "NutriMill Bosch Baker's Bundle",
+      "note": "For stiff whole grain dough and big batches. One machine that mixes, mills, and keeps up with a market table.",
       "categories": [
         "Milling & Flour"
       ],
@@ -1398,11 +1400,13 @@
       "brand": "NutriMill",
       "source": "seed",
       "url": "https://collabs.shop/vavywo",
+      "img": "/product-images/nutrimill-impact-grain-mill.jpg",
       "price": 249,
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "NutriMill Impact grain mill",
+      "note": "Fine flour fast, in volume. If you're milling for more than one kitchen, start here.",
       "categories": [
         "Milling & Flour"
       ],
@@ -1427,11 +1431,13 @@
       "brand": "NutriMill",
       "source": "seed",
       "url": "https://collabs.shop/tyhfee",
+      "img": "/product-images/nutrimill-classic-grain-mill.jpg",
       "price": 329,
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "NutriMill Classic grain mill",
+      "note": "Milling your own without a second mortgage. Coarse to fine, your call.",
       "categories": [
         "Milling & Flour"
       ],
@@ -1455,11 +1461,13 @@
       "brand": "NutriMill",
       "source": "seed",
       "url": "https://collabs.shop/lrhjzp",
+      "img": "/product-images/nutrimill-harvest-grain-mill.jpg",
       "price": 499,
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "NutriMill Harvest stone burr grain mill",
+      "note": "Stone milled, quiet enough for a shared kitchen, pretty enough to leave out.",
       "categories": [
         "Milling & Flour"
       ],
@@ -1489,11 +1497,13 @@
       "brand": "Fourneau",
       "source": "seed",
       "url": "https://collabs.shop/56xs3h",
+      "img": "/product-images/fourneau-bread-oven-grande.jpg",
       "price": 292.5,
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Fourneau Bread Oven Grande cast iron baking vessel",
+      "note": "Steam and spring without the thirty pound lift. Loading it doesn't cost you any skin.",
       "categories": [
         "Bake Day"
       ],
@@ -1517,11 +1527,13 @@
       "brand": "Farm2Flour",
       "source": "seed",
       "url": "https://collabs.shop/rde7py",
+      "img": "/product-images/farm2flour-100-organic-einkorn-flour.jpg",
       "price": 5.5,
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Farm2Flour organic einkorn flour",
+      "note": "Ancient grain you can trace to a farm. Start here if modern wheat sits funny with you.",
       "categories": [
         "Milling & Flour"
       ],
@@ -1545,11 +1557,13 @@
       "brand": "Fusek Flour Co.",
       "source": "seed",
       "url": "https://collabs.shop/qvvoqa",
+      "img": "/product-images/fusek-flour-co-sungold-spelt-berries.jpg",
       "price": 7.5,
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Fusek Flour Co. Sungold spelt berries",
+      "note": "For people who bought a mill. Fresh spelt that hasn't sat in a warehouse for a year.",
       "categories": [
         "Milling & Flour"
       ],
@@ -1573,11 +1587,13 @@
       "brand": "Better Batter",
       "source": "seed",
       "url": "https://collabs.shop/mrd6bl",
+      "img": "/product-images/better-batter-gluten-free-bread-flour-blend.jpg",
       "price": 9.99,
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Better Batter gluten free bread flour blend",
+      "note": "GF bread that isn't a brick, in a blend that works in normal recipes.",
       "categories": [
         "Milling & Flour"
       ],
@@ -1602,11 +1618,13 @@
       "brand": "Polselli",
       "source": "seed",
       "url": "https://collabs.shop/2jn8jy",
+      "img": "/product-images/polselli-organic-tipo-00-flour-5-kg.jpg",
       "price": 29.9,
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Polselli organic Tipo 00 flour, 5 kilogram bag",
+      "note": "Real Italian 00 by the five kilo bag. The chew your pizza crust has been missing.",
       "categories": [
         "Milling & Flour"
       ],
@@ -1631,11 +1649,13 @@
       "brand": "FarmSteady",
       "source": "seed",
       "url": "https://collabs.shop/h9clow",
+      "img": "/product-images/farmsteady-sourdough-bread-making-kit.jpg",
       "price": 55,
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "FarmSteady sourdough bread making kit",
+      "note": "One box, everything a curious beginner needs. No six separate orders.",
       "categories": [
         "Starter Care"
       ],
@@ -1659,11 +1679,13 @@
       "brand": "Made With Loave",
       "source": "seed",
       "url": "https://collabs.shop/9ug4o2",
+      "img": "/product-images/made-with-loave-dehydrated-sourdough-starter-with-recipe.jpg",
       "price": 15,
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Made With Loave dehydrated sourdough starter with recipe card",
+      "note": "A starter with a track record, awake in days instead of weeks.",
       "categories": [
         "Starter Care"
       ],
@@ -1687,11 +1709,13 @@
       "brand": "Made With Loave",
       "source": "seed",
       "url": "https://collabs.shop/akvrdf",
+      "img": "/product-images/made-with-loave-sourdough-accessory-kit.jpg",
       "price": 40,
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "Made With Loave sourdough accessory kit",
+      "note": "The tools that live around a starter, boxed. For whoever has the bug but not the gear.",
       "categories": [
         "Starter Care",
         "Scoring & Shaping"
@@ -1718,6 +1742,7 @@
       "price": 349.99,
       "url": "https://www.krustic.com/products/prime-bakers-bundle?rfsn=8815980.edac31",
       "desc": "The complete kit: Dutch oven, banneton, starter, transfer mat. Everything a new baker needs.",
+      "note": "Everything a new baker needs in one box. My default answer when someone says they want to start.",
       "source": "krustic",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
@@ -1745,6 +1770,7 @@
       "price": 149.99,
       "url": "https://www.krustic.com/products/freeform-dutch-oven-round-enameled?rfsn=8815980.edac31",
       "desc": "Enameled cast iron built for boules. Even heat, easy release, gorgeous color.",
+      "note": "No seasoning, no babysitting. Even heat, and the loaf lets go.",
       "source": "krustic",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
@@ -1773,6 +1799,7 @@
       "price": 159.98,
       "url": "https://www.krustic.com/products/freeform-dutch-oven-oval-enameled?rfsn=8815980.edac31",
       "desc": "Same enameled quality, shaped for batards. Room for two loaves side by side.",
+      "note": "Two batards side by side. A round pot wastes that space.",
       "source": "krustic",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
@@ -1800,6 +1827,7 @@
       "price": 149.99,
       "url": "https://www.krustic.com/products/the-freeform-dutch-oven-cast-iron-round?rfsn=8815980.edac31",
       "desc": "Traditional bare cast iron. Seasons beautifully, holds heat like nothing else.",
+      "note": "Bare iron that seasons into something better every bake.",
       "source": "krustic",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
@@ -1827,6 +1855,7 @@
       "price": 159.98,
       "url": "https://www.krustic.com/products/the-freeform-dutch-oven-cast-iron-oval?rfsn=8815980.edac31",
       "desc": "Oval bare cast iron for long loaves. A workhorse for the serious baker.",
+      "note": "The long-loaf workhorse. Back to back bakes, no complaints.",
       "source": "krustic",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
@@ -1854,6 +1883,7 @@
       "price": 44.99,
       "url": "https://www.krustic.com/products/the-wood-pulp-banneton-oval?rfsn=8815980.edac31",
       "desc": "Sustainable wood pulp proofing basket. Leaves clean spiral patterns on the crust.",
+      "note": "Clean spirals on a batard, none of the flour caking you get from cane.",
       "source": "krustic",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
@@ -1881,6 +1911,7 @@
       "price": 19.99,
       "url": "https://www.krustic.com/products/silicone-transfer-mat-round?rfsn=8815980.edac31",
       "desc": "Move dough from bench to Dutch oven without burns or dropped loaves.",
+      "note": "The drop-proof way to load a screaming hot pot.",
       "source": "krustic",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
@@ -1907,6 +1938,7 @@
     {
       "slug": "lodge-6qt-dutch-oven",
       "name": "Lodge 6qt Dutch Oven",
+      "note": "The pot I point beginners at. Real sourdough without the three hundred dollar spend.",
       "category": "Dutch Oven",
       "price": 79.99,
       "rating": 4.7,
@@ -1937,6 +1969,7 @@
     {
       "slug": "myweigh-kd-8000-scale",
       "name": "MyWeigh KD-8000 Scale",
+      "note": "Baker's percentages on the display, and it holds a full bowl of dough without flinching.",
       "category": "Scale",
       "price": 39.95,
       "rating": 4.8,
@@ -1969,6 +2002,7 @@
     {
       "slug": "bread-bosses-banneton",
       "name": "Bread Bosses Banneton",
+      "note": "The cheap way to find out whether a banneton is your thing.",
       "category": "Banneton",
       "price": 16.95,
       "rating": 4.7,
@@ -1999,6 +2033,7 @@
     {
       "slug": "thermapen-one",
       "name": "Thermapen ONE",
+      "note": "The instant read the professionals argue about. Fast enough to end the guessing.",
       "category": "Thermometer",
       "price": 105,
       "rating": 4.9,
@@ -2029,6 +2064,7 @@
     {
       "slug": "baking-steel",
       "name": "Baking Steel",
+      "note": "Fixes a pale bottom crust permanently. More heat from below than any stone I've tried.",
       "category": "Baking Steel",
       "price": 119,
       "rating": 4.8,
@@ -2059,6 +2095,7 @@
     {
       "slug": "oxo-bench-scraper",
       "name": "OXO Bench Scraper",
+      "note": "The first tool I'd buy today. Cheap, and it earns its drawer space forever.",
       "category": "Bench Tool",
       "price": 10.99,
       "rating": 4.8,
@@ -2089,6 +2126,7 @@
     {
       "slug": "thermoworks-thermopop",
       "name": "ThermoWorks ThermoPop",
+      "note": "Most of the Thermapen for a lot less money. Dough temp, sorted.",
       "category": "Thermometer",
       "price": 34,
       "rating": 4.7,
@@ -2120,6 +2158,7 @@
     {
       "slug": "cambro-6qt-container",
       "name": "Cambro 6qt Container",
+      "note": "Watch your bulk rise through the wall instead of lifting a towel to guess.",
       "category": "Container",
       "price": 17.29,
       "rating": 4.8,
@@ -2151,6 +2190,7 @@
     {
       "slug": "checkered-chef-cooling-rack",
       "name": "Checkered Chef Cooling Rack",
+      "note": "Soggy bottoms are a rack problem. This one fits a half sheet pan.",
       "category": "Cooling Rack",
       "price": 12.95,
       "rating": 4.7,
@@ -2181,6 +2221,7 @@
     {
       "slug": "kitchenaid-artisan-5qt-stand-mixer",
       "name": "KitchenAid Artisan 5qt Stand Mixer",
+      "note": "For cake bakers drifting into bread. It handles dough right up until they catch the bug properly.",
       "category": "Stand Mixer",
       "price": 449.99,
       "rating": 4.8,
@@ -2211,6 +2252,7 @@
     {
       "slug": "feather-razor-blades-100-pack",
       "name": "Feather Razor Blades (100 pack)",
+      "note": "Scoring blades by the hundred. A fresh blade every loaf, no more dragging.",
       "category": "Scoring",
       "price": 18.5,
       "rating": 4.8,
@@ -2242,6 +2284,7 @@
     {
       "slug": "silicone-bread-sling",
       "name": "Silicone Bread Sling",
+      "note": "The cheapest safe way to lower a loaf into a hot pot.",
       "category": "Sling",
       "price": 12.99,
       "rating": 4.6,
@@ -2272,6 +2315,7 @@
     {
       "slug": "ball-wide-mouth-mason-jars-12",
       "name": "Ball Wide Mouth Mason Jars (12)",
+      "note": "Starter jars without boutique pricing. Buy the dozen, give half away.",
       "category": "Starter Jar",
       "price": 18.99,
       "rating": 4.8,
@@ -2303,6 +2347,7 @@
     {
       "slug": "le-creuset-signature-dutch-oven-5-5qt",
       "name": "Le Creuset Signature Dutch Oven 5.5qt",
+      "note": "The pot that's as good on the stove as it is for bread, and on the counter for decades.",
       "category": "Dutch Oven",
       "price": 369.95,
       "rating": 4.8,
@@ -2333,6 +2378,7 @@
     {
       "slug": "staub-cast-iron-round-cocotte-5-5qt",
       "name": "Staub Cast Iron Round Cocotte 5.5qt",
+      "note": "A heavy lid that seals tight, with a matte interior that browns better than enamel.",
       "category": "Dutch Oven",
       "price": 329.99,
       "rating": 4.8,
@@ -2363,6 +2409,7 @@
     {
       "slug": "lavatools-javelin-pro-duo",
       "name": "Lavatools Javelin PRO Duo",
+      "note": "Fast, accurate, readable at a glance, without the flagship price tag.",
       "category": "Thermometer",
       "price": 54.99,
       "rating": 4.7,
@@ -2393,6 +2440,7 @@
     {
       "slug": "fibrament-d-baking-stone",
       "name": "FibraMent-D Baking Stone",
+      "note": "The stone that doesn't crack. Deck oven heat across the whole rack.",
       "category": "Baking Stone",
       "price": 89.95,
       "rating": 4.7,
@@ -2423,6 +2471,7 @@
     {
       "slug": "emile-henry-bread-cloche",
       "name": "Emile Henry Bread Cloche",
+      "note": "A lighter way to trap steam, for when the Dutch oven lift is too much.",
       "category": "Cloche",
       "price": 89.95,
       "rating": 4.6,
@@ -2453,6 +2502,7 @@
     {
       "slug": "ankarsrum-original-stand-mixer",
       "name": "Ankarsrum Original Stand Mixer",
+      "note": "The mixer actually built for dough. It doesn't walk across the counter and it doesn't strain.",
       "category": "Stand Mixer",
       "price": 799,
       "rating": 4.7,
@@ -2484,6 +2534,7 @@
     {
       "slug": "matfer-bourgeat-silicone-baking-mat",
       "name": "Matfer Bourgeat Silicone Baking Mat",
+      "note": "Retire the parchment habit. This survives daily commercial use.",
       "category": "Baking Mat",
       "price": 32,
       "rating": 4.8,
@@ -2521,6 +2572,7 @@
       "img": "/product-images/sourdough-rest-of-us-sharp.jpg",
       "url": "https://a.co/d/guDGoiE",
       "desc": "The beginner-friendly guide. No fancy equipment, no guilt, just techniques that work.",
+      "note": "The book I wrote for people with no gear and no patience for gatekeeping.",
       "source": "books",
       "currency": "USD",
       "rel": null,
@@ -2549,6 +2601,7 @@
       "img": "/product-images/vitale-sourdough-mastery-sharp.jpg",
       "url": "https://a.co/d/h8Lnskn",
       "desc": "Level up: timing, temperature control, and shaping, explained deeper.",
+      "note": "For when your loaves are fine and you want to know why the good ones were good.",
       "source": "books",
       "currency": "USD",
       "rel": null,
@@ -2577,6 +2630,7 @@
       "img": "/product-images/from-oven-to-market-sharp.jpg",
       "url": "https://a.co/d/3MKgp3l",
       "desc": "Turn baking into income. Cottage food law, pricing, production planning.",
+      "note": "Cottage law, pricing, production planning. Read it before you sell a single loaf.",
       "source": "books",
       "currency": "USD",
       "rel": null,
@@ -2605,6 +2659,7 @@
       "img": "/product-images/loaf-and-lie-sharp.jpg",
       "url": "https://a.co/d/fyIyomh",
       "desc": "Part history, part exposé: how industrial bread replaced the real thing.",
+      "note": "Why store bread is what it is. The history behind what we do at the bench.",
       "source": "books",
       "currency": "USD",
       "rel": null,
@@ -2634,6 +2689,7 @@
       "img": "/product-images/bread-journey.jpg",
       "url": "https://a.co/d/3jUvHC8",
       "desc": "History, fermentation science, and bread cultures around the world.",
+      "note": "The science and the story, not another recipe list.",
       "source": "books",
       "currency": "USD",
       "rel": null,
@@ -2660,9 +2716,10 @@
     {
       "slug": "free-starter-guide",
       "name": "Sourdough Starter Guide",
-      "img": "/product-images/starter-guide.png",
+      "img": "/product-images/starter-guide.jpg",
       "url": "https://sourdough-starter-guide.vercel.app/",
       "desc": "Create and keep a healthy starter, start to finish.",
+      "note": "Free, and it covers what went wrong if your starter dies.",
       "source": "free",
       "price": null,
       "currency": null,
@@ -2688,9 +2745,10 @@
     {
       "slug": "free-recipes",
       "name": "Recipe Collection",
-      "img": "/product-images/recipe-collection.png",
+      "img": "/product-images/recipe-collection.jpg",
       "url": "https://bakinggreatbread.blog",
       "desc": "Tested recipes from my kitchen, free on the blog.",
+      "note": "Tested recipes from my kitchen. No algorithm, no paywall.",
       "source": "free",
       "price": null,
       "currency": null,

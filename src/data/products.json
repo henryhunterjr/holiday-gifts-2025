@@ -85,7 +85,7 @@
       "brand": "Brød & Taylor",
       "price": 295,
       "cat": "Starter Care",
-      "img": "/product-images/sahara-dehydrator.png",
+      "img": "/product-images/sahara-dehydrator.jpg",
       "url": "https://collabs.shop/94zxfe",
       "code": "",
       "desc": "Pro-grade dehydrator that folds flat for storage. Dry starter for backup, herbs, fruit, and more.",
@@ -169,7 +169,7 @@
       "brand": "Wire Monkey",
       "price": 29,
       "cat": "Proofing & Temp",
-      "img": "/product-images/round-banneton.png",
+      "img": "/product-images/round-banneton.jpg",
       "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
       "code": "",
       "desc": "Sustainable wood pulp proofing basket that leaves beautiful rings on your boules. No flour caking like rattan.",
@@ -181,7 +181,7 @@
       "brand": "Wire Monkey",
       "price": 32,
       "cat": "Proofing & Temp",
-      "img": "/product-images/oval-banneton.png",
+      "img": "/product-images/oval-banneton.jpg",
       "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
       "code": "",
       "desc": "The batard version. Same sustainable wood pulp, same easy release.",
@@ -277,7 +277,7 @@
       "brand": "Brød & Taylor",
       "price": 20.95,
       "cat": "Scoring & Shaping",
-      "img": "/product-images/dough-whisk-new-sharp.png",
+      "img": "/product-images/dough-whisk-new-sharp.jpg",
       "url": "https://collabs.shop/6jalk7",
       "code": "",
       "desc": "Moves through shaggy dough without sticking or overworking. Retire the wooden spoon.",
@@ -361,7 +361,7 @@
       "brand": "Brød & Taylor",
       "price": 24.95,
       "cat": "Bake Day",
-      "img": "/product-images/bt-spice-grinder.png",
+      "img": "/product-images/bt-spice-grinder.jpg",
       "url": "https://collabs.shop/ve9hzn",
       "code": "",
       "desc": "Compact electric grinder for fresh spices, seeds, and coffee. Fresh-ground makes a difference you can taste.",
@@ -385,7 +385,7 @@
       "brand": "Brød & Taylor",
       "price": 69,
       "cat": "Bake Day",
-      "img": "/product-images/bt-chef-apron.png",
+      "img": "/product-images/bt-chef-apron.jpg",
       "url": "https://collabs.shop/akcwv4",
       "code": "",
       "desc": "Durable, adjustable, and actually comfortable through a full bake day.",
@@ -543,7 +543,8 @@
       "price": 6.08,
       "img": "/product-images/sourdough-rest-of-us-sharp.jpg",
       "url": "https://a.co/d/guDGoiE",
-      "desc": "The beginner-friendly guide. No fancy equipment, no guilt, just techniques that work."
+      "desc": "The beginner-friendly guide. No fancy equipment, no guilt, just techniques that work.",
+      "note": "The book I wrote for people with no gear and no patience for gatekeeping."
     },
     {
       "slug": "book-vitale",
@@ -551,7 +552,8 @@
       "price": 9.6,
       "img": "/product-images/vitale-sourdough-mastery-sharp.jpg",
       "url": "https://a.co/d/h8Lnskn",
-      "desc": "Level up: timing, temperature control, and shaping, explained deeper."
+      "desc": "Level up: timing, temperature control, and shaping, explained deeper.",
+      "note": "For when your loaves are fine and you want to know why the good ones were good."
     },
     {
       "slug": "book-foto",
@@ -559,7 +561,8 @@
       "price": 7.62,
       "img": "/product-images/from-oven-to-market-sharp.jpg",
       "url": "https://a.co/d/3MKgp3l",
-      "desc": "Turn baking into income. Cottage food law, pricing, production planning."
+      "desc": "Turn baking into income. Cottage food law, pricing, production planning.",
+      "note": "Cottage law, pricing, production planning. Read it before you sell a single loaf."
     },
     {
       "slug": "book-loaf-lie",
@@ -567,7 +570,8 @@
       "price": 6.99,
       "img": "/product-images/loaf-and-lie-sharp.jpg",
       "url": "https://a.co/d/fyIyomh",
-      "desc": "Part history, part exposé: how industrial bread replaced the real thing."
+      "desc": "Part history, part exposé: how industrial bread replaced the real thing.",
+      "note": "Why store bread is what it is. The history behind what we do at the bench."
     },
     {
       "slug": "book-journey",
@@ -575,23 +579,26 @@
       "price": 7.95,
       "img": "/product-images/bread-journey.jpg",
       "url": "https://a.co/d/3jUvHC8",
-      "desc": "History, fermentation science, and bread cultures around the world."
+      "desc": "History, fermentation science, and bread cultures around the world.",
+      "note": "The science and the story, not another recipe list."
     }
   ],
   "free": [
     {
       "slug": "free-starter-guide",
       "name": "Sourdough Starter Guide",
-      "img": "/product-images/starter-guide.png",
+      "img": "/product-images/starter-guide.jpg",
       "url": "https://sourdough-starter-guide.vercel.app/",
-      "desc": "Create and keep a healthy starter, start to finish."
+      "desc": "Create and keep a healthy starter, start to finish.",
+      "note": "Free, and it covers what went wrong if your starter dies."
     },
     {
       "slug": "free-recipes",
       "name": "Recipe Collection",
-      "img": "/product-images/recipe-collection.png",
+      "img": "/product-images/recipe-collection.jpg",
       "url": "https://bakinggreatbread.blog",
-      "desc": "Tested recipes from my kitchen, free on the blog."
+      "desc": "Tested recipes from my kitchen, free on the blog.",
+      "note": "Tested recipes from my kitchen. No algorithm, no paywall."
     }
   ],
   "market_kit_highlights": [
