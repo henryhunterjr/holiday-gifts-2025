@@ -773,7 +773,10 @@ export default function HolidayGiftGuide() {
           </div>
         </section>
 
-        {/* Filter bar — sticky on desktop only. */}
+        {/* Browse block. The sticky filter bar lives inside this wrapper, so it
+            only follows the visitor through the section it actually filters. */}
+        <div id="browse" className="relative">
+        {/* Filter bar — sticky on desktop only, scoped to #browse. */}
         <div className="z-40 border-b border-parchment-deep bg-flour md:sticky md:top-[64px] md:bg-flour/95 md:backdrop-blur">
           <div className="mx-auto max-w-[1200px] px-5 py-3">
             <div className="flex flex-wrap items-center gap-2.5">
