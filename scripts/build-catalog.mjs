@@ -70,6 +70,7 @@ for (const line of amazonSrc.split("\n")) {
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/^-+|-+$/g, ""),
     name,
+    note: get("note"),
     category: get("category"),
     price: get("price"),
     rating: Number.isFinite(rating) ? rating : undefined,
@@ -150,6 +151,7 @@ const seedProducts = seedData.newProducts.map((p) => {
     rel: affiliate ? REL_AFFILIATE : null,
     target: affiliate ? TARGET_AFFILIATE : null,
     alt: typeof p.alt === "string" ? p.alt : null,
+    ...(typeof p.note === "string" && p.note.trim() !== "" ? { note: p.note } : {}),
     categories,
     priceBand: priceBandFor(price),
     priceFrom: p.priceFrom ?? false,

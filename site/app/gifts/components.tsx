@@ -1,30 +1,33 @@
 import type { CatalogRecord } from "@/lib/catalog";
 
-// Product card: a faithful port of the SPA's .gift-tag element — brand chip,
-// contain-fit product image melting into the parchment, display-font name,
-// Henry's handwritten note, price + promo code row, evergreen Buy button with
-// string lights. The whole card is clickable via a stretched anchor that
-// carries the record's affiliate rel/target. data-product-slug stays on the
-// card root; the render gate counts it.
+const AUDIENCE_LABELS: Record<string, string> = {
+  "new-bakers": "for new bakers",
+  "serious-bakers": "for serious bakers",
+  "market-sellers": "for market sellers",
+};
+
 function buyLabel(p: CatalogRecord): string {
-  if (p.source === "books" || p.source === "amazon") return "Buy on Amazon";
-  if (p.source === "krustic") return "Buy at Krustic";
   if (p.source === "free") return "Get it free";
-  if (typeof p.brand === "string" && p.brand.trim() !== "") return `Buy at ${p.brand}`;
-  return "Buy it here";
+  return "Buy now";
 }
 
+// Product card: a faithful port of the SPA's .gift-tag element — brand chip,
+// contain-fit product image melting into the parchment, display-font name,
+// Henry's handwritten note, audience chips, price + promo code row, evergreen
+// Buy button with string lights. The whole card is clickable via a stretched
+// anchor that carries the record's affiliate rel/target. data-product-slug
+// stays on the card root; the render gate counts it.
 export function ProductList({ products, pinnedName }: { products: CatalogRecord[]; pinnedName?: string | null }) {
   return (
     <ul className="card-grid">
       {products.map((p, i) => {
         const pinned = pinnedName != null && p.name === pinnedName;
         const hasImg = typeof p.img === "string" && p.img.trim() !== "";
+        const audiences = (p.audiences ?? []).slice(0, 2);
         return (
           <li key={`${p.slug ?? p.name ?? i}`} data-product-slug={p.slug} className={`gift-tag${pinned ? " has-pick" : ""}`}>
             {pinned && <span className="pick-ribbon">Henry's pick</span>}
             {typeof p.brand === "string" && p.brand.trim() !== "" && <span className="brand-chip">{p.brand}</span>}
-            {/* stretched anchor: makes the whole card clickable */}
             {p.url && (
               <a className="card-stretch" href={p.url} rel={p.rel ?? undefined} target={p.target ?? undefined} aria-label={p.name ?? "product link"} />
             )}
@@ -38,6 +41,15 @@ export function ProductList({ products, pinnedName }: { products: CatalogRecord[
               </span>
             )}
             <span className="tag-name">{p.name}</span>
+            {audiences.length > 0 && (
+              <span className="aud-chips">
+                {audiences.map((a) => (
+                  <span key={a} className="aud-chip">
+                    {AUDIENCE_LABELS[a] ?? a}
+                  </span>
+                ))}
+              </span>
+            )}
             {typeof p.desc === "string" && p.desc.trim() !== "" && <p className="tag-desc">{p.desc}</p>}
             {typeof p.note === "string" && p.note.trim() !== "" && <p className="tag-note">"{p.note}"</p>}
             <span className="tag-foot">

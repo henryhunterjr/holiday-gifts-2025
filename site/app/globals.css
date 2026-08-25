@@ -448,6 +448,68 @@ nav.top-nav a:hover {
   box-shadow: var(--shadow-tag);
 }
 
+.disclosure {
+  font-size: 0.82rem;
+  color: hsl(var(--crumb));
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--parchment-deep));
+  border-radius: 10px;
+  padding: 0.6rem 0.9rem;
+  max-width: 46rem;
+}
+
+/* ============ Top picks band ============ */
+.top-picks {
+  margin: 2rem 0 1rem;
+}
+.top-picks > h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+.picks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+.pick-pitch {
+  margin: 0.4rem 0 0.75rem;
+  font-size: 0.92rem;
+  color: hsl(var(--crust));
+}
+
+/* ============ Grouped index sections ============ */
+.cat-group {
+  margin: 2.5rem 0;
+}
+.cat-group > h2 {
+  font-size: 1.5rem;
+  border-bottom: 3px solid hsl(var(--honey));
+  padding-bottom: 0.35rem;
+  margin-bottom: 0.35rem;
+}
+.cat-intro {
+  margin: 0.35rem 0 1.25rem;
+  font-style: italic;
+  color: hsl(var(--crumb));
+}
+
+/* ============ Audience chips ============ */
+.aud-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.15rem 0;
+}
+.aud-chip {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: hsl(var(--evergreen));
+  background: hsl(var(--evergreen) / 0.12);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
 /* ============ Focus ring (accessibility port) ============ */
 a:focus-visible {
   outline: 3px solid hsl(var(--honey));

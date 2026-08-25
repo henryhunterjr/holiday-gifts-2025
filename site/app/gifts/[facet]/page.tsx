@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { buildFacets, productsForFacet, orderProducts } from "@/lib/facets";
-import { contentForRoute } from "@/lib/content";
+import { contentForRoute, siteDisclosure } from "@/lib/content";
 import { BASE_URL } from "@/lib/site.mjs";
 import { buildItemListJsonLd } from "@/lib/schema";
 import { ProductList } from "../components";
@@ -44,6 +44,7 @@ export default async function FacetPage({ params }: { params: Promise<{ facet: s
         <MiniOrnament />
       </header>
       {content && <p className="intro">{content.intro}</p>}
+      <p className="disclosure">{siteDisclosure()}</p>
       <PriceCheckedNote />
       <FacetLinks current={facet} />
       <ProductList products={products} pinnedName={content?.pinnedPick ?? null} />

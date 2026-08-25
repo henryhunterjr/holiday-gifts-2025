@@ -36,7 +36,8 @@
           "I'm mixing more than two loaves at a time",
           "I want one machine that mixes, mills, and handles market volume"
         ]
-      }
+      },
+      "note": "For stiff whole grain dough and big batches. One machine that mixes, mills, and keeps up with a market table."
     },
     {
       "name": "NutriMill Impact Grain Mill",
@@ -62,7 +63,8 @@
           "Store bought whole wheat tastes flat by the time I open the bag",
           "I'm milling for a market table, not a single loaf"
         ]
-      }
+      },
+      "note": "Fine flour fast, in volume. If you're milling for more than one kitchen, start here."
     },
     {
       "name": "NutriMill Classic Grain Mill",
@@ -87,7 +89,8 @@
           "I bake whole grain often enough that bagged flour goes stale on me",
           "I want control over how coarse or fine my flour is"
         ]
-      }
+      },
+      "note": "Milling your own without a second mortgage. Coarse to fine, your call."
     },
     {
       "name": "NutriMill Harvest Grain Mill",
@@ -118,7 +121,8 @@
           "I want stone milled flour, not hammer milled",
           "I want a mill I don't have to hide in a cabinet"
         ]
-      }
+      },
+      "note": "Stone milled, quiet enough for a shared kitchen, pretty enough to leave out."
     },
     {
       "name": "Fourneau Bread Oven Grande",
@@ -144,7 +148,8 @@
           "I want steam without a pan of water and a mess"
         ]
       },
-      "priceFrom": true
+      "priceFrom": true,
+      "note": "Steam and spring without the thirty pound lift. Loading it doesn't cost you any skin."
     },
     {
       "name": "Farm2Flour 100% Organic Einkorn Flour",
@@ -170,7 +175,8 @@
           "I want flour I can trace back to a farm"
         ]
       },
-      "priceFrom": true
+      "priceFrom": true,
+      "note": "Ancient grain you can trace to a farm. Start here if modern wheat sits funny with you."
     },
     {
       "name": "Fusek Flour Co. Sungold Spelt Berries",
@@ -195,7 +201,8 @@
           "I want spelt that hasn't been sitting in a warehouse for a year",
           "I want to taste the difference fresh milled actually makes"
         ]
-      }
+      },
+      "note": "For people who bought a mill. Fresh spelt that hasn't sat in a warehouse for a year."
     },
     {
       "name": "Better Batter Gluten Free Bread Flour Blend",
@@ -223,7 +230,8 @@
           "I want a blend I can use in a normal bread recipe without rewriting it"
         ]
       },
-      "priceFrom": true
+      "priceFrom": true,
+      "note": "GF bread that isn't a brick, in a blend that works in normal recipes."
     },
     {
       "name": "Polselli Organic Tipo 00 Flour, 5 kg",
@@ -250,7 +258,8 @@
           "I'm going through flour fast enough that small bags are costing me",
           "I want real Italian 00, not a domestic substitute"
         ]
-      }
+      },
+      "note": "Real Italian 00 by the five kilo bag. The chew your pizza crust has been missing."
     },
     {
       "name": "FarmSteady Sourdough Bread Making Kit",
@@ -275,7 +284,8 @@
           "I'm shopping for someone who's curious but hasn't started",
           "I want one box that has everything instead of six separate orders"
         ]
-      }
+      },
+      "note": "One box, everything a curious beginner needs. No six separate orders."
     },
     {
       "name": "Made With Loave Dehydrated Sourdough Starter with Recipe",
@@ -300,7 +310,8 @@
           "I want to skip the part where I stare at flour paste for a week",
           "I want a starter with a track record, not one I have to gamble on"
         ]
-      }
+      },
+      "note": "A starter with a track record, awake in days instead of weeks."
     },
     {
       "name": "Made With Loave Sourdough Accessory Kit",
@@ -326,7 +337,8 @@
           "I'm buying for someone who has the bug but not the gear",
           "I want the basics without buying a whole shelf of specialty equipment"
         ]
-      }
+      },
+      "note": "The tools that live around a starter, boxed. For whoever has the bug but not the gear."
     }
   ],
   "enrichmentByName": {

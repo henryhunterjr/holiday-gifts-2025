@@ -51,6 +51,13 @@ for (const r of generated) {
 }
 
 // Pinned picks: exact catalog name, present on its facet.
+// Top picks: exact catalog names too.
+for (const key of Object.keys(content.pages)) {
+  const picks = content.pages[key].topPicks ?? [];
+  for (const tp of picks) {
+    if (!allNames.has(tp.name)) failures.push(`"${key}" topPick "${tp.name}" is not an exact catalog product name`);
+  }
+}
 for (const [key, page] of Object.entries(content.pages)) {
   const pin = page.pinnedPick;
   if (pin === null || pin === undefined) continue;
