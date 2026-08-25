@@ -73,11 +73,17 @@ for (const want of [`${SITE_ORIGIN}/gifts/`, ...facetDirs.map((d) => `${SITE_ORI
   if (!locs.includes(want)) fail(`dist/sitemap.xml is missing <loc> ${want}`);
 }
 
-// The cheap catch-all: nothing that ships may reference the dead host.
-const lovableFiles = walk(DIST).filter((f) => readFile(f).includes("lovable.app"));
+// The cheap catch-all: nothing that ships may LINK to the dead host.
+// Match actual URLs (https://x.lovable.app/..., //lovable.app/...), not the
+// bare string. The auto-generated preview-auth code (previewAuthStorage.ts)
+// carries "lovable.app" in a hostname list that ends up in the JS bundle; it is
+// inert on this site and not a dead link, so a plain-text search false-positives.
+const LOVABLE_URL = /(?:https?:)?\/\/(?:[a-z0-9-]+\.)*lovable\.app(?![a-z0-9.-])/i;
+const lovableFiles = walk(DIST).filter((f) => LOVABLE_URL.test(readFile(f)));
 if (lovableFiles.length) {
   fail(
-    `lovable.app found in ${lovableFiles.length} dist file(s):\n  ${lovableFiles.slice(0, 10).join("\n  ")}`
+    `lovable.app URL found in ${lovableFiles.length} dist file(s):\n  ${lovableFiles.slice(0, 10).join("\n  ")}`
+
   );
 }
 
