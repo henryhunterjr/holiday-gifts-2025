@@ -66,7 +66,7 @@ export function MusicPlayer() {
         <div
           role="group"
           aria-label="Music player"
-          className="absolute right-0 top-[calc(100%+8px)] z-[60] w-[240px] rounded-xl border border-honey/30 bg-oven/98 p-3 text-flour shadow-xl"
+          className="absolute right-0 top-[calc(100%+8px)] z-[60] w-[240px] rounded-xl border border-honey/30 bg-oven p-3 text-flour shadow-xl"
         >
           <div className="flex items-center gap-2">
             <button
