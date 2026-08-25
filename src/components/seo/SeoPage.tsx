@@ -26,7 +26,7 @@ export type SeoPageProps = {
  * canonical URL, JSON-LD, the top back-to-hub nav, the visible <h1>,
  * and the footer link back into the Holiday Gift Guide 2026 hub.
  */
-export function SeoPage({ path, title, description, h1, eyebrow, jsonLd, children }: SeoPageProps) {
+export function SeoPage({ path, title, description, h1, eyebrow, breadcrumbLabel, breadcrumbParents = [], jsonLd, children }: SeoPageProps) {
   const canonical = `${SITE}${path}`;
   const fullTitle = `${title} — Holiday Gifts 2026`;
   const ldArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
