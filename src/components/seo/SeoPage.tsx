@@ -13,6 +13,10 @@ export type SeoPageProps = {
   description: string;
   h1: string;
   eyebrow?: string;
+  /** Short label for this page in the breadcrumb trail. Defaults to `title`. */
+  breadcrumbLabel?: string;
+  /** Optional crumbs between the hub and this page. */
+  breadcrumbParents?: Crumb[];
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
   children: ReactNode;
 };
