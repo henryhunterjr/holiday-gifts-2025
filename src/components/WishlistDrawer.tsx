@@ -32,7 +32,7 @@ export function WishlistDrawer({
 
   return (
     <Dialog open={open} onOpenChange={(v) => !v && onClose()}>
-      <DialogContent className="max-h-[85vh] max-w-[560px] overflow-y-auto bg-flour text-ink">
+      <DialogContent className="max-h-[85vh] w-[calc(100vw-2rem)] max-w-[560px] overflow-y-auto bg-flour p-5 text-ink sm:p-6">
         <DialogHeader>
           <DialogTitle className="font-display text-2xl text-crust">Your saved gifts</DialogTitle>
           <DialogDescription className="text-crumb">
