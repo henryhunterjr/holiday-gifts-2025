@@ -317,27 +317,58 @@ function GiftFinderQuiz({ open, onClose }: { open: boolean; onClose: () => void 
 
   const done = step >= questions.length;
 
-  const matches = useMemo(() => {
+  // Budget is a hard constraint and the stated category comes first. Only when
+  // the category has fewer than three in-budget matches do we backfill, and
+  // those extras get labelled so the picks stay honest.
+  const matches = useMemo<{ p: Product; extra: boolean }[]>(() => {
     if (!done) return [];
-    // Budget is a HARD constraint: filter first, then score.
     const band = bandByLabel(ans.budget);
     const inBudget = band ? products.filter((p) => band.test(priceNum(p))) : products;
-    return inBudget
-      .map((p) => {
-        let score = 0;
-        if (p.cat === ans.need) score += 3;
-        if (ans.who === "A new baker" && ["Starter Care", "Bake Day"].includes(p.cat)) score += 1;
-        if (ans.who === "Obsessed sourdough baker" && ["Scoring & Shaping", "Proofing & Temp"].includes(p.cat)) score += 1;
-        if (ans.who === "Market seller" && ["Storage & Gifting", "Wood & Serving"].includes(p.cat)) score += 1;
-        if (ans.style === "Stocking stuffer" && priceNum(p) < 30) score += 1;
-        if (ans.style === "Centerpiece gift" && priceNum(p) > 100) score += 1;
-        if (ans.style === "Bundle" && /bundle/i.test(p.name)) score += 2;
-        return { p, score };
-      })
-      .sort((a, b) => b.score - a.score)
-      .slice(0, 3)
-      .map((x) => x.p);
+    const rank = (p: Product) => {
+      let score = 0;
+      if (ans.who === "A new baker" && ["Starter Care", "Bake Day"].includes(p.cat)) score += 2;
+      if (ans.who === "Obsessed sourdough baker" && ["Scoring & Shaping", "Proofing & Temp"].includes(p.cat)) score += 2;
+      if (ans.who === "Market seller" && ["Storage & Gifting", "Wood & Serving"].includes(p.cat)) score += 2;
+      if (ans.style === "Stocking stuffer" && priceNum(p) < 30) score += 1;
+      if (ans.style === "Centerpiece gift" && priceNum(p) > 100) score += 1;
+      if (ans.style === "Bundle" && /bundle/i.test(p.name)) score += 2;
+      return score;
+    };
+    const byRank = (a: Product, b: Product) => rank(b) - rank(a);
+    const onCategory = inBudget.filter((p) => p.cat === ans.need).sort(byRank);
+    const picks = onCategory.slice(0, 3).map((p) => ({ p, extra: false }));
+    if (picks.length < 3) {
+      const rest = inBudget
+        .filter((p) => p.cat !== ans.need)
+        .sort(byRank)
+        .slice(0, 3 - picks.length)
+        .map((p) => ({ p, extra: true }));
+      picks.push(...rest);
+    }
+    return picks;
   }, [done, ans]);
+
+  // Preload result photos before revealing them, so the payoff screen never
+  // flashes empty white cards.
+  const [imagesReady, setImagesReady] = useState(false);
+  useEffect(() => {
+    if (!done || matches.length === 0) { setImagesReady(false); return; }
+    let cancelled = false;
+    setImagesReady(false);
+    Promise.all(
+      matches.map(
+        ({ p }) =>
+          new Promise<void>((resolve) => {
+            const img = new Image();
+            img.onload = () => resolve();
+            img.onerror = () => resolve();
+            img.src = p.img;
+          })
+      )
+    ).then(() => { if (!cancelled) setImagesReady(true); });
+    const timer = window.setTimeout(() => { if (!cancelled) setImagesReady(true); }, 2500);
+    return () => { cancelled = true; window.clearTimeout(timer); };
+  }, [done, matches]);
 
   const widenBudget = () => setStep(1); // jump back to budget question
   const changeCategory = () => setStep(2); // jump back to need/category
