@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import type { ReactNode } from "react";
+import { Breadcrumbs, type Crumb } from "@/components/seo/Breadcrumbs";
 
 const SITE = "https://gifts.bakinggreatbread.blog";
 const OG_IMAGE = `${SITE}/og-image.png`;
