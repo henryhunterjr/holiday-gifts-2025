@@ -39,6 +39,10 @@ import bookJourney from "@/assets/holiday/bread-journey.jpg";
 import giveBreadVideo from "@/assets/holiday/give-bread-instead.mp4.asset.json";
 import giveBreadTag from "@/assets/holiday/give-bread-instead-tag.png.asset.json";
 import { GiveawayModal } from "@/components/giveaway/GiveawayModal";
+import { MusicPlayer } from "@/components/MusicPlayer";
+import { WishlistDrawer, type WishlistItem } from "@/components/WishlistDrawer";
+import { useWishlist } from "@/hooks/useWishlist";
+import { breadcrumbJsonLd } from "@/components/seo/Breadcrumbs";
 
 /* ============ Types & data ============ */
 type Product = {
