@@ -627,7 +627,7 @@ export default function HolidayGiftGuide() {
 
       <main id="top">
         {/* Hero */}
-        <section className="relative overflow-hidden pt-32 text-flour" style={{ background: "radial-gradient(1200px 500px at 50% -10%, hsl(var(--honey) / 0.16), transparent 60%), linear-gradient(180deg, #17202b 0%, #1c1a14 45%, hsl(var(--oven)) 100%)" }}>
+        <section className="relative overflow-hidden pt-[150px] text-flour" style={{ background: "radial-gradient(1200px 500px at 50% -10%, hsl(var(--honey) / 0.16), transparent 60%), linear-gradient(180deg, #17202b 0%, #1c1a14 45%, hsl(var(--oven)) 100%)" }}>
           <div className="relative z-20 mx-auto grid max-w-[1200px] items-center gap-10 px-5 pb-20 md:grid-cols-[1.05fr_0.95fr] md:gap-12">
             <div>
               <p className="eyebrow" style={{ color: "hsl(var(--honey))" }}>The 2026 Guide</p>
@@ -1031,8 +1031,8 @@ export default function HolidayGiftGuide() {
               ))}
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="https://fromoventomarket.com" target="_blank" rel="noopener noreferrer" className="rounded-full bg-cranberry px-6 py-3 font-bold text-flour hover:bg-cranberry-deep">See all 35 Market Kit essentials →</a>
-              <a href="https://fromoventomarket.com/" target="_blank" rel="noopener noreferrer" className="rounded-full border-[1.5px] border-flour/40 px-6 py-3 font-bold text-flour hover:border-honey hover:text-honey">Gift the course</a>
+              <a href="https://fromoventomarket.com" target="_blank" rel="noopener noreferrer" className="rounded-full bg-cranberry px-6 py-3 font-bold text-flour hover:bg-cranberry-deep">See the Market Kit at From Oven to Market →</a>
+              <a href="https://fromoventomarket.com/" target="_blank" rel="noopener noreferrer" className="rounded-full border-[1.5px] border-flour/40 px-6 py-3 font-bold text-flour hover:border-honey hover:text-honey">Gift the course at From Oven to Market</a>
             </div>
             <p className="mt-4 text-xs text-[hsl(37_25%_70%)]">As an Amazon Associate Henry earns from qualifying purchases. Booth gear links go to Amazon; the Kit and course live at fromoventomarket.com.</p>
           </div>
