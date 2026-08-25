@@ -1,7 +1,7 @@
 // Central config for the Holiday Gift Guide.
 // Update these values here rather than editing components directly.
 
-export const PRICES_LAST_CHECKED = "November 15, 2026";
+export const PRICES_LAST_CHECKED = "August 25, 2026";
 
 // Products whose destination URL is broken or unverified. Hidden from the live
 // guide until a valid URL is supplied. Keys are product slugs.
