@@ -762,11 +762,13 @@ export default function HolidayGiftGuide() {
             >
               <video
                 src={giveBreadVideo.url}
+                poster="/give-bread-instead-poster.jpg"
                 controls
                 playsInline
                 preload="metadata"
-                className="block h-auto w-full"
+                className="block h-auto w-full bg-oven object-cover"
               />
+
             </div>
           </div>
         </section>
