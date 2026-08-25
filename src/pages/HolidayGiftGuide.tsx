@@ -497,7 +497,8 @@ export default function HolidayGiftGuide() {
   const [band, setBand] = useState<string | null>(null);
   const [quiz, setQuiz] = useState(false);
   const [showAll, setShowAll] = useState(false);
-  const [music, setMusic] = useState(false);
+  const [wishlistOpen, setWishlistOpen] = useState(false);
+  const { count: savedCount } = useWishlist();
   const [giveaway, setGiveaway] = useState(false);
   const searchInputId = useId();
 
