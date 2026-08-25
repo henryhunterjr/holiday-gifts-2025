@@ -43,6 +43,8 @@ import { MusicPlayer } from "@/components/MusicPlayer";
 import { WishlistDrawer, type WishlistItem } from "@/components/WishlistDrawer";
 import { useWishlist } from "@/hooks/useWishlist";
 import { breadcrumbJsonLd } from "@/components/seo/Breadcrumbs";
+import { EXTRA_TOP_PICKS, type TopPick } from "@/data/topPicks";
+import { PromoPopup, usePromoCampaign } from "@/components/promo/PromoPopup";
 
 /* ============ Types & data ============ */
 type Product = {
@@ -681,7 +683,7 @@ export default function HolidayGiftGuide() {
                   <Sparkles className="h-4 w-4" /> Open the Gift Finder
                 </button>
                 <a href="#top6" className="inline-flex items-center gap-2 rounded-full border-[1.5px] border-flour/40 px-6 py-3 font-bold text-flour transition-colors hover:border-honey hover:text-honey">
-                  See Henry's Top 6
+                  See Henry's Top 10
                 </a>
               </div>
               <p className="mt-5 text-sm" style={{ color: "#bfae92" }}>Affiliate links support free recipes. I only recommend what I use.</p>
@@ -1263,6 +1265,7 @@ export default function HolidayGiftGuide() {
 
       <GiftFinderQuiz open={quiz} onClose={() => setQuiz(false)} />
       <GiveawayModal open={giveaway} onClose={() => setGiveaway(false)} />
+      <PromoPopup campaign={promo.campaign} image={promo.image} onDismiss={promo.dismiss} onClickThrough={promo.clickThrough} />
     </div>
   );
 }
