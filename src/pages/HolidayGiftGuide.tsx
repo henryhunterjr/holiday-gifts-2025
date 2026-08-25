@@ -300,6 +300,22 @@ function GiftTag({ p, onCopyCode }: { p: Product; onCopyCode: (code: string) => 
         >
           <Share2 className="h-4 w-4" />
         </button>
+        <button
+          onClick={() => {
+            const nowSaved = toggle(p.slug);
+            toast.success(nowSaved ? `Saved ${p.name}` : `Removed ${p.name}`);
+          }}
+          aria-pressed={saved}
+          aria-label={saved ? `Remove ${p.name} from saved gifts` : `Save ${p.name} to your gift list`}
+          title={saved ? "Saved" : "Save this gift"}
+          className={`flex h-[42px] w-[42px] flex-none items-center justify-center rounded-[10px] border-[1.5px] transition-colors ${
+            saved
+              ? "border-cranberry bg-cranberry text-flour"
+              : "border-parchment-deep bg-white text-crumb hover:border-cranberry hover:text-cranberry"
+          }`}
+        >
+          <Heart className="h-4 w-4" fill={saved ? "currentColor" : "none"} />
+        </button>
       </div>
     </article>
   );
