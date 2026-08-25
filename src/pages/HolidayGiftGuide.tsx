@@ -578,9 +578,24 @@ export default function HolidayGiftGuide() {
           name: "Holiday Gift Guide 2026 — Curated picks",
           itemListElement: items,
         },
+        breadcrumbJsonLd([{ name: "Holiday Gift Guide 2026", path: "/" }]),
       ],
     };
   }, []);
+
+  // Saved gifts are stored as slugs; resolve them back to card data on demand.
+  const wishlistLookup = (slug: string): WishlistItem | undefined => {
+    const p = products.find((x) => x.slug === slug);
+    if (!p) return undefined;
+    return {
+      slug: p.slug,
+      name: p.name,
+      brand: p.brand,
+      img: p.img,
+      url: p.url,
+      priceLabel: priceNum(p) === 0 ? "Free" : priceStr(p),
+    };
+  };
 
   return (
     <div className="min-h-screen bg-flour text-ink">
