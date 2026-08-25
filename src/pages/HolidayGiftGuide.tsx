@@ -163,8 +163,21 @@ const ORNAMENTS = [
 ];
 
 function HeaderGarland() {
+  // The garland belongs to the hero. Once the visitor scrolls past it, fade it
+  // out so it never hangs over live content further down the page.
+  const [visible, setVisible] = useState(true);
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY < 160);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   return (
-    <div aria-hidden className="pointer-events-none absolute inset-x-0 top-full z-40 h-[120px] overflow-visible">
+    <div
+      aria-hidden
+      className="pointer-events-none absolute inset-x-0 top-full z-40 h-[120px] overflow-visible transition-opacity duration-300"
+      style={{ opacity: visible ? 1 : 0 }}
+    >
       {/* String across the top */}
       <svg className="absolute inset-x-0 top-0 h-6 w-full" viewBox="0 0 1200 24" preserveAspectRatio="none">
         <path d="M0 4 Q 300 24 600 8 T 1200 4" stroke="hsl(var(--evergreen-deep))" strokeWidth="2" fill="none" opacity="0.85" />
