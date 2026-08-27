@@ -38,6 +38,7 @@ import bookLoaf from "@/assets/holiday/loaf-and-lie-sharp.jpg";
 import bookJourney from "@/assets/holiday/bread-journey.jpg";
 import giveBreadVideo from "@/assets/holiday/give-bread-instead.mp4.asset.json";
 import giveBreadTag from "@/assets/holiday/give-bread-instead-tag.png.asset.json";
+import wireMonkeyBanner from "@/assets/promo/wiremonkey-promo-banner.png.asset.json";
 import { GiveawayModal } from "@/components/giveaway/GiveawayModal";
 import { MusicPlayer } from "@/components/MusicPlayer";
 import { WishlistDrawer, type WishlistItem } from "@/components/WishlistDrawer";
@@ -964,13 +965,34 @@ export default function HolidayGiftGuide() {
                     const items = displayByCat.get(c) || [];
                     if (items.length === 0) return null;
                     return (
-                      <div key={c} className="mb-14">
-                        <div className="mb-6 flex items-baseline gap-3.5 border-b-2 border-dashed border-parchment-deep pb-2.5">
-                          <h3 className="font-display text-2xl font-semibold text-crust">{c}</h3>
-                          <span className="text-xs text-crumb">{items.length} gift{items.length !== 1 ? "s" : ""}</span>
-                        </div>
-                        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                          {items.map((p) => <GiftTag key={p.slug} p={p} onCopyCode={copyCode} />)}
+                      <div key={c}>
+                        {c === "Proofing & Temp" && (
+                          <a
+                            href="https://wiremonkey.com/henryhunter"
+                            target="_blank"
+                            rel="noopener noreferrer sponsored"
+                            className="mb-10 block overflow-hidden rounded-xl border border-parchment-deep shadow-sm transition-transform hover:scale-[1.01] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-crust"
+                            aria-label="Wire Monkey handcrafted wood scoring lames — shop now"
+                          >
+                            <img
+                              src={wireMonkeyBanner.url}
+                              alt="Wire Monkey handcrafted wood scoring lames — shop at wiremonkey.com/henryhunter"
+                              loading="lazy"
+                              decoding="async"
+                              className="block h-auto w-full"
+                              width={1200}
+                              height={300}
+                            />
+                          </a>
+                        )}
+                        <div className="mb-14">
+                          <div className="mb-6 flex items-baseline gap-3.5 border-b-2 border-dashed border-parchment-deep pb-2.5">
+                            <h3 className="font-display text-2xl font-semibold text-crust">{c}</h3>
+                            <span className="text-xs text-crumb">{items.length} gift{items.length !== 1 ? "s" : ""}</span>
+                          </div>
+                          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                            {items.map((p) => <GiftTag key={p.slug} p={p} onCopyCode={copyCode} />)}
+                          </div>
                         </div>
                       </div>
                     );
