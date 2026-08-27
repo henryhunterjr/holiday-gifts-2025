@@ -38,6 +38,7 @@ import bookLoaf from "@/assets/holiday/loaf-and-lie-sharp.jpg";
 import bookJourney from "@/assets/holiday/bread-journey.jpg";
 import giveBreadVideo from "@/assets/holiday/give-bread-instead.mp4.asset.json";
 import giveBreadTag from "@/assets/holiday/give-bread-instead-tag.png.asset.json";
+import wireMonkeyBanner from "@/assets/promo/wiremonkey-promo-banner.png.asset.json";
 import { GiveawayModal } from "@/components/giveaway/GiveawayModal";
 import { MusicPlayer } from "@/components/MusicPlayer";
 import { WishlistDrawer, type WishlistItem } from "@/components/WishlistDrawer";
