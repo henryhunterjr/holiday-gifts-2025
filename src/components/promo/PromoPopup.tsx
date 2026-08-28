@@ -189,7 +189,7 @@ export function PromoPopup({
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        className="relative m-0 flex max-h-[92vh] w-full max-w-[560px] flex-col overflow-y-auto rounded-t-2xl border-[1.5px] border-honey/40 bg-flour shadow-2xl sm:m-4 sm:max-h-[90vh] sm:rounded-2xl motion-safe:animate-in motion-safe:slide-in-from-bottom-6 motion-safe:sm:zoom-in-95"
+        className="relative m-0 flex max-h-[80vh] w-full max-w-[500px] flex-col overflow-y-auto rounded-t-2xl border-[1.5px] border-honey/40 bg-flour shadow-2xl sm:m-4 sm:max-h-[82vh] sm:rounded-2xl motion-safe:animate-in motion-safe:slide-in-from-bottom-6 motion-safe:sm:zoom-in-95"
       >
         <button
           ref={closeRef}
@@ -207,10 +207,10 @@ export function PromoPopup({
           onClick={() => onClickThrough(campaign.id)}
           className="block"
         >
-          <img src={image} alt={campaign.alt} className="block h-auto w-full" />
+          <img src={image} alt={campaign.alt} className="block h-auto max-h-[30vh] w-full object-contain" />
         </a>
-        <div className="flex flex-col gap-3 border-t border-parchment-deep bg-[hsl(38_55%_95%)] p-4">
-          <h2 id={titleId} className="font-display text-lg font-semibold leading-tight text-crust">
+        <div className="flex flex-col gap-2 border-t border-parchment-deep bg-[hsl(38_55%_95%)] p-3 sm:p-4">
+          <h2 id={titleId} className="font-display text-base font-semibold leading-tight text-crust">
             {campaign.productName} — {campaign.discountLabel}
           </h2>
           <p className="text-sm text-crumb">
@@ -218,13 +218,13 @@ export function PromoPopup({
             <b className="text-cranberry-deep">${campaign.salePrice.toFixed(2)}</b> with code
           </p>
           <div className="flex flex-wrap items-center gap-2">
-            <span className="rounded-md border-[1.5px] border-dashed border-honey bg-white px-3 py-2 font-mono text-base font-bold tracking-wide text-crust">
+            <span className="rounded-md border-[1.5px] border-dashed border-honey bg-white px-2 py-1.5 font-mono text-sm font-bold tracking-wide text-crust">
               {campaign.code}
             </span>
             <button
               type="button"
               onClick={copy}
-              className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border-[1.5px] border-crust px-4 text-sm font-bold text-crust transition-colors hover:bg-crust hover:text-flour"
+              className="inline-flex min-h-[40px] items-center gap-1.5 rounded-full border-[1.5px] border-crust px-3 text-sm font-bold text-crust transition-colors hover:bg-crust hover:text-flour"
             >
               {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
               {copied ? "Copied!" : "Copy Code"}
@@ -235,7 +235,7 @@ export function PromoPopup({
             target="_blank"
             rel="noopener noreferrer sponsored"
             onClick={() => onClickThrough(campaign.id)}
-            className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-evergreen px-6 text-base font-extrabold text-flour transition-colors hover:bg-evergreen-deep"
+            className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-evergreen px-5 text-sm font-extrabold text-flour transition-colors hover:bg-evergreen-deep"
           >
             Shop {campaign.productName} →
           </a>
