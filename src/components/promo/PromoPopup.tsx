@@ -207,7 +207,7 @@ export function PromoPopup({
           onClick={() => onClickThrough(campaign.id)}
           className="block"
         >
-          <img src={image} alt={campaign.alt} className="block h-auto max-h-[30vh] w-full object-contain" />
+          <img src={image} alt={campaign.alt} className="block h-auto w-full object-contain" />
         </a>
         <div className="flex flex-col gap-2 border-t border-parchment-deep bg-[hsl(38_55%_95%)] p-3 sm:p-4">
           <h2 id={titleId} className="font-display text-base font-semibold leading-tight text-crust">
