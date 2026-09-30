@@ -213,10 +213,16 @@ export function PromoPopup({
           <h2 id={titleId} className="font-display text-base font-semibold leading-tight text-crust">
             {campaign.productName} — {campaign.discountLabel}
           </h2>
-          <p className="text-sm text-crumb">
-            <span className="line-through">${campaign.regularPrice.toFixed(2)}</span>{" "}
-            <b className="text-cranberry-deep">${campaign.salePrice.toFixed(2)}</b> with code
-          </p>
+          {campaign.regularPrice !== undefined && campaign.salePrice !== undefined ? (
+            <p className="text-sm text-crumb">
+              <span className="line-through">${campaign.regularPrice.toFixed(2)}</span>{" "}
+              <b className="text-cranberry-deep">${campaign.salePrice.toFixed(2)}</b> with code
+            </p>
+          ) : (
+            <p className="text-sm text-crumb">
+              Save <b className="text-cranberry-deep">{campaign.discountLabel}</b> with code
+            </p>
+          )}
           <div className="flex flex-wrap items-center gap-2">
             <span className="rounded-md border-[1.5px] border-dashed border-honey bg-white px-2 py-1.5 font-mono text-sm font-bold tracking-wide text-crust">
               {campaign.code}
