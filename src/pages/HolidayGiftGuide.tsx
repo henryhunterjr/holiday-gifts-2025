@@ -1,7 +1,7 @@
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Search, Share2, Copy, Snowflake, ExternalLink, Star, X, Sparkles, ChevronDown, Heart } from "lucide-react";
+import { Search, Share2, Copy, Snowflake, ExternalLink, X, Sparkles, ChevronDown, Heart } from "lucide-react";
 import { toast } from "sonner";
 import productsData from "@/data/products.json";
 import { krusticProducts } from "@/data/krustic";
@@ -31,11 +31,6 @@ import ornMixerRed from "@/assets/holiday/ornament-mixer-red.jpg";
 import ornStarter from "@/assets/holiday/ornament-starter-pack.jpg";
 import ornHenryMixer from "@/assets/holiday/ornament-henry-mixer.jpg";
 import fotmBanner from "@/assets/holiday/fotm-banner.jpg";
-import bookSourdough from "@/assets/holiday/sourdough-rest-of-us-sharp.jpg";
-import bookVitale from "@/assets/holiday/vitale-sourdough-mastery-sharp.jpg";
-import bookFOTM from "@/assets/holiday/from-oven-to-market-sharp.jpg";
-import bookLoaf from "@/assets/holiday/loaf-and-lie-sharp.jpg";
-import bookJourney from "@/assets/holiday/bread-journey.jpg";
 import giveBreadVideo from "@/assets/holiday/give-bread-instead.mp4.asset.json";
 import giveBreadTag from "@/assets/holiday/give-bread-instead-tag.png.asset.json";
 import wireMonkeyBanner from "@/assets/promo/wiremonkey-promo-banner.png.asset.json";
@@ -45,7 +40,7 @@ import { WishlistDrawer, type WishlistItem } from "@/components/WishlistDrawer";
 import { useWishlist } from "@/hooks/useWishlist";
 import { breadcrumbJsonLd } from "@/components/seo/Breadcrumbs";
 import { EXTRA_TOP_PICKS, type TopPick } from "@/data/topPicks";
-import { PromoPopup, usePromoCampaign } from "@/components/promo/PromoPopup";
+import { ProductPhoto } from "@/components/ProductPhoto";
 
 /* ============ Types & data ============ */
 type Product = {
@@ -244,11 +239,12 @@ function GiftTag({ p, onCopyCode }: { p: Product; onCopyCode: (code: string) => 
   const { has, toggle } = useWishlist();
   const saved = has(p.slug);
   return (
-    <article className="gift-tag">
-      <span className="brand-chip">{p.brand}</span>
-      <a href={p.url} target="_blank" rel="noopener noreferrer" className="flex h-[170px] items-center justify-center mb-3">
-        <img src={p.img} alt={p.name} loading="lazy" className="max-h-full object-contain transition-transform group-hover:scale-105" style={{ mixBlendMode: "multiply" }} />
+    <article className="holiday-product-card">
+      <a href={p.url} target="_blank" rel="nofollow sponsored noopener noreferrer" aria-label={`Shop ${p.name}`}>
+        <ProductPhoto src={p.img} name={p.name} />
       </a>
+      <div className="holiday-card-body">
+      <p className="holiday-card-brand">{p.brand}</p>
       <h4 className="font-display text-[1.08rem] font-semibold text-crust mb-1 leading-tight">{p.name}</h4>
       <p className="text-[.86rem] text-[hsl(27_35%_28%)] mb-2 line-clamp-3">{p.desc}</p>
       {p.note && <p className="font-hand text-[1.12rem] text-cranberry-deep -rotate-1 mb-3">"{p.note}"</p>}
@@ -264,17 +260,9 @@ function GiftTag({ p, onCopyCode }: { p: Product; onCopyCode: (code: string) => 
         <a
           href={p.url}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="nofollow sponsored noopener noreferrer"
           className="group/gift relative flex-1 overflow-hidden rounded-[10px] bg-evergreen px-3 py-[11px] text-center text-[.88rem] font-extrabold text-flour transition-colors hover:bg-evergreen-deep"
         >
-          {/* mini string lights */}
-          <span aria-hidden className="pointer-events-none absolute inset-x-1 top-1 flex justify-between">
-            <i className="bulb block h-1.5 w-1.5 rounded-full bg-[#ffd166]" style={{ animationDelay: "0s", boxShadow: "0 0 6px #ffd166" }} />
-            <i className="bulb block h-1.5 w-1.5 rounded-full bg-[#ef476f]" style={{ animationDelay: ".3s", boxShadow: "0 0 6px #ef476f" }} />
-            <i className="bulb block h-1.5 w-1.5 rounded-full bg-[#06d6a0]" style={{ animationDelay: ".6s", boxShadow: "0 0 6px #06d6a0" }} />
-            <i className="bulb block h-1.5 w-1.5 rounded-full bg-[#118ab2]" style={{ animationDelay: ".9s", boxShadow: "0 0 6px #118ab2" }} />
-            <i className="bulb block h-1.5 w-1.5 rounded-full bg-[#ffd166]" style={{ animationDelay: "1.2s", boxShadow: "0 0 6px #ffd166" }} />
-          </span>
           <span className="relative inline-flex items-center justify-center gap-1.5">
             <HollySprig className="h-4 w-4" />
             Gift it →
@@ -319,6 +307,7 @@ function GiftTag({ p, onCopyCode }: { p: Product; onCopyCode: (code: string) => 
         >
           <Heart className="h-4 w-4" fill={saved ? "currentColor" : "none"} />
         </button>
+      </div>
       </div>
     </article>
   );
@@ -457,7 +446,7 @@ function GiftFinderQuiz({ open, onClose }: { open: boolean; onClose: () => void 
                 ) : (
                   <div className="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-3">
                     {matches.map(({ p, extra }) => (
-                      <a key={p.slug} href={p.url} target="_blank" rel="noopener noreferrer" className="group relative rounded-xl border border-parchment-deep bg-white p-3 transition-transform hover:-translate-y-1">
+                      <a key={p.slug} href={p.url} target="_blank" rel="nofollow sponsored noopener noreferrer" className="group relative rounded-xl border border-parchment-deep bg-white p-3 transition-transform hover:-translate-y-1">
                         {extra && (
                           <span className="absolute right-2 top-2 rounded-full bg-honey/25 px-2 py-0.5 text-[.65rem] font-bold uppercase tracking-wide text-crust">
                             Also worth a look
@@ -494,7 +483,7 @@ export default function HolidayGiftGuide() {
   const days = useDaysToChristmas();
   const location = useLocation();
   const canonicalUrl = `https://gifts.bakinggreatbread.blog${location.pathname === "/" ? "/" : location.pathname}`;
-  const [snow, setSnow] = useState(true);
+  const [snow, setSnow] = useState(false);
   const [search, setSearch] = useState("");
   const [cat, setCat] = useState<string | null>(null);
   const [band, setBand] = useState<string | null>(null);
@@ -548,12 +537,9 @@ export default function HolidayGiftGuide() {
   // Positions 1-6 come from the curated slugs; 7-10 live in topPicks.ts.
   const top10: TopPick[] = [
     ...top6.map((p) => ({ id: p.slug, name: p.name, img: p.img, url: p.url, price: priceNum(p) })),
-    ...EXTRA_TOP_PICKS,
+    ...EXTRA_TOP_PICKS.filter((p) => !p.placeholder && isValidUrl(p.url)),
   ];
 
-  // Promo popups defer while any other overlay is open — never stacked.
-  const anyOverlayOpen = quiz || wishlistOpen || giveaway;
-  const promo = usePromoCampaign(anyOverlayOpen);
 
 
   // JSON-LD for the curated guide (only fully-verified products).
@@ -684,13 +670,13 @@ export default function HolidayGiftGuide() {
                   <Sparkles className="h-4 w-4" /> Open the Gift Finder
                 </button>
                 <a href="#top6" className="inline-flex items-center gap-2 rounded-full border-[1.5px] border-flour/40 px-6 py-3 font-bold text-flour transition-colors hover:border-honey hover:text-honey">
-                  See Henry's Top 10
+                  See Henry's Top Picks
                 </a>
               </div>
               <p className="mt-5 text-sm" style={{ color: "#bfae92" }}>Affiliate links support free recipes. I only recommend what I use.</p>
             </div>
             <div
-              className="relative overflow-hidden rounded-3xl"
+              className="holiday-hero-art relative overflow-hidden rounded-3xl"
               style={{
                 boxShadow:
                   "0 0 0 4px #1a100a, 0 0 0 8px #3a2412, 0 24px 60px rgba(0,0,0,.6), 0 0 120px hsl(var(--honey) / 0.45)",
@@ -753,7 +739,7 @@ export default function HolidayGiftGuide() {
                 Give <em className="not-italic italic text-honey">Bread</em> Instead.
               </h2>
               <p className="mt-4 max-w-[46ch] text-[1.05rem]" style={{ color: "#e8dcc6" }}>
-                Skip the store-bought this year. A loaf you baked with your own hands says more than anything on a shelf. Watch the two-minute story, then pick a tool below to gift the baker in your life.
+                Skip the store-bought this year. A loaf you baked with your own hands says more than anything on a shelf. Watch the short story, then pick a tool below to gift the baker in your life.
               </p>
               <p className="mt-3 text-sm" style={{ color: "#e8dcc6" }}>
                 Baking your gift? <Link to="/how-to-wrap-sourdough-as-a-gift" className="font-semibold text-honey underline underline-offset-2 hover:text-flour">Learn how to wrap sourdough as a gift</Link>.
@@ -792,70 +778,35 @@ export default function HolidayGiftGuide() {
             <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
               <div>
                 <p className="eyebrow" style={{ color: "hsl(var(--honey))" }}>If you only look at one shelf</p>
-                <h2 className="mt-2 font-display text-3xl font-semibold text-flour md:text-5xl">Henry's Top 10</h2>
+                <h2 className="mt-2 font-display text-3xl font-semibold text-flour md:text-5xl">Henry's Top Picks</h2>
               </div>
               <p className="max-w-[52ch] text-[hsl(37_35%_75%)]">The gifts I'd put under my own tree. Proven, loved, and used until the paint wore off.</p>
             </div>
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-              {top10.map((p, i) =>
-                p.placeholder ? (
-                  <div
-                    key={p.id}
-                    className="flex flex-col items-center justify-center rounded-2xl border-[1.5px] border-dashed border-flour/25 bg-flour/[0.06] p-4 text-center min-h-[280px]"
-                  >
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full border-[1.5px] border-flour/30 font-display text-lg font-bold text-flour/60">{i + 1}</span>
-                    <h3 className="mt-4 font-display text-[1.02rem] font-semibold text-flour/70">{p.name}</h3>
-                    <p className="mt-1 text-sm text-[hsl(37_25%_62%)]">{p.placeholderLabel}</p>
-                  </div>
-                ) : (
-                  <article key={p.id} className="relative flex flex-col rounded-2xl bg-gradient-to-b from-[#fdf6e8] to-flour p-4 text-ink shadow-lg transition-transform hover:-translate-y-1.5">
-                    <span className="absolute -left-2 -top-3 flex h-10 w-10 items-center justify-center rounded-full bg-cranberry font-display text-lg font-bold text-flour shadow-lg">{i + 1}</span>
-                    {p.discountLabel && (
-                      <span className="absolute right-3 top-3 rounded-full bg-evergreen px-2.5 py-1 text-[11px] font-extrabold uppercase tracking-wide text-flour shadow">
-                        {p.discountLabel}
-                      </span>
-                    )}
-                    <a href={p.url} target="_blank" rel="noopener noreferrer sponsored" className="block">
-                      <img src={p.img} alt={p.name} loading="lazy" className="mx-auto my-3 h-36 object-contain" style={{ mixBlendMode: "multiply" }} />
-                    </a>
-                    <h3 className="font-display text-[1.02rem] font-semibold text-crust">{p.name}</h3>
+            <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4">
+              {top10.map((p, i) => (
+                <article key={p.id} className="holiday-product-card holiday-featured-card">
+                  <a href={p.url} target="_blank" rel="nofollow sponsored noopener noreferrer" aria-label={`Shop ${p.name}`}>
+                    <ProductPhoto src={p.img} name={p.name} ribbon={`Henry's pick ${i + 1}`} />
+                  </a>
+                  <div className="holiday-card-body">
+                    <h3 className="font-display text-xl font-semibold leading-tight text-crust">{p.name}</h3>
                     {p.seller && <p className="mt-1 text-xs text-crumb">{p.seller}</p>}
-                    {p.desc && <p className="mt-2 text-[.84rem] leading-snug text-[hsl(27_35%_28%)]">{p.desc}</p>}
-                    <div className="mt-auto pt-3">
-                      {p.salePrice ? (
-                        <>
-                          <p className="font-extrabold text-cranberry">
-                            ${p.salePrice.toFixed(2)}{" "}
-                            <span className="text-sm font-semibold text-crumb line-through">${p.price.toFixed(2)}</span>
-                          </p>
-                          {p.code && (
-                            <button
-                              type="button"
-                              onClick={() => copyCode(p.code!)}
-                              className="code-pill mt-2 min-h-[36px]"
-                              aria-label={`Copy promo code ${p.code}`}
-                            >
-                              <Copy className="h-3 w-3" /> {p.discountLabel} · {p.code}
-                            </button>
-                          )}
-                        </>
-                      ) : (
-                        <p className="font-extrabold text-cranberry">${p.price.toFixed(2)}</p>
+                    {p.desc && <p className="mt-2 text-sm leading-relaxed text-crumb">{p.desc}</p>}
+                    <div className="mt-auto pt-5">
+                      {p.code && (
+                        <button type="button" onClick={() => copyCode(p.code!)} className="code-pill mb-3 min-h-[44px]" aria-label={`Copy promo code ${p.code}`}>
+                          <Copy className="h-3 w-3" /> {p.code}
+                        </button>
                       )}
-                      <a
-                        href={p.url}
-                        target="_blank"
-                        rel="noopener noreferrer sponsored"
-                        className="mt-3 flex min-h-[46px] items-center justify-center rounded-[10px] bg-evergreen px-3 text-center text-[.88rem] font-extrabold text-flour transition-colors hover:bg-evergreen-deep"
-                      >
-                        {p.cta ?? "Gift it"} →
+                      <a href={p.url} target="_blank" rel="nofollow sponsored noopener noreferrer" className="holiday-shop-link">
+                        {p.cta ?? "Shop this gift"} <ExternalLink className="h-4 w-4" aria-hidden />
                       </a>
+                      <p className="mt-2 text-xs text-crumb">Check current price and offers at the store.</p>
                     </div>
-                  </article>
-                ),
-              )}
+                  </div>
+                </article>
+              ))}
             </div>
-            <div className="-mt-3 h-3.5 rounded bg-gradient-to-b from-[#5a3a20] to-[#3a2412] shadow-2xl" />
             <p className="mt-6 text-center text-sm text-[hsl(37_35%_75%)]">
               Need help choosing tools?{" "}
               <Link to="/essential-baking-tools" className="font-semibold text-honey underline underline-offset-2 hover:text-flour">
@@ -946,7 +897,7 @@ export default function HolidayGiftGuide() {
           <div className="mx-auto max-w-[1200px] px-5">
             <h2 className="mb-3 font-display text-3xl font-semibold text-crust md:text-4xl">Browse all baking gifts</h2>
             <p className="mb-6 text-xs text-crumb md:text-sm">
-              Prices and availability may change. Some links are affiliate links, which support our free recipes at no additional cost to you. <span className="whitespace-nowrap">Prices last checked {PRICES_LAST_CHECKED}.</span>
+              Prices and availability may change. Some links are affiliate links, which support our free recipes at no additional cost to you. <span className="whitespace-nowrap">Reference prices from {PRICES_LAST_CHECKED}. Check current prices at the store.</span>
             </p>
             {(() => {
               // If a filter is active, show everything. Otherwise, cap the
@@ -1053,15 +1004,15 @@ export default function HolidayGiftGuide() {
             </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {visibleKrustic.map((k, i) => (
-                <a key={i} href={k.url} target="_blank" rel="noopener noreferrer" className="group rounded-2xl border border-parchment-deep bg-white p-4 shadow-md transition-transform hover:-translate-y-1.5">
-                  <div className="mb-3 flex h-44 items-center justify-center overflow-hidden rounded-xl bg-flour/50">
-                    <img src={k.img} alt={k.name} loading="lazy" className="max-h-full object-contain transition-transform group-hover:scale-105" />
-                  </div>
+                <a key={i} href={k.url} target="_blank" rel="nofollow sponsored noopener noreferrer" className="holiday-product-card">
+                  <ProductPhoto src={k.img} name={k.name} />
+                  <div className="holiday-card-body">
                   <h3 className="font-display text-base font-semibold text-crust">{k.name}</h3>
                   <p className="mt-1 line-clamp-2 text-sm text-crumb">{k.desc}</p>
                   <div className="mt-3 flex items-center justify-between">
                     <span className="font-bold text-cranberry">{k.price}</span>
                     <span className="inline-flex items-center gap-1 text-xs font-bold text-evergreen">Shop <ExternalLink className="h-3 w-3" /></span>
+                  </div>
                   </div>
                 </a>
               ))}
@@ -1086,24 +1037,16 @@ export default function HolidayGiftGuide() {
             <ChevronDown aria-hidden className="h-5 w-5 flex-none text-crumb" />
           </summary>
           <div>
-            <p className="mb-6 max-w-[60ch] text-crumb">The Amazon-available gear that rounds out a serious baker's kitchen.</p>
-            <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-              {amazonProducts.map((a, i) => (
-                <a key={i} href={a.url} target="_blank" rel="noopener noreferrer" className="group flex flex-col rounded-xl border border-parchment-deep bg-white p-3 shadow transition-transform hover:-translate-y-1">
-                  <span className="mb-2 w-fit rounded-full bg-parchment px-2 py-0.5 text-xs font-bold text-crumb">{a.category}</span>
-                  <div className="mb-3 flex h-44 items-center justify-center overflow-hidden rounded-lg bg-white">
-                    <img src={a.img} alt={a.name} loading="lazy" className="max-h-full object-contain transition-transform group-hover:scale-105" />
-                  </div>
-                  <h3 className="font-display text-sm font-semibold text-crust line-clamp-2">{a.name}</h3>
-                  <div className="mt-2 flex items-center gap-1 text-xs">
-                    {[...Array(5)].map((_, s) => (
-                      <Star key={s} className={`h-3.5 w-3.5 ${s < Math.round(a.rating) ? "fill-honey text-honey" : "fill-honey/30 text-honey/30"}`} />
-                    ))}
-                    <span className="ml-1 text-crumb">{a.rating}</span>
-                  </div>
-                  <div className="mt-auto flex items-center justify-between pt-3">
-                    <span className="font-bold text-cranberry">{a.price}</span>
-                    <span className="rounded bg-[#FF9900] px-2 py-1 text-xs font-bold text-black">View</span>
+            <p className="mb-2 max-w-[60ch] text-crumb">More tools for the baker on your list.</p>
+            <p className="mb-6 text-sm text-crumb">As an Amazon Associate I earn from qualifying purchases. These are paid links. Check Amazon for current prices and availability.</p>
+            <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
+              {amazonProducts.map((a) => (
+                <a key={a.url} href={a.url} target="_blank" rel="nofollow sponsored noopener noreferrer" className="holiday-product-card">
+                  <ProductPhoto src={a.img} name={a.name} />
+                  <div className="holiday-card-body">
+                    <p className="holiday-card-brand">{a.category}</p>
+                    <h3 className="font-display text-lg font-semibold leading-tight text-crust">{a.name}</h3>
+                    <span className="holiday-amazon-link mt-auto">Check price on Amazon <ExternalLink className="h-4 w-4" aria-hidden /></span>
                   </div>
                 </a>
               ))}
@@ -1149,7 +1092,7 @@ export default function HolidayGiftGuide() {
               <a href="https://fromoventomarket.com" target="_blank" rel="noopener noreferrer" className="rounded-full bg-cranberry px-6 py-3 font-bold text-flour hover:bg-cranberry-deep">See the Market Kit at From Oven to Market →</a>
               <a href="https://fromoventomarket.com/" target="_blank" rel="noopener noreferrer" className="rounded-full border-[1.5px] border-flour/40 px-6 py-3 font-bold text-flour hover:border-honey hover:text-honey">Gift the course at From Oven to Market</a>
             </div>
-            <p className="mt-4 text-xs text-[hsl(37_25%_70%)]">As an Amazon Associate Henry earns from qualifying purchases. Booth gear links go to Amazon; the Kit and course live at fromoventomarket.com.</p>
+            <p className="mt-4 text-xs text-[hsl(37_25%_70%)]">The market kit and course live at fromoventomarket.com.</p>
           </div>
         </section>
 
@@ -1164,20 +1107,13 @@ export default function HolidayGiftGuide() {
             <ChevronDown aria-hidden className="h-5 w-5 flex-none text-crumb" />
           </summary>
             <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-              {[
-                { name: "Sourdough for the Rest of Us", price: "$6.08", url: "https://amzn.to/sourdoughrestofus", img: bookSourdough },
-                { name: "Vitale Sourdough Mastery", price: "$9.60", url: "https://vitalebreadco.com?ref=bfriedman", img: bookVitale },
-                { name: "From Oven to Market", price: "$7.62", url: "https://fromoventomarket.com/", img: bookFOTM },
-                { name: "The Loaf and the Lie", price: "$6.99", url: "https://amzn.to/loafandlie", img: bookLoaf },
-                { name: "Bread: A Journey Through History", price: "$7.95", url: "https://amzn.to/breadjourney", img: bookJourney },
-              ].map((b, i) => (
-                <a key={i} href={b.url} target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center text-center">
-                  <img src={b.img} alt={b.name} loading="lazy" className="h-56 w-auto object-contain drop-shadow-xl transition-transform group-hover:-translate-y-2" />
+              {productsData.books.filter((b) => isValidUrl(b.url)).map((b) => (
+                <a key={b.slug} href={b.url} target="_blank" rel="nofollow sponsored noopener noreferrer" className="group flex flex-col items-center text-center">
+                  <img src={b.img} alt={b.name} loading="lazy" className="h-56 w-auto object-contain drop-shadow-xl motion-safe:transition-transform motion-safe:group-hover:-translate-y-2" />
                   <h3 className="mt-4 font-display text-sm font-semibold text-crust">{b.name}</h3>
-                  <p className="mt-1 font-bold text-cranberry">{b.price}</p>
+                  <p className="mt-2 text-sm font-semibold text-evergreen">View book on Amazon</p>
                 </a>
-              ))}
-            </div>
+              ))}            </div>
          </details>
         </section>
 
@@ -1255,16 +1191,13 @@ export default function HolidayGiftGuide() {
           </section>
         )}
 
-        {/* Newsletter */}
-        <section className="text-flour" style={{ background: "linear-gradient(180deg, hsl(var(--oven)), hsl(24 40% 12%))" }}>
+        {/* A direct resource link until a real email-delivery integration is available. */}
+        <section className="bg-evergreen-deep text-flour">
           <div className="mx-auto max-w-[900px] px-5 py-20 text-center">
-            <p className="eyebrow" style={{ color: "hsl(var(--honey))" }}>Free with your email</p>
-            <h2 className="mt-3 font-display text-3xl font-semibold text-flour md:text-4xl">The Holiday Bread Collection</h2>
-            <p className="mt-4 text-[hsl(37_35%_82%)]">Drop your email and I'll send you the printable one-sheet holiday recipes. Print them, bake them, give them.</p>
-            <form onSubmit={(e) => { e.preventDefault(); toast.success("You're on the list — check your inbox."); }} className="mx-auto mt-6 flex max-w-md flex-col gap-3 sm:flex-row">
-              <input type="email" required placeholder="your@email.com" className="flex-1 rounded-full border-[1.5px] border-honey/40 bg-flour/10 px-5 py-3 text-flour placeholder:text-[hsl(37_25%_65%)] focus:border-honey focus:outline-none" />
-              <button type="submit" className="rounded-full bg-cranberry px-6 py-3 font-bold text-flour hover:bg-cranberry-deep">Send it</button>
-            </form>
+            <HollySprig className="mx-auto h-10 w-10" />
+            <h2 className="mt-4 font-display text-3xl font-semibold text-flour md:text-4xl">Give them something you baked.</h2>
+            <p className="mx-auto mt-4 max-w-[48ch] text-parchment">Find your next bake in the Recipe Pantry. Pick a recipe, dust off the counter, and make something worth sharing.</p>
+            <a href="https://pantry.bakinggreatbread.com/" target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex min-h-[48px] items-center rounded-full bg-flour px-7 py-3 font-bold text-evergreen-deep">Explore the Recipe Pantry</a>
           </div>
         </section>
       </main>
@@ -1275,6 +1208,7 @@ export default function HolidayGiftGuide() {
             <b className="font-display text-lg text-flour">Baking Great Bread at Home</b>
             <p className="mt-2 text-sm text-[hsl(37_35%_78%)]">Curated with flour-dusted hands by Henry Hunter.</p>
             <p className="mt-2 text-xs text-[hsl(37_25%_65%)]">Affiliate links support free recipes and lessons. I only recommend what I use.</p>
+            <p className="mt-2 text-xs text-parchment">As an Amazon Associate I earn from qualifying purchases.</p>
           </div>
           <div className="flex flex-col gap-2 text-sm md:items-end">
             <a href="https://bakinggreatbread.blog" target="_blank" rel="noopener noreferrer" className="hover:text-honey">The Blog</a>
@@ -1287,7 +1221,7 @@ export default function HolidayGiftGuide() {
 
       <GiftFinderQuiz open={quiz} onClose={() => setQuiz(false)} />
       <GiveawayModal open={giveaway} onClose={() => setGiveaway(false)} />
-      <PromoPopup campaign={promo.campaign} image={promo.image} onDismiss={promo.dismiss} onClickThrough={promo.clickThrough} />
+
     </div>
   );
 }

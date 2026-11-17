@@ -66,7 +66,7 @@ export function WishlistDrawer({
                     <a
                       href={it.url}
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="nofollow sponsored noopener noreferrer"
                       className="inline-flex min-h-[44px] items-center gap-1 rounded-[10px] bg-evergreen px-3 text-[.82rem] font-bold text-flour hover:bg-evergreen-deep"
                     >
                       Gift it <ExternalLink className="h-3 w-3" aria-hidden />
