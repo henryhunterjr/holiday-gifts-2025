@@ -26,12 +26,10 @@ export type AmazonProduct = {
 };
 
 export const amazonProducts: AmazonProduct[] = [
-  { name: "Lodge 6qt Dutch Oven", category: "Dutch Oven", img: "https://cdn.shoplightspeed.com/shops/633447/files/32303969/image.jpg", url: link("B000N4UX4Q"), note: "The pot I point beginners at. Real sourdough without the three hundred dollar spend." },
-  { name: "MyWeigh KD-8000 Scale", category: "Scale", img: "https://m.media-amazon.com/images/I/71xM2VXpPAL.jpg", url: link("B00VEKX35Y"), note: "Baker's percentages on the display, and it holds a full bowl of dough without flinching." },
-  { name: "Bread Bosses Banneton", category: "Banneton", img: "https://m.media-amazon.com/images/I/81b7ZfPVQGL.jpg", url: link("B01GM4UZJI"), note: "The cheap way to find out whether a banneton is your thing." },
-  { name: "Thermapen ONE", category: "Thermometer", img: "https://cdn.coalwayohio.com/wp-content/uploads/2024/09/Thermapen-Mk4_generic-01.jpg", url: link("B084XZLB7W"), note: "The instant read the professionals argue about. Fast enough to end the guessing." },
+  { name: "Lodge 6qt Dutch Oven", category: "Dutch Oven", img: "/product-images/lodge-6qt-dutch-oven.jpg", url: link("B000N4UX4Q"), note: "The pot I point beginners at. Real sourdough without the three hundred dollar spend." },
+  { name: "MyWeigh KD-8000 Scale", category: "Scale", img: "/product-images/myweigh-kd8000.jpg", url: link("B00VEKX35Y"), note: "Baker's percentages on the display, and it holds a full bowl of dough without flinching." },
   { name: "Baking Steel", category: "Baking Steel", img: "https://m.media-amazon.com/images/I/81T2o6K4fLL.jpg", url: link("B00N205G22"), note: "Fixes a pale bottom crust permanently. More heat from below than any stone I've tried." },
-  { name: "OXO Bench Scraper", category: "Bench Tool", img: "https://m.media-amazon.com/images/I/71NIKz3Az2L.jpg", url: link("B00004OCNJ"), note: "The first tool I'd buy today. Cheap, and it earns its drawer space forever." },
+  { name: "OXO Bench Scraper", category: "Bench Tool", img: "/product-images/oxo-bench-scraper.jpg", url: link("B00004OCNJ"), note: "The first tool I'd buy today. Cheap, and it earns its drawer space forever." },
   { name: "ThermoWorks ThermoPop", category: "Thermometer", img: thermopop, url: link("B07MJSQR1F"), note: "Most of the Thermapen for a lot less money. Dough temp, sorted." },
   { name: "Cambro 6qt Container", category: "Container", img: cambro, url: link("B001NCDE74"), note: "Watch your bulk rise through the wall instead of lifting a towel to guess." },
   { name: "Checkered Chef Cooling Rack", category: "Cooling Rack", img: rack, url: link("B01N1YDLIG"), note: "Soggy bottoms are a rack problem. This one fits a half sheet pan." },

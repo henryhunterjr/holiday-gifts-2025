@@ -1,7 +1,7 @@
 {
   "meta": {
     "site": "https://gifts.bakinggreatbread.blog",
-    "generated": "2026-09-30T01:38:08.751Z",
+    "generated": "2026-11-17T05:18:23.614Z",
     "description": "Consolidated product catalog for the Holiday Baking Gift Guide. Affiliate links included. Check each store for current prices and availability.",
     "license": "Free to read. Keep affiliate links intact when republishing."
   },
@@ -1994,66 +1994,6 @@
         "solves": [
           "My scale can't handle a full bowl of dough",
           "I want baker's percentages without doing the math myself"
-        ]
-      }
-    },
-    {
-      "slug": "bread-bosses-banneton",
-      "name": "Bread Bosses Banneton",
-      "note": "The cheap way to find out whether a banneton is your thing.",
-      "category": "Banneton",
-      "price": null,
-      "asin": "B01GM4UZJI",
-      "url": "https://www.amazon.com/dp/B01GM4UZJI?tag=onamz55024a-20",
-      "source": "amazon",
-      "affiliate_tag": "onamz55024a-20",
-      "currency": null,
-      "rel": "nofollow sponsored noopener",
-      "target": "_blank",
-      "alt": "Bread Bosses Banneton",
-      "categories": [
-        "Proofing & Temp"
-      ],
-      "priceBand": null,
-      "priceFrom": false,
-      "priceCheckedAt": null,
-      "audiences": [
-        "new-bakers"
-      ],
-      "concierge": {
-        "solves": [
-          "I want to try a proofing basket without committing much",
-          "My dough loses its shape during the final proof"
-        ]
-      }
-    },
-    {
-      "slug": "thermapen-one",
-      "name": "Thermapen ONE",
-      "note": "The instant read the professionals argue about. Fast enough to end the guessing.",
-      "category": "Thermometer",
-      "price": null,
-      "asin": "B084XZLB7W",
-      "url": "https://www.amazon.com/dp/B084XZLB7W?tag=onamz55024a-20",
-      "source": "amazon",
-      "affiliate_tag": "onamz55024a-20",
-      "currency": null,
-      "rel": "nofollow sponsored noopener",
-      "target": "_blank",
-      "alt": "Thermapen ONE",
-      "categories": [
-        "Proofing & Temp"
-      ],
-      "priceBand": null,
-      "priceFrom": false,
-      "priceCheckedAt": null,
-      "audiences": [
-        "serious-bakers"
-      ],
-      "concierge": {
-        "solves": [
-          "I'm cutting into loaves to check if they're done",
-          "I want an instant read I can actually trust"
         ]
       }
     },

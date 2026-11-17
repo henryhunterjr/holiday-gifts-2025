@@ -22,24 +22,14 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import bakeryWindow from "@/assets/holiday/holiday-hero-2026.png.asset.json";
 import bgbLogo from "@/assets/holiday/ornament-bgb-logo.png";
-import ornBauble from "@/assets/holiday/ornament-bgb-bauble.png";
-import ornCrust from "@/assets/holiday/ornament-crust-crumb.png";
-import ornBanneton from "@/assets/holiday/ornament-banneton.png";
-import ornMixerRed from "@/assets/holiday/ornament-mixer-red.jpg";
-import ornStarter from "@/assets/holiday/ornament-starter-pack.jpg";
-import ornHenryMixer from "@/assets/holiday/ornament-henry-mixer.jpg";
 import fotmBanner from "@/assets/holiday/fotm-banner.jpg";
-import giveBreadVideo from "@/assets/holiday/give-bread-instead.mp4.asset.json";
-import giveBreadTag from "@/assets/holiday/give-bread-instead-tag.png.asset.json";
-import wireMonkeyBanner from "@/assets/promo/wiremonkey-promo-banner.png.asset.json";
 import { GiveawayModal } from "@/components/giveaway/GiveawayModal";
-import { MusicPlayer } from "@/components/MusicPlayer";
 import { WishlistDrawer, type WishlistItem } from "@/components/WishlistDrawer";
 import { useWishlist } from "@/hooks/useWishlist";
 import { breadcrumbJsonLd } from "@/components/seo/Breadcrumbs";
-import { EXTRA_TOP_PICKS, type TopPick } from "@/data/topPicks";
+import { type TopPick } from "@/data/topPicks";
+import "./holiday-editorial.css";
 import { ProductPhoto } from "@/components/ProductPhoto";
 
 /* ============ Types & data ============ */
@@ -90,137 +80,6 @@ const CATEGORIES = [
 const priceNum = (p: Product) => (typeof p.price === "number" ? p.price : parseFloat(String(p.price).replace(/[^0-9.]/g, "")) || 0);
 const priceStr = (p: Product) => (typeof p.price === "number" ? `$${p.price}` : p.price);
 
-/* ============ Countdown ============ */
-function useDaysToChristmas() {
-  const [days, setDays] = useState(0);
-  useEffect(() => {
-    const calc = () => {
-      const now = new Date();
-      const year = now.getMonth() === 11 && now.getDate() > 25 ? now.getFullYear() + 1 : now.getFullYear();
-      const xmas = new Date(year, 11, 25);
-      setDays(Math.max(0, Math.ceil((xmas.getTime() - now.getTime()) / 86400000)));
-    };
-    calc();
-    const id = setInterval(calc, 60_000);
-    return () => clearInterval(id);
-  }, []);
-  return days;
-}
-
-/* ============ Snow Canvas ============ */
-function SnowCanvas({ on }: { on: boolean }) {
-  const ref = useRef<HTMLCanvasElement>(null);
-  useEffect(() => {
-    const c = ref.current;
-    if (!c) return;
-    const ctx = c.getContext("2d")!;
-    ctx.clearRect(0, 0, c.width, c.height);
-    if (!on) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    let raf = 0;
-    const resize = () => {
-      c.width = window.innerWidth;
-      c.height = window.innerHeight;
-    };
-    resize();
-    window.addEventListener("resize", resize);
-    const flakes = Array.from({ length: 70 }, () => ({
-      x: Math.random() * c.width,
-      y: Math.random() * c.height,
-      r: 0.6 + Math.random() * 2.2,
-      vy: 0.2 + Math.random() * 0.7,
-      vx: -0.2 + Math.random() * 0.4,
-      a: 0.35 + Math.random() * 0.45,
-    }));
-    const draw = () => {
-      ctx.clearRect(0, 0, c.width, c.height);
-      for (const f of flakes) {
-        f.y += f.vy;
-        f.x += f.vx;
-        if (f.y > c.height) { f.y = -5; f.x = Math.random() * c.width; }
-        if (f.x < 0 || f.x > c.width) f.x = Math.random() * c.width;
-        ctx.fillStyle = `rgba(255,250,235,${f.a})`;
-        ctx.beginPath();
-        ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
-        ctx.fill();
-      }
-      raf = requestAnimationFrame(draw);
-    };
-    draw();
-    return () => { cancelAnimationFrame(raf); window.removeEventListener("resize", resize); };
-  }, [on]);
-  return <canvas ref={ref} className="pointer-events-none fixed inset-0 z-[45] h-screen w-screen" />;
-}
-
-/* ============ Header Ornament Garland ============ */
-const ORNAMENTS = [
-  { src: ornBauble,     size: 62, drop: 14 },
-  { src: ornCrust,      size: 56, drop: 26 },
-  { src: ornBanneton,   size: 58, drop: 18 },
-  { src: ornHenryMixer, size: 60, drop: 30 },
-  { src: ornStarter,    size: 52, drop: 22 },
-  { src: ornMixerRed,   size: 58, drop: 16 },
-  { src: ornBauble,     size: 54, drop: 28 },
-  { src: ornCrust,      size: 60, drop: 20 },
-];
-
-function HeaderGarland() {
-  // The garland belongs to the hero. Once the visitor scrolls past it, fade it
-  // out so it never hangs over live content further down the page.
-  const [visible, setVisible] = useState(true);
-  useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY < 160);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-  return (
-    <div
-      aria-hidden
-      className="pointer-events-none absolute inset-x-0 top-full z-40 h-[120px] overflow-visible transition-opacity duration-300"
-      style={{ opacity: visible ? 1 : 0 }}
-    >
-      {/* String across the top */}
-      <svg className="absolute inset-x-0 top-0 h-6 w-full" viewBox="0 0 1200 24" preserveAspectRatio="none">
-        <path d="M0 4 Q 300 24 600 8 T 1200 4" stroke="hsl(var(--evergreen-deep))" strokeWidth="2" fill="none" opacity="0.85" />
-      </svg>
-      <div className="mx-auto flex max-w-[1200px] items-start justify-between px-6">
-        {ORNAMENTS.map((o, i) => (
-          <div
-            key={i}
-            className="ornament-sway relative"
-            style={{
-              // @ts-expect-error css var
-              "--sway-a": `${-3 - (i % 3)}deg`,
-              "--sway-b": `${3 + (i % 3)}deg`,
-              animationDelay: `${(i * 0.35).toFixed(2)}s`,
-              animationDuration: `${4 + (i % 4)}s`,
-              marginTop: `${o.drop - 20}px`,
-            }}
-          >
-            {/* twine */}
-            <span
-              className="absolute left-1/2 top-0 -z-10 block w-[2px] -translate-x-1/2 bg-[hsl(var(--twine))]"
-              style={{ height: `${o.drop + 8}px` }}
-            />
-            <img
-              src={o.src}
-              alt=""
-              className="ornament-twinkle block rounded-full object-cover"
-              style={{
-                width: o.size,
-                height: o.size,
-                marginTop: o.drop,
-                animationDelay: `${(i * 0.25).toFixed(2)}s`,
-              }}
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 /* ============ Tiny holly icon (inline SVG) ============ */
 function HollySprig({ className = "" }: { className?: string }) {
   return (
@@ -247,7 +106,7 @@ function GiftTag({ p, onCopyCode }: { p: Product; onCopyCode: (code: string) => 
       <p className="holiday-card-brand">{p.brand}</p>
       <h4 className="font-display text-[1.08rem] font-semibold text-crust mb-1 leading-tight">{p.name}</h4>
       <p className="text-[.86rem] text-[hsl(27_35%_28%)] mb-2 line-clamp-3">{p.desc}</p>
-      {p.note && <p className="font-hand text-[1.12rem] text-cranberry-deep -rotate-1 mb-3">"{p.note}"</p>}
+      {p.note && <p className="font-hand text-[1.12rem] text-cranberry-deep -rotate-1 mb-3">{p.note}</p>}
       <div className="mt-auto flex items-center justify-between gap-2 pt-2">
         <span className={`font-bold text-[1.12rem] ${num === 0 ? "text-evergreen" : "text-crust"}`}>{num === 0 ? "Free" : priceStr(p)}</span>
         {p.code && (
@@ -480,10 +339,8 @@ function GiftFinderQuiz({ open, onClose }: { open: boolean; onClose: () => void 
 
 /* ============ Page ============ */
 export default function HolidayGiftGuide() {
-  const days = useDaysToChristmas();
   const location = useLocation();
   const canonicalUrl = `https://gifts.bakinggreatbread.blog${location.pathname === "/" ? "/" : location.pathname}`;
-  const [snow, setSnow] = useState(false);
   const [search, setSearch] = useState("");
   const [cat, setCat] = useState<string | null>(null);
   const [band, setBand] = useState<string | null>(null);
@@ -536,8 +393,8 @@ export default function HolidayGiftGuide() {
   const top6 = top6Slugs.map((s) => products.find((p) => p.slug === s)).filter(Boolean) as Product[];
   // Positions 1-6 come from the curated slugs; 7-10 live in topPicks.ts.
   const top10: TopPick[] = [
-    ...top6.map((p) => ({ id: p.slug, name: p.name, img: p.img, url: p.url, price: priceNum(p) })),
-    ...EXTRA_TOP_PICKS.filter((p) => !p.placeholder && isValidUrl(p.url)),
+    ...top6.map((p) => ({ id: p.slug, name: p.name, img: p.img, url: p.url, price: priceNum(p), desc: p.desc, seller: p.brand })),
+
   ];
 
 
@@ -597,7 +454,7 @@ export default function HolidayGiftGuide() {
   };
 
   return (
-    <div className="min-h-screen bg-flour text-ink">
+    <div className="holiday-editorial min-h-screen bg-flour text-ink">
       <Helmet>
         <title>Bread Lover's Holiday Gift Guide 2026 | Baking Great Bread</title>
         <meta name="description" content="The 2026 gift guide for bread bakers. Handpicked tools, lames, and books from Henry Hunter, with promo codes built in." />
@@ -612,185 +469,59 @@ export default function HolidayGiftGuide() {
       </Helmet>
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
+
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      {/* Top bar */}
-      <header className="sticky top-0 z-50 border-b border-honey/25 bg-oven/95 text-flour backdrop-blur">
-        <div className="mx-auto flex max-w-[1200px] items-center gap-3 px-4 py-2.5">
-          <a href="#top" className="mr-auto flex items-center gap-2 font-display text-base font-semibold text-flour">
-            <img
-              src={bgbLogo}
-              alt="Baking Great Bread at Home"
-              className="ornament-twinkle h-9 w-9 rounded-full object-cover ring-1 ring-honey/40"
-            />
-            <span className="hidden sm:inline">Baking Great Bread at Home</span>
-            <span className="sm:hidden">BGB</span>
-          </a>
-          <MusicPlayer />
-          <button
-            onClick={() => setWishlistOpen(true)}
-            aria-label={`Saved gifts, ${savedCount} saved`}
-            className={`inline-flex min-h-[36px] items-center gap-1 rounded-full border px-3 py-1 text-xs transition-colors ${savedCount > 0 ? "border-cranberry bg-cranberry/30 text-flour" : "border-honey/40 hover:bg-flour/10"}`}
-          >
-            <Heart className="h-3 w-3" fill={savedCount > 0 ? "currentColor" : "none"} aria-hidden />
-            <span className="hidden sm:inline">Saved</span>
-            <span>{savedCount}</span>
-          </button>
-          <span className="hidden rounded-full border border-honey/40 bg-cranberry/30 px-3 py-1 text-xs whitespace-nowrap sm:inline">
-            <b className="text-honey">{days}</b> days to Christmas
-          </span>
-          <button
-            onClick={() => setSnow((s) => !s)}
-            aria-pressed={snow}
-            className={`hidden items-center gap-1 rounded-full border px-3 py-1 text-xs transition-colors sm:inline-flex ${snow ? "border-honey bg-flour/15" : "border-flour/30"}`}
-          >
-            <Snowflake className="h-3 w-3" /> Snow
-          </button>
-        </div>
-        <HeaderGarland />
+      <a className="skip-guide" href="#browse">Skip to gifts</a>
+      <div className="season-note">A little thought. A lot of good bread. <span>THE HOLIDAY EDIT 2026</span></div>
+      <header className="editorial-header">
+        <a href="#top" className="editorial-brand"><img src={bgbLogo} alt="" width="42" height="42" /><span>Baking Great Bread<small>AT HOME · WITH HENRY HUNTER</small></span></a>
+        <nav aria-label="Main navigation"><a href="#top6">The edit</a><a href="#grain-to-gift">Grain & flour</a><a href="#browse">All gifts</a></nav>
+        <button onClick={() => setWishlistOpen(true)} className="saved-control" aria-label={`Saved gifts, ${savedCount} saved`}><Heart size={17} aria-hidden /> <span>Saved</span> {savedCount}</button>
       </header>
       <WishlistDrawer open={wishlistOpen} onClose={() => setWishlistOpen(false)} lookup={wishlistLookup} />
-
-
       <main id="top">
-        {/* Hero */}
-        <section className="relative overflow-hidden pt-[150px] text-flour" style={{ background: "radial-gradient(1200px 500px at 50% -10%, hsl(var(--honey) / 0.16), transparent 60%), linear-gradient(180deg, #17202b 0%, #1c1a14 45%, hsl(var(--oven)) 100%)" }}>
-          <div className="relative z-20 mx-auto grid max-w-[1200px] items-center gap-10 px-5 pb-20 md:grid-cols-[1.05fr_0.95fr] md:gap-12">
-            <div>
-              <p className="eyebrow" style={{ color: "hsl(var(--honey))" }}>The 2026 Guide</p>
-              <h1 className="mt-3 font-display font-medium" style={{ fontSize: "clamp(2.4rem, 5.6vw, 4.2rem)" }}>
-                Every gift on this list has <em className="not-italic italic text-honey" style={{ fontVariationSettings: '"SOFT" 100' }}>flour on it.</em>
-              </h1>
-              <p className="mt-4 max-w-[46ch] text-[1.05rem]" style={{ color: "#e8dcc6" }}>
-                Handpicked baking tools, wood bowls, lames, and books from Henry Hunter. Real gear I use, with promo codes built in.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <button onClick={() => setQuiz(true)} className="inline-flex items-center gap-2 rounded-full bg-cranberry px-6 py-3 font-bold text-flour shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-cranberry-deep">
-                  <Sparkles className="h-4 w-4" /> Open the Gift Finder
-                </button>
-                <a href="#top6" className="inline-flex items-center gap-2 rounded-full border-[1.5px] border-flour/40 px-6 py-3 font-bold text-flour transition-colors hover:border-honey hover:text-honey">
-                  See Henry's Top Picks
-                </a>
-              </div>
-              <p className="mt-5 text-sm" style={{ color: "#bfae92" }}>Affiliate links support free recipes. I only recommend what I use.</p>
-            </div>
-            <div
-              className="holiday-hero-art relative overflow-hidden rounded-3xl"
-              style={{
-                boxShadow:
-                  "0 0 0 4px #1a100a, 0 0 0 8px #3a2412, 0 24px 60px rgba(0,0,0,.6), 0 0 120px hsl(var(--honey) / 0.45)",
-              }}
-            >
-              <img
-                src={bakeryWindow.url}
-                alt="Baking Great Bread at Home Holiday Shopper's Guide by Crust & Crumb Academy"
-                className="block w-full"
-                loading="eager"
-              />
-              <div
-                className="pointer-events-none absolute inset-0 rounded-3xl"
-                style={{ boxShadow: "inset 0 0 90px hsl(var(--honey) / 0.22)" }}
-              />
-            </div>
+        <section className="editorial-hero">
+          <div className="hero-copy"><p className="edition-label">THE BREAD LOVER’S GIFT GUIDE</p>
+            <h1>For the hands<br />that <em>make<br className="desktop-break" /> the magic.</em></h1>
+            <p>Thoughtful tools. Beautiful ingredients. Gifts for the people who turn flour into something worth sharing.</p>
+            <div className="hero-actions"><a className="editorial-button" href="#top6">Explore the gift edit <span aria-hidden>↗</span></a><button onClick={() => setQuiz(true)}>Help me choose <span aria-hidden>↗</span></button></div>
+            <p className="curator-line">Curated by Henry Hunter <span>For a season of giving well.</span></p>
+          </div>
+          <div className="hero-composition" aria-label="A selection from the holiday gift edit">
+            <div className="hero-arch" aria-hidden />
+            <a className="hero-main-photo" href={products.find(p => p.slug === "challenger-pan")?.url} target="_blank" rel="nofollow sponsored noopener noreferrer"><img src="/product-images/challenger-bread-pan.jpg" alt="Challenger Bread Pan with a freshly baked loaf" width="650" height="650" fetchPriority="high" /><span>THE BAKE-DAY UPGRADE <b>Challenger Bread Pan ↗</b></span></a>
+            <a className="hero-detail-photo" href={products.find(p => p.slug === "walnut-17")?.url} target="_blank" rel="nofollow sponsored noopener noreferrer"><img src="/product-images/walnut-bowl-17.jpg" alt="Handcrafted walnut bowl from Holland Bowl Mill" width="300" height="250" /><span>Made to be kept.</span></a>
+            <div className="hero-seal" aria-hidden>GIVE<br /><em>something</em><br />GOOD</div>
           </div>
         </section>
-        {/* Site-wide snow, sits above hero and page, below modals */}
-        <SnowCanvas on={snow} />
-
-        {/* Promo marquee */}
-        <div className="overflow-hidden border-y border-honey/30 bg-evergreen-deep text-flour">
-          <div className="flex w-max animate-marquee gap-12 whitespace-nowrap py-3">
-            {[...promoCodes, ...promoCodes, ...promoCodes].map(([code, brand], i) => (
-              <span key={i} className="text-sm tracking-wide">
-                <b className="font-display text-honey">{code}</b> · {brand}
-              </span>
-            ))}
+        <div className="editorial-strip"><span>For first loaves & lifelong bakers</span><span>Handpicked by Henry</span><span>Affiliate links support free recipes</span></div>
+        <section id="grain-to-gift" className="grain-story">
+          <div className="grain-intro"><p className="edition-label">FROM GRAIN TO SOMETHING GREAT</p><h2>A gift that starts<br />a whole new ritual.</h2><p>Fresh flour, a favorite grain, a reason to bake again tomorrow. Bring the mill and the ingredients together.</p></div>
+          <div className="partner-spread">
+            <article className="mill-feature"><a href="https://collabs.shop/vavywo" target="_blank" rel="nofollow sponsored noopener noreferrer"><img src="/product-images/nutrimill-impact-grain-mill.jpg" alt="NutriMill Impact grain mill" width="700" height="700" loading="lazy" /></a><div><span className="partner-name">NUTRIMILL</span><h3>Make fresh flour<br />part of the everyday.</h3><p>Explore home milling with the NutriMill Impact. Check the store for current pricing and Black Friday offers.</p><button className="partner-code" onClick={() => copyCode("ACADEMY26")} aria-label="Copy NutriMill code ACADEMY26"><Copy size={14} /> ACADEMY26 <small>Copy code</small></button><a className="editorial-text-link" href="https://collabs.shop/vavywo" target="_blank" rel="nofollow sponsored noopener noreferrer">Shop NutriMill Impact <span aria-hidden>↗</span></a></div></article>
+            <article className="grain-feature"><a href="https://www.ancientgrains.com/einkorn/" target="_blank" rel="nofollow sponsored noopener noreferrer"><img src="/product-images/grand-teton-einkorn.webp" alt="Organic einkorn berries from Grand Teton Ancient Grains" width="700" height="600" loading="lazy" /></a><div><span className="partner-name">GRAND TETON ANCIENT GRAINS</span><h3>Good bread begins<br />with good grain.</h3><p>Explore einkorn, spelt and emmer from this family farm and mill in Idaho.</p><button className="partner-code" onClick={() => copyCode("crustandcrumb")} aria-label="Copy Grand Teton code crustandcrumb"><Copy size={14} /> crustandcrumb <small>Copy code</small></button><p className="offer-detail">10% off your first order through December 31, 2026.</p><a className="editorial-text-link" href="https://www.ancientgrains.com/einkorn/" target="_blank" rel="nofollow sponsored noopener noreferrer">Shop ancient grains <span aria-hidden>↗</span></a></div></article>
           </div>
-        </div>
-
-        {/* Give Bread Instead campaign */}
-        <section id="give-bread-instead" className="relative scroll-mt-[150px] overflow-hidden text-flour" style={{ background: "radial-gradient(900px 400px at 20% 0%, hsl(var(--cranberry) / 0.25), transparent 60%), linear-gradient(180deg, #2a1418 0%, #1c0f12 100%)" }}>
-          <div className="mx-auto grid max-w-[1200px] items-center gap-10 px-5 py-16 md:grid-cols-[1fr_1.1fr] md:py-20">
-            <div>
-              {/* Gift tag hanging as if tied to a package */}
-              <div className="relative mb-8 flex justify-start" aria-hidden>
-                <div className="relative">
-                  <span
-                    className="absolute left-1/2 -top-6 h-6 w-[2px] -translate-x-1/2 bg-[hsl(var(--twine))]"
-                    style={{ background: "#c9a56a" }}
-                  />
-                  <img
-                    src={giveBreadTag.url}
-                    alt=""
-                    className="ornament-sway block h-auto w-[130px] origin-top drop-shadow-2xl sm:w-[160px] md:w-[180px]"
-                    style={{
-                      transform: "rotate(-7deg)",
-                      // @ts-expect-error css vars
-                      "--sway-a": "-9deg",
-                      "--sway-b": "-5deg",
-                      animationDuration: "6s",
-                    }}
-                  />
-                </div>
-              </div>
-              <p className="eyebrow" style={{ color: "hsl(var(--honey))" }}>A December tradition</p>
-              <h2 className="mt-3 font-display font-medium text-flour" style={{ fontSize: "clamp(2rem, 4.4vw, 3.4rem)", lineHeight: 1.05 }}>
-                Give <em className="not-italic italic text-honey">Bread</em> Instead.
-              </h2>
-              <p className="mt-4 max-w-[46ch] text-[1.05rem]" style={{ color: "#e8dcc6" }}>
-                Skip the store-bought this year. A loaf you baked with your own hands says more than anything on a shelf. Watch the short story, then pick a tool below to gift the baker in your life.
-              </p>
-              <p className="mt-3 text-sm" style={{ color: "#e8dcc6" }}>
-                Baking your gift? <Link to="/how-to-wrap-sourdough-as-a-gift" className="font-semibold text-honey underline underline-offset-2 hover:text-flour">Learn how to wrap sourdough as a gift</Link>.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <a href="#top6" className="inline-flex items-center gap-2 rounded-full bg-cranberry px-6 py-3 font-bold text-flour shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-cranberry-deep" aria-label="Shop the 2026 Holiday Gift Guide">
-                  <HollySprig className="h-4 w-4" /> Shop the guide
-                </a>
-                <button onClick={() => setQuiz(true)} className="inline-flex items-center gap-2 rounded-full border-[1.5px] border-flour/40 px-6 py-3 font-bold text-flour transition-colors hover:border-honey hover:text-honey">
-                  <Sparkles className="h-4 w-4" /> Find the perfect gift
-                </button>
-              </div>
-            </div>
-            <div
-              className="relative overflow-hidden rounded-2xl"
-              style={{
-                boxShadow: "0 0 0 4px #1a100a, 0 0 0 8px #3a2412, 0 24px 60px rgba(0,0,0,.6), 0 0 100px hsl(var(--cranberry) / 0.35)",
-              }}
-            >
-              <video
-                src={giveBreadVideo.url}
-                poster="/give-bread-instead-poster.jpg"
-                controls
-                playsInline
-                preload="metadata"
-                className="block h-auto w-full bg-oven object-cover"
-              />
-
-            </div>
-          </div>
+          <div className="grain-resources"><span>A little guidance for the first batch.</span><a href="https://grains.bakinggreatbread.com" target="_blank" rel="noopener noreferrer">Henry’s grain guide ↗</a><a href="https://challenge.bakinggreatbread.com" target="_blank" rel="noopener noreferrer">Bake along with the challenge ↗</a></div>
         </section>
-
         {/* Top 10 */}
-        <section id="top6" className="scroll-mt-[150px] bg-gradient-to-b from-oven to-[hsl(24_38%_11%)] py-16 text-flour">
+        <section id="top6" className="edit-section py-16">
           <div className="mx-auto max-w-[1200px] px-5">
             <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
               <div>
-                <p className="eyebrow" style={{ color: "hsl(var(--honey))" }}>If you only look at one shelf</p>
+                <p className="eyebrow" style={{ color: "hsl(var(--honey))" }}>THE GIFTS I’D GIVE</p>
                 <h2 className="mt-2 font-display text-3xl font-semibold text-flour md:text-5xl">Henry's Top Picks</h2>
               </div>
-              <p className="max-w-[52ch] text-[hsl(37_35%_75%)]">The gifts I'd put under my own tree. Proven, loved, and used until the paint wore off.</p>
+              <p className="max-w-[52ch] text-[hsl(37_35%_75%)]">A few good things for the flour-dusted counter. Start here, then find your own favorites.</p>
             </div>
-            <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4">
-              {top10.map((p, i) => (
+            <div className="featured-grid">
+              {top10.map((p) => (
                 <article key={p.id} className="holiday-product-card holiday-featured-card">
                   <a href={p.url} target="_blank" rel="nofollow sponsored noopener noreferrer" aria-label={`Shop ${p.name}`}>
-                    <ProductPhoto src={p.img} name={p.name} ribbon={`Henry's pick ${i + 1}`} />
+                    <ProductPhoto src={p.img} name={p.name} />
                   </a>
                   <div className="holiday-card-body">
-                    <h3 className="font-display text-xl font-semibold leading-tight text-crust">{p.name}</h3>
-                    {p.seller && <p className="mt-1 text-xs text-crumb">{p.seller}</p>}
+                    <p className="holiday-card-brand">{p.seller ?? "HENRY’S EDIT"}</p><h3 className="font-display text-xl font-semibold leading-tight text-crust">{p.name}</h3>
                     {p.desc && <p className="mt-2 text-sm leading-relaxed text-crumb">{p.desc}</p>}
                     <div className="mt-auto pt-5">
                       {p.code && (
@@ -917,25 +648,6 @@ export default function HolidayGiftGuide() {
                     if (items.length === 0) return null;
                     return (
                       <div key={c}>
-                        {c === "Proofing & Temp" && (
-                          <a
-                            href="https://wiremonkey.com/henryhunter"
-                            target="_blank"
-                            rel="noopener noreferrer sponsored"
-                            className="mb-10 block overflow-hidden rounded-xl border border-parchment-deep shadow-sm transition-transform hover:scale-[1.01] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-crust"
-                            aria-label="Wire Monkey handcrafted wood scoring lames — shop now"
-                          >
-                            <img
-                              src={wireMonkeyBanner.url}
-                              alt="Wire Monkey handcrafted wood scoring lames — shop at wiremonkey.com/henryhunter"
-                              loading="lazy"
-                              decoding="async"
-                              className="block h-auto w-full"
-                              width={1200}
-                              height={300}
-                            />
-                          </a>
-                        )}
                         <div className="mb-14">
                           <div className="mb-6 flex items-baseline gap-3.5 border-b-2 border-dashed border-parchment-deep pb-2.5">
                             <h3 className="font-display text-2xl font-semibold text-crust">{c}</h3>
@@ -1164,7 +876,7 @@ export default function HolidayGiftGuide() {
                     aria-label="Enter the Give Bread Instead Gift Tag Set giveaway"
                   >
                     <img
-                      src={giveBreadTag.url}
+                      src="/give-bread-instead-poster.jpg"
                       alt="Give Bread Instead Gift Tag Set"
                       loading="lazy"
                       className="mx-auto h-40 w-auto object-contain py-3"

@@ -37,4 +37,9 @@ site/node_modules/
 site/.next/
 site/out/
 site/tsconfig.tsbuildinfo
+
+# Local design references and browser verification artifacts
+.library-transfer/
+references/
+qa/
 site/next-env.d.ts
