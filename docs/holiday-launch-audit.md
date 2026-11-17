@@ -4,7 +4,7 @@ Live page: https://holiday-gifts-2025.lovable.app/
 Source baseline: be86396bd8911448a07360f1bfcef2b6aa8d2150
 
 ## Status
-Draft changes prepared. Not published or certified ready for launch. Source checks passed; a full production build, browser preview, mobile interaction check, and merchant destination checks remain outstanding.
+Draft changes prepared. Not published or certified ready for launch. The complete production build passed on Vercel for commit 2f37d36c24679f3f07241683ffd5836e48eaa6da. Preview: https://holiday-gifts-2025-fuvl4kmtj-henryhunterjrs-projects.vercel.app/. Browser visual and interaction checks, mobile checks, and merchant destination checks remain outstanding.
 
 ## Product-card redesign
 The observed page used small, inconsistently sized images inside large cream boxes. Product cards now use a shared photo component with a generous image stage, a white photo mat, pale evergreen background, a restrained pine-and-berry corner, and consistent text spacing. Featured picks carry a cranberry ribbon. Product photos are preserved, not generated or altered. Photo load failures show a useful store prompt.
@@ -22,6 +22,7 @@ Snow defaults off. The interrupting automatic promotion modal is removed from th
 | Book cards used placeholder-like Amazon shortlinks and Vitale linked to vitalebreadco.com?ref=bfriedman | Cards now read existing book records in products.json, with their existing a.co destinations; redirect and tag verification still pending |
 | Amazon prices and ratings were literal constants | Removed from cards and Amazon source data; generator and public feed omit them, with a regression guard |
 | Book price display lacked current provenance | Removed from cards and generated/public book records |
+| Under-$50 facet pinned an Amazon scale whose current price was unverified | Removed that pinned selection; products with unknown prices remain excluded from price filters |
 | Amazon and other product anchors omitted sponsored metadata | Updated gift cards, featured picks, Amazon, Krustic, books and saved-gift purchase links |
 | Amazon disclosure was away from the Amazon shelf and used third-person wording | Exact first-person disclosure placed beside Amazon listings and in footer |
 | Three Amazon entries ignored existing direct-partner deduplication policy | Removed Challenger, Wire Monkey UFO and Brod & Taylor whisk duplicates from the Amazon source; direct partner cards remain |
@@ -39,7 +40,7 @@ Snow defaults off. The interrupting automatic promotion modal is removed from th
 7. **Canonical domain:** Source uses gifts.bakinggreatbread.blog, while the supplied live URL is lovable.app. Confirm the intended canonical domain resolves to this guide before changing SEO.
 8. **Giveaway:** Registration, winner schedule, confirmation and email delivery need an end-to-end check. No test entry was submitted.
 9. **Responsive/interaction QA:** Search, all filters, Gift Finder, saved gifts, code copy, keyboard focus, image loading, video, reduced-motion and mobile layout need a browser pass on the built result.
-10. **Other published surfaces:** Existing static exports/CSV and /gifts pages must be checked after the full build. The source has both a React SPA and a Next static export; this card redesign targets the supplied SPA homepage. This is not a full redesign of all facet pages.
+10. **Other published surfaces:** The build's static render and schema checks passed for all 17 /gifts routes. Visual checks of these pages and review of existing static exports/CSV remain outstanding. The source has both a React SPA and a Next static export; this card redesign targets the supplied SPA homepage. This is not a full redesign of all facet pages.
 
 ## Link inventory
 See holiday-link-inventory.csv for all 87 catalog records: 53 products, 7 Krustic items, 20 deduplicated Amazon products, 5 books and 2 free resources. Every destination is explicitly marked not independently verified. This file is a source inventory, not an HTTP uptime report or attribution certification. Additional homepage promotion/social/navigation links remain part of browser QA.
@@ -50,7 +51,10 @@ See holiday-link-inventory.csv for all 87 catalog records: 53 products, 7 Krusti
 - New Amazon catalog guard passed: no unsupported Amazon prices, currencies, price bands or star ratings.
 - Modified TS/TSX files parsed successfully with esbuild.
 - Styles parsed successfully with PostCSS.
-- No full npm production build or visual/browser tests completed. Git network access failed, Lovable connector returned internal errors, and the browser connection disconnected. Local validation used fetched text sources; seed image-existence checks were not a full asset audit.
+- Full Vercel production build passed for commit 2f37d36c24679f3f07241683ffd5836e48eaa6da: Vite homepage, Next static export, all 17 facet routes, exact rendered counts, structured data, canonical URLs, sitemap and merged output checks.
+- Deployed preview homepage and /gifts/under-50 returned HTTP 200. This is a response check, not a rendered browser test.
+- Vite warned that the main JavaScript bundle exceeds 500 kB; some existing images are large. Performance measurements remain outstanding.
+- No visual/browser tests of the changed design completed. Git network access failed, Lovable connector returned internal errors, and the browser connection disconnected. Remote Vercel builds used the full repository; local validation used fetched text sources.
 
 ## Official Amazon references
 - Disclosure: https://affiliate-program.amazon.com/help/node/topic/GPXFHVYZMTGPUMPE
