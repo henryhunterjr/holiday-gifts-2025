@@ -492,7 +492,7 @@ export default function HolidayGiftGuide() {
           <div className="hero-copy"><p className="edition-label">THE BREAD LOVER’S GIFT GUIDE</p>
             <h1>For the hands<br />that <em>make<br className="desktop-break" /> the magic.</em></h1>
             <p>Thoughtful tools. Beautiful ingredients. Gifts for the people who turn flour into something worth sharing.</p>
-            <div className="hero-actions"><a className="christmas-gift-link" href="/academy-gift-certificate/"><Gift size={30} aria-hidden /><span><strong>Give a year of baking</strong><small>$45 Christmas certificate · <span className="whitespace-nowrap">25% off</span></small></span><span aria-hidden>→</span></a><button onClick={() => setQuiz(true)}>Help me choose <span aria-hidden>↗</span></button></div>
+            <div className="hero-actions"><a className="christmas-gift-link" href="/academy-gift-certificate/"><Gift size={30} aria-hidden /><span><strong>Gift a Crust &amp; Crumb Academy membership</strong><small>One year for $45 this Christmas <span className="whitespace-nowrap">(25% off)</span></small></span><span aria-hidden>→</span></a><button onClick={() => setQuiz(true)}>Help me choose <span aria-hidden>↗</span></button></div>
             <p className="curator-line">Curated by Henry Hunter <span>For a season of giving well.</span></p>
           </div>
           <div className="hero-composition" aria-label="A selection from the holiday gift edit">
