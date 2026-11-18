@@ -171,3 +171,33 @@
   .academy-gift-face { align-items: center; text-align: center; padding: 28px 24px; }
   .academy-gift-stub { justify-items: center; padding: 22px; border-left: none; border-top: 2px dashed #ae8b54; }
 }
+
+.guide-strip-link { text-decoration: underline; text-underline-offset: 4px; }
+.guide-strip-link strong { margin-right: 4px; }
+.holiday-guide-feature, .grain-challenge-feature {
+  width: min(90%, 1200px);
+  margin: 40px auto 60px;
+  border: 1px solid #bc9b62;
+  background: #fbf4e6;
+}
+.holiday-guide-feature { display: grid; grid-template-columns: 1.22fr 1fr; align-items: center; }
+.holiday-guide-art { display: block; background: #421d13; }
+.holiday-guide-feature img, .grain-challenge-feature img { display: block; width: 100%; height: auto; }
+.holiday-guide-copy, .grain-challenge-caption { padding: clamp(20px, 3vw, 42px); }
+.free-gift-tag { display: inline-block; padding: 4px 14px; background: #8d302d; color: #fff9eb; font-size: 19px; line-height: 1.25; font-weight: 800; letter-spacing: .09em; }
+.holiday-guide-copy h2, .grain-challenge-caption h2 { margin: 10px 0; color: #163e35; font: clamp(30px, 3.4vw, 48px)/1.05 Georgia, serif; }
+.holiday-guide-copy h2 + p, .grain-challenge-caption p { max-width: 69ch; line-height: 1.55; }
+.holiday-guide-actions { display: flex; gap: 6px 18px; align-items: center; flex-wrap: wrap; margin-top: 18px; }
+.promo-action, .save-free-guide { display: inline-flex; min-height: 44px; align-items: center; gap: 7px; font-weight: 700; font-size: 15px; }
+.promo-action { padding: 10px 18px; color: #fff9eb; background: #163e35; }
+.promo-action:hover { background: #25564a; }
+.save-free-guide { text-decoration: underline; text-underline-offset: 4px; }
+.grain-challenge-feature > a { display: block; }
+.grain-challenge-caption { display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+.grain-challenge-caption h2 { margin-top: 0; }
+.grain-challenge-caption .promo-action { flex-shrink: 0; }
+@media (max-width: 740px) {
+  .holiday-guide-feature, .grain-challenge-feature { width: calc(100% - 32px); margin: 28px auto 38px; }
+  .holiday-guide-feature { grid-template-columns: 1fr; }
+  .grain-challenge-caption { flex-direction: column; align-items: flex-start; gap: 16px; }
+}

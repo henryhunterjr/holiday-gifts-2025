@@ -25,6 +25,7 @@ import {
 
 import fotmBanner from "@/assets/holiday/fotm-banner.jpg";
 import { GiveawayModal } from "@/components/giveaway/GiveawayModal";
+import { holidayBakingGuide } from "@/data/holidayBakingGuide";
 import { WishlistDrawer, type WishlistItem } from "@/components/WishlistDrawer";
 import { useWishlist } from "@/hooks/useWishlist";
 import { breadcrumbJsonLd } from "@/components/seo/Breadcrumbs";
@@ -337,7 +338,8 @@ export default function HolidayGiftGuide() {
   const [quiz, setQuiz] = useState(false);
   const [showAll, setShowAll] = useState(false);
   const [wishlistOpen, setWishlistOpen] = useState(window.location.hash === "#saved");
-  const { count: savedCount } = useWishlist();
+  const { count: savedCount, has, toggle } = useWishlist();
+  const guideSaved = has(holidayBakingGuide.slug);
   const [giveaway, setGiveaway] = useState(false);
   const searchInputId = useId();
 
@@ -431,6 +433,7 @@ export default function HolidayGiftGuide() {
 
   // Saved gifts are stored as slugs; resolve them back to card data on demand.
   const wishlistLookup = (slug: string): WishlistItem | undefined => {
+    if (slug === holidayBakingGuide.slug) return holidayBakingGuide;
     const maker = makers.find(m => m.items.some(p => `${m.id}:${p.slug}` === slug));
     const item = maker?.items.find(p => `${maker.id}:${p.slug}` === slug);
     if (maker && item) return {slug,name:item.name,brand:maker.brand,img:item.img,url:item.url,priceLabel:item.priceLabel};
@@ -488,20 +491,49 @@ export default function HolidayGiftGuide() {
             <a className="hero-holiday-logo" href="https://recipepantry.app/holiday-bake" target="_blank" rel="noopener noreferrer"><img src="/brand-logos/recipe-pantry.webp" alt="Explore the Recipe Pantry Holiday Collection" width="300" height="220" /></a>
           </div>
         </section>
-        <div className="editorial-strip"><span>For first loaves & lifelong bakers</span><span>Handpicked by Henry</span><span>Affiliate links support free recipes</span></div>
+        <div className="editorial-strip"><a href="#free-holiday-guide" className="guide-strip-link"><strong>FREE</strong> Holiday Baking Guide ↓</a><span>Handpicked by Henry</span><span>Affiliate links support free recipes</span></div>
         <section className="give-bread-banner" aria-labelledby="give-bread-title">
           <img src="/brand-logos/give-bread-instead-2026.webp" alt="Give Bread Instead. This holiday season, give bread instead. Campaign details coming soon." width="2048" height="682" loading="lazy" />
           <div className="give-bread-caption"><h2 id="give-bread-title">Give Bread Instead</h2><p>Nothing to buy. Just bake, wrap, and give.</p><span>Our annual community campaign. Details coming soon.</span></div>
           <p className="sr-only">For five years our community has baked a loaf, wrapped it, and given it to someone who matters. This year Baking Great Bread at Home, Crust &amp; Crumb Academy, and From Oven to Market are working on a way for every loaf to do a little good beyond your own table.</p>
         </section>
         <section id="makers" className="edit-section"><h2 className="text-4xl mb-8">Shop by need. Find your maker.</h2><div className="maker-doors">{makers.map(m => <a key={m.id} href={`/makers/${m.id}/`}><div><small>{m.brand}</small><h3>{m.title}</h3><span>Explore {m.items.length} gifts ↗</span></div><img src={m.items[0].img} alt="" loading="lazy" /></a>)}</div></section>
+        <section id="free-holiday-guide" className="holiday-guide-feature" aria-labelledby="free-holiday-title">
+          <a className="holiday-guide-art" href={holidayBakingGuide.url} target="_blank" rel="noopener noreferrer" aria-label="Open the free Holiday Baking Guide">
+            <img src={holidayBakingGuide.img} alt="Henry Hunter with challah, panettone and Christmas stollen" width="1672" height="941" loading="lazy" />
+          </a>
+          <div className="holiday-guide-copy">
+            <p className="free-gift-tag">FREE</p>
+            <h2 id="free-holiday-title">Holiday Baking Guide</h2>
+            <p>Christmas morning cinnamon rolls. Stollen to wrap for a friend. Pick from 35 recipes and use my make-ahead calendar to plan your bake. This one's on me.</p>
+            <div className="holiday-guide-actions">
+              <a className="promo-action" href={holidayBakingGuide.url} target="_blank" rel="noopener noreferrer">Open my free guide ↗</a>
+              <button type="button" className="save-free-guide" aria-pressed={guideSaved} onClick={() => toggle(holidayBakingGuide.slug)}>
+                <Heart size={17} fill={guideSaved ? "currentColor" : "none"} aria-hidden />
+                {guideSaved ? "Saved to my gift list" : "Save to my gift list"}
+              </button>
+            </div>
+          </div>
+        </section>
         <section id="grain-to-gift" className="grain-story">
           <div className="grain-intro"><p className="edition-label">FROM GRAIN TO SOMETHING GREAT</p><h2>A gift that starts<br />a whole new ritual.</h2><p>Fresh flour, a favorite grain, a reason to bake again tomorrow. Bring the mill and the ingredients together.</p></div>
           <div className="partner-spread">
             <article className="mill-feature"><a href="/makers/nutrimill/"><img src="/product-images/nutrimill-classic-holiday.webp" alt="NutriMill Classic grain mill" width="700" height="700" loading="lazy" /></a><div><span className="partner-name">NUTRIMILL</span><h3>Make fresh flour<br />part of the everyday.</h3><p>Explore home milling with the NutriMill Classic. Compare mills, mixers and prices in our NutriMill collection.</p><button className="partner-code" onClick={() => copyCode("ACADEMY26")} aria-label="Copy NutriMill code ACADEMY26"><Copy size={14} /> ACADEMY26 <small>Copy code</small></button><a className="editorial-text-link" href="/makers/nutrimill/">Explore NutriMill <span aria-hidden>↗</span></a></div></article>
             <article className="grain-feature"><a href="/makers/grand-teton/"><img src="/product-images/grand-teton-holiday.webp" alt="Grand Teton Ancient Grains spelt berries, whole grain einkorn flour and emmer berries" width="700" height="600" loading="lazy" /></a><div><span className="partner-name">GRAND TETON ANCIENT GRAINS</span><h3>Good bread begins<br />with good grain.</h3><p>Explore einkorn, spelt and emmer from this family farm and mill in Idaho.</p><button className="partner-code" onClick={() => copyCode("crustandcrumb")} aria-label="Copy Grand Teton code crustandcrumb"><Copy size={14} /> crustandcrumb <small>Copy code</small></button><p className="offer-detail">10% off your first order through December 31, 2026.</p><a className="editorial-text-link" href="/makers/grand-teton/">Explore grains & prices <span aria-hidden>↗</span></a></div></article>
           </div>
-          <div className="grain-resources"><span>A little guidance for the first batch.</span><a href="https://grains.bakinggreatbread.com" target="_blank" rel="noopener noreferrer">Henry’s grain guide ↗</a><a href="https://challenge.bakinggreatbread.com" target="_blank" rel="noopener noreferrer">Bake along with the challenge ↗</a></div>
+          <div className="grain-resources"><span>A little guidance for the first batch.</span><a href="https://grains.bakinggreatbread.com" target="_blank" rel="noopener noreferrer">Henry’s grain guide ↗</a></div>
+        </section>
+        <section id="ancient-grain-challenge" className="grain-challenge-feature" aria-labelledby="grain-challenge-title">
+          <a href="https://challenge.bakinggreatbread.com/#me" target="_blank" rel="noopener noreferrer" aria-label="Register for the Ancient Grain Challenge">
+            <img src="/brand-logos/ancient-grain-challenge.webp" alt="Weekly 5 lb bags of ancient grain, a 25 lb grain grand prize and a Bosch Universal Plus mixer giveaway" width="1800" height="599" loading="lazy" />
+          </a>
+          <div className="grain-challenge-caption">
+            <div>
+              <h2 id="grain-challenge-title">Ancient Grain Challenge</h2>
+              <p>Register free for the December 1 Bosch Universal Plus mixer drawing. Complete one lesson to qualify for weekly 5 lb grain prizes, or all seven for a chance at the 25 lb bag from Grand Teton Ancient Grains.</p>
+            </div>
+            <a className="promo-action" href="https://challenge.bakinggreatbread.com/#me" target="_blank" rel="noopener noreferrer">Register free ↗</a>
+          </div>
         </section>
         {/* Top 10 */}
         <section id="top6" className="edit-section py-16">
