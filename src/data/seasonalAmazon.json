@@ -1,0 +1,20 @@
+{
+  "thermometer": {
+    "slug": "alpha-grillers-digital-meat-thermometer",
+    "name": "Alpha Grillers Digital Meat Thermometer",
+    "category": "Instant-read thermometer",
+    "img": "/product-images/alpha-grillers-instant-read.webp",
+    "url": "https://link.amazon/B08z1LeOG",
+    "note": "Check the center of a loaf before you pull it from the oven.",
+    "detail": "Arrives pre-calibrated and gives a reading in 1 to 2 seconds."
+  },
+  "cambro": {
+    "slug": "cambro-6qt-container",
+    "name": "Cambro 6-Quart Container with Lid",
+    "category": "Dough storage",
+    "img": "/product-images/cambro-6qt.webp",
+    "url": "https://link.amazon/B0cpGG7pk",
+    "note": "Mark the dough level after mixing and you can see how far it’s risen without lifting the lid.",
+    "detail": "Square container pictured. The Amazon link opens the round 6-quart model."
+  }
+}

@@ -82,6 +82,12 @@ for (const line of amazonSrc.split("\n")) {
   });
 }
 
+// These photo-backed cards have one source for the guide and generated gift pages.
+const seasonalTools = JSON.parse(read("src/data/seasonalAmazon.json"));
+for (const tool of Object.values(seasonalTools)) {
+  amazon.push({ ...tool, desc: tool.detail, price: null, source: "amazon" });
+}
+
 // Enrichment merge: catalog.enrichment.json is keyed by array then exact
 // record name. It replaces categories, audiences and concierge.solves only.
 // price, currency, priceBand, priceCheckedAt, rel, target, alt and cat are

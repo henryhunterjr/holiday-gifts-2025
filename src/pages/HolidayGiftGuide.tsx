@@ -1,10 +1,11 @@
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Search, Share2, Copy, Snowflake, ExternalLink, X, Sparkles, ChevronDown, Heart } from "lucide-react";
+import { Gift, Search, Share2, Copy, Snowflake, ExternalLink, X, Sparkles, ChevronDown, Heart } from "lucide-react";
 import { toast } from "sonner";
 import productsData from "@/data/products.json";
 import { krusticProducts } from "@/data/krustic";
+import seasonalTools from "@/data/seasonalAmazon.json";
 import { amazonProducts } from "@/data/amazon";
 import {
   PRICE_BANDS,
@@ -331,6 +332,13 @@ function GiftFinderQuiz({ open, onClose }: { open: boolean; onClose: () => void 
 /* ============ Page ============ */
 export default function HolidayGiftGuide() {
   const location = useLocation();
+  useEffect(() => {
+    const anchor = document.getElementById(location.hash.slice(1));
+    if (!anchor) return;
+    const frame = requestAnimationFrame(() => anchor.scrollIntoView({ block: "start" }));
+    return () => cancelAnimationFrame(frame);
+  }, [location.hash]);
+
   const canonicalUrl = `https://gifts.bakinggreatbread.blog${location.pathname === "/" ? "/" : location.pathname}`;
   const [search, setSearch] = useState("");
   const [cat, setCat] = useState<string | null>(null);
@@ -481,7 +489,7 @@ export default function HolidayGiftGuide() {
           <div className="hero-copy"><p className="edition-label">THE BREAD LOVER’S GIFT GUIDE</p>
             <h1>For the hands<br />that <em>make<br className="desktop-break" /> the magic.</em></h1>
             <p>Thoughtful tools. Beautiful ingredients. Gifts for the people who turn flour into something worth sharing.</p>
-            <div className="hero-actions"><a className="editorial-button" href="#top6">Explore the gift edit <span aria-hidden>↗</span></a><button onClick={() => setQuiz(true)}>Help me choose <span aria-hidden>↗</span></button></div>
+            <div className="hero-actions"><a className="christmas-gift-link" href="/academy-gift-certificate/"><Gift size={30} aria-hidden /><span><strong>Give a year of baking</strong><small>$45 Christmas gift certificate · 25% off</small></span><span aria-hidden>→</span></a><button onClick={() => setQuiz(true)}>Help me choose <span aria-hidden>↗</span></button></div>
             <p className="curator-line">Curated by Henry Hunter <span>For a season of giving well.</span></p>
           </div>
           <div className="hero-composition" aria-label="A selection from the holiday gift edit">
@@ -516,9 +524,9 @@ export default function HolidayGiftGuide() {
           </div>
         </section>
         <section id="grain-to-gift" className="grain-story">
-          <div className="grain-intro"><p className="edition-label">FROM GRAIN TO SOMETHING GREAT</p><h2>A gift that starts<br />a whole new ritual.</h2><p>Fresh flour, a favorite grain, a reason to bake again tomorrow. Bring the mill and the ingredients together.</p></div>
+          <div className="grain-intro"><p className="edition-label">FROM GRAIN TO SOMETHING GREAT</p><div className="grain-heading-row"><h2>A gift that starts<br />a whole new ritual.</h2><a href="/makers/nutrimill/"><img src="/brand-logos/nutrimill-starburst.jpg" alt="NutriMill" width="92" height="82" /></a></div><p>Fresh flour, a favorite grain, a reason to bake again tomorrow. Bring the mill and the ingredients together.</p></div>
           <div className="partner-spread">
-            <article className="mill-feature"><a href="/makers/nutrimill/"><img src="/product-images/nutrimill-classic-holiday.webp" alt="NutriMill Classic grain mill" width="700" height="700" loading="lazy" /></a><div><span className="partner-name">NUTRIMILL</span><h3>Make fresh flour<br />part of the everyday.</h3><p>Explore home milling with the NutriMill Classic. Compare mills, mixers and prices in our NutriMill collection.</p><button className="partner-code" onClick={() => copyCode("ACADEMY26")} aria-label="Copy NutriMill code ACADEMY26"><Copy size={14} /> ACADEMY26 <small>Copy code</small></button><a className="editorial-text-link" href="/makers/nutrimill/">Explore NutriMill <span aria-hidden>↗</span></a></div></article>
+            <article className="mill-feature"><a href="/makers/nutrimill/"><img src="/product-images/nutrimill-classic-holiday.webp" alt="NutriMill Classic grain mill" width="700" height="700" loading="lazy" /></a><div><span className="partner-name">NUTRIMILL</span><div className="grain-heading-row"><h3>Make fresh flour<br />part of the everyday.</h3><a href="/makers/grand-teton/"><img src="/brand-logos/grand-teton-mark.png" alt="Grand Teton Ancient Grains" width="92" height="82" /></a></div><p>Explore home milling with the NutriMill Classic. Compare mills, mixers and prices in our NutriMill collection.</p><button className="partner-code" onClick={() => copyCode("ACADEMY26")} aria-label="Copy NutriMill code ACADEMY26"><Copy size={14} /> ACADEMY26 <small>Copy code</small></button><a className="editorial-text-link" href="/makers/nutrimill/">Explore NutriMill <span aria-hidden>↗</span></a></div></article>
             <article className="grain-feature"><a href="/makers/grand-teton/"><img src="/product-images/grand-teton-holiday.webp" alt="Grand Teton Ancient Grains spelt berries, whole grain einkorn flour and emmer berries" width="700" height="600" loading="lazy" /></a><div><span className="partner-name">GRAND TETON ANCIENT GRAINS</span><h3>Good bread begins<br />with good grain.</h3><p>Explore einkorn, spelt and emmer from this family farm and mill in Idaho.</p><button className="partner-code" onClick={() => copyCode("crustandcrumb")} aria-label="Copy Grand Teton code crustandcrumb"><Copy size={14} /> crustandcrumb <small>Copy code</small></button><p className="offer-detail">10% off your first order through December 31, 2026.</p><a className="editorial-text-link" href="/makers/grand-teton/">Explore grains & prices <span aria-hidden>↗</span></a></div></article>
           </div>
           <div className="grain-resources"><span>A little guidance for the first batch.</span><a href="https://grains.bakinggreatbread.com" target="_blank" rel="noopener noreferrer">Henry’s grain guide ↗</a></div>
@@ -545,6 +553,17 @@ export default function HolidayGiftGuide() {
               </div>
               <p className="max-w-[52ch] text-[hsl(37_35%_75%)]">A few good things for the flour-dusted counter. Start here, then find your own favorites.</p>
             </div>
+            <article id="cambro-6qt" className="cambro-pick" data-product={seasonalTools.cambro.slug} data-brand="Cambro">
+              <a href={seasonalTools.cambro.url} target="_blank" rel="nofollow sponsored noopener noreferrer" aria-label="View the Cambro container on Amazon">
+                <img src={seasonalTools.cambro.img} width="600" height="600" alt="Clear 6-quart Cambro dough container with measurements and a red lid" loading="eager" />
+              </a>
+              <div>
+                <h3>{seasonalTools.cambro.name}</h3>
+                <p>{seasonalTools.cambro.note}</p>
+                <a className="cambro-buy" href={seasonalTools.cambro.url} target="_blank" rel="nofollow sponsored noopener noreferrer">Shop Cambro on Amazon <ExternalLink size={18} aria-hidden /></a>
+                <small>{seasonalTools.cambro.detail}</small>
+              </div>
+            </article>
             <div className="featured-grid">
               {top10.map((p) => (
                 <article key={p.id} data-product={p.id} data-brand={p.seller} className="holiday-product-card holiday-featured-card">
@@ -584,16 +603,16 @@ export default function HolidayGiftGuide() {
           <div className="academy-gift-face">
             <img src="/brand-logos/academy-crest.webp" alt="Crust & Crumb Academy" width="720" height="405" loading="lazy" />
             <div>
-              <p className="academy-gift-label">Holiday gift certificate</p>
+              <p className="academy-gift-label">Christmas gift certificate</p>
               <h2 id="academy-gift-title">A year of baking together.</h2>
               <p>Give your baker an annual Crust &amp; Crumb Academy membership. Bring the dough questions. Pull up a chair for a Saturday bake-along.</p>
             </div>
           </div>
           <div className="academy-gift-stub">
             <p className="academy-gift-label">One year of membership</p>
-            <p className="academy-gift-price"><strong>$48</strong> <span>Regularly <s>$60</s></span></p>
-            <p className="academy-gift-saving">Holiday savings of 20%</p>
-            <a href="mailto:BGBAH2023@gmail.com?subject=Crust%20%26%20Crumb%20Academy%20%2448%20holiday%20gift%20certificate&amp;body=Hi%20Henry%2C%20I%27d%20like%20to%20give%20a%20one-year%20Academy%20membership%20for%20%2448.%20Please%20send%20me%20the%20purchase%20details.">Email Henry for a gift certificate <span aria-hidden="true">↗</span></a>
+            <p className="academy-gift-price"><strong>$45</strong> <span>Regularly <s>$60</s></span></p>
+            <p className="academy-gift-saving">Save $15 this Christmas · 25% off</p>
+            <a href="/academy-gift-certificate/">View the Christmas gift certificate <span aria-hidden="true">↗</span></a>
           </div>
         </section>
 

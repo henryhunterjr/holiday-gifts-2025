@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import HolidayGiftGuide from "./pages/HolidayGiftGuide";
+import AcademyGiftCertificate from "./pages/AcademyGiftCertificate";
 import NotFound from "./pages/NotFound";
 import SourdoughStarterCareGuide from "./pages/SourdoughStarterCareGuide";
 import SourdoughStarterTroubleshooting from "./pages/SourdoughStarterTroubleshooting";
@@ -28,6 +29,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <Routes>
+            <Route path="/academy-gift-certificate" element={<AcademyGiftCertificate />} />
             <Route path="/" element={<HolidayGiftGuide />} />
             <Route path="/bread-baker-holiday-gift-guide-2025" element={<HolidayGiftGuide />} />
             <Route path="/sourdough-starter-care-guide" element={<SourdoughStarterCareGuide />} />

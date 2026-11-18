@@ -201,3 +201,51 @@
   .holiday-guide-feature { grid-template-columns: 1fr; }
   .grain-challenge-caption { flex-direction: column; align-items: flex-start; gap: 16px; }
 }
+
+.hero-actions { flex-wrap: wrap; }
+.christmas-gift-link, .certificate-order > a {
+  display: inline-flex; align-items: center; justify-content: center; gap: .9rem;
+  background: #942d3c; color: #fff9e9; border: 1px solid #f0ca85;
+  border-radius: 6px; padding: 1rem 1.2rem; text-decoration: none;
+  box-shadow: inset 0 0 0 3px #942d3c, inset 0 0 0 4px #c9786f;
+}
+.christmas-gift-link:hover, .certificate-order > a:hover { background: #782232; }
+.christmas-gift-link strong, .christmas-gift-link small { display: block; }
+.christmas-gift-link strong { font: bold clamp(1.3rem, 2vw, 1.8rem)/1.14 Georgia, serif; }
+.christmas-gift-link small { margin-top: .28rem; font-size: .9rem; }
+.grain-heading-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.grain-heading-row > a { flex: 0 0 clamp(54px, 6vw, 88px); }
+.grain-heading-row img, .partner-spread .grain-heading-row img { display: block; width: 100%; height: auto; object-fit: contain; mix-blend-mode: normal; }
+.grain-intro .grain-heading-row img { border-radius: 8px; }
+.cambro-pick { display: grid; grid-template-columns: minmax(160px, 255px) 1fr; align-items: center; gap: clamp(1.3rem, 4vw, 3.5rem); background: #fbf4e6; color: #173d32; margin: 0 0 2.4rem; border: 1px solid #ccae77; scroll-margin-top: 6rem; }
+.cambro-pick img { display: block; width: 100%; height: auto; object-fit: contain; }
+.cambro-pick > div { padding: 1.4rem 1.5rem 1.4rem 0; }
+.cambro-pick h3 { margin: 0 0 .45rem; font: 500 clamp(1.65rem, 3vw, 2.6rem)/1.08 Georgia, serif; }
+.cambro-pick p { max-width: 50ch; font-size: 1rem; line-height: 1.5; }
+.cambro-buy { display: inline-flex; align-items: center; gap: .7rem; min-height: 46px; padding: .65rem 1rem; font-weight: 700; background: #174437; color: white; margin: .85rem 0 .45rem; }
+.cambro-buy:hover { background: #225c48; }
+.cambro-pick small { display: block; color: #4e5d52; font-size: .83rem; }
+.certificate-shop { min-height: 100vh; padding: clamp(1.5rem, 6vw, 5rem); background: radial-gradient(ellipse at 70% 0%, #305c46, #0d322a 70%); color: #f9edd2; font-family: Georgia, serif; }
+.certificate-back { display: block; width: fit-content; margin: 0 auto 2rem 0; padding: .6rem 0; font: 600 1rem/1.4 system-ui, sans-serif; }
+.christmas-certificate { max-width: 1050px; margin: min(6vh, 3rem) auto; display: grid; grid-template-columns: 1.6fr 1fr; background: #fff5df; color: #193e32; border: 6px double #c69d53; box-shadow: 0 16px 45px #061d1970; }
+.certificate-face { text-align: center; padding: clamp(1.6rem, 4vw, 3.3rem); }
+.certificate-face img { display: block; width: min(220px, 60%); height: auto; margin: 0 auto 1.1rem; }
+.certificate-kicker { font: 750 .86rem/1.4 system-ui, sans-serif; text-transform: uppercase; letter-spacing: .12em; color: #913340; }
+.certificate-face h1 { font: normal clamp(2.8rem, 6vw, 4.8rem)/1.03 Georgia, serif; letter-spacing: -.045em; margin: .7rem 0 1rem; }
+.certificate-face h1 + p { font: 1.08rem/1.65 system-ui, sans-serif; max-width: 40ch; margin: auto; }
+.certificate-signature { margin-top: 1.6rem; font: italic 1.65rem Georgia, serif; }
+.certificate-face small, .certificate-order small { font: .9rem/1.5 system-ui, sans-serif; }
+.certificate-order { background: #752437; border-left: 4px double #dfb673; color: #fff3d9; padding: clamp(1.6rem, 4vw, 3.2rem); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
+.certificate-order h2 { font: normal clamp(1.6rem, 3vw, 2.6rem)/1.12 Georgia, serif; margin: 1.4rem 0 .75rem; }
+.certificate-cost { font: normal 3.4rem/1.2 Georgia, serif; }
+.certificate-cost s { font-size: 1.5rem; }
+.certificate-order > a { margin: 1.6rem 0 .7rem; background: #ffedc7; color: #53222c; font: bold 1.05rem/1.4 system-ui, sans-serif; box-shadow: none; }
+.certificate-order > a:hover { background: #ffdc91; }
+@media (max-width: 650px) {
+  .cambro-pick, .christmas-certificate { grid-template-columns: 1fr; }
+  .cambro-pick { gap: 0; }
+  .cambro-pick > a { background: #f3ead8; }
+  .cambro-pick img { max-height: 260px; }
+  .cambro-pick > div { padding: 1.3rem; }
+  .certificate-order { border-left: 0; border-top: 4px double #dfb673; }
+}
