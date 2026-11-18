@@ -101,3 +101,6 @@
 @media (prefers-reduced-motion:reduce) { .holiday-editorial *, .holiday-editorial *::before,.holiday-editorial *::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; } html { scroll-behavior:auto; } }
 
 .maker-doors {display:grid;grid-template-columns:1fr 1fr;gap:24px}.maker-doors>a{display:flex;align-items:center;justify-content:space-between;min-height:230px;background:#e8dfce;padding:24px;overflow:hidden;color:#163e35}.maker-doors h3{font:32px/1.1 Georgia,serif;margin:12px 0}.maker-doors small{letter-spacing:.12em;text-transform:uppercase}.maker-doors img{width:44%;mix-blend-mode:multiply;object-fit:contain;transition:transform .4s}.maker-doors a:hover img{transform:perspective(700px) rotateY(-8deg) scale(1.06)}@media(max-width:700px){.maker-doors{grid-template-columns:1fr}.maker-doors h3{font-size:27px}}@media(prefers-reduced-motion:reduce){.maker-doors img{transition:none!important;transform:none!important}}
+
+.partner-spread article > a { height:auto; aspect-ratio:1; }
+.partner-spread img { object-fit:contain; mix-blend-mode:normal; }
