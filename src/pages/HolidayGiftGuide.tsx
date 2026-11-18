@@ -22,7 +22,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import bgbLogo from "@/assets/holiday/ornament-bgb-logo.png";
+
 import fotmBanner from "@/assets/holiday/fotm-banner.jpg";
 import { GiveawayModal } from "@/components/giveaway/GiveawayModal";
 import { WishlistDrawer, type WishlistItem } from "@/components/WishlistDrawer";
@@ -468,9 +468,9 @@ export default function HolidayGiftGuide() {
       <a className="skip-guide" href="#browse">Skip to gifts</a>
       <div className="season-note">A little thought. A lot of good bread. <span>THE HOLIDAY EDIT 2026</span></div>
       <header className="editorial-header">
-        <a href="#top" className="editorial-brand"><img src={bgbLogo} alt="" width="42" height="42" /><span>Baking Great Bread<small>AT HOME · WITH HENRY HUNTER</small></span></a>
-        <nav aria-label="Main navigation"><a href="#makers">Shop by maker</a><a href="#grain-to-gift">Grain & flour</a><a href="#browse">All gifts</a></nav>
-        <button onClick={() => setWishlistOpen(true)} className="saved-control" aria-label={`Saved gifts, ${savedCount} saved`}><Heart size={17} aria-hidden /> <span>Saved</span> {savedCount}</button>
+        <a href="#top" className="editorial-brand"><img src="/brand-logos/academy.png" alt="Crust & Crumb Academy" width="1672" height="941" /><span>Baking Great Bread at Home<strong>Crust &amp; Crumb Academy</strong><small>A holiday guide by Henry Hunter</small></span></a>
+        <nav aria-label="Main navigation"><a href="#makers">Shop by maker</a><a href="#grain-to-gift">Grain &amp; flour</a><a href="#browse">All gifts</a></nav>
+        <div className="header-actions"><a className="about-henry" href="https://bakinggreatbread.com/about" target="_blank" rel="noopener noreferrer">About Henry Hunter</a><button onClick={() => setWishlistOpen(true)} className="saved-control" aria-label={`Saved gifts, ${savedCount} saved`}><Heart size={17} aria-hidden /> <span>Saved</span> {savedCount}</button></div>
       </header>
       <WishlistDrawer open={wishlistOpen} onClose={() => setWishlistOpen(false)} lookup={wishlistLookup} />
       <main id="top">
@@ -489,6 +489,11 @@ export default function HolidayGiftGuide() {
           </div>
         </section>
         <div className="editorial-strip"><span>For first loaves & lifelong bakers</span><span>Handpicked by Henry</span><span>Affiliate links support free recipes</span></div>
+        <section className="give-bread-banner" aria-labelledby="give-bread-title">
+          <img src="/give-bread-instead-2026.png" alt="Give Bread Instead. This holiday season, give bread instead. Campaign details coming soon." width="2048" height="682" loading="lazy" />
+          <div className="give-bread-caption"><h2 id="give-bread-title">Give Bread Instead</h2><p>Nothing to buy. Just bake, wrap, and give.</p><span>Our annual community campaign. Details coming soon.</span></div>
+          <p className="sr-only">For five years our community has baked a loaf, wrapped it, and given it to someone who matters. This year Baking Great Bread at Home, Crust &amp; Crumb Academy, and From Oven to Market are working on a way for every loaf to do a little good beyond your own table.</p>
+        </section>
         <section id="makers" className="edit-section"><h2 className="text-4xl mb-8">Shop by need. Find your maker.</h2><div className="maker-doors">{makers.map(m => <a key={m.id} href={`/makers/${m.id}/`}><div><small>{m.brand}</small><h3>{m.title}</h3><span>Explore {m.items.length} gifts ↗</span></div><img src={m.items[0].img} alt="" loading="lazy" /></a>)}</div></section>
         <section id="grain-to-gift" className="grain-story">
           <div className="grain-intro"><p className="edition-label">FROM GRAIN TO SOMETHING GREAT</p><h2>A gift that starts<br />a whole new ritual.</h2><p>Fresh flour, a favorite grain, a reason to bake again tomorrow. Bring the mill and the ingredients together.</p></div>
