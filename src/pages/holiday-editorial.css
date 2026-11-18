@@ -213,10 +213,14 @@
 .christmas-gift-link strong, .christmas-gift-link small { display: block; }
 .christmas-gift-link strong { font: bold clamp(1.3rem, 2vw, 1.8rem)/1.14 Georgia, serif; }
 .christmas-gift-link small { margin-top: .28rem; font-size: .9rem; }
-.grain-heading-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-.grain-heading-row > a { flex: 0 0 clamp(54px, 6vw, 88px); }
-.grain-heading-row img, .partner-spread .grain-heading-row img { display: block; width: 100%; height: auto; object-fit: contain; mix-blend-mode: normal; }
-.grain-intro .grain-heading-row img { border-radius: 8px; }
+.partner-identity { display: flex; gap: 1rem; align-items: center; justify-content: space-between; }
+.partner-identity > a { display: grid; place-items: center; width: 70px; height: 62px; flex: none; }
+.partner-spread .partner-identity img { width: 100%; height: 100%; object-fit: contain; }
+.mill-feature .partner-identity img { width: 56px; height: 56px; border-radius: 9px; }
+.partner-spread h3 { max-width: 17ch; margin-top: 12px; text-wrap: balance; }
+.partner-spread article > a { aspect-ratio: 4 / 3; }
+.partner-spread article > a img { background: #eee8dc; }
+.mobile-browse { display: none; }
 .cambro-pick { display: grid; grid-template-columns: minmax(160px, 255px) 1fr; align-items: center; gap: clamp(1.3rem, 4vw, 3.5rem); background: #fbf4e6; color: #173d32; margin: 0 0 2.4rem; border: 1px solid #ccae77; scroll-margin-top: 6rem; }
 .cambro-pick img { display: block; width: 100%; height: auto; object-fit: contain; }
 .cambro-pick > div { padding: 1.4rem 1.5rem 1.4rem 0; }
@@ -248,4 +252,68 @@
   .cambro-pick img { max-height: 260px; }
   .cambro-pick > div { padding: 1.3rem; }
   .certificate-order { border-left: 0; border-top: 4px double #dfb673; }
+}
+
+@media (min-width: 1150px) {
+  .editorial-header { flex-wrap: nowrap; gap: 24px; padding-block: 12px; }
+  .editorial-header nav { order: 0; width: auto; border: 0; gap: clamp(18px, 2vw, 36px); }
+  .editorial-brand img { width: 150px; }
+  .header-actions { margin: 0; }
+}
+@media (min-width: 768px) and (max-width: 1149px) {
+  .editorial-header { padding-block: 10px 2px; gap: 2px 20px; }
+  .editorial-brand img { width: 145px; }
+  .featured-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 767px) {
+  .season-note { padding-block: 6px; font-size: 11px; }
+  .editorial-header { padding: 10px 16px 0; gap: 5px; }
+  .editorial-brand img { width: clamp(88px, 25vw, 120px); }
+  .editorial-brand small { margin-top: 4px; }
+  .header-actions { border-top: 1px solid #163e3525; gap: 6px; }
+  .header-actions :is(button, a) { min-height: 44px; display: inline-flex; align-items: center; padding: 6px 2px; }
+  .mobile-browse { gap: 3px; font-size: 14px; font-weight: 700; }
+  .mobile-browse[aria-expanded="true"] svg { transform: rotate(180deg); }
+  .header-actions .saved-control { border: 0; gap: 5px; }
+  .editorial-header nav { display: none; }
+  .editorial-header nav.is-open { display: flex; gap: 8px; flex-wrap: wrap; }
+  .editorial-header nav a { font-size: 14px; min-height: 44px; }
+  .editorial-hero { min-height: auto; padding: 30px 20px; gap: 16px; }
+  .hero-copy .edition-label { margin-bottom: 14px; font-size: 10px; }
+  .hero-copy h1 { font-size: clamp(45px, 10.8vw, 69px); }
+  .hero-copy > p:not(.edition-label):not(.curator-line) { max-width: 44ch; margin-top: 14px; font-size: 16px; line-height: 1.5; }
+  .hero-actions { margin-top: 18px; gap: 4px 16px; }
+  .hero-actions button { font-size: 14px; min-height: 44px; }
+  .hero-copy .curator-line { margin-top: 10px; }
+  .hero-composition { height: auto; aspect-ratio: 1.25; }
+  .hero-main-photo { width: 73%; }
+  .hero-detail-photo { width: 39%; }
+  .hero-holiday-logo { width: 36%; }
+  .hero-main-photo > span { padding-block: 8px; }
+  .guide-strip-link { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; }
+  .editorial-strip { padding-block: 4px; align-items: center; }
+  .grain-story { padding-top: 40px; }
+  .grain-intro { gap: 12px; margin-bottom: 20px; }
+  .partner-spread article > div { padding: 18px 22px 24px; }
+  .partner-spread .partner-name { font-size: 12px; letter-spacing: .1em; }
+  .partner-spread p { font-size: 16px; line-height: 1.55; }
+  .partner-spread .editorial-text-link { display: inline-flex; align-items: center; min-height: 44px; }
+  .holiday-editorial .holiday-shop-link { font-size: 15px; }
+  .holiday-featured-card .holiday-card-body > p:not(.holiday-card-brand) { font-size: 15px; line-height: 1.5; }
+}
+@media (max-width: 540px) {
+  .featured-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .featured-grid .holiday-featured-card { display: grid; grid-template-columns: minmax(76px, .68fr) minmax(0, 1.4fr); align-items: start; gap: 12px; padding-block: 18px 0; border-top: 1px solid #163e352d; }
+  .featured-grid .holiday-card-body { padding: 0; }
+  .featured-grid .holiday-card-body h3 { font-size: 22px; }
+  .featured-grid .holiday-card-body .mt-auto { padding-top: 6px; }
+  .christmas-gift-link { max-width: 100%; padding: .8rem .9rem; gap: .65rem; }
+  .christmas-gift-link strong { font-size: 1.35rem; }
+}
+
+@media (min-width: 1150px) {
+  .editorial-header .header-actions { order: 1; }
+}
+@media (max-width: 359px) {
+  .header-actions .saved-control span { display: none; }
 }
