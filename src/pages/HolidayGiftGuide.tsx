@@ -30,6 +30,7 @@ import { useWishlist } from "@/hooks/useWishlist";
 import { breadcrumbJsonLd } from "@/components/seo/Breadcrumbs";
 import { type TopPick } from "@/data/topPicks";
 import "./holiday-editorial.css";
+import makers from "@/data/makers.json";
 import { ProductPhoto } from "@/components/ProductPhoto";
 
 /* ============ Types & data ============ */
@@ -80,18 +81,6 @@ const CATEGORIES = [
 const priceNum = (p: Product) => (typeof p.price === "number" ? p.price : parseFloat(String(p.price).replace(/[^0-9.]/g, "")) || 0);
 const priceStr = (p: Product) => (typeof p.price === "number" ? `$${p.price}` : p.price);
 
-/* ============ Tiny holly icon (inline SVG) ============ */
-function HollySprig({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden>
-      <path d="M12 3c-1.6 2-4 2.4-6 1.6.4 2.2 2 4 4 4.4-2 .6-4 2.4-4.4 4.6 2-.8 4.4-.4 6 1.6 1.6-2 4-2.4 6-1.6-.4-2.2-2.4-4-4.4-4.6 2-.4 3.6-2.2 4-4.4-2 .8-4.4.4-5.2-1.6z" fill="#2f7d3a" stroke="#1c4a24" strokeWidth=".6"/>
-      <circle cx="9.5" cy="15" r="1.4" fill="#e11d1d"/>
-      <circle cx="13" cy="16.5" r="1.2" fill="#e11d1d"/>
-      <circle cx="11.5" cy="13" r="1.1" fill="#e11d1d"/>
-    </svg>
-  );
-}
-
 /* ============ Gift Tag Card ============ */
 function GiftTag({ p, onCopyCode }: { p: Product; onCopyCode: (code: string) => void }) {
   const num = priceNum(p);
@@ -123,7 +112,7 @@ function GiftTag({ p, onCopyCode }: { p: Product; onCopyCode: (code: string) => 
           className="group/gift relative flex-1 overflow-hidden rounded-[10px] bg-evergreen px-3 py-[11px] text-center text-[.88rem] font-extrabold text-flour transition-colors hover:bg-evergreen-deep"
         >
           <span className="relative inline-flex items-center justify-center gap-1.5">
-            <HollySprig className="h-4 w-4" />
+            
             Gift it →
           </span>
         </a>
@@ -476,7 +465,7 @@ export default function HolidayGiftGuide() {
       <div className="season-note">A little thought. A lot of good bread. <span>THE HOLIDAY EDIT 2026</span></div>
       <header className="editorial-header">
         <a href="#top" className="editorial-brand"><img src={bgbLogo} alt="" width="42" height="42" /><span>Baking Great Bread<small>AT HOME · WITH HENRY HUNTER</small></span></a>
-        <nav aria-label="Main navigation"><a href="#top6">The edit</a><a href="#grain-to-gift">Grain & flour</a><a href="#browse">All gifts</a></nav>
+        <nav aria-label="Main navigation"><a href="#makers">Shop by maker</a><a href="#grain-to-gift">Grain & flour</a><a href="#browse">All gifts</a></nav>
         <button onClick={() => setWishlistOpen(true)} className="saved-control" aria-label={`Saved gifts, ${savedCount} saved`}><Heart size={17} aria-hidden /> <span>Saved</span> {savedCount}</button>
       </header>
       <WishlistDrawer open={wishlistOpen} onClose={() => setWishlistOpen(false)} lookup={wishlistLookup} />
@@ -496,6 +485,7 @@ export default function HolidayGiftGuide() {
           </div>
         </section>
         <div className="editorial-strip"><span>For first loaves & lifelong bakers</span><span>Handpicked by Henry</span><span>Affiliate links support free recipes</span></div>
+        <section id="makers" className="edit-section"><h2 className="text-4xl mb-8">Shop by need. Find your maker.</h2><div className="maker-doors">{makers.map(m => <a key={m.id} href={`/makers/${m.id}/`}><div><small>{m.brand}</small><h3>{m.title}</h3><span>Explore {m.items.length} gifts ↗</span></div><img src={m.items[0].img} alt="" loading="lazy" /></a>)}</div></section>
         <section id="grain-to-gift" className="grain-story">
           <div className="grain-intro"><p className="edition-label">FROM GRAIN TO SOMETHING GREAT</p><h2>A gift that starts<br />a whole new ritual.</h2><p>Fresh flour, a favorite grain, a reason to bake again tomorrow. Bring the mill and the ingredients together.</p></div>
           <div className="partner-spread">
@@ -862,7 +852,7 @@ export default function HolidayGiftGuide() {
                       rel="noopener noreferrer"
                       className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-evergreen px-5 py-2.5 text-sm font-bold text-flour hover:bg-evergreen-deep"
                     >
-                      <HollySprig className="h-4 w-4" />
+                      
                       Get it free →
                     </a>
                   </article>
@@ -894,7 +884,7 @@ export default function HolidayGiftGuide() {
                     onClick={() => setGiveaway(true)}
                     className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-cranberry px-5 py-2.5 text-sm font-bold text-flour hover:bg-cranberry-deep"
                   >
-                    <HollySprig className="h-4 w-4" />
+                    
                     Enter to win →
                   </button>
                 </article>
@@ -906,7 +896,7 @@ export default function HolidayGiftGuide() {
         {/* A direct resource link until a real email-delivery integration is available. */}
         <section className="bg-evergreen-deep text-flour">
           <div className="mx-auto max-w-[900px] px-5 py-20 text-center">
-            <HollySprig className="mx-auto h-10 w-10" />
+            
             <h2 className="mt-4 font-display text-3xl font-semibold text-flour md:text-4xl">Give them something you baked.</h2>
             <p className="mx-auto mt-4 max-w-[48ch] text-parchment">Find your next bake in the Recipe Pantry. Pick a recipe, dust off the counter, and make something worth sharing.</p>
             <a href="https://pantry.bakinggreatbread.com/" target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex min-h-[48px] items-center rounded-full bg-flour px-7 py-3 font-bold text-evergreen-deep">Explore the Recipe Pantry</a>

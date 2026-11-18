@@ -1,0 +1,226 @@
+[
+  {
+    "id": "wire-monkey",
+    "brand": "Wire Monkey",
+    "title": "Bread lames",
+    "items": [
+      {
+        "slug": "goose-lame",
+        "name": "Goose Lame (Black Walnut)",
+        "url": "https://wiremonkey.com/products/goose-lame",
+        "img": "/maker-photos/wire-monkey/goose-lame.webp",
+        "desc": "The flagship and most popular lame."
+      },
+      {
+        "slug": "ufo-zero-lame",
+        "name": "UFO Zero Lame",
+        "url": "https://wiremonkey.com/products/ufo-zero-lame",
+        "img": "/maker-photos/wire-monkey/ufo-zero-lame.webp",
+        "desc": "The original circular lame."
+      },
+      {
+        "slug": "ufo-bread-journey-lame",
+        "name": "UFO Bread Journey Lame (Walnut & Maple)",
+        "url": "https://wiremonkey.com/products/ufo-bread-journey-lame",
+        "img": "/maker-photos/wire-monkey/ufo-bread-journey-lame.webp",
+        "desc": "America's Test Kitchen Top Pick."
+      },
+      {
+        "slug": "ufo-corbeau-lame",
+        "name": "UFO Corbeau Lame (Recycled)",
+        "url": "https://wiremonkey.com/products/ufo-corbeau-lame",
+        "img": "/maker-photos/wire-monkey/ufo-corbeau-lame.webp",
+        "desc": "The toughest model in the lineup."
+      },
+      {
+        "slug": "ufo-nux-lame",
+        "name": "UFO Nux Lame",
+        "url": "https://wiremonkey.com/products/ufo-nux-lame",
+        "img": "/maker-photos/wire-monkey/ufo-nux-lame.webp",
+        "desc": "Twice as thick as the other UFOs (12.7 mm), easiest to grip, open, and tighten."
+      },
+      {
+        "slug": "arc-lame",
+        "name": "Arc Lame (Black Walnut)",
+        "url": "https://wiremonkey.com/products/arc-lame",
+        "img": "/maker-photos/wire-monkey/arc-lame.webp",
+        "desc": "The world's smallest curved lame."
+      },
+      {
+        "slug": "poco-lame",
+        "name": "Poco Lame (Walnut & Maple)",
+        "url": "https://wiremonkey.com/products/poco-lame",
+        "img": "/maker-photos/wire-monkey/poco-lame.webp",
+        "desc": "The smallest straight-blade lame in the world and the lowest-priced way into the line."
+      }
+    ]
+  },
+  {
+    "id": "brod-and-taylor",
+    "brand": "Brød & Taylor",
+    "title": "Proofing & baking tools",
+    "items": [
+      {
+        "slug": "folding-proofer",
+        "name": "Folding Proofer & Slow Cooker",
+        "url": "https://brodandtaylor.com/products/folding-proofer-slow-cooker?dt_id=330823",
+        "img": "/maker-photos/brod-and-taylor/folding-proofer.webp",
+        "desc": "The flagship."
+      },
+      {
+        "slug": "sourdough-home",
+        "name": "Sourdough Home",
+        "url": "https://brodandtaylor.com/products/sourdough-home?dt_id=330823",
+        "img": "/maker-photos/brod-and-taylor/sourdough-home.webp",
+        "desc": "A compact starter keeper that both heats and cools (41-122F), so a starter stays at the exact temperature chosen."
+      },
+      {
+        "slug": "high-capacity-baking-scale",
+        "name": "High Capacity Baking Scale",
+        "url": "https://brodandtaylor.com/products/high-capacity-baking-scale?dt_id=330823",
+        "img": "/maker-photos/brod-and-taylor/high-capacity-baking-scale.webp",
+        "desc": "A precision kitchen scale that weighs up to 15 kg / 33 lbs with 1-gram accuracy."
+      },
+      {
+        "slug": "bread-steel",
+        "name": "Bread Steel",
+        "url": "https://brodandtaylor.com/products/bread-steel?dt_id=330823",
+        "img": "/maker-photos/brod-and-taylor/bread-steel.webp",
+        "desc": "A flat steel baking surface that heats fast, holds heat, and gives a crisp crust and strong oven spring."
+      },
+      {
+        "slug": "baking-shell-boule",
+        "name": "Baking Shell (Boule)",
+        "url": "https://brodandtaylor.com/products/baking-shell-boule?dt_id=330823",
+        "img": "/maker-photos/brod-and-taylor/baking-shell-boule.webp",
+        "desc": "A lightweight anodized aluminum dome that traps steam over a loaf for oven spring and a crisp crust."
+      },
+      {
+        "slug": "sourdough-starter-jar",
+        "name": "Sourdough Starter Jar",
+        "url": "https://brodandtaylor.com/products/sourdough-starter-jar?dt_id=330823",
+        "img": "/maker-photos/brod-and-taylor/sourdough-starter-jar.webp",
+        "desc": "A purpose-built starter jar in durable borosilicate glass with inch and cm scales, a black marker ring to track rise, and a loose-fitting lid so the starter breathes."
+      },
+      {
+        "slug": "banneton-boule-set-of-2",
+        "name": "Banneton (Boule) Set of 2",
+        "url": "https://brodandtaylor.com/products/banneton-boule-set-of-2?dt_id=330823",
+        "img": "/maker-photos/brod-and-taylor/banneton-boule-set-of-2.webp",
+        "desc": "Two round proofing baskets made from upcycled sugarcane pulp and bamboo."
+      },
+      {
+        "slug": "bread-lame",
+        "name": "Bread Lame",
+        "url": "https://brodandtaylor.com/products/bread-lame?dt_id=330823",
+        "img": "/maker-photos/brod-and-taylor/bread-lame.webp",
+        "desc": "A scoring lame with a soft-grip balanced handle, a stainless blade holder that sets the razor close to the handle for control, 5 double-sided blades included, and a protective sheath.."
+      }
+    ]
+  },
+  {
+    "id": "sour-house",
+    "brand": "Sourhouse",
+    "title": "Sourdough starter care",
+    "items": [
+      {
+        "slug": "goldie",
+        "name": "Goldie by Sourhouse + Cooling Puck",
+        "url": "https://sourhouse.co/products/global-goldie-by-sourhouse-cooling-puck?ref=BAKINGGREATBREAD",
+        "img": "/maker-photos/sour-house/goldie.webp",
+        "desc": "A warming home for a sourdough starter."
+      },
+      {
+        "slug": "doughbed",
+        "name": "DoughBed by Sourhouse",
+        "url": "https://sourhouse.co/products/doughbed-by-sourhouse?ref=BAKINGGREATBREAD",
+        "img": "/maker-photos/sour-house/doughbed.webp",
+        "desc": "A warming mat, glass dough bowl, and cork lid that gently warms dough to 75-82F during bulk proof, so proofing times stay consistent."
+      },
+      {
+        "slug": "starter-jars",
+        "name": "Sourhouse Starter Jars (Pint or Quart)",
+        "url": "https://sourhouse.co/products/global-sourhouse-starter-jars-pint-or-quart?ref=BAKINGGREATBREAD",
+        "img": "/maker-photos/sour-house/starter-jars.webp",
+        "desc": "Straight-sided glass starter jar with a silicone lid that closes all the way while the starter still breathes."
+      },
+      {
+        "slug": "bread-blanket",
+        "name": "Bread Blanket by Sourhouse",
+        "url": "https://sourhouse.co/products/bread-blanket-by-sourhouse?ref=BAKINGGREATBREAD",
+        "img": "/maker-photos/sour-house/bread-blanket.webp",
+        "desc": "A 100% cotton muslin square (34 x 34 in laid flat) for wrapping a finished loaf, doubling as a picnic or potluck cloth."
+      },
+      {
+        "slug": "essential-bundle",
+        "name": "Essential Bundle",
+        "url": "https://sourhouse.co/products/goldie-jar-bundle-world-central-kitchen-benefit?ref=BAKINGGREATBREAD",
+        "img": "/maker-photos/sour-house/essential-bundle.webp",
+        "desc": "Goldie + one Sourhouse Starter Jar (Pint or Quart)."
+      },
+      {
+        "slug": "baking-on-your-schedule-bundle",
+        "name": "Baking On Your Schedule Bundle",
+        "url": "https://sourhouse.co/products/baking-on-your-schedule-bundle-goldie-doughbed-starter-jar?ref=BAKINGGREATBREAD",
+        "img": "/maker-photos/sour-house/baking-on-your-schedule-bundle.webp",
+        "desc": "The full setup: Goldie, DoughBed (warming mat + glass dough bowl + cork lid), Cooling Puck, and one Starter Jar (Pint or Quart).."
+      },
+      {
+        "slug": "big-bundle",
+        "name": "Big Bundle: Goldie + Puck + Pint + Quart + Bread Blanket + Adapter (Holiday Pricing)",
+        "url": "https://sourhouse.co/products/big-bundle-goldie-puck-pint-quart-goldie-blanket-adapter?ref=BAKINGGREATBREAD",
+        "img": "/maker-photos/sour-house/big-bundle.webp",
+        "desc": "Goldie, Cooling Puck, both a Pint and a Quart Starter Jar, a gold Bread Blanket, and a US/Canada USB-to-wall adapter."
+      }
+    ]
+  },
+  {
+    "id": "holland-bowl",
+    "brand": "Holland Bowl Mill",
+    "title": "Wooden bowls",
+    "items": [
+      {
+        "slug": "10-inch-wooden-bowl",
+        "name": "10\" Wooden Bowl",
+        "url": "https://hollandbowlmill.com/products/10-inch-wooden-bowl",
+        "img": "/maker-photos/holland-bowl/10-inch-wooden-bowl.webp",
+        "desc": "A mid-size bowl that works for a family salad one night and a snack bowl the next."
+      },
+      {
+        "slug": "12-inch-wooden-bowl",
+        "name": "12\" Wooden Bowl",
+        "url": "https://hollandbowlmill.com/products/12-inch-wooden-bowl",
+        "img": "/maker-photos/holland-bowl/12-inch-wooden-bowl.webp",
+        "desc": "A family-size bowl, substantial without being unwieldy."
+      },
+      {
+        "slug": "15-inch-wooden-bowl",
+        "name": "15\" Wooden Bowl",
+        "url": "https://hollandbowlmill.com/products/15-inch-wooden-bowl",
+        "img": "/maker-photos/holland-bowl/15-inch-wooden-bowl.webp",
+        "desc": "The one for bakers."
+      },
+      {
+        "slug": "17-inch-wooden-bowl",
+        "name": "17\" Wooden Bowl",
+        "url": "https://hollandbowlmill.com/products/17-inch-wooden-bowl",
+        "img": "/maker-photos/holland-bowl/17-inch-wooden-bowl.webp",
+        "desc": "The \"Ultimate Entertaining Bowl\" — big salad for a crowd, fruit bowl, centerpiece."
+      },
+      {
+        "slug": "20-inch-wooden-bowl",
+        "name": "20\" Wooden Bowl",
+        "url": "https://hollandbowlmill.com/products/20-inch-wooden-bowl",
+        "img": "/maker-photos/holland-bowl/20-inch-wooden-bowl.webp",
+        "desc": "Their largest bowl, made for the table that needs a true centerpiece."
+      },
+      {
+        "slug": "15-inch-four-corners-wooden-bowl",
+        "name": "15\" Four Corners Wooden Bowl",
+        "url": "https://hollandbowlmill.com/products/15-inch-four-corners-wooden-bowl",
+        "img": "/maker-photos/holland-bowl/15-inch-four-corners-wooden-bowl.webp",
+        "desc": "A modern, sleek bowl with squared corners and an undulating rim."
+      }
+    ]
+  }
+]
