@@ -7,53 +7,89 @@
       {
         "slug": "goose-lame",
         "name": "Goose Lame (Black Walnut)",
-        "url": "https://wiremonkey.com/products/goose-lame",
+        "url": "https://wiremonkey.com/products/goose-lame?rfsn=6816936.edb8683",
         "img": "/maker-photos/wire-monkey/goose-lame.webp",
-        "desc": "The flagship and most popular lame."
+        "desc": "The flagship and most popular lame.",
+        "priceLabel": "$54.95",
+        "priceDetails": "$54.95 (in stock; 82 reviews, 4.95/5)",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://wiremonkey.com/products/goose-lame",
+        "availability": "Check stock at checkout"
       },
       {
         "slug": "ufo-zero-lame",
         "name": "UFO Zero Lame",
-        "url": "https://wiremonkey.com/products/ufo-zero-lame",
+        "url": "https://wiremonkey.com/products/ufo-zero-lame?rfsn=6816936.edb8683",
         "img": "/maker-photos/wire-monkey/ufo-zero-lame.webp",
-        "desc": "The original circular lame."
+        "desc": "The original circular lame.",
+        "priceLabel": "$36.95",
+        "priceDetails": "$36.95 (in stock; 205 reviews, 4.98/5)",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://wiremonkey.com/products/ufo-zero-lame",
+        "availability": "Check stock at checkout"
       },
       {
         "slug": "ufo-bread-journey-lame",
         "name": "UFO Bread Journey Lame (Walnut & Maple)",
-        "url": "https://wiremonkey.com/products/ufo-bread-journey-lame",
+        "url": "https://wiremonkey.com/products/ufo-bread-journey-lame?rfsn=6816936.edb8683",
         "img": "/maker-photos/wire-monkey/ufo-bread-journey-lame.webp",
-        "desc": "America's Test Kitchen Top Pick."
+        "desc": "America's Test Kitchen Top Pick.",
+        "priceLabel": "$36.95",
+        "priceDetails": "$36.95 (in stock; 548 reviews, 4.98/5)",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://wiremonkey.com/products/ufo-bread-journey-lame",
+        "availability": "Check stock at checkout"
       },
       {
         "slug": "ufo-corbeau-lame",
         "name": "UFO Corbeau Lame (Recycled)",
-        "url": "https://wiremonkey.com/products/ufo-corbeau-lame",
+        "url": "https://wiremonkey.com/products/ufo-corbeau-lame?rfsn=6816936.edb8683",
         "img": "/maker-photos/wire-monkey/ufo-corbeau-lame.webp",
-        "desc": "The toughest model in the lineup."
+        "desc": "The toughest model in the lineup.",
+        "priceLabel": "$39.95",
+        "priceDetails": "$39.95 (in stock; 50 reviews, 4.92/5)",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://wiremonkey.com/products/ufo-corbeau-lame",
+        "availability": "Check stock at checkout"
       },
       {
         "slug": "ufo-nux-lame",
         "name": "UFO Nux Lame",
-        "url": "https://wiremonkey.com/products/ufo-nux-lame",
+        "url": "https://wiremonkey.com/products/ufo-nux-lame?rfsn=6816936.edb8683",
         "img": "/maker-photos/wire-monkey/ufo-nux-lame.webp",
-        "desc": "Twice as thick as the other UFOs (12.7 mm), easiest to grip, open, and tighten."
+        "desc": "Twice as thick as the other UFOs (12.7 mm), easiest to grip, open, and tighten.",
+        "priceLabel": "$40.95",
+        "priceDetails": "$40.95 (in stock; 37 reviews, 4.95/5)",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://wiremonkey.com/products/ufo-nux-lame",
+        "availability": "Check stock at checkout"
       },
       {
         "slug": "arc-lame",
         "name": "Arc Lame (Black Walnut)",
-        "url": "https://wiremonkey.com/products/arc-lame",
+        "url": "https://wiremonkey.com/products/arc-lame?rfsn=6816936.edb8683",
         "img": "/maker-photos/wire-monkey/arc-lame.webp",
-        "desc": "The world's smallest curved lame."
+        "desc": "The world's smallest curved lame.",
+        "priceLabel": "$28.95",
+        "priceDetails": "$28.95 (in stock; 13 reviews, 4.92/5)",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://wiremonkey.com/products/arc-lame",
+        "availability": "Check stock at checkout"
       },
       {
         "slug": "poco-lame",
         "name": "Poco Lame (Walnut & Maple)",
-        "url": "https://wiremonkey.com/products/poco-lame",
+        "url": "https://wiremonkey.com/products/poco-lame?rfsn=6816936.edb8683",
         "img": "/maker-photos/wire-monkey/poco-lame.webp",
-        "desc": "The smallest straight-blade lame in the world and the lowest-priced way into the line."
+        "desc": "The smallest straight-blade lame in the world and the lowest-priced way into the line.",
+        "priceLabel": "$20.95",
+        "priceDetails": "$20.95 (in stock; 10 reviews, 5.0/5)",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://wiremonkey.com/products/poco-lame",
+        "availability": "Check stock at checkout"
       }
-    ]
+    ],
+    "logo": "/brand-logos/wire-monkey.webp"
   },
   {
     "id": "brod-and-taylor",
@@ -65,58 +101,99 @@
         "name": "Folding Proofer & Slow Cooker",
         "url": "https://brodandtaylor.com/products/folding-proofer-slow-cooker?dt_id=330823",
         "img": "/maker-photos/brod-and-taylor/folding-proofer.webp",
-        "desc": "The flagship."
+        "desc": "The flagship.",
+        "priceLabel": "$249.00",
+        "priceDetails": "$249.00 (also available as Proofer + Accessory Shelf for $269.00)",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://brodandtaylor.com/products/folding-proofer-slow-cooker",
+        "availability": "Check stock at checkout"
       },
       {
         "slug": "sourdough-home",
         "name": "Sourdough Home",
         "url": "https://brodandtaylor.com/products/sourdough-home?dt_id=330823",
         "img": "/maker-photos/brod-and-taylor/sourdough-home.webp",
-        "desc": "A compact starter keeper that both heats and cools (41-122F), so a starter stays at the exact temperature chosen."
+        "desc": "A compact starter keeper that both heats and cools (41-122F), so a starter stays at the exact temperature chosen.",
+        "priceLabel": "$149.00",
+        "priceDetails": "$149.00 (also available as Sourdough Home & Starter Jar bundle for $165.00)",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://brodandtaylor.com/products/sourdough-home",
+        "availability": "Check stock at checkout"
       },
       {
         "slug": "high-capacity-baking-scale",
         "name": "High Capacity Baking Scale",
         "url": "https://brodandtaylor.com/products/high-capacity-baking-scale?dt_id=330823",
         "img": "/maker-photos/brod-and-taylor/high-capacity-baking-scale.webp",
-        "desc": "A precision kitchen scale that weighs up to 15 kg / 33 lbs with 1-gram accuracy."
+        "desc": "A precision kitchen scale that weighs up to 15 kg / 33 lbs with 1-gram accuracy.",
+        "priceLabel": "$24.95",
+        "priceDetails": "$24.95",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://brodandtaylor.com/products/high-capacity-baking-scale",
+        "availability": "Check stock at checkout"
       },
       {
         "slug": "bread-steel",
         "name": "Bread Steel",
         "url": "https://brodandtaylor.com/products/bread-steel?dt_id=330823",
         "img": "/maker-photos/brod-and-taylor/bread-steel.webp",
-        "desc": "A flat steel baking surface that heats fast, holds heat, and gives a crisp crust and strong oven spring."
+        "desc": "A flat steel baking surface that heats fast, holds heat, and gives a crisp crust and strong oven spring.",
+        "priceLabel": "$79.00",
+        "priceDetails": "$79.00 (Max version $89.00, Duo version $119.00 — same product page, three configurations)",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://brodandtaylor.com/products/bread-steel",
+        "availability": "Check stock at checkout"
       },
       {
         "slug": "baking-shell-boule",
         "name": "Baking Shell (Boule)",
         "url": "https://brodandtaylor.com/products/baking-shell-boule?dt_id=330823",
         "img": "/maker-photos/brod-and-taylor/baking-shell-boule.webp",
-        "desc": "A lightweight anodized aluminum dome that traps steam over a loaf for oven spring and a crisp crust."
+        "desc": "A lightweight anodized aluminum dome that traps steam over a loaf for oven spring and a crisp crust.",
+        "priceLabel": "$85.00",
+        "priceDetails": "$85.00 (Batard version also $85.00 — same product page, two shapes)",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://brodandtaylor.com/products/baking-shell-boule",
+        "availability": "Check stock at checkout"
       },
       {
         "slug": "sourdough-starter-jar",
         "name": "Sourdough Starter Jar",
         "url": "https://brodandtaylor.com/products/sourdough-starter-jar?dt_id=330823",
         "img": "/maker-photos/brod-and-taylor/sourdough-starter-jar.webp",
-        "desc": "A purpose-built starter jar in durable borosilicate glass with inch and cm scales, a black marker ring to track rise, and a loose-fitting lid so the starter breathes."
+        "desc": "A purpose-built starter jar in durable borosilicate glass with inch and cm scales, a black marker ring to track rise, and a loose-fitting lid so the starter breathes.",
+        "priceLabel": "From $19.99",
+        "priceDetails": "$24.95 (Small version $19.99 — same product page)",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://brodandtaylor.com/products/sourdough-starter-jar",
+        "availability": "Check stock at checkout"
       },
       {
         "slug": "banneton-boule-set-of-2",
         "name": "Banneton (Boule) Set of 2",
         "url": "https://brodandtaylor.com/products/banneton-boule-set-of-2?dt_id=330823",
         "img": "/maker-photos/brod-and-taylor/banneton-boule-set-of-2.webp",
-        "desc": "Two round proofing baskets made from upcycled sugarcane pulp and bamboo."
+        "desc": "Two round proofing baskets made from upcycled sugarcane pulp and bamboo.",
+        "priceLabel": "$29.95",
+        "priceDetails": "$29.95 (was $31.90)",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://brodandtaylor.com/products/banneton-boule-set-of-2",
+        "availability": "Check stock at checkout"
       },
       {
         "slug": "bread-lame",
         "name": "Bread Lame",
         "url": "https://brodandtaylor.com/products/bread-lame?dt_id=330823",
         "img": "/maker-photos/brod-and-taylor/bread-lame.webp",
-        "desc": "A scoring lame with a soft-grip balanced handle, a stainless blade holder that sets the razor close to the handle for control, 5 double-sided blades included, and a protective sheath.."
+        "desc": "A scoring lame with a soft-grip balanced handle, a stainless blade holder that sets the razor close to the handle for control, 5 double-sided blades included, and a protective sheath..",
+        "priceLabel": "$29.95",
+        "priceDetails": "$29.95",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://brodandtaylor.com/products/bread-lame",
+        "availability": "Check stock at checkout"
       }
-    ]
+    ],
+    "logo": "/brand-logos/brod-and-taylor.webp"
   },
   {
     "id": "sour-house",
@@ -128,51 +205,87 @@
         "name": "Goldie by Sourhouse + Cooling Puck",
         "url": "https://sourhouse.co/products/global-goldie-by-sourhouse-cooling-puck?ref=BAKINGGREATBREAD",
         "img": "/maker-photos/sour-house/goldie.webp",
-        "desc": "A warming home for a sourdough starter."
+        "desc": "A warming home for a sourdough starter.",
+        "priceLabel": "$149.95",
+        "priceDetails": "$149.95",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://sourhouse.co/products/global-goldie-by-sourhouse-cooling-puck",
+        "availability": "Check stock at checkout"
       },
       {
         "slug": "doughbed",
         "name": "DoughBed by Sourhouse",
         "url": "https://sourhouse.co/products/doughbed-by-sourhouse?ref=BAKINGGREATBREAD",
         "img": "/maker-photos/sour-house/doughbed.webp",
-        "desc": "A warming mat, glass dough bowl, and cork lid that gently warms dough to 75-82F during bulk proof, so proofing times stay consistent."
+        "desc": "A warming mat, glass dough bowl, and cork lid that gently warms dough to 75-82F during bulk proof, so proofing times stay consistent.",
+        "priceLabel": "$279.95",
+        "priceDetails": "$279.95",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://sourhouse.co/products/doughbed-by-sourhouse",
+        "availability": "Check stock at checkout"
       },
       {
         "slug": "starter-jars",
         "name": "Sourhouse Starter Jars (Pint or Quart)",
         "url": "https://sourhouse.co/products/global-sourhouse-starter-jars-pint-or-quart?ref=BAKINGGREATBREAD",
         "img": "/maker-photos/sour-house/starter-jars.webp",
-        "desc": "Straight-sided glass starter jar with a silicone lid that closes all the way while the starter still breathes."
+        "desc": "Straight-sided glass starter jar with a silicone lid that closes all the way while the starter still breathes.",
+        "priceLabel": "$23.95",
+        "priceDetails": "$23.95",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://sourhouse.co/products/global-sourhouse-starter-jars-pint-or-quart",
+        "availability": "Check stock at checkout"
       },
       {
         "slug": "bread-blanket",
         "name": "Bread Blanket by Sourhouse",
         "url": "https://sourhouse.co/products/bread-blanket-by-sourhouse?ref=BAKINGGREATBREAD",
         "img": "/maker-photos/sour-house/bread-blanket.webp",
-        "desc": "A 100% cotton muslin square (34 x 34 in laid flat) for wrapping a finished loaf, doubling as a picnic or potluck cloth."
+        "desc": "A 100% cotton muslin square (34 x 34 in laid flat) for wrapping a finished loaf, doubling as a picnic or potluck cloth.",
+        "priceLabel": "$19.95",
+        "priceDetails": "$19.95",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://sourhouse.co/products/bread-blanket-by-sourhouse",
+        "availability": "Check stock at checkout"
       },
       {
         "slug": "essential-bundle",
         "name": "Essential Bundle",
         "url": "https://sourhouse.co/products/goldie-jar-bundle-world-central-kitchen-benefit?ref=BAKINGGREATBREAD",
         "img": "/maker-photos/sour-house/essential-bundle.webp",
-        "desc": "Goldie + one Sourhouse Starter Jar (Pint or Quart)."
+        "desc": "Goldie + one Sourhouse Starter Jar (Pint or Quart).",
+        "priceLabel": "From $148.95",
+        "priceDetails": "from $148.95 (regular $173.90, Holiday Pricing)",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://sourhouse.co/products/goldie-jar-bundle-world-central-kitchen-benefit",
+        "availability": "Check stock at checkout"
       },
       {
         "slug": "baking-on-your-schedule-bundle",
         "name": "Baking On Your Schedule Bundle",
         "url": "https://sourhouse.co/products/baking-on-your-schedule-bundle-goldie-doughbed-starter-jar?ref=BAKINGGREATBREAD",
         "img": "/maker-photos/sour-house/baking-on-your-schedule-bundle.webp",
-        "desc": "The full setup: Goldie, DoughBed (warming mat + glass dough bowl + cork lid), Cooling Puck, and one Starter Jar (Pint or Quart).."
+        "desc": "The full setup: Goldie, DoughBed (warming mat + glass dough bowl + cork lid), Cooling Puck, and one Starter Jar (Pint or Quart)..",
+        "priceLabel": "From $368.95",
+        "priceDetails": "from $368.95 (regular $453.85, Holiday Pricing)",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://sourhouse.co/products/baking-on-your-schedule-bundle-goldie-doughbed-starter-jar",
+        "availability": "Check stock at checkout"
       },
       {
         "slug": "big-bundle",
         "name": "Big Bundle: Goldie + Puck + Pint + Quart + Bread Blanket + Adapter (Holiday Pricing)",
         "url": "https://sourhouse.co/products/big-bundle-goldie-puck-pint-quart-goldie-blanket-adapter?ref=BAKINGGREATBREAD",
         "img": "/maker-photos/sour-house/big-bundle.webp",
-        "desc": "Goldie, Cooling Puck, both a Pint and a Quart Starter Jar, a gold Bread Blanket, and a US/Canada USB-to-wall adapter."
+        "desc": "Goldie, Cooling Puck, both a Pint and a Quart Starter Jar, a gold Bread Blanket, and a US/Canada USB-to-wall adapter.",
+        "priceLabel": "$174.95",
+        "priceDetails": "$174.95 (regular $208.80, Holiday Pricing)",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://sourhouse.co/products/big-bundle-goldie-puck-pint-quart-goldie-blanket-adapter",
+        "availability": "Check stock at checkout"
       }
-    ]
+    ],
+    "logo": "/brand-logos/sour-house.webp"
   },
   {
     "id": "holland-bowl",
@@ -182,45 +295,388 @@
       {
         "slug": "10-inch-wooden-bowl",
         "name": "10\" Wooden Bowl",
-        "url": "https://hollandbowlmill.com/products/10-inch-wooden-bowl",
+        "url": "https://hollandbowlmill.com/products/10-inch-wooden-bowl?wpam_id=10",
         "img": "/maker-photos/holland-bowl/10-inch-wooden-bowl.webp",
-        "desc": "A mid-size bowl that works for a family salad one night and a snack bowl the next."
+        "desc": "A mid-size bowl that works for a family salad one night and a snack bowl the next.",
+        "priceLabel": "From $58.50",
+        "priceDetails": "from $58.50 (Beech $58.50; Cherry $77.00; Maple $77.00; Ebonized Cherry $85.00; Walnut $91.00)",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://hollandbowlmill.com/products/10-inch-wooden-bowl",
+        "availability": "Check stock at checkout"
       },
       {
         "slug": "12-inch-wooden-bowl",
         "name": "12\" Wooden Bowl",
-        "url": "https://hollandbowlmill.com/products/12-inch-wooden-bowl",
+        "url": "https://hollandbowlmill.com/products/12-inch-wooden-bowl?wpam_id=10",
         "img": "/maker-photos/holland-bowl/12-inch-wooden-bowl.webp",
-        "desc": "A family-size bowl, substantial without being unwieldy."
+        "desc": "A family-size bowl, substantial without being unwieldy.",
+        "priceLabel": "From $70.00",
+        "priceDetails": "from $70.00 (Beech $70.00; Cherry $91.50; Maple $91.50; Ebonized Cherry $102.50; Walnut $108.50)",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://hollandbowlmill.com/products/12-inch-wooden-bowl",
+        "availability": "Check stock at checkout"
       },
       {
         "slug": "15-inch-wooden-bowl",
         "name": "15\" Wooden Bowl",
-        "url": "https://hollandbowlmill.com/products/15-inch-wooden-bowl",
+        "url": "https://hollandbowlmill.com/products/15-inch-wooden-bowl?wpam_id=10",
         "img": "/maker-photos/holland-bowl/15-inch-wooden-bowl.webp",
-        "desc": "The one for bakers."
+        "desc": "The one for bakers.",
+        "priceLabel": "From $154.00",
+        "priceDetails": "from $154.00 (Beech $154.00; Cherry $182.50; Maple $182.50; Ebonized Cherry $195.00; Walnut $215.00)",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://hollandbowlmill.com/products/15-inch-wooden-bowl",
+        "availability": "Check stock at checkout"
       },
       {
         "slug": "17-inch-wooden-bowl",
         "name": "17\" Wooden Bowl",
-        "url": "https://hollandbowlmill.com/products/17-inch-wooden-bowl",
+        "url": "https://hollandbowlmill.com/products/17-inch-wooden-bowl?wpam_id=10",
         "img": "/maker-photos/holland-bowl/17-inch-wooden-bowl.webp",
-        "desc": "The \"Ultimate Entertaining Bowl\" — big salad for a crowd, fruit bowl, centerpiece."
+        "desc": "The \"Ultimate Entertaining Bowl\" — big salad for a crowd, fruit bowl, centerpiece.",
+        "priceLabel": "From $250.00",
+        "priceDetails": "from $250.00 (Beech $250.00; Cherry $345.00; Maple $345.00; Ebonized Cherry $385.00; Walnut $415.00)",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://hollandbowlmill.com/products/17-inch-wooden-bowl",
+        "availability": "Check stock at checkout"
       },
       {
         "slug": "20-inch-wooden-bowl",
         "name": "20\" Wooden Bowl",
-        "url": "https://hollandbowlmill.com/products/20-inch-wooden-bowl",
+        "url": "https://hollandbowlmill.com/products/20-inch-wooden-bowl?wpam_id=10",
         "img": "/maker-photos/holland-bowl/20-inch-wooden-bowl.webp",
-        "desc": "Their largest bowl, made for the table that needs a true centerpiece."
+        "desc": "Their largest bowl, made for the table that needs a true centerpiece.",
+        "priceLabel": "From $420.00",
+        "priceDetails": "from $420.00 (Beech $420.00; Cherry $495.00; Maple $495.00; Ebonized Cherry $525.00; Walnut $547.50)",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://hollandbowlmill.com/products/20-inch-wooden-bowl",
+        "availability": "Check stock at checkout"
       },
       {
         "slug": "15-inch-four-corners-wooden-bowl",
         "name": "15\" Four Corners Wooden Bowl",
-        "url": "https://hollandbowlmill.com/products/15-inch-four-corners-wooden-bowl",
+        "url": "https://hollandbowlmill.com/products/15-inch-four-corners-wooden-bowl?wpam_id=10",
         "img": "/maker-photos/holland-bowl/15-inch-four-corners-wooden-bowl.webp",
-        "desc": "A modern, sleek bowl with squared corners and an undulating rim."
+        "desc": "A modern, sleek bowl with squared corners and an undulating rim.",
+        "priceLabel": "$115.00",
+        "priceDetails": "$115.00 (Cherry); $127.50 (Walnut). Only two woods on this one.",
+        "priceChecked": "2026-11-17",
+        "priceSource": "https://hollandbowlmill.com/products/15-inch-four-corners-wooden-bowl",
+        "availability": "Check stock at checkout"
       }
-    ]
+    ],
+    "logo": "/brand-logos/holland-bowl.webp"
+  },
+  {
+    "id": "nutrimill",
+    "brand": "NutriMill",
+    "title": "Grain mills & mixers",
+    "items": [
+      {
+        "slug": "white-universal-plus",
+        "name": "Bosch Universal Plus Mixer — White",
+        "url": "https://nutrimill.com/products/white-universal-plus",
+        "img": "/maker-photos/nutrimill/white-universal-plus.webp",
+        "desc": "The flagship. A 500-watt bottom-drive stand mixer with a 6.5-quart bowl that kneads up to 14 one-pound loaves per batch.",
+        "priceLabel": "$399.00",
+        "priceDetails": "$399.00 Black Friday sale (regular $499.00, save $100.00). In stock. 545 reviews, 4.85/5.",
+        "priceChecked": "2026-11-18",
+        "priceSource": "https://nutrimill.com/products/white-universal-plus",
+        "availability": "Check stock at checkout"
+      },
+      {
+        "slug": "black-bosch-universal-plus-mixer",
+        "name": "Bosch Universal Plus Mixer — Black, Stainless Bowl",
+        "url": "https://nutrimill.com/products/black-bosch-universal-plus-mixer",
+        "img": "/maker-photos/nutrimill/black-bosch-universal-plus-mixer.webp",
+        "desc": "The same Universal Plus with a black base and a 6.5-quart brushed stainless steel bowl instead of plastic. Same 500-watt bottom-drive motor, 4 speeds plus pulse, 20+ optional attachments.",
+        "priceLabel": "$549.00",
+        "priceDetails": "$549.00 (regular $599.00, save $50.00). In stock. 200 reviews, 4.75/5.",
+        "priceChecked": "2026-11-18",
+        "priceSource": "https://nutrimill.com/products/black-bosch-universal-plus-mixer",
+        "availability": "Check stock at checkout"
+      },
+      {
+        "slug": "artiste-mixer",
+        "name": "NutriMill Artiste Stand Mixer",
+        "url": "https://nutrimill.com/products/artiste-mixer",
+        "img": "/maker-photos/nutrimill/artiste-mixer.webp",
+        "desc": "NutriMill's own bottom-drive mixer. 500 watts, 6.5-quart bowl, up to 8 pounds of dough per batch.",
+        "priceLabel": "$219.00",
+        "priceDetails": "$219.00 Black Friday sale (regular $299.00, save $80.00). In stock. 527 reviews, 4.80/5.",
+        "priceChecked": "2026-11-18",
+        "priceSource": "https://nutrimill.com/products/artiste-mixer",
+        "availability": "Check stock at checkout"
+      },
+      {
+        "slug": "classic-grain-mill",
+        "name": "NutriMill Classic Grain Mill — 2026 model",
+        "url": "https://nutrimill.com/products/classic-grain-mill",
+        "img": "/maker-photos/nutrimill/classic-grain-mill.webp",
+        "desc": "The best-selling grain mill for over 25 years, redesigned for 2026. 1200-watt motor, stainless steel impact milling heads, 12-cup hopper, 20-cup flour canister, from super fine pastry flour to coarse meal.",
+        "priceLabel": "$349.00",
+        "priceDetails": "$349.00. Out of stock — \"New Model Coming Soon\" on the site. Launches Thu Nov 19, 2026 at 9:00 AM MT. ACADEMY26 takes $20 off it.",
+        "priceChecked": "2026-11-18",
+        "priceSource": "https://nutrimill.com/products/classic-grain-mill",
+        "availability": "Coming soon"
+      },
+      {
+        "slug": "impact-grain-mill",
+        "name": "NutriMill Impact Grain Mill",
+        "url": "https://nutrimill.com/products/impact-grain-mill",
+        "img": "/maker-photos/nutrimill/impact-grain-mill.webp",
+        "desc": "The compact high-speed impact mill, built for bread flour. 1200-watt motor, stainless steel impact milling heads, 7-cup grain hopper, up to 11 cups of flour per batch.",
+        "priceLabel": "$199.00",
+        "priceDetails": "$199.00 Black Friday sale (regular $249.00, save $50.00). In stock. 150 reviews, 4.88/5. Free shipping.",
+        "priceChecked": "2026-11-18",
+        "priceSource": "https://nutrimill.com/products/impact-grain-mill",
+        "availability": "Check stock at checkout"
+      },
+      {
+        "slug": "harvest-grain-mill",
+        "name": "NutriMill Harvest Grain Mill",
+        "url": "https://nutrimill.com/products/harvest-grain-mill",
+        "img": "/maker-photos/nutrimill/harvest-grain-mill.webp",
+        "desc": "The stone mill. Renewable bamboo housing with near diamond-hard corundum stones, 450-watt motor with auto-shutoff thermal protection, patented texture control knob from cracked grain to ultra-fine flour.",
+        "priceLabel": "$499.00",
+        "priceDetails": "$499.00. In stock on the live product page Nov 18 (see flag below). 480 reviews, 4.81/5.",
+        "priceChecked": "2026-11-18",
+        "priceSource": "https://nutrimill.com/products/harvest-grain-mill",
+        "availability": "Check stock at checkout"
+      },
+      {
+        "slug": "flourish-grain-mill",
+        "name": "NutriMill Flourish Stone Grain Mill",
+        "url": "https://nutrimill.com/products/flourish-grain-mill",
+        "img": "/maker-photos/nutrimill/flourish-grain-mill.webp",
+        "desc": "The new compact stone mill. Durable corundum stones on CushionFlex stone suspension, driven by a DC motor with thermal protection.",
+        "priceLabel": "$399.00",
+        "priceDetails": "$399.00. Out of stock — \"New Mill Coming Soon\" on the site. No launch date shown on the site.",
+        "priceChecked": "2026-11-18",
+        "priceSource": "https://nutrimill.com/products/flourish-grain-mill",
+        "availability": "Coming soon"
+      },
+      {
+        "slug": "bosch-bakers-pack-attachment-set",
+        "name": "Bosch Baker's Bundle",
+        "url": "https://nutrimill.com/products/bosch-bakers-pack-attachment-set",
+        "img": "/maker-photos/nutrimill/bosch-bakers-pack-attachment-set.webp",
+        "desc": "The attachment set for the Bosch Universal Plus: Cookie Paddles, Cake Paddles, Bowl Scraper, Metal Whip Drive, plus cookie sheet liners and a 40-piece icing kit. The gift-ready add-on for anyone buying the Bosch.",
+        "priceLabel": "$99.00",
+        "priceDetails": "$99.00 (regular $135.00, save $36.00). In stock. 122 reviews, 4.81/5.",
+        "priceChecked": "2026-11-18",
+        "priceSource": "https://nutrimill.com/products/bosch-bakers-pack-attachment-set",
+        "availability": "Check stock at checkout"
+      },
+      {
+        "slug": "artiste-bakers-pack-attachment-set",
+        "name": "Artiste Baker's Bundle",
+        "url": "https://nutrimill.com/products/artiste-bakers-pack-attachment-set",
+        "img": "/maker-photos/nutrimill/artiste-bakers-pack-attachment-set.webp",
+        "desc": "The attachment set for the Artiste: Cookie Paddles, Cake Paddles, Bowl Scraper, plus cookie sheet liners and a 40-piece icing kit. Same contents as the Bosch bundle except no Metal Whip Drive, because the Artiste already includes one.",
+        "priceLabel": "$94.00",
+        "priceDetails": "$94.00 (regular $125.00, save $31.00). In stock. 59 reviews, 4.78/5.",
+        "priceChecked": "2026-11-18",
+        "priceSource": "https://nutrimill.com/products/artiste-bakers-pack-attachment-set",
+        "availability": "Check stock at checkout"
+      }
+    ],
+    "logo": "/brand-logos/nutrimill.webp"
+  },
+  {
+    "id": "grand-teton",
+    "brand": "Grand Teton Ancient Grains",
+    "title": "Grains, flour & pasta",
+    "items": [
+      {
+        "slug": "organic-einkorn-berries-in-paper-bags",
+        "name": "Organic Einkorn Berries in Paper Bags",
+        "url": "https://www.ancientgrains.com/shop/einkorn/organic-einkorn-berries-in-paper-bags?a_aid=henryhunter",
+        "img": "/maker-photos/grand-teton/organic-einkorn-berries-in-paper-bags.webp",
+        "desc": "Organic einkorn berries for home milling, sprouting, or cooking whole in salads, pilafs and soups.",
+        "priceLabel": "$11.21 – $143.95",
+        "priceDetails": "Organic Einkorn Berries in Paper Bags — $11.21 – $143.95",
+        "priceChecked": "2026-11-18",
+        "priceSource": "https://www.ancientgrains.com/shop/einkorn/organic-einkorn-berries-in-paper-bags",
+        "availability": "Check stock at checkout"
+      },
+      {
+        "slug": "organic-spelt-berries-in-paper-bags",
+        "name": "Organic Spelt Berries in Paper Bags",
+        "url": "https://www.ancientgrains.com/shop/spelt/organic-spelt-berries-in-paper-bags?a_aid=henryhunter",
+        "img": "/maker-photos/grand-teton/organic-spelt-berries-in-paper-bags.webp",
+        "desc": "Spelt, also known as Farro Grande, the ancient wheat of the Romans. Nutty and slightly sweet, for milling, sprouting, or cooking whole.",
+        "priceLabel": "$11.95 – $96.95",
+        "priceDetails": "Organic Spelt Berries in Paper Bags — $11.95 – $96.95",
+        "priceChecked": "2026-11-18",
+        "priceSource": "https://www.ancientgrains.com/shop/spelt/organic-spelt-berries-in-paper-bags",
+        "availability": "Check stock at checkout"
+      },
+      {
+        "slug": "organic-emmer-berries-in-paper-bags",
+        "name": "Organic Emmer Farro in Paper Bags",
+        "url": "https://www.ancientgrains.com/shop/emmer/organic-emmer-berries-in-paper-bags?a_aid=henryhunter",
+        "img": "/maker-photos/grand-teton/organic-emmer-berries-in-paper-bags.webp",
+        "desc": "Emmer, also known as Farro or Farro Medio, the ancient ancestor of modern wheat and a cousin to einkorn. The wheat of the people of Sumer.",
+        "priceLabel": "$12.95 – $121.95",
+        "priceDetails": "Organic Emmer Farro in Paper Bags — $12.95 – $121.95",
+        "priceChecked": "2026-11-18",
+        "priceSource": "https://www.ancientgrains.com/shop/emmer/organic-emmer-berries-in-paper-bags",
+        "availability": "Check stock at checkout"
+      },
+      {
+        "slug": "organic-khorasan-berries-in-paper-bags",
+        "name": "Organic Khorasan Berries in Paper Bags",
+        "url": "https://www.ancientgrains.com/shop/khorasan/organic-khorasan-berries-in-paper-bags?a_aid=henryhunter",
+        "img": "/maker-photos/grand-teton/organic-khorasan-berries-in-paper-bags.webp",
+        "desc": "Khorasan (also sold elsewhere under the brand name Kamut), a large, versatile ancient grain from Mesopotamia with a rich, nutty, buttery flavor and kernels about twice the size of modern wheat. For milling, sprouting, or cooking whole.",
+        "priceLabel": "$15.95 – $121.95",
+        "priceDetails": "Organic Khorasan Berries in Paper Bags — $15.95 – $121.95",
+        "priceChecked": "2026-11-18",
+        "priceSource": "https://www.ancientgrains.com/shop/khorasan/organic-khorasan-berries-in-paper-bags",
+        "availability": "Check stock at checkout"
+      },
+      {
+        "slug": "hard-white-wheat-berries-in-paper-bags",
+        "name": "Organic Hard White Wheat Berries in Paper Bags",
+        "url": "https://www.ancientgrains.com/shop/hard-white-wheat/hard-white-wheat-berries-in-paper-bags?a_aid=henryhunter",
+        "img": "/maker-photos/grand-teton/hard-white-wheat-berries-in-paper-bags.webp",
+        "desc": "Hard white wheat, the everyday bread wheat for bakers who want light-colored loaves with strong gluten and superior dough performance. 12% protein.",
+        "priceLabel": "$12.95 – $79.95",
+        "priceDetails": "Organic Hard White Wheat Berries in Paper Bags — $12.95 – $79.95",
+        "priceChecked": "2026-11-18",
+        "priceSource": "https://www.ancientgrains.com/shop/hard-white-wheat/hard-white-wheat-berries-in-paper-bags",
+        "availability": "Check stock at checkout"
+      },
+      {
+        "slug": "hard-red-spring-wheat-berries-in-paper-bags",
+        "name": "Organic Hard Red Spring Wheat Berries in Paper Bags",
+        "url": "https://www.ancientgrains.com/shop/hard-red-wheat/hard-red-spring-wheat-berries-in-paper-bags?a_aid=henryhunter",
+        "img": "/maker-photos/grand-teton/hard-red-spring-wheat-berries-in-paper-bags.webp",
+        "desc": "Hard red spring wheat, the classic choice for bread, pizza dough, and anything that needs strong gluten and good chew. Rich, nutty, malty flavor.",
+        "priceLabel": "$12.95 – $79.95",
+        "priceDetails": "Organic Hard Red Spring Wheat Berries in Paper Bags — $12.95 – $79.95",
+        "priceChecked": "2026-11-18",
+        "priceSource": "https://www.ancientgrains.com/shop/hard-red-wheat/hard-red-spring-wheat-berries-in-paper-bags",
+        "availability": "Check stock at checkout"
+      },
+      {
+        "slug": "organic-soft-white-wheat-berries-in-paper-bags",
+        "name": "Organic Soft White Wheat Berries in Paper Bags",
+        "url": "https://www.ancientgrains.com/shop/soft-white-wheat/organic-soft-white-wheat-berries-in-paper-bags?a_aid=henryhunter",
+        "img": "",
+        "desc": "Soft white wheat, the pastry wheat of the Northwest. A NEW product.",
+        "priceLabel": "From $11.95",
+        "priceDetails": "Organic Soft White Wheat Berries in Paper Bags — from $11.95",
+        "priceChecked": "2026-11-18",
+        "priceSource": "https://www.ancientgrains.com/shop/soft-white-wheat/organic-soft-white-wheat-berries-in-paper-bags",
+        "availability": "Check stock at checkout"
+      },
+      {
+        "slug": "organic-rye-berries-in-paper-bags",
+        "name": "Organic Rye Berries in Paper Bags",
+        "url": "https://www.ancientgrains.com/shop/rye/organic-rye-berries-in-paper-bags?a_aid=henryhunter",
+        "img": "/maker-photos/grand-teton/organic-rye-berries-in-paper-bags.webp",
+        "desc": "Rye berries for home millers who want fresh rye flour for rye bread, sourdough, pumpernickel-style loaves, and crackers. A little fresh-milled rye goes a long way in flavor.",
+        "priceLabel": "$14.95 – $77.95",
+        "priceDetails": "Organic Rye Berries in Paper Bags — $14.95 – $77.95",
+        "priceChecked": "2026-11-18",
+        "priceSource": "https://www.ancientgrains.com/shop/rye/organic-rye-berries-in-paper-bags",
+        "availability": "Check stock at checkout"
+      },
+      {
+        "slug": "organic-all-purpose-einkorn-flour-in-paper-bags",
+        "name": "Organic All-Purpose Einkorn Flour in Paper Bags",
+        "url": "https://www.ancientgrains.com/shop/einkorn/organic-all-purpose-einkorn-flour-in-paper-bags?a_aid=henryhunter",
+        "img": "/maker-photos/grand-teton/organic-all-purpose-einkorn-flour-in-paper-bags.webp",
+        "desc": "Freshly stone-milled and sifted all-purpose einkorn flour, about 85% of the whole grain, with a slight yellow tint from einkorn's high lutein. Unbromated, unbleached, no additives.",
+        "priceLabel": "$21.59 – $143.95",
+        "priceDetails": "Organic All-Purpose Einkorn Flour in Paper Bags — $21.59 – $143.95",
+        "priceChecked": "2026-11-18",
+        "priceSource": "https://www.ancientgrains.com/shop/einkorn/organic-all-purpose-einkorn-flour-in-paper-bags",
+        "availability": "Check stock at checkout"
+      },
+      {
+        "slug": "organic-whole-grain-einkorn-flour-in-paper-bags",
+        "name": "Organic Einkorn Whole Wheat Flour",
+        "url": "https://www.ancientgrains.com/shop/einkorn/organic-whole-grain-einkorn-flour-in-paper-bags?a_aid=henryhunter",
+        "img": "/maker-photos/grand-teton/organic-whole-grain-einkorn-flour-in-paper-bags.webp",
+        "desc": "100% whole grain einkorn flour, freshly stone-milled to order and shipped after milling day. Nothing removed: bran, germ, and endosperm all in.",
+        "priceLabel": "$19.87 – $132.95",
+        "priceDetails": "Organic Einkorn Whole Wheat Flour — $19.87 – $132.95",
+        "priceChecked": "2026-11-18",
+        "priceSource": "https://www.ancientgrains.com/shop/einkorn/organic-whole-grain-einkorn-flour-in-paper-bags",
+        "availability": "Check stock at checkout"
+      },
+      {
+        "slug": "organic-einkorn-fusilli",
+        "name": "Organic Einkorn Fusilli",
+        "url": "https://www.ancientgrains.com/shop/einkorn/pasta/organic-einkorn-fusilli?a_aid=henryhunter",
+        "img": "/maker-photos/grand-teton/organic-einkorn-fusilli.webp",
+        "desc": "Bronze-cut fusilli pasta from stone-milled whole-grain einkorn semolina, slow-dried at low temperatures. The rough bronze-die texture grabs sauce.",
+        "priceLabel": "$16.99 – $113.95",
+        "priceDetails": "Organic Einkorn Fusilli — $16.99 – $113.95",
+        "priceChecked": "2026-11-18",
+        "priceSource": "https://www.ancientgrains.com/shop/einkorn/pasta/organic-einkorn-fusilli",
+        "availability": "Check stock at checkout"
+      }
+    ],
+    "logo": "/brand-logos/grand-teton.webp"
+  },
+  {
+    "id": "modkitchn",
+    "brand": "ModKitchn",
+    "title": "Bread storage & baking slings",
+    "items": [
+      {
+        "slug": "fresh-bread-storage-bags",
+        "name": "Fresh Bread Storage Bags",
+        "url": "https://modkitchn.com/products/fresh-bread-storage-bags?dt_id=2863905",
+        "img": "/maker-photos/modkitchn/fresh-bread-storage-bags.webp",
+        "desc": "The flagship. Two reusable bread bags (Red and Greige) with a moisture-controlling liner, waterproof zipper, and roll-top closure.",
+        "priceLabel": "$29.99",
+        "priceDetails": "$29.99 for the set of 2. In stock (added to cart successfully Nov 18).",
+        "priceChecked": "2026-11-18",
+        "priceSource": "https://modkitchn.com/products/fresh-bread-storage-bags",
+        "availability": "Check stock at checkout"
+      },
+      {
+        "slug": "special-edition-holiday-bread-bags",
+        "name": "Special Edition: Holiday Bread Bags",
+        "url": "https://modkitchn.com/products/special-edition-holiday-bread-bags?dt_id=2863905",
+        "img": "/maker-photos/modkitchn/special-edition-holiday-bread-bags.webp",
+        "desc": "The same premium bags as above, dressed in a limited-edition winter design. Set of 2, each fits round, oval, or sandwich loaves.",
+        "priceLabel": "$29.99",
+        "priceDetails": "$29.99 for the set of 2. In stock (added to cart successfully Nov 18).",
+        "priceChecked": "2026-11-18",
+        "priceSource": "https://modkitchn.com/products/special-edition-holiday-bread-bags",
+        "availability": "Check stock at checkout"
+      },
+      {
+        "slug": "oval-silicone-bread-slings",
+        "name": "Oval Bread Slings",
+        "url": "https://modkitchn.com/products/oval-silicone-bread-slings?dt_id=2863905",
+        "img": "/maker-photos/modkitchn/oval-silicone-bread-slings.webp",
+        "desc": "Oval silicone bread slings for moving dough safely from counter to Dutch oven. SureHold wide-grip handles, BakeShield Technology for a golden crust without burnt loaves, food-grade BPA-free silicone, non-stick, oven safe to 480 degrees, dishwasher safe (upper rack).",
+        "priceLabel": "From $15.99",
+        "priceDetails": "Small $15.99, Large $17.99. Both in stock (added to cart successfully Nov 18).",
+        "priceChecked": "2026-11-18",
+        "priceSource": "https://modkitchn.com/products/oval-silicone-bread-slings",
+        "availability": "Check stock at checkout"
+      },
+      {
+        "slug": "silicone-bread-sling",
+        "name": "Round Bread Sling",
+        "url": "https://modkitchn.com/products/silicone-bread-sling?dt_id=2863905",
+        "img": "/maker-photos/modkitchn/silicone-bread-sling.webp",
+        "desc": "Round silicone bread sling for boules and artisan loaves. Same SureHold handles and BakeShield Technology as the oval version, food-grade BPA-free silicone, non-stick, oven safe to 480 degrees, dishwasher safe (upper rack).",
+        "priceLabel": "From $16.99",
+        "priceDetails": "Single $16.99, 2-Pack $24.99. Both in stock (added to cart successfully Nov 18).",
+        "priceChecked": "2026-11-18",
+        "priceSource": "https://modkitchn.com/products/silicone-bread-sling",
+        "availability": "Check stock at checkout"
+      }
+    ],
+    "logo": ""
   }
 ]

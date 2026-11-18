@@ -13,6 +13,8 @@ import FixGummyDenseSourdough from "./pages/FixGummyDenseSourdough";
 import SourdoughToolsAndSupplies from "./pages/SourdoughToolsAndSupplies";
 import EssentialBakingTools from "./pages/EssentialBakingTools";
 import HowToWrapSourdoughAsAGift from "./pages/HowToWrapSourdoughAsAGift";
+import SavedGifts from "./pages/SavedGifts";
+import AdminAnalytics from "./pages/AdminAnalytics";
 import AdminLogin from "./pages/AdminLogin";
 import AdminGiveaway from "./pages/AdminGiveaway";
 
@@ -34,6 +36,8 @@ const App = () => (
             <Route path="/sourdough-tools-and-supplies" element={<SourdoughToolsAndSupplies />} />
             <Route path="/essential-baking-tools" element={<EssentialBakingTools />} />
             <Route path="/how-to-wrap-sourdough-as-a-gift" element={<HowToWrapSourdoughAsAGift />} />
+            <Route path="/saved-gifts" element={<SavedGifts />} />
+            <Route path="/admin/analytics" element={<AdminAnalytics />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin/giveaway" element={<AdminGiveaway />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

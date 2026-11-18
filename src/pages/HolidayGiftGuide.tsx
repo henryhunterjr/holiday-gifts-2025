@@ -39,6 +39,7 @@ type Product = {
   name: string;
   brand: string;
   price: number | string;
+  priceChecked?: string;
   cat: string;
   img: string;
   url: string;
@@ -335,7 +336,7 @@ export default function HolidayGiftGuide() {
   const [band, setBand] = useState<string | null>(null);
   const [quiz, setQuiz] = useState(false);
   const [showAll, setShowAll] = useState(false);
-  const [wishlistOpen, setWishlistOpen] = useState(false);
+  const [wishlistOpen, setWishlistOpen] = useState(window.location.hash === "#saved");
   const { count: savedCount } = useWishlist();
   const [giveaway, setGiveaway] = useState(false);
   const searchInputId = useId();
@@ -430,6 +431,9 @@ export default function HolidayGiftGuide() {
 
   // Saved gifts are stored as slugs; resolve them back to card data on demand.
   const wishlistLookup = (slug: string): WishlistItem | undefined => {
+    const maker = makers.find(m => m.items.some(p => `${m.id}:${p.slug}` === slug));
+    const item = maker?.items.find(p => `${maker.id}:${p.slug}` === slug);
+    if (maker && item) return {slug,name:item.name,brand:maker.brand,img:item.img,url:item.url,priceLabel:item.priceLabel};
     const p = products.find((x) => x.slug === slug);
     if (!p) return undefined;
     return {
@@ -481,7 +485,7 @@ export default function HolidayGiftGuide() {
             <div className="hero-arch" aria-hidden />
             <a className="hero-main-photo" href={products.find(p => p.slug === "challenger-pan")?.url} target="_blank" rel="nofollow sponsored noopener noreferrer"><img src="/product-images/challenger-bread-pan.jpg" alt="Challenger Bread Pan with a freshly baked loaf" width="650" height="650" fetchPriority="high" /><span>THE BAKE-DAY UPGRADE <b>Challenger Bread Pan ↗</b></span></a>
             <a className="hero-detail-photo" href={products.find(p => p.slug === "walnut-17")?.url} target="_blank" rel="nofollow sponsored noopener noreferrer"><img src="/product-images/walnut-bowl-17.jpg" alt="Handcrafted walnut bowl from Holland Bowl Mill" width="300" height="250" /><span>Made to be kept.</span></a>
-            <div className="hero-seal" aria-hidden>GIVE<br /><em>something</em><br />GOOD</div>
+            <a className="hero-holiday-logo" href="https://recipepantry.app/holiday-bake" target="_blank" rel="noopener noreferrer"><img src="/brand-logos/recipe-pantry.webp" alt="Explore the Recipe Pantry Holiday Collection" width="300" height="220" /></a>
           </div>
         </section>
         <div className="editorial-strip"><span>For first loaves & lifelong bakers</span><span>Handpicked by Henry</span><span>Affiliate links support free recipes</span></div>
@@ -489,8 +493,8 @@ export default function HolidayGiftGuide() {
         <section id="grain-to-gift" className="grain-story">
           <div className="grain-intro"><p className="edition-label">FROM GRAIN TO SOMETHING GREAT</p><h2>A gift that starts<br />a whole new ritual.</h2><p>Fresh flour, a favorite grain, a reason to bake again tomorrow. Bring the mill and the ingredients together.</p></div>
           <div className="partner-spread">
-            <article className="mill-feature"><a href="https://collabs.shop/qn3koy" target="_blank" rel="nofollow sponsored noopener noreferrer"><img src="/product-images/nutrimill-classic-holiday.webp" alt="NutriMill Classic grain mill" width="700" height="700" loading="lazy" /></a><div><span className="partner-name">NUTRIMILL</span><h3>Make fresh flour<br />part of the everyday.</h3><p>Explore home milling with the NutriMill Classic. Check the store for current pricing and Black Friday offers.</p><button className="partner-code" onClick={() => copyCode("ACADEMY26")} aria-label="Copy NutriMill code ACADEMY26"><Copy size={14} /> ACADEMY26 <small>Copy code</small></button><a className="editorial-text-link" href="https://collabs.shop/qn3koy" target="_blank" rel="nofollow sponsored noopener noreferrer">Shop NutriMill Classic <span aria-hidden>↗</span></a></div></article>
-            <article className="grain-feature"><a href="https://www.ancientgrains.com/?a_aid=henryhunter" target="_blank" rel="nofollow sponsored noopener noreferrer"><img src="/product-images/grand-teton-holiday.webp" alt="Grand Teton Ancient Grains spelt berries, whole grain einkorn flour and emmer berries" width="700" height="600" loading="lazy" /></a><div><span className="partner-name">GRAND TETON ANCIENT GRAINS</span><h3>Good bread begins<br />with good grain.</h3><p>Explore einkorn, spelt and emmer from this family farm and mill in Idaho.</p><button className="partner-code" onClick={() => copyCode("crustandcrumb")} aria-label="Copy Grand Teton code crustandcrumb"><Copy size={14} /> crustandcrumb <small>Copy code</small></button><p className="offer-detail">10% off your first order through December 31, 2026.</p><a className="editorial-text-link" href="https://www.ancientgrains.com/?a_aid=henryhunter" target="_blank" rel="nofollow sponsored noopener noreferrer">Shop ancient grains <span aria-hidden>↗</span></a></div></article>
+            <article className="mill-feature"><a href="/makers/nutrimill/"><img src="/product-images/nutrimill-classic-holiday.webp" alt="NutriMill Classic grain mill" width="700" height="700" loading="lazy" /></a><div><span className="partner-name">NUTRIMILL</span><h3>Make fresh flour<br />part of the everyday.</h3><p>Explore home milling with the NutriMill Classic. Compare mills, mixers and prices in our NutriMill collection.</p><button className="partner-code" onClick={() => copyCode("ACADEMY26")} aria-label="Copy NutriMill code ACADEMY26"><Copy size={14} /> ACADEMY26 <small>Copy code</small></button><a className="editorial-text-link" href="/makers/nutrimill/">Explore NutriMill <span aria-hidden>↗</span></a></div></article>
+            <article className="grain-feature"><a href="/makers/grand-teton/"><img src="/product-images/grand-teton-holiday.webp" alt="Grand Teton Ancient Grains spelt berries, whole grain einkorn flour and emmer berries" width="700" height="600" loading="lazy" /></a><div><span className="partner-name">GRAND TETON ANCIENT GRAINS</span><h3>Good bread begins<br />with good grain.</h3><p>Explore einkorn, spelt and emmer from this family farm and mill in Idaho.</p><button className="partner-code" onClick={() => copyCode("crustandcrumb")} aria-label="Copy Grand Teton code crustandcrumb"><Copy size={14} /> crustandcrumb <small>Copy code</small></button><p className="offer-detail">10% off your first order through December 31, 2026.</p><a className="editorial-text-link" href="/makers/grand-teton/">Explore grains & prices <span aria-hidden>↗</span></a></div></article>
           </div>
           <div className="grain-resources"><span>A little guidance for the first batch.</span><a href="https://grains.bakinggreatbread.com" target="_blank" rel="noopener noreferrer">Henry’s grain guide ↗</a><a href="https://challenge.bakinggreatbread.com" target="_blank" rel="noopener noreferrer">Bake along with the challenge ↗</a></div>
         </section>
@@ -506,7 +510,7 @@ export default function HolidayGiftGuide() {
             </div>
             <div className="featured-grid">
               {top10.map((p) => (
-                <article key={p.id} className="holiday-product-card holiday-featured-card">
+                <article key={p.id} data-product={p.id} data-brand={p.seller} className="holiday-product-card holiday-featured-card">
                   <a href={p.url} target="_blank" rel="nofollow sponsored noopener noreferrer" aria-label={`Shop ${p.name}`}>
                     <ProductPhoto src={p.img} name={p.name} />
                   </a>
@@ -522,7 +526,7 @@ export default function HolidayGiftGuide() {
                       <a href={p.url} target="_blank" rel="nofollow sponsored noopener noreferrer" className="holiday-shop-link">
                         {p.cta ?? "Shop this gift"} <ExternalLink className="h-4 w-4" aria-hidden />
                       </a>
-                      <p className="mt-2 text-xs text-crumb">Check current price and offers at the store.</p>
+                      <p className="mt-3 text-xl font-bold text-evergreen-deep">${p.price.toFixed(2)}</p><p className="mt-1 text-xs text-crumb">USD · Reference price checked {products.find(x => x.slug === p.id)?.priceChecked ?? PRICES_LAST_CHECKED}. Confirm final price and stock at checkout.</p>
                     </div>
                   </div>
                 </article>
@@ -904,7 +908,7 @@ export default function HolidayGiftGuide() {
         </section>
       </main>
 
-      <footer className="border-t border-honey/25 bg-oven text-flour">
+      <footer className="border-t border-honey/25 bg-oven text-flour"><div className="max-w-6xl mx-auto px-5 pt-6 flex gap-6"><a href="/saved-gifts/">Your gift list</a><a href="/admin/login/">Admin sign in</a></div>
         <div className="mx-auto grid max-w-[1200px] gap-8 px-5 py-12 md:grid-cols-2">
           <div>
             <b className="font-display text-lg text-flour">Baking Great Bread at Home</b>

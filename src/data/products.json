@@ -10,7 +10,7 @@
       "Sourhouse — Goldie, DoughBed, jars"
     ],
     [
-      "BAKINGGREATBREAD10",
+      "BAKINGGREATBREAD",
       "ModKitchn — 10% off slings & bags"
     ],
     [
@@ -35,25 +35,27 @@
       "slug": "goldie",
       "name": "Goldie Starter Warmer",
       "brand": "Sourhouse",
-      "price": 89,
+      "price": 149.95,
       "cat": "Starter Care",
       "img": "/product-images/sourhouse-goldie-starter-warmer.webp",
       "url": "https://sourhouse.co?ref=BAKINGGREATBREAD",
       "code": "HBK26",
       "desc": "Holds your starter at a steady 75–82°F around the clock. Plug it in, stop worrying about cold kitchens and sluggish ferments.",
-      "note": "Cold kitchen? Solved. This lives on my counter year-round."
+      "note": "Cold kitchen? Solved. This lives on my counter year-round.",
+      "priceChecked": "2026-11-17"
     },
     {
       "slug": "sourdough-home",
       "name": "Sourdough Home + Starter Jar Bundle",
       "brand": "Brød & Taylor",
-      "price": 44.95,
+      "price": 165,
       "cat": "Starter Care",
       "img": "/product-images/bt-sourdough-home-starter-jar-bundle.webp",
       "url": "https://collabs.shop/1vjisb",
       "code": "",
       "desc": "Temperature-controlled home for your starter with jar included. Dial in an exact temp, hot or cold, and your feeding schedule finally behaves.",
-      "note": "Set it to 78°F and your starter shows up on time."
+      "note": "Set it to 78°F and your starter shows up on time.",
+      "priceChecked": "2026-11-17"
     },
     {
       "slug": "starter-jars",
@@ -107,13 +109,14 @@
       "slug": "proofer",
       "name": "Folding Proofer & Slow Cooker",
       "brand": "Brød & Taylor",
-      "price": 189,
+      "price": 249,
       "cat": "Proofing & Temp",
       "img": "/product-images/brod-taylor-proofer-sharp.jpg",
       "url": "https://collabs.shop/vutgu8",
       "code": "",
       "desc": "Precision temperature control for proofing, plus it doubles as a slow cooker. Folds flat. Dough rises on schedule, every time.",
-      "note": "The single biggest upgrade to my winter baking."
+      "note": "The single biggest upgrade to my winter baking.",
+      "priceChecked": "2026-11-17"
     },
     {
       "slug": "proofer-shelf",
@@ -203,25 +206,27 @@
       "slug": "goose-lame",
       "name": "Goose Lame",
       "brand": "Wire Monkey",
-      "price": 49.95,
+      "price": 54.95,
       "cat": "Scoring & Shaping",
       "img": "/product-images/goose-lame.jpg",
       "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
       "code": "",
       "desc": "Wire Monkey’s flagship scoring tool. Balanced, beautiful walnut, and forgiving for newer hands.",
-      "note": "The lame I hand people when they say scoring scares them."
+      "note": "The lame I hand people when they say scoring scares them.",
+      "priceChecked": "2026-11-17"
     },
     {
       "slug": "ufo-zero",
       "name": "UFO Zero Lame",
       "brand": "Wire Monkey",
-      "price": 29.95,
+      "price": 36.95,
       "cat": "Scoring & Shaping",
       "img": "/product-images/wiremonkey-ufo-zero.webp",
       "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
       "code": "",
       "desc": "The original circular lame. Retractable blade, ambidextrous, fine control for detail work.",
-      "note": "Fits the hand like it grew there."
+      "note": "Fits the hand like it grew there.",
+      "priceChecked": "2026-11-17"
     },
     {
       "slug": "ufo-lame",
@@ -239,25 +244,27 @@
       "slug": "poco-lame",
       "name": "Poco Lame",
       "brand": "Wire Monkey",
-      "price": 18.95,
+      "price": 20.95,
       "cat": "Scoring & Shaping",
       "img": "/product-images/wiremonkey-poco.webp",
       "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
       "code": "",
       "desc": "The smallest straight-blade lame, black walnut. Maximum control, minimum price.",
-      "note": "Best stocking stuffer under $20 on this page."
+      "note": "Best stocking stuffer under $20 on this page.",
+      "priceChecked": "2026-11-17"
     },
     {
       "slug": "arc-lame",
       "name": "Arc Lame",
       "brand": "Wire Monkey",
-      "price": 25.95,
+      "price": 28.95,
       "cat": "Scoring & Shaping",
       "img": "/product-images/wiremonkey-arc-lame.webp",
       "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
       "code": "",
       "desc": "The smallest curved lame in the world, with a base stand. Built for long dramatic slashes.",
-      "note": "For the baker chasing that one perfect ear."
+      "note": "For the baker chasing that one perfect ear.",
+      "priceChecked": "2026-11-17"
     },
     {
       "slug": "bench-knife",
@@ -431,37 +438,40 @@
       "slug": "walnut-17",
       "name": "17″ Walnut Bowl",
       "brand": "Holland Bowl Mill",
-      "price": 385,
+      "price": 415,
       "cat": "Wood & Serving",
       "img": "/product-images/walnut-bowl-17.jpg",
       "url": "https://hollandbowlmill.com/baking/?wpam_id=10",
       "code": "Henry",
       "desc": "Hand-turned in Michigan from a single piece of walnut. An heirloom that mixes, proofs, and serves for generations.",
-      "note": "This bowl will outlive both of us. That’s the point."
+      "note": "This bowl will outlive both of us. That’s the point.",
+      "priceChecked": "2026-11-17"
     },
     {
       "slug": "maple-17",
       "name": "17″ Maple Bowl",
       "brand": "Holland Bowl Mill",
-      "price": 325,
+      "price": 345,
       "cat": "Wood & Serving",
       "img": "/product-images/maple-bowl-17.jpg",
       "url": "https://hollandbowlmill.com/baking/?wpam_id=10",
       "code": "Henry",
       "desc": "The lighter-grain sibling. Same one-piece hand-turned construction, brighter look.",
-      "note": "Maple brightens a dark kitchen."
+      "note": "Maple brightens a dark kitchen.",
+      "priceChecked": "2026-11-17"
     },
     {
       "slug": "beech-17",
       "name": "17″ Beechwood Bowl",
       "brand": "Holland Bowl Mill",
-      "price": 135,
+      "price": 250,
       "cat": "Wood & Serving",
       "img": "/product-images/holland-bowl-mill.jpg",
       "url": "https://hollandbowlmill.com/baking/?wpam_id=10",
       "code": "Henry",
       "desc": "The workhorse of the line. Big enough for full batches, and wood keeps dough at room temp even in a cold kitchen.",
-      "note": "The entry door to heirloom wood."
+      "note": "The entry door to heirloom wood.",
+      "priceChecked": "2026-11-17"
     },
     {
       "slug": "rolling-pin",
@@ -491,49 +501,53 @@
       "slug": "round-sling",
       "name": "Round Bread Sling",
       "brand": "ModKitchn",
-      "price": 15.99,
+      "price": 16.99,
       "cat": "Storage & Gifting",
       "img": "/product-images/modkitchen-bread-sling.webp",
-      "url": "https://modkitchn.com/discount/BAKINGGREATBREAD10",
-      "code": "BAKINGGREATBREAD10",
+      "url": "https://modkitchn.com/BAKINGGREATBREAD",
+      "code": "BAKINGGREATBREAD",
       "desc": "Silicone sling with SureHold grips. Lower dough into a screaming-hot Dutch oven without the burn scars.",
-      "note": "Knuckles: saved."
+      "note": "Knuckles: saved.",
+      "priceChecked": "2026-11-18"
     },
     {
       "slug": "oval-sling",
       "name": "Oval Bread Sling",
       "brand": "ModKitchn",
-      "price": 16.99,
+      "price": 15.99,
       "cat": "Storage & Gifting",
       "img": "/product-images/modkitchen-oval-sling.webp",
-      "url": "https://modkitchn.com/discount/BAKINGGREATBREAD10",
-      "code": "BAKINGGREATBREAD10",
+      "url": "https://modkitchn.com/BAKINGGREATBREAD",
+      "code": "BAKINGGREATBREAD",
       "desc": "The batard-shaped version, sized for oval Dutch ovens.",
-      "note": "Same save, longer loaf."
+      "note": "Same save, longer loaf.",
+      "priceChecked": "2026-11-18"
     },
     {
       "slug": "bread-bag",
       "name": "Reusable Bread Bag",
       "brand": "ModKitchn",
-      "price": 29.95,
+      "price": 29.99,
       "cat": "Storage & Gifting",
       "img": "/product-images/modkitchen-bread-bag.webp",
-      "url": "https://modkitchn.com/discount/BAKINGGREATBREAD10",
-      "code": "BAKINGGREATBREAD10",
+      "url": "https://modkitchn.com/BAKINGGREATBREAD",
+      "code": "BAKINGGREATBREAD",
       "desc": "Waterproof zipper, moisture-managing liner, made from recycled bottles. Keeps crust crisp days longer.",
-      "note": "Day-three sourdough that still crackles."
+      "note": "Day-three sourdough that still crackles.",
+      "priceChecked": "2026-11-18"
     },
     {
       "slug": "holiday-bags",
       "name": "Holiday Bread Bags (Limited)",
       "brand": "ModKitchn",
-      "price": 29.95,
+      "price": 29.99,
       "cat": "Storage & Gifting",
       "img": "/product-images/modkitchen-holiday-bags.webp",
-      "url": "https://modkitchn.com/discount/BAKINGGREATBREAD10",
-      "code": "BAKINGGREATBREAD10",
+      "url": "https://modkitchn.com/BAKINGGREATBREAD",
+      "code": "BAKINGGREATBREAD",
       "desc": "Limited-edition festive prints. Gift a homemade loaf inside one and you’ve given two presents.",
-      "note": "The loaf is the gift. This is the bow."
+      "note": "The loaf is the gift. This is the bow.",
+      "priceChecked": "2026-11-18"
     }
   ],
   "books": [

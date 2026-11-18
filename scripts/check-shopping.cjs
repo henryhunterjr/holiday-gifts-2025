@@ -1,0 +1,37 @@
+const {chromium}=require('playwright-core');
+const fs=require('fs');
+(async()=>{
+ const browser=await chromium.launch({executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',headless:true});
+ const page=await browser.newPage({viewport:{width:1440,height:1000}});const failures=[];
+ page.on('pageerror',e=>failures.push(e.message));
+ const base=process.env.TEST_URL||'http://127.0.0.1:4175';
+ await page.goto(base+'/makers/wire-monkey/');
+ await page.locator('[data-save]').first().click();
+ if(await page.locator('[data-save]').first().getAttribute('aria-pressed')!=='true')throw Error('save failed');
+ await page.goto(base+'/makers/modkitchn/');await page.locator('[data-save]').first().click();
+ await page.getByRole('link',{name:/Saved gifts/}).click();
+ await page.waitForSelector('article');
+ if(await page.locator('article').count()!==2)throw Error('cross-maker saved list failed');
+ await page.reload();await page.waitForSelector('article');
+ if(await page.locator('article').count()!==2)throw Error('saved list persistence failed');
+ await page.getByRole('button',{name:/Remove/}).first().click();
+ if(await page.locator('article').count()!==1)throw Error('remove failed');
+ await page.goto(base+'/');await page.locator('.hero-holiday-logo img').waitFor();
+ await page.screenshot({path:'../../outputs/guide-desktop.png'});
+ if(await page.locator('.maker-doors>a').count()!==7)throw Error('missing makers');
+ await page.setViewportSize({width:390,height:844});
+ await page.screenshot({path:'../../outputs/guide-mobile.png'});
+ if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth))throw Error('homepage mobile overflow');
+ await page.goto(base+'/makers/wire-monkey/');
+ await page.screenshot({path:'../../outputs/catalog-mobile.png'});
+ if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth))throw Error('catalog mobile overflow');
+ if(!await page.locator('.maker-logo').evaluate(el=>el.complete&&el.naturalWidth>0))throw Error('logo not loaded');
+ if(await page.locator('.price').count()!==7)throw Error('missing prices');
+ await page.goto(base+'/admin/analytics/');await page.waitForURL('**/admin/login/');
+ if(!await page.getByRole('heading',{name:'Admin sign in'}).isVisible())throw Error('admin gate missing');
+ const makers=JSON.parse(fs.readFileSync('src/data/makers.json'));
+ for(const m of makers){for(const p of m.items){if(p.img&&!fs.existsSync('public'+p.img))throw Error('missing '+p.img);if(!p.priceLabel)throw Error('missing price');}}
+ if(failures.length)throw Error(failures.join('\n'));
+ console.log('PASS: cross-maker save/remove/persistence, 7 collections, prices, logo loading, desktop/mobile overflow, admin sign-in gate, all image paths.');
+ await browser.close();
+})().catch(e=>{console.error(e);process.exit(1)});

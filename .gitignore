@@ -43,3 +43,5 @@ site/tsconfig.tsbuildinfo
 references/
 qa/
 site/next-env.d.ts
+
+public/guide-config.json

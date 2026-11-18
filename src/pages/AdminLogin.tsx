@@ -13,7 +13,7 @@ export default function AdminLogin() {
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
-      if (data.session) navigate("/admin/giveaway", { replace: true });
+      if (data.session) navigate("/admin/analytics", { replace: true });
     });
   }, [navigate]);
 
@@ -24,9 +24,9 @@ export default function AdminLogin() {
       const { error } = await supabase.auth.signInWithPassword({ email, password });
       setBusy(false);
       if (error) return toast.error(error.message);
-      navigate("/admin/giveaway", { replace: true });
+      navigate("/admin/analytics", { replace: true });
     } else {
-      const redirectUrl = `${window.location.origin}/admin/giveaway`;
+      const redirectUrl = `${window.location.origin}/admin/analytics`;
       const { error } = await supabase.auth.signUp({
         email,
         password,
@@ -46,7 +46,7 @@ export default function AdminLogin() {
       </Helmet>
       <div className="w-full max-w-md rounded-2xl border border-parchment-deep bg-white p-8 shadow-lg">
         <h1 className="font-display text-2xl font-semibold text-crust">Admin sign in</h1>
-        <p className="mt-1 text-sm text-crumb">Access the giveaway dashboard.</p>
+        <p className="mt-1 text-sm text-crumb">Access your guide reports and giveaway dashboard.</p>
         <form onSubmit={submit} className="mt-6 space-y-4">
           <label className="block text-sm font-semibold text-crust">
             Email

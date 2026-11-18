@@ -34,6 +34,14 @@
 .hero-detail-photo span { display:block; text-align:center; font:italic 18px Georgia,serif; padding:12px 0 7px; }
 .hero-seal { position:absolute; right:-10px; bottom:2px; width:130px; height:130px; border-radius:50%; background:#a43d31; color:#fff7e6; display:flex; flex-direction:column; align-items:center; justify-content:center; font-size:12px; letter-spacing:.2em; transform:rotate(12deg); border:1px solid #c78d6a; outline:5px solid #a43d31; }
 .hero-seal em { font:italic 19px Georgia,serif; letter-spacing:0; margin:3px; }
+.hero-holiday-logo { position:absolute; right:-18px; bottom:-5px; width:240px; z-index:3; filter:drop-shadow(0 8px 12px #563b2126); transition:transform .25s ease; }
+.hero-holiday-logo img { width:100%; height:auto; object-fit:contain; }
+.hero-holiday-logo:hover { transform:translateY(-5px); }
+.hero-holiday-logo:focus-visible { outline:3px solid #872e32; outline-offset:5px; }
+.season-note { background:#872e32; color:#fffaf0; border-bottom:3px solid #bd914c; }
+.maker-doors>a { border-top:3px solid #bd914c; }
+@media(max-width:767px) { .hero-holiday-logo { right:0; bottom:-12px; width:180px; } }
+@media(prefers-reduced-motion:reduce) { .hero-holiday-logo { transition:none; } .hero-holiday-logo:hover { transform:none; } }
 .editorial-strip { display:flex; justify-content:space-around; padding:22px 5vw; border-bottom:1px solid #163e3522; font-size:11px; letter-spacing:.05em; background:#eee8dd; }
 .grain-story { padding:100px 5vw 30px; }
 .grain-intro { display:grid; grid-template-columns:1fr 1.3fr 1fr; gap:35px; align-items:end; margin-bottom:48px; }
