@@ -9,10 +9,8 @@ import balljars from "@/assets/holiday/amazon-ball-jars.jpeg";
 import sling from "@/assets/holiday/amazon-bread-sling.jpeg";
 import feather from "@/assets/holiday/amazon-feather-blades.jpeg";
 import kitchenaid from "@/assets/holiday/amazon-kitchenaid-mixer.png";
-import cambro from "@/assets/holiday/amazon-cambro-container.jpg";
 import rack from "@/assets/holiday/amazon-checkered-chef-rack.jpg";
 import whisk from "@/assets/holiday/amazon-brod-taylor-whisk.jpg";
-import thermopop from "@/assets/holiday/amazon-thermopop.jpg";
 
 const TAG = "onamz55024a-20";
 const link = (asin: string) => `https://www.amazon.com/dp/${asin}?tag=${TAG}`;
@@ -22,6 +20,7 @@ export type AmazonProduct = {
   category: string;
   img: string;
   note: string;
+  detail?: string;
   url: string;
 };
 
@@ -30,8 +29,22 @@ export const amazonProducts: AmazonProduct[] = [
   { name: "MyWeigh KD-8000 Scale", category: "Scale", img: "/product-images/myweigh-kd8000.jpg", url: link("B00VEKX35Y"), note: "Baker's percentages on the display, and it holds a full bowl of dough without flinching." },
   { name: "Baking Steel", category: "Baking Steel", img: "https://m.media-amazon.com/images/I/81T2o6K4fLL.jpg", url: link("B00N205G22"), note: "Fixes a pale bottom crust permanently. More heat from below than any stone I've tried." },
   { name: "OXO Bench Scraper", category: "Bench Tool", img: "/product-images/oxo-bench-scraper.jpg", url: link("B00004OCNJ"), note: "The first tool I'd buy today. Cheap, and it earns its drawer space forever." },
-  { name: "ThermoWorks ThermoPop", category: "Thermometer", img: thermopop, url: link("B07MJSQR1F"), note: "Most of the Thermapen for a lot less money. Dough temp, sorted." },
-  { name: "Cambro 6qt Container", category: "Container", img: cambro, url: link("B001NCDE74"), note: "Watch your bulk rise through the wall instead of lifting a towel to guess." },
+  {
+    name: "Alpha Grillers Digital Meat Thermometer",
+    category: "Instant-read thermometer",
+    img: "/product-images/alpha-grillers-instant-read.webp",
+    url: "https://link.amazon/B08z1LeOG",
+    note: "Check the center of a loaf before you pull it from the oven.",
+    detail: "Arrives pre-calibrated and gives a reading in 1 to 2 seconds.",
+  },
+  {
+    name: "Cambro 6-Quart Container with Lid",
+    category: "Dough storage",
+    img: "/product-images/cambro-6qt.webp",
+    url: "https://link.amazon/B0cpGG7pk",
+    note: "Follow the rise of your dough through the clear sides.",
+    detail: "Square container pictured. The Amazon link is for the round 6-quart model.",
+  },
   { name: "Checkered Chef Cooling Rack", category: "Cooling Rack", img: rack, url: link("B01N1YDLIG"), note: "Soggy bottoms are a rack problem. This one fits a half sheet pan." },
   { name: "KitchenAid Artisan 5qt Stand Mixer", category: "Stand Mixer", img: kitchenaid, url: link("B00005UP2P"), note: "For cake bakers drifting into bread. It handles dough right up until they catch the bug properly." },
   { name: "Feather Razor Blades (100 pack)", category: "Scoring", img: feather, url: link("B004LK3Y8W"), note: "Scoring blades by the hundred. A fresh blade every loaf, no more dragging." },

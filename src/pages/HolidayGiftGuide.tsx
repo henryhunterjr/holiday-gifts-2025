@@ -468,7 +468,7 @@ export default function HolidayGiftGuide() {
       <a className="skip-guide" href="#browse">Skip to gifts</a>
       <div className="season-note">A little thought. A lot of good bread. <span>THE HOLIDAY EDIT 2026</span></div>
       <header className="editorial-header">
-        <a href="#top" className="editorial-brand"><img src="/brand-logos/academy.png" alt="Crust & Crumb Academy" width="1672" height="941" /><span>Baking Great Bread at Home<strong>Crust &amp; Crumb Academy</strong><small>A holiday guide by Henry Hunter</small></span></a>
+        <a href="#top" className="editorial-brand"><img src="/brand-logos/academy-crest.webp" alt="Crust & Crumb Academy" width="720" height="405" /><span>Baking Great Bread at Home<strong>Crust &amp; Crumb Academy</strong><small>A holiday guide by Henry Hunter</small></span></a>
         <nav aria-label="Main navigation"><a href="#makers">Shop by maker</a><a href="#grain-to-gift">Grain &amp; flour</a><a href="#browse">All gifts</a></nav>
         <div className="header-actions"><a className="about-henry" href="https://bakinggreatbread.com/about" target="_blank" rel="noopener noreferrer">About Henry Hunter</a><button onClick={() => setWishlistOpen(true)} className="saved-control" aria-label={`Saved gifts, ${savedCount} saved`}><Heart size={17} aria-hidden /> <span>Saved</span> {savedCount}</button></div>
       </header>
@@ -490,7 +490,7 @@ export default function HolidayGiftGuide() {
         </section>
         <div className="editorial-strip"><span>For first loaves & lifelong bakers</span><span>Handpicked by Henry</span><span>Affiliate links support free recipes</span></div>
         <section className="give-bread-banner" aria-labelledby="give-bread-title">
-          <img src="/give-bread-instead-2026.png" alt="Give Bread Instead. This holiday season, give bread instead. Campaign details coming soon." width="2048" height="682" loading="lazy" />
+          <img src="/brand-logos/give-bread-instead-2026.webp" alt="Give Bread Instead. This holiday season, give bread instead. Campaign details coming soon." width="2048" height="682" loading="lazy" />
           <div className="give-bread-caption"><h2 id="give-bread-title">Give Bread Instead</h2><p>Nothing to buy. Just bake, wrap, and give.</p><span>Our annual community campaign. Details coming soon.</span></div>
           <p className="sr-only">For five years our community has baked a loaf, wrapped it, and given it to someone who matters. This year Baking Great Bread at Home, Crust &amp; Crumb Academy, and From Oven to Market are working on a way for every loaf to do a little good beyond your own table.</p>
         </section>
@@ -547,6 +547,23 @@ export default function HolidayGiftGuide() {
           </div>
         </section>
 
+
+        <section className="academy-gift" id="academy-gift" aria-labelledby="academy-gift-title">
+          <div className="academy-gift-face">
+            <img src="/brand-logos/academy-crest.webp" alt="Crust & Crumb Academy" width="720" height="405" loading="lazy" />
+            <div>
+              <p className="academy-gift-label">Holiday gift certificate</p>
+              <h2 id="academy-gift-title">A year of baking together.</h2>
+              <p>Give your baker an annual Crust &amp; Crumb Academy membership. Bring the dough questions. Pull up a chair for a Saturday bake-along.</p>
+            </div>
+          </div>
+          <div className="academy-gift-stub">
+            <p className="academy-gift-label">One year of membership</p>
+            <p className="academy-gift-price"><strong>$48</strong> <span>Regularly <s>$60</s></span></p>
+            <p className="academy-gift-saving">Holiday savings of 20%</p>
+            <a href="mailto:BGBAH2023@gmail.com?subject=Crust%20%26%20Crumb%20Academy%20%2448%20holiday%20gift%20certificate&amp;body=Hi%20Henry%2C%20I%27d%20like%20to%20give%20a%20one-year%20Academy%20membership%20for%20%2448.%20Please%20send%20me%20the%20purchase%20details.">Email Henry for a gift certificate <span aria-hidden="true">↗</span></a>
+          </div>
+        </section>
 
         {/* Browse block. The sticky filter bar lives inside this wrapper, so it
             only follows the visitor through the section it actually filters. */}
@@ -757,6 +774,7 @@ export default function HolidayGiftGuide() {
                   <div className="holiday-card-body">
                     <p className="holiday-card-brand">{a.category}</p>
                     <h3 className="font-display text-lg font-semibold leading-tight text-crust">{a.name}</h3>
+                    {a.detail && <p className="mb-3 text-sm text-crumb">{a.detail}</p>}
                     <span className="holiday-amazon-link mt-auto">Check price on Amazon <ExternalLink className="h-4 w-4" aria-hidden /></span>
                   </div>
                 </a>
