@@ -1,6 +1,7 @@
 {
   "trailingSlash": true,
   "rewrites": [
-    { "source": "/((?!api/|brand-logos/|guide-tools\\.js|guide-config\\.json|maker-catalog\\.css|makers/|maker-photos/|gifts/|_next/|assets/|product-images/).*)", "destination": "/index.html" }
+    { "source": "/((?!og-image[.]png|favicon[.]png|api/|brand-logos/|guide-tools\\.js|guide-config\\.json|maker-catalog\\.css|makers/|maker-photos/|gifts/|_next/|assets/|product-images/).*)", "destination": "/index.html" }
   ]
 }
+
