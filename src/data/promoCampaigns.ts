@@ -1,8 +1,12 @@
 // Rotating holiday promo campaigns. Each campaign owns its own identity,
 // artwork pair, and affiliate URL. Add a campaign here and the popup system
 // picks it up — no component changes needed.
-import boschA from "@/assets/promo/bosch-promo-a.png.asset.json";
-import boschB from "@/assets/promo/bosch-promo-b.png.asset.json";
+// BLACK FRIDAY SWAP (revert after Nov 30, 2026): the Bosch campaign runs the
+// tall Black Friday artwork through the sale weekend. To revert, restore the
+// two imports below and the original Bosch campaign entry (20% OFF, $399.20).
+// import boschA from "@/assets/promo/bosch-promo-a.png.asset.json";
+// import boschB from "@/assets/promo/bosch-promo-b.png.asset.json";
+import boschBlackFriday from "@/assets/promo/bosch-black-friday-2026.png.asset.json";
 import millA from "@/assets/promo/nutrimill-promo-a.png.asset.json";
 import millB from "@/assets/promo/nutrimill-promo-b.png.asset.json";
 import sourhouseGoldie from "@/assets/promo/sourhouse-goldie-promo.png.asset.json";
@@ -32,12 +36,12 @@ export const PROMO_CAMPAIGNS: PromoCampaign[] = [
     campaignName: "Bosch Universal Plus Mixer Holiday Offer",
     productName: "Bosch Universal Plus Mixer",
     regularPrice: 499.0,
-    salePrice: 399.2,
-    discountLabel: "20% OFF",
+    salePrice: 399.0,
+    discountLabel: "$100 OFF",
     code: "ACADEMY26",
     url: "https://collabs.shop/igygnm",
-    images: [boschA.url, boschB.url],
-    alt: "Bosch Universal Plus Mixer holiday offer, 20% off with code ACADEMY26",
+    images: [boschBlackFriday.url, boschBlackFriday.url],
+    alt: "Bosch Universal Plus Mixer Black Friday sale, $100 off at $399 with code ACADEMY26, ends November 30",
   },
   {
     id: "nutrimill-classic-grain-mill",
