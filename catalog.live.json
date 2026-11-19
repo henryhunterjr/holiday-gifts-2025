@@ -25,7 +25,6 @@
   ],
   "top_picks": [
     "goldie",
-    "challenger-pan",
     "proofer",
     "goose-lame",
     "walnut-17",
@@ -65,7 +64,7 @@
       "price": 20.76,
       "cat": "Starter Care",
       "img": "https://holiday-gifts-2025.lovable.app/assets/starter-jars-hGFrfhj5.webp",
-      "url": "https://bit.ly/Sourhouse",
+      "url": "https://sourhouse.co?ref=BAKINGGREATBREAD",
       "code": "HBK26",
       "desc": "Easy-clean borosilicate jars with measurement markings and breathable silicone lids. Made for daily starter life.",
       "note": "The jar I actually reach for every morning.",
@@ -143,7 +142,7 @@
       "price": 279.95,
       "cat": "Proofing & Temp",
       "img": "https://holiday-gifts-2025.lovable.app/assets/sourhouse-doughbed-ZAyioXnJ.jpg",
-      "url": "https://bit.ly/Sourhouse",
+      "url": "https://sourhouse.co?ref=BAKINGGREATBREAD",
       "code": "HBK26",
       "desc": "A warm, glass-bottomed bed for bulk fermentation. Gentle even heat and a lid that earns its counter space.",
       "note": "Bulk ferment finally runs on my schedule.",
@@ -156,7 +155,7 @@
       "price": 19.95,
       "cat": "Proofing & Temp",
       "img": "https://holiday-gifts-2025.lovable.app/assets/sour-house-bread-blanket-alt-DZSnRtNv.webp",
-      "url": "https://bit.ly/Sourhouse",
+      "url": "https://sourhouse.co?ref=BAKINGGREATBREAD",
       "code": "HBK26",
       "desc": "Breathable muslin cover that keeps loaves fresh and doughs cozy. Simple and smart.",
       "note": "Tuck the dough in. Literally.",
@@ -329,19 +328,6 @@
       "code": "",
       "desc": "Heat-resistant mat for kneading and shaping. Saves your counters and your patience.",
       "note": "Cleanup goes from ten minutes to ten seconds.",
-      "source": "main"
-    },
-    {
-      "slug": "challenger-pan",
-      "name": "Challenger Bread Pan",
-      "brand": "Challenger Breadware",
-      "price": 270,
-      "cat": "Bake Day",
-      "img": "https://holiday-gifts-2025.lovable.app/assets/challenger-bread-pan-GSjRZvht.jpg",
-      "url": "https://challengerbreadware.com/?ref=henryhunterjr",
-      "code": "",
-      "desc": "Cast iron built specifically for bread. Traps steam like a professional deck oven and gives you crust you can hear. Grab their pre-cut parchment while you’re there.",
-      "note": "The best crust of my life came out of this pan.",
       "source": "main"
     },
     {
@@ -632,16 +618,6 @@
       "rating": 4.7,
       "asin": "B000N4UX4Q",
       "url": "https://www.amazon.com/dp/B000N4UX4Q?tag=onamz55024a-20",
-      "source": "amazon",
-      "affiliate_tag": "onamz55024a-20"
-    },
-    {
-      "name": "Challenger Bread Pan",
-      "category": "Bread Pan",
-      "price": "$295",
-      "rating": 4.9,
-      "asin": "B07M6MF86P",
-      "url": "https://www.amazon.com/dp/B07M6MF86P?tag=onamz55024a-20",
       "source": "amazon",
       "affiliate_tag": "onamz55024a-20"
     },

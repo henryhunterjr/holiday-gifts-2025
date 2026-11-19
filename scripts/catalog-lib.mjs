@@ -13,18 +13,15 @@ const AFFILIATE_PARAMS = ["tag", "rfsn", "wpam_id", "dt_id"];
 // values on the expected host (verified in the catalog, 2026-08-21).
 const AFFILIATE_REF_VALUES = new Map([
   ["sourhouse.co", "BAKINGGREATBREAD"],
-  ["challengerbreadware.com", "henryhunterjr"],
 ]);
 
 // Links whose affiliate nature was verified by following redirects on
 // 2026-08-21, matched on hostname + path prefix (protocol- and www.-safe):
 // - collabs.shop/*      Shopify Collabs shortlinks, land with dt_id= attribution
-// - bit.ly/Sourhouse    lands on go.referralcandy.com share link
 // - brodandtaylor.com/henrysbreadkitchen lands with dt_id= attribution
 const KNOWN_AFFILIATE_PREFIXES = [
   { host: "link.amazon", path: "/" },
   { host: "collabs.shop", path: "/" },
-  { host: "bit.ly", path: "/Sourhouse" },
   { host: "brodandtaylor.com", path: "/henrysbreadkitchen" },
 ];
 

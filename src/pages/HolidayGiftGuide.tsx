@@ -540,7 +540,6 @@ export default function HolidayGiftGuide() {
           </div>
           <div className="hero-composition" aria-label="A selection from the holiday gift edit">
             <div className="hero-arch" aria-hidden />
-            <a className="hero-main-photo" href={products.find(p => p.slug === "challenger-pan")?.url} target="_blank" rel="nofollow sponsored noopener noreferrer"><img src="/product-images/challenger-bread-pan.jpg" alt="Challenger Bread Pan with a freshly baked loaf" width="650" height="650" fetchPriority="high" /><span>THE BAKE-DAY UPGRADE <b>Challenger Bread Pan ↗</b></span></a>
             <a className="hero-detail-photo" href={products.find(p => p.slug === "walnut-17")?.url} target="_blank" rel="nofollow sponsored noopener noreferrer"><img src="/product-images/walnut-bowl-17.jpg" alt="Handcrafted walnut bowl from Holland Bowl Mill" width="300" height="250" /><span>Made to be kept.</span></a>
             <a className="hero-holiday-logo" href="https://recipepantry.app/holiday-bake" target="_blank" rel="noopener noreferrer"><img src="/brand-logos/recipe-pantry.webp" alt="Explore the Recipe Pantry Holiday Collection" width="300" height="220" /></a>
           </div>
