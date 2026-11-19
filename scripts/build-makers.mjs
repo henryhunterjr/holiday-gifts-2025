@@ -8,7 +8,7 @@ const offers={
  'wire-monkey':['https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683','Activate Henry’s storewide 10% discount'],
  'brod-and-taylor':['https://brodandtaylor.com?dt_id=330823','Shop with Henry’s Brød & Taylor link'],
  'sour-house':['https://sourhouse.co?ref=BAKINGGREATBREAD','Use HBK26 for 10% off eligible Sourhouse items. The bundles below show Sourhouse’s holiday prices.'],
- 'holland-bowl':['https://hollandbowlmill.com/baking/?wpam_id=10','Use Henry for 15% off your first order. One use per customer.'],
+ 'holland-bowl':['https://hollandbowlmill.com/?wpam_id=10','Use Henry for 15% off your first order. One use per customer.'],
  'nutrimill':['https://nutrimill.com/Academy26','Shop with Henry’s NutriMill link. ACADEMY26 takes $20 off the Classic.'],
  'grand-teton':['https://www.ancientgrains.com/?a_aid=henryhunter','Use crustandcrumb for 10% off your first order.'],
  'modkitchn':['https://modkitchn.com/BAKINGGREATBREAD','Activate 10% off with BAKINGGREATBREAD']
