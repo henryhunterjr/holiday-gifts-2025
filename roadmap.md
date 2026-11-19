@@ -17,3 +17,8 @@
 - [x] FAQ plus CollectionPage, Breadcrumb, ItemList, Organization, Person schema
 - [ ] Owner: add https://gifts.bakinggreatbread.com/ as Site URL and /admin/analytics/ redirect in Auth settings
 - [ ] Owner: point gifts.bakinggreatbread.blog at .com with a permanent redirect at the domain host
+# Improvements (Nov 19)
+- [x] Curator note, badges, Best for lines and FAQ on all seven maker pages
+- [x] Weekly price check (scripts/check-prices.mjs + GitHub Action opens an issue on changes)
+- [x] One copy of maker pages: static HTML only; app route hands off
+- [ ] Owner: submit https://gifts.bakinggreatbread.com/sitemap.xml in Google Search Console (needs owner's Google account)

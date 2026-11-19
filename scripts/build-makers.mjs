@@ -35,7 +35,7 @@ for(const m of makers){
  <div class="card-actions"><a class="shop" data-event="partner_click" href="${e(p.url)}" target="_blank" rel="sponsored noopener noreferrer">${p.availability==='Coming soon'?'Check availability':`Shop at ${brand}`} ↗</a><button type="button" class="save" data-save="${m.id}:${p.slug}" aria-pressed="false" aria-label="Save ${e(p.name)}">♡ Save</button></div></article>`;}).join('');
  const counts={all:m.items.length};for(const p of m.items){const b=band(num(p.priceLabel));counts[b]=(counts[b]||0)+1;}
  const pills=[['all',`All (${counts.all})`],['under-30','Under $30'],['30-100','$30–$100'],['100-plus','$100+']].map(([k,l],i)=>`<button type="button" data-filter="${k}" aria-pressed="${i===0}">${l}</button>`).join('');
- const faq=faqs[m.id]||[];
+ const faq=m.faq?m.faq.map(f=>[f.q,f.a]):(faqs[m.id]||[]);
  const h1=`${m.brand} — ${m.title}`;
  const ld={"@context":"https://schema.org","@graph":[ORG,PERSON,
   {"@type":"CollectionPage","@id":url,url,name:h1,isPartOf:{"@type":"WebSite",url:origin+'/'},publisher:{"@id":ORG["@id"]},author:{"@id":PERSON["@id"]},mainEntity:{"@id":url+'#products'}},

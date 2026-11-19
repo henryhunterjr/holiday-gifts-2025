@@ -12,9 +12,11 @@
         "desc": "The flagship and most popular lame.",
         "priceLabel": "$54.95",
         "priceDetails": "$54.95 (in stock; 82 reviews, 4.95/5)",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://wiremonkey.com/products/goose-lame",
-        "availability": "Check stock at checkout"
+        "availability": "Check stock at checkout",
+        "bestFor": "The baker who wants one lame that does it all and looks good on the counter.",
+        "badge": "Henry's Pick"
       },
       {
         "slug": "ufo-zero-lame",
@@ -24,9 +26,10 @@
         "desc": "The original circular lame.",
         "priceLabel": "$36.95",
         "priceDetails": "$36.95 (in stock; 205 reviews, 4.98/5)",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://wiremonkey.com/products/ufo-zero-lame",
-        "availability": "Check stock at checkout"
+        "availability": "Check stock at checkout",
+        "bestFor": "Bakers who want a fast, clean straight score with a blade that swaps in seconds."
       },
       {
         "slug": "ufo-bread-journey-lame",
@@ -36,9 +39,11 @@
         "desc": "America's Test Kitchen Top Pick.",
         "priceLabel": "$36.95",
         "priceDetails": "$36.95 (in stock; 548 reviews, 4.98/5)",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://wiremonkey.com/products/ufo-bread-journey-lame",
-        "availability": "Check stock at checkout"
+        "availability": "Check stock at checkout",
+        "bestFor": "A first real lame. It's the one America's Test Kitchen picked, and it's hard to beat at the price.",
+        "badge": "Best Value"
       },
       {
         "slug": "ufo-corbeau-lame",
@@ -48,9 +53,10 @@
         "desc": "The toughest model in the lineup.",
         "priceLabel": "$39.95",
         "priceDetails": "$39.95 (in stock; 50 reviews, 4.92/5)",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://wiremonkey.com/products/ufo-corbeau-lame",
-        "availability": "Check stock at checkout"
+        "availability": "Check stock at checkout",
+        "bestFor": "Busy bakers who bake often and want a lame that takes a beating."
       },
       {
         "slug": "ufo-nux-lame",
@@ -60,9 +66,10 @@
         "desc": "Twice as thick as the other UFOs (12.7 mm), easiest to grip, open, and tighten.",
         "priceLabel": "$40.95",
         "priceDetails": "$40.95 (in stock; 37 reviews, 4.95/5)",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://wiremonkey.com/products/ufo-nux-lame",
-        "availability": "Check stock at checkout"
+        "availability": "Check stock at checkout",
+        "bestFor": "Bakers with bigger hands or grip trouble who want an easy hold."
       },
       {
         "slug": "arc-lame",
@@ -72,9 +79,10 @@
         "desc": "The world's smallest curved lame.",
         "priceLabel": "$28.95",
         "priceDetails": "$28.95 (in stock; 13 reviews, 4.92/5)",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://wiremonkey.com/products/arc-lame",
-        "availability": "Check stock at checkout"
+        "availability": "Check stock at checkout",
+        "bestFor": "Ear chasers. The curved blade makes that tall, open ear on a batard."
       },
       {
         "slug": "poco-lame",
@@ -84,12 +92,29 @@
         "desc": "The smallest straight-blade lame in the world and the lowest-priced way into the line.",
         "priceLabel": "$20.95",
         "priceDetails": "$20.95 (in stock; 10 reviews, 5.0/5)",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://wiremonkey.com/products/poco-lame",
-        "availability": "Check stock at checkout"
+        "availability": "Check stock at checkout",
+        "bestFor": "Stocking stuffers and bakers who travel with their kit.",
+        "badge": "Under $25"
       }
     ],
-    "logo": "/brand-logos/wire-monkey.webp"
+    "logo": "/brand-logos/wire-monkey.webp",
+    "curatorNote": "Curated by Henry Hunter, founder of Baking Great Bread at Home. A good lame is the cheapest upgrade a bread baker can make, and Wire Monkey makes the ones I reach for. If your baker scores with a kitchen knife, start here.",
+    "faq": [
+      {
+        "q": "Straight or curved lame: which should I gift?",
+        "a": "A straight blade cuts clean, upright lines and decorative patterns. A curved blade sits at an angle and lifts a tall ear on a batard. If you don't know their style, a straight UFO is the safer first gift."
+      },
+      {
+        "q": "Are replacement blades easy to find?",
+        "a": "Yes. Wire Monkey lames take standard double-edge razor blades, the kind sold at any drugstore, and the blade swaps without tools."
+      },
+      {
+        "q": "What's the best Wire Monkey gift under $30?",
+        "a": "The Poco at $20.95 or the Arc at $28.95. Both are full working lames, just smaller, and they make a great stocking stuffer."
+      }
+    ]
   },
   {
     "id": "brod-and-taylor",
@@ -104,7 +129,7 @@
         "desc": "A temperature-controlled proofing box that keeps sourdough, yeast dough, and yogurt at the exact degree you set, then folds completely flat to slide into a drawer. Doubles as a slow cooker.",
         "priceLabel": "$249.00",
         "priceDetails": "$249.00 (also available as Proofer + Accessory Shelf for $269.00)",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://brodandtaylor.com/products/folding-proofer-slow-cooker",
         "availability": "Check stock at checkout",
         "bestFor": "Bakers with a chilly kitchen who want predictable, consistent rise times year-round.",
@@ -118,7 +143,7 @@
         "desc": "A compact starter keeper that both heats and cools (41–122°F / 5–50°C), so a starter stays at the exact temperature chosen.",
         "priceLabel": "$149.00",
         "priceDetails": "$149.00 (also available as Sourdough Home & Starter Jar bundle for $165.00)",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://brodandtaylor.com/products/sourdough-home",
         "availability": "Check stock at checkout",
         "bestFor": "Sourdough bakers who want to control starter feeding schedules down to the degree."
@@ -131,7 +156,7 @@
         "desc": "A precision kitchen scale that weighs up to 15 kg / 33 lbs with 1-gram accuracy.",
         "priceLabel": "$24.95",
         "priceDetails": "$24.95",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://brodandtaylor.com/products/high-capacity-baking-scale",
         "availability": "Check stock at checkout",
         "badge": "Best Under $30",
@@ -145,7 +170,7 @@
         "desc": "A flat steel baking surface that heats fast, holds heat, and gives a crisp crust and strong oven spring.",
         "priceLabel": "$79.00",
         "priceDetails": "$79.00 (Max version $89.00, Duo version $119.00 — same product page, three configurations)",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://brodandtaylor.com/products/bread-steel",
         "availability": "Check stock at checkout",
         "bestFor": "Home bakers chasing bakery-style blistered crust and strong oven spring."
@@ -158,7 +183,7 @@
         "desc": "A lightweight anodized aluminum dome that traps steam over a loaf for oven spring and a crisp crust.",
         "priceLabel": "$85.00",
         "priceDetails": "$85.00 (Batard version also $85.00 — same product page, two shapes)",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://brodandtaylor.com/products/baking-shell-boule",
         "availability": "Check stock at checkout",
         "bestFor": "Bakers who want Dutch-oven steam without lifting heavy cast iron."
@@ -171,7 +196,7 @@
         "desc": "A purpose-built starter jar in durable borosilicate glass with inch and cm scales, a black marker ring to track rise, and a loose-fitting lid so the starter breathes.",
         "priceLabel": "$24.95",
         "priceDetails": "$24.95 (Small version $19.99 — same product page)",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://brodandtaylor.com/products/sourdough-starter-jar",
         "availability": "Check stock at checkout",
         "badge": "Stocking Stuffer",
@@ -185,7 +210,7 @@
         "desc": "Two round proofing baskets made from upcycled sugarcane pulp and bamboo.",
         "priceLabel": "$29.95",
         "priceDetails": "$29.95 (was $31.90)",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://brodandtaylor.com/products/banneton-boule-set-of-2",
         "availability": "Check stock at checkout",
         "badge": "Great for Beginners",
@@ -199,7 +224,7 @@
         "desc": "A scoring lame with a soft-grip balanced handle, a stainless blade holder that sets the razor close to the handle for control, 5 double-sided blades included, and a protective sheath.",
         "priceLabel": "$29.95",
         "priceDetails": "$29.95",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://brodandtaylor.com/products/bread-lame",
         "availability": "Check stock at checkout",
         "bestFor": "Crisp, controlled decorative scoring on artisan crusts."
@@ -214,7 +239,7 @@
         "priceLabel": "$39.95",
         "priceDetails": "$39.95",
         "priceSource": "https://brodandtaylor.com/products/banneton-mini-boule-set-of-4",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "availability": "Check stock at checkout"
       },
       {
@@ -227,7 +252,7 @@
         "priceLabel": "$34.95",
         "priceDetails": "$34.95",
         "priceSource": "https://brodandtaylor.com/products/banneton-large-batard-set-of-2",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "availability": "Check stock at checkout"
       }
     ],
@@ -247,10 +272,12 @@
         "desc": "Goldie warms your starter. Keep the included Cooling Puck in the freezer. If the light turns red above 82°F, set the frozen puck on the jar lid to cool the starter.",
         "priceLabel": "$149.95",
         "priceDetails": "$149.95",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://sourhouse.co/products/global-goldie-by-sourhouse-cooling-puck",
         "availability": "Check stock at checkout",
-        "code": "HBK26"
+        "code": "HBK26",
+        "bestFor": "Bakers whose starter stalls in a cold kitchen, or who want it ready on their schedule.",
+        "badge": "Henry's Pick"
       },
       {
         "slug": "doughbed",
@@ -260,10 +287,12 @@
         "desc": "A warming mat, glass dough bowl, and cork lid that gently warms dough to 75-82F during bulk proof, so proofing times stay consistent.",
         "priceLabel": "$279.95",
         "priceDetails": "$279.95",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://sourhouse.co/products/doughbed-by-sourhouse",
         "availability": "Check stock at checkout",
-        "code": "HBK26"
+        "code": "HBK26",
+        "bestFor": "Bakers who want bulk fermentation to finish on time, every time, all winter.",
+        "badge": "Splurge"
       },
       {
         "slug": "starter-jars",
@@ -273,10 +302,12 @@
         "desc": "Straight-sided glass starter jar with a silicone lid that closes all the way while the starter still breathes.",
         "priceLabel": "$23.95",
         "priceDetails": "$23.95",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://sourhouse.co/products/global-sourhouse-starter-jars-pint-or-quart",
         "availability": "Check stock at checkout",
-        "code": "HBK26"
+        "code": "HBK26",
+        "bestFor": "Any sourdough baker. Straight sides make the rise easy to read and the jar easy to scrape.",
+        "badge": "Under $25"
       },
       {
         "slug": "bread-blanket",
@@ -286,10 +317,12 @@
         "desc": "A 100% cotton muslin square (34 x 34 in laid flat) for wrapping a finished loaf, doubling as a picnic or potluck cloth.",
         "priceLabel": "$19.95",
         "priceDetails": "$19.95",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://sourhouse.co/products/bread-blanket-by-sourhouse",
         "availability": "Check stock at checkout",
-        "code": "HBK26"
+        "code": "HBK26",
+        "bestFor": "The friend who gifts loaves. Wrap the bread, and the blanket becomes part of the gift.",
+        "badge": "Under $25"
       },
       {
         "slug": "essential-bundle",
@@ -299,10 +332,12 @@
         "desc": "Goldie (with its Cooling Puck) + one Sourhouse Starter Jar (Pint or Quart).",
         "priceLabel": "From $148.95",
         "priceDetails": "from $148.95 (regular $173.90, Holiday Pricing)",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://sourhouse.co/products/goldie-jar-bundle-world-central-kitchen-benefit",
         "availability": "Check stock at checkout",
-        "code": "HBK26"
+        "code": "HBK26",
+        "bestFor": "A baker starting out with sourdough who needs the warmer and the jar together.",
+        "badge": "Best Value"
       },
       {
         "slug": "baking-on-your-schedule-bundle",
@@ -312,10 +347,11 @@
         "desc": "Goldie with its Cooling Puck, DoughBed (warming mat, glass dough bowl, and cork lid), and one Sourhouse Starter Jar (Pint or Quart).",
         "priceLabel": "From $368.95",
         "priceDetails": "from $368.95 (regular $453.85, Holiday Pricing)",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://sourhouse.co/products/baking-on-your-schedule-bundle-goldie-doughbed-starter-jar",
         "availability": "Check stock at checkout",
-        "code": "HBK26"
+        "code": "HBK26",
+        "bestFor": "The serious home baker who wants full control from starter to bulk proof."
       },
       {
         "slug": "big-bundle",
@@ -325,15 +361,32 @@
         "desc": "Goldie, Cooling Puck, both a Pint and a Quart Starter Jar, a gold Bread Blanket, and a US/Canada USB-to-wall adapter.",
         "priceLabel": "$174.95",
         "priceDetails": "$174.95 (regular $208.80, Holiday Pricing)",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://sourhouse.co/products/big-bundle-goldie-puck-pint-quart-goldie-blanket-adapter",
         "availability": "Check stock at checkout",
-        "code": "HBK26"
+        "code": "HBK26",
+        "bestFor": "The baker who keeps two starters going and gives bread away all season.",
+        "badge": "Holiday Price"
       }
     ],
     "logo": "/brand-logos/sour-house.webp",
     "promoCode": "HBK26",
-    "promoDetail": "10% off Sourhouse Goldie, DoughBed, and Starter Jars."
+    "promoDetail": "10% off Sourhouse Goldie, DoughBed, and Starter Jars.",
+    "curatorNote": "Curated by Henry Hunter, founder of Baking Great Bread at Home. Temperature decides how sourdough behaves, and Sourhouse built its whole line around that. If your baker fights a cold kitchen or a sluggish starter, start here.",
+    "faq": [
+      {
+        "q": "What does Goldie actually do?",
+        "a": "Goldie holds your starter at a steady warm temperature, so it peaks when you plan instead of when the kitchen allows. The included Cooling Puck slows it down when the room runs hot."
+      },
+      {
+        "q": "Goldie or DoughBed: which should I gift?",
+        "a": "Goldie is for the starter. DoughBed is for the dough during bulk proof. If they have neither, start with Goldie or the Essential Bundle. The Baking On Your Schedule Bundle covers both."
+      },
+      {
+        "q": "How do I get the discount?",
+        "a": "Use code HBK26 at checkout for 10% off eligible Sourhouse items. Bundles already show Sourhouse's holiday prices."
+      }
+    ]
   },
   {
     "id": "holland-bowl",
@@ -348,10 +401,11 @@
         "desc": "A mid-size bowl that works for a family salad one night and a snack bowl the next.",
         "priceLabel": "From $58.50",
         "priceDetails": "from $58.50 (Beech $58.50; Cherry $77.00; Maple $77.00; Ebonized Cherry $85.00; Walnut $91.00)",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://hollandbowlmill.com/products/10-inch-wooden-bowl",
         "availability": "Check stock at checkout",
-        "code": "Henry"
+        "code": "Henry",
+        "bestFor": "Small batches, salads, and a first wooden bowl."
       },
       {
         "slug": "12-inch-wooden-bowl",
@@ -361,10 +415,11 @@
         "desc": "A family-size bowl, substantial without being unwieldy.",
         "priceLabel": "From $70.00",
         "priceDetails": "from $70.00 (Beech $70.00; Cherry $91.50; Maple $91.50; Ebonized Cherry $102.50; Walnut $108.50)",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://hollandbowlmill.com/products/12-inch-wooden-bowl",
         "availability": "Check stock at checkout",
-        "code": "Henry"
+        "code": "Henry",
+        "bestFor": "Families who want an everyday bowl that still handles a single loaf of dough."
       },
       {
         "slug": "15-inch-wooden-bowl",
@@ -374,10 +429,12 @@
         "desc": "The one for bakers.",
         "priceLabel": "From $154.00",
         "priceDetails": "from $154.00 (Beech $154.00; Cherry $182.50; Maple $182.50; Ebonized Cherry $195.00; Walnut $215.00)",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://hollandbowlmill.com/products/15-inch-wooden-bowl",
         "availability": "Check stock at checkout",
-        "code": "Henry"
+        "code": "Henry",
+        "bestFor": "Bakers. Room to mix and knead a full batch of dough by hand.",
+        "badge": "Henry's Pick"
       },
       {
         "slug": "17-inch-wooden-bowl",
@@ -387,10 +444,11 @@
         "desc": "The \"Ultimate Entertaining Bowl\" — big salad for a crowd, fruit bowl, centerpiece.",
         "priceLabel": "From $250.00",
         "priceDetails": "from $250.00 (Beech $250.00; Cherry $345.00; Maple $345.00; Ebonized Cherry $385.00; Walnut $415.00)",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://hollandbowlmill.com/products/17-inch-wooden-bowl",
         "availability": "Check stock at checkout",
-        "code": "Henry"
+        "code": "Henry",
+        "bestFor": "Hosts who need a big serving bowl for a crowd."
       },
       {
         "slug": "20-inch-wooden-bowl",
@@ -400,10 +458,12 @@
         "desc": "Their largest bowl, made for the table that needs a true centerpiece.",
         "priceLabel": "From $420.00",
         "priceDetails": "from $420.00 (Beech $420.00; Cherry $495.00; Maple $495.00; Ebonized Cherry $525.00; Walnut $547.50)",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://hollandbowlmill.com/products/20-inch-wooden-bowl",
         "availability": "Check stock at checkout",
-        "code": "Henry"
+        "code": "Henry",
+        "bestFor": "An heirloom centerpiece for the family table.",
+        "badge": "Splurge"
       },
       {
         "slug": "15-inch-four-corners-wooden-bowl",
@@ -413,15 +473,31 @@
         "desc": "A modern, sleek bowl with squared corners and an undulating rim.",
         "priceLabel": "$115.00",
         "priceDetails": "$115.00 (Cherry); $127.50 (Walnut). Only two woods on this one.",
-        "priceChecked": "2026-11-17",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://hollandbowlmill.com/products/15-inch-four-corners-wooden-bowl",
         "availability": "Check stock at checkout",
-        "code": "Henry"
+        "code": "Henry",
+        "bestFor": "Modern kitchens and anyone who wants a serving piece that stands out."
       }
     ],
     "logo": "/brand-logos/holland-bowl.webp",
     "promoCode": "Henry",
-    "promoDetail": "Confirm active Shopify affiliate tracking & code with Holland Bowl Mill."
+    "promoDetail": "Confirm active Shopify affiliate tracking & code with Holland Bowl Mill.",
+    "curatorNote": "Curated by Henry Hunter, founder of Baking Great Bread at Home. Holland Bowl Mill turns single pieces of hardwood into bowls that last generations. If you're shopping for a baker who mixes by hand, start with the 15 inch.",
+    "faq": [
+      {
+        "q": "What size wooden bowl is best for bread dough?",
+        "a": "The 15 inch. It holds a full batch with room to work the dough by hand. The 12 inch handles a single loaf."
+      },
+      {
+        "q": "How do I care for a wooden bowl?",
+        "a": "Hand wash with warm water, dry it right away, and oil it now and then with a food-safe oil. Never soak it or put it in the dishwasher."
+      },
+      {
+        "q": "Is there a discount?",
+        "a": "Use code Henry for 15% off your first order. One use per customer."
+      }
+    ]
   },
   {
     "id": "nutrimill",
@@ -436,10 +512,12 @@
         "desc": "The flagship. A 500-watt bottom-drive stand mixer with a 6.5-quart bowl that kneads up to 14 one-pound loaves per batch.",
         "priceLabel": "$399.00",
         "priceDetails": "$399.00 Black Friday sale (regular $499.00, save $100.00). In stock. 545 reviews, 4.85/5.",
-        "priceChecked": "2026-11-18",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://nutrimill.com/products/white-universal-plus",
         "availability": "Check stock at checkout",
-        "code": "ACADEMY26"
+        "code": "ACADEMY26",
+        "bestFor": "Bakers who make big batches and want a mixer that kneads heavy whole grain dough without strain.",
+        "badge": "Henry's Pick"
       },
       {
         "slug": "black-bosch-universal-plus-mixer",
@@ -449,10 +527,11 @@
         "desc": "The same Universal Plus with a black base and a 6.5-quart brushed stainless steel bowl instead of plastic. Same 500-watt bottom-drive motor, 4 speeds plus pulse, 20+ optional attachments.",
         "priceLabel": "$549.00",
         "priceDetails": "$549.00 (regular $599.00, save $50.00). In stock. 200 reviews, 4.75/5.",
-        "priceChecked": "2026-11-18",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://nutrimill.com/products/black-bosch-universal-plus-mixer",
         "availability": "Check stock at checkout",
-        "code": "ACADEMY26"
+        "code": "ACADEMY26",
+        "bestFor": "The same workhorse with a stainless bowl, for bakers who want the premium finish."
       },
       {
         "slug": "artiste-mixer",
@@ -462,10 +541,12 @@
         "desc": "NutriMill's own bottom-drive mixer. 500 watts, 6.5-quart bowl, up to 8 pounds of dough per batch.",
         "priceLabel": "$219.00",
         "priceDetails": "$219.00 Black Friday sale (regular $299.00, save $80.00). In stock. 527 reviews, 4.80/5.",
-        "priceChecked": "2026-11-18",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://nutrimill.com/products/artiste-mixer",
         "availability": "Check stock at checkout",
-        "code": "ACADEMY26"
+        "code": "ACADEMY26",
+        "bestFor": "A first bottom-drive mixer at a friendlier price.",
+        "badge": "Best Value"
       },
       {
         "slug": "classic-grain-mill",
@@ -475,10 +556,11 @@
         "desc": "The best-selling grain mill for over 25 years, redesigned for 2026. 1200-watt motor, stainless steel impact milling heads, 12-cup hopper, 20-cup flour canister, from super fine pastry flour to coarse meal.",
         "priceLabel": "$349.00",
         "priceDetails": "$349.00. Out of stock — \"New Model Coming Soon\" on the site. Launches Thu Nov 19, 2026 at 9:00 AM MT. ACADEMY26 takes $20 off it.",
-        "priceChecked": "2026-11-18",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://nutrimill.com/products/classic-grain-mill",
         "availability": "Coming soon",
-        "code": "ACADEMY26"
+        "code": "ACADEMY26",
+        "bestFor": "The home miller who wants fast, fine flour and a mill with a long track record."
       },
       {
         "slug": "impact-grain-mill",
@@ -488,10 +570,11 @@
         "desc": "The compact high-speed impact mill, built for bread flour. 1200-watt motor, stainless steel impact milling heads, 7-cup grain hopper, up to 11 cups of flour per batch.",
         "priceLabel": "$199.00",
         "priceDetails": "$199.00 Black Friday sale (regular $249.00, save $50.00). In stock. 150 reviews, 4.88/5. Free shipping.",
-        "priceChecked": "2026-11-18",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://nutrimill.com/products/impact-grain-mill",
         "availability": "Check stock at checkout",
-        "code": "ACADEMY26"
+        "code": "ACADEMY26",
+        "bestFor": "Bakers with a small kitchen who want fresh bread flour without the big footprint."
       },
       {
         "slug": "harvest-grain-mill",
@@ -501,10 +584,12 @@
         "desc": "The stone mill. Renewable bamboo housing with near diamond-hard corundum stones, 450-watt motor with auto-shutoff thermal protection, patented texture control knob from cracked grain to ultra-fine flour.",
         "priceLabel": "$499.00",
         "priceDetails": "$499.00. In stock on the live product page Nov 18 (see flag below). 480 reviews, 4.81/5.",
-        "priceChecked": "2026-11-18",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://nutrimill.com/products/harvest-grain-mill",
         "availability": "Check stock at checkout",
-        "code": "ACADEMY26"
+        "code": "ACADEMY26",
+        "bestFor": "Bakers who want stone-ground flour and a mill that looks good on the counter.",
+        "badge": "Splurge"
       },
       {
         "slug": "flourish-grain-mill",
@@ -514,10 +599,11 @@
         "desc": "The new compact stone mill. Durable corundum stones on CushionFlex stone suspension, driven by a DC motor with thermal protection.",
         "priceLabel": "$399.00",
         "priceDetails": "$399.00. Out of stock — \"New Mill Coming Soon\" on the site. No launch date shown on the site.",
-        "priceChecked": "2026-11-18",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://nutrimill.com/products/flourish-grain-mill",
         "availability": "Coming soon",
-        "code": "ACADEMY26"
+        "code": "ACADEMY26",
+        "bestFor": "Stone milling in a compact, quiet package."
       },
       {
         "slug": "bosch-bakers-pack-attachment-set",
@@ -527,10 +613,11 @@
         "desc": "The attachment set for the Bosch Universal Plus: Cookie Paddles, Cake Paddles, Bowl Scraper, Metal Whip Drive, plus cookie sheet liners and a 40-piece icing kit. The gift-ready add-on for anyone buying the Bosch.",
         "priceLabel": "$99.00",
         "priceDetails": "$99.00 (regular $135.00, save $36.00). In stock. 122 reviews, 4.81/5.",
-        "priceChecked": "2026-11-18",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://nutrimill.com/products/bosch-bakers-pack-attachment-set",
         "availability": "Check stock at checkout",
-        "code": "ACADEMY26"
+        "code": "ACADEMY26",
+        "bestFor": "Anyone who already owns the Universal Plus and wants cookies and cakes too."
       },
       {
         "slug": "artiste-bakers-pack-attachment-set",
@@ -540,15 +627,31 @@
         "desc": "The attachment set for the Artiste: Cookie Paddles, Cake Paddles, Bowl Scraper, plus cookie sheet liners and a 40-piece icing kit. Same contents as the Bosch bundle except no Metal Whip Drive, because the Artiste already includes one.",
         "priceLabel": "$94.00",
         "priceDetails": "$94.00 (regular $125.00, save $31.00). In stock. 59 reviews, 4.78/5.",
-        "priceChecked": "2026-11-18",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://nutrimill.com/products/artiste-bakers-pack-attachment-set",
         "availability": "Check stock at checkout",
-        "code": "ACADEMY26"
+        "code": "ACADEMY26",
+        "bestFor": "Artiste owners who want the full baking kit."
       }
     ],
     "logo": "/brand-logos/nutrimill.webp",
     "promoCode": "ACADEMY26",
-    "promoDetail": "$20 off — stacks on top of Black Friday sale prices (confirmed by NutriMill)."
+    "promoDetail": "$20 off — stacks on top of Black Friday sale prices (confirmed by NutriMill).",
+    "curatorNote": "Curated by Henry Hunter, founder of Baking Great Bread at Home. Fresh flour changes the flavor of everything you bake, and a good mixer makes whole grain doughs easy. If your baker is curious about milling, start here.",
+    "faq": [
+      {
+        "q": "Impact mill or stone mill: which should I gift?",
+        "a": "Impact mills like the Classic and Impact are fast and make fine bread flour. Stone mills like the Harvest and Flourish run slower and cooler and give a classic stone-ground texture. For bread, either works. Speed favors impact, character favors stone."
+      },
+      {
+        "q": "Do I need a special mixer for whole grain dough?",
+        "a": "Whole grain dough is heavy. A bottom-drive mixer like the Bosch Universal Plus or Artiste handles it without the strain that tilt-head mixers feel."
+      },
+      {
+        "q": "How does the ACADEMY26 code work?",
+        "a": "ACADEMY26 takes $20 off and stacks on top of NutriMill's sale prices."
+      }
+    ]
   },
   {
     "id": "grand-teton",
@@ -566,7 +669,9 @@
         "priceChecked": "2026-11-18",
         "priceSource": "https://www.ancientgrains.com/shop/einkorn/organic-einkorn-berries-in-paper-bags",
         "availability": "Check stock at checkout",
-        "code": "crustandcrumb"
+        "code": "crustandcrumb",
+        "bestFor": "Home millers who want the oldest wheat and its rich, golden flavor.",
+        "badge": "Henry's Pick"
       },
       {
         "slug": "organic-spelt-berries-in-paper-bags",
@@ -579,7 +684,8 @@
         "priceChecked": "2026-11-18",
         "priceSource": "https://www.ancientgrains.com/shop/spelt/organic-spelt-berries-in-paper-bags",
         "availability": "Check stock at checkout",
-        "code": "crustandcrumb"
+        "code": "crustandcrumb",
+        "bestFor": "Bakers who want a nutty, slightly sweet loaf that's easy to work with."
       },
       {
         "slug": "organic-emmer-berries-in-paper-bags",
@@ -592,7 +698,8 @@
         "priceChecked": "2026-11-18",
         "priceSource": "https://www.ancientgrains.com/shop/emmer/organic-emmer-berries-in-paper-bags",
         "availability": "Check stock at checkout",
-        "code": "crustandcrumb"
+        "code": "crustandcrumb",
+        "bestFor": "Bakers and cooks who want grain for bread and farro for the dinner table."
       },
       {
         "slug": "organic-khorasan-berries-in-paper-bags",
@@ -605,7 +712,8 @@
         "priceChecked": "2026-11-18",
         "priceSource": "https://www.ancientgrains.com/shop/khorasan/organic-khorasan-berries-in-paper-bags",
         "availability": "Check stock at checkout",
-        "code": "crustandcrumb"
+        "code": "crustandcrumb",
+        "bestFor": "Adventurous bakers who want a buttery, golden ancient grain."
       },
       {
         "slug": "hard-white-wheat-berries-in-paper-bags",
@@ -618,7 +726,9 @@
         "priceChecked": "2026-11-18",
         "priceSource": "https://www.ancientgrains.com/shop/hard-white-wheat/hard-white-wheat-berries-in-paper-bags",
         "availability": "Check stock at checkout",
-        "code": "crustandcrumb"
+        "code": "crustandcrumb",
+        "bestFor": "New home millers who want light, soft whole wheat loaves.",
+        "badge": "Best for Beginners"
       },
       {
         "slug": "hard-red-spring-wheat-berries-in-paper-bags",
@@ -631,7 +741,8 @@
         "priceChecked": "2026-11-18",
         "priceSource": "https://www.ancientgrains.com/shop/hard-red-wheat/hard-red-spring-wheat-berries-in-paper-bags",
         "availability": "Check stock at checkout",
-        "code": "crustandcrumb"
+        "code": "crustandcrumb",
+        "bestFor": "Bread and pizza bakers who need strong gluten and good rise."
       },
       {
         "slug": "organic-soft-white-wheat-berries-in-paper-bags",
@@ -644,7 +755,8 @@
         "priceChecked": "2026-11-18",
         "priceSource": "https://www.ancientgrains.com/shop/soft-white-wheat/organic-soft-white-wheat-berries-in-paper-bags",
         "availability": "Check stock at checkout",
-        "code": "crustandcrumb"
+        "code": "crustandcrumb",
+        "bestFor": "Pastry, cookies, and tender baked goods."
       },
       {
         "slug": "organic-rye-berries-in-paper-bags",
@@ -657,7 +769,8 @@
         "priceChecked": "2026-11-18",
         "priceSource": "https://www.ancientgrains.com/shop/rye/organic-rye-berries-in-paper-bags",
         "availability": "Check stock at checkout",
-        "code": "crustandcrumb"
+        "code": "crustandcrumb",
+        "bestFor": "Rye and pumpernickel fans who want fresh rye flour."
       },
       {
         "slug": "organic-all-purpose-einkorn-flour-in-paper-bags",
@@ -670,7 +783,8 @@
         "priceChecked": "2026-11-18",
         "priceSource": "https://www.ancientgrains.com/shop/einkorn/organic-all-purpose-einkorn-flour-in-paper-bags",
         "availability": "Check stock at checkout",
-        "code": "crustandcrumb"
+        "code": "crustandcrumb",
+        "bestFor": "Bakers without a mill who want to try einkorn in everyday recipes."
       },
       {
         "slug": "organic-whole-grain-einkorn-flour-in-paper-bags",
@@ -683,7 +797,8 @@
         "priceChecked": "2026-11-18",
         "priceSource": "https://www.ancientgrains.com/shop/einkorn/organic-whole-grain-einkorn-flour-in-paper-bags",
         "availability": "Check stock at checkout",
-        "code": "crustandcrumb"
+        "code": "crustandcrumb",
+        "bestFor": "Whole grain bakers without a mill who want flour milled to order."
       },
       {
         "slug": "organic-einkorn-fusilli",
@@ -696,12 +811,29 @@
         "priceChecked": "2026-11-18",
         "priceSource": "https://www.ancientgrains.com/shop/einkorn/pasta/organic-einkorn-fusilli",
         "availability": "Check stock at checkout",
-        "code": "crustandcrumb"
+        "code": "crustandcrumb",
+        "bestFor": "The cook in the family. An easy add-on to any grain gift.",
+        "badge": "Under $20"
       }
     ],
     "logo": "/brand-logos/grand-teton.webp",
     "promoCode": "crustandcrumb",
-    "promoDetail": "10% off your first order through December 31, 2026."
+    "promoDetail": "10% off your first order through December 31, 2026.",
+    "curatorNote": "Curated by Henry Hunter, founder of Baking Great Bread at Home. Grand Teton is a family farm and mill in Idaho, and their ancient grains are what I mill at home. If your baker just got a grain mill, start here.",
+    "faq": [
+      {
+        "q": "Which grain should a new home miller start with?",
+        "a": "Hard white wheat. It mills easily and bakes into a light, mild whole wheat loaf. Once they're comfortable, einkorn and spelt add flavor."
+      },
+      {
+        "q": "Can I bake with einkorn like regular flour?",
+        "a": "Mostly. Einkorn absorbs less water and has weaker gluten, so use a little less liquid and expect a softer dough. The flavor is worth it."
+      },
+      {
+        "q": "Is there a discount?",
+        "a": "Use code crustandcrumb for 10% off your first order through December 31, 2026."
+      }
+    ]
   },
   {
     "id": "modkitchn",
@@ -716,10 +848,12 @@
         "desc": "The flagship. Two reusable bread bags (Red and Greige) with a moisture-controlling liner, waterproof zipper, and roll-top closure.",
         "priceLabel": "$29.99",
         "priceDetails": "$29.99 for the set of 2. In stock (added to cart successfully Nov 18).",
-        "priceChecked": "2026-11-18",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://modkitchn.com/products/fresh-bread-storage-bags",
         "availability": "Check stock at checkout",
-        "code": "BAKINGGREATBREAD"
+        "code": "BAKINGGREATBREAD",
+        "bestFor": "Anyone who bakes or buys good bread and hates seeing it go stale.",
+        "badge": "Henry's Pick"
       },
       {
         "slug": "special-edition-holiday-bread-bags",
@@ -729,10 +863,12 @@
         "desc": "The same premium bags as above, dressed in a limited-edition winter design. Set of 2, each fits round, oval, or sandwich loaves.",
         "priceLabel": "$29.99",
         "priceDetails": "$29.99 for the set of 2. In stock (added to cart successfully Nov 18).",
-        "priceChecked": "2026-11-18",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://modkitchn.com/products/special-edition-holiday-bread-bags",
         "availability": "Check stock at checkout",
-        "code": "BAKINGGREATBREAD"
+        "code": "BAKINGGREATBREAD",
+        "bestFor": "Gift loaves. Bake the bread, bag it, and the bag is part of the gift.",
+        "badge": "Holiday Edition"
       },
       {
         "slug": "oval-silicone-bread-slings",
@@ -742,10 +878,12 @@
         "desc": "Oval silicone bread slings for moving dough safely from counter to Dutch oven. SureHold wide-grip handles, BakeShield Technology for a golden crust without burnt loaves, food-grade BPA-free silicone, non-stick, oven safe to 480 degrees, dishwasher safe (upper rack).",
         "priceLabel": "From $15.99",
         "priceDetails": "Small $15.99, Large $17.99. Both in stock (added to cart successfully Nov 18).",
-        "priceChecked": "2026-11-18",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://modkitchn.com/products/oval-silicone-bread-slings",
         "availability": "Check stock at checkout",
-        "code": "BAKINGGREATBREAD"
+        "code": "BAKINGGREATBREAD",
+        "bestFor": "Batard bakers who want a safe way to load a hot oval Dutch oven.",
+        "badge": "Under $20"
       },
       {
         "slug": "silicone-bread-sling",
@@ -755,14 +893,31 @@
         "desc": "Round silicone bread sling for boules and artisan loaves. Same SureHold handles and BakeShield Technology as the oval version, food-grade BPA-free silicone, non-stick, oven safe to 480 degrees, dishwasher safe (upper rack).",
         "priceLabel": "From $16.99",
         "priceDetails": "Single $16.99, 2-Pack $24.99. Both in stock (added to cart successfully Nov 18).",
-        "priceChecked": "2026-11-18",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://modkitchn.com/products/silicone-bread-sling",
         "availability": "Check stock at checkout",
-        "code": "BAKINGGREATBREAD"
+        "code": "BAKINGGREATBREAD",
+        "bestFor": "Boule bakers tired of burned knuckles and parchment.",
+        "badge": "Under $20"
       }
     ],
     "logo": "/brand-logos/modkitchn.webp",
     "promoCode": "BAKINGGREATBREAD",
-    "promoDetail": "10% off ModKitchn bread slings and reusable bags."
+    "promoDetail": "10% off ModKitchn bread slings and reusable bags.",
+    "curatorNote": "Curated by Henry Hunter, founder of Baking Great Bread at Home. ModKitchn solves two small problems every bread baker has: getting dough into a hot Dutch oven and keeping the loaf fresh after. If you need an easy gift under $30, start here.",
+    "faq": [
+      {
+        "q": "What is a bread sling?",
+        "a": "A silicone sling with handles. You set the dough on it and lower it into a hot Dutch oven without touching the pot. It replaces parchment and you reuse it every bake."
+      },
+      {
+        "q": "Round or oval sling?",
+        "a": "Match the pot and the loaf. Round for a round Dutch oven and boules, oval for an oval pot and batards."
+      },
+      {
+        "q": "How long does bread stay fresh in the storage bags?",
+        "a": "Longer than on the counter or in plastic. The liner manages moisture so the crust stays better and the crumb doesn't dry out as fast."
+      }
+    ]
   }
 ]
