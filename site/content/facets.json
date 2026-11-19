@@ -34,8 +34,8 @@
       "pinnedPick": null,
       "topPicks": [
         {
-          "name": "NutriMill Bosch Baker's Bundle",
-          "pitch": "If I were starting over, this is the machine I'd buy. It mixes stiff whole grain dough without straining, it mills your own flour, and it keeps up with a market table. Nothing else in this guide does all three."
+          "name": "Bosch Universal Plus Mixer — White",
+          "pitch": "A mixer for the baker who makes several loaves at a time. The wide bowl leaves room to see the dough come together."
         },
         {
           "name": "NutriMill Harvest Grain Mill",
@@ -46,8 +46,8 @@
           "pitch": "Cold kitchens kill more starters than any other mistake. This holds the temperature for you, around the clock, and your feeding schedule finally behaves."
         },
         {
-          "name": "Poco Lame",
-          "pitch": "The lame I hand to nervous new bakers. Small, forgiving, under twenty dollars, and it gets used every single bake."
+          "name": "Poco Lame (Walnut & Maple)",
+          "pitch": "A small scoring tool for a baker learning to guide the blade. Easy to tuck into a Christmas stocking."
         }
       ]
     },
@@ -67,13 +67,13 @@
       "title": "Lames and Shaping Tools for Bread Bakers",
       "metaDescription": "Lames, bench knives, whisks and mats. The tools you hold in your hands, from makers who care how they feel.",
       "intro": "Scoring is where a loaf stops being dough and starts being yours. A good lame is not about the blade, it's about the handle and the balance and whether you trust it enough to commit to the cut. These are the ones worth holding.",
-      "pinnedPick": "Goose Lame"
+      "pinnedPick": "Goose Lame (Black Walnut)"
     },
     "/gifts/starter-care": {
       "title": "Sourdough Starter Care Gifts",
-      "metaDescription": "Warmers, jars, dehydrators and a dried starter that wakes up in a few days. Keep a starter alive through a cold kitchen.",
+      "metaDescription": "Starter jars, warmers and sourdough tools for a home baker’s feeding routine.",
       "intro": "A starter is a pet that eats flour and forgives almost nothing about temperature. Most of what goes wrong in sourdough traces back to a starter that was too cold, too neglected, or too new. This is what keeps one healthy.",
-      "pinnedPick": "Vitale Sourdough Starter (Dehydrated)"
+      "pinnedPick": "Starter Jars (Pint or Quart)"
     },
     "/gifts/milling-flour": {
       "title": "Grain Mills and Flour for Home Bakers",
@@ -103,7 +103,7 @@
       "title": "Gifts for New Sourdough Bakers",
       "metaDescription": "For someone who just started, or is about to. Nothing here assumes they already own a shelf of specialty gear.",
       "intro": "Shopping for someone who just caught the bug. The trap is buying the thing an experienced baker would want, which usually sits in a drawer. Start with what gets used every single bake: something to mix with, something to score with, something to bake in.",
-      "pinnedPick": "Poco Lame"
+      "pinnedPick": "Poco Lame (Walnut & Maple)"
     },
     "/gifts/serious-bakers": {
       "title": "Gifts for Serious Bread Bakers",
@@ -120,14 +120,14 @@
     "/gifts/under-25": {
       "title": "Bread Baking Gifts Under $25",
       "metaDescription": "Real tools under twenty-five dollars. Stocking stuffers that get used instead of drawered.",
-      "intro": "The best gift in this whole guide might be a fourteen dollar bench knife. Small tools get used every bake, which is more than you can say for most expensive ones. Nothing here is filler.",
-      "pinnedPick": "Poco Lame"
+      "intro": "The best gift in this whole guide might be a bench knife. Small tools get used every bake, which is more than you can say for most expensive ones. Nothing here is filler.",
+      "pinnedPick": "High Capacity Baking Scale"
     },
     "/gifts/25-75": {
       "title": "Bread Baking Gifts $25 to $75",
       "metaDescription": "The sweet spot. Serious tools at a price that doesn't require a conversation first.",
       "intro": "This is where most of the good stuff lives. Enough money to buy something made properly, not so much that you need to check with anyone first. If you only look at one price band, make it this one.",
-      "pinnedPick": "Baker’s Math Kitchen Scale"
+      "pinnedPick": "Goose Lame (Black Walnut)"
     },
     "/gifts/75-150": {
       "title": "Bread Baking Gifts $75 to $150",
