@@ -19,10 +19,30 @@ const ORIGIN = new URL(BASE_URL).origin;
 
 // Parse content routes out of src/App.tsx: every <Route path="..."> that
 // starts with "/", excluding the bare root, /admin/* and the catch-all.
+// Also excluded, because a sitemap must only list addresses Google can
+// actually index:
+//   - parameterized routes (/makers/:makerId) — a literal ":makerId" URL 404s
+//   - redirect routes (<Navigate ...>) — they forward to another page
+//   - pages that declare noindex — telling Google to skip them, then
+//     handing them to Google in a sitemap, is a contradiction
+// Trailing slashes are normalized so "/x" and "/x/" become one entry.
 const appTsx = readFileSync(join(root, "src", "App.tsx"), "utf8");
-const spaRoutes = [...appTsx.matchAll(/<Route path="([^"]+)"/g)]
-  .map((m) => m[1])
-  .filter((p) => p.startsWith("/") && p !== "/" && !p.startsWith("/admin") && !p.includes("*"));
+const routeRe = /<Route\s+path="([^"]+)"\s+element=\{<(\w+)/g;
+const spaRoutes = [];
+for (const m of appTsx.matchAll(routeRe)) {
+  const [path, component] = [m[1], m[2]];
+  if (!path.startsWith("/") || path === "/" || path.startsWith("/admin") || path.includes("*")) continue;
+  if (path.includes(":")) continue;
+  if (component === "Navigate") continue;
+  const pageFile = join(root, "src", "pages", `${component}.tsx`);
+  try {
+    if (readFileSync(pageFile, "utf8").includes("noindex")) continue;
+  } catch {
+    // Component lives somewhere else; keep the route rather than lose it.
+  }
+  const normalized = path.replace(/\/+$/, "");
+  if (!spaRoutes.includes(normalized)) spaRoutes.push(normalized);
+}
 
 if (spaRoutes.length === 0) {
   console.error("build-sitemap: no SPA content routes found in src/App.tsx — parsing broke");
@@ -40,7 +60,9 @@ const makers = JSON.parse(readFileSync(join(root, "src/data/makers.json"), "utf8
 const locs = [
   ...makers.map(m => `${ORIGIN}/makers/${m.id}/`),
   `${ORIGIN}/`,
-  ...spaRoutes.map((r) => `${ORIGIN}${r}/`),
+  // No trailing slash: each of these pages emits its own canonical without
+  // one (see SeoPage.tsx), and a sitemap entry must be that exact address.
+  ...spaRoutes.map((r) => `${ORIGIN}${r}`),
   `${BASE_URL}/`,
   ...categories.map((c) => `${BASE_URL}/${slugify(c)}/`),
   ...audiences.map((a) => `${BASE_URL}/${slugify(a)}/`),

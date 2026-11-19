@@ -73,6 +73,41 @@ for (const want of [`${SITE_ORIGIN}/gifts/`, ...facetDirs.map((d) => `${SITE_ORI
   if (!locs.includes(want)) fail(`dist/sitemap.xml is missing <loc> ${want}`);
 }
 
+// A sitemap must only list addresses Google can index. These are the
+// mistakes that shipped once already and cost crawl errors.
+const badParam = locs.filter((l) => l.includes("/:"));
+if (badParam.length) fail(`dist/sitemap.xml lists parameterized routes: ${badParam.join(", ")}`);
+const badSlash = locs.filter((l) => l.includes("//", l.indexOf("//") + 2));
+if (badSlash.length) fail(`dist/sitemap.xml lists double-slash URLs: ${badSlash.join(", ")}`);
+const dupes = locs.filter((l, i) => locs.indexOf(l) !== i);
+if (dupes.length) fail(`dist/sitemap.xml lists duplicate URLs: ${[...new Set(dupes)].join(", ")}`);
+for (const banned of ["/saved-gifts", "/bread-baker-holiday-gift-guide-2025", "/admin"]) {
+  if (locs.some((l) => l.includes(banned))) {
+    fail(`dist/sitemap.xml lists a page that is noindex or a redirect: ${banned}`);
+  }
+}
+
+// Every sitemap entry must be the exact address the page names as its own
+// canonical, or Google reads the two as duplicates. The SPA content pages
+// canonical WITHOUT a trailing slash; maker and gift pages canonical WITH one.
+const SPA_CANONICALS = [
+  "/academy-gift-certificate",
+  "/sourdough-starter-care-guide",
+  "/sourdough-starter-troubleshooting",
+  "/fix-gummy-dense-sourdough",
+  "/sourdough-tools-and-supplies",
+  "/essential-baking-tools",
+  "/how-to-wrap-sourdough-as-a-gift",
+];
+for (const p of SPA_CANONICALS) {
+  if (!locs.includes(`${SITE_ORIGIN}${p}`)) {
+    fail(`dist/sitemap.xml is missing the canonical form ${SITE_ORIGIN}${p}`);
+  }
+  if (locs.includes(`${SITE_ORIGIN}${p}/`)) {
+    fail(`dist/sitemap.xml lists ${p} with a trailing slash, but the page canonicals without one`);
+  }
+}
+
 // The cheap catch-all: nothing that ships may LINK to the dead host.
 // Match actual URLs (https://x.lovable.app/..., //lovable.app/...), not the
 // bare string. The auto-generated preview-auth code (previewAuthStorage.ts)
