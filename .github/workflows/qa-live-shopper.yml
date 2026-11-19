@@ -1,0 +1,65 @@
+name: Check live holiday shopping paths
+on:
+  push:
+    branches: [qa/live-nov19-shopping]
+permissions: {}
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Run shopper checks against production
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/guide-check"
+          cd "$RUNNER_TEMP/guide-check"
+          npm install --no-audit --no-fund playwright@1.56.1
+          npx playwright install --with-deps chromium
+          cat > check.mjs <<'QA'
+          import assert from "node:assert/strict";
+          import {chromium} from "playwright";
+          
+          const browser = await chromium.launch({args: ["--no-sandbox"]});
+          try {
+            const page = await browser.newPage({reducedMotion: "reduce"});
+            const origin = "https://gifts.bakinggreatbread.blog";
+            await page.goto(origin, {waitUntil: "domcontentloaded"});
+            const search = page.getByRole("searchbox", {name: "Search gifts by product or maker"});
+            await search.waitFor();
+            for (const width of [390, 768, 1024, 1440]) {
+              await page.setViewportSize({width, height: 880});
+              const actual = await page.evaluate(() => document.documentElement.scrollWidth);
+              assert.ok(actual <= width, `Page is ${actual}px wide in a ${width}px viewport`);
+              console.log(`Layout fits at ${width}px`);
+            }
+            await page.setViewportSize({width: 390, height: 844});
+            await page.getByRole("button", {name: "Find a gift", exact: true}).click();
+            const dialog = page.getByRole("dialog");
+            for (const name of ["A new baker", "Under $25", "Starter Care", "Stocking stuffer"])
+              await dialog.getByRole("button", {name, exact: true}).click();
+            await dialog.getByRole("link").first().waitFor();
+            const results = await dialog.getByRole("link").allInnerTexts();
+            assert.ok(results.some(s => s.includes("Starter Jars") && s.includes("$23.95")));
+            assert.ok(results.every(s => !/Vitale|Grinder/i.test(s)));
+            assert.ok(results.every(s => Number(s.match(/\$([\d.]+)/)?.[1]) < 25));
+            console.log("Finder results:", results.map(x => x.replaceAll("\n", " ")));
+            await dialog.getByRole("button", {name:"Done", exact:true}).click();
+            for (const query of ["High Capacity Baking Scale", "Baker's Math Kitchen Scale", "Organic Spelt Berries"]) {
+              await search.fill(query);
+              const result = page.locator(".holiday-product-card").filter({has:page.getByRole("heading", {name: query.includes("Scale") ? "High Capacity Baking Scale" : /Organic Spelt Berries/})});
+              await result.first().waitFor();
+              assert.equal(await result.count(), 1);
+              console.log("Search passed:", query);
+            }
+            for (const query of ["Vitale Sourdough Starter", "Spice & Coffee Grinder"]) {
+              await search.fill(query);
+              await page.getByText("No gifts match your filters.").waitFor();
+            }
+            await page.goto(origin + "/academy-gift-certificate/", {waitUntil:"domcontentloaded"});
+            const order = page.getByRole("link", {name:/order your gift by email/i});
+            assert.match(await order.getAttribute("href"), /^mailto:/);
+            console.log("Certificate email order path passed");
+          } finally { await browser.close(); }
+          
+          QA
+          node check.mjs
