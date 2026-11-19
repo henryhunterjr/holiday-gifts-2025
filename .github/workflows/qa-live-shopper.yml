@@ -62,3 +62,25 @@ jobs:
           
           QA
           node check.mjs
+  inventory:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - name: Read public Sourhouse inventory by variant
+        shell: bash
+        run: |
+          node --input-type=module <<'CHECK'
+          const urls = [["goldie","https://sourhouse.co/products/global-goldie-by-sourhouse-cooling-puck"],["doughbed","https://sourhouse.co/products/doughbed-by-sourhouse"],["starter-jars","https://sourhouse.co/products/global-sourhouse-starter-jars-pint-or-quart"],["bread-blanket","https://sourhouse.co/products/bread-blanket-by-sourhouse"],["essential-bundle","https://sourhouse.co/products/goldie-jar-bundle-world-central-kitchen-benefit"],["baking-on-your-schedule-bundle","https://sourhouse.co/products/baking-on-your-schedule-bundle-goldie-doughbed-starter-jar"],["big-bundle","https://sourhouse.co/products/big-bundle-goldie-puck-pint-quart-goldie-blanket-adapter"]];
+          for (const [slug, url] of urls) {
+            try {
+              const response = await fetch(url + ".js", {signal: AbortSignal.timeout(12000)});
+              if (!response.ok) throw new Error("HTTP " + response.status);
+              const product = await response.json();
+              if (!Array.isArray(product.variants)) throw new Error("Missing variants");
+              console.log(slug, JSON.stringify(product.variants.map(v => ({option:v.title, price:v.price, available:v.available}))));
+            } catch (error) {
+              console.error(slug, error.message);
+              process.exitCode = 1;
+            }
+          }
+          CHECK
