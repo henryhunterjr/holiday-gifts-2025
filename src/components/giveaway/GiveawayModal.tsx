@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { z } from "zod";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
@@ -9,7 +9,6 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import giveBreadTag from "@/assets/holiday/give-bread-instead-tag.png.asset.json";
 
 const schema = z.object({
   first_name: z.string().trim().min(1, "First name is required").max(100),
@@ -52,6 +51,7 @@ const STATUS_OPTIONS: { value: FormState["baker_status"]; label: string }[] = [
 ];
 
 export function GiveawayModal({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const titleRef = useRef<HTMLHeadingElement>(null);
   const [form, setForm] = useState<FormState>(EMPTY);
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
@@ -95,18 +95,24 @@ export function GiveawayModal({ open, onClose }: { open: boolean; onClose: () =>
 
   return (
     <Dialog open={open} onOpenChange={(o) => { if (!o) handleClose(); }}>
-      <DialogContent className="max-w-lg bg-flour p-0 max-h-[90vh] overflow-y-auto">
-        <div className="flex flex-col items-center bg-[hsl(38_55%_92%)] px-6 pb-4 pt-6 border-b border-parchment-deep">
+      <DialogContent
+        className="block w-[calc(100%_-_1rem)] max-w-lg max-h-[calc(100dvh_-_1.5rem)] overflow-y-auto overscroll-contain rounded-xl bg-flour p-0"
+        onOpenAutoFocus={(event) => {
+          event.preventDefault();
+          titleRef.current?.focus({ preventScroll: true });
+        }}
+      >
+        <div className="flex flex-col items-center bg-[hsl(38_55%_92%)] px-12 py-4 border-b border-parchment-deep">
           <img
-            src={giveBreadTag.url}
+            src="/brand-logos/give-bread-instead-seal.webp"
             alt="Give Bread Instead"
-            className="h-24 w-auto object-contain drop-shadow"
+            className="h-28 w-auto max-w-full object-contain sm:h-32"
           />
         </div>
-        <div className="p-6">
+        <div className="min-w-0 px-4 py-5 sm:p-6">
           <DialogHeader className="text-left">
             <p className="eyebrow">Weekly giveaway</p>
-            <DialogTitle className="font-display text-2xl font-semibold text-crust">
+            <DialogTitle ref={titleRef} tabIndex={-1} className="font-display text-2xl font-semibold leading-tight text-crust">
               Win the Give Bread Instead Gift Tag Set
             </DialogTitle>
             <DialogDescription className="text-crumb">
@@ -127,8 +133,8 @@ export function GiveawayModal({ open, onClose }: { open: boolean; onClose: () =>
             </div>
           ) : (
             <form onSubmit={submit} className="mt-4 space-y-4">
-              <div className="grid grid-cols-2 gap-3">
-                <label className="block text-sm font-semibold text-crust">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <label className="block min-w-0 text-sm font-semibold text-crust">
                   First name
                   <input
                     type="text"
@@ -136,10 +142,10 @@ export function GiveawayModal({ open, onClose }: { open: boolean; onClose: () =>
                     maxLength={100}
                     value={form.first_name}
                     onChange={(e) => setForm({ ...form, first_name: e.target.value })}
-                    className="mt-1 w-full rounded-lg border-[1.5px] border-parchment-deep bg-white px-3 py-2 text-sm text-ink focus:border-honey focus:outline-none"
+                    className="mt-1 block min-h-11 w-full min-w-0 rounded-lg border-[1.5px] border-parchment-deep bg-white px-3 py-2 text-base font-normal leading-6 text-ink focus:border-honey focus:outline-none"
                   />
                 </label>
-                <label className="block text-sm font-semibold text-crust">
+                <label className="block min-w-0 text-sm font-semibold text-crust">
                   Last name
                   <input
                     type="text"
@@ -147,11 +153,11 @@ export function GiveawayModal({ open, onClose }: { open: boolean; onClose: () =>
                     maxLength={100}
                     value={form.last_name}
                     onChange={(e) => setForm({ ...form, last_name: e.target.value })}
-                    className="mt-1 w-full rounded-lg border-[1.5px] border-parchment-deep bg-white px-3 py-2 text-sm text-ink focus:border-honey focus:outline-none"
+                    className="mt-1 block min-h-11 w-full min-w-0 rounded-lg border-[1.5px] border-parchment-deep bg-white px-3 py-2 text-base font-normal leading-6 text-ink focus:border-honey focus:outline-none"
                   />
                 </label>
               </div>
-              <label className="block text-sm font-semibold text-crust">
+              <label className="block min-w-0 text-sm font-semibold text-crust">
                 Email
                 <input
                   type="email"
@@ -159,43 +165,43 @@ export function GiveawayModal({ open, onClose }: { open: boolean; onClose: () =>
                   maxLength={255}
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className="mt-1 w-full rounded-lg border-[1.5px] border-parchment-deep bg-white px-3 py-2 text-sm text-ink focus:border-honey focus:outline-none"
+                  className="mt-1 block min-h-11 w-full min-w-0 rounded-lg border-[1.5px] border-parchment-deep bg-white px-3 py-2 text-base font-normal leading-6 text-ink focus:border-honey focus:outline-none"
                 />
               </label>
 
               <div className="rounded-lg border border-parchment-deep bg-white/70 p-3 space-y-2">
-                <label className="flex items-start gap-2 text-sm text-crust">
+                <label className="grid grid-cols-[1.125rem_minmax(0,1fr)] items-start gap-2.5 text-sm leading-6 text-crust">
                   <input
                     type="checkbox"
                     checked={form.is_academy_member}
                     onChange={(e) => setForm({ ...form, is_academy_member: e.target.checked })}
-                    className="mt-1"
+                    className="mt-1 h-[1.125rem] w-[1.125rem] accent-evergreen"
                   />
                   <span>I'm a member of the <b>Crust &amp; Crumb Academy</b></span>
                 </label>
-                <label className="flex items-start gap-2 text-sm text-crust">
+                <label className="grid grid-cols-[1.125rem_minmax(0,1fr)] items-start gap-2.5 text-sm leading-6 text-crust">
                   <input
                     type="checkbox"
                     checked={form.is_fotm_member}
                     onChange={(e) => setForm({ ...form, is_fotm_member: e.target.checked })}
-                    className="mt-1"
+                    className="mt-1 h-[1.125rem] w-[1.125rem] accent-evergreen"
                   />
                   <span>I'm a member of <b>From Oven to Market</b></span>
                 </label>
               </div>
 
-              <fieldset className="rounded-lg border border-parchment-deep bg-white/70 p-3">
-                <legend className="px-1 text-sm font-semibold text-crust">Where are you in your baking journey?</legend>
-                <div className="mt-2 space-y-2">
+              <fieldset className="min-w-0 rounded-lg border border-parchment-deep bg-white/70 p-3">
+                <legend className="float-left w-full px-0 text-sm font-semibold leading-5 text-crust">Where are you in your baking journey?</legend>
+                <div className="clear-both space-y-2 pt-3">
                   {STATUS_OPTIONS.map((o) => (
-                    <label key={o.value} className="flex items-start gap-2 text-sm text-ink">
+                    <label key={o.value} className="grid grid-cols-[1.125rem_minmax(0,1fr)] items-start gap-2.5 text-sm leading-6 text-ink">
                       <input
                         type="radio"
                         name="baker_status"
                         value={o.value}
                         checked={form.baker_status === o.value}
                         onChange={() => setForm({ ...form, baker_status: o.value })}
-                        className="mt-1"
+                        className="mt-1 h-[1.125rem] w-[1.125rem] accent-evergreen"
                         required
                       />
                       <span>{o.label}</span>
@@ -205,21 +211,22 @@ export function GiveawayModal({ open, onClose }: { open: boolean; onClose: () =>
                 {form.baker_status === "other" && (
                   <input
                     type="text"
+                    aria-label="Tell me more about your baking journey"
                     placeholder="Tell me more…"
                     maxLength={500}
                     value={form.baker_status_other}
                     onChange={(e) => setForm({ ...form, baker_status_other: e.target.value })}
-                    className="mt-3 w-full rounded-lg border-[1.5px] border-parchment-deep bg-white px-3 py-2 text-sm text-ink focus:border-honey focus:outline-none"
+                    className="mt-3 block min-h-11 w-full min-w-0 rounded-lg border-[1.5px] border-parchment-deep bg-white px-3 py-2 text-base font-normal leading-6 text-ink focus:border-honey focus:outline-none"
                   />
                 )}
               </fieldset>
 
-              <label className="flex items-start gap-2 text-xs text-crumb">
+              <label className="grid grid-cols-[1.125rem_minmax(0,1fr)] items-start gap-2.5 text-sm leading-6 text-crumb">
                 <input
                   type="checkbox"
                   checked={form.consent}
                   onChange={(e) => setForm({ ...form, consent: e.target.checked })}
-                  className="mt-1"
+                  className="mt-1 h-[1.125rem] w-[1.125rem] accent-evergreen"
                   required
                 />
                 <span>
