@@ -84,3 +84,49 @@ jobs:
             }
           }
           CHECK
+  links:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Check catalog images, local destinations and Amazon product URL format
+        shell: bash
+        run: |
+          node --input-type=module <<'CHECK'
+          import assert from 'node:assert/strict';
+          const site = 'https://gifts.bakinggreatbread.blog';
+          const feed = await (await fetch(site + '/catalog.json')).json();
+          const rows = Object.values(feed).filter(Array.isArray).flat().filter(row => typeof row === 'object' && row);
+          const paths = new Map();
+          const amazon = new Set();
+          const short = new Set();
+          for (const row of rows) {
+            if (row.img?.startsWith('/')) paths.set(row.img, 'image/');
+            if (!row.url) continue;
+            const url = new URL(row.url, site);
+            if (url.origin === site) paths.set(url.pathname, 'text/html');
+            if (['a.co','amzn.to'].includes(url.hostname)) short.add(url.href);
+            if (url.hostname === 'www.amazon.com' && url.pathname.includes('/dp/')) {
+              assert.match(url.pathname, /\/dp\/[A-Z0-9]{10}(?:\/|$)/, row.name);
+              assert.ok(url.searchParams.get('tag'), row.name + ' has no affiliate tag');
+              amazon.add(url.href);
+            }
+          }
+          const pending = Array.from(paths);
+          const failures = [];
+          async function check() {
+            while (pending.length) {
+              const [path,type] = pending.pop();
+              const res = await fetch(new URL(path, site), {method:'HEAD',signal:AbortSignal.timeout(15000)});
+              if (!res.ok || !res.headers.get('content-type')?.startsWith(type)) failures.push([path, res.status, res.headers.get('content-type')]);
+            }
+          }
+          await Promise.all(Array.from({length: 4}, check));
+          console.log('Official catalog images and destinations checked:', paths.size, 'direct Amazon URLs checked for ASIN and tag:', amazon.size, 'short URLs outside format check:', short.size, 'failures:', failures);
+          for (const url of short) {
+            try {
+              const res = await fetch(url, {redirect:'manual',signal:AbortSignal.timeout(7000)});
+              console.log('Amazon book short link', url, res.status, res.headers.get('location')?.split('?')[0] ?? '(no redirect exposed)');
+            } catch (error) { console.log('Book destination could not be confirmed',url,error.message); }
+          }
+          assert.equal(failures.length, 0);
+          CHECK
