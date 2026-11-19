@@ -191,6 +191,30 @@
         "priceChecked": "2026-11-17",
         "priceSource": "https://brodandtaylor.com/products/bread-lame",
         "availability": "Check stock at checkout"
+      },
+      {
+        "slug": "banneton-mini-boule-set-of-4",
+        "name": "Banneton (Mini Boule) Set of 4",
+        "url": "https://brodandtaylor.com/products/banneton-mini-boule-set-of-4?dt_id=330823",
+        "img": "/maker-photos/brod-and-taylor/banneton-mini-boule-set-of-4.webp",
+        "desc": "Four 6-inch round baskets for 300 to 450 g of dough each. A good size for soup bowls or small gift loaves.",
+        "priceLabel": "$39.95",
+        "priceDetails": "$39.95. Set of four, each 6 inches across and 3 inches high.",
+        "priceChecked": "2026-11-19",
+        "priceSource": "https://brodandtaylor.com/products/banneton-mini-boule-set-of-4",
+        "availability": "Check stock at checkout"
+      },
+      {
+        "slug": "banneton-large-batard-set-of-2",
+        "name": "Banneton (Large Batard) Set of 2",
+        "url": "https://brodandtaylor.com/products/banneton-large-batard-set-of-2?dt_id=330823",
+        "img": "/maker-photos/brod-and-taylor/banneton-large-batard-set-of-2.webp",
+        "desc": "Two oval baskets for family-size loaves. Each holds 900 g to 1.1 kg of dough.",
+        "priceLabel": "$34.95",
+        "priceDetails": "$34.95. Set of two, each 11.5 inches long, 5 inches wide and 3 inches high.",
+        "priceChecked": "2026-11-19",
+        "priceSource": "https://brodandtaylor.com/products/banneton-large-batard-set-of-2",
+        "availability": "Check stock at checkout"
       }
     ],
     "logo": "/brand-logos/brod-and-taylor.webp"
