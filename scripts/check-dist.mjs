@@ -89,7 +89,7 @@ for (const banned of ["/saved-gifts", "/bread-baker-holiday-gift-guide-2025", "/
 
 // Every sitemap entry must be the exact address the page names as its own
 // canonical, or Google reads the two as duplicates. The SPA content pages
-// canonical WITHOUT a trailing slash; maker and gift pages canonical WITH one.
+// canonical WITH a trailing slash, matching Vercel's trailingSlash redirect.
 const SPA_CANONICALS = [
   "/academy-gift-certificate",
   "/sourdough-starter-care-guide",
@@ -100,11 +100,11 @@ const SPA_CANONICALS = [
   "/how-to-wrap-sourdough-as-a-gift",
 ];
 for (const p of SPA_CANONICALS) {
-  if (!locs.includes(`${SITE_ORIGIN}${p}`)) {
-    fail(`dist/sitemap.xml is missing the canonical form ${SITE_ORIGIN}${p}`);
+  if (!locs.includes(`${SITE_ORIGIN}${p}/`)) {
+    fail(`dist/sitemap.xml is missing the canonical form ${SITE_ORIGIN}${p}/`);
   }
-  if (locs.includes(`${SITE_ORIGIN}${p}/`)) {
-    fail(`dist/sitemap.xml lists ${p} with a trailing slash, but the page canonicals without one`);
+  if (locs.includes(`${SITE_ORIGIN}${p}`)) {
+    fail(`dist/sitemap.xml lists ${p} without a trailing slash, which Vercel redirects`);
   }
 }
 

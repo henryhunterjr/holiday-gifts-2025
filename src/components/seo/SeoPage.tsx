@@ -27,7 +27,7 @@ export type SeoPageProps = {
  * and the footer link back into the Holiday Gift Guide 2026 hub.
  */
 export function SeoPage({ path, title, description, h1, eyebrow, breadcrumbLabel, breadcrumbParents = [], jsonLd, children }: SeoPageProps) {
-  const canonical = `${SITE}${path}`;
+  const canonical = `${SITE}${path.endsWith("/") ? path : `${path}/`}`;
   const fullTitle = `${title} — Holiday Gifts 2026`;
   const ldArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 

@@ -36,10 +36,10 @@ export default function AcademyGiftCertificate() {
           name="description"
           content="Gift one full year of Crust & Crumb Academy by Henry Hunter for $45 (25% off). Includes Saturday bake-alongs, bread lessons, and community coaching."
         />
-        <link rel="canonical" href={`${SITE_ORIGIN}/academy-gift-certificate`} />
+        <link rel="canonical" href={`${SITE_ORIGIN}/academy-gift-certificate/`} />
         <meta property="og:title" content="Christmas Gift Certificate | Crust & Crumb Academy" />
         <meta property="og:description" content="Give a full year of baking with Henry Hunter for $45 this Christmas (save $15)." />
-        <meta property="og:url" content={`${SITE_ORIGIN}/academy-gift-certificate`} />
+        <meta property="og:url" content={`${SITE_ORIGIN}/academy-gift-certificate/`} />
         <meta property="og:image" content={`${SITE_ORIGIN}/og-image.png`} />
       </Helmet>
       <Link className="certificate-back" to="/">← Holiday Shopping Guide</Link>

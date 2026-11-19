@@ -60,9 +60,9 @@ const makers = JSON.parse(readFileSync(join(root, "src/data/makers.json"), "utf8
 const locs = [
   ...makers.map(m => `${ORIGIN}/makers/${m.id}/`),
   `${ORIGIN}/`,
-  // No trailing slash: each of these pages emits its own canonical without
-  // one (see SeoPage.tsx), and a sitemap entry must be that exact address.
-  ...spaRoutes.map((r) => `${ORIGIN}${r}`),
+  // Trailing slash: Vercel (trailingSlash: true) 308s the bare form, and each
+  // page canonicals the slashed form (see SeoPage.tsx).
+  ...spaRoutes.map((r) => `${ORIGIN}${r}/`),
   `${BASE_URL}/`,
   ...categories.map((c) => `${BASE_URL}/${slugify(c)}/`),
   ...audiences.map((a) => `${BASE_URL}/${slugify(a)}/`),
