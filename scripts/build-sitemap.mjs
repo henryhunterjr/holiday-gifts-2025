@@ -21,8 +21,8 @@ const ORIGIN = new URL(BASE_URL).origin;
 // starts with "/", excluding the bare root, /admin/* and the catch-all.
 const appTsx = readFileSync(join(root, "src", "App.tsx"), "utf8");
 const spaRoutes = [...appTsx.matchAll(/<Route path="([^"]+)"/g)]
-  .map((m) => m[1])
-  .filter((p) => p.startsWith("/") && p !== "/" && !p.startsWith("/admin") && !p.includes("*"));
+  .map((m) => m[1].replace(/\/$/, ""))
+  .filter((p) => p.startsWith("/") && p !== "/" && !p.startsWith("/admin") && !p.includes("*") && !p.includes(":") && p !== "/bread-baker-holiday-gift-guide-2025");
 
 if (spaRoutes.length === 0) {
   console.error("build-sitemap: no SPA content routes found in src/App.tsx — parsing broke");
@@ -50,7 +50,7 @@ const locs = [
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${locs.map((l) => `  <url><loc>${l}</loc></url>`).join("\n")}
+${[...new Set(locs)].map((l) => `  <url><loc>${l}</loc></url>`).join("\n")}
 </urlset>
 `;
 

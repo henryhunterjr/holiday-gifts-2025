@@ -61,9 +61,9 @@
 .partner-code small { border-left:1px solid #163e3545; padding-left:12px; font-size:11px; font-weight:400; }
 .offer-detail { font-size:11px !important; }
 .editorial-text-link { display:flex; justify-content:space-between; border-bottom:1px solid #163e3570; padding:20px 0 10px; font-size:14px; font-weight:700; }
-.grain-resources { display:flex; gap:25px; align-items:center; justify-content:flex-end; padding:25px 0; font-size:12px; flex-wrap:wrap; }
-.grain-resources span { margin-right:auto; color:#526359; }
-.grain-resources a { text-decoration:underline; text-underline-offset:5px; }
+.grain-guide-banner { display:block; width:min(100%, 920px); margin:clamp(20px, 4vw, 48px) auto 0; }
+.grain-guide-banner img { display:block; width:100%; height:auto; }
+.grain-guide-banner:focus-visible { outline:3px solid currentColor; outline-offset:4px; }
 .edit-section { background:var(--paper); padding:80px 5vw; }
 .edit-section > div { padding:0; max-width:none; }
 .edit-section :is(h2,.text-flour) { color:#163e35; }
@@ -324,6 +324,7 @@
 .partner-codes-bar { background:#f3ede1; border-top:1px solid #163e3520; border-bottom:1px solid #163e3520; padding:36px 0; }
 .partner-codes-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:12px 24px; }
 .partner-code-row { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 0; border-top:1px solid #163e3522; }
-@media (min-width: 768px) {
-  .holiday-editorial #browse > div:first-child { position:sticky; top:0; z-index:40; }
+.holiday-editorial #browse > div:first-child { position:sticky; top:0; z-index:40; backdrop-filter:blur(8px); }
+@media (max-width:767px) {
+  .holiday-editorial #browse > div:first-child { max-height:40dvh; overflow-y:auto; }
 }

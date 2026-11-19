@@ -18,6 +18,7 @@ type MakerItem = {
   priceLabel?: string;
   note?: string;
   url: string;
+  offerUrl?: string;
   img?: string;
   code?: string;
 };
@@ -125,11 +126,11 @@ export default function MakerCollection() {
           {maker.items.map((item) => {
             const wishlistSlug = `${maker.id}:${item.slug}`;
             const saved = has(wishlistSlug);
-            const activeCode = item.code || maker.promoCode;
+            const activeCode = item.code;
             return (
               <article key={item.slug} data-product={item.slug} data-brand={maker.brand} className="holiday-product-card">
                 <a
-                  href={item.url}
+                  href={item.offerUrl ?? item.url}
                   target="_blank"
                   rel="nofollow sponsored noopener noreferrer"
                   aria-label={`Shop ${item.name} from ${maker.brand}`}
@@ -151,7 +152,7 @@ export default function MakerCollection() {
                   {item.priceLabel && <p className="mt-3 text-lg font-bold text-evergreen-deep">{item.priceLabel}</p>}
                   <div className="mt-auto flex flex-wrap items-center gap-2 pt-4">
                     <a
-                      href={item.url}
+                      href={item.offerUrl ?? item.url}
                       target="_blank"
                       rel="nofollow sponsored noopener noreferrer"
                       className="holiday-shop-link flex-1"

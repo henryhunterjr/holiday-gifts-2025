@@ -8,6 +8,7 @@ import { existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { enrichRecord, isAffiliateUrl, REL_AFFILIATE, TARGET_AFFILIATE, parsePrice, priceBandFor } from "./catalog-lib.mjs";
 
+import { BASE_URL } from "../site/lib/site.mjs";
 import { makerGifts } from "../src/lib/makerCatalog.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -205,7 +206,7 @@ const makerSeedReplacements = new Set(legacySeedSlugs.values());
 
 const catalog = {
   meta: {
-    site: "https://gifts.bakinggreatbread.blog",
+    site: new URL(BASE_URL).origin,
     generated: new Date().toISOString(),
     description:
       "Consolidated product catalog for the Holiday Baking Gift Guide. Affiliate links included. Check each store for current prices and availability.",
