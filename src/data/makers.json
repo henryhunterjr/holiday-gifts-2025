@@ -415,10 +415,10 @@
         "img": "/maker-photos/nutrimill/classic-grain-mill.webp",
         "desc": "The best-selling grain mill for over 25 years, redesigned for 2026. 1200-watt motor, stainless steel impact milling heads, 12-cup hopper, 20-cup flour canister, from super fine pastry flour to coarse meal.",
         "priceLabel": "$349.00",
-        "priceDetails": "$349.00. Out of stock — \"New Model Coming Soon\" on the site. Launches Thu Nov 19, 2026 at 9:00 AM MT. ACADEMY26 takes $20 off it.",
-        "priceChecked": "2026-11-18",
+        "priceDetails": "NutriMill listed the redesigned Classic (SKU 760200) in stock at $349.00 on November 19, 2026, before discounts.",
+        "priceChecked": "2026-11-19",
         "priceSource": "https://nutrimill.com/products/classic-grain-mill",
-        "availability": "Coming soon"
+        "availability": "In stock"
       },
       {
         "slug": "impact-grain-mill",
