@@ -4,7 +4,7 @@
   const read = () => { try { const v=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(v)?v.filter(x=>typeof x==='string'):[]; } catch {return memory;} };
   const sync = () => {
     const list=read();
-    document.querySelectorAll('[data-save]').forEach(b=>{const saved=list.includes(b.dataset.save);b.setAttribute('aria-pressed',String(saved));b.textContent=saved?'Saved ✓':'Save gift';});
+    document.querySelectorAll('[data-save]').forEach(b=>{const saved=list.includes(b.dataset.save);b.setAttribute('aria-pressed',String(saved));b.textContent=saved?'♥ Saved':'♡ Save';});
     document.querySelectorAll('[data-saved-count]').forEach(n=>n.textContent=String(list.length));
   };
   const config=fetch('/guide-config.json').then(r=>r.json()).catch(()=>({}));
@@ -25,8 +25,9 @@
     fetch(c.url+'/rest/v1/rpc/record_guide_event',{method:'POST',headers:{apikey:c.key,'Content-Type':'application/json'},body:JSON.stringify({payload}),keepalive:true}).catch(()=>{});
   }
   document.addEventListener('click',event=>{
+    const pill=event.target.closest('[data-filter]');if(pill){const k=pill.dataset.filter;document.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b===pill)));let shown=0;document.querySelectorAll('article[data-band]').forEach(a=>{const on=k==='all'||a.dataset.band===k;a.hidden=!on;if(on)shown++;});const st=document.getElementById('save-status');if(st)st.textContent=`Showing ${shown} gifts.`;track('filter_used',k);return;}
     const button=event.target.closest('[data-save]');
-    if(button){const list=read(),id=button.dataset.save,added=!list.includes(id);memory=added?[...list,id]:list.filter(x=>x!==id);let persisted=true;try{localStorage.setItem(KEY,JSON.stringify(memory));}catch{persisted=false;}window.dispatchEvent(new Event('bgb-wishlist-change'));sync();const status=document.getElementById('save-status');if(status)status.textContent=persisted?(added?'Added to your saved gifts.':'Removed from saved gifts.'):'Saved for this page only. Browser storage is unavailable.';track(added?'gift_save':'gift_remove',id,button.closest('[data-brand]')?.dataset.brand||'');}
+    if(button){const list=read(),id=button.dataset.save,added=!list.includes(id);memory=added?[...list,id]:list.filter(x=>x!==id);let persisted=true;try{localStorage.setItem(KEY,JSON.stringify(memory));}catch{persisted=false;}window.dispatchEvent(new Event('bgb-wishlist-change'));sync();document.querySelectorAll('[data-saved-count]').forEach(n=>{const l=n.closest('a')||n;l.classList.remove('bump');void l.offsetWidth;l.classList.add('bump');});const status=document.getElementById('save-status');if(status)status.textContent=persisted?(added?'Added to your saved gifts.':'Removed from saved gifts.'):'Saved for this page only. Browser storage is unavailable.';track(added?'gift_save':'gift_remove',id,button.closest('[data-brand]')?.dataset.brand||'');}
     const link=event.target.closest('a[href]');if(!link)return;
     const url=new URL(link.href,location.href),card=link.closest('[data-product]');
     if(url.origin!==location.origin)track(link.dataset.event||'outbound_click',card?.dataset.product||'',link.dataset.brand||card?.dataset.brand||url.hostname);

@@ -26,7 +26,7 @@ export default function AdminLogin() {
       if (error) return toast.error(error.message);
       navigate("/admin/analytics", { replace: true });
     } else {
-      const redirectUrl = "https://gifts.bakinggreatbread.blog/admin/analytics/";
+      const redirectUrl = "https://gifts.bakinggreatbread.com/admin/analytics/";
       const { error } = await supabase.auth.signUp({
         email,
         password,

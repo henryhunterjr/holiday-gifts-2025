@@ -8,7 +8,7 @@ export default function EssentialBakingTools() {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: "Essential Baking Tools for Home Bread Bakers",
-    mainEntityOfPage: { "@type": "WebPage", "@id": `https://gifts.bakinggreatbread.blog${PATH}` },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://gifts.bakinggreatbread.com${PATH}` },
     inLanguage: "en-US",
     author: { "@type": "Person", name: "Henry Hunter" },
   };

@@ -14,14 +14,14 @@ function redirect(input) {
   });
   return result;
 }
-assert.equal(redirect('https://holiday-gifts-2025.lovable.app/'), 'https://gifts.bakinggreatbread.blog/');
-assert.equal(redirect('https://holiday-gifts-2025.lovable.app/#grain-to-gift'), 'https://gifts.bakinggreatbread.blog/#grain-to-gift');
-assert.equal(redirect('https://holiday-gifts-2025.lovable.app/gifts/under-50/?utm_source=email#products'), 'https://gifts.bakinggreatbread.blog/gifts/under-50/?utm_source=email#products');
+assert.equal(redirect('https://holiday-gifts-2025.lovable.app/'), 'https://gifts.bakinggreatbread.com/');
+assert.equal(redirect('https://holiday-gifts-2025.lovable.app/#grain-to-gift'), 'https://gifts.bakinggreatbread.com/#grain-to-gift');
+assert.equal(redirect('https://holiday-gifts-2025.lovable.app/gifts/under-50/?utm_source=email#products'), 'https://gifts.bakinggreatbread.com/gifts/under-50/?utm_source=email#products');
 for (const key of ['access_token', 'refresh_token', 'code', 'token', 'token_hash']) {
   for (const separator of ['?', '#']) {
-    assert.equal(redirect(`https://holiday-gifts-2025.lovable.app/admin/analytics/${separator}${key}=test-only`), 'https://gifts.bakinggreatbread.blog/admin/login/');
+    assert.equal(redirect(`https://holiday-gifts-2025.lovable.app/admin/analytics/${separator}${key}=test-only`), 'https://gifts.bakinggreatbread.com/admin/login/');
   }
 }
-assert.equal(redirect('https://gifts.bakinggreatbread.blog/#grain-to-gift'), undefined);
+assert.equal(redirect('https://gifts.bakinggreatbread.com/#grain-to-gift'), undefined);
 assert.equal(redirect('https://id-preview--example.lovable.app/'), undefined);
 console.log('Legacy redirect rules passed: homepage, section, product paths, credential stripping, official and preview hosts.');

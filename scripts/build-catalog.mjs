@@ -205,7 +205,7 @@ const makerSeedReplacements = new Set(legacySeedSlugs.values());
 
 const catalog = {
   meta: {
-    site: "https://gifts.bakinggreatbread.blog",
+    site: "https://gifts.bakinggreatbread.com",
     generated: new Date().toISOString(),
     description:
       "Consolidated product catalog for the Holiday Baking Gift Guide. Affiliate links included. Check each store for current prices and availability.",

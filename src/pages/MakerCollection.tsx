@@ -46,7 +46,7 @@ export default function MakerCollection() {
 
   if (!maker) return <NotFound />;
 
-  const canonicalUrl = `${SITE_ORIGIN}/makers/${maker.id}`;
+  const canonicalUrl = `${SITE_ORIGIN}/makers/${maker.id}/`;
   const copyCode = async (code: string) => {
     trackEvent("promo_code_copy", { code, brand: maker.brand, surface: "maker_page" });
     try {
@@ -93,7 +93,7 @@ export default function MakerCollection() {
         <div className="mb-10 flex flex-wrap items-center justify-between gap-6 border-b border-parchment-deep pb-8">
           <div>
             <p className="edition-label" style={{ marginBottom: 10 }}>{maker.brand}</p>
-            <h1 className="font-display text-4xl font-semibold text-crust md:text-5xl">{maker.title}</h1>
+            <h1 className="font-display text-4xl font-semibold text-crust md:text-5xl">{maker.brand} — {maker.title}</h1>
             <p className="mt-3 max-w-[60ch] text-crumb">
               Kitchen-tested picks from {maker.brand}. Affiliate links support our free recipes at no extra cost to you.
             </p>

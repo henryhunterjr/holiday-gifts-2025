@@ -7,3 +7,13 @@
 - [ ] Owner: update Auth settings → Advanced Site URL and Redirect URLs.
 - [ ] Owner: sync/re-check latest main in Project settings → Git before publishing.
 - [ ] Publish legacy redirect after main-branch sync is confirmed, then verify homepage and section redirects.
+# Launch work order (Nov 19): .com domain, Brød & Taylor page
+- [x] Canonicals and schema moved to gifts.bakinggreatbread.com sitewide; admin and saved gifts noindex
+- [x] Save buttons in page HTML, saved counter highlight, shareable wish list link
+- [x] Admin link removed from footers; About, Privacy, Contact added
+- [x] Affiliate note above the fold; Brand — Category headings on all maker pages
+- [x] Brød & Taylor copy, badges, Best for lines, 2 new bannetons, single price line, accordions only for variants
+- [x] Curator note, Recipe Pantry banner moved below grid, budget pills, warm card styling, fast first 2 images
+- [x] FAQ plus CollectionPage, Breadcrumb, ItemList, Organization, Person schema
+- [ ] Owner: add https://gifts.bakinggreatbread.com/ as Site URL and /admin/analytics/ redirect in Auth settings
+- [ ] Owner: point gifts.bakinggreatbread.blog at .com with a permanent redirect at the domain host

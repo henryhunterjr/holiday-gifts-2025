@@ -94,31 +94,34 @@
   {
     "id": "brod-and-taylor",
     "brand": "Brød & Taylor",
-    "title": "Proofing & baking tools",
+    "title": "Proofing & Baking Tools",
     "items": [
       {
         "slug": "folding-proofer",
         "name": "Folding Proofer & Slow Cooker",
         "url": "https://brodandtaylor.com/products/folding-proofer-slow-cooker?dt_id=330823",
         "img": "/maker-photos/brod-and-taylor/folding-proofer.webp",
-        "desc": "The flagship.",
+        "desc": "A temperature-controlled proofing box that keeps sourdough, yeast dough, and yogurt at the exact degree you set, then folds completely flat to slide into a drawer. Doubles as a slow cooker.",
         "priceLabel": "$249.00",
         "priceDetails": "$249.00 (also available as Proofer + Accessory Shelf for $269.00)",
         "priceChecked": "2026-11-17",
         "priceSource": "https://brodandtaylor.com/products/folding-proofer-slow-cooker",
-        "availability": "Check stock at checkout"
+        "availability": "Check stock at checkout",
+        "bestFor": "Bakers with a chilly kitchen who want predictable, consistent rise times year-round.",
+        "badge": "Henry's #1 Splurge"
       },
       {
         "slug": "sourdough-home",
         "name": "Sourdough Home",
         "url": "https://brodandtaylor.com/products/sourdough-home?dt_id=330823",
         "img": "/maker-photos/brod-and-taylor/sourdough-home.webp",
-        "desc": "A compact starter keeper that both heats and cools (41-122F), so a starter stays at the exact temperature chosen.",
+        "desc": "A compact starter keeper that both heats and cools (41–122°F / 5–50°C), so a starter stays at the exact temperature chosen.",
         "priceLabel": "$149.00",
         "priceDetails": "$149.00 (also available as Sourdough Home & Starter Jar bundle for $165.00)",
         "priceChecked": "2026-11-17",
         "priceSource": "https://brodandtaylor.com/products/sourdough-home",
-        "availability": "Check stock at checkout"
+        "availability": "Check stock at checkout",
+        "bestFor": "Sourdough bakers who want to control starter feeding schedules down to the degree."
       },
       {
         "slug": "high-capacity-baking-scale",
@@ -130,7 +133,9 @@
         "priceDetails": "$24.95",
         "priceChecked": "2026-11-17",
         "priceSource": "https://brodandtaylor.com/products/high-capacity-baking-scale",
-        "availability": "Check stock at checkout"
+        "availability": "Check stock at checkout",
+        "badge": "Best Under $30",
+        "bestFor": "Any baker still using measuring cups who is ready for precision gram-based baking."
       },
       {
         "slug": "bread-steel",
@@ -142,7 +147,8 @@
         "priceDetails": "$79.00 (Max version $89.00, Duo version $119.00 — same product page, three configurations)",
         "priceChecked": "2026-11-17",
         "priceSource": "https://brodandtaylor.com/products/bread-steel",
-        "availability": "Check stock at checkout"
+        "availability": "Check stock at checkout",
+        "bestFor": "Home bakers chasing bakery-style blistered crust and strong oven spring."
       },
       {
         "slug": "baking-shell-boule",
@@ -154,7 +160,8 @@
         "priceDetails": "$85.00 (Batard version also $85.00 — same product page, two shapes)",
         "priceChecked": "2026-11-17",
         "priceSource": "https://brodandtaylor.com/products/baking-shell-boule",
-        "availability": "Check stock at checkout"
+        "availability": "Check stock at checkout",
+        "bestFor": "Bakers who want Dutch-oven steam without lifting heavy cast iron."
       },
       {
         "slug": "sourdough-starter-jar",
@@ -162,11 +169,13 @@
         "url": "https://brodandtaylor.com/products/sourdough-starter-jar?dt_id=330823",
         "img": "/maker-photos/brod-and-taylor/sourdough-starter-jar.webp",
         "desc": "A purpose-built starter jar in durable borosilicate glass with inch and cm scales, a black marker ring to track rise, and a loose-fitting lid so the starter breathes.",
-        "priceLabel": "From $19.99",
+        "priceLabel": "$24.95",
         "priceDetails": "$24.95 (Small version $19.99 — same product page)",
         "priceChecked": "2026-11-17",
         "priceSource": "https://brodandtaylor.com/products/sourdough-starter-jar",
-        "availability": "Check stock at checkout"
+        "availability": "Check stock at checkout",
+        "badge": "Stocking Stuffer",
+        "bestFor": "Tracking starter rise cleanly without guessing."
       },
       {
         "slug": "banneton-boule-set-of-2",
@@ -178,22 +187,52 @@
         "priceDetails": "$29.95 (was $31.90)",
         "priceChecked": "2026-11-17",
         "priceSource": "https://brodandtaylor.com/products/banneton-boule-set-of-2",
-        "availability": "Check stock at checkout"
+        "availability": "Check stock at checkout",
+        "badge": "Great for Beginners",
+        "bestFor": "Everyday round artisan loaves with easy release and cleanup."
       },
       {
         "slug": "bread-lame",
         "name": "Bread Lame",
         "url": "https://brodandtaylor.com/products/bread-lame?dt_id=330823",
         "img": "/maker-photos/brod-and-taylor/bread-lame.webp",
-        "desc": "A scoring lame with a soft-grip balanced handle, a stainless blade holder that sets the razor close to the handle for control, 5 double-sided blades included, and a protective sheath..",
+        "desc": "A scoring lame with a soft-grip balanced handle, a stainless blade holder that sets the razor close to the handle for control, 5 double-sided blades included, and a protective sheath.",
         "priceLabel": "$29.95",
         "priceDetails": "$29.95",
         "priceChecked": "2026-11-17",
         "priceSource": "https://brodandtaylor.com/products/bread-lame",
+        "availability": "Check stock at checkout",
+        "bestFor": "Crisp, controlled decorative scoring on artisan crusts."
+      },
+      {
+        "slug": "banneton-mini-boule-set-of-4",
+        "name": "Banneton (Mini Boule) Set of 4",
+        "url": "https://brodandtaylor.com/products/banneton-mini-boule-set-of-4?dt_id=330823",
+        "img": "/maker-photos/brod-and-taylor/banneton-mini-boule-set-of-4.webp",
+        "desc": "Four small round proofing baskets for rolls, bread bowls, and mini loaves.",
+        "bestFor": "Bread bowls, dinner rolls, and small holiday gift loaves.",
+        "priceLabel": "$39.95",
+        "priceDetails": "$39.95",
+        "priceSource": "https://brodandtaylor.com/products/banneton-mini-boule-set-of-4",
+        "priceChecked": "2026-11-17",
+        "availability": "Check stock at checkout"
+      },
+      {
+        "slug": "banneton-large-batard-set-of-2",
+        "name": "Banneton (Large Batard) Set of 2",
+        "url": "https://brodandtaylor.com/products/banneton-large-batard-set-of-2?dt_id=330823",
+        "img": "/maker-photos/brod-and-taylor/banneton-large-batard-set-of-2.webp",
+        "desc": "Two oval proofing baskets sized for family-size batards.",
+        "bestFor": "Bakers making larger oval family-size loaves (900 g–1.1 kg).",
+        "priceLabel": "$34.95",
+        "priceDetails": "$34.95",
+        "priceSource": "https://brodandtaylor.com/products/banneton-large-batard-set-of-2",
+        "priceChecked": "2026-11-17",
         "availability": "Check stock at checkout"
       }
     ],
-    "logo": "/brand-logos/brod-and-taylor.webp"
+    "logo": "/brand-logos/brod-and-taylor.webp",
+    "curatorNote": "Curated by Henry Hunter, founder of Baking Great Bread at Home. I use Brød & Taylor tools in my own kitchen. If you're shopping for a sourdough baker who wants consistent results, start here."
   },
   {
     "id": "sour-house",
