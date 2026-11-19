@@ -5,7 +5,7 @@ on:
 permissions: {}
 jobs:
   check:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 6
     steps:
       - name: Run shopper checks against production
@@ -14,12 +14,11 @@ jobs:
           mkdir -p "$RUNNER_TEMP/guide-check"
           cd "$RUNNER_TEMP/guide-check"
           npm install --no-audit --no-fund playwright@1.56.1
-          npx playwright install --with-deps chromium
           cat > check.mjs <<'QA'
           import assert from "node:assert/strict";
           import {chromium} from "playwright";
           
-          const browser = await chromium.launch({args: ["--no-sandbox"]});
+          const browser = await chromium.launch({channel: "chrome", args: ["--no-sandbox"]});
           try {
             const page = await browser.newPage({reducedMotion: "reduce"});
             const origin = "https://gifts.bakinggreatbread.blog";
