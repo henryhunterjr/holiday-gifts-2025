@@ -2,6 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      if (location.hostname === "holiday-gifts-2025.lovable.app") {
+        const destination = new URL("https://gifts.bakinggreatbread.blog/");
+        destination.pathname = location.pathname;
+        destination.search = location.search;
+        destination.hash = location.hash;
+        const authFragment = new URLSearchParams(location.hash.slice(1));
+        const authParams = ["access_token", "refresh_token", "code", "token", "token_hash", "error", "error_code"];
+        if (authParams.some(key => destination.searchParams.has(key) || authFragment.has(key))) {
+          destination.pathname = "/admin/login/";
+          destination.search = "";
+          destination.hash = "";
+        }
+        location.replace(destination.href);
+      }
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bread Lover&#39;s Holiday Gift Guide 2026 | Baking Great Bread</title>
     <meta name="description" content="The 2026 gift guide for bread bakers. Handpicked tools, lames, and books from Henry Hunter, with promo codes built in.">
