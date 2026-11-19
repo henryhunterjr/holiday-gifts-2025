@@ -53,6 +53,51 @@ export type Database = {
         }
         Relationships: []
       }
+      guide_events: {
+        Row: {
+          brand: string
+          campaign: string
+          created_at: string
+          device: string
+          environment: string
+          event: string
+          id: number
+          medium: string
+          path: string
+          product: string
+          session_id: string
+          source: string
+        }
+        Insert: {
+          brand?: string
+          campaign?: string
+          created_at?: string
+          device: string
+          environment: string
+          event: string
+          id?: never
+          medium?: string
+          path: string
+          product?: string
+          session_id: string
+          source?: string
+        }
+        Update: {
+          brand?: string
+          campaign?: string
+          created_at?: string
+          device?: string
+          environment?: string
+          event?: string
+          id?: never
+          medium?: string
+          path?: string
+          product?: string
+          session_id?: string
+          source?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string
@@ -79,6 +124,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      get_guide_report: { Args: { days?: number; env?: string }; Returns: Json }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -86,6 +132,7 @@ export type Database = {
         }
         Returns: boolean
       }
+      record_guide_event: { Args: { payload: Json }; Returns: undefined }
     }
     Enums: {
       app_role: "admin"
