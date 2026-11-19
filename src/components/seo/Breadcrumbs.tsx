@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 
-export const SITE_ORIGIN = "https://gifts.bakinggreatbread.blog";
+export const SITE_ORIGIN = "https://gifts.bakinggreatbread.com";
 
 export type Crumb = { name: string; path?: string };
 

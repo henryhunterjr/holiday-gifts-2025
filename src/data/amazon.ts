@@ -13,7 +13,7 @@ import kitchenaid from "@/assets/holiday/amazon-kitchenaid-mixer.png";
 import rack from "@/assets/holiday/amazon-checkered-chef-rack.jpg";
 import whisk from "@/assets/holiday/amazon-brod-taylor-whisk.jpg";
 
-const TAG = "onamz55024a-20";
+const TAG = "55024a-20";
 const link = (asin: string) => `https://www.amazon.com/dp/${asin}?tag=${TAG}`;
 
 export type AmazonProduct = {

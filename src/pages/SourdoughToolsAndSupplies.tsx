@@ -8,7 +8,7 @@ export default function SourdoughToolsAndSupplies() {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: "Sourdough Tools and Supplies: What You Actually Need",
-    mainEntityOfPage: { "@type": "WebPage", "@id": `https://gifts.bakinggreatbread.blog${PATH}` },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://gifts.bakinggreatbread.com${PATH}` },
     inLanguage: "en-US",
     author: { "@type": "Person", name: "Henry Hunter" },
   };
