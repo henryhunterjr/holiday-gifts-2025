@@ -248,7 +248,7 @@ function GiftFinderQuiz({ open, onClose }: { open: boolean; onClose: () => void 
     <Dialog open={open} onOpenChange={(o) => { if (!o) onClose(); }}>
       <DialogContent
         aria-labelledby={titleId}
-        className="max-w-2xl bg-flour p-6 md:p-10"
+        className="max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-2xl overflow-y-auto overscroll-contain bg-flour p-5 sm:p-6 md:p-10"
       >
         <DialogHeader className="text-left">
           <p className="eyebrow mb-1">Gift Finder</p>
@@ -302,13 +302,13 @@ function GiftFinderQuiz({ open, onClose }: { open: boolean; onClose: () => void 
                 ) : (
                   <div className="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-3">
                     {matches.map(({ p, extra }) => (
-                      <a key={p.slug} href={p.url} target="_blank" rel="nofollow sponsored noopener noreferrer" className="group relative rounded-xl border border-parchment-deep bg-white p-3 transition-transform hover:-translate-y-1">
+                      <a key={p.slug} href={p.url} target="_blank" rel="nofollow sponsored noopener noreferrer" className="group grid min-w-0 grid-cols-[4.5rem_1fr] items-center gap-x-3 rounded-xl border border-parchment-deep bg-white p-3 sm:block sm:transition-transform sm:hover:-translate-y-1">
                         {extra && (
-                          <span className="absolute right-2 top-2 rounded-full bg-honey/25 px-2 py-0.5 text-[.65rem] font-bold uppercase tracking-wide text-crust">
+                          <span className="col-span-2 mb-1 block w-fit rounded-full bg-honey/25 px-2 py-0.5 text-[.65rem] font-bold uppercase tracking-wide text-crust">
                             Also worth a look
                           </span>
                         )}
-                        <img src={p.img} alt={p.name} className="mx-auto h-32 object-contain" style={{ mixBlendMode: "multiply" }} />
+                        <img src={p.img} alt={p.name} className="row-span-3 mx-auto h-[4.5rem] w-full object-contain sm:h-32" style={{ mixBlendMode: "multiply" }} />
                         <p className="mt-2 line-clamp-2 font-display text-sm font-semibold text-crust">{p.name}</p>
                         <p className="mt-1 text-xs text-crumb">{p.brand}</p>
                         <p className="mt-1 font-bold text-cranberry">{priceStr(p)}</p>
