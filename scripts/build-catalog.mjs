@@ -8,10 +8,13 @@ import { existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { enrichRecord, isAffiliateUrl, REL_AFFILIATE, TARGET_AFFILIATE, parsePrice, priceBandFor } from "./catalog-lib.mjs";
 
+import { makerGifts } from "../src/lib/makerCatalog.mjs";
+
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (p) => fs.readFileSync(path.join(root, p), "utf8");
 
 const data = JSON.parse(read("src/data/products.json"));
+const makers = JSON.parse(read("src/data/makers.json"));
 const config = read("src/lib/guideConfig.ts");
 
 // Pull the disabled-slug sets straight out of guideConfig.ts so the feed always
@@ -190,6 +193,16 @@ for (const s of seedProducts) {
   seenSlugs.add(s.slug);
 }
 
+// These legacy seed listings are also maintained in the NutriMill maker catalog.
+// Use the maker record for stock, selected variant, price and destination.
+const legacySeedSlugs = new Map([
+  ["nutrimill:bosch-bakers-pack-attachment-set", "nutrimill-bosch-bakers-bundle"],
+  ["nutrimill:impact-grain-mill", "nutrimill-impact-grain-mill"],
+  ["nutrimill:classic-grain-mill", "nutrimill-classic-grain-mill"],
+  ["nutrimill:harvest-grain-mill", "nutrimill-harvest-grain-mill"],
+]);
+const makerSeedReplacements = new Set(legacySeedSlugs.values());
+
 const catalog = {
   meta: {
     site: "https://gifts.bakinggreatbread.blog",
@@ -207,7 +220,15 @@ const catalog = {
         .map((p) => ({ ...p, source: "main" })),
       "products"
     ),
-    ...seedProducts,
+    ...makerGifts(makers, data.products).map(item => ({
+      ...enrichRecord(item),
+      slug: legacySeedSlugs.get(item.slug) ?? item.slug,
+      source: "maker",
+      audiences: ["new-bakers", "serious-bakers"],
+      priceFrom: /from|–/i.test(item.priceLabel),
+      priceCheckedAt: item.priceChecked,
+    })),
+    ...seedProducts.filter(item => !makerSeedReplacements.has(item.slug)),
   ],
   krustic: enrichAll(krustic, "krustic"),
   amazon: enrichAll(

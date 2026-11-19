@@ -7,11 +7,18 @@ export const PRICES_LAST_CHECKED = "November 18, 2026";
 // guide until a valid URL is supplied. Keys are product slugs.
 export const DISABLED_PRODUCT_SLUGS: ReadonlySet<string> = new Set([
   // 404 as of 2026 launch audit
+  "vitale-starter", // Etsy shop is closed.
+  "spice-grinder", // Sold out at the maker.
+  "round-banneton", // Exact round variant pending verification.
+  "bread-wrap", // No active listing found.
+  "toast-tongs", // Product link returned 404.
+  "sahara", // Default configuration unavailable.
   "french-press", // Water Kettle & French Press — collabs.shop/b8bht0
 ]);
 
 // Krustic product URL slugs (from `krustic.ts`) that are unverified or 404.
 export const DISABLED_KRUSTIC_SLUGS: ReadonlySet<string> = new Set([
+  "bakers-bundle", // Linked Duo configuration unavailable.
   "dual-flour-dehydrated-starter",
 ]);
 

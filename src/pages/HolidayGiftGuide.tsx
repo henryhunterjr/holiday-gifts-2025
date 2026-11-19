@@ -33,6 +33,7 @@ import { breadcrumbJsonLd } from "@/components/seo/Breadcrumbs";
 import { type TopPick } from "@/data/topPicks";
 import "./holiday-editorial.css";
 import makers from "@/data/makers.json";
+import { makerGifts } from "@/lib/makerCatalog.mjs";
 import { ProductPhoto } from "@/components/ProductPhoto";
 
 /* ============ Types & data ============ */
@@ -42,6 +43,8 @@ type Product = {
   brand: string;
   price: number | string;
   priceChecked?: string;
+  aliases?: string[];
+  priceLabel?: string;
   cat: string;
   img: string;
   url: string;
@@ -52,9 +55,10 @@ type Product = {
 
 const allProducts = productsData.products as Product[];
 // Hide products that are disabled or lack a valid URL.
-const products = allProducts.filter(
+const curatedProducts = allProducts.filter(
   (p) => !DISABLED_PRODUCT_SLUGS.has(p.slug) && isValidUrl(p.url),
 );
+const products: Product[] = [...curatedProducts, ...makerGifts(makers, allProducts)];
 const top6Slugs = productsData.top6 as string[];
 const promoCodes = productsData.promo_codes as [string, string][];
 const visibleKrustic = krusticProducts.filter(
@@ -79,10 +83,11 @@ const CATEGORIES = [
   "Bake Day",
   "Wood & Serving",
   "Storage & Gifting",
+  "Milling & Flour",
 ];
 
 const priceNum = (p: Product) => (typeof p.price === "number" ? p.price : parseFloat(String(p.price).replace(/[^0-9.]/g, "")) || 0);
-const priceStr = (p: Product) => (typeof p.price === "number" ? `$${p.price}` : p.price);
+const priceStr = (p: Product) => p.priceLabel ?? (typeof p.price === "number" ? `$${p.price}` : p.price);
 
 /* ============ Gift Tag Card ============ */
 function GiftTag({ p, onCopyCode }: { p: Product; onCopyCode: (code: string) => void }) {
@@ -107,16 +112,16 @@ function GiftTag({ p, onCopyCode }: { p: Product; onCopyCode: (code: string) => 
           </button>
         )}
       </div>
-      <div className="mt-3 flex gap-2">
+      <div className="mt-3 flex flex-wrap gap-2">
         <a
           href={p.url}
           target="_blank"
           rel="nofollow sponsored noopener noreferrer"
-          className="group/gift relative flex-1 overflow-hidden rounded-[10px] bg-evergreen px-3 py-[11px] text-center text-[.88rem] font-extrabold text-flour transition-colors hover:bg-evergreen-deep"
+          className="group/gift relative flex-1 overflow-hidden rounded-[10px] bg-evergreen px-3 py-[11px] text-center min-h-[44px] text-[.95rem] font-extrabold text-flour transition-colors hover:bg-evergreen-deep"
         >
           <span className="relative inline-flex items-center justify-center gap-1.5">
             
-            Gift it →
+            Shop at {p.brand} ↗
           </span>
         </a>
         <button
@@ -176,7 +181,7 @@ function GiftFinderQuiz({ open, onClose }: { open: boolean; onClose: () => void 
   const questions = [
     { key: "who" as const, q: "Who's it for?", opts: ["A new baker", "Weekend baker", "Obsessed sourdough baker", "Market seller"] },
     { key: "budget" as const, q: "What's the budget?", opts: ["Under $25", "$25–75", "$75–150", "Splurge $150+"] },
-    { key: "need" as const, q: "What do they need most?", opts: ["Starter Care", "Proofing & Temp", "Scoring & Shaping", "Bake Day", "Wood & Serving", "Storage & Gifting"] },
+    { key: "need" as const, q: "What do they need most?", opts: CATEGORIES },
     { key: "style" as const, q: "Gift style?", opts: ["Stocking stuffer", "Centerpiece gift", "Bundle"] },
   ];
 
@@ -313,7 +318,7 @@ function GiftFinderQuiz({ open, onClose }: { open: boolean; onClose: () => void 
                 )}
                 {matches.some((m) => m.extra) && (
                   <p className="mt-3 text-xs text-crumb">
-                    Only {matches.filter((m) => !m.extra).length} {ans.need} pick{matches.filter((m) => !m.extra).length === 1 ? "" : "s"} land in that budget, so I added a couple of close cousins.
+                    Also shown are gifts from other categories within your budget.
                   </p>
                 )}
                 <div className="mt-6 flex flex-wrap gap-3">
@@ -377,19 +382,10 @@ export default function HolidayGiftGuide() {
         const b = bandByLabel(band);
         if (b && !b.test(priceNum(p))) return false;
       }
-      if (q && !`${p.name} ${p.brand} ${p.desc}`.toLowerCase().includes(q)) return false;
+      if (q && !`${p.name} ${p.brand} ${p.desc} ${p.aliases?.join(" ") ?? ""}`.toLowerCase().includes(q)) return false;
       return true;
     });
   }, [search, cat, band]);
-
-  const byCat = useMemo(() => {
-    const map = new Map<string, Product[]>();
-    for (const p of filtered) {
-      if (!map.has(p.cat)) map.set(p.cat, []);
-      map.get(p.cat)!.push(p);
-    }
-    return map;
-  }, [filtered]);
 
   const top6 = top6Slugs.map((s) => products.find((p) => p.slug === s)).filter(Boolean) as Product[];
   // Positions 1-6 come from the curated slugs; 7-10 live in topPicks.ts.
@@ -402,7 +398,7 @@ export default function HolidayGiftGuide() {
 
   // JSON-LD for the curated guide (only fully-verified products).
   const jsonLd = useMemo(() => {
-    const items = products
+    const items = curatedProducts
       .filter((p) => isValidUrl(p.url) && p.img && priceNum(p) > 0)
       .map((p, i) => ({
         "@type": "ListItem",
@@ -492,7 +488,7 @@ export default function HolidayGiftGuide() {
           <div className="hero-copy"><p className="edition-label">THE BREAD LOVER’S GIFT GUIDE</p>
             <h1>For the hands<br />that <em>make<br className="desktop-break" /> the magic.</em></h1>
             <p>Thoughtful tools. Beautiful ingredients. Gifts for the people who turn flour into something worth sharing.</p>
-            <div className="hero-actions"><a className="christmas-gift-link" href="/academy-gift-certificate/"><Gift size={30} aria-hidden /><span><strong>Gift a Crust &amp; Crumb Academy membership</strong><small>One year for $45 this Christmas <span className="whitespace-nowrap">(25% off)</span></small></span><span aria-hidden>→</span></a><button onClick={() => setQuiz(true)}>Help me choose <span aria-hidden>↗</span></button></div>
+            <div className="hero-actions"><a className="christmas-gift-link" href="/academy-gift-certificate/"><Gift size={30} aria-hidden /><span><strong>Gift a Crust &amp; Crumb Academy membership</strong><small>One year for $45 this Christmas <span className="whitespace-nowrap">(25% off)</span></small></span><span aria-hidden>→</span></a><button onClick={() => setQuiz(true)}>Find a gift <span aria-hidden>↗</span></button></div>
             <p className="curator-line">Curated by Henry Hunter <span>For a season of giving well.</span></p>
           </div>
           <div className="hero-composition" aria-label="A selection from the holiday gift edit">
@@ -560,7 +556,7 @@ export default function HolidayGiftGuide() {
             </div>
             <article id="cambro-6qt" className="cambro-pick" data-product={seasonalTools.cambro.slug} data-brand="Cambro">
               <a href={seasonalTools.cambro.url} target="_blank" rel="nofollow sponsored noopener noreferrer" aria-label="View the Cambro container on Amazon">
-                <img src={seasonalTools.cambro.img} width="600" height="600" alt="Clear 6-quart Cambro dough container with measurements and a red lid" loading="eager" />
+                <img src={seasonalTools.cambro.img} width="600" height="600" alt="Square 6-quart Cambro container with red volume markings and its matching red lid" loading="eager" />
               </a>
               <div>
                 <h3>{seasonalTools.cambro.name}</h3>
@@ -629,15 +625,15 @@ export default function HolidayGiftGuide() {
           <div className="mx-auto max-w-[1200px] px-5 py-3">
             <div className="flex flex-wrap items-center gap-2.5">
               <div className="relative min-w-[180px] flex-1">
-                <label htmlFor={searchInputId} className="sr-only">Search the main gift collection</label>
+                <label htmlFor={searchInputId} className="sr-only">Search gifts by product or maker</label>
                 <Search aria-hidden className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-crumb" />
                 <input
                   id={searchInputId}
                   type="search"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  placeholder="Search the main gift collection…"
-                  aria-label="Search the main gift collection"
+                  placeholder="Search gifts by product or maker…"
+                  aria-label="Search gifts by product or maker"
                   className="min-h-[44px] w-full rounded-full border-[1.5px] border-parchment-deep bg-white py-2.5 pl-10 pr-10 text-sm focus:border-honey focus:outline-none focus:ring-2 focus:ring-honey/30"
                 />
                 {search && (
@@ -700,7 +696,7 @@ export default function HolidayGiftGuide() {
           <div className="mx-auto max-w-[1200px] px-5">
             <h2 className="mb-3 font-display text-3xl font-semibold text-crust md:text-4xl">Browse all baking gifts</h2>
             <p className="mb-6 text-xs text-crumb md:text-sm">
-              Prices and availability may change. Some links are affiliate links, which support our free recipes at no additional cost to you. <span className="whitespace-nowrap">Latest price checks: {PRICES_LAST_CHECKED}. Check current prices at the store.</span>
+              Prices and availability may change. Some links are affiliate links, which support our free recipes at no additional cost to you. <span className="inline">Latest price checks: {PRICES_LAST_CHECKED}. Check current prices at the store.</span>
             </p>
             {(() => {
               // If a filter is active, show everything. Otherwise, cap the

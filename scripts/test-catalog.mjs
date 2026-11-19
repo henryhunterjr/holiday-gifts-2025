@@ -127,3 +127,17 @@ for (const tool of Object.values(seasonalTools)) {
   assert.equal(record.img, tool.img, `Missing photo for ${tool.name}`);
   assert.ok(fs.existsSync(path.join(root, "public", record.img)), `Missing photo file for ${tool.name}`);
 }
+
+const featured = catalog.products.find(product => product.slug === "sourdough-home");
+assert.equal(new URL(featured.url).pathname, "/products/sourdough-home-and-starter-jar");
+assert.equal(catalog.amazon.find(product => product.slug === "cambro-6qt-container").asin, "B07FC7L861");
+const makerData = JSON.parse(fs.readFileSync(path.join(root, "src/data/makers.json"), "utf8"));
+const listedPrices = new Map(catalog.products.filter(product => product.source === "main")
+  .map(product => [product.url, product.price]));
+for (const maker of makerData) {
+  for (const item of maker.items) {
+    if (!listedPrices.has(item.url)) continue;
+    const price = Number(item.priceLabel.match(/\d[\d,]*(?:\.\d+)?/)?.[0].replaceAll(",", ""));
+    assert.equal(listedPrices.get(item.url), price, `Conflicting prices for ${item.name}`);
+  }
+}
