@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generated": "2026-07-11",
+    "generated": "2026-11-19",
     "source": "verified: henry_affiliate_links.csv, affiliatelinks.csv, live-site audit",
-    "note": "Single source of truth for the Lovable rebuild. Never use affiliate-links-promo-codes.csv."
+    "note": "Updated Nov 19, 2026: added Amazon affiliate tag to books; replaced dead Holland Bowl Mill /baking/ URL with live Shopify URLs (confirm new Shopify affiliate param with HBM)."
   },
   "promo_codes": [
     [
@@ -20,6 +20,18 @@
     [
       "Discount built in",
       "Wire Monkey — use my link, save automatically"
+    ],
+    [
+      "ACADEMY26",
+      "NutriMill & Bosch — $20 off (stacks on Black Friday!)"
+    ],
+    [
+      "crustandcrumb",
+      "Grand Teton Ancient Grains — 10% off first order thru Dec 31"
+    ],
+    [
+      "BGBAH25",
+      "Krustic — 10% off heritage sourdough tools"
     ]
   ],
   "top6": [
@@ -38,7 +50,7 @@
       "price": 149.95,
       "cat": "Starter Care",
       "img": "/product-images/sourhouse-goldie-starter-warmer.webp",
-      "url": "https://sourhouse.co/products/global-goldie-by-sourhouse-cooling-puck?ref=BAKINGGREATBREAD",
+      "url": "https://sourhouse.co?ref=BAKINGGREATBREAD",
       "code": "HBK26",
       "desc": "Goldie warms your starter. Keep the included Cooling Puck in the freezer. If the light turns red above 82°F, set the frozen puck on the jar lid to cool the starter.",
       "note": "Cold kitchen? Solved. This lives on my counter year-round.",
@@ -51,24 +63,23 @@
       "price": 165,
       "cat": "Starter Care",
       "img": "/product-images/bt-sourdough-home-starter-jar-bundle.webp",
-      "url": "https://brodandtaylor.com/products/sourdough-home-and-starter-jar?dt_id=330823",
+      "url": "https://collabs.shop/1vjisb",
       "code": "",
-      "desc": "Includes the temperature-controlled Sourdough Home and a regular starter jar. Set the temperature to fit your feeding schedule.",
+      "desc": "Temperature-controlled home for your starter with jar included. Dial in an exact temp, hot or cold, and your feeding schedule finally behaves.",
       "note": "Set it to 78°F and your starter shows up on time.",
-      "priceChecked": "2026-11-19"
+      "priceChecked": "2026-11-17"
     },
     {
       "slug": "starter-jars",
       "name": "Starter Jars (Pint or Quart)",
       "brand": "Sourhouse",
-      "price": 23.95,
+      "price": 20.76,
       "cat": "Starter Care",
       "img": "/product-images/starter-jars.webp",
-      "url": "https://sourhouse.co/products/global-sourhouse-starter-jars-pint-or-quart?ref=BAKINGGREATBREAD",
+      "url": "https://bit.ly/Sourhouse",
       "code": "HBK26",
-      "desc": "The pint jar starts at $23.95. Its straight sides make feeding and scraping down your starter easy. Choose pint or quart at Sourhouse.",
-      "note": "The jar I actually reach for every morning.",
-      "priceChecked": "2026-11-19"
+      "desc": "Easy-clean borosilicate jars with measurement markings and breathable silicone lids. Made for daily starter life.",
+      "note": "The jar I actually reach for every morning."
     },
     {
       "slug": "vitale-starter",
@@ -95,13 +106,25 @@
       "note": "Back up your starter. Future you says thanks."
     },
     {
+      "slug": "sahara-shelves",
+      "name": "Sahara Poly Shelves",
+      "brand": "Brød & Taylor",
+      "price": 39.95,
+      "cat": "Starter Care",
+      "img": "/product-images/sahara-poly-shelves.webp",
+      "url": "https://collabs.shop/94zxfe",
+      "code": "",
+      "desc": "Extra shelves to expand the Sahara. More trays, more drying, one batch.",
+      "note": "Stocking stuffer for the Sahara owner."
+    },
+    {
       "slug": "proofer",
       "name": "Folding Proofer & Slow Cooker",
       "brand": "Brød & Taylor",
       "price": 249,
       "cat": "Proofing & Temp",
       "img": "/product-images/brod-taylor-proofer-sharp.jpg",
-      "url": "https://brodandtaylor.com/products/folding-proofer-slow-cooker?dt_id=330823",
+      "url": "https://collabs.shop/vutgu8",
       "code": "",
       "desc": "Precision temperature control for proofing, plus it doubles as a slow cooker. Folds flat. Dough rises on schedule, every time.",
       "note": "The single biggest upgrade to my winter baking.",
@@ -111,14 +134,13 @@
       "slug": "proofer-shelf",
       "name": "Proofer Accessory Shelf Kit",
       "brand": "Brød & Taylor",
-      "price": 24.95,
+      "price": 49.95,
       "cat": "Proofing & Temp",
       "img": "/product-images/folding-proofer-accessories.webp",
-      "url": "https://brodandtaylor.com/products/accessory-shelf-folding-legs?dt_id=330823",
+      "url": "https://collabs.shop/vutgu8",
       "code": "",
-      "desc": "The accessory shelf with folding legs adds a second level to your folding proofer.",
-      "note": "Two doughs, one proofer.",
-      "priceChecked": "2026-11-18"
+      "desc": "Adds a second level to the Folding Proofer. Double the dough in the same footprint.",
+      "note": "Two doughs, one proofer."
     },
     {
       "slug": "doughbed",
@@ -127,7 +149,7 @@
       "price": 279.95,
       "cat": "Proofing & Temp",
       "img": "/product-images/sourhouse-doughbed.jpg",
-      "url": "https://sourhouse.co/products/doughbed-by-sourhouse?ref=BAKINGGREATBREAD",
+      "url": "https://bit.ly/Sourhouse",
       "code": "HBK26",
       "desc": "A warm, glass-bottomed bed for bulk fermentation. Gentle even heat and a lid that earns its counter space.",
       "note": "Bulk ferment finally runs on my schedule."
@@ -139,23 +161,22 @@
       "price": 19.95,
       "cat": "Proofing & Temp",
       "img": "/product-images/sour-house-bread-blanket-alt.webp",
-      "url": "https://sourhouse.co/products/bread-blanket-by-sourhouse?ref=BAKINGGREATBREAD",
+      "url": "https://bit.ly/Sourhouse",
       "code": "HBK26",
       "desc": "Breathable muslin cover that keeps loaves fresh and doughs cozy. Simple and smart.",
       "note": "Tuck the dough in. Literally."
     },
     {
       "slug": "proof-container",
-      "name": "6 L Proofing Container",
+      "name": "6 Qt Proofing Container",
       "brand": "Brød & Taylor",
       "price": 24.95,
       "cat": "Proofing & Temp",
       "img": "/product-images/proofing-container-6qt.webp",
-      "url": "https://brodandtaylor.com/products/proofing-container?dt_id=330823",
+      "url": "https://brodandtaylor.com/henrysbreadkitchen",
       "code": "",
-      "desc": "A low, wide container with a lid and volume markings for tracking a batch of dough. Fits inside the Folding Proofer.",
-      "note": "Stop guessing. Watch it rise.",
-      "priceChecked": "2026-11-19"
+      "desc": "Clear-walled 6-quart tub with markings so you can see exactly how far your bulk has come.",
+      "note": "Stop guessing. Watch it rise."
     },
     {
       "slug": "round-banneton",
@@ -176,37 +197,35 @@
       "price": 32,
       "cat": "Proofing & Temp",
       "img": "/product-images/oval-banneton.jpg",
-      "url": "https://wiremonkey.com/products/wood-pulp-banneton?rfsn=6816936.edb8683",
+      "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
       "code": "",
-      "desc": "The 750 g oval wood-pulp basket holds a bâtard as it proofs.",
-      "note": "For the batard bakers on your list.",
-      "priceChecked": "2026-11-19"
+      "desc": "The batard version. Same sustainable wood pulp, same easy release.",
+      "note": "For the batard bakers on your list."
     },
     {
       "slug": "banneton-cover",
       "name": "Reusable Banneton Covers",
       "brand": "Wire Monkey",
-      "price": 21.99,
+      "price": 19.99,
       "cat": "Proofing & Temp",
       "img": "/product-images/wiremonkey-banneton-cover.webp",
-      "url": "https://wiremonkey.com/products/reusable-dish-covers?rfsn=6816936.edb8683",
+      "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
       "code": "",
       "desc": "Elastic, washable covers by Wild Clementine Co. Keep proofing dough from drying out, skip the plastic wrap.",
-      "note": "Little gift, daily use.",
-      "priceChecked": "2026-11-19"
+      "note": "Little gift, daily use."
     },
     {
       "slug": "goose-lame",
-      "name": "Goose Lame (Black Walnut)",
+      "name": "Goose Lame",
       "brand": "Wire Monkey",
       "price": 54.95,
       "cat": "Scoring & Shaping",
-      "img": "/maker-photos/wire-monkey/goose-lame.webp",
-      "url": "https://wiremonkey.com/products/goose-lame?rfsn=6816936.edb8683",
+      "img": "/product-images/goose-lame.jpg",
+      "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
       "code": "",
       "desc": "Wire Monkey’s flagship scoring tool. Balanced, beautiful walnut, and forgiving for newer hands.",
       "note": "The lame I hand people when they say scoring scares them.",
-      "priceChecked": "2026-11-18"
+      "priceChecked": "2026-11-17"
     },
     {
       "slug": "ufo-zero",
@@ -214,64 +233,62 @@
       "brand": "Wire Monkey",
       "price": 36.95,
       "cat": "Scoring & Shaping",
-      "img": "/maker-photos/wire-monkey/ufo-zero-lame.webp",
-      "url": "https://wiremonkey.com/products/ufo-zero-lame?rfsn=6816936.edb8683",
+      "img": "/product-images/wiremonkey-ufo-zero.webp",
+      "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
       "code": "",
       "desc": "The original circular lame. Retractable blade, ambidextrous, fine control for detail work.",
       "note": "Fits the hand like it grew there.",
-      "priceChecked": "2026-11-18"
+      "priceChecked": "2026-11-17"
     },
     {
       "slug": "ufo-lame",
-      "name": "UFO Bread Journey Lame (Walnut & Maple)",
+      "name": "UFO Bread Lame",
       "brand": "Wire Monkey",
-      "price": 36.95,
+      "price": 29.95,
       "cat": "Scoring & Shaping",
-      "img": "/maker-photos/wire-monkey/ufo-bread-journey-lame.webp",
-      "url": "https://wiremonkey.com/products/ufo-bread-journey-lame?rfsn=6816936.edb8683",
+      "img": "/product-images/ufo-lame.webp",
+      "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
       "code": "",
       "desc": "The saucer-shaped classic in gorgeous wood. Scoring control that makes ears stand up.",
-      "note": "Yes, it looks like a UFO. It scores like a dream.",
-      "priceChecked": "2026-11-18"
+      "note": "Yes, it looks like a UFO. It scores like a dream."
     },
     {
       "slug": "poco-lame",
-      "name": "Poco Lame (Walnut & Maple)",
+      "name": "Poco Lame",
       "brand": "Wire Monkey",
       "price": 20.95,
       "cat": "Scoring & Shaping",
-      "img": "/maker-photos/wire-monkey/poco-lame.webp",
-      "url": "https://wiremonkey.com/products/poco-lame?rfsn=6816936.edb8683",
+      "img": "/product-images/wiremonkey-poco.webp",
+      "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
       "code": "",
       "desc": "The smallest straight-blade lame, black walnut. Maximum control, minimum price.",
       "note": "Best stocking stuffer under $20 on this page.",
-      "priceChecked": "2026-11-18"
+      "priceChecked": "2026-11-17"
     },
     {
       "slug": "arc-lame",
-      "name": "Arc Lame (Black Walnut)",
+      "name": "Arc Lame",
       "brand": "Wire Monkey",
       "price": 28.95,
       "cat": "Scoring & Shaping",
-      "img": "/maker-photos/wire-monkey/arc-lame.webp",
-      "url": "https://wiremonkey.com/products/arc-lame?rfsn=6816936.edb8683",
+      "img": "/product-images/wiremonkey-arc-lame.webp",
+      "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
       "code": "",
       "desc": "The smallest curved lame in the world, with a base stand. Built for long dramatic slashes.",
       "note": "For the baker chasing that one perfect ear.",
-      "priceChecked": "2026-11-18"
+      "priceChecked": "2026-11-17"
     },
     {
       "slug": "bench-knife",
       "name": "Bench Knife",
       "brand": "Brød & Taylor",
-      "price": 18.95,
+      "price": 14.95,
       "cat": "Scoring & Shaping",
       "img": "/product-images/bt-dough-scraper.jpg",
       "url": "https://collabs.shop/8vcnxu",
       "code": "",
       "desc": "One-piece stainless scraper for dividing, shaping, and keeping the bench clean. No seams for dough to hide in.",
-      "note": "The tool I’d grab in a kitchen fire.",
-      "priceChecked": "2026-11-18"
+      "note": "The tool I’d grab in a kitchen fire."
     },
     {
       "slug": "dough-whisk",
@@ -289,83 +306,73 @@
       "slug": "whisk-bundle",
       "name": "Dough Whisk + Bench Knife Bundle",
       "brand": "Brød & Taylor",
-      "price": 37.75,
+      "price": 34.95,
       "cat": "Scoring & Shaping",
       "img": "/product-images/bt-dough-whisk-bench-knife-bundle.webp",
-      "url": "https://brodandtaylor.com/products/dough-whisk-and-bench-knife?dt_id=330823",
+      "url": "https://brodandtaylor.com/henrysbreadkitchen",
       "code": "",
       "desc": "The two tools every new baker needs, boxed together. Mixing and shaping, sorted.",
-      "note": "My default gift for brand-new bakers.",
-      "priceChecked": "2026-11-19"
+      "note": "My default gift for brand-new bakers."
     },
     {
       "slug": "silicone-mat",
       "name": "Non-Stick Silicone Mat",
       "brand": "Brød & Taylor",
-      "price": 8.95,
+      "price": 19.95,
       "cat": "Scoring & Shaping",
       "img": "/product-images/nonstick-silicone-mat.webp",
-      "url": "https://brodandtaylor.com/products/silicone-baking-mats?dt_id=330823",
+      "url": "https://brodandtaylor.com/henrysbreadkitchen",
       "code": "",
       "desc": "Heat-resistant mat for kneading and shaping. Saves your counters and your patience.",
-      "note": "Cleanup goes from ten minutes to ten seconds.",
-      "priceChecked": "2026-11-19"
+      "note": "Cleanup goes from ten minutes to ten seconds."
     },
     {
       "slug": "challenger-pan",
       "name": "Challenger Bread Pan",
       "brand": "Challenger Breadware",
-      "price": 299,
+      "price": 270,
       "cat": "Bake Day",
       "img": "/product-images/challenger-bread-pan.jpg",
-      "url": "https://challengerbreadware.com/product/the-challenger-bread-pan/?ref=henryhunterjr",
+      "url": "https://challengerbreadware.com/?ref=henryhunterjr",
       "code": "",
       "desc": "Cast iron built specifically for bread. Traps steam like a professional deck oven and gives you crust you can hear. Grab their pre-cut parchment while you’re there.",
-      "note": "The best crust of my life came out of this pan.",
-      "priceChecked": "2026-11-19"
+      "note": "The best crust of my life came out of this pan."
     },
     {
       "slug": "shell-batard",
       "name": "Baking Shell (Batard) + Steel",
       "brand": "Brød & Taylor",
-      "price": 164,
+      "price": 89,
       "cat": "Bake Day",
       "img": "/product-images/baking-shell-batard-steel-alt.webp",
       "url": "https://collabs.shop/noauwh",
       "code": "",
       "desc": "Steam-trapping shell and steel combo for oval loaves. Serious oven spring without a 30-pound Dutch oven.",
-      "note": "Dutch oven results, half the deadlift.",
-      "priceChecked": "2026-11-18"
+      "note": "Dutch oven results, half the deadlift."
     },
     {
       "slug": "shell-steel-bundle",
-      "name": "Baking Shell (Boule) + Steel",
+      "name": "Baking Shell + Steel Bundle",
       "brand": "Brød & Taylor",
-      "price": 164,
+      "price": 159,
       "cat": "Bake Day",
       "img": "/product-images/bt-baking-shell-steel-bundle.webp",
       "url": "https://collabs.shop/g9yxme",
       "code": "",
       "desc": "The boule version of the shell-and-steel setup. Even heat below, trapped steam above.",
-      "note": "Round loaf people, this one’s yours.",
-      "priceChecked": "2026-11-18"
+      "note": "Round loaf people, this one’s yours."
     },
     {
       "slug": "bakers-scale",
-      "name": "High Capacity Baking Scale",
+      "name": "Baker’s Math Kitchen Scale",
       "brand": "Brød & Taylor",
-      "price": 24.95,
+      "price": 49.95,
       "cat": "Bake Day",
-      "img": "/maker-photos/brod-and-taylor/high-capacity-baking-scale.webp",
-      "url": "https://brodandtaylor.com/products/high-capacity-baking-scale?dt_id=330823",
+      "img": "/product-images/bt-bakers-math-scale.webp",
+      "url": "https://collabs.shop/hvryn6",
       "code": "",
-      "desc": "A precision kitchen scale that weighs up to 15 kg / 33 lbs with 1-gram accuracy.",
-      "note": "Weigh your mixing bowl, then add the flour and water right on the scale.",
-      "priceChecked": "2026-11-18",
-      "aliases": [
-        "Baker’s Math Kitchen Scale",
-        "Baker's Math Kitchen Scale"
-      ]
+      "desc": "High-capacity precision scale with baker’s percentage built in. The math does itself.",
+      "note": "Percentages without the napkin math."
     },
     {
       "slug": "spice-grinder",
@@ -393,16 +400,15 @@
     },
     {
       "slug": "apron",
-      "name": "Brød & Taylor Apron",
+      "name": "Chef’s Apron",
       "brand": "Brød & Taylor",
-      "price": 60,
+      "price": 69,
       "cat": "Bake Day",
       "img": "/product-images/bt-chef-apron.jpg",
       "url": "https://collabs.shop/akcwv4",
       "code": "",
       "desc": "Durable, adjustable, and actually comfortable through a full bake day.",
-      "note": "Flour goes on the apron, not the good shirt.",
-      "priceChecked": "2026-11-18"
+      "note": "Flour goes on the apron, not the good shirt."
     },
     {
       "slug": "french-press",
@@ -447,11 +453,11 @@
       "price": 415,
       "cat": "Wood & Serving",
       "img": "/product-images/walnut-bowl-17.jpg",
-      "url": "https://hollandbowlmill.com/products/17-inch-wooden-bowl?variant=44106123214947&wpam_id=10",
+      "url": "https://hollandbowlmill.com/products/17-inch-wooden-bowl",
       "code": "Henry",
       "desc": "Hand-turned in Michigan from a single piece of walnut. An heirloom that mixes, proofs, and serves for generations.",
       "note": "This bowl will outlive both of us. That’s the point.",
-      "priceChecked": "2026-11-18"
+      "priceChecked": "2026-11-19"
     },
     {
       "slug": "maple-17",
@@ -460,11 +466,11 @@
       "price": 345,
       "cat": "Wood & Serving",
       "img": "/product-images/maple-bowl-17.jpg",
-      "url": "https://hollandbowlmill.com/products/17-inch-wooden-bowl?variant=44106123182179&wpam_id=10",
+      "url": "https://hollandbowlmill.com/products/17-inch-wooden-bowl",
       "code": "Henry",
       "desc": "The lighter-grain sibling. Same one-piece hand-turned construction, brighter look.",
       "note": "Maple brightens a dark kitchen.",
-      "priceChecked": "2026-11-18"
+      "priceChecked": "2026-11-19"
     },
     {
       "slug": "beech-17",
@@ -473,11 +479,11 @@
       "price": 250,
       "cat": "Wood & Serving",
       "img": "/product-images/holland-bowl-mill.jpg",
-      "url": "https://hollandbowlmill.com/products/17-inch-wooden-bowl?variant=44106123083875&wpam_id=10",
+      "url": "https://hollandbowlmill.com/products/17-inch-wooden-bowl",
       "code": "Henry",
       "desc": "The workhorse of the line. Big enough for full batches, and wood keeps dough at room temp even in a cold kitchen.",
       "note": "The entry door to heirloom wood.",
-      "priceChecked": "2026-11-18"
+      "priceChecked": "2026-11-19"
     },
     {
       "slug": "rolling-pin",
@@ -486,11 +492,11 @@
       "price": 65,
       "cat": "Wood & Serving",
       "img": "/product-images/french-rolling-pin.jpg",
-      "url": "https://hollandbowlmill.com/products/french-rolling-pin?wpam_id=10",
+      "url": "https://hollandbowlmill.com/collections/wooden-bowls",
       "code": "Henry",
       "desc": "Tapered hardwood pin, hand-finished. Feel the dough instead of fighting it.",
       "note": "Tapered pins let you steer.",
-      "priceChecked": "2026-11-18"
+      "priceChecked": "2026-11-19"
     },
     {
       "slug": "bread-board",
@@ -499,11 +505,11 @@
       "price": 130,
       "cat": "Wood & Serving",
       "img": "/product-images/bread-board-bow-knife.jpg",
-      "url": "https://hollandbowlmill.com/products/bread-board-and-bow-knife?wpam_id=10",
+      "url": "https://hollandbowlmill.com/collections/wooden-bowls",
       "code": "Henry",
       "desc": "Cherry board with a serrated bow knife. The way fresh bread wants to be sliced and served.",
       "note": "This is how you present a loaf you’re proud of.",
-      "priceChecked": "2026-11-18"
+      "priceChecked": "2026-11-19"
     },
     {
       "slug": "round-sling",
@@ -512,7 +518,7 @@
       "price": 16.99,
       "cat": "Storage & Gifting",
       "img": "/product-images/modkitchen-bread-sling.webp",
-      "url": "https://modkitchn.com/products/silicone-bread-sling?dt_id=2863905",
+      "url": "https://modkitchn.com/BAKINGGREATBREAD",
       "code": "BAKINGGREATBREAD",
       "desc": "Silicone sling with SureHold grips. Lower dough into a screaming-hot Dutch oven without the burn scars.",
       "note": "Knuckles: saved.",
@@ -520,12 +526,12 @@
     },
     {
       "slug": "oval-sling",
-      "name": "Large Oval Bread Sling",
+      "name": "Oval Bread Sling",
       "brand": "ModKitchn",
-      "price": 17.99,
+      "price": 15.99,
       "cat": "Storage & Gifting",
       "img": "/product-images/modkitchen-oval-sling.webp",
-      "url": "https://modkitchn.com/products/oval-silicone-bread-slings?dt_id=2863905",
+      "url": "https://modkitchn.com/BAKINGGREATBREAD",
       "code": "BAKINGGREATBREAD",
       "desc": "The batard-shaped version, sized for oval Dutch ovens.",
       "note": "Same save, longer loaf.",
@@ -538,7 +544,7 @@
       "price": 29.99,
       "cat": "Storage & Gifting",
       "img": "/product-images/modkitchen-bread-bag.webp",
-      "url": "https://modkitchn.com/products/fresh-bread-storage-bags?dt_id=2863905",
+      "url": "https://modkitchn.com/BAKINGGREATBREAD",
       "code": "BAKINGGREATBREAD",
       "desc": "Waterproof zipper, moisture-managing liner, made from recycled bottles. Keeps crust crisp days longer.",
       "note": "Day-three sourdough that still crackles.",
@@ -551,7 +557,7 @@
       "price": 29.99,
       "cat": "Storage & Gifting",
       "img": "/product-images/modkitchen-holiday-bags.webp",
-      "url": "https://modkitchn.com/products/special-edition-holiday-bread-bags?dt_id=2863905",
+      "url": "https://modkitchn.com/BAKINGGREATBREAD",
       "code": "BAKINGGREATBREAD",
       "desc": "Limited-edition festive prints. Gift a homemade loaf inside one and you’ve given two presents.",
       "note": "The loaf is the gift. This is the bow.",
@@ -564,7 +570,7 @@
       "name": "Sourdough for the Rest of Us",
       "price": 6.08,
       "img": "/product-images/sourdough-rest-of-us-sharp.jpg",
-      "url": "https://a.co/d/guDGoiE",
+      "url": "https://a.co/d/guDGoiE?tag=onamz55024a-20",
       "desc": "The beginner-friendly guide. No fancy equipment, no guilt, just techniques that work.",
       "note": "The book I wrote for people with no gear and no patience for gatekeeping."
     },
@@ -573,7 +579,7 @@
       "name": "Vitale Sourdough Mastery",
       "price": 9.6,
       "img": "/product-images/vitale-sourdough-mastery-sharp.jpg",
-      "url": "https://a.co/d/h8Lnskn",
+      "url": "https://a.co/d/h8Lnskn?tag=onamz55024a-20",
       "desc": "Level up: timing, temperature control, and shaping, explained deeper.",
       "note": "For when your loaves are fine and you want to know why the good ones were good."
     },
@@ -582,7 +588,7 @@
       "name": "From Oven to Market",
       "price": 7.62,
       "img": "/product-images/from-oven-to-market-sharp.jpg",
-      "url": "https://a.co/d/3MKgp3l",
+      "url": "https://a.co/d/3MKgp3l?tag=onamz55024a-20",
       "desc": "Turn baking into income. Cottage food law, pricing, production planning.",
       "note": "Cottage law, pricing, production planning. Read it before you sell a single loaf."
     },
@@ -591,7 +597,7 @@
       "name": "The Loaf and the Lie",
       "price": 6.99,
       "img": "/product-images/loaf-and-lie-sharp.jpg",
-      "url": "https://a.co/d/fyIyomh",
+      "url": "https://a.co/d/fyIyomh?tag=onamz55024a-20",
       "desc": "Part history, part exposé: how industrial bread replaced the real thing.",
       "note": "Why store bread is what it is. The history behind what we do at the bench."
     },
@@ -600,7 +606,7 @@
       "name": "Bread: A Journey",
       "price": 7.95,
       "img": "/product-images/bread-journey.jpg",
-      "url": "https://a.co/d/3jUvHC8",
+      "url": "https://a.co/d/3jUvHC8?tag=onamz55024a-20",
       "desc": "History, fermentation science, and bread cultures around the world.",
       "note": "The science and the story, not another recipe list."
     }

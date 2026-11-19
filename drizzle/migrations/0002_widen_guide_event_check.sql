@@ -1,0 +1,2 @@
+alter table public.guide_events drop constraint guide_events_event_check;
+alter table public.guide_events add constraint guide_events_event_check check (event = any (array['page_view','product_view','gift_save','gift_remove','partner_click','offer_click','outbound_click','collection_click','outbound_affiliate_click','promo_code_copy','academy_cert_cta_click','academy_cert_email_copy','quiz_start','quiz_step','quiz_complete','quiz_pick_click','filter_used','wishlist_toggle','giveaway_modal_open','free_guide_click','maker_door_click']));

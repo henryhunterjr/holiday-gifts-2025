@@ -65,6 +65,7 @@ export type Database = {
           medium: string
           path: string
           product: string
+          section: string
           session_id: string
           source: string
         }
@@ -79,6 +80,7 @@ export type Database = {
           medium?: string
           path: string
           product?: string
+          section?: string
           session_id: string
           source?: string
         }
@@ -93,6 +95,7 @@ export type Database = {
           medium?: string
           path?: string
           product?: string
+          section?: string
           session_id?: string
           source?: string
         }

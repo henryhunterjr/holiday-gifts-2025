@@ -3,9 +3,9 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import HolidayGiftGuide from "./pages/HolidayGiftGuide";
+import MakerCollection from "./pages/MakerCollection";
 import AcademyGiftCertificate from "./pages/AcademyGiftCertificate";
 import NotFound from "./pages/NotFound";
 import SourdoughStarterCareGuide from "./pages/SourdoughStarterCareGuide";
@@ -29,9 +29,12 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <Routes>
-            <Route path="/academy-gift-certificate" element={<AcademyGiftCertificate />} />
             <Route path="/" element={<HolidayGiftGuide />} />
-            <Route path="/bread-baker-holiday-gift-guide-2025" element={<HolidayGiftGuide />} />
+            <Route path="/bread-baker-holiday-gift-guide-2025" element={<Navigate to="/" replace />} />
+            <Route path="/makers/:makerId" element={<MakerCollection />} />
+            <Route path="/makers/:makerId/" element={<MakerCollection />} />
+            <Route path="/academy-gift-certificate" element={<AcademyGiftCertificate />} />
+            <Route path="/academy-gift-certificate/" element={<AcademyGiftCertificate />} />
             <Route path="/sourdough-starter-care-guide" element={<SourdoughStarterCareGuide />} />
             <Route path="/sourdough-starter-troubleshooting" element={<SourdoughStarterTroubleshooting />} />
             <Route path="/fix-gummy-dense-sourdough" element={<FixGummyDenseSourdough />} />
@@ -39,6 +42,7 @@ const App = () => (
             <Route path="/essential-baking-tools" element={<EssentialBakingTools />} />
             <Route path="/how-to-wrap-sourdough-as-a-gift" element={<HowToWrapSourdoughAsAGift />} />
             <Route path="/saved-gifts" element={<SavedGifts />} />
+            <Route path="/saved-gifts/" element={<SavedGifts />} />
             <Route path="/admin/analytics" element={<AdminAnalytics />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin/giveaway" element={<AdminGiveaway />} />
