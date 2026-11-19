@@ -47,6 +47,7 @@ export function useWishlist() {
     const current = read();
     const next = current.includes(slug) ? current.filter((s) => s !== slug) : [...current, slug];
     write(next);
+    window.dispatchEvent(new CustomEvent("guide-event", {detail:{event:next.includes(slug)?"gift_save":"gift_remove",product:slug,brand:""}}));
     return next.includes(slug);
   }, []);
 

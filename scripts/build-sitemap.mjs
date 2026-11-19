@@ -36,7 +36,9 @@ const categories = [...new Set(arrays.flatMap((p) => p.categories ?? []))].sort(
 const audiences = [...new Set(arrays.flatMap((p) => p.audiences ?? []))].sort();
 const bands = [...new Set(arrays.map((p) => p.priceBand).filter((b) => typeof b === "string"))].sort();
 
+const makers = JSON.parse(readFileSync(join(root, "src/data/makers.json"), "utf8"));
 const locs = [
+  ...makers.map(m => `${ORIGIN}/makers/${m.id}/`),
   `${ORIGIN}/`,
   ...spaRoutes.map((r) => `${ORIGIN}${r}/`),
   `${BASE_URL}/`,

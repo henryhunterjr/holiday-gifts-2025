@@ -15,6 +15,7 @@ export type WishlistItem = {
   img: string;
   url: string;
   priceLabel: string;
+  actionLabel?: string;
 };
 
 /** Modal list of every gift the visitor has saved, with links back out to buy. */
@@ -66,10 +67,10 @@ export function WishlistDrawer({
                     <a
                       href={it.url}
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel={it.actionLabel ? "noopener noreferrer" : "nofollow sponsored noopener noreferrer"}
                       className="inline-flex min-h-[44px] items-center gap-1 rounded-[10px] bg-evergreen px-3 text-[.82rem] font-bold text-flour hover:bg-evergreen-deep"
                     >
-                      Gift it <ExternalLink className="h-3 w-3" aria-hidden />
+                      {it.actionLabel ?? "Gift it"} <ExternalLink className="h-3 w-3" aria-hidden />
                     </a>
                     <button
                       onClick={() => remove(it.slug)}

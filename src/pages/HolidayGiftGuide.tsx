@@ -1,10 +1,11 @@
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Search, Share2, Copy, Snowflake, ExternalLink, Star, X, Sparkles, ChevronDown, Heart } from "lucide-react";
+import { Gift, Search, Share2, Copy, Snowflake, ExternalLink, X, Sparkles, ChevronDown, Heart } from "lucide-react";
 import { toast } from "sonner";
 import productsData from "@/data/products.json";
 import { krusticProducts } from "@/data/krustic";
+import seasonalTools from "@/data/seasonalAmazon.json";
 import { amazonProducts } from "@/data/amazon";
 import {
   PRICE_BANDS,
@@ -22,30 +23,17 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import bakeryWindow from "@/assets/holiday/holiday-hero-2026.png.asset.json";
-import bgbLogo from "@/assets/holiday/ornament-bgb-logo.png";
-import ornBauble from "@/assets/holiday/ornament-bgb-bauble.png";
-import ornCrust from "@/assets/holiday/ornament-crust-crumb.png";
-import ornBanneton from "@/assets/holiday/ornament-banneton.png";
-import ornMixerRed from "@/assets/holiday/ornament-mixer-red.jpg";
-import ornStarter from "@/assets/holiday/ornament-starter-pack.jpg";
-import ornHenryMixer from "@/assets/holiday/ornament-henry-mixer.jpg";
+
 import fotmBanner from "@/assets/holiday/fotm-banner.jpg";
-import bookSourdough from "@/assets/holiday/sourdough-rest-of-us-sharp.jpg";
-import bookVitale from "@/assets/holiday/vitale-sourdough-mastery-sharp.jpg";
-import bookFOTM from "@/assets/holiday/from-oven-to-market-sharp.jpg";
-import bookLoaf from "@/assets/holiday/loaf-and-lie-sharp.jpg";
-import bookJourney from "@/assets/holiday/bread-journey.jpg";
-import giveBreadVideo from "@/assets/holiday/give-bread-instead.mp4.asset.json";
-import giveBreadTag from "@/assets/holiday/give-bread-instead-tag.png.asset.json";
-import wireMonkeyBanner from "@/assets/promo/wiremonkey-promo-banner.png.asset.json";
 import { GiveawayModal } from "@/components/giveaway/GiveawayModal";
-import { MusicPlayer } from "@/components/MusicPlayer";
+import { holidayBakingGuide } from "@/data/holidayBakingGuide";
 import { WishlistDrawer, type WishlistItem } from "@/components/WishlistDrawer";
 import { useWishlist } from "@/hooks/useWishlist";
 import { breadcrumbJsonLd } from "@/components/seo/Breadcrumbs";
-import { EXTRA_TOP_PICKS, type TopPick } from "@/data/topPicks";
-import { PromoPopup, usePromoCampaign } from "@/components/promo/PromoPopup";
+import { type TopPick } from "@/data/topPicks";
+import "./holiday-editorial.css";
+import makers from "@/data/makers.json";
+import { ProductPhoto } from "@/components/ProductPhoto";
 
 /* ============ Types & data ============ */
 type Product = {
@@ -53,6 +41,7 @@ type Product = {
   name: string;
   brand: string;
   price: number | string;
+  priceChecked?: string;
   cat: string;
   img: string;
   url: string;
@@ -95,163 +84,21 @@ const CATEGORIES = [
 const priceNum = (p: Product) => (typeof p.price === "number" ? p.price : parseFloat(String(p.price).replace(/[^0-9.]/g, "")) || 0);
 const priceStr = (p: Product) => (typeof p.price === "number" ? `$${p.price}` : p.price);
 
-/* ============ Countdown ============ */
-function useDaysToChristmas() {
-  const [days, setDays] = useState(0);
-  useEffect(() => {
-    const calc = () => {
-      const now = new Date();
-      const year = now.getMonth() === 11 && now.getDate() > 25 ? now.getFullYear() + 1 : now.getFullYear();
-      const xmas = new Date(year, 11, 25);
-      setDays(Math.max(0, Math.ceil((xmas.getTime() - now.getTime()) / 86400000)));
-    };
-    calc();
-    const id = setInterval(calc, 60_000);
-    return () => clearInterval(id);
-  }, []);
-  return days;
-}
-
-/* ============ Snow Canvas ============ */
-function SnowCanvas({ on }: { on: boolean }) {
-  const ref = useRef<HTMLCanvasElement>(null);
-  useEffect(() => {
-    const c = ref.current;
-    if (!c) return;
-    const ctx = c.getContext("2d")!;
-    ctx.clearRect(0, 0, c.width, c.height);
-    if (!on) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    let raf = 0;
-    const resize = () => {
-      c.width = window.innerWidth;
-      c.height = window.innerHeight;
-    };
-    resize();
-    window.addEventListener("resize", resize);
-    const flakes = Array.from({ length: 70 }, () => ({
-      x: Math.random() * c.width,
-      y: Math.random() * c.height,
-      r: 0.6 + Math.random() * 2.2,
-      vy: 0.2 + Math.random() * 0.7,
-      vx: -0.2 + Math.random() * 0.4,
-      a: 0.35 + Math.random() * 0.45,
-    }));
-    const draw = () => {
-      ctx.clearRect(0, 0, c.width, c.height);
-      for (const f of flakes) {
-        f.y += f.vy;
-        f.x += f.vx;
-        if (f.y > c.height) { f.y = -5; f.x = Math.random() * c.width; }
-        if (f.x < 0 || f.x > c.width) f.x = Math.random() * c.width;
-        ctx.fillStyle = `rgba(255,250,235,${f.a})`;
-        ctx.beginPath();
-        ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
-        ctx.fill();
-      }
-      raf = requestAnimationFrame(draw);
-    };
-    draw();
-    return () => { cancelAnimationFrame(raf); window.removeEventListener("resize", resize); };
-  }, [on]);
-  return <canvas ref={ref} className="pointer-events-none fixed inset-0 z-[45] h-screen w-screen" />;
-}
-
-/* ============ Header Ornament Garland ============ */
-const ORNAMENTS = [
-  { src: ornBauble,     size: 62, drop: 14 },
-  { src: ornCrust,      size: 56, drop: 26 },
-  { src: ornBanneton,   size: 58, drop: 18 },
-  { src: ornHenryMixer, size: 60, drop: 30 },
-  { src: ornStarter,    size: 52, drop: 22 },
-  { src: ornMixerRed,   size: 58, drop: 16 },
-  { src: ornBauble,     size: 54, drop: 28 },
-  { src: ornCrust,      size: 60, drop: 20 },
-];
-
-function HeaderGarland() {
-  // The garland belongs to the hero. Once the visitor scrolls past it, fade it
-  // out so it never hangs over live content further down the page.
-  const [visible, setVisible] = useState(true);
-  useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY < 160);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-  return (
-    <div
-      aria-hidden
-      className="pointer-events-none absolute inset-x-0 top-full z-40 h-[120px] overflow-visible transition-opacity duration-300"
-      style={{ opacity: visible ? 1 : 0 }}
-    >
-      {/* String across the top */}
-      <svg className="absolute inset-x-0 top-0 h-6 w-full" viewBox="0 0 1200 24" preserveAspectRatio="none">
-        <path d="M0 4 Q 300 24 600 8 T 1200 4" stroke="hsl(var(--evergreen-deep))" strokeWidth="2" fill="none" opacity="0.85" />
-      </svg>
-      <div className="mx-auto flex max-w-[1200px] items-start justify-between px-6">
-        {ORNAMENTS.map((o, i) => (
-          <div
-            key={i}
-            className="ornament-sway relative"
-            style={{
-              // @ts-expect-error css var
-              "--sway-a": `${-3 - (i % 3)}deg`,
-              "--sway-b": `${3 + (i % 3)}deg`,
-              animationDelay: `${(i * 0.35).toFixed(2)}s`,
-              animationDuration: `${4 + (i % 4)}s`,
-              marginTop: `${o.drop - 20}px`,
-            }}
-          >
-            {/* twine */}
-            <span
-              className="absolute left-1/2 top-0 -z-10 block w-[2px] -translate-x-1/2 bg-[hsl(var(--twine))]"
-              style={{ height: `${o.drop + 8}px` }}
-            />
-            <img
-              src={o.src}
-              alt=""
-              className="ornament-twinkle block rounded-full object-cover"
-              style={{
-                width: o.size,
-                height: o.size,
-                marginTop: o.drop,
-                animationDelay: `${(i * 0.25).toFixed(2)}s`,
-              }}
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-/* ============ Tiny holly icon (inline SVG) ============ */
-function HollySprig({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden>
-      <path d="M12 3c-1.6 2-4 2.4-6 1.6.4 2.2 2 4 4 4.4-2 .6-4 2.4-4.4 4.6 2-.8 4.4-.4 6 1.6 1.6-2 4-2.4 6-1.6-.4-2.2-2.4-4-4.4-4.6 2-.4 3.6-2.2 4-4.4-2 .8-4.4.4-5.2-1.6z" fill="#2f7d3a" stroke="#1c4a24" strokeWidth=".6"/>
-      <circle cx="9.5" cy="15" r="1.4" fill="#e11d1d"/>
-      <circle cx="13" cy="16.5" r="1.2" fill="#e11d1d"/>
-      <circle cx="11.5" cy="13" r="1.1" fill="#e11d1d"/>
-    </svg>
-  );
-}
-
 /* ============ Gift Tag Card ============ */
 function GiftTag({ p, onCopyCode }: { p: Product; onCopyCode: (code: string) => void }) {
   const num = priceNum(p);
   const { has, toggle } = useWishlist();
   const saved = has(p.slug);
   return (
-    <article className="gift-tag">
-      <span className="brand-chip">{p.brand}</span>
-      <a href={p.url} target="_blank" rel="noopener noreferrer" className="flex h-[170px] items-center justify-center mb-3">
-        <img src={p.img} alt={p.name} loading="lazy" className="max-h-full object-contain transition-transform group-hover:scale-105" style={{ mixBlendMode: "multiply" }} />
+    <article className="holiday-product-card">
+      <a href={p.url} target="_blank" rel="nofollow sponsored noopener noreferrer" aria-label={`Shop ${p.name}`}>
+        <ProductPhoto src={p.img} name={p.name} />
       </a>
+      <div className="holiday-card-body">
+      <p className="holiday-card-brand">{p.brand}</p>
       <h4 className="font-display text-[1.08rem] font-semibold text-crust mb-1 leading-tight">{p.name}</h4>
       <p className="text-[.86rem] text-[hsl(27_35%_28%)] mb-2 line-clamp-3">{p.desc}</p>
-      {p.note && <p className="font-hand text-[1.12rem] text-cranberry-deep -rotate-1 mb-3">"{p.note}"</p>}
+      {p.note && <p className="font-hand text-[1.12rem] text-cranberry-deep -rotate-1 mb-3">{p.note}</p>}
       <div className="mt-auto flex items-center justify-between gap-2 pt-2">
         <span className={`font-bold text-[1.12rem] ${num === 0 ? "text-evergreen" : "text-crust"}`}>{num === 0 ? "Free" : priceStr(p)}</span>
         {p.code && (
@@ -264,19 +111,11 @@ function GiftTag({ p, onCopyCode }: { p: Product; onCopyCode: (code: string) => 
         <a
           href={p.url}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="nofollow sponsored noopener noreferrer"
           className="group/gift relative flex-1 overflow-hidden rounded-[10px] bg-evergreen px-3 py-[11px] text-center text-[.88rem] font-extrabold text-flour transition-colors hover:bg-evergreen-deep"
         >
-          {/* mini string lights */}
-          <span aria-hidden className="pointer-events-none absolute inset-x-1 top-1 flex justify-between">
-            <i className="bulb block h-1.5 w-1.5 rounded-full bg-[#ffd166]" style={{ animationDelay: "0s", boxShadow: "0 0 6px #ffd166" }} />
-            <i className="bulb block h-1.5 w-1.5 rounded-full bg-[#ef476f]" style={{ animationDelay: ".3s", boxShadow: "0 0 6px #ef476f" }} />
-            <i className="bulb block h-1.5 w-1.5 rounded-full bg-[#06d6a0]" style={{ animationDelay: ".6s", boxShadow: "0 0 6px #06d6a0" }} />
-            <i className="bulb block h-1.5 w-1.5 rounded-full bg-[#118ab2]" style={{ animationDelay: ".9s", boxShadow: "0 0 6px #118ab2" }} />
-            <i className="bulb block h-1.5 w-1.5 rounded-full bg-[#ffd166]" style={{ animationDelay: "1.2s", boxShadow: "0 0 6px #ffd166" }} />
-          </span>
           <span className="relative inline-flex items-center justify-center gap-1.5">
-            <HollySprig className="h-4 w-4" />
+            
             Gift it →
           </span>
         </a>
@@ -319,6 +158,7 @@ function GiftTag({ p, onCopyCode }: { p: Product; onCopyCode: (code: string) => 
         >
           <Heart className="h-4 w-4" fill={saved ? "currentColor" : "none"} />
         </button>
+      </div>
       </div>
     </article>
   );
@@ -457,7 +297,7 @@ function GiftFinderQuiz({ open, onClose }: { open: boolean; onClose: () => void 
                 ) : (
                   <div className="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-3">
                     {matches.map(({ p, extra }) => (
-                      <a key={p.slug} href={p.url} target="_blank" rel="noopener noreferrer" className="group relative rounded-xl border border-parchment-deep bg-white p-3 transition-transform hover:-translate-y-1">
+                      <a key={p.slug} href={p.url} target="_blank" rel="nofollow sponsored noopener noreferrer" className="group relative rounded-xl border border-parchment-deep bg-white p-3 transition-transform hover:-translate-y-1">
                         {extra && (
                           <span className="absolute right-2 top-2 rounded-full bg-honey/25 px-2 py-0.5 text-[.65rem] font-bold uppercase tracking-wide text-crust">
                             Also worth a look
@@ -491,17 +331,24 @@ function GiftFinderQuiz({ open, onClose }: { open: boolean; onClose: () => void 
 
 /* ============ Page ============ */
 export default function HolidayGiftGuide() {
-  const days = useDaysToChristmas();
   const location = useLocation();
+  useEffect(() => {
+    const anchor = document.getElementById(location.hash.slice(1));
+    if (!anchor) return;
+    const frame = requestAnimationFrame(() => anchor.scrollIntoView({ block: "start" }));
+    return () => cancelAnimationFrame(frame);
+  }, [location.hash]);
+
   const canonicalUrl = `https://gifts.bakinggreatbread.blog${location.pathname === "/" ? "/" : location.pathname}`;
-  const [snow, setSnow] = useState(true);
   const [search, setSearch] = useState("");
   const [cat, setCat] = useState<string | null>(null);
   const [band, setBand] = useState<string | null>(null);
   const [quiz, setQuiz] = useState(false);
+  const [navOpen, setNavOpen] = useState(false);
   const [showAll, setShowAll] = useState(false);
-  const [wishlistOpen, setWishlistOpen] = useState(false);
-  const { count: savedCount } = useWishlist();
+  const [wishlistOpen, setWishlistOpen] = useState(window.location.hash === "#saved");
+  const { count: savedCount, has, toggle } = useWishlist();
+  const guideSaved = has(holidayBakingGuide.slug);
   const [giveaway, setGiveaway] = useState(false);
   const searchInputId = useId();
 
@@ -547,13 +394,10 @@ export default function HolidayGiftGuide() {
   const top6 = top6Slugs.map((s) => products.find((p) => p.slug === s)).filter(Boolean) as Product[];
   // Positions 1-6 come from the curated slugs; 7-10 live in topPicks.ts.
   const top10: TopPick[] = [
-    ...top6.map((p) => ({ id: p.slug, name: p.name, img: p.img, url: p.url, price: priceNum(p) })),
-    ...EXTRA_TOP_PICKS,
+    ...top6.map((p) => ({ id: p.slug, name: p.name, img: p.img, url: p.url, price: priceNum(p), desc: p.desc, seller: p.brand })),
+
   ];
 
-  // Promo popups defer while any other overlay is open — never stacked.
-  const anyOverlayOpen = quiz || wishlistOpen || giveaway;
-  const promo = usePromoCampaign(anyOverlayOpen);
 
 
   // JSON-LD for the curated guide (only fully-verified products).
@@ -598,6 +442,10 @@ export default function HolidayGiftGuide() {
 
   // Saved gifts are stored as slugs; resolve them back to card data on demand.
   const wishlistLookup = (slug: string): WishlistItem | undefined => {
+    if (slug === holidayBakingGuide.slug) return holidayBakingGuide;
+    const maker = makers.find(m => m.items.some(p => `${m.id}:${p.slug}` === slug));
+    const item = maker?.items.find(p => `${maker.id}:${p.slug}` === slug);
+    if (maker && item) return {slug,name:item.name,brand:maker.brand,img:item.img,url:item.url,priceLabel:item.priceLabel};
     const p = products.find((x) => x.slug === slug);
     if (!p) return undefined;
     return {
@@ -611,7 +459,7 @@ export default function HolidayGiftGuide() {
   };
 
   return (
-    <div className="min-h-screen bg-flour text-ink">
+    <div className="holiday-editorial min-h-screen bg-flour text-ink">
       <Helmet>
         <title>Bread Lover's Holiday Gift Guide 2026 | Baking Great Bread</title>
         <meta name="description" content="The 2026 gift guide for bread bakers. Handpicked tools, lames, and books from Henry Hunter, with promo codes built in." />
@@ -626,236 +474,123 @@ export default function HolidayGiftGuide() {
       </Helmet>
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
+
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      {/* Top bar */}
-      <header className="sticky top-0 z-50 border-b border-honey/25 bg-oven/95 text-flour backdrop-blur">
-        <div className="mx-auto flex max-w-[1200px] items-center gap-3 px-4 py-2.5">
-          <a href="#top" className="mr-auto flex items-center gap-2 font-display text-base font-semibold text-flour">
-            <img
-              src={bgbLogo}
-              alt="Baking Great Bread at Home"
-              className="ornament-twinkle h-9 w-9 rounded-full object-cover ring-1 ring-honey/40"
-            />
-            <span className="hidden sm:inline">Baking Great Bread at Home</span>
-            <span className="sm:hidden">BGB</span>
-          </a>
-          <MusicPlayer />
-          <button
-            onClick={() => setWishlistOpen(true)}
-            aria-label={`Saved gifts, ${savedCount} saved`}
-            className={`inline-flex min-h-[36px] items-center gap-1 rounded-full border px-3 py-1 text-xs transition-colors ${savedCount > 0 ? "border-cranberry bg-cranberry/30 text-flour" : "border-honey/40 hover:bg-flour/10"}`}
-          >
-            <Heart className="h-3 w-3" fill={savedCount > 0 ? "currentColor" : "none"} aria-hidden />
-            <span className="hidden sm:inline">Saved</span>
-            <span>{savedCount}</span>
-          </button>
-          <span className="hidden rounded-full border border-honey/40 bg-cranberry/30 px-3 py-1 text-xs whitespace-nowrap sm:inline">
-            <b className="text-honey">{days}</b> days to Christmas
-          </span>
-          <button
-            onClick={() => setSnow((s) => !s)}
-            aria-pressed={snow}
-            className={`hidden items-center gap-1 rounded-full border px-3 py-1 text-xs transition-colors sm:inline-flex ${snow ? "border-honey bg-flour/15" : "border-flour/30"}`}
-          >
-            <Snowflake className="h-3 w-3" /> Snow
-          </button>
-        </div>
-        <HeaderGarland />
+      <a className="skip-guide" href="#browse">Skip to gifts</a>
+      <div className="season-note">A little thought. A lot of good bread. <span>THE HOLIDAY EDIT 2026</span></div>
+      <header className="editorial-header">
+        <a href="#top" className="editorial-brand"><img src="/brand-logos/academy-crest.webp" alt="Crust & Crumb Academy" width="720" height="405" /><span>Baking Great Bread at Home<strong>Crust &amp; Crumb Academy</strong><small>A holiday guide by Henry Hunter</small></span></a>
+        <div className="header-actions">
+          <button type="button" className="mobile-browse" aria-expanded={navOpen} aria-controls="gift-guide-nav" onClick={() => setNavOpen(open => !open)}>Browse gifts <ChevronDown size={16} aria-hidden /></button>
+          <a className="about-henry" href="https://bakinggreatbread.com/about" target="_blank" rel="noopener noreferrer">About Henry Hunter</a><button onClick={() => setWishlistOpen(true)} className="saved-control" aria-label={`Saved gifts, ${savedCount} saved`}><Heart size={17} aria-hidden /> <span>Saved</span> {savedCount}</button></div>
+        <nav aria-label="Main navigation" id="gift-guide-nav" className={navOpen ? "is-open" : undefined} onClick={() => setNavOpen(false)}><a href="#makers">Shop by maker</a><a href="#grain-to-gift">Grain &amp; flour</a><a href="#browse">All gifts</a></nav>
       </header>
       <WishlistDrawer open={wishlistOpen} onClose={() => setWishlistOpen(false)} lookup={wishlistLookup} />
-
-
       <main id="top">
-        {/* Hero */}
-        <section className="relative overflow-hidden pt-[150px] text-flour" style={{ background: "radial-gradient(1200px 500px at 50% -10%, hsl(var(--honey) / 0.16), transparent 60%), linear-gradient(180deg, #17202b 0%, #1c1a14 45%, hsl(var(--oven)) 100%)" }}>
-          <div className="relative z-20 mx-auto grid max-w-[1200px] items-center gap-10 px-5 pb-20 md:grid-cols-[1.05fr_0.95fr] md:gap-12">
-            <div>
-              <p className="eyebrow" style={{ color: "hsl(var(--honey))" }}>The 2026 Guide</p>
-              <h1 className="mt-3 font-display font-medium" style={{ fontSize: "clamp(2.4rem, 5.6vw, 4.2rem)" }}>
-                Every gift on this list has <em className="not-italic italic text-honey" style={{ fontVariationSettings: '"SOFT" 100' }}>flour on it.</em>
-              </h1>
-              <p className="mt-4 max-w-[46ch] text-[1.05rem]" style={{ color: "#e8dcc6" }}>
-                Handpicked baking tools, wood bowls, lames, and books from Henry Hunter. Real gear I use, with promo codes built in.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <button onClick={() => setQuiz(true)} className="inline-flex items-center gap-2 rounded-full bg-cranberry px-6 py-3 font-bold text-flour shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-cranberry-deep">
-                  <Sparkles className="h-4 w-4" /> Open the Gift Finder
-                </button>
-                <a href="#top6" className="inline-flex items-center gap-2 rounded-full border-[1.5px] border-flour/40 px-6 py-3 font-bold text-flour transition-colors hover:border-honey hover:text-honey">
-                  See Henry's Top 10
-                </a>
-              </div>
-              <p className="mt-5 text-sm" style={{ color: "#bfae92" }}>Affiliate links support free recipes. I only recommend what I use.</p>
-            </div>
-            <div
-              className="relative overflow-hidden rounded-3xl"
-              style={{
-                boxShadow:
-                  "0 0 0 4px #1a100a, 0 0 0 8px #3a2412, 0 24px 60px rgba(0,0,0,.6), 0 0 120px hsl(var(--honey) / 0.45)",
-              }}
-            >
-              <img
-                src={bakeryWindow.url}
-                alt="Baking Great Bread at Home Holiday Shopper's Guide by Crust & Crumb Academy"
-                className="block w-full"
-                loading="eager"
-              />
-              <div
-                className="pointer-events-none absolute inset-0 rounded-3xl"
-                style={{ boxShadow: "inset 0 0 90px hsl(var(--honey) / 0.22)" }}
-              />
+        <section className="editorial-hero">
+          <div className="hero-copy"><p className="edition-label">THE BREAD LOVER’S GIFT GUIDE</p>
+            <h1>For the hands<br />that <em>make<br className="desktop-break" /> the magic.</em></h1>
+            <p>Thoughtful tools. Beautiful ingredients. Gifts for the people who turn flour into something worth sharing.</p>
+            <div className="hero-actions"><a className="christmas-gift-link" href="/academy-gift-certificate/"><Gift size={30} aria-hidden /><span><strong>Gift a Crust &amp; Crumb Academy membership</strong><small>One year for $45 this Christmas <span className="whitespace-nowrap">(25% off)</span></small></span><span aria-hidden>→</span></a><button onClick={() => setQuiz(true)}>Help me choose <span aria-hidden>↗</span></button></div>
+            <p className="curator-line">Curated by Henry Hunter <span>For a season of giving well.</span></p>
+          </div>
+          <div className="hero-composition" aria-label="A selection from the holiday gift edit">
+            <div className="hero-arch" aria-hidden />
+            <a className="hero-main-photo" href={products.find(p => p.slug === "challenger-pan")?.url} target="_blank" rel="nofollow sponsored noopener noreferrer"><img src="/product-images/challenger-bread-pan.jpg" alt="Challenger Bread Pan with a freshly baked loaf" width="650" height="650" fetchPriority="high" /><span>THE BAKE-DAY UPGRADE <b>Challenger Bread Pan ↗</b></span></a>
+            <a className="hero-detail-photo" href={products.find(p => p.slug === "walnut-17")?.url} target="_blank" rel="nofollow sponsored noopener noreferrer"><img src="/product-images/walnut-bowl-17.jpg" alt="Handcrafted walnut bowl from Holland Bowl Mill" width="300" height="250" /><span>Made to be kept.</span></a>
+            <a className="hero-holiday-logo" href="https://recipepantry.app/holiday-bake" target="_blank" rel="noopener noreferrer"><img src="/brand-logos/recipe-pantry.webp" alt="Explore the Recipe Pantry Holiday Collection" width="300" height="220" /></a>
+          </div>
+        </section>
+        <div className="editorial-strip"><a href="#free-holiday-guide" className="guide-strip-link"><strong>FREE</strong> Holiday Baking Guide ↓</a><span>Handpicked by Henry</span><span>Affiliate links support free recipes</span></div>
+        <section className="give-bread-banner" aria-labelledby="give-bread-title">
+          <img src="/brand-logos/give-bread-instead-2026.webp" alt="Give Bread Instead. This holiday season, give bread instead. Campaign details coming soon." width="2048" height="682" loading="lazy" />
+          <div className="give-bread-caption"><h2 id="give-bread-title">Give Bread Instead</h2><p>Nothing to buy. Just bake, wrap, and give.</p><span>Our annual community campaign. Details coming soon.</span></div>
+          <p className="sr-only">For five years our community has baked a loaf, wrapped it, and given it to someone who matters. This year Baking Great Bread at Home, Crust &amp; Crumb Academy, and From Oven to Market are working on a way for every loaf to do a little good beyond your own table.</p>
+        </section>
+        <section id="makers" className="edit-section"><h2 className="text-4xl mb-8">Shop by need. Find your maker.</h2><div className="maker-doors">{makers.map(m => <a key={m.id} href={`/makers/${m.id}/`}><div><small>{m.brand}</small><h3>{m.title}</h3><span>Explore {m.items.length} gifts ↗</span></div><img src={m.items[0].img} alt="" loading="lazy" /></a>)}</div></section>
+        <section id="free-holiday-guide" className="holiday-guide-feature" aria-labelledby="free-holiday-title">
+          <a className="holiday-guide-art" href={holidayBakingGuide.url} target="_blank" rel="noopener noreferrer" aria-label="Open the free Holiday Baking Guide">
+            <img src={holidayBakingGuide.img} alt="Henry Hunter with challah, panettone and Christmas stollen" width="1672" height="941" loading="lazy" />
+          </a>
+          <div className="holiday-guide-copy">
+            <p className="free-gift-tag">FREE</p>
+            <h2 id="free-holiday-title">Holiday Baking Guide</h2>
+            <p>Christmas morning cinnamon rolls. Stollen to wrap for a friend. Pick from 35 recipes and use my make-ahead calendar to plan your bake. This one's on me.</p>
+            <div className="holiday-guide-actions">
+              <a className="promo-action" href={holidayBakingGuide.url} target="_blank" rel="noopener noreferrer">Open my free guide ↗</a>
+              <button type="button" className="save-free-guide" aria-pressed={guideSaved} onClick={() => toggle(holidayBakingGuide.slug)}>
+                <Heart size={17} fill={guideSaved ? "currentColor" : "none"} aria-hidden />
+                {guideSaved ? "Saved to my gift list" : "Save to my gift list"}
+              </button>
             </div>
           </div>
         </section>
-        {/* Site-wide snow, sits above hero and page, below modals */}
-        <SnowCanvas on={snow} />
-
-        {/* Promo marquee */}
-        <div className="overflow-hidden border-y border-honey/30 bg-evergreen-deep text-flour">
-          <div className="flex w-max animate-marquee gap-12 whitespace-nowrap py-3">
-            {[...promoCodes, ...promoCodes, ...promoCodes].map(([code, brand], i) => (
-              <span key={i} className="text-sm tracking-wide">
-                <b className="font-display text-honey">{code}</b> · {brand}
-              </span>
-            ))}
+        <section id="grain-to-gift" className="grain-story">
+          <div className="grain-intro"><p className="edition-label">FROM GRAIN TO SOMETHING GREAT</p><h2>A gift that starts<br />a whole new ritual.</h2><p>Fresh flour, a favorite grain, a reason to bake again tomorrow. Bring the mill and the ingredients together.</p></div>
+          <div className="partner-spread">
+            <article className="mill-feature"><a href="/makers/nutrimill/"><img src="/product-images/nutrimill-classic-holiday.webp" alt="NutriMill Classic grain mill" width="700" height="700" loading="lazy" /></a><div><div className="partner-identity"><span className="partner-name">NUTRIMILL</span><a href="/makers/nutrimill/"><img src="/brand-logos/nutrimill-starburst.jpg" alt="NutriMill" width="92" height="82" /></a></div><h3>Make fresh flour part of the everyday.</h3><p>Explore home milling with the NutriMill Classic. Compare mills, mixers and prices in our NutriMill collection.</p><button className="partner-code" onClick={() => copyCode("ACADEMY26")} aria-label="Copy NutriMill code ACADEMY26"><Copy size={14} /> ACADEMY26 <small>Copy code</small></button><a className="editorial-text-link" href="/makers/nutrimill/">Explore NutriMill <span aria-hidden>↗</span></a></div></article>
+            <article className="grain-feature"><a href="/makers/grand-teton/"><img src="/product-images/grand-teton-holiday.webp" alt="Grand Teton Ancient Grains spelt berries, whole grain einkorn flour and emmer berries" width="700" height="600" loading="lazy" /></a><div><div className="partner-identity"><span className="partner-name">GRAND TETON ANCIENT GRAINS</span><a href="/makers/grand-teton/"><img src="/brand-logos/grand-teton-mark.png" alt="Grand Teton Ancient Grains" width="92" height="82" /></a></div><h3>Good bread begins with good grain.</h3><p>Explore einkorn, spelt and emmer from this family farm and mill in Idaho.</p><button className="partner-code" onClick={() => copyCode("crustandcrumb")} aria-label="Copy Grand Teton code crustandcrumb"><Copy size={14} /> crustandcrumb <small>Copy code</small></button><p className="offer-detail">10% off your first order through December 31, 2026.</p><a className="editorial-text-link" href="/makers/grand-teton/">Explore grains & prices <span aria-hidden>↗</span></a></div></article>
           </div>
-        </div>
-
-        {/* Give Bread Instead campaign */}
-        <section id="give-bread-instead" className="relative scroll-mt-[150px] overflow-hidden text-flour" style={{ background: "radial-gradient(900px 400px at 20% 0%, hsl(var(--cranberry) / 0.25), transparent 60%), linear-gradient(180deg, #2a1418 0%, #1c0f12 100%)" }}>
-          <div className="mx-auto grid max-w-[1200px] items-center gap-10 px-5 py-16 md:grid-cols-[1fr_1.1fr] md:py-20">
+          <div className="grain-resources"><span>A little guidance for the first batch.</span><a href="https://grains.bakinggreatbread.com" target="_blank" rel="noopener noreferrer">Henry’s grain guide ↗</a></div>
+        </section>
+        <section id="ancient-grain-challenge" className="grain-challenge-feature" aria-labelledby="grain-challenge-title">
+          <a href="https://challenge.bakinggreatbread.com/#me" target="_blank" rel="noopener noreferrer" aria-label="Register for the Ancient Grain Challenge">
+            <img src="/brand-logos/ancient-grain-challenge.webp" alt="Weekly 5 lb bags of ancient grain, a 25 lb grain grand prize and a Bosch Universal Plus mixer giveaway" width="1800" height="599" loading="lazy" />
+          </a>
+          <div className="grain-challenge-caption">
             <div>
-              {/* Gift tag hanging as if tied to a package */}
-              <div className="relative mb-8 flex justify-start" aria-hidden>
-                <div className="relative">
-                  <span
-                    className="absolute left-1/2 -top-6 h-6 w-[2px] -translate-x-1/2 bg-[hsl(var(--twine))]"
-                    style={{ background: "#c9a56a" }}
-                  />
-                  <img
-                    src={giveBreadTag.url}
-                    alt=""
-                    className="ornament-sway block h-auto w-[130px] origin-top drop-shadow-2xl sm:w-[160px] md:w-[180px]"
-                    style={{
-                      transform: "rotate(-7deg)",
-                      // @ts-expect-error css vars
-                      "--sway-a": "-9deg",
-                      "--sway-b": "-5deg",
-                      animationDuration: "6s",
-                    }}
-                  />
-                </div>
-              </div>
-              <p className="eyebrow" style={{ color: "hsl(var(--honey))" }}>A December tradition</p>
-              <h2 className="mt-3 font-display font-medium text-flour" style={{ fontSize: "clamp(2rem, 4.4vw, 3.4rem)", lineHeight: 1.05 }}>
-                Give <em className="not-italic italic text-honey">Bread</em> Instead.
-              </h2>
-              <p className="mt-4 max-w-[46ch] text-[1.05rem]" style={{ color: "#e8dcc6" }}>
-                Skip the store-bought this year. A loaf you baked with your own hands says more than anything on a shelf. Watch the two-minute story, then pick a tool below to gift the baker in your life.
-              </p>
-              <p className="mt-3 text-sm" style={{ color: "#e8dcc6" }}>
-                Baking your gift? <Link to="/how-to-wrap-sourdough-as-a-gift" className="font-semibold text-honey underline underline-offset-2 hover:text-flour">Learn how to wrap sourdough as a gift</Link>.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <a href="#top6" className="inline-flex items-center gap-2 rounded-full bg-cranberry px-6 py-3 font-bold text-flour shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-cranberry-deep" aria-label="Shop the 2026 Holiday Gift Guide">
-                  <HollySprig className="h-4 w-4" /> Shop the guide
-                </a>
-                <button onClick={() => setQuiz(true)} className="inline-flex items-center gap-2 rounded-full border-[1.5px] border-flour/40 px-6 py-3 font-bold text-flour transition-colors hover:border-honey hover:text-honey">
-                  <Sparkles className="h-4 w-4" /> Find the perfect gift
-                </button>
-              </div>
+              <h2 id="grain-challenge-title">Ancient Grain Challenge</h2>
+              <p>Register free for the December 1 Bosch Universal Plus mixer drawing. Complete one lesson to qualify for weekly 5 lb grain prizes, or all seven for a chance at the 25 lb bag from Grand Teton Ancient Grains.</p>
             </div>
-            <div
-              className="relative overflow-hidden rounded-2xl"
-              style={{
-                boxShadow: "0 0 0 4px #1a100a, 0 0 0 8px #3a2412, 0 24px 60px rgba(0,0,0,.6), 0 0 100px hsl(var(--cranberry) / 0.35)",
-              }}
-            >
-              <video
-                src={giveBreadVideo.url}
-                poster="/give-bread-instead-poster.jpg"
-                controls
-                playsInline
-                preload="metadata"
-                className="block h-auto w-full bg-oven object-cover"
-              />
-
-            </div>
+            <a className="promo-action" href="https://challenge.bakinggreatbread.com/#me" target="_blank" rel="noopener noreferrer">Register free ↗</a>
           </div>
         </section>
-
         {/* Top 10 */}
-        <section id="top6" className="scroll-mt-[150px] bg-gradient-to-b from-oven to-[hsl(24_38%_11%)] py-16 text-flour">
+        <section id="top6" className="edit-section py-16">
           <div className="mx-auto max-w-[1200px] px-5">
             <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
               <div>
-                <p className="eyebrow" style={{ color: "hsl(var(--honey))" }}>If you only look at one shelf</p>
-                <h2 className="mt-2 font-display text-3xl font-semibold text-flour md:text-5xl">Henry's Top 10</h2>
+                <p className="eyebrow" style={{ color: "hsl(var(--honey))" }}>THE GIFTS I’D GIVE</p>
+                <h2 className="mt-2 font-display text-3xl font-semibold text-flour md:text-5xl">Henry's Top Picks</h2>
               </div>
-              <p className="max-w-[52ch] text-[hsl(37_35%_75%)]">The gifts I'd put under my own tree. Proven, loved, and used until the paint wore off.</p>
+              <p className="max-w-[52ch] text-[hsl(37_35%_75%)]">A few good things for the flour-dusted counter. Start here, then find your own favorites.</p>
             </div>
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-              {top10.map((p, i) =>
-                p.placeholder ? (
-                  <div
-                    key={p.id}
-                    className="flex flex-col items-center justify-center rounded-2xl border-[1.5px] border-dashed border-flour/25 bg-flour/[0.06] p-4 text-center min-h-[280px]"
-                  >
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full border-[1.5px] border-flour/30 font-display text-lg font-bold text-flour/60">{i + 1}</span>
-                    <h3 className="mt-4 font-display text-[1.02rem] font-semibold text-flour/70">{p.name}</h3>
-                    <p className="mt-1 text-sm text-[hsl(37_25%_62%)]">{p.placeholderLabel}</p>
-                  </div>
-                ) : (
-                  <article key={p.id} className="relative flex flex-col rounded-2xl bg-gradient-to-b from-[#fdf6e8] to-flour p-4 text-ink shadow-lg transition-transform hover:-translate-y-1.5">
-                    <span className="absolute -left-2 -top-3 flex h-10 w-10 items-center justify-center rounded-full bg-cranberry font-display text-lg font-bold text-flour shadow-lg">{i + 1}</span>
-                    {p.discountLabel && (
-                      <span className="absolute right-3 top-3 rounded-full bg-evergreen px-2.5 py-1 text-[11px] font-extrabold uppercase tracking-wide text-flour shadow">
-                        {p.discountLabel}
-                      </span>
-                    )}
-                    <a href={p.url} target="_blank" rel="noopener noreferrer sponsored" className="block">
-                      <img src={p.img} alt={p.name} loading="lazy" className="mx-auto my-3 h-36 object-contain" style={{ mixBlendMode: "multiply" }} />
-                    </a>
-                    <h3 className="font-display text-[1.02rem] font-semibold text-crust">{p.name}</h3>
-                    {p.seller && <p className="mt-1 text-xs text-crumb">{p.seller}</p>}
-                    {p.desc && <p className="mt-2 text-[.84rem] leading-snug text-[hsl(27_35%_28%)]">{p.desc}</p>}
-                    <div className="mt-auto pt-3">
-                      {p.salePrice ? (
-                        <>
-                          <p className="font-extrabold text-cranberry">
-                            ${p.salePrice.toFixed(2)}{" "}
-                            <span className="text-sm font-semibold text-crumb line-through">${p.price.toFixed(2)}</span>
-                          </p>
-                          {p.code && (
-                            <button
-                              type="button"
-                              onClick={() => copyCode(p.code!)}
-                              className="code-pill mt-2 min-h-[36px]"
-                              aria-label={`Copy promo code ${p.code}`}
-                            >
-                              <Copy className="h-3 w-3" /> {p.discountLabel} · {p.code}
-                            </button>
-                          )}
-                        </>
-                      ) : (
-                        <p className="font-extrabold text-cranberry">${p.price.toFixed(2)}</p>
+            <article id="cambro-6qt" className="cambro-pick" data-product={seasonalTools.cambro.slug} data-brand="Cambro">
+              <a href={seasonalTools.cambro.url} target="_blank" rel="nofollow sponsored noopener noreferrer" aria-label="View the Cambro container on Amazon">
+                <img src={seasonalTools.cambro.img} width="600" height="600" alt="Clear 6-quart Cambro dough container with measurements and a red lid" loading="eager" />
+              </a>
+              <div>
+                <h3>{seasonalTools.cambro.name}</h3>
+                <p>{seasonalTools.cambro.note}</p>
+                <a className="cambro-buy" href={seasonalTools.cambro.url} target="_blank" rel="nofollow sponsored noopener noreferrer">Shop Cambro on Amazon <ExternalLink size={18} aria-hidden /></a>
+                <small>{seasonalTools.cambro.detail}</small>
+              </div>
+            </article>
+            <div className="featured-grid">
+              {top10.map((p) => (
+                <article key={p.id} data-product={p.id} data-brand={p.seller} className="holiday-product-card holiday-featured-card">
+                  <a href={p.url} target="_blank" rel="nofollow sponsored noopener noreferrer" aria-label={`Shop ${p.name}`}>
+                    <ProductPhoto src={p.img} name={p.name} />
+                  </a>
+                  <div className="holiday-card-body">
+                    <p className="holiday-card-brand">{p.seller ?? "HENRY’S EDIT"}</p><h3 className="font-display text-xl font-semibold leading-tight text-crust">{p.name}</h3>
+                    {p.desc && <p className="mt-2 text-sm leading-relaxed text-crumb">{p.desc}</p>}
+                    <div className="mt-auto pt-5">
+                      {p.code && (
+                        <button type="button" onClick={() => copyCode(p.code!)} className="code-pill mb-3 min-h-[44px]" aria-label={`Copy promo code ${p.code}`}>
+                          <Copy className="h-3 w-3" /> {p.code}
+                        </button>
                       )}
-                      <a
-                        href={p.url}
-                        target="_blank"
-                        rel="noopener noreferrer sponsored"
-                        className="mt-3 flex min-h-[46px] items-center justify-center rounded-[10px] bg-evergreen px-3 text-center text-[.88rem] font-extrabold text-flour transition-colors hover:bg-evergreen-deep"
-                      >
-                        {p.cta ?? "Gift it"} →
+                      <a href={p.url} target="_blank" rel="nofollow sponsored noopener noreferrer" className="holiday-shop-link">
+                        {p.cta ?? "Shop this gift"} <ExternalLink className="h-4 w-4" aria-hidden />
                       </a>
+                      <p className="mt-3 text-xl font-bold text-evergreen-deep">${p.price.toFixed(2)}</p><p className="mt-1 text-xs text-crumb">USD · Reference price{products.find(x => x.slug === p.id)?.priceChecked ? ` checked ${products.find(x => x.slug === p.id)?.priceChecked}` : ""}. Confirm final price and stock at checkout.</p>
                     </div>
-                  </article>
-                ),
-              )}
+                  </div>
+                </article>
+              ))}
             </div>
-            <div className="-mt-3 h-3.5 rounded bg-gradient-to-b from-[#5a3a20] to-[#3a2412] shadow-2xl" />
             <p className="mt-6 text-center text-sm text-[hsl(37_35%_75%)]">
               Need help choosing tools?{" "}
               <Link to="/essential-baking-tools" className="font-semibold text-honey underline underline-offset-2 hover:text-flour">
@@ -866,6 +601,23 @@ export default function HolidayGiftGuide() {
           </div>
         </section>
 
+
+        <section className="academy-gift" id="academy-gift" aria-labelledby="academy-gift-title">
+          <div className="academy-gift-face">
+            <img src="/brand-logos/academy-crest.webp" alt="Crust & Crumb Academy" width="720" height="405" loading="lazy" />
+            <div>
+              <p className="academy-gift-label">Christmas gift certificate</p>
+              <h2 id="academy-gift-title">A year of baking together.</h2>
+              <p>Give your baker an annual Crust &amp; Crumb Academy membership. Bring the dough questions. Pull up a chair for a Saturday bake-along.</p>
+            </div>
+          </div>
+          <div className="academy-gift-stub">
+            <p className="academy-gift-label">One year of membership</p>
+            <p className="academy-gift-price"><strong>$45</strong> <span>Regularly <s>$60</s></span></p>
+            <p className="academy-gift-saving">Save $15 this Christmas · 25% off</p>
+            <a href="/academy-gift-certificate/">View the Christmas gift certificate <span aria-hidden="true">↗</span></a>
+          </div>
+        </section>
 
         {/* Browse block. The sticky filter bar lives inside this wrapper, so it
             only follows the visitor through the section it actually filters. */}
@@ -946,7 +698,7 @@ export default function HolidayGiftGuide() {
           <div className="mx-auto max-w-[1200px] px-5">
             <h2 className="mb-3 font-display text-3xl font-semibold text-crust md:text-4xl">Browse all baking gifts</h2>
             <p className="mb-6 text-xs text-crumb md:text-sm">
-              Prices and availability may change. Some links are affiliate links, which support our free recipes at no additional cost to you. <span className="whitespace-nowrap">Prices last checked {PRICES_LAST_CHECKED}.</span>
+              Prices and availability may change. Some links are affiliate links, which support our free recipes at no additional cost to you. <span className="whitespace-nowrap">Latest price checks: {PRICES_LAST_CHECKED}. Check current prices at the store.</span>
             </p>
             {(() => {
               // If a filter is active, show everything. Otherwise, cap the
@@ -966,25 +718,6 @@ export default function HolidayGiftGuide() {
                     if (items.length === 0) return null;
                     return (
                       <div key={c}>
-                        {c === "Proofing & Temp" && (
-                          <a
-                            href="https://wiremonkey.com/henryhunter"
-                            target="_blank"
-                            rel="noopener noreferrer sponsored"
-                            className="mb-10 block overflow-hidden rounded-xl border border-parchment-deep shadow-sm transition-transform hover:scale-[1.01] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-crust"
-                            aria-label="Wire Monkey handcrafted wood scoring lames — shop now"
-                          >
-                            <img
-                              src={wireMonkeyBanner.url}
-                              alt="Wire Monkey handcrafted wood scoring lames — shop at wiremonkey.com/henryhunter"
-                              loading="lazy"
-                              decoding="async"
-                              className="block h-auto w-full"
-                              width={1200}
-                              height={300}
-                            />
-                          </a>
-                        )}
                         <div className="mb-14">
                           <div className="mb-6 flex items-baseline gap-3.5 border-b-2 border-dashed border-parchment-deep pb-2.5">
                             <h3 className="font-display text-2xl font-semibold text-crust">{c}</h3>
@@ -1053,15 +786,15 @@ export default function HolidayGiftGuide() {
             </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {visibleKrustic.map((k, i) => (
-                <a key={i} href={k.url} target="_blank" rel="noopener noreferrer" className="group rounded-2xl border border-parchment-deep bg-white p-4 shadow-md transition-transform hover:-translate-y-1.5">
-                  <div className="mb-3 flex h-44 items-center justify-center overflow-hidden rounded-xl bg-flour/50">
-                    <img src={k.img} alt={k.name} loading="lazy" className="max-h-full object-contain transition-transform group-hover:scale-105" />
-                  </div>
+                <a key={i} href={k.url} target="_blank" rel="nofollow sponsored noopener noreferrer" className="holiday-product-card">
+                  <ProductPhoto src={k.img} name={k.name} />
+                  <div className="holiday-card-body">
                   <h3 className="font-display text-base font-semibold text-crust">{k.name}</h3>
                   <p className="mt-1 line-clamp-2 text-sm text-crumb">{k.desc}</p>
                   <div className="mt-3 flex items-center justify-between">
                     <span className="font-bold text-cranberry">{k.price}</span>
                     <span className="inline-flex items-center gap-1 text-xs font-bold text-evergreen">Shop <ExternalLink className="h-3 w-3" /></span>
+                  </div>
                   </div>
                 </a>
               ))}
@@ -1086,24 +819,17 @@ export default function HolidayGiftGuide() {
             <ChevronDown aria-hidden className="h-5 w-5 flex-none text-crumb" />
           </summary>
           <div>
-            <p className="mb-6 max-w-[60ch] text-crumb">The Amazon-available gear that rounds out a serious baker's kitchen.</p>
-            <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-              {amazonProducts.map((a, i) => (
-                <a key={i} href={a.url} target="_blank" rel="noopener noreferrer" className="group flex flex-col rounded-xl border border-parchment-deep bg-white p-3 shadow transition-transform hover:-translate-y-1">
-                  <span className="mb-2 w-fit rounded-full bg-parchment px-2 py-0.5 text-xs font-bold text-crumb">{a.category}</span>
-                  <div className="mb-3 flex h-44 items-center justify-center overflow-hidden rounded-lg bg-white">
-                    <img src={a.img} alt={a.name} loading="lazy" className="max-h-full object-contain transition-transform group-hover:scale-105" />
-                  </div>
-                  <h3 className="font-display text-sm font-semibold text-crust line-clamp-2">{a.name}</h3>
-                  <div className="mt-2 flex items-center gap-1 text-xs">
-                    {[...Array(5)].map((_, s) => (
-                      <Star key={s} className={`h-3.5 w-3.5 ${s < Math.round(a.rating) ? "fill-honey text-honey" : "fill-honey/30 text-honey/30"}`} />
-                    ))}
-                    <span className="ml-1 text-crumb">{a.rating}</span>
-                  </div>
-                  <div className="mt-auto flex items-center justify-between pt-3">
-                    <span className="font-bold text-cranberry">{a.price}</span>
-                    <span className="rounded bg-[#FF9900] px-2 py-1 text-xs font-bold text-black">View</span>
+            <p className="mb-2 max-w-[60ch] text-crumb">More tools for the baker on your list.</p>
+            <p className="mb-6 text-sm text-crumb">As an Amazon Associate I earn from qualifying purchases. These are paid links. Check Amazon for current prices and availability.</p>
+            <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
+              {amazonProducts.map((a) => (
+                <a key={a.url} href={a.url} target="_blank" rel="nofollow sponsored noopener noreferrer" className="holiday-product-card">
+                  <ProductPhoto src={a.img} name={a.name} />
+                  <div className="holiday-card-body">
+                    <p className="holiday-card-brand">{a.category}</p>
+                    <h3 className="font-display text-lg font-semibold leading-tight text-crust">{a.name}</h3>
+                    {a.detail && <p className="mb-3 text-sm text-crumb">{a.detail}</p>}
+                    <span className="holiday-amazon-link mt-auto">Check price on Amazon <ExternalLink className="h-4 w-4" aria-hidden /></span>
                   </div>
                 </a>
               ))}
@@ -1149,7 +875,7 @@ export default function HolidayGiftGuide() {
               <a href="https://fromoventomarket.com" target="_blank" rel="noopener noreferrer" className="rounded-full bg-cranberry px-6 py-3 font-bold text-flour hover:bg-cranberry-deep">See the Market Kit at From Oven to Market →</a>
               <a href="https://fromoventomarket.com/" target="_blank" rel="noopener noreferrer" className="rounded-full border-[1.5px] border-flour/40 px-6 py-3 font-bold text-flour hover:border-honey hover:text-honey">Gift the course at From Oven to Market</a>
             </div>
-            <p className="mt-4 text-xs text-[hsl(37_25%_70%)]">As an Amazon Associate Henry earns from qualifying purchases. Booth gear links go to Amazon; the Kit and course live at fromoventomarket.com.</p>
+            <p className="mt-4 text-xs text-[hsl(37_25%_70%)]">The market kit and course live at fromoventomarket.com.</p>
           </div>
         </section>
 
@@ -1164,20 +890,13 @@ export default function HolidayGiftGuide() {
             <ChevronDown aria-hidden className="h-5 w-5 flex-none text-crumb" />
           </summary>
             <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-              {[
-                { name: "Sourdough for the Rest of Us", price: "$6.08", url: "https://amzn.to/sourdoughrestofus", img: bookSourdough },
-                { name: "Vitale Sourdough Mastery", price: "$9.60", url: "https://vitalebreadco.com?ref=bfriedman", img: bookVitale },
-                { name: "From Oven to Market", price: "$7.62", url: "https://fromoventomarket.com/", img: bookFOTM },
-                { name: "The Loaf and the Lie", price: "$6.99", url: "https://amzn.to/loafandlie", img: bookLoaf },
-                { name: "Bread: A Journey Through History", price: "$7.95", url: "https://amzn.to/breadjourney", img: bookJourney },
-              ].map((b, i) => (
-                <a key={i} href={b.url} target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center text-center">
-                  <img src={b.img} alt={b.name} loading="lazy" className="h-56 w-auto object-contain drop-shadow-xl transition-transform group-hover:-translate-y-2" />
+              {productsData.books.filter((b) => isValidUrl(b.url)).map((b) => (
+                <a key={b.slug} href={b.url} target="_blank" rel="nofollow sponsored noopener noreferrer" className="group flex flex-col items-center text-center">
+                  <img src={b.img} alt={b.name} loading="lazy" className="h-56 w-auto object-contain drop-shadow-xl motion-safe:transition-transform motion-safe:group-hover:-translate-y-2" />
                   <h3 className="mt-4 font-display text-sm font-semibold text-crust">{b.name}</h3>
-                  <p className="mt-1 font-bold text-cranberry">{b.price}</p>
+                  <p className="mt-2 text-sm font-semibold text-evergreen">View book on Amazon</p>
                 </a>
-              ))}
-            </div>
+              ))}            </div>
          </details>
         </section>
 
@@ -1214,7 +933,7 @@ export default function HolidayGiftGuide() {
                       rel="noopener noreferrer"
                       className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-evergreen px-5 py-2.5 text-sm font-bold text-flour hover:bg-evergreen-deep"
                     >
-                      <HollySprig className="h-4 w-4" />
+                      
                       Get it free →
                     </a>
                   </article>
@@ -1228,7 +947,7 @@ export default function HolidayGiftGuide() {
                     aria-label="Enter the Give Bread Instead Gift Tag Set giveaway"
                   >
                     <img
-                      src={giveBreadTag.url}
+                      src="/give-bread-instead-poster.jpg"
                       alt="Give Bread Instead Gift Tag Set"
                       loading="lazy"
                       className="mx-auto h-40 w-auto object-contain py-3"
@@ -1246,7 +965,7 @@ export default function HolidayGiftGuide() {
                     onClick={() => setGiveaway(true)}
                     className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-cranberry px-5 py-2.5 text-sm font-bold text-flour hover:bg-cranberry-deep"
                   >
-                    <HollySprig className="h-4 w-4" />
+                    
                     Enter to win →
                   </button>
                 </article>
@@ -1255,26 +974,24 @@ export default function HolidayGiftGuide() {
           </section>
         )}
 
-        {/* Newsletter */}
-        <section className="text-flour" style={{ background: "linear-gradient(180deg, hsl(var(--oven)), hsl(24 40% 12%))" }}>
+        {/* A direct resource link until a real email-delivery integration is available. */}
+        <section className="bg-evergreen-deep text-flour">
           <div className="mx-auto max-w-[900px] px-5 py-20 text-center">
-            <p className="eyebrow" style={{ color: "hsl(var(--honey))" }}>Free with your email</p>
-            <h2 className="mt-3 font-display text-3xl font-semibold text-flour md:text-4xl">The Holiday Bread Collection</h2>
-            <p className="mt-4 text-[hsl(37_35%_82%)]">Drop your email and I'll send you the printable one-sheet holiday recipes. Print them, bake them, give them.</p>
-            <form onSubmit={(e) => { e.preventDefault(); toast.success("You're on the list — check your inbox."); }} className="mx-auto mt-6 flex max-w-md flex-col gap-3 sm:flex-row">
-              <input type="email" required placeholder="your@email.com" className="flex-1 rounded-full border-[1.5px] border-honey/40 bg-flour/10 px-5 py-3 text-flour placeholder:text-[hsl(37_25%_65%)] focus:border-honey focus:outline-none" />
-              <button type="submit" className="rounded-full bg-cranberry px-6 py-3 font-bold text-flour hover:bg-cranberry-deep">Send it</button>
-            </form>
+            
+            <h2 className="mt-4 font-display text-3xl font-semibold text-flour md:text-4xl">Give them something you baked.</h2>
+            <p className="mx-auto mt-4 max-w-[48ch] text-parchment">Find your next bake in the Recipe Pantry. Pick a recipe, dust off the counter, and make something worth sharing.</p>
+            <a href="https://pantry.bakinggreatbread.com/" target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex min-h-[48px] items-center rounded-full bg-flour px-7 py-3 font-bold text-evergreen-deep">Explore the Recipe Pantry</a>
           </div>
         </section>
       </main>
 
-      <footer className="border-t border-honey/25 bg-oven text-flour">
+      <footer className="border-t border-honey/25 bg-oven text-flour"><div className="max-w-6xl mx-auto px-5 pt-6 flex gap-6"><a href="/saved-gifts/">Your gift list</a><a href="/admin/login/">Admin sign in</a></div>
         <div className="mx-auto grid max-w-[1200px] gap-8 px-5 py-12 md:grid-cols-2">
           <div>
             <b className="font-display text-lg text-flour">Baking Great Bread at Home</b>
             <p className="mt-2 text-sm text-[hsl(37_35%_78%)]">Curated with flour-dusted hands by Henry Hunter.</p>
             <p className="mt-2 text-xs text-[hsl(37_25%_65%)]">Affiliate links support free recipes and lessons. I only recommend what I use.</p>
+            <p className="mt-2 text-xs text-parchment">As an Amazon Associate I earn from qualifying purchases.</p>
           </div>
           <div className="flex flex-col gap-2 text-sm md:items-end">
             <a href="https://bakinggreatbread.blog" target="_blank" rel="noopener noreferrer" className="hover:text-honey">The Blog</a>
@@ -1287,7 +1004,7 @@ export default function HolidayGiftGuide() {
 
       <GiftFinderQuiz open={quiz} onClose={() => setQuiz(false)} />
       <GiveawayModal open={giveaway} onClose={() => setGiveaway(false)} />
-      <PromoPopup campaign={promo.campaign} image={promo.image} onDismiss={promo.dismiss} onClickThrough={promo.clickThrough} />
+
     </div>
   );
 }

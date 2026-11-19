@@ -73,13 +73,19 @@ for (const line of amazonSrc.split("\n")) {
     name,
     note: get("note"),
     category: get("category"),
-    price: get("price"),
-    rating: Number.isFinite(rating) ? rating : undefined,
+    // Amazon price/rating data is deliberately absent until supplied by an approved API.
+    price: null,
     asin,
     url: asin ? `https://www.amazon.com/dp/${asin}?tag=${TAG}` : urlLiteral,
     source: "amazon",
     affiliate_tag: TAG,
   });
+}
+
+// These photo-backed cards have one source for the guide and generated gift pages.
+const seasonalTools = JSON.parse(read("src/data/seasonalAmazon.json"));
+for (const tool of Object.values(seasonalTools)) {
+  amazon.push({ ...tool, desc: tool.detail, price: null, source: "amazon" });
 }
 
 // Enrichment merge: catalog.enrichment.json is keyed by array then exact
@@ -189,7 +195,7 @@ const catalog = {
     site: "https://gifts.bakinggreatbread.blog",
     generated: new Date().toISOString(),
     description:
-      "Consolidated product catalog for the Holiday Baking Gift Guide. Affiliate links included. Prices last verified on the site.",
+      "Consolidated product catalog for the Holiday Baking Gift Guide. Affiliate links included. Check each store for current prices and availability.",
     license: "Free to read. Keep affiliate links intact when republishing.",
   },
   promo_codes: data.promo_codes.map(([code, applies_to]) => ({ code, applies_to })),
@@ -208,7 +214,7 @@ const catalog = {
     amazon.filter((a) => !dropNamesFor("amazon").has(a.name)),
     "amazon"
   ),
-  books: enrichAll((data.books || []).map((b) => ({ ...b, source: "books" })), "books"),
+  books: enrichAll((data.books || []).map((b) => ({ ...b, price: null, source: "books" })), "books"),
   free_resources: enrichAll((data.free || []).map((f) => ({ ...f, source: "free" })), "free_resources"),
 };
 

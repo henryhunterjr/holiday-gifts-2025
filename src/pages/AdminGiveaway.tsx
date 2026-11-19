@@ -22,7 +22,7 @@ const WEEKS: { label: string; start: Date; end: Date }[] = (() => {
   const start = new Date("2026-11-05T00:00:00");
   const end = new Date("2026-12-25T23:59:59");
   const out: { label: string; start: Date; end: Date }[] = [];
-  let cur = new Date(start);
+  const cur = new Date(start);
   let i = 1;
   while (cur <= end) {
     const wEnd = new Date(cur);

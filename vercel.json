@@ -1,6 +1,6 @@
 {
   "trailingSlash": true,
   "rewrites": [
-    { "source": "/((?!gifts/|_next/|assets/|product-images/).*)", "destination": "/index.html" }
+    { "source": "/((?!give-bread-instead-2026[.]png|og-image[.]png|favicon[.]png|api/|brand-logos/|guide-tools\\.js|guide-config\\.json|maker-catalog\\.css|makers/|maker-photos/|gifts/|_next/|assets/|product-images/).*)", "destination": "/index.html" }
   ]
 }

@@ -22,6 +22,7 @@ const AFFILIATE_REF_VALUES = new Map([
 // - bit.ly/Sourhouse    lands on go.referralcandy.com share link
 // - brodandtaylor.com/henrysbreadkitchen lands with dt_id= attribution
 const KNOWN_AFFILIATE_PREFIXES = [
+  { host: "link.amazon", path: "/" },
   { host: "collabs.shop", path: "/" },
   { host: "bit.ly", path: "/Sourhouse" },
   { host: "brodandtaylor.com", path: "/henrysbreadkitchen" },

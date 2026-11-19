@@ -1,0 +1,42 @@
+{
+  "url": "http://127.0.0.1:5180/",
+  "images": 86,
+  "failures": [],
+  "fallback": 0,
+  "widths": [
+    {
+      "width": 360,
+      "scroll": 360
+    },
+    {
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "width": 430,
+      "scroll": 430
+    },
+    {
+      "width": 768,
+      "scroll": 768
+    },
+    {
+      "width": 1440,
+      "scroll": 1440
+    }
+  ],
+  "quiz": "GIFT FINDER\n\nWho's it for?\n\nQuestion 1 of 4\n\nA new baker\nWeekend baker\nObsessed sourdough baker\nMarket seller\nClose",
+  "results": "GIFT FINDER\n\nHere's what I'd get them\n\nBased on: A new baker · Under $25 · Starter Care · Stocking stuffer\n\n3 gifts found within your budget.\n\nStarter Jars (Pint or Quart)\n\nSourhouse\n\n$20.76\n\nVitale Sourdough Starter (Dehydrated)\n\nVitale Sourdough Co.\n\n$12\n\nALSO WORTH A LOOK\n\nSpice & Coffee Grinder\n\nBrød & Taylor\n\n$24.95\n\nOnly 2 Starter Care picks land in that budget, so I added a couple of close cousins.\n\nStart over\nDone\nClose",
+  "errors": [],
+  "motion": "none",
+  "checks": [
+    "image decoding",
+    "copy partner code",
+    "expanded catalog",
+    "search",
+    "combined category/budget filters",
+    "saved list and reload persistence",
+    "Gift Finder completion",
+    "reduced motion"
+  ]
+}

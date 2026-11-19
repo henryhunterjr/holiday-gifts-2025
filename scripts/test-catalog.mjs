@@ -108,3 +108,22 @@ if (failures.length) {
 console.log(
   `catalog tests passed: ${affiliateCount} affiliate records carry rel="${REL_AFFILIATE}" and target="${TARGET_AFFILIATE}"; every record has categories and audiences`
 );
+
+
+// Amazon pricing and ratings are intentionally withheld until an approved API
+// supplies current data. A stale catalog must not silently reintroduce them.
+for (const record of catalog.amazon || []) {
+  assert.equal(record.price, null, `Amazon price must be omitted: ${record.name}`);
+  assert.equal(record.currency, null, `Amazon currency must be omitted: ${record.name}`);
+  assert.equal(record.priceBand, null, `Amazon price band must be omitted: ${record.name}`);
+  assert.ok(!("rating" in record), `Amazon rating must be omitted: ${record.name}`);
+}
+console.log("Amazon catalog guard passed: no unsupported prices or ratings.");
+
+const seasonalTools = JSON.parse(fs.readFileSync(path.join(root, "src/data/seasonalAmazon.json"), "utf8"));
+for (const tool of Object.values(seasonalTools)) {
+  const record = catalog.amazon.find(({ slug }) => slug === tool.slug);
+  assert.equal(record?.url, tool.url, `Missing shopping link for ${tool.name}`);
+  assert.equal(record.img, tool.img, `Missing photo for ${tool.name}`);
+  assert.ok(fs.existsSync(path.join(root, "public", record.img)), `Missing photo file for ${tool.name}`);
+}

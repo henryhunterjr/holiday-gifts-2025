@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import HolidayGiftGuide from "./pages/HolidayGiftGuide";
+import AcademyGiftCertificate from "./pages/AcademyGiftCertificate";
 import NotFound from "./pages/NotFound";
 import SourdoughStarterCareGuide from "./pages/SourdoughStarterCareGuide";
 import SourdoughStarterTroubleshooting from "./pages/SourdoughStarterTroubleshooting";
@@ -13,6 +14,8 @@ import FixGummyDenseSourdough from "./pages/FixGummyDenseSourdough";
 import SourdoughToolsAndSupplies from "./pages/SourdoughToolsAndSupplies";
 import EssentialBakingTools from "./pages/EssentialBakingTools";
 import HowToWrapSourdoughAsAGift from "./pages/HowToWrapSourdoughAsAGift";
+import SavedGifts from "./pages/SavedGifts";
+import AdminAnalytics from "./pages/AdminAnalytics";
 import AdminLogin from "./pages/AdminLogin";
 import AdminGiveaway from "./pages/AdminGiveaway";
 
@@ -26,6 +29,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <Routes>
+            <Route path="/academy-gift-certificate" element={<AcademyGiftCertificate />} />
             <Route path="/" element={<HolidayGiftGuide />} />
             <Route path="/bread-baker-holiday-gift-guide-2025" element={<HolidayGiftGuide />} />
             <Route path="/sourdough-starter-care-guide" element={<SourdoughStarterCareGuide />} />
@@ -34,6 +38,8 @@ const App = () => (
             <Route path="/sourdough-tools-and-supplies" element={<SourdoughToolsAndSupplies />} />
             <Route path="/essential-baking-tools" element={<EssentialBakingTools />} />
             <Route path="/how-to-wrap-sourdough-as-a-gift" element={<HowToWrapSourdoughAsAGift />} />
+            <Route path="/saved-gifts" element={<SavedGifts />} />
+            <Route path="/admin/analytics" element={<AdminAnalytics />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin/giveaway" element={<AdminGiveaway />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
