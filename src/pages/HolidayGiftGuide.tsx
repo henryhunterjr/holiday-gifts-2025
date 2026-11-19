@@ -585,7 +585,7 @@ export default function HolidayGiftGuide() {
                       <a href={p.url} target="_blank" rel="nofollow sponsored noopener noreferrer" className="holiday-shop-link">
                         {p.cta ?? "Shop this gift"} <ExternalLink className="h-4 w-4" aria-hidden />
                       </a>
-                      <p className="mt-3 text-xl font-bold text-evergreen-deep">${p.price.toFixed(2)}</p><p className="mt-1 text-xs text-crumb">USD · Reference price checked {products.find(x => x.slug === p.id)?.priceChecked ?? PRICES_LAST_CHECKED}. Confirm final price and stock at checkout.</p>
+                      <p className="mt-3 text-xl font-bold text-evergreen-deep">${p.price.toFixed(2)}</p><p className="mt-1 text-xs text-crumb">USD · Reference price{products.find(x => x.slug === p.id)?.priceChecked ? ` checked ${products.find(x => x.slug === p.id)?.priceChecked}` : ""}. Confirm final price and stock at checkout.</p>
                     </div>
                   </div>
                 </article>
@@ -698,7 +698,7 @@ export default function HolidayGiftGuide() {
           <div className="mx-auto max-w-[1200px] px-5">
             <h2 className="mb-3 font-display text-3xl font-semibold text-crust md:text-4xl">Browse all baking gifts</h2>
             <p className="mb-6 text-xs text-crumb md:text-sm">
-              Prices and availability may change. Some links are affiliate links, which support our free recipes at no additional cost to you. <span className="whitespace-nowrap">Reference prices from {PRICES_LAST_CHECKED}. Check current prices at the store.</span>
+              Prices and availability may change. Some links are affiliate links, which support our free recipes at no additional cost to you. <span className="whitespace-nowrap">Latest price checks: {PRICES_LAST_CHECKED}. Check current prices at the store.</span>
             </p>
             {(() => {
               // If a filter is active, show everything. Otherwise, cap the

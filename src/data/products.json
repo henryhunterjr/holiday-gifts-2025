@@ -441,11 +441,11 @@
       "price": 415,
       "cat": "Wood & Serving",
       "img": "/product-images/walnut-bowl-17.jpg",
-      "url": "https://hollandbowlmill.com/baking/?wpam_id=10",
+      "url": "https://hollandbowlmill.com/products/17-inch-wooden-bowl?variant=44106123214947&wpam_id=10",
       "code": "Henry",
       "desc": "Hand-turned in Michigan from a single piece of walnut. An heirloom that mixes, proofs, and serves for generations.",
       "note": "This bowl will outlive both of us. That’s the point.",
-      "priceChecked": "2026-11-17"
+      "priceChecked": "2026-11-18"
     },
     {
       "slug": "maple-17",
@@ -454,11 +454,11 @@
       "price": 345,
       "cat": "Wood & Serving",
       "img": "/product-images/maple-bowl-17.jpg",
-      "url": "https://hollandbowlmill.com/baking/?wpam_id=10",
+      "url": "https://hollandbowlmill.com/products/17-inch-wooden-bowl?variant=44106123182179&wpam_id=10",
       "code": "Henry",
       "desc": "The lighter-grain sibling. Same one-piece hand-turned construction, brighter look.",
       "note": "Maple brightens a dark kitchen.",
-      "priceChecked": "2026-11-17"
+      "priceChecked": "2026-11-18"
     },
     {
       "slug": "beech-17",
@@ -467,23 +467,24 @@
       "price": 250,
       "cat": "Wood & Serving",
       "img": "/product-images/holland-bowl-mill.jpg",
-      "url": "https://hollandbowlmill.com/baking/?wpam_id=10",
+      "url": "https://hollandbowlmill.com/products/17-inch-wooden-bowl?variant=44106123083875&wpam_id=10",
       "code": "Henry",
       "desc": "The workhorse of the line. Big enough for full batches, and wood keeps dough at room temp even in a cold kitchen.",
       "note": "The entry door to heirloom wood.",
-      "priceChecked": "2026-11-17"
+      "priceChecked": "2026-11-18"
     },
     {
       "slug": "rolling-pin",
       "name": "French Rolling Pin",
       "brand": "Holland Bowl Mill",
-      "price": 55,
+      "price": 65,
       "cat": "Wood & Serving",
       "img": "/product-images/french-rolling-pin.jpg",
-      "url": "https://hollandbowlmill.com/baking/?wpam_id=10",
+      "url": "https://hollandbowlmill.com/products/french-rolling-pin?wpam_id=10",
       "code": "Henry",
       "desc": "Tapered hardwood pin, hand-finished. Feel the dough instead of fighting it.",
-      "note": "Tapered pins let you steer."
+      "note": "Tapered pins let you steer.",
+      "priceChecked": "2026-11-18"
     },
     {
       "slug": "bread-board",
@@ -492,10 +493,11 @@
       "price": 130,
       "cat": "Wood & Serving",
       "img": "/product-images/bread-board-bow-knife.jpg",
-      "url": "https://hollandbowlmill.com/baking/?wpam_id=10",
+      "url": "https://hollandbowlmill.com/products/bread-board-and-bow-knife?wpam_id=10",
       "code": "Henry",
       "desc": "Cherry board with a serrated bow knife. The way fresh bread wants to be sliced and served.",
-      "note": "This is how you present a loaf you’re proud of."
+      "note": "This is how you present a loaf you’re proud of.",
+      "priceChecked": "2026-11-18"
     },
     {
       "slug": "round-sling",
