@@ -46,7 +46,7 @@ const path=require('node:path');
  if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth))throw Error('catalog mobile overflow');
  if(!await page.locator('.maker-logo').evaluate(el=>el.complete&&el.naturalWidth>0))throw Error('logo not loaded');
  if(await page.locator('.price').count()!==7)throw Error('missing prices');
- await page.goto(base+'/admin/analytics/');await page.waitForURL('**/admin/login/');
+ await page.goto(base+'/admin/analytics/');await page.waitForURL(url=>url.pathname.replace(/\/$/, '') === '/admin/login');
  if(!await page.getByRole('heading',{name:'Admin sign in'}).isVisible())throw Error('admin gate missing');
  const makers=JSON.parse(fs.readFileSync('src/data/makers.json'));
  for(const m of makers){for(const p of m.items){if(p.img&&!fs.existsSync('public'+p.img))throw Error('missing '+p.img);if(!p.priceLabel)throw Error('missing price');}}
