@@ -10,12 +10,17 @@ jobs:
     timeout-minutes: 6
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - run: npm ci --ignore-scripts
-      - name: Check live guide
-        run: node scripts/check-shopping.cjs
+      - name: Check the public storefront
+        run: |
+          npm install --prefix "$RUNNER_TEMP/gift-browser" --no-audit --no-fund playwright-core@1.56.1
+          NODE_PATH="$RUNNER_TEMP/gift-browser/node_modules" node scripts/check-shopping.cjs
         env:
           TEST_URL: https://gifts.bakinggreatbread.com
           CHROME_BIN: /usr/bin/google-chrome
+      - name: Keep viewport evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: guide-viewports
+          path: qa/shopping/*.png
+          retention-days: 3
