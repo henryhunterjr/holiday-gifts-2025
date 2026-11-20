@@ -10,7 +10,7 @@ const offers={
  'sour-house':['https://sourhouse.co?ref=BAKINGGREATBREAD','Use HBK26 for 10% off Goldie, DoughBed and starter jars. Holiday bundles are excluded.'],
  'holland-bowl':['https://hollandbowlmill.com/?wpam_id=10','Use Henry for 15% off your first order. One use per customer.'],
  'nutrimill':['https://nutrimill.com/Academy26','Shop with Henry’s NutriMill link. ACADEMY26 takes $20 off the Classic.'],
- 'grand-teton':['https://www.ancientgrains.com/?a_aid=henryhunter','Use crustandcrumb for 10% off your first order.'],
+ 'grand-teton':['https://www.ancientgrains.com/?a_aid=henryhunter','First order? Try crustandcrumb and check your total at checkout.'],
  'modkitchn':['https://modkitchn.com/BAKINGGREATBREAD','Activate 10% off with BAKINGGREATBREAD']
 };
 const ORG={"@type":"Organization","@id":"https://bakinggreatbread.com/#organization",name:"Baking Great Bread at Home",url:"https://bakinggreatbread.com"};

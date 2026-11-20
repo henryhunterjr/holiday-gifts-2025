@@ -814,7 +814,7 @@
     ],
     "logo": "/brand-logos/grand-teton.webp",
     "promoCode": "crustandcrumb",
-    "promoDetail": "10% off your first order through December 31, 2026.",
+    "promoDetail": "For first orders. Check your discount in the order total before paying.",
     "curatorNote": "Curated by Henry Hunter, founder of Baking Great Bread at Home. Grand Teton is a family farm and mill in Idaho, and their ancient grains are what I mill at home. If your baker just got a grain mill, start here.",
     "faq": [
       {
@@ -827,7 +827,7 @@
       },
       {
         "q": "Is there a discount?",
-        "a": "Use code crustandcrumb for 10% off your first order through December 31, 2026."
+        "a": "On a first order, enter crustandcrumb at checkout. Check the order total before paying."
       }
     ]
   },
