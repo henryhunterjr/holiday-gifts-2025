@@ -380,7 +380,7 @@
       },
       {
         "q": "How do I get the discount?",
-        "a": "Use code HBK26 at checkout for 10% off eligible Sourhouse items. Bundles already show Sourhouse's holiday prices."
+        "a": "HBK26 takes 10% off Goldie, DoughBed and starter jars. The three holiday bundles have their own prices and do not take HBK26."
       }
     ]
   },
@@ -551,10 +551,10 @@
         "img": "/maker-photos/nutrimill/classic-grain-mill.webp",
         "desc": "The best-selling grain mill for over 25 years, redesigned for 2026. 1200-watt motor, stainless steel impact milling heads, 12-cup hopper, 20-cup flour canister, from super fine pastry flour to coarse meal.",
         "priceLabel": "$349.00",
-        "priceDetails": "$349.00. Out of stock — \"New Model Coming Soon\" on the site. Launches Thu Nov 19, 2026 at 9:00 AM MT. ACADEMY26 takes $20 off it.",
+        "priceDetails": "$349.00 before the ACADEMY26 discount.",
         "priceChecked": "2026-11-19",
         "priceSource": "https://nutrimill.com/products/classic-grain-mill",
-        "availability": "Coming soon",
+        "availability": "Check stock at checkout",
         "code": "ACADEMY26",
         "bestFor": "The home miller who wants fast, fine flour and a mill with a long track record."
       },
@@ -594,10 +594,10 @@
         "img": "/maker-photos/nutrimill/flourish-grain-mill.webp",
         "desc": "The new compact stone mill. Durable corundum stones on CushionFlex stone suspension, driven by a DC motor with thermal protection.",
         "priceLabel": "$399.00",
-        "priceDetails": "$399.00. Out of stock — \"New Mill Coming Soon\" on the site. No launch date shown on the site.",
+        "priceDetails": "$399.00 before the ACADEMY26 discount.",
         "priceChecked": "2026-11-19",
         "priceSource": "https://nutrimill.com/products/flourish-grain-mill",
-        "availability": "Coming soon",
+        "availability": "Check stock at checkout",
         "code": "ACADEMY26",
         "bestFor": "Stone milling in a compact, quiet package."
       },

@@ -1,7 +1,7 @@
 {
   "meta": {
     "site": "https://gifts.bakinggreatbread.com",
-    "generated": "2026-11-20T03:34:45.714Z",
+    "generated": "2026-11-20T03:39:42.147Z",
     "description": "Consolidated product catalog for the Holiday Baking Gift Guide. Affiliate links included. Check each store for current prices and availability.",
     "license": "Free to read. Keep affiliate links intact when republishing."
   },
@@ -1811,6 +1811,36 @@
       "source": "maker"
     },
     {
+      "slug": "nutrimill-classic-grain-mill",
+      "name": "NutriMill Classic Grain Mill — 2026 model",
+      "brand": "NutriMill",
+      "cat": "Milling & Flour",
+      "img": "/maker-photos/nutrimill/classic-grain-mill.webp",
+      "url": "https://nutrimill.com/products/classic-grain-mill?dt_id=3376604",
+      "desc": "The best-selling grain mill for over 25 years, redesigned for 2026. 1200-watt motor, stainless steel impact milling heads, 12-cup hopper, 20-cup flour canister, from super fine pastry flour to coarse meal.",
+      "price": 349,
+      "priceLabel": "$349.00",
+      "priceChecked": "2026-11-19",
+      "currency": "USD",
+      "rel": "nofollow sponsored noopener",
+      "target": "_blank",
+      "alt": "NutriMill Classic Grain Mill — 2026 model by NutriMill",
+      "categories": [
+        "Milling & Flour"
+      ],
+      "priceBand": "splurge",
+      "priceFrom": false,
+      "priceCheckedAt": "2026-11-19",
+      "audiences": [
+        "new-bakers",
+        "serious-bakers"
+      ],
+      "concierge": {
+        "solves": []
+      },
+      "source": "maker"
+    },
+    {
       "slug": "nutrimill-impact-grain-mill",
       "name": "NutriMill Impact Grain Mill",
       "brand": "NutriMill",
@@ -1855,6 +1885,36 @@
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
       "alt": "NutriMill Harvest Grain Mill by NutriMill",
+      "categories": [
+        "Milling & Flour"
+      ],
+      "priceBand": "splurge",
+      "priceFrom": false,
+      "priceCheckedAt": "2026-11-19",
+      "audiences": [
+        "new-bakers",
+        "serious-bakers"
+      ],
+      "concierge": {
+        "solves": []
+      },
+      "source": "maker"
+    },
+    {
+      "slug": "nutrimill:flourish-grain-mill",
+      "name": "NutriMill Flourish Stone Grain Mill",
+      "brand": "NutriMill",
+      "cat": "Milling & Flour",
+      "img": "/maker-photos/nutrimill/flourish-grain-mill.webp",
+      "url": "https://nutrimill.com/products/flourish-grain-mill?dt_id=3376604",
+      "desc": "The new compact stone mill. Durable corundum stones on CushionFlex stone suspension, driven by a DC motor with thermal protection.",
+      "price": 399,
+      "priceLabel": "$399.00",
+      "priceChecked": "2026-11-19",
+      "currency": "USD",
+      "rel": "nofollow sponsored noopener",
+      "target": "_blank",
+      "alt": "NutriMill Flourish Stone Grain Mill by NutriMill",
       "categories": [
         "Milling & Flour"
       ],
