@@ -94,10 +94,7 @@
 .holiday-editorial #browse .grid { gap:42px 26px; }
 .holiday-editorial #browse .holiday-card-body > .mt-3 a { background:#163e35; border-radius:0; }
 .holiday-editorial .code-pill { border-radius:0; box-shadow:none; background:transparent; }
-.holiday-editorial :is(#emile-henry,#market-sellers) { background:#193e34 !important; color:#f7f4ec; }
-.holiday-editorial #emile-henry :is(h2,h3,p,.text-crust) { color:#f7f4ec; }
-.holiday-editorial #emile-henry .holiday-card-body { padding-bottom:30px; }
-.holiday-editorial #emile-henry a { color:#f7f4ec; }
+.holiday-editorial #market-sellers { background:#193e34 !important; color:#f7f4ec; }
 .holiday-editorial section { scroll-margin-top:24px; }
 .holiday-editorial .ornament-twinkle { animation:none; box-shadow:none; }
 .holiday-editorial #browse a[aria-label*="Wire Monkey handcrafted"] { display:none; }
@@ -326,4 +323,38 @@
 .partner-code-row { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 0; border-top:1px solid #163e3522; }
 @media (min-width: 768px) {
   .holiday-editorial #browse > div:first-child { position:sticky; top:0; z-index:40; }
+}
+
+/* The ceramic collection follows the paper, serif type and fine rules of the guide. */
+.ceramics { background:#f4eee3; color:#263d32; padding:clamp(3rem,7vw,7rem) max(5vw,20px); }
+.ceramics-inner { max-width:1160px; margin:auto; }
+.ceramics-heading { display:grid; grid-template-columns:1.1fr 1fr; align-items:end; gap:2rem; border-top:1px solid #ad9879; padding-top:1.75rem; margin-bottom:clamp(2rem,4vw,4rem); }
+.ceramics h2,.ceramics h3 { font-family:Georgia,serif; font-weight:400; text-wrap:balance; }
+.ceramics h2 { font-size:clamp(3.4rem,7vw,6.25rem); letter-spacing:-.055em; line-height:1.05; margin-top:.45rem; }
+.ceramics h3 { font-size:clamp(1.9rem,3vw,2.65rem); line-height:1.13; letter-spacing:-.035em; }
+.ceramics-heading > p,.ceramic-copy > p:not(.ceramic-kicker),.ceramic-feature-copy > p:not(.ceramic-kicker) { font-size:1.0625rem; line-height:1.65; max-width:48ch; }
+.ceramic-kicker { font-size:.76rem; font-weight:700; line-height:1.5; letter-spacing:.12em; text-transform:uppercase; color:#794335; }
+.ceramic-feature { display:grid; grid-template-columns:1.1fr 1fr; background:#552d30; color:#fff7eb; }
+.ceramic-feature > img { width:100%; height:100%; aspect-ratio:1.18; object-fit:cover; }
+.ceramic-feature-copy { align-self:center; padding:clamp(1.75rem,5vw,5rem); }
+.ceramic-feature .ceramic-kicker { color:#ecd4b2; }
+.ceramic-feature h3 { font-size:clamp(2.5rem,5vw,4.6rem); margin:.75rem 0 1rem; }
+.ceramic-purchase { display:flex; flex-wrap:wrap; gap:.75rem 1.5rem; align-items:center; margin-top:1.25rem; }
+.ceramic-price { display:flex; gap:.65rem; align-items:baseline; font-size:1.15rem; }
+.ceramic-price del { font-size:.95rem; }
+.ceramic-purchase a { display:inline-flex; min-height:44px; align-items:center; justify-content:center; gap:.5rem; background:#163e35; color:white; padding:.65rem 1rem; font-size:.95rem; font-weight:700; }
+.ceramic-feature .ceramic-purchase a { background:#fff4df; color:#4c2b2d; }
+.ceramic-purchase a:hover { text-decoration:underline; text-underline-offset:4px; }
+.ceramic-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(2.5rem,5vw,4.5rem) clamp(1.75rem,4vw,3.5rem); margin-top:clamp(2.5rem,5vw,4.5rem); }
+.ceramic-grid article,.ceramic-copy { display:flex; flex-direction:column; min-width:0; }
+.ceramic-photo { background:#e9e1d3; padding:clamp(1rem,2.5vw,2rem); }
+.ceramic-photo img { width:100%; aspect-ratio:1.65; height:auto; object-fit:contain; mix-blend-mode:multiply; }
+.ceramic-copy { border-bottom:1px solid #bcad99; flex:1; padding:1.25rem 0 1.75rem; }
+.ceramic-copy h3 { margin:.35rem 0 .65rem; }
+.ceramic-copy .ceramic-purchase { margin-top:auto; padding-top:1rem; }
+@media(max-width:720px) {
+  .ceramics-heading,.ceramic-feature,.ceramic-grid { grid-template-columns:minmax(0,1fr); }
+  .ceramics-heading { gap:1rem; }
+  .ceramic-feature > img { aspect-ratio:1.22; height:auto; }
+  .ceramic-feature-copy { padding:1.5rem; }
 }

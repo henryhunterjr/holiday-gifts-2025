@@ -760,6 +760,20 @@
             "Moving a proofed batard into a hot pot without deflating it"
           ]
         }
+      },
+      "Oval Bread Slings (Small or Large)": {
+        "categories": [
+          "Storage & Gifting"
+        ],
+        "audiences": [
+          "new-bakers",
+          "serious-bakers"
+        ],
+        "concierge": {
+          "solves": [
+            "Moving a proofed batard into a hot pot without deflating it"
+          ]
+        }
       }
     },
     "krustic": {

@@ -4,6 +4,8 @@ import { Helmet } from "react-helmet-async";
 import { Gift, Search, Share2, Copy, Snowflake, ExternalLink, X, Sparkles, ChevronDown, Heart } from "lucide-react";
 import { toast } from "sonner";
 import productsData from "@/data/products.json";
+import { EmileHenryCollection } from "@/components/EmileHenryCollection";
+import { makerGifts } from "@/lib/makerCatalog.mjs";
 import emileHenry from "@/data/emileHenry.json";
 import seasonalTools from "@/data/seasonalAmazon.json";
 import { amazonProducts } from "@/data/amazon";
@@ -44,6 +46,8 @@ type Product = {
   brand: string;
   price: number | string;
   priceChecked?: string;
+  priceLabel?: string;
+  aliases?: string[];
   cat: string;
   img: string;
   url: string;
@@ -54,9 +58,10 @@ type Product = {
 
 const allProducts = productsData.products as Product[];
 // Hide products that are disabled or lack a valid URL.
-const products = allProducts.filter(
+const curatedProducts = allProducts.filter(
   (p) => !DISABLED_PRODUCT_SLUGS.has(p.slug) && isValidUrl(p.url),
 );
+const products: Product[] = [...curatedProducts, ...makerGifts(makers, allProducts), ...emileHenry];
 const top6Slugs = productsData.top6 as string[];
 const promoCodes = productsData.promo_codes as [string, string][];
 
@@ -78,10 +83,12 @@ const CATEGORIES = [
   "Bake Day",
   "Wood & Serving",
   "Storage & Gifting",
+  "Milling & Flour",
 ];
 
+const normalizeSearch = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[’']/g, "").toLowerCase();
 const priceNum = (p: Product) => (typeof p.price === "number" ? p.price : parseFloat(String(p.price).replace(/[^0-9.]/g, "")) || 0);
-const priceStr = (p: Product) => (typeof p.price === "number" ? `$${p.price}` : p.price);
+const priceStr = (p: Product) => p.priceLabel ?? (typeof p.price === "number" ? `$${p.price}` : p.price);
 
 /* ============ Gift Tag Card ============ */
 function GiftTag({ p, onCopyCode }: { p: Product; onCopyCode: (code: string) => void }) {
@@ -116,7 +123,7 @@ function GiftTag({ p, onCopyCode }: { p: Product; onCopyCode: (code: string) => 
         >
           <span className="relative inline-flex items-center justify-center gap-1.5">
             
-            Gift it →
+            Shop at {p.brand} ↗
           </span>
         </a>
         <button
@@ -178,7 +185,7 @@ function GiftFinderQuiz({ open, onClose }: { open: boolean; onClose: () => void 
   const questions = [
     { key: "who" as const, q: "Who's it for?", opts: ["A new baker", "Weekend baker", "Obsessed sourdough baker", "Market seller"] },
     { key: "budget" as const, q: "What's the budget?", opts: ["Under $25", "$25–75", "$75–150", "Splurge $150+"] },
-    { key: "need" as const, q: "What do they need most?", opts: ["Starter Care", "Proofing & Temp", "Scoring & Shaping", "Bake Day", "Wood & Serving", "Storage & Gifting"] },
+    { key: "need" as const, q: "What do they need most?", opts: CATEGORIES },
     { key: "style" as const, q: "Gift style?", opts: ["Stocking stuffer", "Centerpiece gift", "Bundle"] },
   ];
 
@@ -245,7 +252,7 @@ function GiftFinderQuiz({ open, onClose }: { open: boolean; onClose: () => void 
     <Dialog open={open} onOpenChange={(o) => { if (!o) onClose(); }}>
       <DialogContent
         aria-labelledby={titleId}
-        className="max-w-2xl bg-flour p-6 md:p-10"
+        className="max-h-[calc(100dvh-2rem)] max-w-2xl overflow-y-auto overscroll-contain bg-flour p-5 md:p-10"
       >
         <DialogHeader className="text-left">
           <p className="eyebrow mb-1">Gift Finder</p>
@@ -315,7 +322,7 @@ function GiftFinderQuiz({ open, onClose }: { open: boolean; onClose: () => void 
                 )}
                 {matches.some((m) => m.extra) && (
                   <p className="mt-3 text-xs text-crumb">
-                    Only {matches.filter((m) => !m.extra).length} {ans.need} pick{matches.filter((m) => !m.extra).length === 1 ? "" : "s"} land in that budget, so I added a couple of close cousins.
+                    Also shown are gifts from other categories within your budget.
                   </p>
                 )}
                 <div className="mt-6 flex flex-wrap gap-3">
@@ -384,14 +391,14 @@ export default function HolidayGiftGuide() {
   const anyFilter = search.trim() !== "" || !!cat || !!band;
 
   const filtered = useMemo(() => {
-    const q = search.trim().toLowerCase();
+    const q = normalizeSearch(search.trim());
     return products.filter((p) => {
       if (cat && p.cat !== cat) return false;
       if (band) {
         const b = bandByLabel(band);
         if (b && !b.test(priceNum(p))) return false;
       }
-      if (q && !`${p.name} ${p.brand} ${p.desc}`.toLowerCase().includes(q)) return false;
+      if (q && !normalizeSearch([p.name, p.brand, p.desc, ...(p.aliases ?? [])].join(" ")).includes(q)) return false;
       return true;
     });
   }, [search, cat, band]);
@@ -416,7 +423,7 @@ export default function HolidayGiftGuide() {
 
   // JSON-LD for the curated guide (only fully-verified products).
   const jsonLd = useMemo(() => {
-    const items = products
+    const items = curatedProducts
       .filter((p) => isValidUrl(p.url) && p.img && priceNum(p) > 0)
       .map((p, i) => ({
         "@type": "ListItem",
@@ -484,7 +491,7 @@ export default function HolidayGiftGuide() {
     if (slug === holidayBakingGuide.slug) return holidayBakingGuide;
     const maker = makers.find(m => m.items.some(p => `${m.id}:${p.slug}` === slug));
     const item = maker?.items.find(p => `${maker.id}:${p.slug}` === slug);
-    if (maker && item) return {slug,name:item.name,brand:maker.brand,img:item.img,url:item.url,priceLabel:item.priceLabel};
+    if (maker && item && item.availability !== "Coming soon") return {slug,name:item.name,brand:maker.brand,img:item.img,url:item.url,priceLabel:item.priceLabel};
     const p = products.find((x) => x.slug === slug);
     if (!p) return undefined;
     return {
@@ -546,7 +553,7 @@ export default function HolidayGiftGuide() {
           <div className="give-bread-caption"><h2 id="give-bread-title">Give Bread Instead</h2><p>Nothing to buy. Just bake, wrap, and give.</p><span>Our annual community campaign. Details coming soon.</span></div>
           <p className="sr-only">For five years our community has baked a loaf, wrapped it, and given it to someone who matters. This year Baking Great Bread at Home, Crust &amp; Crumb Academy, and From Oven to Market are working on a way for every loaf to do a little good beyond your own table.</p>
         </section>
-        <section id="makers" className="edit-section"><h2 className="text-4xl mb-8">Shop by need. Find your maker.</h2><div className="maker-doors">{makers.map(m => <a key={m.id} href={`/makers/${m.id}/`} onClick={() => trackEvent("maker_door_click", { maker_id: m.id, brand: m.brand })}><div><small>{m.brand}</small><h3>{m.title}</h3><span>Explore {m.items.length} gifts ↗</span></div><img src={m.items[0].img} alt="" loading="lazy" /></a>)}</div></section>
+        <section id="makers" className="edit-section"><h2 className="text-4xl mb-8">Shop by need. Find your maker.</h2><div className="maker-doors">{makers.map(m => <a key={m.id} href={`/makers/${m.id}/`} onClick={() => trackEvent("maker_door_click", { maker_id: m.id, brand: m.brand })}><div><small>{m.brand}</small><h3>{m.title}</h3><span>Explore {m.items.length} gifts ↗</span></div><img src={m.items[0].img} alt="" loading="lazy" /></a>)}<a href="#emile-henry"><div><small>Émile Henry</small><h3>French ceramic bakeware</h3><span>Explore {emileHenry.length} pieces ↓</span></div><img src={emileHenry[1].img} alt="" loading="lazy" /></a></div></section>
         <section id="free-holiday-guide" className="holiday-guide-feature" aria-labelledby="free-holiday-title">
           <a className="holiday-guide-art" href={holidayBakingGuide.url} target="_blank" rel="noopener noreferrer" aria-label="Open the free Holiday Baking Guide">
             <img src={holidayBakingGuide.img} alt="Henry Hunter with challah, panettone and Christmas stollen" width="1672" height="941" loading="lazy" />
@@ -564,6 +571,7 @@ export default function HolidayGiftGuide() {
             </div>
           </div>
         </section>
+        <EmileHenryCollection />
         <section id="grain-to-gift" className="grain-story">
           <div className="grain-intro"><p className="edition-label">FROM GRAIN TO SOMETHING GREAT</p><h2>A gift that starts<br />a whole new ritual.</h2><p>Fresh flour, a favorite grain, a reason to bake again tomorrow. Bring the mill and the ingredients together.</p></div>
           <div className="partner-spread">
@@ -669,7 +677,7 @@ export default function HolidayGiftGuide() {
                 <div key={code} className="partner-code-row">
                   <span className="text-sm text-crust">{label}</span>
                   {code === "Discount built in" ? (
-                    <span className="text-xs font-bold text-evergreen-deep">Auto-applied via link</span>
+                    <a className="code-pill" href="https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683" target="_blank" rel="sponsored noopener noreferrer">Open offer ↗</a>
                   ) : (
                     <button
                       type="button"
@@ -694,15 +702,15 @@ export default function HolidayGiftGuide() {
           <div className="mx-auto max-w-[1200px] px-5 py-3">
             <div className="flex flex-wrap items-center gap-2.5">
               <div className="relative min-w-[180px] flex-1">
-                <label htmlFor={searchInputId} className="sr-only">Search the main gift collection</label>
+                <label htmlFor={searchInputId} className="sr-only">Search gifts and makers</label>
                 <Search aria-hidden className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-crumb" />
                 <input
                   id={searchInputId}
                   type="search"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  placeholder="Search the main gift collection…"
-                  aria-label="Search the main gift collection"
+                  placeholder="Search gifts and makers…"
+                  aria-label="Search gifts and makers"
                   className="min-h-[44px] w-full rounded-full border-[1.5px] border-parchment-deep bg-white py-2.5 pl-10 pr-10 text-sm focus:border-honey focus:outline-none focus:ring-2 focus:ring-honey/30"
                 />
                 {search && (
@@ -800,6 +808,9 @@ export default function HolidayGiftGuide() {
                   {filtered.length === 0 && (
                     <div className="py-16 text-center">
                       <p className="text-crumb">No gifts match your filters.</p>
+                      {makers.filter(m => normalizeSearch(search.trim()) && normalizeSearch(m.brand).includes(normalizeSearch(search.trim()))).map(m => (
+                        <a key={m.id} className="mx-auto mt-3 block w-fit underline" href={`/makers/${m.id}/`}>See the {m.brand} collection</a>
+                      ))}
                       <button onClick={clearAllFilters} className="mt-4 min-h-[44px] rounded-full bg-cranberry px-5 py-2 font-bold text-flour hover:bg-cranberry-deep">Clear all filters</button>
                     </div>
                   )}
@@ -821,34 +832,7 @@ export default function HolidayGiftGuide() {
         </div>
         {/* /browse — the sticky filter bar releases here */}
 
-        <section id="emile-henry" className="scroll-mt-[150px] border-y border-parchment-deep py-12">
-          <details open className="mx-auto max-w-[1200px] px-5">
-            <summary className="mb-4 flex cursor-pointer list-none items-center justify-between gap-4">
-              <div>
-                <p className="eyebrow">Featured brand</p>
-                <h2 className="mt-2 font-display text-4xl md:text-5xl">Emile Henry</h2>
-              </div>
-              <ChevronDown aria-hidden className="h-5 w-5" />
-            </summary>
-            <p className="mb-8 max-w-[60ch]">Start with the bread they love to bake. These covered ceramic bakers are made in France, each shaped for a different loaf.</p>
-            <div className="grid gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-              {emileHenry.map((item) => (
-                <a key={item.slug} href={item.url} target="_blank" rel="noopener noreferrer" className="holiday-product-card flex flex-col" data-product={item.slug} data-brand={item.brand}>
-                  <img className="aspect-square w-full rounded-sm object-contain" src={item.img} alt={item.alt} loading="lazy" decoding="async" width="720" height="720" />
-                  <div className="holiday-card-body flex flex-1 flex-col">
-                    <h3 className="font-display">{item.name}</h3>
-                    <p className="my-3 text-sm">{item.desc}</p>
-                    <div className="mt-auto flex flex-wrap items-baseline gap-2">
-                      <strong>${item.price.toFixed(2)}</strong>
-                      {item.regularPrice && <del className="text-sm opacity-80">${item.regularPrice.toFixed(2)}</del>}
-                    </div>
-                    <span className="mt-3 inline-flex items-center gap-2 text-sm font-bold underline underline-offset-4">Shop at Emile Henry <ExternalLink aria-hidden className="h-3 w-3" /></span>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </details>
-        </section>
+
 
         {/* Shop More Baking Essentials — Amazon */}
         <section className="py-10">

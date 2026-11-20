@@ -1,7 +1,7 @@
 {
   "meta": {
     "site": "https://gifts.bakinggreatbread.com",
-    "generated": "2026-11-20T02:13:17.304Z",
+    "generated": "2026-11-20T03:27:58.058Z",
     "description": "Consolidated product catalog for the Holiday Baking Gift Guide. Affiliate links included. Check each store for current prices and availability.",
     "license": "Free to read. Keep affiliate links intact when republishing."
   },
@@ -20,7 +20,7 @@
     },
     {
       "code": "Discount built in",
-      "applies_to": "Wire Monkey — use my link, save automatically"
+      "applies_to": "Wire Monkey offer"
     },
     {
       "code": "ACADEMY26",
@@ -46,11 +46,11 @@
       "price": 149.95,
       "cat": "Starter Care",
       "img": "/product-images/sourhouse-goldie-starter-warmer.webp",
-      "url": "https://sourhouse.co?ref=BAKINGGREATBREAD",
+      "url": "https://sourhouse.co/products/global-goldie-by-sourhouse-cooling-puck?ref=BAKINGGREATBREAD",
       "code": "HBK26",
       "desc": "Goldie warms your starter. Keep the included Cooling Puck in the freezer. If the light turns red above 82°F, set the frozen puck on the jar lid to cool the starter.",
       "note": "Cold kitchen? Solved. This lives on my counter year-round.",
-      "priceChecked": "2026-11-17",
+      "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
@@ -84,7 +84,7 @@
       "code": "",
       "desc": "Temperature-controlled home for your starter with jar included. Dial in an exact temp, hot or cold, and your feeding schedule finally behaves.",
       "note": "Set it to 78°F and your starter shows up on time.",
-      "priceChecked": "2026-11-17",
+      "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
@@ -111,13 +111,14 @@
       "slug": "starter-jars",
       "name": "Starter Jars (Pint or Quart)",
       "brand": "Sourhouse",
-      "price": 20.76,
+      "price": 23.95,
       "cat": "Starter Care",
       "img": "/product-images/starter-jars.webp",
-      "url": "https://sourhouse.co?ref=BAKINGGREATBREAD",
+      "url": "https://sourhouse.co/products/global-sourhouse-starter-jars-pint-or-quart?ref=BAKINGGREATBREAD",
       "code": "HBK26",
-      "desc": "Easy-clean borosilicate jars with measurement markings and breathable silicone lids. Made for daily starter life.",
+      "desc": "The pint jar starts at $23.95. Its straight sides make feeding and scraping down your starter easy. Choose pint or quart at Sourhouse.",
       "note": "The jar I actually reach for every morning.",
+      "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
@@ -140,50 +141,17 @@
       }
     },
     {
-      "slug": "sahara-shelves",
-      "name": "Sahara Poly Shelves",
-      "brand": "Brød & Taylor",
-      "price": 39.95,
-      "cat": "Starter Care",
-      "img": "/product-images/sahara-poly-shelves.webp",
-      "url": "https://collabs.shop/94zxfe",
-      "code": "",
-      "desc": "Extra shelves to expand the Sahara. More trays, more drying, one batch.",
-      "note": "Stocking stuffer for the Sahara owner.",
-      "source": "main",
-      "currency": "USD",
-      "rel": "nofollow sponsored noopener",
-      "target": "_blank",
-      "alt": "Sahara Poly Shelves by Brød & Taylor",
-      "categories": [
-        "Starter Care"
-      ],
-      "priceBand": "25-75",
-      "priceFrom": false,
-      "priceCheckedAt": null,
-      "audiences": [
-        "serious-bakers",
-        "market-sellers"
-      ],
-      "concierge": {
-        "solves": [
-          "I'm running out of tray space mid-batch",
-          "I want to dry a full load in one run instead of three"
-        ]
-      }
-    },
-    {
       "slug": "proofer",
       "name": "Folding Proofer & Slow Cooker",
       "brand": "Brød & Taylor",
       "price": 249,
       "cat": "Proofing & Temp",
       "img": "/product-images/brod-taylor-proofer-sharp.jpg",
-      "url": "https://collabs.shop/vutgu8",
+      "url": "https://brodandtaylor.com/products/folding-proofer-slow-cooker?dt_id=330823",
       "code": "",
       "desc": "Precision temperature control for proofing, plus it doubles as a slow cooker. Folds flat. Dough rises on schedule, every time.",
       "note": "The single biggest upgrade to my winter baking.",
-      "priceChecked": "2026-11-17",
+      "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
@@ -209,13 +177,14 @@
       "slug": "proofer-shelf",
       "name": "Proofer Accessory Shelf Kit",
       "brand": "Brød & Taylor",
-      "price": 49.95,
+      "price": 24.95,
       "cat": "Proofing & Temp",
       "img": "/product-images/folding-proofer-accessories.webp",
-      "url": "https://collabs.shop/vutgu8",
+      "url": "https://brodandtaylor.com/products/accessory-shelf-folding-legs?dt_id=330823",
       "code": "",
-      "desc": "Adds a second level to the Folding Proofer. Double the dough in the same footprint.",
+      "desc": "The accessory shelf with folding legs adds a second level to your folding proofer.",
       "note": "Two doughs, one proofer.",
+      "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
@@ -224,7 +193,7 @@
       "categories": [
         "Proofing & Temp"
       ],
-      "priceBand": "25-75",
+      "priceBand": "under-25",
       "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
@@ -245,10 +214,11 @@
       "price": 279.95,
       "cat": "Proofing & Temp",
       "img": "/product-images/sourhouse-doughbed.jpg",
-      "url": "https://sourhouse.co?ref=BAKINGGREATBREAD",
+      "url": "https://sourhouse.co/products/doughbed-by-sourhouse?ref=BAKINGGREATBREAD",
       "code": "HBK26",
       "desc": "A warm, glass-bottomed bed for bulk fermentation. Gentle even heat and a lid that earns its counter space.",
       "note": "Bulk ferment finally runs on my schedule.",
+      "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
@@ -277,10 +247,11 @@
       "price": 19.95,
       "cat": "Proofing & Temp",
       "img": "/product-images/sour-house-bread-blanket-alt.webp",
-      "url": "https://sourhouse.co?ref=BAKINGGREATBREAD",
+      "url": "https://sourhouse.co/products/bread-blanket-by-sourhouse?ref=BAKINGGREATBREAD",
       "code": "HBK26",
       "desc": "Breathable muslin cover that keeps loaves fresh and doughs cozy. Simple and smart.",
       "note": "Tuck the dough in. Literally.",
+      "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
@@ -305,20 +276,21 @@
     },
     {
       "slug": "proof-container",
-      "name": "6 Qt Proofing Container",
+      "name": "6 L Proofing Container",
       "brand": "Brød & Taylor",
       "price": 24.95,
       "cat": "Proofing & Temp",
       "img": "/product-images/proofing-container-6qt.webp",
-      "url": "https://brodandtaylor.com/henrysbreadkitchen",
+      "url": "https://brodandtaylor.com/products/proofing-container?dt_id=330823",
       "code": "",
-      "desc": "Clear-walled 6-quart tub with markings so you can see exactly how far your bulk has come.",
+      "desc": "A low, wide container with a lid and volume markings for tracking a batch of dough. Fits inside the Folding Proofer.",
       "note": "Stop guessing. Watch it rise.",
+      "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
-      "alt": "6 Qt Proofing Container by Brød & Taylor",
+      "alt": "6 L Proofing Container by Brød & Taylor",
       "categories": [
         "Proofing & Temp"
       ],
@@ -331,7 +303,8 @@
       ],
       "concierge": {
         "solves": [
-          "I can't tell when my dough has doubled"
+          "I can't tell when bulk fermentation is actually done",
+          "I'm guessing at rise instead of measuring it"
         ]
       }
     },
@@ -339,13 +312,14 @@
       "slug": "oval-banneton",
       "name": "Wood Pulp Banneton (Oval)",
       "brand": "Wire Monkey",
-      "price": 32,
+      "price": 25.6,
       "cat": "Proofing & Temp",
       "img": "/product-images/oval-banneton.jpg",
-      "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
+      "url": "https://wiremonkey.com/products/wood-pulp-banneton?rfsn=6816936.edb8683&variant=49661930176798",
       "code": "",
-      "desc": "The batard version. Same sustainable wood pulp, same easy release.",
+      "desc": "The 750 g oval wood-pulp basket holds a bâtard as it proofs.",
       "note": "For the batard bakers on your list.",
+      "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
@@ -371,13 +345,14 @@
       "slug": "banneton-cover",
       "name": "Reusable Banneton Covers",
       "brand": "Wire Monkey",
-      "price": 19.99,
+      "price": 21.99,
       "cat": "Proofing & Temp",
       "img": "/product-images/wiremonkey-banneton-cover.webp",
-      "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
+      "url": "https://wiremonkey.com/products/reusable-dish-covers?rfsn=6816936.edb8683&variant=60768383435038",
       "code": "",
       "desc": "Elastic, washable covers by Wild Clementine Co. Keep proofing dough from drying out, skip the plastic wrap.",
       "note": "Little gift, daily use.",
+      "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
@@ -401,21 +376,21 @@
     },
     {
       "slug": "goose-lame",
-      "name": "Goose Lame",
+      "name": "Goose Lame (Black Walnut)",
       "brand": "Wire Monkey",
-      "price": 54.95,
+      "price": 41.21,
       "cat": "Scoring & Shaping",
-      "img": "/product-images/goose-lame.jpg",
-      "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
+      "img": "/maker-photos/wire-monkey/goose-lame.webp",
+      "url": "https://wiremonkey.com/products/goose-lame?rfsn=6816936.edb8683",
       "code": "",
       "desc": "Wire Monkey’s flagship scoring tool. Balanced, beautiful walnut, and forgiving for newer hands.",
       "note": "The lame I hand people when they say scoring scares them.",
-      "priceChecked": "2026-11-17",
+      "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
-      "alt": "Goose Lame by Wire Monkey",
+      "alt": "Goose Lame (Black Walnut) by Wire Monkey",
       "categories": [
         "Scoring & Shaping"
       ],
@@ -437,14 +412,14 @@
       "slug": "ufo-zero",
       "name": "UFO Zero Lame",
       "brand": "Wire Monkey",
-      "price": 36.95,
+      "price": 27.71,
       "cat": "Scoring & Shaping",
-      "img": "/product-images/wiremonkey-ufo-zero.webp",
-      "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
+      "img": "/maker-photos/wire-monkey/ufo-zero-lame.webp",
+      "url": "https://wiremonkey.com/products/ufo-zero-lame?rfsn=6816936.edb8683",
       "code": "",
       "desc": "The original circular lame. Retractable blade, ambidextrous, fine control for detail work.",
       "note": "Fits the hand like it grew there.",
-      "priceChecked": "2026-11-17",
+      "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
@@ -468,20 +443,21 @@
     },
     {
       "slug": "ufo-lame",
-      "name": "UFO Bread Lame",
+      "name": "UFO Bread Journey Lame (Walnut & Maple)",
       "brand": "Wire Monkey",
-      "price": 29.95,
+      "price": 27.71,
       "cat": "Scoring & Shaping",
-      "img": "/product-images/ufo-lame.webp",
-      "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
+      "img": "/maker-photos/wire-monkey/ufo-bread-journey-lame.webp",
+      "url": "https://wiremonkey.com/products/ufo-bread-journey-lame?rfsn=6816936.edb8683",
       "code": "",
       "desc": "The saucer-shaped classic in gorgeous wood. Scoring control that makes ears stand up.",
       "note": "Yes, it looks like a UFO. It scores like a dream.",
+      "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
-      "alt": "UFO Bread Lame by Wire Monkey",
+      "alt": "UFO Bread Journey Lame (Walnut & Maple) by Wire Monkey",
       "categories": [
         "Scoring & Shaping"
       ],
@@ -500,21 +476,21 @@
     },
     {
       "slug": "poco-lame",
-      "name": "Poco Lame",
+      "name": "Poco Lame (Walnut & Maple)",
       "brand": "Wire Monkey",
-      "price": 20.95,
+      "price": 10.48,
       "cat": "Scoring & Shaping",
-      "img": "/product-images/wiremonkey-poco.webp",
-      "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
+      "img": "/maker-photos/wire-monkey/poco-lame.webp",
+      "url": "https://wiremonkey.com/products/poco-lame?rfsn=6816936.edb8683",
       "code": "",
       "desc": "The smallest straight-blade lame, black walnut. Maximum control, minimum price.",
       "note": "Best stocking stuffer under $20 on this page.",
-      "priceChecked": "2026-11-17",
+      "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
-      "alt": "Poco Lame by Wire Monkey",
+      "alt": "Poco Lame (Walnut & Maple) by Wire Monkey",
       "categories": [
         "Scoring & Shaping"
       ],
@@ -534,25 +510,25 @@
     },
     {
       "slug": "arc-lame",
-      "name": "Arc Lame",
+      "name": "Arc Lame (Black Walnut)",
       "brand": "Wire Monkey",
-      "price": 28.95,
+      "price": 21.71,
       "cat": "Scoring & Shaping",
-      "img": "/product-images/wiremonkey-arc-lame.webp",
-      "url": "https://wiremonkey.com/discount/C1Z5YP7FNQ03?rfsn=6816936.edb8683",
+      "img": "/maker-photos/wire-monkey/arc-lame.webp",
+      "url": "https://wiremonkey.com/products/arc-lame?rfsn=6816936.edb8683",
       "code": "",
       "desc": "The smallest curved lame in the world, with a base stand. Built for long dramatic slashes.",
       "note": "For the baker chasing that one perfect ear.",
-      "priceChecked": "2026-11-17",
+      "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
-      "alt": "Arc Lame by Wire Monkey",
+      "alt": "Arc Lame (Black Walnut) by Wire Monkey",
       "categories": [
         "Scoring & Shaping"
       ],
-      "priceBand": "25-75",
+      "priceBand": "under-25",
       "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
@@ -569,13 +545,14 @@
       "slug": "bench-knife",
       "name": "Bench Knife",
       "brand": "Brød & Taylor",
-      "price": 14.95,
+      "price": 18.95,
       "cat": "Scoring & Shaping",
       "img": "/product-images/bt-dough-scraper.jpg",
       "url": "https://collabs.shop/8vcnxu",
       "code": "",
       "desc": "One-piece stainless scraper for dividing, shaping, and keeping the bench clean. No seams for dough to hide in.",
       "note": "The tool I’d grab in a kitchen fire.",
+      "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
@@ -608,6 +585,7 @@
       "code": "",
       "desc": "Moves through shaggy dough without sticking or overworking. Retire the wooden spoon.",
       "note": "Mixes in half the strokes. Ask my wrist.",
+      "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
@@ -633,13 +611,14 @@
       "slug": "whisk-bundle",
       "name": "Dough Whisk + Bench Knife Bundle",
       "brand": "Brød & Taylor",
-      "price": 34.95,
+      "price": 37.75,
       "cat": "Scoring & Shaping",
       "img": "/product-images/bt-dough-whisk-bench-knife-bundle.webp",
-      "url": "https://brodandtaylor.com/henrysbreadkitchen",
+      "url": "https://brodandtaylor.com/products/dough-whisk-and-bench-knife?dt_id=330823",
       "code": "",
       "desc": "The two tools every new baker needs, boxed together. Mixing and shaping, sorted.",
       "note": "My default gift for brand-new bakers.",
+      "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
@@ -665,13 +644,14 @@
       "slug": "silicone-mat",
       "name": "Non-Stick Silicone Mat",
       "brand": "Brød & Taylor",
-      "price": 19.95,
+      "price": 8.95,
       "cat": "Scoring & Shaping",
       "img": "/product-images/nonstick-silicone-mat.webp",
-      "url": "https://brodandtaylor.com/henrysbreadkitchen",
+      "url": "https://brodandtaylor.com/products/silicone-baking-mats?dt_id=330823&variant=36114048352412",
       "code": "",
       "desc": "Heat-resistant mat for kneading and shaping. Saves your counters and your patience.",
       "note": "Cleanup goes from ten minutes to ten seconds.",
+      "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
@@ -697,13 +677,14 @@
       "slug": "shell-batard",
       "name": "Baking Shell (Batard) + Steel",
       "brand": "Brød & Taylor",
-      "price": 89,
+      "price": 164,
       "cat": "Bake Day",
       "img": "/product-images/baking-shell-batard-steel-alt.webp",
       "url": "https://collabs.shop/noauwh",
       "code": "",
       "desc": "Steam-trapping shell and steel combo for oval loaves. Serious oven spring without a 30-pound Dutch oven.",
       "note": "Dutch oven results, half the deadlift.",
+      "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
@@ -712,7 +693,7 @@
       "categories": [
         "Bake Day"
       ],
-      "priceBand": "75-150",
+      "priceBand": "splurge",
       "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
@@ -727,20 +708,21 @@
     },
     {
       "slug": "shell-steel-bundle",
-      "name": "Baking Shell + Steel Bundle",
+      "name": "Baking Shell (Boule) + Steel",
       "brand": "Brød & Taylor",
-      "price": 159,
+      "price": 164,
       "cat": "Bake Day",
       "img": "/product-images/bt-baking-shell-steel-bundle.webp",
       "url": "https://collabs.shop/g9yxme",
       "code": "",
       "desc": "The boule version of the shell-and-steel setup. Even heat below, trapped steam above.",
       "note": "Round loaf people, this one’s yours.",
+      "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
-      "alt": "Baking Shell + Steel Bundle by Brød & Taylor",
+      "alt": "Baking Shell (Boule) + Steel by Brød & Taylor",
       "categories": [
         "Bake Day"
       ],
@@ -752,39 +734,47 @@
       ],
       "concierge": {
         "solves": [
-          "I want bakery crust without heavy cast iron"
+          "I want trapped steam above and real heat below",
+          "I want boule results that match what a bakery gets"
         ]
       }
     },
     {
       "slug": "bakers-scale",
-      "name": "Baker’s Math Kitchen Scale",
+      "name": "High Capacity Baking Scale",
       "brand": "Brød & Taylor",
-      "price": 49.95,
+      "price": 24.95,
       "cat": "Bake Day",
-      "img": "/product-images/bt-bakers-math-scale.webp",
-      "url": "https://collabs.shop/hvryn6",
+      "img": "/maker-photos/brod-and-taylor/high-capacity-baking-scale.webp",
+      "url": "https://brodandtaylor.com/products/high-capacity-baking-scale?dt_id=330823",
       "code": "",
-      "desc": "High-capacity precision scale with baker’s percentage built in. The math does itself.",
-      "note": "Percentages without the napkin math.",
+      "desc": "A precision kitchen scale that weighs up to 15 kg / 33 lbs with 1-gram accuracy.",
+      "note": "Weigh your mixing bowl, then add the flour and water right on the scale.",
+      "aliases": [
+        "Baker’s Math Kitchen Scale",
+        "Baker's Math Kitchen Scale"
+      ],
+      "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
-      "alt": "Baker’s Math Kitchen Scale by Brød & Taylor",
+      "alt": "High Capacity Baking Scale by Brød & Taylor",
       "categories": [
         "Bake Day"
       ],
-      "priceBand": "25-75",
+      "priceBand": "under-25",
       "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
+        "new-bakers",
         "serious-bakers",
         "market-sellers"
       ],
       "concierge": {
         "solves": [
-          "I want to scale recipes by baker's percentage"
+          "I'm doing baker's percentages on my phone every single bake",
+          "My scale maxes out before the bowl is even full"
         ]
       }
     },
@@ -799,6 +789,7 @@
       "code": "",
       "desc": "Spring-action sharpener with Austrian steel. Your bread knife deserves better than sawing.",
       "note": "A sharp knife respects the crumb.",
+      "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
@@ -822,20 +813,21 @@
     },
     {
       "slug": "apron",
-      "name": "Chef’s Apron",
+      "name": "Brød & Taylor Apron",
       "brand": "Brød & Taylor",
-      "price": 69,
+      "price": 60,
       "cat": "Bake Day",
       "img": "/product-images/bt-chef-apron.jpg",
       "url": "https://collabs.shop/akcwv4",
       "code": "",
       "desc": "Durable, adjustable, and actually comfortable through a full bake day.",
       "note": "Flour goes on the apron, not the good shirt.",
+      "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
       "target": "_blank",
-      "alt": "Chef’s Apron by Brød & Taylor",
+      "alt": "Brød & Taylor Apron by Brød & Taylor",
       "categories": [
         "Bake Day"
       ],
@@ -848,7 +840,8 @@
       ],
       "concierge": {
         "solves": [
-          "I want a gift every baker uses every bake"
+          "I ruin my clothes every bake day",
+          "I want an apron that's still comfortable four hours in"
         ]
       }
     },
@@ -859,15 +852,15 @@
       "price": 415,
       "cat": "Wood & Serving",
       "img": "/product-images/walnut-bowl-17.jpg",
-      "url": "https://hollandbowlmill.com/products/17-inch-wooden-bowl",
+      "url": "https://hollandbowlmill.com/products/17-inch-wooden-bowl?variant=44106123214947&wpam_id=10",
       "code": "Henry",
       "desc": "Hand-turned in Michigan from a single piece of walnut. An heirloom that mixes, proofs, and serves for generations.",
       "note": "This bowl will outlive both of us. That’s the point.",
       "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
-      "rel": null,
-      "target": null,
+      "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "17″ Walnut Bowl by Holland Bowl Mill",
       "categories": [
         "Wood & Serving"
@@ -892,15 +885,15 @@
       "price": 345,
       "cat": "Wood & Serving",
       "img": "/product-images/maple-bowl-17.jpg",
-      "url": "https://hollandbowlmill.com/products/17-inch-wooden-bowl",
+      "url": "https://hollandbowlmill.com/products/17-inch-wooden-bowl?variant=44106123182179&wpam_id=10",
       "code": "Henry",
       "desc": "The lighter-grain sibling. Same one-piece hand-turned construction, brighter look.",
       "note": "Maple brightens a dark kitchen.",
       "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
-      "rel": null,
-      "target": null,
+      "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "17″ Maple Bowl by Holland Bowl Mill",
       "categories": [
         "Wood & Serving"
@@ -925,15 +918,15 @@
       "price": 250,
       "cat": "Wood & Serving",
       "img": "/product-images/holland-bowl-mill.jpg",
-      "url": "https://hollandbowlmill.com/products/17-inch-wooden-bowl",
+      "url": "https://hollandbowlmill.com/products/17-inch-wooden-bowl?variant=44106123083875&wpam_id=10",
       "code": "Henry",
       "desc": "The workhorse of the line. Big enough for full batches, and wood keeps dough at room temp even in a cold kitchen.",
       "note": "The entry door to heirloom wood.",
       "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
-      "rel": null,
-      "target": null,
+      "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "17″ Beechwood Bowl by Holland Bowl Mill",
       "categories": [
         "Wood & Serving"
@@ -958,15 +951,15 @@
       "price": 65,
       "cat": "Wood & Serving",
       "img": "/product-images/french-rolling-pin.jpg",
-      "url": "https://hollandbowlmill.com/collections/wooden-bowls",
+      "url": "https://hollandbowlmill.com/products/french-rolling-pin?wpam_id=10&variant=44106127278179",
       "code": "Henry",
       "desc": "Tapered hardwood pin, hand-finished. Feel the dough instead of fighting it.",
       "note": "Tapered pins let you steer.",
       "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
-      "rel": null,
-      "target": null,
+      "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "French Rolling Pin by Holland Bowl Mill",
       "categories": [
         "Wood & Serving"
@@ -992,15 +985,15 @@
       "price": 130,
       "cat": "Wood & Serving",
       "img": "/product-images/bread-board-bow-knife.jpg",
-      "url": "https://hollandbowlmill.com/collections/wooden-bowls",
+      "url": "https://hollandbowlmill.com/products/bread-board-and-bow-knife?wpam_id=10",
       "code": "Henry",
       "desc": "Cherry board with a serrated bow knife. The way fresh bread wants to be sliced and served.",
       "note": "This is how you present a loaf you’re proud of.",
       "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
-      "rel": null,
-      "target": null,
+      "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Cherry Bread Board & Bow Knife by Holland Bowl Mill",
       "categories": [
         "Wood & Serving"
@@ -1026,21 +1019,22 @@
       "price": 16.99,
       "cat": "Storage & Gifting",
       "img": "/product-images/modkitchen-bread-sling.webp",
-      "url": "https://modkitchn.com/BAKINGGREATBREAD",
+      "url": "https://modkitchn.com/products/silicone-bread-sling?dt_id=2863905",
       "code": "BAKINGGREATBREAD",
       "desc": "Silicone sling with SureHold grips. Lower dough into a screaming-hot Dutch oven without the burn scars.",
       "note": "Knuckles: saved.",
-      "priceChecked": "2026-11-18",
+      "priceChecked": "2026-11-19",
+      "priceLabel": "From $16.99",
+      "priceFrom": false,
       "source": "main",
       "currency": "USD",
-      "rel": null,
-      "target": null,
+      "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Round Bread Sling by ModKitchn",
       "categories": [
         "Storage & Gifting"
       ],
       "priceBand": "under-25",
-      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers",
@@ -1055,26 +1049,27 @@
     },
     {
       "slug": "oval-sling",
-      "name": "Oval Bread Sling",
+      "name": "Oval Bread Slings (Small or Large)",
       "brand": "ModKitchn",
       "price": 15.99,
       "cat": "Storage & Gifting",
       "img": "/product-images/modkitchen-oval-sling.webp",
-      "url": "https://modkitchn.com/BAKINGGREATBREAD",
+      "url": "https://modkitchn.com/products/oval-silicone-bread-slings?dt_id=2863905",
       "code": "BAKINGGREATBREAD",
-      "desc": "The batard-shaped version, sized for oval Dutch ovens.",
+      "desc": "Choose Small at $15.99 or Large at $17.99 to fit your oval Dutch oven.",
       "note": "Same save, longer loaf.",
-      "priceChecked": "2026-11-18",
+      "priceChecked": "2026-11-19",
+      "priceLabel": "From $15.99",
+      "priceFrom": false,
       "source": "main",
       "currency": "USD",
-      "rel": null,
-      "target": null,
-      "alt": "Oval Bread Sling by ModKitchn",
+      "rel": "nofollow sponsored noopener",
+      "target": "_blank",
+      "alt": "Oval Bread Slings (Small or Large) by ModKitchn",
       "categories": [
         "Storage & Gifting"
       ],
       "priceBand": "under-25",
-      "priceFrom": false,
       "priceCheckedAt": null,
       "audiences": [
         "new-bakers",
@@ -1093,15 +1088,15 @@
       "price": 29.99,
       "cat": "Storage & Gifting",
       "img": "/product-images/modkitchen-bread-bag.webp",
-      "url": "https://modkitchn.com/BAKINGGREATBREAD",
+      "url": "https://modkitchn.com/products/fresh-bread-storage-bags?dt_id=2863905",
       "code": "BAKINGGREATBREAD",
       "desc": "Waterproof zipper, moisture-managing liner, made from recycled bottles. Keeps crust crisp days longer.",
       "note": "Day-three sourdough that still crackles.",
-      "priceChecked": "2026-11-18",
+      "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
-      "rel": null,
-      "target": null,
+      "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Reusable Bread Bag by ModKitchn",
       "categories": [
         "Storage & Gifting"
@@ -1128,15 +1123,15 @@
       "price": 29.99,
       "cat": "Storage & Gifting",
       "img": "/product-images/modkitchen-holiday-bags.webp",
-      "url": "https://modkitchn.com/BAKINGGREATBREAD",
+      "url": "https://modkitchn.com/products/special-edition-holiday-bread-bags?dt_id=2863905",
       "code": "BAKINGGREATBREAD",
       "desc": "Limited-edition festive prints. Gift a homemade loaf inside one and you’ve given two presents.",
       "note": "The loaf is the gift. This is the bow.",
-      "priceChecked": "2026-11-18",
+      "priceChecked": "2026-11-19",
       "source": "main",
       "currency": "USD",
-      "rel": null,
-      "target": null,
+      "rel": "nofollow sponsored noopener",
+      "target": "_blank",
       "alt": "Holiday Bread Bags (Limited) by ModKitchn",
       "categories": [
         "Storage & Gifting"
@@ -1156,96 +1151,6 @@
       }
     },
     {
-      "slug": "wire-monkey:goose-lame",
-      "name": "Goose Lame (Black Walnut)",
-      "brand": "Wire Monkey",
-      "cat": "Scoring & Shaping",
-      "img": "/maker-photos/wire-monkey/goose-lame.webp",
-      "url": "https://wiremonkey.com/products/goose-lame?rfsn=6816936.edb8683",
-      "desc": "The flagship and most popular lame.",
-      "price": 54.95,
-      "priceLabel": "$54.95",
-      "priceChecked": "2026-11-19",
-      "currency": "USD",
-      "rel": "nofollow sponsored noopener",
-      "target": "_blank",
-      "alt": "Goose Lame (Black Walnut) by Wire Monkey",
-      "categories": [
-        "Scoring & Shaping"
-      ],
-      "priceBand": "25-75",
-      "priceFrom": false,
-      "priceCheckedAt": "2026-11-19",
-      "audiences": [
-        "new-bakers",
-        "serious-bakers"
-      ],
-      "concierge": {
-        "solves": []
-      },
-      "source": "maker"
-    },
-    {
-      "slug": "wire-monkey:ufo-zero-lame",
-      "name": "UFO Zero Lame",
-      "brand": "Wire Monkey",
-      "cat": "Scoring & Shaping",
-      "img": "/maker-photos/wire-monkey/ufo-zero-lame.webp",
-      "url": "https://wiremonkey.com/products/ufo-zero-lame?rfsn=6816936.edb8683",
-      "desc": "The original circular lame.",
-      "price": 36.95,
-      "priceLabel": "$36.95",
-      "priceChecked": "2026-11-19",
-      "currency": "USD",
-      "rel": "nofollow sponsored noopener",
-      "target": "_blank",
-      "alt": "UFO Zero Lame by Wire Monkey",
-      "categories": [
-        "Scoring & Shaping"
-      ],
-      "priceBand": "25-75",
-      "priceFrom": false,
-      "priceCheckedAt": "2026-11-19",
-      "audiences": [
-        "new-bakers",
-        "serious-bakers"
-      ],
-      "concierge": {
-        "solves": []
-      },
-      "source": "maker"
-    },
-    {
-      "slug": "wire-monkey:ufo-bread-journey-lame",
-      "name": "UFO Bread Journey Lame (Walnut & Maple)",
-      "brand": "Wire Monkey",
-      "cat": "Scoring & Shaping",
-      "img": "/maker-photos/wire-monkey/ufo-bread-journey-lame.webp",
-      "url": "https://wiremonkey.com/products/ufo-bread-journey-lame?rfsn=6816936.edb8683",
-      "desc": "America's Test Kitchen Top Pick.",
-      "price": 36.95,
-      "priceLabel": "$36.95",
-      "priceChecked": "2026-11-19",
-      "currency": "USD",
-      "rel": "nofollow sponsored noopener",
-      "target": "_blank",
-      "alt": "UFO Bread Journey Lame (Walnut & Maple) by Wire Monkey",
-      "categories": [
-        "Scoring & Shaping"
-      ],
-      "priceBand": "25-75",
-      "priceFrom": false,
-      "priceCheckedAt": "2026-11-19",
-      "audiences": [
-        "new-bakers",
-        "serious-bakers"
-      ],
-      "concierge": {
-        "solves": []
-      },
-      "source": "maker"
-    },
-    {
       "slug": "wire-monkey:ufo-corbeau-lame",
       "name": "UFO Corbeau Lame (Recycled)",
       "brand": "Wire Monkey",
@@ -1253,8 +1158,8 @@
       "img": "/maker-photos/wire-monkey/ufo-corbeau-lame.webp",
       "url": "https://wiremonkey.com/products/ufo-corbeau-lame?rfsn=6816936.edb8683",
       "desc": "The toughest model in the lineup.",
-      "price": 39.95,
-      "priceLabel": "$39.95",
+      "price": 29.96,
+      "priceLabel": "$29.96",
       "priceChecked": "2026-11-19",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
@@ -1283,8 +1188,8 @@
       "img": "/maker-photos/wire-monkey/ufo-nux-lame.webp",
       "url": "https://wiremonkey.com/products/ufo-nux-lame?rfsn=6816936.edb8683",
       "desc": "Twice as thick as the other UFOs (12.7 mm), easiest to grip, open, and tighten.",
-      "price": 40.95,
-      "priceLabel": "$40.95",
+      "price": 30.71,
+      "priceLabel": "$30.71",
       "priceChecked": "2026-11-19",
       "currency": "USD",
       "rel": "nofollow sponsored noopener",
@@ -1294,96 +1199,6 @@
         "Scoring & Shaping"
       ],
       "priceBand": "25-75",
-      "priceFrom": false,
-      "priceCheckedAt": "2026-11-19",
-      "audiences": [
-        "new-bakers",
-        "serious-bakers"
-      ],
-      "concierge": {
-        "solves": []
-      },
-      "source": "maker"
-    },
-    {
-      "slug": "wire-monkey:arc-lame",
-      "name": "Arc Lame (Black Walnut)",
-      "brand": "Wire Monkey",
-      "cat": "Scoring & Shaping",
-      "img": "/maker-photos/wire-monkey/arc-lame.webp",
-      "url": "https://wiremonkey.com/products/arc-lame?rfsn=6816936.edb8683",
-      "desc": "The world's smallest curved lame.",
-      "price": 28.95,
-      "priceLabel": "$28.95",
-      "priceChecked": "2026-11-19",
-      "currency": "USD",
-      "rel": "nofollow sponsored noopener",
-      "target": "_blank",
-      "alt": "Arc Lame (Black Walnut) by Wire Monkey",
-      "categories": [
-        "Scoring & Shaping"
-      ],
-      "priceBand": "25-75",
-      "priceFrom": false,
-      "priceCheckedAt": "2026-11-19",
-      "audiences": [
-        "new-bakers",
-        "serious-bakers"
-      ],
-      "concierge": {
-        "solves": []
-      },
-      "source": "maker"
-    },
-    {
-      "slug": "wire-monkey:poco-lame",
-      "name": "Poco Lame (Walnut & Maple)",
-      "brand": "Wire Monkey",
-      "cat": "Scoring & Shaping",
-      "img": "/maker-photos/wire-monkey/poco-lame.webp",
-      "url": "https://wiremonkey.com/products/poco-lame?rfsn=6816936.edb8683",
-      "desc": "The smallest straight-blade lame in the world and the lowest-priced way into the line.",
-      "price": 20.95,
-      "priceLabel": "$20.95",
-      "priceChecked": "2026-11-19",
-      "currency": "USD",
-      "rel": "nofollow sponsored noopener",
-      "target": "_blank",
-      "alt": "Poco Lame (Walnut & Maple) by Wire Monkey",
-      "categories": [
-        "Scoring & Shaping"
-      ],
-      "priceBand": "under-25",
-      "priceFrom": false,
-      "priceCheckedAt": "2026-11-19",
-      "audiences": [
-        "new-bakers",
-        "serious-bakers"
-      ],
-      "concierge": {
-        "solves": []
-      },
-      "source": "maker"
-    },
-    {
-      "slug": "brod-and-taylor:folding-proofer",
-      "name": "Folding Proofer & Slow Cooker",
-      "brand": "Brød & Taylor",
-      "cat": "Proofing & Temp",
-      "img": "/maker-photos/brod-and-taylor/folding-proofer.webp",
-      "url": "https://brodandtaylor.com/products/folding-proofer-slow-cooker?dt_id=330823",
-      "desc": "A temperature-controlled proofing box that keeps sourdough, yeast dough, and yogurt at the exact degree you set, then folds completely flat to slide into a drawer. Doubles as a slow cooker.",
-      "price": 249,
-      "priceLabel": "$249.00",
-      "priceChecked": "2026-11-19",
-      "currency": "USD",
-      "rel": "nofollow sponsored noopener",
-      "target": "_blank",
-      "alt": "Folding Proofer & Slow Cooker by Brød & Taylor",
-      "categories": [
-        "Proofing & Temp"
-      ],
-      "priceBand": "splurge",
       "priceFrom": false,
       "priceCheckedAt": "2026-11-19",
       "audiences": [
@@ -1414,36 +1229,6 @@
         "Starter Care"
       ],
       "priceBand": "75-150",
-      "priceFrom": false,
-      "priceCheckedAt": "2026-11-19",
-      "audiences": [
-        "new-bakers",
-        "serious-bakers"
-      ],
-      "concierge": {
-        "solves": []
-      },
-      "source": "maker"
-    },
-    {
-      "slug": "brod-and-taylor:high-capacity-baking-scale",
-      "name": "High Capacity Baking Scale",
-      "brand": "Brød & Taylor",
-      "cat": "Bake Day",
-      "img": "/maker-photos/brod-and-taylor/high-capacity-baking-scale.webp",
-      "url": "https://brodandtaylor.com/products/high-capacity-baking-scale?dt_id=330823",
-      "desc": "A precision kitchen scale that weighs up to 15 kg / 33 lbs with 1-gram accuracy.",
-      "price": 24.95,
-      "priceLabel": "$24.95",
-      "priceChecked": "2026-11-19",
-      "currency": "USD",
-      "rel": "nofollow sponsored noopener",
-      "target": "_blank",
-      "alt": "High Capacity Baking Scale by Brød & Taylor",
-      "categories": [
-        "Bake Day"
-      ],
-      "priceBand": "under-25",
       "priceFrom": false,
       "priceCheckedAt": "2026-11-19",
       "audiences": [
@@ -1666,126 +1451,6 @@
       "source": "maker"
     },
     {
-      "slug": "sour-house:goldie",
-      "name": "Goldie by Sourhouse + Cooling Puck",
-      "brand": "Sourhouse",
-      "cat": "Starter Care",
-      "img": "/maker-photos/sour-house/goldie.webp",
-      "url": "https://sourhouse.co/products/global-goldie-by-sourhouse-cooling-puck?ref=BAKINGGREATBREAD",
-      "desc": "Goldie warms your starter. Keep the included Cooling Puck in the freezer. If the light turns red above 82°F, set the frozen puck on the jar lid to cool the starter.",
-      "price": 149.95,
-      "priceLabel": "$149.95",
-      "priceChecked": "2026-11-19",
-      "currency": "USD",
-      "rel": "nofollow sponsored noopener",
-      "target": "_blank",
-      "alt": "Goldie by Sourhouse + Cooling Puck by Sourhouse",
-      "categories": [
-        "Starter Care"
-      ],
-      "priceBand": "75-150",
-      "priceFrom": false,
-      "priceCheckedAt": "2026-11-19",
-      "audiences": [
-        "new-bakers",
-        "serious-bakers"
-      ],
-      "concierge": {
-        "solves": []
-      },
-      "source": "maker"
-    },
-    {
-      "slug": "sour-house:doughbed",
-      "name": "DoughBed by Sourhouse",
-      "brand": "Sourhouse",
-      "cat": "Starter Care",
-      "img": "/maker-photos/sour-house/doughbed.webp",
-      "url": "https://sourhouse.co/products/doughbed-by-sourhouse?ref=BAKINGGREATBREAD",
-      "desc": "A warming mat, glass dough bowl, and cork lid that gently warms dough to 75-82F during bulk proof, so proofing times stay consistent.",
-      "price": 279.95,
-      "priceLabel": "$279.95",
-      "priceChecked": "2026-11-19",
-      "currency": "USD",
-      "rel": "nofollow sponsored noopener",
-      "target": "_blank",
-      "alt": "DoughBed by Sourhouse by Sourhouse",
-      "categories": [
-        "Starter Care"
-      ],
-      "priceBand": "splurge",
-      "priceFrom": false,
-      "priceCheckedAt": "2026-11-19",
-      "audiences": [
-        "new-bakers",
-        "serious-bakers"
-      ],
-      "concierge": {
-        "solves": []
-      },
-      "source": "maker"
-    },
-    {
-      "slug": "sour-house:starter-jars",
-      "name": "Sourhouse Starter Jars (Pint or Quart)",
-      "brand": "Sourhouse",
-      "cat": "Starter Care",
-      "img": "/maker-photos/sour-house/starter-jars.webp",
-      "url": "https://sourhouse.co/products/global-sourhouse-starter-jars-pint-or-quart?ref=BAKINGGREATBREAD",
-      "desc": "Straight-sided glass starter jar with a silicone lid that closes all the way while the starter still breathes.",
-      "price": 23.95,
-      "priceLabel": "$23.95",
-      "priceChecked": "2026-11-19",
-      "currency": "USD",
-      "rel": "nofollow sponsored noopener",
-      "target": "_blank",
-      "alt": "Sourhouse Starter Jars (Pint or Quart) by Sourhouse",
-      "categories": [
-        "Starter Care"
-      ],
-      "priceBand": "under-25",
-      "priceFrom": false,
-      "priceCheckedAt": "2026-11-19",
-      "audiences": [
-        "new-bakers",
-        "serious-bakers"
-      ],
-      "concierge": {
-        "solves": []
-      },
-      "source": "maker"
-    },
-    {
-      "slug": "sour-house:bread-blanket",
-      "name": "Bread Blanket by Sourhouse",
-      "brand": "Sourhouse",
-      "cat": "Starter Care",
-      "img": "/maker-photos/sour-house/bread-blanket.webp",
-      "url": "https://sourhouse.co/products/bread-blanket-by-sourhouse?ref=BAKINGGREATBREAD",
-      "desc": "A 100% cotton muslin square (34 x 34 in laid flat) for wrapping a finished loaf, doubling as a picnic or potluck cloth.",
-      "price": 19.95,
-      "priceLabel": "$19.95",
-      "priceChecked": "2026-11-19",
-      "currency": "USD",
-      "rel": "nofollow sponsored noopener",
-      "target": "_blank",
-      "alt": "Bread Blanket by Sourhouse by Sourhouse",
-      "categories": [
-        "Starter Care"
-      ],
-      "priceBand": "under-25",
-      "priceFrom": false,
-      "priceCheckedAt": "2026-11-19",
-      "audiences": [
-        "new-bakers",
-        "serious-bakers"
-      ],
-      "concierge": {
-        "solves": []
-      },
-      "source": "maker"
-    },
-    {
       "slug": "sour-house:essential-bundle",
       "name": "Essential Bundle",
       "brand": "Sourhouse",
@@ -1950,6 +1615,36 @@
       "rel": null,
       "target": null,
       "alt": "15\" Wooden Bowl by Holland Bowl Mill",
+      "categories": [
+        "Wood & Serving"
+      ],
+      "priceBand": "splurge",
+      "priceFrom": true,
+      "priceCheckedAt": "2026-11-19",
+      "audiences": [
+        "new-bakers",
+        "serious-bakers"
+      ],
+      "concierge": {
+        "solves": []
+      },
+      "source": "maker"
+    },
+    {
+      "slug": "holland-bowl:17-inch-wooden-bowl",
+      "name": "17\" Wooden Bowl",
+      "brand": "Holland Bowl Mill",
+      "cat": "Wood & Serving",
+      "img": "/maker-photos/holland-bowl/17-inch-wooden-bowl.webp",
+      "url": "https://hollandbowlmill.com/products/17-inch-wooden-bowl",
+      "desc": "The \"Ultimate Entertaining Bowl\" — big salad for a crowd, fruit bowl, centerpiece.",
+      "price": 250,
+      "priceLabel": "From $250.00",
+      "priceChecked": "2026-11-19",
+      "currency": "USD",
+      "rel": null,
+      "target": null,
+      "alt": "17\" Wooden Bowl by Holland Bowl Mill",
       "categories": [
         "Wood & Serving"
       ],
@@ -2566,137 +2261,18 @@
       "source": "maker"
     },
     {
-      "slug": "modkitchn:fresh-bread-storage-bags",
-      "name": "Fresh Bread Storage Bags",
-      "brand": "ModKitchn",
-      "cat": "Storage & Gifting",
-      "img": "/maker-photos/modkitchn/fresh-bread-storage-bags.webp",
-      "url": "https://modkitchn.com/products/fresh-bread-storage-bags?dt_id=2863905",
-      "desc": "The flagship. Two reusable bread bags (Red and Greige) with a moisture-controlling liner, waterproof zipper, and roll-top closure.",
-      "price": 29.99,
-      "priceLabel": "$29.99",
-      "priceChecked": "2026-11-19",
-      "currency": "USD",
-      "rel": "nofollow sponsored noopener",
-      "target": "_blank",
-      "alt": "Fresh Bread Storage Bags by ModKitchn",
-      "categories": [
-        "Storage & Gifting"
-      ],
-      "priceBand": "25-75",
-      "priceFrom": false,
-      "priceCheckedAt": "2026-11-19",
-      "audiences": [
-        "new-bakers",
-        "serious-bakers"
-      ],
-      "concierge": {
-        "solves": []
-      },
-      "source": "maker"
-    },
-    {
-      "slug": "modkitchn:special-edition-holiday-bread-bags",
-      "name": "Special Edition: Holiday Bread Bags",
-      "brand": "ModKitchn",
-      "cat": "Storage & Gifting",
-      "img": "/maker-photos/modkitchn/special-edition-holiday-bread-bags.webp",
-      "url": "https://modkitchn.com/products/special-edition-holiday-bread-bags?dt_id=2863905",
-      "desc": "The same premium bags as above, dressed in a limited-edition winter design. Set of 2, each fits round, oval, or sandwich loaves.",
-      "price": 29.99,
-      "priceLabel": "$29.99",
-      "priceChecked": "2026-11-19",
-      "currency": "USD",
-      "rel": "nofollow sponsored noopener",
-      "target": "_blank",
-      "alt": "Special Edition: Holiday Bread Bags by ModKitchn",
-      "categories": [
-        "Storage & Gifting"
-      ],
-      "priceBand": "25-75",
-      "priceFrom": false,
-      "priceCheckedAt": "2026-11-19",
-      "audiences": [
-        "new-bakers",
-        "serious-bakers"
-      ],
-      "concierge": {
-        "solves": []
-      },
-      "source": "maker"
-    },
-    {
-      "slug": "modkitchn:oval-silicone-bread-slings",
-      "name": "Oval Bread Slings",
-      "brand": "ModKitchn",
-      "cat": "Storage & Gifting",
-      "img": "/maker-photos/modkitchn/oval-silicone-bread-slings.webp",
-      "url": "https://modkitchn.com/products/oval-silicone-bread-slings?dt_id=2863905",
-      "desc": "Oval silicone bread slings for moving dough safely from counter to Dutch oven. SureHold wide-grip handles, BakeShield Technology for a golden crust without burnt loaves, food-grade BPA-free silicone, non-stick, oven safe to 480 degrees, dishwasher safe (upper rack).",
-      "price": 15.99,
-      "priceLabel": "From $15.99",
-      "priceChecked": "2026-11-19",
-      "currency": "USD",
-      "rel": "nofollow sponsored noopener",
-      "target": "_blank",
-      "alt": "Oval Bread Slings by ModKitchn",
-      "categories": [
-        "Storage & Gifting"
-      ],
-      "priceBand": "under-25",
-      "priceFrom": true,
-      "priceCheckedAt": "2026-11-19",
-      "audiences": [
-        "new-bakers",
-        "serious-bakers"
-      ],
-      "concierge": {
-        "solves": []
-      },
-      "source": "maker"
-    },
-    {
-      "slug": "modkitchn:silicone-bread-sling",
-      "name": "Round Bread Sling",
-      "brand": "ModKitchn",
-      "cat": "Storage & Gifting",
-      "img": "/maker-photos/modkitchn/silicone-bread-sling.webp",
-      "url": "https://modkitchn.com/products/silicone-bread-sling?dt_id=2863905",
-      "desc": "Round silicone bread sling for boules and artisan loaves. Same SureHold handles and BakeShield Technology as the oval version, food-grade BPA-free silicone, non-stick, oven safe to 480 degrees, dishwasher safe (upper rack).",
-      "price": 16.99,
-      "priceLabel": "From $16.99",
-      "priceChecked": "2026-11-19",
-      "currency": "USD",
-      "rel": "nofollow sponsored noopener",
-      "target": "_blank",
-      "alt": "Round Bread Sling by ModKitchn",
-      "categories": [
-        "Storage & Gifting"
-      ],
-      "priceBand": "under-25",
-      "priceFrom": true,
-      "priceCheckedAt": "2026-11-19",
-      "audiences": [
-        "new-bakers",
-        "serious-bakers"
-      ],
-      "concierge": {
-        "solves": []
-      },
-      "source": "maker"
-    },
-    {
-      "slug": "emile-henry-bread-cloche",
-      "name": "Bread Cloche",
-      "brand": "Emile Henry",
+      "slug": "emile-henry-baguette-baker",
+      "name": "Baguette Baker",
+      "brand": "Émile Henry",
       "cat": "Bake Day",
       "price": 149.95,
       "regularPrice": 199.95,
       "priceChecked": "2026-11-19",
-      "url": "https://www.emilehenryusa.com/products/bread-cloche",
-      "img": "https://cdn.shopify.com/s/files/1/2961/4672/files/25.png?v=1777674633&width=720",
-      "alt": "Linen ceramic cloche with its lid tilted over a crusty round loaf",
-      "desc": "For the baker who loves a round country loaf. The dome holds steam around the dough as it rises, then lifts off for browning.",
+      "url": "https://www.emilehenryusa.com/products/baguette-baker?variant=7686310723631",
+      "img": "/product-images/emile-henry/baguette-baker.webp",
+      "alt": "Baguette Baker in Burgundy",
+      "color": "Burgundy",
+      "desc": "Three grooves cradle three slender loaves. The lid keeps steam close to the dough while the cuts open in the oven.",
       "currency": "USD",
       "rel": null,
       "target": null,
@@ -2715,17 +2291,18 @@
       "source": "emile-henry"
     },
     {
-      "slug": "emile-henry-baguette-baker",
-      "name": "Baguette Baker",
-      "brand": "Emile Henry",
+      "slug": "emile-henry-bread-cloche",
+      "name": "Bread Cloche",
+      "brand": "Émile Henry",
       "cat": "Bake Day",
       "price": 149.95,
       "regularPrice": 199.95,
       "priceChecked": "2026-11-19",
-      "url": "https://www.emilehenryusa.com/products/baguette-baker",
-      "img": "https://cdn.shopify.com/s/files/1/2961/4672/files/ECOM_images_27.png?v=1777674582&width=720",
-      "alt": "Three baguettes nestled in a cream ceramic baguette baker",
-      "desc": "Three molded channels support three slender loaves. The lid holds steam around the baguettes for a crisp crust.",
+      "url": "https://www.emilehenryusa.com/products/bread-cloche?variant=45281708146735",
+      "img": "/product-images/emile-henry/bread-cloche.webp",
+      "alt": "Bread Cloche in Linen",
+      "color": "Linen",
+      "desc": "For the baker who scores a big country boule. The domed lid holds steam through the first part of the bake, then lifts away for browning.",
       "currency": "USD",
       "rel": null,
       "target": null,
@@ -2746,15 +2323,16 @@
     {
       "slug": "emile-henry-bread-loaf-baker",
       "name": "Bread Loaf Baker",
-      "brand": "Emile Henry",
+      "brand": "Émile Henry",
       "cat": "Bake Day",
       "price": 139.95,
       "regularPrice": 169.95,
       "priceChecked": "2026-11-19",
-      "url": "https://www.emilehenryusa.com/products/bread-loaf-baker",
-      "img": "https://cdn.shopify.com/s/files/1/2961/4672/files/23.png?v=1777574455&width=720",
-      "alt": "Cream ceramic loaf baker with the lid lifted over a browned loaf",
-      "desc": "Deep ceramic sides support a sandwich loaf as it rises. The vented lid gives the top crust room to brown.",
+      "url": "https://www.emilehenryusa.com/products/bread-loaf-baker?variant=41639032946735",
+      "img": "/product-images/emile-henry/bread-loaf-baker.webp",
+      "alt": "Bread Loaf Baker in Charcoal",
+      "color": "Charcoal",
+      "desc": "Deep, straight sides give sandwich dough somewhere to climb. Reach for this one for an everyday loaf that slices neatly for toast.",
       "currency": "USD",
       "rel": null,
       "target": null,
@@ -2774,16 +2352,47 @@
     },
     {
       "slug": "emile-henry-pullman-long-loaf-bread-baker-1",
-      "name": "Limited Edition Pullman / Long Loaf Bread Baker",
-      "brand": "Emile Henry",
+      "name": "Limited Edition Pullman Baker",
+      "brand": "Émile Henry",
       "cat": "Bake Day",
       "price": 99.95,
       "regularPrice": 199.95,
       "priceChecked": "2026-11-19",
-      "url": "https://www.emilehenryusa.com/products/pullman-long-loaf-bread-baker-1",
-      "img": "https://cdn.shopify.com/s/files/1/2961/4672/files/6_39e8f42e-7152-4e7c-8088-03c6dfbc90e4.png?v=1757598893&width=720",
-      "alt": "Dark Pullman baker holding a scored loaf beside its cream-lined lid",
-      "desc": "A long, covered baker for sandwich slices or a country loaf with room for diagonal scores. Available in limited-edition colors.",
+      "url": "https://www.emilehenryusa.com/products/pullman-long-loaf-bread-baker-1?variant=51913440395510",
+      "img": "/product-images/emile-henry/pullman-long-loaf-bread-baker-1.webp",
+      "alt": "Limited Edition Pullman Baker in Poppy",
+      "color": "Poppy",
+      "desc": "A long, covered baker in a seasonal glaze. Choose it for a sandwich loaf with enough even slices to go around the holiday table.",
+      "currency": "USD",
+      "rel": null,
+      "target": null,
+      "categories": [
+        "Bake Day"
+      ],
+      "priceBand": "75-150",
+      "priceFrom": false,
+      "priceCheckedAt": "2026-11-19",
+      "audiences": [
+        "serious-bakers"
+      ],
+      "concierge": {
+        "solves": []
+      },
+      "source": "emile-henry"
+    },
+    {
+      "slug": "emile-henry-artisan-bread-loaf-baker",
+      "name": "Artisan Bread Loaf Baker",
+      "brand": "Émile Henry",
+      "cat": "Bake Day",
+      "price": 149.95,
+      "regularPrice": 199.95,
+      "priceChecked": "2026-11-19",
+      "url": "https://www.emilehenryusa.com/products/artisan-bread-loaf-baker?variant=31717152817199",
+      "img": "/product-images/emile-henry/artisan-bread-loaf-baker.webp",
+      "alt": "Artisan Bread Loaf Baker in Burgundy",
+      "color": "Burgundy",
+      "desc": "For a rustic oval loaf with a long score down the middle. Its oblong shape gives a bâtard room to open as it bakes.",
       "currency": "USD",
       "rel": null,
       "target": null,
@@ -2804,15 +2413,106 @@
     {
       "slug": "emile-henry-bread-pot-1",
       "name": "Bread Pot",
-      "brand": "Emile Henry",
+      "brand": "Émile Henry",
       "cat": "Bake Day",
       "price": 149.95,
       "regularPrice": null,
       "priceChecked": "2026-11-19",
-      "url": "https://www.emilehenryusa.com/products/bread-pot-1",
-      "img": "https://cdn.shopify.com/s/files/1/2961/4672/files/5500_34_Burgundy_BreadPot_1.png?v=1755204710&width=720",
-      "alt": "Burgundy ceramic bread pot with a domed lid and two handles",
-      "desc": "For sourdough and no-knead boules. The round pot holds steam under its lid and goes from oven to table.",
+      "url": "https://www.emilehenryusa.com/products/bread-pot-1?variant=42699170709551",
+      "img": "/product-images/emile-henry/bread-pot-1.webp",
+      "alt": "Bread Pot in Burgundy",
+      "color": "Burgundy",
+      "desc": "A round, lidded pot for sourdough and no-knead bread. The side handles give oven mitts a place to grip when the loaf is ready.",
+      "currency": "USD",
+      "rel": null,
+      "target": null,
+      "categories": [
+        "Bake Day"
+      ],
+      "priceBand": "75-150",
+      "priceFrom": false,
+      "priceCheckedAt": "2026-11-19",
+      "audiences": [
+        "serious-bakers"
+      ],
+      "concierge": {
+        "solves": []
+      },
+      "source": "emile-henry"
+    },
+    {
+      "slug": "emile-henry-italian-bread-loaf-baker",
+      "name": "Pullman / Long Loaf Bread Baker",
+      "brand": "Émile Henry",
+      "cat": "Bake Day",
+      "price": 149.95,
+      "regularPrice": 199.95,
+      "priceChecked": "2026-11-19",
+      "url": "https://www.emilehenryusa.com/products/italian-bread-loaf-baker?variant=45264748085295",
+      "img": "/product-images/emile-henry/italian-bread-loaf-baker.webp",
+      "alt": "Pullman / Long Loaf Bread Baker in Linen",
+      "color": "Linen",
+      "desc": "The classic long-loaf shape in the core glaze collection. A good fit for the baker making a week’s worth of sandwiches.",
+      "currency": "USD",
+      "rel": null,
+      "target": null,
+      "categories": [
+        "Bake Day"
+      ],
+      "priceBand": "75-150",
+      "priceFrom": false,
+      "priceCheckedAt": "2026-11-19",
+      "audiences": [
+        "serious-bakers"
+      ],
+      "concierge": {
+        "solves": []
+      },
+      "source": "emile-henry"
+    },
+    {
+      "slug": "emile-henry-modern-bread-cloche",
+      "name": "Modern Bread Cloche",
+      "brand": "Émile Henry",
+      "cat": "Bake Day",
+      "price": 149.95,
+      "regularPrice": 199.95,
+      "priceChecked": "2026-11-19",
+      "url": "https://www.emilehenryusa.com/products/modern-bread-cloche?variant=39281682612271",
+      "img": "/product-images/emile-henry/modern-bread-cloche.webp",
+      "alt": "Modern Bread Cloche in Charcoal",
+      "color": "Charcoal",
+      "desc": "The low platter and rounded cover are made for a free-standing boule. Lift the lid and carry the loaf to the table on its baking base.",
+      "currency": "USD",
+      "rel": null,
+      "target": null,
+      "categories": [
+        "Bake Day"
+      ],
+      "priceBand": "75-150",
+      "priceFrom": false,
+      "priceCheckedAt": "2026-11-19",
+      "audiences": [
+        "serious-bakers"
+      ],
+      "concierge": {
+        "solves": []
+      },
+      "source": "emile-henry"
+    },
+    {
+      "slug": "emile-henry-smooth-pizza-stone",
+      "name": "Smooth Pizza Stone",
+      "brand": "Émile Henry",
+      "cat": "Bake Day",
+      "price": 83.95,
+      "regularPrice": null,
+      "priceChecked": "2026-11-19",
+      "url": "https://www.emilehenryusa.com/products/smooth-pizza-stone?variant=8797558997039",
+      "img": "/product-images/emile-henry/smooth-pizza-stone.webp",
+      "alt": "Smooth Pizza Stone in Burgundy",
+      "color": "Burgundy",
+      "desc": "For the baker who saves a ball of dough for pizza night. The smooth ceramic surface doubles as a serving plate.",
       "currency": "USD",
       "rel": null,
       "target": null,

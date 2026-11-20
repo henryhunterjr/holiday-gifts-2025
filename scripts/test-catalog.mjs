@@ -141,3 +141,18 @@ for (const maker of makerData) {
     assert.equal(listedPrices.get(item.url), price, `Conflicting prices for ${item.name}`);
   }
 }
+
+const storefront = new Map(catalog.products.map(item => [item.slug, item]));
+for (const slug of ["vitale-starter", "spice-grinder", "sahara-shelves"]) {
+  assert.ok(!storefront.has(slug), `Unavailable product in catalog: ${slug}`);
+}
+for (const [slug, price] of Object.entries({
+  "bakers-scale": 24.95, "starter-jars": 23.95, "bench-knife": 18.95,
+  "shell-batard": 164, "shell-steel-bundle": 164, "proof-container": 24.95,
+})) assert.equal(storefront.get(slug)?.price, price, `Review audited price: ${slug}`);
+const ceramics = catalog.products.filter(item => item.source === "emile-henry");
+assert.equal(ceramics.length, 9);
+for (const piece of ceramics) {
+  assert.ok(new URL(piece.url).searchParams.has("variant"), `Missing glaze selection: ${piece.name}`);
+  assert.ok(fs.existsSync(path.join(root, "public", piece.img)), `Missing ceramic photo: ${piece.name}`);
+}

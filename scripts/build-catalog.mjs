@@ -146,7 +146,7 @@ const seedProducts = seedData.newProducts.map((p) => {
     priceBand: priceBandFor(price),
     priceFrom: p.priceFrom ?? false,
     // Verified dates come from the seed; null stays null. Never backfilled.
-    priceCheckedAt: p.priceCheckedAt ?? null,
+    priceCheckedAt: p.priceChecked ?? p.priceCheckedAt ?? null,
     audiences: [...(p.audiences ?? [])],
     // commissionRate and partnerStatus are deliberately NOT copied here:
     // partner commission rates are commercially sensitive and must never be

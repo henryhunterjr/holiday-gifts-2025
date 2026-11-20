@@ -12,6 +12,7 @@ export const DISABLED_PRODUCT_SLUGS: ReadonlySet<string> = new Set([
   "round-banneton", // Exact round variant pending verification.
   "bread-wrap", // No active listing found.
   "toast-tongs", // Product link returned 404.
+  "sahara-shelves", // The shelf link resolves to the dehydrator.
   "sahara", // Default configuration unavailable.
   "french-press", // Water Kettle & French Press — collabs.shop/b8bht0
 ]);
