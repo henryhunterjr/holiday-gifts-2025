@@ -1,0 +1,21 @@
+name: Verify live gift guide
+on:
+  push:
+    branches: [qa/november-ceramics-display]
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci --ignore-scripts
+      - name: Check live guide
+        run: node scripts/check-shopping.cjs
+        env:
+          TEST_URL: https://gifts.bakinggreatbread.com
+          CHROME_BIN: /usr/bin/google-chrome
