@@ -320,7 +320,6 @@
         "priceChecked": "2026-11-19",
         "priceSource": "https://sourhouse.co/products/bread-blanket-by-sourhouse",
         "availability": "Check stock at checkout",
-        "code": "HBK26",
         "bestFor": "The friend who gifts loaves. Wrap the bread, and the blanket becomes part of the gift.",
         "badge": "Under $25"
       },
@@ -335,7 +334,6 @@
         "priceChecked": "2026-11-19",
         "priceSource": "https://sourhouse.co/products/goldie-jar-bundle-world-central-kitchen-benefit",
         "availability": "Check stock at checkout",
-        "code": "HBK26",
         "bestFor": "A baker starting out with sourdough who needs the warmer and the jar together.",
         "badge": "Best Value"
       },
@@ -350,7 +348,6 @@
         "priceChecked": "2026-11-19",
         "priceSource": "https://sourhouse.co/products/baking-on-your-schedule-bundle-goldie-doughbed-starter-jar",
         "availability": "Check stock at checkout",
-        "code": "HBK26",
         "bestFor": "The serious home baker who wants full control from starter to bulk proof."
       },
       {
@@ -364,7 +361,6 @@
         "priceChecked": "2026-11-19",
         "priceSource": "https://sourhouse.co/products/big-bundle-goldie-puck-pint-quart-goldie-blanket-adapter",
         "availability": "Check stock at checkout",
-        "code": "HBK26",
         "bestFor": "The baker who keeps two starters going and gives bread away all season.",
         "badge": "Holiday Price"
       }
@@ -396,7 +392,7 @@
       {
         "slug": "10-inch-wooden-bowl",
         "name": "10\" Wooden Bowl",
-        "url": "https://hollandbowlmill.com/products/10-inch-wooden-bowl",
+        "url": "https://hollandbowlmill.com/products/10-inch-wooden-bowl?wpam_id=10",
         "img": "/maker-photos/holland-bowl/10-inch-wooden-bowl.webp",
         "desc": "A mid-size bowl that works for a family salad one night and a snack bowl the next.",
         "priceLabel": "From $58.50",
@@ -410,7 +406,7 @@
       {
         "slug": "12-inch-wooden-bowl",
         "name": "12\" Wooden Bowl",
-        "url": "https://hollandbowlmill.com/products/12-inch-wooden-bowl",
+        "url": "https://hollandbowlmill.com/products/12-inch-wooden-bowl?wpam_id=10",
         "img": "/maker-photos/holland-bowl/12-inch-wooden-bowl.webp",
         "desc": "A family-size bowl, substantial without being unwieldy.",
         "priceLabel": "From $70.00",
@@ -424,7 +420,7 @@
       {
         "slug": "15-inch-wooden-bowl",
         "name": "15\" Wooden Bowl",
-        "url": "https://hollandbowlmill.com/products/15-inch-wooden-bowl",
+        "url": "https://hollandbowlmill.com/products/15-inch-wooden-bowl?wpam_id=10",
         "img": "/maker-photos/holland-bowl/15-inch-wooden-bowl.webp",
         "desc": "The one for bakers.",
         "priceLabel": "From $154.00",
@@ -439,7 +435,7 @@
       {
         "slug": "17-inch-wooden-bowl",
         "name": "17\" Wooden Bowl",
-        "url": "https://hollandbowlmill.com/products/17-inch-wooden-bowl",
+        "url": "https://hollandbowlmill.com/products/17-inch-wooden-bowl?wpam_id=10",
         "img": "/maker-photos/holland-bowl/17-inch-wooden-bowl.webp",
         "desc": "The \"Ultimate Entertaining Bowl\" — big salad for a crowd, fruit bowl, centerpiece.",
         "priceLabel": "From $250.00",
@@ -453,7 +449,7 @@
       {
         "slug": "20-inch-wooden-bowl",
         "name": "20\" Wooden Bowl",
-        "url": "https://hollandbowlmill.com/products/20-inch-wooden-bowl",
+        "url": "https://hollandbowlmill.com/products/20-inch-wooden-bowl?wpam_id=10",
         "img": "/maker-photos/holland-bowl/20-inch-wooden-bowl.webp",
         "desc": "Their largest bowl, made for the table that needs a true centerpiece.",
         "priceLabel": "From $420.00",
@@ -468,7 +464,7 @@
       {
         "slug": "15-inch-four-corners-wooden-bowl",
         "name": "15\" Four Corners Wooden Bowl",
-        "url": "https://hollandbowlmill.com/products/15-inch-four-corners-wooden-bowl",
+        "url": "https://hollandbowlmill.com/products/15-inch-four-corners-wooden-bowl?wpam_id=10",
         "img": "/maker-photos/holland-bowl/15-inch-four-corners-wooden-bowl.webp",
         "desc": "A modern, sleek bowl with squared corners and an undulating rim.",
         "priceLabel": "$115.00",
@@ -522,7 +518,7 @@
       {
         "slug": "black-bosch-universal-plus-mixer",
         "name": "Bosch Universal Plus Mixer — Black, Stainless Bowl",
-        "url": "https://nutrimill.com/Academy26",
+        "url": "https://nutrimill.com/products/black-bosch-universal-plus-mixer?dt_id=3376604",
         "img": "/maker-photos/nutrimill/black-bosch-universal-plus-mixer.webp",
         "desc": "The same Universal Plus with a black base and a 6.5-quart brushed stainless steel bowl instead of plastic. Same 500-watt bottom-drive motor, 4 speeds plus pulse, 20+ optional attachments.",
         "priceLabel": "$549.00",
@@ -536,7 +532,7 @@
       {
         "slug": "artiste-mixer",
         "name": "NutriMill Artiste Stand Mixer",
-        "url": "https://nutrimill.com/Academy26",
+        "url": "https://nutrimill.com/products/artiste-mixer?dt_id=3376604",
         "img": "/maker-photos/nutrimill/artiste-mixer.webp",
         "desc": "NutriMill's own bottom-drive mixer. 500 watts, 6.5-quart bowl, up to 8 pounds of dough per batch.",
         "priceLabel": "$219.00",
@@ -551,7 +547,7 @@
       {
         "slug": "classic-grain-mill",
         "name": "NutriMill Classic Grain Mill — 2026 model",
-        "url": "https://nutrimill.com/Academy26",
+        "url": "https://nutrimill.com/products/classic-grain-mill?dt_id=3376604",
         "img": "/maker-photos/nutrimill/classic-grain-mill.webp",
         "desc": "The best-selling grain mill for over 25 years, redesigned for 2026. 1200-watt motor, stainless steel impact milling heads, 12-cup hopper, 20-cup flour canister, from super fine pastry flour to coarse meal.",
         "priceLabel": "$349.00",
@@ -565,7 +561,7 @@
       {
         "slug": "impact-grain-mill",
         "name": "NutriMill Impact Grain Mill",
-        "url": "https://nutrimill.com/Academy26",
+        "url": "https://nutrimill.com/products/impact-grain-mill?dt_id=3376604",
         "img": "/maker-photos/nutrimill/impact-grain-mill.webp",
         "desc": "The compact high-speed impact mill, built for bread flour. 1200-watt motor, stainless steel impact milling heads, 7-cup grain hopper, up to 11 cups of flour per batch.",
         "priceLabel": "$199.00",
@@ -579,7 +575,7 @@
       {
         "slug": "harvest-grain-mill",
         "name": "NutriMill Harvest Grain Mill",
-        "url": "https://nutrimill.com/Academy26",
+        "url": "https://nutrimill.com/products/harvest-grain-mill?dt_id=3376604",
         "img": "/maker-photos/nutrimill/harvest-grain-mill.webp",
         "desc": "The stone mill. Renewable bamboo housing with near diamond-hard corundum stones, 450-watt motor with auto-shutoff thermal protection, patented texture control knob from cracked grain to ultra-fine flour.",
         "priceLabel": "$499.00",
@@ -594,7 +590,7 @@
       {
         "slug": "flourish-grain-mill",
         "name": "NutriMill Flourish Stone Grain Mill",
-        "url": "https://nutrimill.com/Academy26",
+        "url": "https://nutrimill.com/products/flourish-grain-mill?dt_id=3376604",
         "img": "/maker-photos/nutrimill/flourish-grain-mill.webp",
         "desc": "The new compact stone mill. Durable corundum stones on CushionFlex stone suspension, driven by a DC motor with thermal protection.",
         "priceLabel": "$399.00",
@@ -608,7 +604,7 @@
       {
         "slug": "bosch-bakers-pack-attachment-set",
         "name": "Bosch Baker's Bundle",
-        "url": "https://nutrimill.com/Academy26",
+        "url": "https://nutrimill.com/products/bosch-bakers-pack-attachment-set?dt_id=3376604",
         "img": "/maker-photos/nutrimill/bosch-bakers-pack-attachment-set.webp",
         "desc": "The attachment set for the Bosch Universal Plus: Cookie Paddles, Cake Paddles, Bowl Scraper, Metal Whip Drive, plus cookie sheet liners and a 40-piece icing kit. The gift-ready add-on for anyone buying the Bosch.",
         "priceLabel": "$99.00",
@@ -622,7 +618,7 @@
       {
         "slug": "artiste-bakers-pack-attachment-set",
         "name": "Artiste Baker's Bundle",
-        "url": "https://nutrimill.com/Academy26",
+        "url": "https://nutrimill.com/products/artiste-bakers-pack-attachment-set?dt_id=3376604",
         "img": "/maker-photos/nutrimill/artiste-bakers-pack-attachment-set.webp",
         "desc": "The attachment set for the Artiste: Cookie Paddles, Cake Paddles, Bowl Scraper, plus cookie sheet liners and a 40-piece icing kit. Same contents as the Bosch bundle except no Metal Whip Drive, because the Artiste already includes one.",
         "priceLabel": "$94.00",
