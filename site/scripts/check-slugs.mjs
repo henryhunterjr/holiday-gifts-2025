@@ -12,7 +12,7 @@ import { PRICE_CAPS } from "../lib/price-caps.mjs";
 const here = path.dirname(fileURLToPath(import.meta.url));
 const raw = JSON.parse(fs.readFileSync(path.resolve(here, "..", "..", "public", "catalog.json"), "utf8"));
 
-const arrays = ["products", "krustic", "amazon", "books", "free_resources"].flatMap((k) => raw[k] ?? []);
+const arrays = ["products", "amazon", "books", "free_resources"].flatMap((k) => raw[k] ?? []);
 const categories = [...new Set(arrays.flatMap((p) => p.categories ?? []))].sort();
 const audiences = [...new Set(arrays.flatMap((p) => p.audiences ?? []))].sort();
 const bands = [...new Set(arrays.map((p) => p.priceBand).filter((b) => typeof b === "string"))].sort();

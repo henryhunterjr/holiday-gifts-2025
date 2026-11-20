@@ -4,12 +4,12 @@
 
 ## Pages
 
-- [Holiday Gift Guide 2026](/): The main curated gift guide, Henry's Top 6, category aisles, Krustic and Amazon collections, market-seller gear, and books.
+- [Holiday Gift Guide 2026](/): The main curated gift guide, Henry's Top 6, category aisles, Emile Henry and Amazon collections, market-seller gear, and books.
 - [Holiday Gift Guide 2026 (long URL)](/bread-baker-holiday-gift-guide-2025): Same guide at its longer canonical route.
 
 ## Data
 
-- [Product catalog JSON](/catalog.json): Full structured catalog — main products, Krustic, Amazon, books, free resources, promo codes. Regenerated on every build.
+- [Product catalog JSON](/catalog.json): Full structured catalog — main products, Emile Henry, Amazon, books, free resources, promo codes. Regenerated on every build.
 - [Gift guide CSV](/holiday-gift-guide-2025.csv): Flat CSV export of the guide.
 - [Pinterest product catalog CSV](/pinterest-product-catalog.csv): Pinterest-formatted feed.
 

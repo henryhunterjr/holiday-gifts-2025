@@ -17,7 +17,7 @@ const MIN_AFFILIATE_RECORDS = 60;
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const catalog = JSON.parse(fs.readFileSync(path.join(root, "public", "catalog.json"), "utf8"));
 
-const ARRAYS = ["products", "krustic", "amazon", "books", "free_resources"];
+const ARRAYS = ["products", "amazon", "books", "free_resources"];
 
 const failures = [];
 let affiliateCount = 0;

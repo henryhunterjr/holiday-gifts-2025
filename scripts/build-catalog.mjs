@@ -25,32 +25,7 @@ const setFrom = (name) => {
   return new Set([...body.matchAll(/"([^"]+)"/g)].map((m) => m[1]));
 };
 const disabled = setFrom("DISABLED_PRODUCT_SLUGS");
-const disabledKrustic = setFrom("DISABLED_KRUSTIC_SLUGS");
-
-// Parse the TS data modules without importing them (they import images).
-const parseTsProducts = (src) => {
-  const rows = [];
-  for (const line of src.split("\n")) {
-    const t = line.trim();
-    if (!t.startsWith("{ ") || !t.includes("url:")) continue;
-    const obj = {};
-    for (const [, k, v] of t.matchAll(/(\w+):\s*(?:"([^"]*)"|`([^`]*)`|([\d.]+))/g)) {
-      obj[k] = v;
-    }
-    for (const [, k, s, b, n] of t.matchAll(/(\w+):\s*(?:"([^"]*)"|`([^`]*)`|([\d.]+))/g)) {
-      obj[k] = s ?? (b !== undefined ? b : Number(n));
-    }
-    if (obj.name && obj.url) rows.push(obj);
-  }
-  return rows;
-};
-
-const krusticSrc = read("src/data/krustic.ts");
-const R = (krusticSrc.match(/const R = "([^"]+)"/) || [, ""])[1];
-const krustic = parseTsProducts(krusticSrc)
-  .map((p) => ({ ...p, url: p.url.replace("${R}", R) }))
-  .filter((p) => !disabledKrustic.has(p.slug))
-  .map(({ img, ...p }) => ({ ...p, source: "krustic" }));
+const emileHenry = JSON.parse(read("src/data/emileHenry.json"));
 
 const amazonSrc = read("src/data/amazon.ts");
 const TAG = (amazonSrc.match(/const TAG = "([^"]+)"/) || [, ""])[1];
@@ -186,7 +161,7 @@ const seedProducts = seedData.newProducts.map((p) => {
 // in the catalog.
 const seenSlugs = new Set([
   ...data.products.map((p) => p.slug),
-  ...krustic.map((p) => p.slug),
+  ...emileHenry.map((p) => p.slug),
 ]);
 for (const s of seedProducts) {
   if (seenSlugs.has(s.slug)) throw new Error(`Seed product slug collision: "${s.slug}". Rename in the seed or adjust slugify.`);
@@ -228,9 +203,12 @@ const catalog = {
       priceFrom: /from|–/i.test(item.priceLabel),
       priceCheckedAt: item.priceChecked,
     })),
+    ...emileHenry.map(item => ({
+      ...enrichRecord(item), source: "emile-henry", alt: item.alt,
+      audiences: ["serious-bakers"], priceCheckedAt: item.priceChecked,
+    })),
     ...seedProducts.filter(item => !makerSeedReplacements.has(item.slug)),
   ],
-  krustic: enrichAll(krustic, "krustic"),
   amazon: enrichAll(
     amazon.filter((a) => !dropNamesFor("amazon").has(a.name)),
     "amazon"
@@ -242,5 +220,5 @@ const catalog = {
 const out = path.join(root, "public", "catalog.json");
 fs.writeFileSync(out, JSON.stringify(catalog, null, 2));
 console.log(
-  `catalog.json written: ${catalog.products.length} products (incl ${seedProducts.length} seed), ${krustic.length} krustic, ${catalog.amazon.length} amazon (after drops), ${catalog.books.length} books, ${catalog.free_resources.length} free`
+  `catalog.json written: ${catalog.products.length} products (incl ${seedProducts.length} seed), ${catalog.amazon.length} amazon (after drops), ${catalog.books.length} books, ${catalog.free_resources.length} free`
 );

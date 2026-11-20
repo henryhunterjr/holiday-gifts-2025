@@ -12,7 +12,7 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const raw = JSON.parse(fs.readFileSync(path.resolve(here, "..", "..", "public", "catalog.json"), "utf8"));
 const content = JSON.parse(fs.readFileSync(path.resolve(here, "..", "content", "facets.json"), "utf8"));
 
-const arrays = ["products", "krustic", "amazon", "books", "free_resources"].flatMap((k) => raw[k] ?? []);
+const arrays = ["products", "amazon", "books", "free_resources"].flatMap((k) => raw[k] ?? []);
 const allNames = new Set(arrays.map((p) => p.name));
 
 const categories = [...new Set(arrays.flatMap((p) => p.categories ?? []))].sort();

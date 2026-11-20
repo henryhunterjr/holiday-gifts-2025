@@ -16,12 +16,6 @@ export const DISABLED_PRODUCT_SLUGS: ReadonlySet<string> = new Set([
   "french-press", // Water Kettle & French Press — collabs.shop/b8bht0
 ]);
 
-// Krustic product URL slugs (from `krustic.ts`) that are unverified or 404.
-export const DISABLED_KRUSTIC_SLUGS: ReadonlySet<string> = new Set([
-  "bakers-bundle", // Linked Duo configuration unavailable.
-  "dual-flour-dehydrated-starter",
-]);
-
 // Free resource cards are shown once real download URLs are configured below.
 export const FREE_RESOURCES_ENABLED = true;
 

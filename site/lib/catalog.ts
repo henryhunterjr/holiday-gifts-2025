@@ -25,7 +25,7 @@ export type Facet =
 
 export function readCatalog(): { products: CatalogRecord[] } {
   const raw = JSON.parse(fs.readFileSync(CATALOG_PATH, "utf8"));
-  const arrays = ["products", "krustic", "amazon", "books", "free_resources"] as const;
+  const arrays = ["products", "amazon", "books", "free_resources"] as const;
   const products: CatalogRecord[] = [];
   for (const key of arrays) {
     for (const record of raw[key] ?? []) products.push({ ...record });

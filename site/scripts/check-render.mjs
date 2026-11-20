@@ -3,7 +3,7 @@
 // data-product-slug markers in the visible HTML must equal the count computed
 // from the catalog. Exact counts catch a page that renders empty AND a page
 // that renders 26 of 27 (off-by-one) or 30 (facet leaking products).
-// The "Challenger Bread Pan" assertion stays as the named canary.
+// The "Baking Shell + Steel Bundle" assertion stays as the named canary.
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -13,7 +13,7 @@ import { PRICE_CAPS } from "../lib/price-caps.mjs";
 const here = path.dirname(fileURLToPath(import.meta.url));
 const outDir = path.resolve(here, "..", "out");
 const catalogPath = path.resolve(here, "..", "..", "public", "catalog.json");
-const NEEDLE = "Challenger Bread Pan";
+const NEEDLE = "Baking Shell + Steel Bundle";
 
 function visibleMarkup(html) {
   // Remove script and style blocks entirely; what remains is markup a non-JS
@@ -23,7 +23,7 @@ function visibleMarkup(html) {
 
 const raw = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
 const content = JSON.parse(fs.readFileSync(path.resolve(here, "..", "content", "facets.json"), "utf8"));
-const arrays = ["products", "krustic", "amazon", "books", "free_resources"].flatMap((k) => raw[k] ?? []);
+const arrays = ["products", "amazon", "books", "free_resources"].flatMap((k) => raw[k] ?? []);
 const all = arrays;
 
 function visibleText(html) {

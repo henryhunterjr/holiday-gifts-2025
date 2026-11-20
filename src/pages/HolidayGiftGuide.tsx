@@ -4,14 +4,13 @@ import { Helmet } from "react-helmet-async";
 import { Gift, Search, Share2, Copy, Snowflake, ExternalLink, X, Sparkles, ChevronDown, Heart } from "lucide-react";
 import { toast } from "sonner";
 import productsData from "@/data/products.json";
-import { krusticProducts } from "@/data/krustic";
+import emileHenry from "@/data/emileHenry.json";
 import seasonalTools from "@/data/seasonalAmazon.json";
 import { amazonProducts } from "@/data/amazon";
 import {
   PRICE_BANDS,
   bandByLabel,
   DISABLED_PRODUCT_SLUGS,
-  DISABLED_KRUSTIC_SLUGS,
   FREE_RESOURCES_ENABLED,
   PRICES_LAST_CHECKED,
   isValidUrl,
@@ -60,9 +59,6 @@ const products = allProducts.filter(
 );
 const top6Slugs = productsData.top6 as string[];
 const promoCodes = productsData.promo_codes as [string, string][];
-const visibleKrustic = krusticProducts.filter(
-  (k) => !DISABLED_KRUSTIC_SLUGS.has(k.slug) && isValidUrl(k.url),
-);
 
 type FreeResource = {
   slug: string;
@@ -825,58 +821,33 @@ export default function HolidayGiftGuide() {
         </div>
         {/* /browse — the sticky filter bar releases here */}
 
-        {/* Krustic brand section */}
-        <section id="krustic" className="scroll-mt-[150px] border-y border-parchment-deep bg-parchment/60 py-10">
-         <details open className="mx-auto max-w-[1200px] px-5">
-          <summary className="mb-6 flex cursor-pointer list-none items-center justify-between gap-4">
-            <div>
-              <p className="eyebrow">Featured brand</p>
-              <h2 className="mt-2 font-display text-3xl font-semibold text-crust md:text-4xl">Krustic <span className="font-hand text-2xl text-cranberry">Rise Above Tradition™</span></h2>
-            </div>
-            <ChevronDown aria-hidden className="h-5 w-5 flex-none text-crumb" />
-          </summary>
-          <div>
-            <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+        <section id="emile-henry" className="scroll-mt-[150px] border-y border-parchment-deep py-12">
+          <details open className="mx-auto max-w-[1200px] px-5">
+            <summary className="mb-4 flex cursor-pointer list-none items-center justify-between gap-4">
               <div>
-                <p className="mt-3 max-w-[60ch] text-crumb">Heritage-inspired sourdough tools that honor the past and elevate your bake. Free shipping + 30-day returns.</p>
-                <p className="mt-2 max-w-[60ch] text-sm text-crumb">
-                  New to sourdough?{" "}
-                  <Link to="/sourdough-starter-care-guide" className="font-semibold text-cranberry hover:underline">
-                    Start with the starter care guide
-                  </Link>
-                  . Gummy loaves?{" "}
-                  <Link to="/fix-gummy-dense-sourdough" className="font-semibold text-cranberry hover:underline">
-                    Here's a troubleshooting guide
-                  </Link>
-                  .
-                </p>
+                <p className="eyebrow">Featured brand</p>
+                <h2 className="mt-2 font-display text-4xl md:text-5xl">Emile Henry</h2>
               </div>
-              <button onClick={() => copyCode("BGBAH25")} className="code-pill min-h-[44px] text-base">
-                <Copy className="h-4 w-4" /> Use code BGBAH25 for 10% off
-              </button>
-            </div>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {visibleKrustic.map((k, i) => (
-                <a key={i} href={k.url} target="_blank" rel="nofollow sponsored noopener noreferrer" className="holiday-product-card">
-                  <ProductPhoto src={k.img} name={k.name} />
-                  <div className="holiday-card-body">
-                  <h3 className="font-display text-base font-semibold text-crust">{k.name}</h3>
-                  <p className="mt-1 line-clamp-2 text-sm text-crumb">{k.desc}</p>
-                  <div className="mt-3 flex items-center justify-between">
-                    <span className="font-bold text-cranberry">{k.price}</span>
-                    <span className="inline-flex items-center gap-1 text-xs font-bold text-evergreen">Shop <ExternalLink className="h-3 w-3" /></span>
-                  </div>
+              <ChevronDown aria-hidden className="h-5 w-5" />
+            </summary>
+            <p className="mb-8 max-w-[60ch]">Start with the bread they love to bake. These covered ceramic bakers are made in France, each shaped for a different loaf.</p>
+            <div className="grid gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+              {emileHenry.map((item) => (
+                <a key={item.slug} href={item.url} target="_blank" rel="noopener noreferrer" className="holiday-product-card flex flex-col" data-product={item.slug} data-brand={item.brand}>
+                  <img className="aspect-square w-full rounded-sm object-contain" src={item.img} alt={item.alt} loading="lazy" decoding="async" width="720" height="720" />
+                  <div className="holiday-card-body flex flex-1 flex-col">
+                    <h3 className="font-display">{item.name}</h3>
+                    <p className="my-3 text-sm">{item.desc}</p>
+                    <div className="mt-auto flex flex-wrap items-baseline gap-2">
+                      <strong>${item.price.toFixed(2)}</strong>
+                      {item.regularPrice && <del className="text-sm opacity-80">${item.regularPrice.toFixed(2)}</del>}
+                    </div>
+                    <span className="mt-3 inline-flex items-center gap-2 text-sm font-bold underline underline-offset-4">Shop at Emile Henry <ExternalLink aria-hidden className="h-3 w-3" /></span>
                   </div>
                 </a>
               ))}
             </div>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-crumb">
-              <a href="https://www.instagram.com/krustic_crafts/" target="_blank" rel="noopener noreferrer" className="hover:text-cranberry">Instagram</a>
-              <a href="https://www.facebook.com/KrusticCrafts" target="_blank" rel="noopener noreferrer" className="hover:text-cranberry">Facebook</a>
-              <a href="https://www.tiktok.com/@krustic" target="_blank" rel="noopener noreferrer" className="hover:text-cranberry">TikTok</a>
-            </div>
-          </div>
-         </details>
+          </details>
         </section>
 
         {/* Shop More Baking Essentials — Amazon */}

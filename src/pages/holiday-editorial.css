@@ -94,10 +94,10 @@
 .holiday-editorial #browse .grid { gap:42px 26px; }
 .holiday-editorial #browse .holiday-card-body > .mt-3 a { background:#163e35; border-radius:0; }
 .holiday-editorial .code-pill { border-radius:0; box-shadow:none; background:transparent; }
-.holiday-editorial :is(#krustic,#market-sellers) { background:#193e34 !important; color:#f7f4ec; }
-.holiday-editorial #krustic :is(h2,h3,p,.text-crust) { color:#f7f4ec; }
-.holiday-editorial #krustic .holiday-card-body { padding-bottom:30px; }
-.holiday-editorial #krustic .holiday-product-photo { background:#f0ece3; }
+.holiday-editorial :is(#emile-henry,#market-sellers) { background:#193e34 !important; color:#f7f4ec; }
+.holiday-editorial #emile-henry :is(h2,h3,p,.text-crust) { color:#f7f4ec; }
+.holiday-editorial #emile-henry .holiday-card-body { padding-bottom:30px; }
+.holiday-editorial #emile-henry a { color:#f7f4ec; }
 .holiday-editorial section { scroll-margin-top:24px; }
 .holiday-editorial .ornament-twinkle { animation:none; box-shadow:none; }
 .holiday-editorial #browse a[aria-label*="Wire Monkey handcrafted"] { display:none; }

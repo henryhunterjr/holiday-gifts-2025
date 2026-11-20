@@ -37,8 +37,8 @@ if (!spaHtml.includes("/assets/")) fail("dist/index.html does not reference /ass
 const giftsIndex = readFile(`${DIST}/gifts/index.html`)
   .replace(/<script[\s\S]*?<\/script>/gi, "")
   .replace(/<style[\s\S]*?<\/style>/gi, "");
-if (!giftsIndex.includes("Challenger Bread Pan")) {
-  fail('dist/gifts/index.html does not contain "Challenger Bread Pan" as visible text');
+if (!giftsIndex.includes("Baking Shell + Steel Bundle")) {
+  fail('dist/gifts/index.html does not contain "Baking Shell + Steel Bundle" as visible text');
 }
 
 // Exactly 16 routes under dist/gifts/.

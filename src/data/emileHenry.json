@@ -1,0 +1,67 @@
+[
+  {
+    "slug": "emile-henry-bread-cloche",
+    "name": "Bread Cloche",
+    "brand": "Emile Henry",
+    "cat": "Bake Day",
+    "price": 149.95,
+    "regularPrice": 199.95,
+    "priceChecked": "2026-11-19",
+    "url": "https://www.emilehenryusa.com/products/bread-cloche",
+    "img": "https://cdn.shopify.com/s/files/1/2961/4672/files/25.png?v=1777674633&width=720",
+    "alt": "Linen ceramic cloche with its lid tilted over a crusty round loaf",
+    "desc": "For the baker who loves a round country loaf. The dome holds steam around the dough as it rises, then lifts off for browning."
+  },
+  {
+    "slug": "emile-henry-baguette-baker",
+    "name": "Baguette Baker",
+    "brand": "Emile Henry",
+    "cat": "Bake Day",
+    "price": 149.95,
+    "regularPrice": 199.95,
+    "priceChecked": "2026-11-19",
+    "url": "https://www.emilehenryusa.com/products/baguette-baker",
+    "img": "https://cdn.shopify.com/s/files/1/2961/4672/files/ECOM_images_27.png?v=1777674582&width=720",
+    "alt": "Three baguettes nestled in a cream ceramic baguette baker",
+    "desc": "Three molded channels support three slender loaves. The lid holds steam around the baguettes for a crisp crust."
+  },
+  {
+    "slug": "emile-henry-bread-loaf-baker",
+    "name": "Bread Loaf Baker",
+    "brand": "Emile Henry",
+    "cat": "Bake Day",
+    "price": 139.95,
+    "regularPrice": 169.95,
+    "priceChecked": "2026-11-19",
+    "url": "https://www.emilehenryusa.com/products/bread-loaf-baker",
+    "img": "https://cdn.shopify.com/s/files/1/2961/4672/files/23.png?v=1777574455&width=720",
+    "alt": "Cream ceramic loaf baker with the lid lifted over a browned loaf",
+    "desc": "Deep ceramic sides support a sandwich loaf as it rises. The vented lid gives the top crust room to brown."
+  },
+  {
+    "slug": "emile-henry-pullman-long-loaf-bread-baker-1",
+    "name": "Limited Edition Pullman / Long Loaf Bread Baker",
+    "brand": "Emile Henry",
+    "cat": "Bake Day",
+    "price": 99.95,
+    "regularPrice": 199.95,
+    "priceChecked": "2026-11-19",
+    "url": "https://www.emilehenryusa.com/products/pullman-long-loaf-bread-baker-1",
+    "img": "https://cdn.shopify.com/s/files/1/2961/4672/files/6_39e8f42e-7152-4e7c-8088-03c6dfbc90e4.png?v=1757598893&width=720",
+    "alt": "Dark Pullman baker holding a scored loaf beside its cream-lined lid",
+    "desc": "A long, covered baker for sandwich slices or a country loaf with room for diagonal scores. Available in limited-edition colors."
+  },
+  {
+    "slug": "emile-henry-bread-pot-1",
+    "name": "Bread Pot",
+    "brand": "Emile Henry",
+    "cat": "Bake Day",
+    "price": 149.95,
+    "regularPrice": null,
+    "priceChecked": "2026-11-19",
+    "url": "https://www.emilehenryusa.com/products/bread-pot-1",
+    "img": "https://cdn.shopify.com/s/files/1/2961/4672/files/5500_34_Burgundy_BreadPot_1.png?v=1755204710&width=720",
+    "alt": "Burgundy ceramic bread pot with a domed lid and two handles",
+    "desc": "For sourdough and no-knead boules. The round pot holds steam under its lid and goes from oven to table."
+  }
+]

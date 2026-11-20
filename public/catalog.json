@@ -1,7 +1,7 @@
 {
   "meta": {
     "site": "https://gifts.bakinggreatbread.com",
-    "generated": "2026-11-19T22:32:06.396Z",
+    "generated": "2026-11-20T02:13:17.304Z",
     "description": "Consolidated product catalog for the Holiday Baking Gift Guide. Affiliate links included. Check each store for current prices and availability.",
     "license": "Free to read. Keep affiliate links intact when republishing."
   },
@@ -29,10 +29,6 @@
     {
       "code": "crustandcrumb",
       "applies_to": "Grand Teton Ancient Grains — 10% off first order thru Dec 31"
-    },
-    {
-      "code": "BGBAH25",
-      "applies_to": "Krustic — 10% off heritage sourdough tools"
     }
   ],
   "top_picks": [
@@ -2690,6 +2686,151 @@
       "source": "maker"
     },
     {
+      "slug": "emile-henry-bread-cloche",
+      "name": "Bread Cloche",
+      "brand": "Emile Henry",
+      "cat": "Bake Day",
+      "price": 149.95,
+      "regularPrice": 199.95,
+      "priceChecked": "2026-11-19",
+      "url": "https://www.emilehenryusa.com/products/bread-cloche",
+      "img": "https://cdn.shopify.com/s/files/1/2961/4672/files/25.png?v=1777674633&width=720",
+      "alt": "Linen ceramic cloche with its lid tilted over a crusty round loaf",
+      "desc": "For the baker who loves a round country loaf. The dome holds steam around the dough as it rises, then lifts off for browning.",
+      "currency": "USD",
+      "rel": null,
+      "target": null,
+      "categories": [
+        "Bake Day"
+      ],
+      "priceBand": "75-150",
+      "priceFrom": false,
+      "priceCheckedAt": "2026-11-19",
+      "audiences": [
+        "serious-bakers"
+      ],
+      "concierge": {
+        "solves": []
+      },
+      "source": "emile-henry"
+    },
+    {
+      "slug": "emile-henry-baguette-baker",
+      "name": "Baguette Baker",
+      "brand": "Emile Henry",
+      "cat": "Bake Day",
+      "price": 149.95,
+      "regularPrice": 199.95,
+      "priceChecked": "2026-11-19",
+      "url": "https://www.emilehenryusa.com/products/baguette-baker",
+      "img": "https://cdn.shopify.com/s/files/1/2961/4672/files/ECOM_images_27.png?v=1777674582&width=720",
+      "alt": "Three baguettes nestled in a cream ceramic baguette baker",
+      "desc": "Three molded channels support three slender loaves. The lid holds steam around the baguettes for a crisp crust.",
+      "currency": "USD",
+      "rel": null,
+      "target": null,
+      "categories": [
+        "Bake Day"
+      ],
+      "priceBand": "75-150",
+      "priceFrom": false,
+      "priceCheckedAt": "2026-11-19",
+      "audiences": [
+        "serious-bakers"
+      ],
+      "concierge": {
+        "solves": []
+      },
+      "source": "emile-henry"
+    },
+    {
+      "slug": "emile-henry-bread-loaf-baker",
+      "name": "Bread Loaf Baker",
+      "brand": "Emile Henry",
+      "cat": "Bake Day",
+      "price": 139.95,
+      "regularPrice": 169.95,
+      "priceChecked": "2026-11-19",
+      "url": "https://www.emilehenryusa.com/products/bread-loaf-baker",
+      "img": "https://cdn.shopify.com/s/files/1/2961/4672/files/23.png?v=1777574455&width=720",
+      "alt": "Cream ceramic loaf baker with the lid lifted over a browned loaf",
+      "desc": "Deep ceramic sides support a sandwich loaf as it rises. The vented lid gives the top crust room to brown.",
+      "currency": "USD",
+      "rel": null,
+      "target": null,
+      "categories": [
+        "Bake Day"
+      ],
+      "priceBand": "75-150",
+      "priceFrom": false,
+      "priceCheckedAt": "2026-11-19",
+      "audiences": [
+        "serious-bakers"
+      ],
+      "concierge": {
+        "solves": []
+      },
+      "source": "emile-henry"
+    },
+    {
+      "slug": "emile-henry-pullman-long-loaf-bread-baker-1",
+      "name": "Limited Edition Pullman / Long Loaf Bread Baker",
+      "brand": "Emile Henry",
+      "cat": "Bake Day",
+      "price": 99.95,
+      "regularPrice": 199.95,
+      "priceChecked": "2026-11-19",
+      "url": "https://www.emilehenryusa.com/products/pullman-long-loaf-bread-baker-1",
+      "img": "https://cdn.shopify.com/s/files/1/2961/4672/files/6_39e8f42e-7152-4e7c-8088-03c6dfbc90e4.png?v=1757598893&width=720",
+      "alt": "Dark Pullman baker holding a scored loaf beside its cream-lined lid",
+      "desc": "A long, covered baker for sandwich slices or a country loaf with room for diagonal scores. Available in limited-edition colors.",
+      "currency": "USD",
+      "rel": null,
+      "target": null,
+      "categories": [
+        "Bake Day"
+      ],
+      "priceBand": "75-150",
+      "priceFrom": false,
+      "priceCheckedAt": "2026-11-19",
+      "audiences": [
+        "serious-bakers"
+      ],
+      "concierge": {
+        "solves": []
+      },
+      "source": "emile-henry"
+    },
+    {
+      "slug": "emile-henry-bread-pot-1",
+      "name": "Bread Pot",
+      "brand": "Emile Henry",
+      "cat": "Bake Day",
+      "price": 149.95,
+      "regularPrice": null,
+      "priceChecked": "2026-11-19",
+      "url": "https://www.emilehenryusa.com/products/bread-pot-1",
+      "img": "https://cdn.shopify.com/s/files/1/2961/4672/files/5500_34_Burgundy_BreadPot_1.png?v=1755204710&width=720",
+      "alt": "Burgundy ceramic bread pot with a domed lid and two handles",
+      "desc": "For sourdough and no-knead boules. The round pot holds steam under its lid and goes from oven to table.",
+      "currency": "USD",
+      "rel": null,
+      "target": null,
+      "categories": [
+        "Bake Day"
+      ],
+      "priceBand": "75-150",
+      "priceFrom": false,
+      "priceCheckedAt": "2026-11-19",
+      "audiences": [
+        "serious-bakers"
+      ],
+      "concierge": {
+        "solves": []
+      },
+      "source": "emile-henry"
+    },
+    {
       "slug": "fourneau-bread-oven-grande",
       "name": "Fourneau Bread Oven Grande",
       "brand": "Fourneau",
@@ -2929,177 +3070,6 @@
           "I've got a starter going and now I need the tools around it",
           "I'm buying for someone who has the bug but not the gear",
           "I want the basics without buying a whole shelf of specialty equipment"
-        ]
-      }
-    }
-  ],
-  "krustic": [
-    {
-      "slug": "enameled-round",
-      "name": "Enameled Dutch Oven — Round",
-      "price": 149.99,
-      "url": "https://www.krustic.com/products/freeform-dutch-oven-round-enameled?rfsn=8815980.edac31",
-      "desc": "Enameled cast iron built for boules. Even heat, easy release, gorgeous color.",
-      "note": "No seasoning, no babysitting. Even heat, and the loaf lets go.",
-      "source": "krustic",
-      "currency": "USD",
-      "rel": "nofollow sponsored noopener",
-      "target": "_blank",
-      "alt": "Enameled Dutch Oven — Round",
-      "categories": [
-        "Bake Day"
-      ],
-      "priceBand": "75-150",
-      "priceFrom": false,
-      "priceCheckedAt": null,
-      "audiences": [
-        "new-bakers",
-        "serious-bakers"
-      ],
-      "concierge": {
-        "solves": [
-          "I want a Dutch oven I don't have to season and babysit",
-          "My loaf sticks to bare cast iron"
-        ]
-      }
-    },
-    {
-      "slug": "enameled-oval",
-      "name": "Enameled Dutch Oven — Oval",
-      "price": 159.98,
-      "url": "https://www.krustic.com/products/freeform-dutch-oven-oval-enameled?rfsn=8815980.edac31",
-      "desc": "Same enameled quality, shaped for batards. Room for two loaves side by side.",
-      "note": "Two batards side by side. A round pot wastes that space.",
-      "source": "krustic",
-      "currency": "USD",
-      "rel": "nofollow sponsored noopener",
-      "target": "_blank",
-      "alt": "Enameled Dutch Oven — Oval",
-      "categories": [
-        "Bake Day"
-      ],
-      "priceBand": "splurge",
-      "priceFrom": false,
-      "priceCheckedAt": null,
-      "audiences": [
-        "serious-bakers"
-      ],
-      "concierge": {
-        "solves": [
-          "I bake batards and a round pot wastes the space",
-          "I want to fit two loaves side by side"
-        ]
-      }
-    },
-    {
-      "slug": "cast-iron-round",
-      "name": "Cast Iron Dutch Oven — Round",
-      "price": 149.99,
-      "url": "https://www.krustic.com/products/the-freeform-dutch-oven-cast-iron-round?rfsn=8815980.edac31",
-      "desc": "Traditional bare cast iron. Seasons beautifully, holds heat like nothing else.",
-      "note": "Bare iron that seasons into something better every bake.",
-      "source": "krustic",
-      "currency": "USD",
-      "rel": "nofollow sponsored noopener",
-      "target": "_blank",
-      "alt": "Cast Iron Dutch Oven — Round",
-      "categories": [
-        "Bake Day"
-      ],
-      "priceBand": "75-150",
-      "priceFrom": false,
-      "priceCheckedAt": null,
-      "audiences": [
-        "serious-bakers"
-      ],
-      "concierge": {
-        "solves": [
-          "I want the heat retention only bare cast iron gives",
-          "I want a pot that gets better the more I use it"
-        ]
-      }
-    },
-    {
-      "slug": "cast-iron-oval",
-      "name": "Cast Iron Dutch Oven — Oval",
-      "price": 159.98,
-      "url": "https://www.krustic.com/products/the-freeform-dutch-oven-cast-iron-oval?rfsn=8815980.edac31",
-      "desc": "Oval bare cast iron for long loaves. A workhorse for the serious baker.",
-      "note": "The long-loaf workhorse. Back to back bakes, no complaints.",
-      "source": "krustic",
-      "currency": "USD",
-      "rel": "nofollow sponsored noopener",
-      "target": "_blank",
-      "alt": "Cast Iron Dutch Oven — Oval",
-      "categories": [
-        "Bake Day"
-      ],
-      "priceBand": "splurge",
-      "priceFrom": false,
-      "priceCheckedAt": null,
-      "audiences": [
-        "serious-bakers"
-      ],
-      "concierge": {
-        "solves": [
-          "I want bare cast iron shaped for long loaves",
-          "I need a workhorse that handles back to back bakes"
-        ]
-      }
-    },
-    {
-      "slug": "banneton-oval",
-      "name": "Wood Pulp Banneton — Oval",
-      "price": 44.99,
-      "url": "https://www.krustic.com/products/the-wood-pulp-banneton-oval?rfsn=8815980.edac31",
-      "desc": "Sustainable wood pulp proofing basket. Leaves clean spiral patterns on the crust.",
-      "note": "Clean spirals on a batard, none of the flour caking you get from cane.",
-      "source": "krustic",
-      "currency": "USD",
-      "rel": "nofollow sponsored noopener",
-      "target": "_blank",
-      "alt": "Wood Pulp Banneton — Oval",
-      "categories": [
-        "Proofing & Temp"
-      ],
-      "priceBand": "25-75",
-      "priceFrom": false,
-      "priceCheckedAt": null,
-      "audiences": [
-        "serious-bakers"
-      ],
-      "concierge": {
-        "solves": [
-          "I want clean spiral patterns on a batard",
-          "My cane basket sheds and cakes with flour"
-        ]
-      }
-    },
-    {
-      "slug": "transfer-mat",
-      "name": "Silicone Transfer Mat",
-      "price": 19.99,
-      "url": "https://www.krustic.com/products/silicone-transfer-mat-round?rfsn=8815980.edac31",
-      "desc": "Move dough from bench to Dutch oven without burns or dropped loaves.",
-      "note": "The drop-proof way to load a screaming hot pot.",
-      "source": "krustic",
-      "currency": "USD",
-      "rel": "nofollow sponsored noopener",
-      "target": "_blank",
-      "alt": "Silicone Transfer Mat",
-      "categories": [
-        "Bake Day"
-      ],
-      "priceBand": "under-25",
-      "priceFrom": false,
-      "priceCheckedAt": null,
-      "audiences": [
-        "new-bakers"
-      ],
-      "concierge": {
-        "solves": [
-          "I drop the loaf every time I move it to the pot",
-          "I want to load hot cast iron without burning my hands"
         ]
       }
     }
