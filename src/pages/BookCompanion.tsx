@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { BookOpen, ShoppingBag, PlayCircle, ArrowRight, ExternalLink, ChevronDown, ChevronUp, CheckCircle2 } from "lucide-react";
+import { BookOpen, ShoppingBag, PlayCircle, BookText, ArrowRight, ExternalLink, ChevronDown, ChevronUp, CheckCircle2 } from "lucide-react";
 import productsData from "@/data/products.json";
 import { DISABLED_PRODUCT_SLUGS, isValidUrl } from "@/lib/guideConfig";
 import { ProductPhoto } from "@/components/ProductPhoto";
@@ -11,6 +11,8 @@ type Gear = { slug: string; name: string; brand: string; img: string; url: strin
 const catalog = (productsData.products as Gear[]).filter(p => !DISABLED_PRODUCT_SLUGS.has(p.slug) && isValidUrl(p.url));
 const findGear = (slug: string) => catalog.find(p => p.slug === slug);
 const authority = "https://bakinggreatbread.com/bread-authority";
+const glossary = "https://crust-and-crumb-tawny.vercel.app";
+const termUrl = (slug: string) => `${glossary}/term/${slug}`;
 const topic = (path: string) => authority + "/" + path + "?utm_campaign=bread-authority";
 const essentials = [
   { title: "Digital scale, 1 g increments", why: "Every recipe uses grams first. If you buy one thing, make it a scale.", swap: "Use the volume amounts until you have one.", slug: "bakers-scale" },
@@ -44,6 +46,43 @@ const chapters = [
   { key: "11", name: "Chapter 11 · Tools, Budget to Pro", desc: "The six essentials, your first $50, and what Henry actually uses.", links: [] },
   { key: "15", name: "Chapter 15 · Fresh milling and whole grains", desc: "Explore fresh flour and how it changes dough.", links: [{ title: "Flour types", path: "flour-types" }] },
 ];
+const glossaryChapters: Record<string, { title: string; terms: { name: string; slug: string; why: string }[] }> = {
+  starter: { title: "Starting and feeding your starter", terms: [
+    { name: "Fermentation", slug: "fermentation", why: "What makes starter active" },
+    { name: "Starter Jar", slug: "starter-jar", why: "Watch rise and fall" },
+    { name: "Sourdough Starter", slug: "sourdough-starter", why: "The culture behind the loaf" }
+  ] },
+  flour: { title: "Understanding flour", terms: [
+    { name: "All-Purpose Flour", slug: "all-purpose-flour", why: "What everyday flour can do" },
+    { name: "Baker's Percentage", slug: "bakers-percentage", why: "Work confidently in grams" },
+    { name: "Ancient Grain", slug: "ancient-grain", why: "What the label means" }
+  ] },
+  bulk: { title: "Reading fermentation", terms: [
+    { name: "Bulk Fermentation", slug: "bulk-fermentation", why: "Understand the main rise" },
+    { name: "Aliquot Jar", slug: "aliquot-jar", why: "Track dough rise visually" },
+    { name: "Autolyse", slug: "autolyse", why: "Why flour and water rest" }
+  ] },
+  shaping: { title: "Shaping, proofing, and scoring", terms: [
+    { name: "Bench Rest", slug: "bench-rest", why: "Let dough relax between shaping steps" },
+    { name: "Banneton", slug: "banneton", why: "Support dough while proofing" },
+    { name: "Banneton Liner", slug: "banneton-liner", why: "Keep dough from sticking" }
+  ] },
+  troubleshoot: { title: "When the loaf doesn't cooperate", terms: [
+    { name: "Banneton Sticking", slug: "banneton-sticking", why: "Fix dough that tears on release" },
+    { name: "Oven Spring", slug: "oven-spring", why: "Understand the final expansion" }
+  ] },
+  "11": { title: "Chapter 11 · Tools, Budget to Pro", terms: [
+    { name: "Bench Scraper", slug: "bench-scraper", why: "Move and shape sticky dough" },
+    { name: "Banneton", slug: "banneton", why: "Proofing basket and its alternatives" },
+    { name: "Baking Steel", slug: "baking-steel", why: "Know when a steel is useful" },
+    { name: "Aliquot Jar", slug: "aliquot-jar", why: "A simple way to track bulk rise" }
+  ] },
+  "15": { title: "Chapter 15 · Fresh milling and whole grains", terms: [
+    { name: "Ancient Grain", slug: "ancient-grain", why: "What counts as an ancient grain" },
+    { name: "Aged Flour", slug: "aged-flour", why: "How flour changes after milling" },
+    { name: "Aleurone Layer", slug: "aleurone-layer", why: "What lives inside a wheat kernel" }
+  ] }
+};
 const card = "rounded-2xl border border-[#d8c8b3] bg-white/90 p-5 shadow-sm";
 const button = "inline-flex items-center justify-center gap-2 rounded-xl bg-[#382417] px-4 py-3 text-sm font-semibold text-[#fff7e9] hover:bg-[#633d24] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9e681e]";
 function GearLink({ slug }: { slug?: string }) {
@@ -57,7 +96,7 @@ function GearGrid({ slugs }: { slugs: string[] }) {
 }
 export default function BookCompanion() {
   const [params, setParams] = useSearchParams();
-  const activeTab = params.get("view") === "lessons" ? "lessons" : "equipment";
+  const activeTab = params.get("view") === "lessons" ? "lessons" : params.get("view") === "glossary" ? "glossary" : "equipment";
   const [openPartner, setOpenPartner] = useState<string | null>(null);
   const linkedChapter = params.get("chapter");
   const openChapters = useMemo(() => linkedChapter ? chapters.filter(c => c.key === linkedChapter) : chapters, [linkedChapter]);
@@ -72,13 +111,14 @@ export default function BookCompanion() {
       <p className="mt-5 max-w-2xl leading-relaxed text-[#efe2d0]">Perfection not required. Find the equipment from Chapter 11, affordable alternatives, and the videos and articles that expand on the techniques in your book.</p>
     </div></header>
     <div className="mx-auto max-w-5xl px-4 pb-20 sm:px-6">
-      <nav aria-label="Companion sections" className="-mt-5 mb-9 grid grid-cols-2 gap-3">
+      <nav aria-label="Companion sections" className="-mt-5 mb-9 grid grid-cols-1 gap-3 sm:grid-cols-3">
         <button type="button" aria-pressed={activeTab === "equipment"} onClick={() => select("equipment")} className={button + (activeTab === "equipment" ? " ring-4 ring-[#d3aa61]" : " opacity-85")}><ShoppingBag size={18}/> Chapter 11 Gear</button>
         <button type="button" aria-pressed={activeTab === "lessons"} onClick={() => select("lessons")} className={button + (activeTab === "lessons" ? " ring-4 ring-[#d3aa61]" : " opacity-85")}><PlayCircle size={18}/> Techniques & Videos</button>
+        <button type="button" aria-pressed={activeTab === "glossary"} onClick={() => select("glossary")} className={button + (activeTab === "glossary" ? " ring-4 ring-[#d3aa61]" : " opacity-85")}><BookText size={18}/> Bread Glossary</button>
       </nav>
       {activeTab === "equipment" ? <div className="space-y-12">
         <section><p className="text-sm font-bold uppercase tracking-widest text-[#875c2e]">Start here</p><h2 className="mt-2 font-serif text-3xl">The six tools you actually need</h2><p className="mt-3 max-w-3xl">Don't buy $400 worth of gear to solve a $20 problem. Most of these are already in your kitchen. If you're buying something, start with the scale, then the thermometer.</p>
-          <div className="mt-6 grid gap-4 md:grid-cols-2">{essentials.map((item,i)=><article className={card} key={item.title}><span className="text-xs font-bold tracking-widest text-[#94632c]">0{i+1} / 06</span><h3 className="mt-1 text-xl font-bold">{item.title}</h3><p className="mt-2">{item.why}</p><p className="mt-3 text-sm text-[#55483d]"><strong>Budget tip:</strong> {item.swap}</p><GearLink slug={item.slug}/></article>)}</div>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">{essentials.map((item,i)=><article className={card} key={item.title}><span className="text-xs font-bold tracking-widest text-[#94632c]">{i+1}</span><h3 className="mt-1 text-xl font-bold">{item.title}</h3><p className="mt-2">{item.why}</p><p className="mt-3 text-sm text-[#55483d]"><strong>Budget tip:</strong> {item.swap}</p><GearLink slug={item.slug}/></article>)}</div>
         </section>
         <section className="rounded-3xl bg-[#efe1c8] p-6 sm:p-9"><h2 className="font-serif text-3xl">How to spend your first $50</h2><p className="mt-3">About $20 for a scale, $10 for a thermometer, $10 for two scrapers, and $10 for razor blades and parchment. Use your own bowl and a towel-lined bowl for proofing. Bake under an inverted heat-safe stainless steel bowl on a sheet pan until you're ready to upgrade.</p><p className="mt-3 text-sm font-semibold">These are illustrative budget estimates, not current product prices.</p></section>
         <section><h2 className="font-serif text-3xl">Nice to have, not necessary</h2><div className="mt-5 grid gap-4 sm:grid-cols-2">{optional.map(item=><article key={item.title} className={card}><h3 className="text-lg font-semibold">{item.title}</h3><p className="mt-2 text-sm">{item.why}</p><GearLink slug={item.slug}/></article>)}</div></section>
@@ -93,10 +133,25 @@ export default function BookCompanion() {
           <div className="mt-6 space-y-3">{partners.map(partner => <div className={card} key={partner.name}><button type="button" className="flex w-full items-center justify-between gap-4 text-left" aria-expanded={openPartner === partner.name} onClick={() => setOpenPartner(openPartner === partner.name ? null : partner.name)}><span><strong className="text-xl">{partner.name}</strong><span className="mt-1 block text-sm text-[#584639]">{partner.purpose}</span></span>{openPartner === partner.name ? <ChevronUp/> : <ChevronDown/>}</button>{openPartner === partner.name && <div className="mt-5">{partner.slugs.length ? <GearGrid slugs={partner.slugs}/> : <p className="rounded-lg bg-[#faf4e9] p-4 text-sm">NutriMill Classic mill and Bosch mixer are mentioned in the book. Product links are being verified before publication. See <a className="font-semibold underline" href="https://gifts.bakinggreatbread.com">the main guide</a> for the current catalog.</p>}</div>}</div>)}</div>
         </section>
         <section className="rounded-3xl bg-[#2e2118] p-7 text-[#fff5e2]"><h2 className="font-serif text-3xl">Ask before you buy</h2><p className="mt-2">Not sure a gadget will solve your problem? Bring your question to Crust & Crumb Academy. We care about better bread, not bigger shopping carts.</p><a href="https://www.skool.com/crust-crumb-academy-7621/about" target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 font-bold text-[#f0cd8d] underline">Visit the Academy <ArrowRight size={16}/></a></section>
-      </div> : <div className="space-y-8">
+      </div> : activeTab === "lessons" ? <div className="space-y-8">
         <section><p className="text-sm font-bold uppercase tracking-widest text-[#875c2e]">Book lessons</p><h2 className="mt-2 font-serif text-3xl">Watch it. Read it. Try it.</h2><p className="mt-3 max-w-3xl">Start with the topic from your chapter. These links open the matching Bread Authority teaching pages, where Henry's related lessons and demonstrations live.</p><a className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#70461e] underline" href={authority} target="_blank" rel="noopener noreferrer">Explore the full Bread Authority <ExternalLink size={14}/></a></section>
         <div className="grid gap-5">{openChapters.length ? openChapters.map(c=><section className={card} key={c.key} id={"chapter-"+c.key}><div className="flex gap-3"><BookOpen className="mt-1 shrink-0 text-[#8a602d]"/><div><h3 className="text-xl font-bold">{c.name}</h3><p className="mt-2 text-sm text-[#514339]">{c.desc}</p><div className="mt-4 flex flex-wrap gap-2">{c.key === "11" ? <button onClick={() => select("equipment")} className={button}>Open Chapter 11 Gear <ArrowRight size={15}/></button> : c.links.map(l=><a href={topic(l.path)} target="_blank" rel="noreferrer" key={l.path} className="inline-flex items-center gap-2 rounded-lg border border-[#cbb18c] bg-[#faf3e5] px-3 py-2 text-sm font-semibold hover:bg-[#f0e1c9]">{l.title}<ExternalLink size={13}/></a>)}</div></div></div></section>) : <p className={card}>The requested chapter isn't mapped yet. <a className="underline" href={authority}>Browse the Bread Authority</a>.</p>}</div>
         <p className="text-sm text-[#625043]">More chapter mappings can be added without changing the QR code printed in the book.</p>
+      </div> : <div className="space-y-8">
+        <section>
+          <p className="text-sm font-bold uppercase tracking-widest text-[#875c2e]">The words behind the work</p>
+          <h2 className="mt-2 font-serif text-3xl">Understand the language of bread</h2>
+          <p className="mt-3 max-w-3xl">Stuck on a word in the book? Open Henry's original glossary entry. Definitions remain in the Crust & Crumb glossary so corrections and new material stay current without a new edition.</p>
+          <a className="mt-4 inline-flex items-center gap-2 font-semibold text-[#70461e] underline" target="_blank" rel="noopener noreferrer" href={glossary}>Browse all 280 glossary terms <ExternalLink size={15}/></a>
+          <p className="mt-3 text-sm text-[#5f4e3b]">The glossary also includes a Sourdough Mastery path created as a companion to this book, plus Tools & Equipment and troubleshooting paths.</p>
+        </section>
+        <div className="space-y-5">{Object.entries(glossaryChapters).filter(([key]) => !linkedChapter || key === linkedChapter).map(([key, section]) => <section key={key} className={card} id={"glossary-"+key}>
+          <h3 className="font-serif text-2xl">{section.title}</h3>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2">{section.terms.map(term => <a key={term.slug} href={termUrl(term.slug)} target="_blank" rel="noopener noreferrer" className="group rounded-xl border border-[#d8c8b3] bg-[#fcf8ef] p-4 hover:border-[#986735] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9e681e]">
+            <div className="flex items-center justify-between gap-2"><strong className="text-lg text-[#382417] group-hover:underline">{term.name}</strong><ExternalLink size={15} aria-hidden="true"/></div><p className="mt-1 text-sm text-[#55483d]">{term.why}</p></a>)}</div>
+          {key === "11" && <button type="button" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#70461e] underline" onClick={() => select("equipment")}>See the tools in Chapter 11 <ArrowRight size={15}/></button>}
+        </section>)}</div>
+        <div className="rounded-2xl bg-[#efe1c8] p-5"><h3 className="font-serif text-2xl">A loaf giving you trouble?</h3><p className="mt-2">Use the glossary's Diagnose a Problem tool to start with the symptom, then see the likely causes and fixes.</p><a href={glossary} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-2 font-semibold underline">Open the glossary diagnosis tool <ExternalLink size={15}/></a></div>
       </div>}
       <footer className="mt-16 border-t border-[#d6c6ae] pt-6 text-sm text-[#665444]"><CheckCircle2 className="mr-2 inline-block" size={16}/> Perfection not required. Progress is.<div className="mt-2">© Henry Hunter · Crust & Crumb Academy · <Link to="/" className="underline">Holiday Shopping Guide</Link></div></footer>
     </div>
