@@ -102,7 +102,7 @@ export default function BookCompanion() {
   const openChapters = useMemo(() => linkedChapter ? chapters.filter(c => c.key === linkedChapter) : chapters, [linkedChapter]);
   const select = (view: string) => setParams(existing => { const next = new URLSearchParams(existing); next.set("view", view); return next; });
   return <main className="min-h-screen bg-[#faf4e9] text-[#33251b]">
-    <Helmet><title>Sourdough for the Rest of Us | Official Book Companion</title><meta name="description" content="Henry Hunter's permanent companion to Sourdough for the Rest of Us: Chapter 11 equipment, budget swaps, recommended gear, and Bread Authority lessons."/><link rel="canonical" href="https://gifts.bakinggreatbread.com/sourdough-for-the-rest-of-us"/></Helmet>
+    <Helmet><title>Sourdough for the Rest of Us | Official Book Companion</title><meta name="description" content="Henry Hunter's permanent companion to Sourdough for the Rest of Us: Chapter 11 equipment, budget swaps, recommended gear, and Bread Authority lessons."/><link rel="canonical" href="https://gifts.bakinggreatbread.com/sourdough-for-the-rest-of-us/"/></Helmet>
     <header className="bg-[#241811] px-5 py-10 text-[#fff6e5] sm:py-16"><div className="mx-auto max-w-5xl">
       <Link to="/" className="text-sm text-[#e6bf7d] underline underline-offset-4">← Holiday Shopping Guide</Link>
       <p className="mt-7 text-xs font-bold uppercase tracking-[.23em] text-[#e6bf7d]">Henry Hunter · Official Book Companion</p>

@@ -33,6 +33,12 @@ if (!existsSync(`${DIST}/index.html`)) fail("dist/index.html missing");
 const spaHtml = readFile(`${DIST}/index.html`);
 if (!spaHtml.includes("/assets/")) fail("dist/index.html does not reference /assets/ — SPA looks broken");
 
+// Readers may open the printed book's QR URL directly, without SPA navigation.
+const companionHtml = readFile(`${DIST}/sourdough-for-the-rest-of-us/index.html`);
+if (!companionHtml.includes("/assets/")) {
+  fail("book companion direct-route HTML does not include Vite assets");
+}
+
 // Gift guide survived the merge, as real text.
 const giftsIndex = readFile(`${DIST}/gifts/index.html`)
   .replace(/<script[\s\S]*?<\/script>/gi, "")
@@ -91,6 +97,7 @@ for (const banned of ["/saved-gifts", "/bread-baker-holiday-gift-guide-2025", "/
 // canonical, or Google reads the two as duplicates. The SPA content pages
 // canonical WITH a trailing slash, matching Vercel's trailingSlash redirect.
 const SPA_CANONICALS = [
+  "/sourdough-for-the-rest-of-us",
   "/academy-gift-certificate",
   "/sourdough-starter-care-guide",
   "/sourdough-starter-troubleshooting",
