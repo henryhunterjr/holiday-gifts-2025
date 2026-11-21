@@ -3,6 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { BookOpen, ShoppingBag, PlayCircle, BookText, ArrowRight, ExternalLink, ChevronDown, ChevronUp, CheckCircle2 } from "lucide-react";
 import productsData from "@/data/products.json";
+import { bookChapters } from "@/data/bookCompanionChapters";
 import { DISABLED_PRODUCT_SLUGS, isValidUrl } from "@/lib/guideConfig";
 import { ProductPhoto } from "@/components/ProductPhoto";
 import { trackEvent } from "@/lib/analytics";
@@ -33,56 +34,16 @@ const partners = [
   { name: "Brød & Taylor", purpose: "Weighing, baking, proofing, starter backup", slugs: ["bakers-scale", "shell-steel-bundle", "proofer", "sahara", "dough-whisk", "bench-knife"] },
   { name: "Sourhouse", purpose: "Reliable starter and dough temperatures", slugs: ["goldie", "doughbed"] },
   { name: "Wire Monkey", purpose: "Scoring", slugs: ["goose-lame", "ufo-zero"] },
-  { name: "ModKitchn", purpose: "Safer loading", slugs: ["round-sling", "oval-sling"] },
+  { name: "ModKitchn", purpose: "Safer loading", slugs: ["round-sling", "oval-sling", "bread-bag"] },
   { name: "Holland Bowl Mill", purpose: "Mixing and bulk", slugs: ["walnut-17", "maple-17"] },
   { name: "NutriMill", purpose: "Fresh-milled flour and enriched dough", slugs: [] },
 ];
-const chapters = [
-  { key: "starter", name: "Starting and feeding your starter", desc: "What to look for, how to feed it, and what to do when it stalls.", links: [{ title: "Building a sourdough starter", path: "sourdough-starter" }, { title: "Starter maintenance", path: "starter-maintenance" }] },
-  { key: "flour", name: "Understanding flour", desc: "Pick flour that fits your dough and your schedule.", links: [{ title: "Flour types", path: "flour-types" }, { title: "Baker's percentage", path: "bakers-percentage" }] },
-  { key: "bulk", name: "Reading fermentation", desc: "Learn the visual clues rather than watching only the clock.", links: [{ title: "Bulk fermentation", path: "bulk-fermentation" }, { title: "Reading dough", path: "reading-dough" }] },
-  { key: "shaping", name: "Shaping, proofing, and scoring", desc: "Build structure, judge readiness, and help the loaf open.", links: [{ title: "Shaping sourdough", path: "shaping-sourdough" }, { title: "Proofing", path: "proofing" }, { title: "Scoring sourdough", path: "scoring-sourdough" }] },
-  { key: "troubleshoot", name: "When the loaf doesn't cooperate", desc: "Dense, sticky, flat, or gummy bread: understand the cause.", links: [{ title: "Sourdough troubleshooting", path: "sourdough-troubleshooting" }] },
-  { key: "11", name: "Chapter 11 · Tools, Budget to Pro", desc: "The six essentials, your first $50, and what Henry actually uses.", links: [] },
-  { key: "15", name: "Chapter 15 · Fresh milling and whole grains", desc: "Explore fresh flour and how it changes dough.", links: [{ title: "Flour types", path: "flour-types" }] },
-];
-const glossaryChapters: Record<string, { title: string; terms: { name: string; slug: string; why: string }[] }> = {
-  starter: { title: "Starting and feeding your starter", terms: [
-    { name: "Fermentation", slug: "fermentation", why: "What makes starter active" },
-    { name: "Starter Jar", slug: "starter-jar", why: "Watch rise and fall" },
-    { name: "Sourdough Starter", slug: "sourdough-starter", why: "The culture behind the loaf" }
-  ] },
-  flour: { title: "Understanding flour", terms: [
-    { name: "All-Purpose Flour", slug: "all-purpose-flour", why: "What everyday flour can do" },
-    { name: "Baker's Percentage", slug: "bakers-percentage", why: "Work confidently in grams" },
-    { name: "Ancient Grain", slug: "ancient-grain", why: "What the label means" }
-  ] },
-  bulk: { title: "Reading fermentation", terms: [
-    { name: "Bulk Fermentation", slug: "bulk-fermentation", why: "Understand the main rise" },
-    { name: "Aliquot Jar", slug: "aliquot-jar", why: "Track dough rise visually" },
-    { name: "Autolyse", slug: "autolyse", why: "Why flour and water rest" }
-  ] },
-  shaping: { title: "Shaping, proofing, and scoring", terms: [
-    { name: "Bench Rest", slug: "bench-rest", why: "Let dough relax between shaping steps" },
-    { name: "Banneton", slug: "banneton", why: "Support dough while proofing" },
-    { name: "Banneton Liner", slug: "banneton-liner", why: "Keep dough from sticking" }
-  ] },
-  troubleshoot: { title: "When the loaf doesn't cooperate", terms: [
-    { name: "Banneton Sticking", slug: "banneton-sticking", why: "Fix dough that tears on release" },
-    { name: "Oven Spring", slug: "oven-spring", why: "Understand the final expansion" }
-  ] },
-  "11": { title: "Chapter 11 · Tools, Budget to Pro", terms: [
-    { name: "Bench Scraper", slug: "bench-scraper", why: "Move and shape sticky dough" },
-    { name: "Banneton", slug: "banneton", why: "Proofing basket and its alternatives" },
-    { name: "Baking Steel", slug: "baking-steel", why: "Know when a steel is useful" },
-    { name: "Aliquot Jar", slug: "aliquot-jar", why: "A simple way to track bulk rise" }
-  ] },
-  "15": { title: "Chapter 15 · Fresh milling and whole grains", terms: [
-    { name: "Ancient Grain", slug: "ancient-grain", why: "What counts as an ancient grain" },
-    { name: "Aged Flour", slug: "aged-flour", why: "How flour changes after milling" },
-    { name: "Aleurone Layer", slug: "aleurone-layer", why: "What lives inside a wheat kernel" }
-  ] }
-};
+const chapters = bookChapters;
+const knownGlossarySlugs: Record<string,string> = {"Bench scraper":"bench-scraper","Banneton":"banneton","Baking steel":"baking-steel","Aliquot jar":"aliquot-jar"};
+const glossaryChapters = Object.fromEntries(chapters.map(chapter => [chapter.key, {
+ title: `Chapter ${chapter.key} · ${chapter.name}`,
+ terms: chapter.glossaryTerms.map(name=>({name,slug:knownGlossarySlugs[name],why:"Explore this term in the glossary"}))
+}]));
 const card = "rounded-2xl border border-[#d8c8b3] bg-white/90 p-5 shadow-sm";
 const button = "inline-flex items-center justify-center gap-2 rounded-xl bg-[#382417] px-4 py-3 text-sm font-semibold text-[#fff7e9] hover:bg-[#633d24] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9e681e]";
 function GearLink({ slug }: { slug?: string }) {
@@ -96,20 +57,36 @@ function GearGrid({ slugs }: { slugs: string[] }) {
 }
 export default function BookCompanion() {
   const [params, setParams] = useSearchParams();
-  const activeTab = params.get("view") === "lessons" ? "lessons" : params.get("view") === "glossary" ? "glossary" : "equipment";
+  const activeTab = params.get("view") === "equipment" ? "equipment" : params.get("view") === "glossary" ? "glossary" : "lessons";
   const [openPartner, setOpenPartner] = useState<string | null>(null);
   const linkedChapter = params.get("chapter");
   const openChapters = useMemo(() => linkedChapter ? chapters.filter(c => c.key === linkedChapter) : chapters, [linkedChapter]);
   const select = (view: string) => setParams(existing => { const next = new URLSearchParams(existing); next.set("view", view); return next; });
   return <main className="min-h-screen bg-[#faf4e9] text-[#33251b]">
-    <Helmet><title>Sourdough for the Rest of Us | Official Book Companion</title><meta name="description" content="Henry Hunter's permanent companion to Sourdough for the Rest of Us: Chapter 11 equipment, budget swaps, recommended gear, and Bread Authority lessons."/><link rel="canonical" href="https://gifts.bakinggreatbread.com/sourdough-for-the-rest-of-us/"/></Helmet>
-    <header className="bg-[#241811] px-5 py-10 text-[#fff6e5] sm:py-16"><div className="mx-auto max-w-5xl">
-      <Link to="/" className="text-sm text-[#e6bf7d] underline underline-offset-4">← Holiday Shopping Guide</Link>
-      <p className="mt-7 text-xs font-bold uppercase tracking-[.23em] text-[#e6bf7d]">Henry Hunter · Official Book Companion</p>
-      <h1 className="mt-3 max-w-3xl font-serif text-4xl leading-tight sm:text-6xl">Sourdough for the Rest of Us</h1>
-      <h2 className="mt-3 text-xl text-[#e6bf7d]">The tools and teaching behind the book</h2>
-      <p className="mt-5 max-w-2xl leading-relaxed text-[#efe2d0]">Perfection not required. Find the equipment from Chapter 11, affordable alternatives, and the videos and articles that expand on the techniques in your book.</p>
-    </div></header>
+    <Helmet><title>Sourdough for the Rest of Us | Official Book Companion</title><meta name="description" content="Henry Hunter's permanent companion to Sourdough for the Rest of Us: Resources and explanations matched to all 24 chapters, including how to freeze bread, the glossary, and equipment."/><link rel="canonical" href="https://bakinggreatbread.com/sourdough-for-the-rest-of-us/"/></Helmet>
+    <header className="relative isolate overflow-hidden bg-[#1f110b] text-[#fff5df]">
+      <div className="absolute inset-0 -z-20" aria-hidden="true">
+        <img src="https://bakinggreatbread.blog/wp-content/uploads/2026/11/sourdough-for-the-rest-of-us-companion-hero.png" alt="" className="h-full w-full object-cover object-[65%_center] opacity-65 sm:object-center sm:opacity-95" />
+      </div>
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#1c100b] via-[#1c100bed] to-[#1c100b66] sm:via-[#1c100bc9] sm:to-transparent" aria-hidden="true"/>
+      <div className="mx-auto flex min-h-[530px] max-w-6xl flex-col justify-between px-5 py-8 sm:min-h-[620px] sm:px-8 sm:py-12">
+        <nav className="flex flex-wrap items-center justify-between gap-3 text-sm">
+          <a href="https://bakinggreatbread.com/" className="font-semibold text-[#f5dcae] hover:underline">← BakingGreatBread.com</a>
+          <span className="rounded-full border border-[#e1b96e] bg-[#32170fd9] px-4 py-2 text-xs font-bold uppercase tracking-[.14em] text-[#ffe5af]">2026 Revised & Expanded</span>
+        </nav>
+        <div className="max-w-[580px] pb-3 sm:pb-9">
+          <p className="mb-5 text-xs font-bold uppercase tracking-[.23em] text-[#f6c977]">Henry Hunter · The official digital companion</p>
+          <h1 className="font-serif text-[clamp(3.1rem,7.7vw,6.4rem)] leading-[.94] tracking-[-.035em] text-[#fff2d7] [text-shadow:0_3px_30px_#120700a8]">Sourdough <span className="block text-[.54em] italic leading-[1.1]">for the Rest of Us</span></h1>
+          <div className="mt-7 h-[3px] w-32 rounded-full bg-gradient-to-r from-[#bb7930] via-[#ffd27a] to-[#bb7930]"/>
+          <p className="mt-5 font-serif text-2xl italic text-[#ffdea5] sm:text-3xl">Perfection Not Required.</p>
+          <p className="mt-4 max-w-[470px] text-[1rem] leading-relaxed text-[#fffaed] sm:text-lg">The book is in your hands. Here you can watch the techniques, understand the language, and find the tools behind every chapter.</p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <button type="button" onClick={() => setParams({view:"lessons"})} className="rounded-lg bg-[#d19a47] px-5 py-3 text-sm font-extrabold text-[#281408] hover:bg-[#efbe72]">Explore all 24 chapters</button>
+            <button type="button" onClick={() => setParams({view:"equipment"})} className="rounded-lg border border-[#f1d3a0] bg-[#261811ba] px-5 py-3 text-sm font-semibold text-[#fff6e8] hover:bg-[#57361a]">Chapter 11 equipment</button>
+          </div>
+        </div>
+      </div>
+    </header>
     <div className="mx-auto max-w-5xl px-4 pb-20 sm:px-6">
       <nav aria-label="Companion sections" className="-mt-5 mb-9 grid grid-cols-1 gap-3 sm:grid-cols-3">
         <button type="button" aria-pressed={activeTab === "equipment"} onClick={() => select("equipment")} className={button + (activeTab === "equipment" ? " ring-4 ring-[#d3aa61]" : " opacity-85")}><ShoppingBag size={18}/> Chapter 11 Gear</button>
@@ -134,20 +111,50 @@ export default function BookCompanion() {
         </section>
         <section className="rounded-3xl bg-[#2e2118] p-7 text-[#fff5e2]"><h2 className="font-serif text-3xl">Ask before you buy</h2><p className="mt-2">Not sure a gadget will solve your problem? Bring your question to Crust & Crumb Academy. We care about better bread, not bigger shopping carts.</p><a href="https://www.skool.com/crust-crumb-academy-7621/about" target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 font-bold text-[#f0cd8d] underline">Visit the Academy <ArrowRight size={16}/></a></section>
       </div> : activeTab === "lessons" ? <div className="space-y-8">
-        <section><p className="text-sm font-bold uppercase tracking-widest text-[#875c2e]">Book lessons</p><h2 className="mt-2 font-serif text-3xl">Watch it. Read it. Try it.</h2><p className="mt-3 max-w-3xl">Start with the topic from your chapter. These links open the matching Bread Authority teaching pages, where Henry's related lessons and demonstrations live.</p><a className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#70461e] underline" href={authority} target="_blank" rel="noopener noreferrer">Explore the full Bread Authority <ExternalLink size={14}/></a></section>
-        <div className="grid gap-5">{openChapters.length ? openChapters.map(c=><section className={card} key={c.key} id={"chapter-"+c.key}><div className="flex gap-3"><BookOpen className="mt-1 shrink-0 text-[#8a602d]"/><div><h3 className="text-xl font-bold">{c.name}</h3><p className="mt-2 text-sm text-[#514339]">{c.desc}</p><div className="mt-4 flex flex-wrap gap-2">{c.key === "11" ? <button onClick={() => select("equipment")} className={button}>Open Chapter 11 Gear <ArrowRight size={15}/></button> : c.links.map(l=><a href={topic(l.path)} target="_blank" rel="noreferrer" key={l.path} className="inline-flex items-center gap-2 rounded-lg border border-[#cbb18c] bg-[#faf3e5] px-3 py-2 text-sm font-semibold hover:bg-[#f0e1c9]">{l.title}<ExternalLink size={13}/></a>)}</div></div></div></section>) : <p className={card}>The requested chapter isn't mapped yet. <a className="underline" href={authority}>Browse the Bread Authority</a>.</p>}</div>
-        <p className="text-sm text-[#625043]">More chapter mappings can be added without changing the QR code printed in the book.</p>
+        <section><p className="text-sm font-bold uppercase tracking-widest text-[#875c2e]">Book lessons</p><h2 className="mt-2 font-serif text-3xl">Watch it. Read it. Try it.</h2><p className="mt-3 max-w-3xl">All 24 chapters are here in manuscript order. Each one leads to related demonstrations, explanations, glossary terms and practical resources.</p><a className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#70461e] underline" href={authority} target="_blank" rel="noopener noreferrer">Explore the full Bread Authority <ExternalLink size={14}/></a></section>
+        <div className="mb-6 rounded-2xl border border-[#d8c8b3] bg-white p-4">
+          <label htmlFor="book-chapter-select" className="mb-2 block text-sm font-semibold">Jump to a chapter</label>
+          <select id="book-chapter-select" value={linkedChapter ?? ""} onChange={e => setParams(e.target.value ? {view:"lessons",chapter:e.target.value} : {view:"lessons"})} className="w-full rounded-lg border border-[#a99985] bg-[#fffaf3] p-3 text-base">
+            <option value="">Browse all 24 chapters</option>
+            {chapters.map(ch=><option key={ch.key} value={ch.key}>Chapter {ch.key}: {ch.name}</option>)}
+          </select>
+        </div>
+        <div className="mb-5 rounded-2xl border border-[#b99663] bg-[#f3e6d1] p-5">
+          <p className="font-semibold text-[#6c3b23]">Chapter 22 spotlight: Freezing bread</p>
+          <p className="mt-1 text-sm">The book explains freezing, thawing and reheating. Watch the demonstration or read the full article.</p>
+          <div className="mt-3 flex flex-wrap gap-3">
+            <a href="https://bakinggreatbread.blog/2026/06/17/how-to-freeze-bread/" target="_blank" rel="noopener noreferrer" className="text-sm font-bold underline">Read the freezing article</a>
+            <a href="https://www.youtube.com/watch?v=eiepOzOVDgk" target="_blank" rel="noopener noreferrer" className="text-sm font-bold underline">Watch the video</a>
+            <button onClick={() => setParams({view:"lessons",chapter:"22"})} className="text-sm font-bold underline">Open Chapter 22</button>
+          </div>
+        </div>
+        {linkedChapter && <button type="button" className="mb-5 text-sm font-semibold underline" onClick={() => setParams({view:"lessons"})}>← All 24 chapters</button>}
+        <div className="grid gap-5">{openChapters.length ? openChapters.map(ch => <section className={card} key={ch.key} id={"chapter-"+ch.key}>
+          <div className="flex gap-3"><BookOpen className="mt-1 shrink-0 text-[#8a602d]"/><div className="min-w-0 flex-1">
+            <p className="text-xs font-bold uppercase tracking-wide text-[#8a602d]">Chapter {ch.key} · Print page {ch.page}</p>
+            <h3 className="mt-1 text-xl font-bold">{ch.name}</h3><p className="mt-2 text-sm">{ch.desc}</p>
+            <p className="mt-4 text-sm font-bold">Subjects from this chapter</p>
+            <ul className="mt-2 list-disc pl-5 text-sm space-y-1">{ch.focus.map(f=><li key={f}>{f}</li>)}</ul>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {ch.key === "11" && <button onClick={() => select("equipment")} className={button}>Chapter 11 Gear <ArrowRight size={15}/></button>}
+              {ch.key === "22" && <button onClick={() => select("equipment")} className={button}>Bread Storage Gear <ShoppingBag size={15}/></button>}
+              {ch.key === "22" && <GearLink slug="bread-bag" />}
+              {ch.links.map(l=><a key={l.title} href={l.url ?? (l.path ? topic(l.path) : authority)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg border border-[#cbb18c] bg-[#faf3e5] px-3 py-2 text-sm font-semibold hover:bg-[#f0e1c9]">{l.title}<ExternalLink size={13}/></a>)}
+            </div>
+            <p className="mt-4 text-xs"><b>Glossary terms:</b> {ch.glossaryTerms.join(" · ")} <button className="font-semibold underline" onClick={() => setParams({view:"glossary",chapter:ch.key})}>Explore these terms</button></p>
+          </div></div></section>) : <p className={card}>No chapter found. <button className="underline" onClick={() => setParams({view:"lessons"})}>See all chapters</button></p>}</div>
+        <p className="text-sm text-[#625043]">All 24 chapters are mapped. Resource links may be updated without changing the book’s QR codes; recipe QR codes still go to Recipe Pantry.</p>
       </div> : <div className="space-y-8">
         <section>
           <p className="text-sm font-bold uppercase tracking-widest text-[#875c2e]">The words behind the work</p>
           <h2 className="mt-2 font-serif text-3xl">Understand the language of bread</h2>
           <p className="mt-3 max-w-3xl">Stuck on a word in the book? Open Henry's original glossary entry. Definitions remain in the Crust & Crumb glossary so corrections and new material stay current without a new edition.</p>
-          <a className="mt-4 inline-flex items-center gap-2 font-semibold text-[#70461e] underline" target="_blank" rel="noopener noreferrer" href={glossary}>Browse all 280 glossary terms <ExternalLink size={15}/></a>
+          <a className="mt-4 inline-flex items-center gap-2 font-semibold text-[#70461e] underline" target="_blank" rel="noopener noreferrer" href={glossary}>Open the full glossary <ExternalLink size={15}/></a>
           <p className="mt-3 text-sm text-[#5f4e3b]">The glossary also includes a Sourdough Mastery path created as a companion to this book, plus Tools & Equipment and troubleshooting paths.</p>
         </section>
         <div className="space-y-5">{Object.entries(glossaryChapters).filter(([key]) => !linkedChapter || key === linkedChapter).map(([key, section]) => <section key={key} className={card} id={"glossary-"+key}>
           <h3 className="font-serif text-2xl">{section.title}</h3>
-          <div className="mt-4 grid gap-3 sm:grid-cols-2">{section.terms.map(term => <a key={term.slug} href={termUrl(term.slug)} target="_blank" rel="noopener noreferrer" className="group rounded-xl border border-[#d8c8b3] bg-[#fcf8ef] p-4 hover:border-[#986735] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9e681e]">
+          <div className="mt-4 grid gap-3 sm:grid-cols-2">{section.terms.map(term => <a key={term.slug} href={term.slug ? termUrl(term.slug) : glossary} target="_blank" rel="noopener noreferrer" className="group rounded-xl border border-[#d8c8b3] bg-[#fcf8ef] p-4 hover:border-[#986735] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9e681e]">
             <div className="flex items-center justify-between gap-2"><strong className="text-lg text-[#382417] group-hover:underline">{term.name}</strong><ExternalLink size={15} aria-hidden="true"/></div><p className="mt-1 text-sm text-[#55483d]">{term.why}</p></a>)}</div>
           {key === "11" && <button type="button" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#70461e] underline" onClick={() => select("equipment")}>See the tools in Chapter 11 <ArrowRight size={15}/></button>}
         </section>)}</div>

@@ -1,4 +1,4 @@
-import { existsSync, cpSync, readdirSync, statSync, mkdirSync, copyFileSync } from "node:fs";
+import { existsSync, cpSync, readdirSync, statSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join, relative } from "node:path";
 
 const OUT = "site/out";
@@ -57,7 +57,25 @@ for (const top of COPY) {
 // and merged Next static output must not depend on the SPA fallback rewrite.
 const companionDir = join(DIST, "sourdough-for-the-rest-of-us");
 mkdirSync(companionDir, { recursive: true });
-copyFileSync(join(DIST, "index.html"), join(companionDir, "index.html"));
+// The book path also lives on bakinggreatbread.com through a same-path
+// reverse-proxy rewrite. Absolute asset URLs must keep JS/CSS on this origin.
+const companionTitle = "Sourdough for the Rest of Us | Henry Hunter's Book Companion";
+const companionDescription = "Explore all 24 chapters of the revised and expanded Sourdough for the Rest of Us: videos, Bread Authority lessons, a glossary, and the tools Henry uses.";
+const companionHero = "https://bakinggreatbread.blog/wp-content/uploads/2026/11/sourdough-for-the-rest-of-us-companion-hero.png";
+const companionUrl = "https://bakinggreatbread.com/sourdough-for-the-rest-of-us/";
+const companionHtml = readFileSync(join(DIST, "index.html"), "utf8")
+  .replaceAll('src="/assets/', 'src="https://gifts.bakinggreatbread.com/assets/')
+  .replaceAll('href="/assets/', 'href="https://gifts.bakinggreatbread.com/assets/')
+  .replace(/<title>[^<]*<[/]title>/i, `<title>${companionTitle}</title>`)
+  .replace(/<meta name="description"[^>]*>/i, `<meta name="description" content="${companionDescription}">`)
+  .replace(/<meta property="og:title"[^>]*>/i, `<meta property="og:title" content="${companionTitle}">`)
+  .replace(/<meta property="og:description"[^>]*>/i, `<meta property="og:description" content="${companionDescription}">`)
+  .replace(/<meta property="og:image"[^>]*>/i, `<meta property="og:image" content="${companionHero}">`)
+  .replace(/<meta property="og:url"[^>]*>/i, `<meta property="og:url" content="${companionUrl}">`)
+  .replace(/<meta name="twitter:image"[^>]*>/i, `<meta name="twitter:image" content="${companionHero}">`)
+  .replace(/<meta name="twitter:title"[^>]*>/i, `<meta name="twitter:title" content="${companionTitle}">`)
+  .replace(/<meta name="twitter:description"[^>]*>/i, `<meta name="twitter:description" content="${companionDescription}">`);
+writeFileSync(join(companionDir, "index.html"), companionHtml);
 
 console.log(
   `merge-site: wrote /sourdough-for-the-rest-of-us/index.html`
