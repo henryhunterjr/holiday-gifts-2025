@@ -66,7 +66,7 @@ const companionUrl = "https://bakinggreatbread.com/sourdough-for-the-rest-of-us/
 const companionHtml = readFileSync(join(DIST, "index.html"), "utf8")
   .replaceAll('src="/assets/', 'src="https://gifts.bakinggreatbread.com/assets/')
   .replaceAll('href="/assets/', 'href="https://gifts.bakinggreatbread.com/assets/')
-  .replace(/<title>[\\s\\S]*?<\\/title>/i, `<title>${companionTitle}</title>`)
+  .replace(/<title>[^<]*<[/]title>/i, `<title>${companionTitle}</title>`)
   .replace(/<meta name="description"[^>]*>/i, `<meta name="description" content="${companionDescription}">`)
   .replace(/<meta property="og:title"[^>]*>/i, `<meta property="og:title" content="${companionTitle}">`)
   .replace(/<meta property="og:description"[^>]*>/i, `<meta property="og:description" content="${companionDescription}">`)
