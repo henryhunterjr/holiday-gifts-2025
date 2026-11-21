@@ -51,8 +51,8 @@ const glossaryChapters = Object.fromEntries(chapters.map(chapter => [chapter.key
  title: `Chapter ${chapter.key} · ${chapter.name}`,
  terms: chapter.glossaryTerms.map(name=>({name,slug:knownGlossarySlugs[name],why: knownGlossarySlugs[name] ? "Read this definition" : "Browse the glossary to find this term"}))
 }]));
-const card = "rounded-2xl border border-[#d8c8b3] bg-white/90 p-5 shadow-sm";
-const button = "inline-flex items-center justify-center gap-2 rounded-xl bg-[#382417] px-4 py-3 text-sm font-semibold text-[#fff7e9] hover:bg-[#633d24] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9e681e]";
+const card = "rounded-2xl border border-[#dfceb8] bg-[#fffaf3] p-5 shadow-[0_10px_30px_-22px_rgba(60,32,13,.45)]";
+const button = "inline-flex items-center justify-center gap-2 rounded-xl bg-[#b46b32] px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#8d471d] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b46b32]";
 function GearLink({ slug }: { slug?: string }) {
   const p = slug ? findGear(slug) : undefined;
   if (!p) return null;
@@ -70,7 +70,7 @@ export default function BookCompanion() {
   const storageOnly = activeTab === "equipment" && linkedChapter === "22";
   const openChapters = useMemo(() => linkedChapter ? chapters.filter(c => c.key === linkedChapter) : chapters, [linkedChapter]);
   const select = (view: string) => setParams({view});
-  return <main className="min-h-screen bg-[#faf4e9] text-[#33251b]">
+  return <main className="min-h-screen bg-[#f6ebd8] text-[#2d211b]">
     <Helmet><title>Sourdough for the Rest of Us | Official Book Companion</title><meta name="description" content="Henry Hunter's permanent companion to Sourdough for the Rest of Us: Resources and explanations matched to all 24 chapters, including how to freeze bread, the glossary, and equipment."/><link rel="canonical" href="https://bakinggreatbread.com/sourdough-for-the-rest-of-us/"/></Helmet>
     <header className="relative isolate overflow-hidden bg-[#1f110b] text-[#fff5df]">
       <div className="absolute inset-0 -z-20" aria-hidden="true">
@@ -96,11 +96,16 @@ export default function BookCompanion() {
       </div>
     </header>
     <div className="mx-auto max-w-5xl px-4 pb-20 sm:px-6">
-      <nav aria-label="Companion sections" className="relative z-10 mt-5 mb-9 grid grid-cols-1 gap-3 sm:grid-cols-3">
-        <button type="button" aria-pressed={activeTab === "equipment"} onClick={() => select("equipment")} className={button + (activeTab === "equipment" ? " ring-4 ring-[#d3aa61]" : " opacity-85")}><ShoppingBag size={18}/> Chapter 11 Gear</button>
-        <button type="button" aria-pressed={activeTab === "lessons"} onClick={() => select("lessons")} className={button + (activeTab === "lessons" ? " ring-4 ring-[#d3aa61]" : " opacity-85")}><PlayCircle size={18}/> Techniques & Videos</button>
-        <button type="button" aria-pressed={activeTab === "glossary"} onClick={() => select("glossary")} className={button + (activeTab === "glossary" ? " ring-4 ring-[#d3aa61]" : " opacity-85")}><BookText size={18}/> Bread Glossary</button>
+      <nav aria-label="Companion sections" className="relative z-10 mt-6 mb-9 grid grid-cols-1 gap-2 rounded-2xl border border-[#e2d4c2] bg-[#fff9ef] p-2 shadow-sm sm:grid-cols-3">
+        <button type="button" aria-pressed={activeTab === "equipment"} onClick={() => select("equipment")} className={"flex min-h-12 items-center justify-center gap-2 rounded-xl px-3 py-3 text-sm font-semibold transition-colors " + (activeTab === "equipment" ? "bg-[#af6530] text-white shadow-sm" : "bg-transparent text-[#604b3d] hover:bg-[#f1dfc9]")}><ShoppingBag size={18}/> Chapter 11 Gear</button>
+        <button type="button" aria-pressed={activeTab === "lessons"} onClick={() => select("lessons")} className={"flex min-h-12 items-center justify-center gap-2 rounded-xl px-3 py-3 text-sm font-semibold transition-colors " + (activeTab === "lessons" ? "bg-[#af6530] text-white shadow-sm" : "bg-transparent text-[#604b3d] hover:bg-[#f1dfc9]")}><PlayCircle size={18}/> Techniques & Videos</button>
+        <button type="button" aria-pressed={activeTab === "glossary"} onClick={() => select("glossary")} className={"flex min-h-12 items-center justify-center gap-2 rounded-xl px-3 py-3 text-sm font-semibold transition-colors " + (activeTab === "glossary" ? "bg-[#af6530] text-white shadow-sm" : "bg-transparent text-[#604b3d] hover:bg-[#f1dfc9]")}><BookText size={18}/> Bread Glossary</button>
       </nav>
+      <div className="mb-10 grid gap-3 sm:grid-cols-3" aria-label="How to use the companion">
+        <div className="flex items-start gap-3 rounded-xl border border-[#e6d7c3] bg-[#fff8ed] p-4"><span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#b46b32] text-sm font-bold text-white">1</span><div><p className="font-semibold">Find your chapter</p><p className="mt-1 text-sm text-[#695748]">Start where you are in the book.</p></div></div>
+        <div className="flex items-start gap-3 rounded-xl border border-[#e6d7c3] bg-[#fff8ed] p-4"><span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#b46b32] text-sm font-bold text-white">2</span><div><p className="font-semibold">See it demonstrated</p><p className="mt-1 text-sm text-[#695748]">Watch, read, and understand the why.</p></div></div>
+        <div className="flex items-start gap-3 rounded-xl border border-[#e6d7c3] bg-[#fff8ed] p-4"><span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#b46b32] text-sm font-bold text-white">3</span><div><p className="font-semibold">Bake with confidence</p><p className="mt-1 text-sm text-[#695748]">Come back whenever you need help.</p></div></div>
+      </div>
       {activeTab === "equipment" ? <div className="space-y-12">
         {storageOnly && <section id="storage-gear" className="rounded-2xl border border-[#d8c8b3] bg-white p-5"><p className="text-xs font-bold uppercase tracking-wider text-[#875c2e]">Chapter 22 · Bread storage</p><h2 className="mt-2 font-serif text-3xl">Keep your bread fresh</h2><p className="mt-2">You don’t need a special bag to store or freeze a loaf. Here is the reusable bread bag from my gear guide, alongside the no-cost freezer alternative.</p><p className="mt-3 text-sm"><strong>Budget alternative:</strong> Cool the loaf fully, wrap it airtight in freezer-safe packaging, label it and freeze. For everyday counter storage, use a clean bread bag or another suitable covering.</p><div className="mt-5"><GearGrid slugs={["bread-bag"]}/></div><button className="mt-5 font-semibold underline" onClick={() => select("equipment")}>See all Chapter 11 gear</button></section>}
         {!storageOnly && <>
@@ -123,14 +128,14 @@ export default function BookCompanion() {
         <section className="rounded-3xl bg-[#2e2118] p-7 text-[#fff5e2]"><h2 className="font-serif text-3xl">Ask before you buy</h2><p className="mt-2">Not sure a gadget will solve your problem? Bring your question to Crust & Crumb Academy. We care about better bread, not bigger shopping carts.</p><a href="https://www.skool.com/crust-crumb-academy-7621/about" target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 font-bold text-[#f0cd8d] underline">Visit the Academy <ArrowRight size={16}/></a></section>
       </div> : activeTab === "lessons" ? <div className="space-y-8">
         <section><p className="text-sm font-bold uppercase tracking-widest text-[#875c2e]">Book lessons</p><h2 className="mt-2 font-serif text-3xl">Watch it. Read it. Try it.</h2><p className="mt-3 max-w-3xl">All 24 chapters are here in manuscript order. Each one leads to related demonstrations, explanations, glossary terms and practical resources.</p><a className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#70461e] underline" href={authority} target="_blank" rel="noopener noreferrer">Explore the full Bread Authority <ExternalLink size={14}/></a></section>
-        <div className="mb-6 rounded-2xl border border-[#d8c8b3] bg-white p-4">
+        <div className="mb-6 rounded-2xl border border-[#dfceb8] bg-[#fffaf3] p-4">
           <label htmlFor="book-chapter-select" className="mb-2 block text-sm font-semibold">Jump to a chapter</label>
           <select id="book-chapter-select" value={linkedChapter ?? ""} onChange={e => setParams(e.target.value ? {view:"lessons",chapter:e.target.value} : {view:"lessons"})} className="w-full rounded-lg border border-[#a99985] bg-[#fffaf3] p-3 text-base">
             <option value="">Browse all 24 chapters</option>
             {chapters.map(ch=><option key={ch.key} value={ch.key}>Chapter {ch.key}: {ch.name}</option>)}
           </select>
         </div>
-        <div className="mb-5 rounded-2xl border border-[#b99663] bg-[#f3e6d1] p-5">
+        <div className="mb-5 rounded-2xl border border-[#e2ccb4] bg-[#f6e4d0] p-5">
           <p className="font-semibold text-[#6c3b23]">Chapter 22 spotlight: Freezing bread</p>
           <p className="mt-1 text-sm">The book explains freezing, thawing and reheating. Watch the demonstration or read the full article.</p>
           <div className="mt-3 flex flex-wrap gap-3">
@@ -140,20 +145,31 @@ export default function BookCompanion() {
           </div>
         </div>
         {linkedChapter && <button type="button" className="mb-5 text-sm font-semibold underline" onClick={() => setParams({view:"lessons"})}>← All 24 chapters</button>}
-        <div className="grid gap-5">{openChapters.length ? openChapters.map(ch => <section className={card} key={ch.key} id={"chapter-"+ch.key}>
-          <div className="flex gap-3"><BookOpen className="mt-1 shrink-0 text-[#8a602d]"/><div className="min-w-0 flex-1">
-            <p className="text-xs font-bold uppercase tracking-wide text-[#8a602d]">Chapter {ch.key} · Print page {ch.page}</p>
-            <h3 className="mt-1 text-xl font-bold">{ch.name}</h3><p className="mt-2 text-sm">{ch.desc}</p>
-            <p className="mt-4 text-sm font-bold">Subjects from this chapter</p>
-            <ul className="mt-2 list-disc pl-5 text-sm space-y-1">{ch.focus.map(f=><li key={f}>{f}</li>)}</ul>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {ch.key === "11" && <button onClick={() => select("equipment")} className={button}>Chapter 11 Gear <ArrowRight size={15}/></button>}
-              {ch.key === "22" && <button onClick={() => setParams({view:"equipment",chapter:"22"})} className={button}>Bread Storage Gear <ShoppingBag size={15}/></button>}
-              {ch.key === "22" && <GearLink slug="bread-bag" />}
-              {ch.links.map(l=><a key={l.title} href={l.url ?? (l.path ? topic(l.path) : authority)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg border border-[#cbb18c] bg-[#faf3e5] px-3 py-2 text-sm font-semibold hover:bg-[#f0e1c9]">{l.title}<ExternalLink size={13}/></a>)}
+        {!linkedChapter ? (
+          <section aria-label="All book chapters">
+            <div className="mb-4 flex items-baseline justify-between gap-3"><h3 className="font-serif text-2xl font-semibold">Choose where you are in the book</h3><span className="text-sm text-[#836b56]">24 chapters</span></div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {chapters.map(ch => <button key={ch.key} type="button" onClick={() => setParams({view:"lessons",chapter:ch.key})} className="group flex min-h-[94px] items-center gap-4 rounded-2xl border border-[#dfceb8] bg-[#fffaf3] px-4 py-3 text-left shadow-[0_8px_24px_-20px_rgba(40,22,10,.7)] transition hover:-translate-y-0.5 hover:border-[#bb8052] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b46b32]">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#f1dec8] font-serif text-xl font-bold text-[#8a4c25]">{ch.key}</span>
+                <span className="min-w-0 flex-1"><span className="block text-xs font-semibold uppercase tracking-wider text-[#a26d45]">Page {ch.page}</span><span className="mt-1 block text-[15px] font-semibold leading-snug text-[#2e211a] group-hover:text-[#8e4b21]">{ch.name}</span></span><ArrowRight className="shrink-0 text-[#b46b32]" size={18}/>
+              </button>)}
             </div>
-            <p className="mt-4 text-xs"><b>Glossary terms:</b> {ch.glossaryTerms.join(" · ")} <button className="font-semibold underline" onClick={() => setParams({view:"glossary",chapter:ch.key})}>Explore these terms</button></p>
-          </div></div></section>) : <p className={card}>No chapter found. <button className="underline" onClick={() => setParams({view:"lessons"})}>See all chapters</button></p>}</div>
+          </section>
+        ) : openChapters.length ? openChapters.map(ch => <section className={card + " scroll-mt-6 p-5 sm:p-8"} key={ch.key} id={"chapter-"+ch.key}>
+          <button className="mb-5 inline-flex items-center gap-2 text-sm font-semibold text-[#a25a2c] underline underline-offset-4" type="button" onClick={() => setParams({view:"lessons"})}>← Back to all 24 chapters</button>
+          <p className="text-xs font-bold uppercase tracking-[.15em] text-[#a25a2c]">Chapter {ch.key} · Print page {ch.page}</p>
+          <h3 className="mt-2 font-serif text-3xl font-semibold leading-tight">{ch.name}</h3>
+          <p className="mt-3 max-w-2xl text-base leading-relaxed text-[#59493d]">{ch.desc}</p>
+          <div className="mt-7 grid gap-5 md:grid-cols-[.85fr_1.15fr]">
+            <div className="rounded-xl bg-[#f3e7d6] p-5"><p className="text-xs font-bold uppercase tracking-[.12em] text-[#955e38]">What you'll explore</p><ul className="mt-3 space-y-3">{ch.focus.map(f=><li className="flex gap-2 text-sm leading-relaxed" key={f}><CheckCircle2 className="mt-0.5 shrink-0 text-[#a66d40]" size={16}/>{f}</li>)}</ul></div>
+            <div><p className="text-xs font-bold uppercase tracking-[.12em] text-[#955e38]">Lessons & resources</p><div className="mt-3 grid gap-2">
+              {ch.key === "11" && <button onClick={() => select("equipment")} className={button}>Open Chapter 11 equipment <ShoppingBag size={15}/></button>}
+              {ch.key === "22" && <button onClick={() => setParams({view:"equipment",chapter:"22"})} className={button}>Bread storage gear <ShoppingBag size={15}/></button>}
+              {ch.links.map(l=><a key={l.title} href={l.url ?? (l.path ? topic(l.path) : authority)} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between gap-3 rounded-xl border border-[#e4d0b8] bg-white px-4 py-3 text-sm font-semibold text-[#734323] transition hover:border-[#b46b32] hover:bg-[#fff7ea]">{l.title}<ExternalLink className="shrink-0" size={15}/></a>)}
+            </div></div>
+          </div>
+          <div className="mt-6 border-t border-[#e4d6c4] pt-5"><p className="text-sm"><strong>Words from this chapter:</strong> {ch.glossaryTerms.join(" · ")}</p><button type="button" onClick={() => setParams({view:"glossary",chapter:ch.key})} className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-[#9e5225] underline underline-offset-4">Explore the glossary <ArrowRight size={15}/></button></div>
+        </section>) : <p className={card}>No chapter found. <button className="underline" onClick={() => setParams({view:"lessons"})}>See all chapters</button>.</p>}
         <p className="text-sm text-[#625043]">All 24 chapters are mapped. Resource links may be updated without changing the book’s QR codes; recipe QR codes still go to Recipe Pantry.</p>
       </div> : <div className="space-y-8">
         <section>
