@@ -61,7 +61,10 @@ for (const top of COPY) {
 // Each page also carries a plain-HTML copy of its content inside #root. React
 // replaces it on load; crawlers and AI readers that don't run JavaScript get the
 // chapters and tools as real text.
-const ORIGIN = "https://gifts.bakinggreatbread.com";
+// Preview deployments point at their own build so a preview shows the new code.
+const ORIGIN = process.env.VERCEL_ENV && process.env.VERCEL_ENV !== "production" && process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : "https://gifts.bakinggreatbread.com";
 const companionHero = "https://bakinggreatbread.blog/wp-content/uploads/2026/11/sourdough-for-the-rest-of-us-companion-hero.png";
 const companionUrl = "https://bakinggreatbread.com/sourdough-for-the-rest-of-us/";
 const toolsUrl = "https://bakinggreatbread.com/sourdough-for-the-rest-of-us/tools/";
