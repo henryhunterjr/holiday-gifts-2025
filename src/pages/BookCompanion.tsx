@@ -63,7 +63,7 @@ export default function BookCompanion() {
   const openChapters = useMemo(() => linkedChapter ? chapters.filter(c => c.key === linkedChapter) : chapters, [linkedChapter]);
   const select = (view: string) => setParams(existing => { const next = new URLSearchParams(existing); next.set("view", view); return next; });
   return <main className="min-h-screen bg-[#faf4e9] text-[#33251b]">
-    <Helmet><title>Sourdough for the Rest of Us | Official Book Companion</title><meta name="description" content="Henry Hunter's permanent companion to Sourdough for the Rest of Us: Resources and explanations matched to all 24 chapters, including how to freeze bread, the glossary, and equipment."/><link rel="canonical" href="https://gifts.bakinggreatbread.com/sourdough-for-the-rest-of-us/"/></Helmet>
+    <Helmet><title>Sourdough for the Rest of Us | Official Book Companion</title><meta name="description" content="Henry Hunter's permanent companion to Sourdough for the Rest of Us: Resources and explanations matched to all 24 chapters, including how to freeze bread, the glossary, and equipment."/><link rel="canonical" href="https://bakinggreatbread.com/sourdough-for-the-rest-of-us/"/></Helmet>
     <header className="relative isolate overflow-hidden bg-[#1f110b] text-[#fff5df]">
       <div className="absolute inset-0 -z-20" aria-hidden="true">
         <img src="https://bakinggreatbread.blog/wp-content/uploads/2026/11/sourdough-for-the-rest-of-us-companion-hero.png" alt="" className="h-full w-full object-cover object-[65%_center] opacity-65 sm:object-center sm:opacity-95" />
