@@ -114,7 +114,7 @@ export function AboutHenry() {
         <h2 id="about-henry-heading" className="mt-2 font-display text-3xl text-[#2d2118]">Meet Henry Hunter</h2>
         <p className="mt-3 text-[#4b3d32]">I learned to bake bread from a German baker while I was serving in the Army. Today I teach home bakers through Baking Great Bread at Home and Crust &amp; Crumb Academy, and I write books and build tools to make good bread easier for everyone.</p>
         <ul className="mt-4 grid gap-1 text-sm text-[#4b3d32] sm:grid-cols-2">
-          <li>Author of six books, including this one</li>
+          <li>Author of several baking books, including this one</li>
           <li>Founder of Baking Great Bread at Home</li>
           <li>Founder of Crust &amp; Crumb Academy</li>
           <li>Builder of the tools in the Baker's Toolbox</li>
