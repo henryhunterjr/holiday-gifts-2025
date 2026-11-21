@@ -157,8 +157,8 @@ export default function BookCompanion() {
       <script type="application/ld+json">{JSON.stringify(bookSchema)}</script>
     </Helmet>
     <CompanionHero eyebrow="Henry Hunter · The official digital companion" title={<>Sourdough <span className="block text-[.54em] italic leading-[1.1]">for the Rest of Us</span></>}
+      tagline="Perfection Not Required."
       subtitle="The book is in your hands. Here you can watch the techniques, understand the language, and find the tools behind every chapter.">
-      <p className="mt-5 font-display text-2xl italic text-[#ffdea5] sm:text-3xl">Perfection Not Required.</p>
       <div className="mt-7 flex flex-wrap gap-3">
         <Link to="/sourdough-for-the-rest-of-us/?view=lessons" className="inline-flex min-h-[44px] items-center rounded-lg bg-[#d19a47] px-5 text-sm font-extrabold text-[#281408] hover:bg-[#efbe72]">Explore all 24 chapters</Link>
         <Link to="/sourdough-for-the-rest-of-us/tools/" className="inline-flex min-h-[44px] items-center gap-2 rounded-lg border border-[#f1d3a0] bg-[#261811ba] px-5 text-sm font-semibold text-[#fff6e8] hover:bg-[#57361a]"><Wrench size={15} aria-hidden="true" /> Henry's Baker's Toolbox</Link>

@@ -80,7 +80,7 @@ export function CompanionNav({ active }: { active: CompanionSection }) {
  * so a wide monitor never crops Henry's face, and the dark wall on its left edge
  * fades into the headline's space.
  */
-export function CompanionHero({ eyebrow, title, subtitle, children }: { eyebrow: string; title: React.ReactNode; subtitle?: string; children?: React.ReactNode }) {
+export function CompanionHero({ eyebrow, title, tagline, subtitle, children }: { eyebrow: string; title: React.ReactNode; tagline?: string; subtitle?: string; children?: React.ReactNode }) {
   return (
     <header className="relative isolate overflow-hidden bg-[#1f110b] text-[#fff5df]">
       <div className="relative lg:absolute lg:inset-y-0 lg:right-0 lg:aspect-[3/2] lg:h-full" aria-hidden="true">
@@ -88,7 +88,7 @@ export function CompanionHero({ eyebrow, title, subtitle, children }: { eyebrow:
         <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#1f110b] to-transparent lg:inset-y-0 lg:left-0 lg:right-auto lg:h-full lg:w-[38%] lg:bg-gradient-to-r" />
       </div>
       <div className="relative mx-auto flex max-w-6xl flex-col px-5 pb-10 pt-2 sm:px-8 lg:min-h-[clamp(600px,42vw,780px)] lg:justify-center lg:py-16">
-        <div className="mb-6 flex flex-wrap items-center justify-between gap-3 text-sm lg:absolute lg:inset-x-8 lg:top-7 lg:mb-0">
+        <div className="mb-6 flex flex-wrap items-center justify-between gap-3 text-sm lg:absolute lg:left-8 lg:top-7 lg:mb-0 lg:justify-start lg:gap-5">
           <a href="https://bakinggreatbread.com/" className="font-semibold text-[#f5dcae] hover:underline">← BakingGreatBread.com</a>
           <span className="rounded-full border border-[#e1b96e] bg-[#32170fd9] px-4 py-2 text-xs font-bold uppercase tracking-[.14em] text-[#ffe5af]">2026 Revised & Expanded</span>
         </div>
@@ -96,7 +96,8 @@ export function CompanionHero({ eyebrow, title, subtitle, children }: { eyebrow:
           <p className="mb-4 text-xs font-bold uppercase tracking-[.23em] text-[#f6c977]">{eyebrow}</p>
           <h1 className="font-display text-[clamp(2.9rem,7vw,5.9rem)] leading-[.94] tracking-[-.03em] text-[#fff2d7] [text-shadow:0_3px_30px_#120700a8]">{title}</h1>
           <div className="mt-6 h-[3px] w-32 rounded-full bg-gradient-to-r from-[#bb7930] via-[#ffd27a] to-[#bb7930]" />
-          {subtitle && <p className="mt-5 max-w-[470px] text-base leading-relaxed text-[#fffaed] sm:text-lg">{subtitle}</p>}
+          {tagline && <p className="mt-5 font-display text-2xl italic text-[#ffdea5] sm:text-3xl">{tagline}</p>}
+          {subtitle && <p className="mt-4 max-w-[470px] text-base leading-relaxed text-[#fffaed] sm:text-lg">{subtitle}</p>}
           {children}
         </div>
       </div>
