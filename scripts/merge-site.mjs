@@ -1,4 +1,4 @@
-import { existsSync, cpSync, readdirSync, statSync } from "node:fs";
+import { existsSync, cpSync, readdirSync, statSync, mkdirSync, copyFileSync } from "node:fs";
 import { join, relative } from "node:path";
 
 const OUT = "site/out";
@@ -52,6 +52,16 @@ if (collisions.length) {
 for (const top of COPY) {
   cpSync(join(OUT, top), join(DIST, top), { recursive: true });
 }
+
+// Ship an actual HTML entry for the printed-book URL. Vercel's trailingSlash
+// and merged Next static output must not depend on the SPA fallback rewrite.
+const companionDir = join(DIST, "sourdough-for-the-rest-of-us");
+mkdirSync(companionDir, { recursive: true });
+copyFileSync(join(DIST, "index.html"), join(companionDir, "index.html"));
+
+console.log(
+  `merge-site: wrote /sourdough-for-the-rest-of-us/index.html`
+);
 
 console.log(
   `merge-site: copied ${COPY.join(", ")} into dist/; ` +
