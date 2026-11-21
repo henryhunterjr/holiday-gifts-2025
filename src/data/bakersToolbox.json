@@ -1,0 +1,170 @@
+{
+  "_howToAdd": "Add a tool by copying one object into 'toolbox' (tools that match a book chapter) or 'workshop' (Henry's wider body of work). status: live | in-progress | retired. A retired tool keeps its entry but its url must be null so the page never sends readers to it. Every url must be checked in a browser before it goes in. Never use a lovable.app or Bitly address; use skoo.ly or the tool's own domain.",
+  "lastChecked": "2026-11-21",
+  "toolbox": [
+    {
+      "slug": "sourdough-yeast-converter",
+      "name": "Sourdough ↔ Yeast Recipe Converter",
+      "kind": "Calculator",
+      "what": "Converts a recipe from commercial yeast to sourdough, or back again.",
+      "problem": "Swapping yeast for starter isn't a one-for-one trade. Your starter brings its own flour and water, and the converter counts them so the dough comes out right.",
+      "forWho": "Bakers who want to make a favorite yeasted recipe with their starter.",
+      "url": "https://sourdough-yeast-converter-v2.vercel.app/",
+      "chapters": ["9"],
+      "status": "live",
+      "launched": "October 2026"
+    },
+    {
+      "slug": "fermentation-compass",
+      "name": "The Fermentation Compass",
+      "kind": "Planner",
+      "what": "Helps you decide between a counter ferment and a cold ferment for the time you have.",
+      "problem": "Counter or fridge is the question I hear most. The Compass walks you to an answer that fits your kitchen and your day.",
+      "forWho": "Anyone planning a bake around work, school or sleep.",
+      "url": "https://skoo.ly/fermentation-compass",
+      "chapters": ["5", "10"],
+      "status": "live"
+    },
+    {
+      "slug": "starter-levain-studio",
+      "name": "Starter & Levain Studio",
+      "kind": "Calculator",
+      "what": "A starter and levain calculator: feeding ratios, levain builds and timing.",
+      "problem": "Getting a levain to peak right when the dough needs it takes math most of us don't want to do at 6 AM.",
+      "forWho": "New starter keepers and bakers building a levain for a recipe.",
+      "url": "https://bakinggreatbread.com/starter-levain-studio",
+      "chapters": ["1", "2", "12"],
+      "status": "live"
+    },
+    {
+      "slug": "starter-guide",
+      "name": "The Sourdough Starter Guide",
+      "kind": "Guide",
+      "what": "My step-by-step guide to making a starter and keeping it healthy.",
+      "problem": "Most starters that \"die\" are just hungry or cold. The guide shows you what's normal so you don't throw a good one out.",
+      "forWho": "Day-one starter makers and anyone whose starter is acting up.",
+      "url": "https://skoo.ly/starter-guide",
+      "chapters": ["1", "2", "3"],
+      "status": "live"
+    },
+    {
+      "slug": "salt-converter",
+      "name": "Salt Converter",
+      "kind": "Calculator",
+      "what": "Converts between table salt, kosher salt and other salts by weight and volume.",
+      "problem": "Not all salt weighs the same. A teaspoon of one brand can be nearly double another, and that's enough to wreck a loaf.",
+      "forWho": "Bakers measuring by volume or switching salt brands.",
+      "url": "https://bakinggreatbread.com/salt-converter",
+      "chapters": ["4"],
+      "status": "live"
+    },
+    {
+      "slug": "glossary",
+      "name": "Crust & Crumb Interactive Bread Baking Glossary",
+      "kind": "Reference",
+      "what": "280 bread terms with plain definitions, pronunciations, common mistakes and guided learning paths. Free.",
+      "problem": "Bread has its own language. When the book says bassinage or fermentolyse, you can look it up and hear how it's said.",
+      "forWho": "Every reader. It backs the glossary at the end of the book.",
+      "url": "https://crust-and-crumb-tawny.vercel.app/",
+      "chapters": ["all"],
+      "status": "live",
+      "launched": "October 2026"
+    },
+    {
+      "slug": "bread-authority",
+      "name": "The Bread Authority",
+      "kind": "Library",
+      "what": "My library of videos, articles, recipes and lessons, organized into 29 topics across 8 categories.",
+      "problem": "Years of videos and posts are no help if you can't find them. The Bread Authority puts each one under the topic it teaches.",
+      "forWho": "Bakers who want to go deeper on a chapter or fix a specific problem.",
+      "url": "https://skoo.ly/bread-authority",
+      "chapters": ["3", "7", "8", "22", "24"],
+      "status": "live"
+    },
+    {
+      "slug": "recipe-pantry",
+      "name": "Recipe Pantry",
+      "kind": "Recipes",
+      "what": "The recipe collection behind the book's recipe QR codes, with scaling and printing.",
+      "problem": "A printed recipe can't scale itself or get better. Recipe Pantry can, and the book's recipe codes point there.",
+      "forWho": "Anyone baking the recipes in Parts 3 and 4.",
+      "url": "https://recipepantry.app/",
+      "chapters": ["12", "13", "14", "15", "16", "17", "18", "19", "20", "21"],
+      "status": "live"
+    },
+    {
+      "slug": "the-mill",
+      "name": "The Mill",
+      "kind": "Planner",
+      "what": "A fresh-milled flour planner from Recipe Pantry.",
+      "problem": "Fresh flour drinks more water and moves faster than bagged flour. The Mill helps you plan for that before you mix.",
+      "forWho": "Home millers and bakers new to fresh-milled flour.",
+      "url": "https://skoo.ly/the-mill",
+      "chapters": ["15"],
+      "status": "live"
+    },
+    {
+      "slug": "ancient-grain-guide",
+      "name": "Ancient Grain Guide",
+      "kind": "Guide",
+      "what": "Helps fresh-milled bakers pick a flour blend and understand how an ancient grain handles.",
+      "problem": "Einkorn, spelt and emmer don't behave like modern wheat. The guide grew out of my ancient grain cheat sheets.",
+      "forWho": "Bakers working with einkorn, spelt, emmer or khorasan.",
+      "url": "https://grains.bakinggreatbread.com/",
+      "chapters": ["15"],
+      "status": "live",
+      "launched": "November 2026"
+    }
+  ],
+  "workshop": [
+    {
+      "slug": "bread-calculator",
+      "name": "Bread Dough Calculator",
+      "kind": "Calculator",
+      "what": "Hydration, baker's percentages and recipe scaling in one place.",
+      "url": "https://bakinggreatbread.com/bread-calculator",
+      "status": "live"
+    },
+    {
+      "slug": "ancient-grain-challenge",
+      "name": "The Ancient Grain Challenge",
+      "kind": "Challenge",
+      "what": "Lessons and quizzes that take you from wheat berries to bread.",
+      "url": "https://challenge.bakinggreatbread.com/",
+      "status": "live"
+    },
+    {
+      "slug": "holiday-bake",
+      "name": "The Holiday Bake",
+      "kind": "Guide",
+      "what": "My free holiday baking guide with recipes and a make-ahead calendar.",
+      "url": "https://skoo.ly/holiday-bake",
+      "status": "live"
+    },
+    {
+      "slug": "recipe-pantry-pro",
+      "name": "Recipe Pantry Pro",
+      "kind": "Workspace",
+      "what": "A recipe workspace for bakers who sell at markets: costing and scaling.",
+      "url": "https://recipe-pantry-pro.vercel.app/",
+      "status": "live"
+    },
+    {
+      "slug": "all-tools",
+      "name": "All Tools & Challenges",
+      "kind": "Directory",
+      "what": "Every calculator, guide, quiz and challenge on BakingGreatBread.com in one list.",
+      "url": "https://bakinggreatbread.com/all-tools",
+      "status": "live"
+    },
+    {
+      "slug": "converter-v1",
+      "name": "Original Sourdough ↔ Yeast Converter",
+      "kind": "Calculator",
+      "what": "My first converter. Replaced in October 2026 by the rebuilt converter in the toolbox above.",
+      "url": null,
+      "status": "retired",
+      "retired": "October 2026"
+    }
+  ]
+}

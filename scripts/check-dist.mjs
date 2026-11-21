@@ -38,6 +38,15 @@ const companionHtml = readFile(`${DIST}/sourdough-for-the-rest-of-us/index.html`
 if (!companionHtml.includes("/assets/")) {
   fail("book companion direct-route HTML does not include Vite assets");
 }
+// Through the bakinggreatbread.com proxy, root-relative files would load from the wrong site.
+for (const [label, html] of [["companion", companionHtml], ["toolbox", readFile(`${DIST}/sourdough-for-the-rest-of-us/tools/index.html`)]]) {
+  if (/(src|href)="\/(assets|guide-tools|favicon)/.test(html)) fail(`${label} HTML still has a root-relative asset URL`);
+  if (!html.includes('rel="canonical"')) fail(`${label} HTML has no canonical link`);
+  if (!html.includes("application/ld+json")) fail(`${label} HTML has no structured data`);
+}
+if (!readFile(`${DIST}/sourdough-for-the-rest-of-us/tools/index.html`).includes("Sourdough ↔ Yeast Recipe Converter")) {
+  fail("toolbox HTML is missing its tool list as text");
+}
 
 // Gift guide survived the merge, as real text.
 const giftsIndex = readFile(`${DIST}/gifts/index.html`)

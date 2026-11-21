@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import HolidayGiftGuide from "./pages/HolidayGiftGuide";
 import BookCompanion from "./pages/BookCompanion";
+import BakersToolbox from "./pages/BakersToolbox";
 import MakerCollection from "./pages/MakerCollection";
 import AcademyGiftCertificate from "./pages/AcademyGiftCertificate";
 import NotFound from "./pages/NotFound";
@@ -32,6 +33,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<HolidayGiftGuide />} />
             <Route path="/sourdough-for-the-rest-of-us" element={<BookCompanion />} />
+            <Route path="/sourdough-for-the-rest-of-us/tools" element={<BakersToolbox />} />
             <Route path="/bread-baker-holiday-gift-guide-2025" element={<Navigate to="/" replace />} />
             <Route path="/makers/:makerId" element={<MakerCollection />} />
             <Route path="/makers/:makerId/" element={<MakerCollection />} />
