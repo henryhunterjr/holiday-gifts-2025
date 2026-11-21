@@ -64,13 +64,29 @@ export default function BookCompanion() {
   const select = (view: string) => setParams(existing => { const next = new URLSearchParams(existing); next.set("view", view); return next; });
   return <main className="min-h-screen bg-[#faf4e9] text-[#33251b]">
     <Helmet><title>Sourdough for the Rest of Us | Official Book Companion</title><meta name="description" content="Henry Hunter's permanent companion to Sourdough for the Rest of Us: Resources and explanations matched to all 24 chapters, including how to freeze bread, the glossary, and equipment."/><link rel="canonical" href="https://gifts.bakinggreatbread.com/sourdough-for-the-rest-of-us/"/></Helmet>
-    <header className="bg-[#241811] px-5 py-10 text-[#fff6e5] sm:py-16"><div className="mx-auto max-w-5xl">
-      <Link to="/" className="text-sm text-[#e6bf7d] underline underline-offset-4">← Holiday Shopping Guide</Link>
-      <p className="mt-7 text-xs font-bold uppercase tracking-[.23em] text-[#e6bf7d]">Henry Hunter · Official Book Companion</p>
-      <h1 className="mt-3 max-w-3xl font-serif text-4xl leading-tight sm:text-6xl">Sourdough for the Rest of Us</h1>
-      <h2 className="mt-3 text-xl text-[#e6bf7d]">The tools and teaching behind the book</h2>
-      <p className="mt-5 max-w-2xl leading-relaxed text-[#efe2d0]">Perfection not required. Follow your chapter to video demonstrations, articles, glossary definitions and the gear I actually use.</p>
-    </div></header>
+    <header className="relative isolate overflow-hidden bg-[#1f110b] text-[#fff5df]">
+      <div className="absolute inset-0 -z-20" aria-hidden="true">
+        <img src="https://bakinggreatbread.blog/wp-content/uploads/2026/11/sourdough-for-the-rest-of-us-companion-hero.png" alt="" className="h-full w-full object-cover object-[65%_center] opacity-65 sm:object-center sm:opacity-95" />
+      </div>
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#1c100b] via-[#1c100bed] to-[#1c100b66] sm:via-[#1c100bc9] sm:to-transparent" aria-hidden="true"/>
+      <div className="mx-auto flex min-h-[530px] max-w-6xl flex-col justify-between px-5 py-8 sm:min-h-[620px] sm:px-8 sm:py-12">
+        <nav className="flex flex-wrap items-center justify-between gap-3 text-sm">
+          <a href="https://bakinggreatbread.com/" className="font-semibold text-[#f5dcae] hover:underline">← BakingGreatBread.com</a>
+          <span className="rounded-full border border-[#e1b96e] bg-[#32170fd9] px-4 py-2 text-xs font-bold uppercase tracking-[.14em] text-[#ffe5af]">2026 Revised & Expanded</span>
+        </nav>
+        <div className="max-w-[580px] pb-3 sm:pb-9">
+          <p className="mb-5 text-xs font-bold uppercase tracking-[.23em] text-[#f6c977]">Henry Hunter · The official digital companion</p>
+          <h1 className="font-serif text-[clamp(3.1rem,7.7vw,6.4rem)] leading-[.94] tracking-[-.035em] text-[#fff2d7] [text-shadow:0_3px_30px_#120700a8]">Sourdough <span className="block text-[.54em] italic leading-[1.1]">for the Rest of Us</span></h1>
+          <div className="mt-7 h-[3px] w-32 rounded-full bg-gradient-to-r from-[#bb7930] via-[#ffd27a] to-[#bb7930]"/>
+          <p className="mt-5 font-serif text-2xl italic text-[#ffdea5] sm:text-3xl">Perfection Not Required.</p>
+          <p className="mt-4 max-w-[470px] text-[1rem] leading-relaxed text-[#fffaed] sm:text-lg">The book is in your hands. Here you can watch the techniques, understand the language, and find the tools behind every chapter.</p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <button type="button" onClick={() => setParams({view:"lessons"})} className="rounded-lg bg-[#d19a47] px-5 py-3 text-sm font-extrabold text-[#281408] hover:bg-[#efbe72]">Explore all 24 chapters</button>
+            <button type="button" onClick={() => setParams({view:"equipment"})} className="rounded-lg border border-[#f1d3a0] bg-[#261811ba] px-5 py-3 text-sm font-semibold text-[#fff6e8] hover:bg-[#57361a]">Chapter 11 equipment</button>
+          </div>
+        </div>
+      </div>
+    </header>
     <div className="mx-auto max-w-5xl px-4 pb-20 sm:px-6">
       <nav aria-label="Companion sections" className="-mt-5 mb-9 grid grid-cols-1 gap-3 sm:grid-cols-3">
         <button type="button" aria-pressed={activeTab === "equipment"} onClick={() => select("equipment")} className={button + (activeTab === "equipment" ? " ring-4 ring-[#d3aa61]" : " opacity-85")}><ShoppingBag size={18}/> Chapter 11 Gear</button>
