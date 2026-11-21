@@ -96,6 +96,13 @@ export default function BookCompanion() {
         <section className="rounded-3xl bg-[#2e2118] p-7 text-[#fff5e2]"><h2 className="font-serif text-3xl">Ask before you buy</h2><p className="mt-2">Not sure a gadget will solve your problem? Bring your question to Crust & Crumb Academy. We care about better bread, not bigger shopping carts.</p><a href="https://www.skool.com/crust-crumb-academy-7621/about" target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 font-bold text-[#f0cd8d] underline">Visit the Academy <ArrowRight size={16}/></a></section>
       </div> : activeTab === "lessons" ? <div className="space-y-8">
         <section><p className="text-sm font-bold uppercase tracking-widest text-[#875c2e]">Book lessons</p><h2 className="mt-2 font-serif text-3xl">Watch it. Read it. Try it.</h2><p className="mt-3 max-w-3xl">All 24 chapters are here in manuscript order. Each one leads to related demonstrations, explanations, glossary terms and practical resources.</p><a className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#70461e] underline" href={authority} target="_blank" rel="noopener noreferrer">Explore the full Bread Authority <ExternalLink size={14}/></a></section>
+        <div className="mb-6 rounded-2xl border border-[#d8c8b3] bg-white p-4">
+          <label htmlFor="book-chapter-select" className="mb-2 block text-sm font-semibold">Jump to a chapter</label>
+          <select id="book-chapter-select" value={linkedChapter ?? ""} onChange={e => setParams(e.target.value ? {view:"lessons",chapter:e.target.value} : {view:"lessons"})} className="w-full rounded-lg border border-[#a99985] bg-[#fffaf3] p-3 text-base">
+            <option value="">Browse all 24 chapters</option>
+            {chapters.map(ch=><option key={ch.key} value={ch.key}>Chapter {ch.key}: {ch.name}</option>)}
+          </select>
+        </div>
         <div className="mb-5 rounded-2xl border border-[#b99663] bg-[#f3e6d1] p-5">
           <p className="font-semibold text-[#6c3b23]">Chapter 22 spotlight: Freezing bread</p>
           <p className="mt-1 text-sm">The book explains freezing, thawing and reheating. Watch the demonstration or read the full article.</p>
@@ -115,6 +122,7 @@ export default function BookCompanion() {
             <div className="mt-4 flex flex-wrap gap-2">
               {ch.key === "11" && <button onClick={() => select("equipment")} className={button}>Chapter 11 Gear <ArrowRight size={15}/></button>}
               {ch.key === "22" && <button onClick={() => select("equipment")} className={button}>Bread Storage Gear <ShoppingBag size={15}/></button>}
+              {ch.key === "22" && <GearLink slug="bread-bag" />}
               {ch.links.map(l=><a key={l.title} href={l.url ?? (l.path ? topic(l.path) : authority)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-lg border border-[#cbb18c] bg-[#faf3e5] px-3 py-2 text-sm font-semibold hover:bg-[#f0e1c9]">{l.title}<ExternalLink size={13}/></a>)}
             </div>
             <p className="mt-4 text-xs"><b>Glossary terms:</b> {ch.glossaryTerms.join(" · ")} <button className="font-semibold underline" onClick={() => setParams({view:"glossary",chapter:ch.key})}>Explore these terms</button></p>
