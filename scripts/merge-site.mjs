@@ -1,4 +1,4 @@
-import { existsSync, cpSync, readdirSync, statSync, mkdirSync, copyFileSync } from "node:fs";
+import { existsSync, cpSync, readdirSync, statSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join, relative } from "node:path";
 
 const OUT = "site/out";
@@ -57,7 +57,12 @@ for (const top of COPY) {
 // and merged Next static output must not depend on the SPA fallback rewrite.
 const companionDir = join(DIST, "sourdough-for-the-rest-of-us");
 mkdirSync(companionDir, { recursive: true });
-copyFileSync(join(DIST, "index.html"), join(companionDir, "index.html"));
+// The book path also lives on bakinggreatbread.com through a same-path
+// reverse-proxy rewrite. Absolute asset URLs must keep JS/CSS on this origin.
+const companionHtml = readFileSync(join(DIST, "index.html"), "utf8")
+  .replaceAll('src="/assets/', 'src="https://gifts.bakinggreatbread.com/assets/')
+  .replaceAll('href="/assets/', 'href="https://gifts.bakinggreatbread.com/assets/');
+writeFileSync(join(companionDir, "index.html"), companionHtml);
 
 console.log(
   `merge-site: wrote /sourdough-for-the-rest-of-us/index.html`
